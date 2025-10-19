@@ -41,7 +41,7 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 }
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v1.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneVerbale}{v1.1} % <-- modifica qui la versione o ID
 \newcommand{\VerbaleInterno}{Interno} 
 
 \pagestyle{fancy}
@@ -106,9 +106,11 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            v0.1 & \DataVerbale & Andrea Difino & & Prima stesura\\
+            \VersioneVerbale & 2025/10/19 & Giacomo Giora & Andrea Difino & Modifiche a versioni e immagini\\
             \hline
-            \VersioneVerbale & \DataVerbale & Giacomo Giora & Andrea Difino & Sistemazione contenuto\\
+            v1.0 & \DataVerbale & Giacomo Giora & Andrea Difino & Sistemazione contenuto\\
+            \hline
+            v0.1 & \DataVerbale & Andrea Difino & & Prima stesura\\
             \hline
         \end{tabular}
     \end{center}
@@ -145,40 +147,43 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 \section{Discussione}{
     \subsection{Creazione e definizione del team}{
         All'inizio della riunione, il team ha deciso di chiamarsi \textbf{ATLAS}, derivante da \emph{Atlante}.  
-        Un nome che rappresenta forza e che raffigura, come si vede anche dal logo, un grande peso - il peso dei nuovi doveri e delle nuove conoscenze che sorreggeremo.
+        Un nome che rappresenta forza e che raffigura, come si vede anche dal logo in \hyperlink{logo-target}{Figura~\ref{fig:logo-atlas}}, un grande peso - il peso dei nuovi doveri e delle nuove conoscenze che sorreggeremo.
 
-        Il logo scelto per il team è:
-
-        \begin{center}  
+        \begin{figure}[h]
+            \centering
+            \hypertarget{logo-target}{}
             \begin{tikzpicture}
-                \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+            \clip (0,-0.1) circle (4.6cm);
                 \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
-            \end{tikzpicture}\\
-        \end{center}
+            \end{tikzpicture}
+            \caption{Logo scelto dal team Atlas}
+            \label{fig:logo-atlas}
+        \end{figure}
 
         Infine, per consolidare il gruppo, è stata creata l'email ufficiale: \texttt{\Email}.
-    }
+        }
 
-    \subsection{Creazione organizzazione su GitHub}{
+        \subsection{Creazione organizzazione su GitHub}{
         È stata creata l'organizzazione su GitHub per la gestione \textbf{efficace} delle repository del team. 
-    }
+        }
 
-    \subsection{Definizione struttura dei verbali}{
+        \subsection{Definizione struttura dei verbali}{
         Si è discusso della struttura dei verbali, distinguendo tra \textbf{interni} ed \textbf{esterni}
-    }
+        }
 
-    \subsection{Discussione per la preferenza dei capitolati disponibili}{
+        \subsection{Discussione per la preferenza dei capitolati disponibili}{
         Sono stati analizzati i capitolati disponibili: C1 è risultato il preferito, C2 la seconda scelta, e C6 come alternativa.  
-    }
+        }
 
-    \subsection{Pianificazione delle comunicazioni con le aziende}{
+        \subsection{Pianificazione delle comunicazioni con le aziende}{
         Sono state inviate email alle aziende di interesse per richiedere un incontro per la prossima settimana e creato un file Google Docs per raccogliere le domande da porre durante le call e filtrare quelle migliori.  
         
-    }
+        }
 
-    \subsection{Assegnazione dei ruoli e suddivisione dei capitolati per lo studio}{
+        \subsection{Assegnazione dei ruoli e suddivisione dei capitolati per lo studio}{
         Infine, è stato definito il responsabile per le prime due settimane e si è proceduto alla suddivisione dei capitolati tra i membri per lo studio e la preparazione delle domande.
-    }
+        }
+
 
 }
 
