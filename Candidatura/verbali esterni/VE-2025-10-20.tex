@@ -1,0 +1,188 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/10/20}
+\newcommand{\OraInizio}{16:30}
+\newcommand{\OraFine}{16:50}
+\newcommand{\LuogoVerbale}{Chiamata Zoom}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportate le domande poste e le risposte ricevute durante il primo meeting effettuato dal team \Gruppo \space con l'azienda \textbf{Var Group}, riguardante il capitolato C2 del corso di Ingegneria del Sofware. L'incontro si è tenuto da remoto nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v0.1} % <-- modifica qui la versione o ID
+\newcommand{\VerbaleEsterno}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleEsterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleEsterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l}
+        \textbf{Nome} & \textbf{Presenza} \\
+        \hline
+        \textbf{Stefano Dindo} & SI (\textbf{Var Group})\\
+        \textbf{Michele Massaro} & SI (\textbf{Var Group})\\
+        Andrea Difino & SI \\
+        Federico Simonetto & SI \\
+        Riccardo Valerio & NO \\
+        Francesco Marcolongo & SI \\
+        Michele Tesser & NO \\
+        Giacomo Giora & SI \\
+        Bilal Sabic & SI \\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneVerbale & 2025/10/20 & Giacomo Giora &  & Prima stesura\\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del Giorno}{
+    \begin{itemize}
+        \item Chiarimenti sul capitolato
+        \item Esposizione domande riguardanti il progetto
+    \end{itemize}
+}
+
+
+\section{Domande e risposte}{
+
+    \subsection{Framework da utilizzare per l'architettura}
+    \textbf{Domanda:} Nel capitolato sono citati diversi framework per la creazione dell'architettura a multi agenti con un orchestratore centrale. Noi dovremo usare uno di quei framework o ci verrà fornito successivamente?
+
+    \textbf{Risposta:} L'obiettivo è creare un nostro framework. Attualmente esistono già strumenti in grado di effettuare test di unità e analisi statica. Noi vogliamo utilizzare l'AI per orchestrare questi strumenti in una procedura automatizzata di rilascio. Quindi ad esempio, quando arriva un commit, l'orchestratore attiva un agente dedicato all'analisi statica. Se è necessario effettuare un controllo di sicurezza, l'orchestratore attiva un altro agente (ad esempio un LLM specializzato). Ogni agente ha un compito specifico, e l'orchestratore si occupa di delegare e raccogliere i risultati.
+
+    \subsection{Struttura e funzionalità della dashboard}
+    \textbf{Domanda:} Nella presentazione del capitolato viene mostrato uno schema concettuale con una dashboard come componente finale. Essa come dovrà essere strutturata? Cosa dovrebbe permettere all'utente di poter fare? Si può visualizzare l'analisi solo delle proprie repository o anche di repository "generali" per esempio su una sezione trending come c'è su GitHub?
+
+    \textbf{Risposta:} La struttura della dashboard verrà definita più precisamente durante la sessione di design thinking. L'idea è di avere un processo di drill down, che permetta all'utente di partire da una visione d'insieme e con un click approfondire i dettagli tecnici di ogni singola repository. Le funzionalità previste sono: visualizzazione di linguaggi di programmazione e librerie utilizzate, analisi di livello di uniformità delle librerie usate nei vari progetti, possibilità di ottenere suggerimenti di miglioramento, ad esempio: se in un progetto è presente una libreria in versione 2.0 ma l'ultima versione è la 3.0, l'interfaccia suggerirà l'aggiornamento. e anche una dashboard progettata per essere interattiva e fornire indicazioni utili per ottimizzare la qualità del codice e la gestione dei progetti. Possiamo avere due tipi di utenti: l'utente standard che può visualizzare e analizzare solo le proprie repository e il superadmin, che può visualizzare e analizzare tutte le repository.
+
+    \subsection{Formato delle proposte di remediation}
+    \textbf{Domanda:} Le proposte di remediation devono essere fornite come report, per esempio come documento con i risultati dell'analisi, oppure in tempo reale per esempio come differenza visuale (diff) del codice, come avviene su GitHub?
+
+    \textbf{Risposta:} L'ideale sarebbe avere la possibilità di visualizzare le differenze nel codice (diff) direttamente nella piattaforma, permettendo così una visualizzazione più chiara e immediata dei suggerimenti di modifica, ma in fase di design thinking si definirà meglio se conviene concentrarsi su questa parte oppure dare priorità ad altri aspetti del progetto.
+
+    \subsection{Metriche per l'analisi}
+    \textbf{Domanda:} Nel capitolato è specificato che come metriche per superare l'analisi sulla sicurezza di un progetto si utilizza lo standard OWASP, cos'è precisamente questo standard? Per quanto riguarda l'analisi sul fatto che un progetto è aggiornato, documentato, e con test, ci verrebbero fornite anche lì delle metriche oggettive?
+
+    \textbf{Risposta:} Per quanto riguarda invece la parte relativa ad aggiornamenti, documentazione e test, non esiste uno standard analogo già definito. Sarà l'orchestratore a lanciare le verifiche in corrispondenza di un commit, per esempio tramite l'uso di un tag, e da lì far partire le attività di controllo. Verranno utilizzate metriche come una soglia minima di code coverage, la verifica della presenza di documentazione API tramite strumenti come Swagger, l'analisi delle firme e dei tipi di ritorno dei metodi, e la disponibilità di una documentazione architetturale che spieghi le scelte progettuali. L'obiettivo è avere un processo automatizzato e oggettivo che controlli sicurezza, aggiornamento e qualità del codice.
+
+    \subsection{Data layer}
+    \textbf{Domanda:} Come deve funzionare il data layer che comunica con l'orchestratore? Con che linguaggio deve essere implementato?
+
+    \textbf{Risposta:} Il data layer è lo strato in cui risiedono il database e il sistema di code, e ha il compito di gestire lo scambio di messaggi tra l'orchestratore e i vari agenti. Per esempio, quando un agente esegue un'analisi statica e un altro deve riceverne i risultati, è necessario un canale di comunicazione affidabile ed efficiente. Questo scambio può avvenire attraverso un sistema a code oppure tramite API intermedie che fungono da punto di passaggio per i dati. Non è richiesto un linguaggio specifico per la sua implementazione: la scelta dipenderà dal design complessivo e dagli strumenti che verranno adottati. L'aspetto più importante è garantire l'interoperabilità tra gli agenti e un'integrazione fluida con l'orchestratore.
+
+    \subsection{Demo live e documentazione tecnica}
+    \textbf{Domanda:} In cosa consiste la demo live? Ci viene spiegato come produrre la documentazione tecnica?
+
+    \textbf{Risposta:} Per la documentazione tecnica: il primo step sarà una sessione di design thinking, durante la quale verrà definito il perimetro e l'esigenza di business da realizzare. Successivamente verranno fornite indicazioni tecniche su come strutturare la documentazione. La collaborazione potrà avvenire tramite: accesso a una nostra repo dedicata, oppure una repo creata direttamente dai proponenti, oppure tramite strumenti di comunicazione come Teams. Le modalità operative non sono ancora state decise, anche perché i sistemi potrebbero essere piuttosto complessi per voi studenti. Invece per la demo live: si mostrerà la parte applicativa sviluppata, in particolare il cruscotto degli agenti. Durante la presentazione, verrà simulato un commit e sarà possibile vedere l'interazione tra tutti i sistemi. Quindi l'obiettivo della demo è dimostrare il funzionamento concreto dell'architettura multi-agente e della pipeline automatizzata.
+}
+
+\section{Conclusioni}{
+    Sono state poste diverse domande riguardanti il capitolato C2 e sono state fornite risposte dettagliate dai rappresentanti dell'azienda Var Group. Le risposte sono state esaustive e hanno chiarito vari aspetti tecnici e funzionali del progetto, inclusi l'architettura multi-agente, la dashboard, le metriche di analisi, il data layer e le modalità di presentazione della demo live e della documentazione tecnica.
+}
+
+\vspace{2cm}
+\begin{flushright}
+    \textbf{Approvazione dell'azienda} \\
+    Il proponente,\\[0.5cm]
+    \rule{6cm}{0.4pt}\\
+\end{flushright}
+
+
+
+\end{document}
