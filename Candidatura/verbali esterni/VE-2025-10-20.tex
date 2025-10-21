@@ -41,7 +41,7 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
 }
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v0.1} % <-- modifica qui la versione o ID
+\newcommand{\VersioneVerbale}{v1.0} % <-- modifica qui la versione o ID
 \newcommand{\VerbaleEsterno}{Esterno} 
 
 \pagestyle{fancy}
@@ -108,7 +108,9 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneVerbale & 2025/10/20 & Giacomo Giora &  & Prima stesura\\
+            \VersioneVerbale & 2025/10/21 & Giacomo Giora & Federico Simonetto & Sistemazione contenuto\\
+            \hline
+            v0.1 & 2025/10/20 & Giacomo Giora &  & Prima stesura\\ 
             \hline
         \end{tabular}
     \end{center}
@@ -159,13 +161,14 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
     \subsection{Metriche per l'analisi}
     \textbf{Domanda:} Nel capitolato è specificato che come metriche per superare l'analisi sulla sicurezza di un progetto si utilizza lo standard OWASP, cos'è precisamente questo standard? Per quanto riguarda l'analisi sul fatto che un progetto è aggiornato, documentato, e con test, ci verrebbero fornite anche lì delle metriche oggettive?
 
-    \textbf{Risposta:} Per quanto riguarda invece la parte relativa ad aggiornamenti, documentazione e test, non esiste uno standard analogo già definito. Sarà l'orchestratore a lanciare le verifiche in corrispondenza di un commit, per esempio tramite l'uso di un tag, e da lì far partire le attività di controllo. Verranno utilizzate metriche come una soglia minima di code coverage, la verifica della presenza di documentazione API tramite strumenti come Swagger, l'analisi delle firme e dei tipi di ritorno dei metodi, e la disponibilità di una documentazione architetturale che spieghi le scelte progettuali. L'obiettivo è avere un processo automatizzato e oggettivo che controlli sicurezza, aggiornamento e qualità del codice.
+    \textbf{Risposta:} Lo standard OWASP è un insieme di best practices e linee guida rivolte alla sicurezza del software che sono facilmente approfondibili nel loro sito ufficiale. Per quanto riguarda invece la parte relativa ad aggiornamenti, documentazione e test, non esiste uno standard analogo già definito. Sarà l'orchestratore a lanciare le verifiche in corrispondenza di un commit, per esempio tramite l'uso di un tag, e da lì far partire le attività di controllo. Verranno utilizzate metriche come una soglia minima di code coverage, la verifica della presenza di documentazione API tramite strumenti come Swagger, l'analisi delle firme e dei tipi di ritorno dei metodi, e la disponibilità di una documentazione architetturale che spieghi le scelte progettuali. L'obiettivo è avere un processo automatizzato e oggettivo che controlli sicurezza, aggiornamento e qualità del codice.
 
     \subsection{Data layer}
     \textbf{Domanda:} Come deve funzionare il data layer che comunica con l'orchestratore? Con che linguaggio deve essere implementato?
 
     \textbf{Risposta:} Il data layer è lo strato in cui risiedono il database e il sistema di code, e ha il compito di gestire lo scambio di messaggi tra l'orchestratore e i vari agenti. Per esempio, quando un agente esegue un'analisi statica e un altro deve riceverne i risultati, è necessario un canale di comunicazione affidabile ed efficiente. Questo scambio può avvenire attraverso un sistema a code oppure tramite API intermedie che fungono da punto di passaggio per i dati. Non è richiesto un linguaggio specifico per la sua implementazione: la scelta dipenderà dal design complessivo e dagli strumenti che verranno adottati. L'aspetto più importante è garantire l'interoperabilità tra gli agenti e un'integrazione fluida con l'orchestratore.
 
+    \newpage
     \subsection{Demo live e documentazione tecnica}
     \textbf{Domanda:} In cosa consiste la demo live? Ci viene spiegato come produrre la documentazione tecnica?
 
