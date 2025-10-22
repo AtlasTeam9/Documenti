@@ -41,7 +41,7 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
 }
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v0.1} % <-- modifica qui la versione o ID
+\newcommand{\VersioneVerbale}{v1.0} % <-- modifica qui la versione o ID
 \newcommand{\VerbaleEsterno}{Esterno} 
 
 \pagestyle{fancy}
@@ -107,9 +107,11 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneVerbale & 2025/10/21 & Giacomo Giora &  & Prima stesura\\ 
+            \VersioneVerbale & 2025/10/21 & Giacomo Giora & Tesser Michele & Sistemazione contenuto\\ 
             \hline
-        \end{tabular}
+            v0.1 & 2025/10/21 & Giacomo Giora &  & Prima stesura\\ 
+            \hline
+       \end{tabular}
     \end{center}
 }
 
@@ -140,34 +142,48 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
 
 \section{Domande e risposte}{
 
-    \subsection{Titolo domanda}
-    \textbf{Domanda:} Testo domanda.
+    \subsection{Qualità del supporto LLM}
+    \textbf{Domanda:} Qual è il livello di accuratezza o qualità atteso per le funzioni di sintesi, traduzione e riscrittura? Si devono solo dimostrare le funzionalità o deve esserci una valutazione qualitativa sui risultati?
 
-    \textbf{Risposta:} Testo risposta.
+    \textbf{Risposta:} Non è richiesto un livello minimo di accuratezza o qualità per le funzioni basate su LLM. È sufficiente dimostrare il funzionamento e le potenzialità del sistema. L’azienda lascia libertà di implementare diverse strategie per la gestione delle funzioni base, ad esempio, oltre al metodo dei sei cappelli, è stato menzionato anche il metodo PARA.
 
-    \subsection{Titolo domanda}
-    \textbf{Domanda:} Testo domanda.
+    \subsection{Gestione UI delle funzionalità intelligenti}
+    \textbf{Domanda:} Come devono essere gestite le selezioni di testo su cui applicare le operazioni dell’LLM (riassunto, traduzione, critica)? L’utente seleziona con il mouse e poi sceglie l’operazione? O inserisce un comando in un campo separato?
 
-    \textbf{Risposta:} Testo risposta.
+    \textbf{Risposta:} L’interfaccia dovrà permettere di applicare le operazioni sia alla pagina corrente sia a una porzione selezionata di testo. Le funzioni potranno essere accessibili anche tramite un menu contestuale, ad esempio con il click destro del mouse.
 
-    \subsection{Titolo domanda}
-    \textbf{Domanda:} Testo domanda.
+    \subsection{Modalità salvataggio files}
+    \textbf{Domanda:} Quando salviamo il file, verrà salvato sia il file markdown che il riassunto come un file di testo oppure andiamo a salvare solo il riassunto?
 
-    \textbf{Risposta:} Testo risposta.
+    \textbf{Risposta:} Al momento del salvataggio dovrà essere memorizzato il documento originale. Eventuali elaborazioni o riassunti potranno essere gestiti come informazioni aggiuntive, ma non sostitutive del file principale.
 
-    \subsection{Titolo domanda}
-    \textbf{Domanda:} Testo domanda.
+    \subsection{Visione del rendering}
+    \textbf{Domanda:} Il rendering viene fatto in tempo reale oppure l’utente dovrà esplicitamente richiederlo tramite un tasto ad esempio?
 
-    \textbf{Risposta:} Testo risposta.
+    \textbf{Risposta:} Il rendering verrà eseguito su richiesta esplicita dell’utente, ad esempio tramite un pulsante o una specifica opzione dell’interfaccia.
 
-    \subsection{Titolo domanda}
-    \textbf{Domanda:} Testo domanda.
+    \subsection{API tokens}
+    \textbf{Domanda:} Visto che è possibile lavorare con l’API di chatGPT, dovremo tenere in considerazione anche il limite di token? Se magari usiamo tutti i token, l’utente dovrà aspettare un tempo predeterminato oppure esiste qualche metodo per evitare questo problema di token?
 
-    \textbf{Risposta:} Testo risposta.
+    \textbf{Risposta:} L’utente non dovrà essere consapevole della gestione dei token. Il monitoraggio e l’eventuale limitazione avverranno lato server. L’azienda utilizza già un sistema interno, basato su LiteLLM, per gestire costi, accessi e modelli. Poiché Zucchetti dispone di AI ospitate localmente, l’impatto economico dell’utilizzo dei modelli è ridotto.
+
+    \subsection{Comunicazione}
+    \textbf{Domanda:} Come avverrà la comunicazione con l'azienda? Con che frequenze e in che modalità?
+
+    \textbf{Risposta:} L’azienda si è resa disponibile per fornire chiarimenti e feedback in qualsiasi momento, sia a distanza che, se necessario, di persona presso la sede Zucchetti, nel rispetto degli impegni lavorativi del personale. È incoraggiato il contatto diretto in caso di dubbi o per mostrare progressi rilevanti.
+
+    \subsection{Consigli}
+    \textbf{Domanda:} Considerata la pluriennale esperienza della Zucchetti chiediamo qualche libero consiglio.
+
+    \textbf{Risposta:} L’azienda ha evidenziato come il capitolato sia volutamente aperto, lasciando ampio spazio alla creatività del team. È stato suggerito di concentrarsi su interfacce chiare e intuitive, ad esempio integrando viste grafiche simili a quelle dell’applicazione Obsidian. È stata inoltre sottolineata l’importanza di limitare l’uso dei LLM alla rielaborazione del testo, evitando la generazione completa dei contenuti per mantenere coerenza e qualità.
+
 }
+\newpage
 
 \section{Conclusioni}{
-    Sono state poste diverse domande riguardanti il capitolato C6 e sono state fornite risposte dettagliate dai rappresentanti dell'azienda Zucchetti. Le risposte sono state esaustive e hanno chiarito vari aspetti tecnici e funzionali del progetto, inclusi .....
+  Durante l’incontro con i rappresentanti di Zucchetti S.p.A., il team ha ricevuto risposte chiare e dettagliate alle domande relative al capitolato C6 – Second Brain.
+  Sono stati approfonditi diversi aspetti tecnici e funzionali del progetto, tra cui il ruolo dei LLM, la gestione dell’interfaccia utente, le modalità di salvataggio e visualizzazione dei documenti, e le linee guida per l’interazione con l’azienda.
+  L’incontro ha confermato la disponibilità di Zucchetti a collaborare e fornire supporto durante lo sviluppo. Le risposte ottenute hanno contribuito a delineare con maggiore precisione gli obiettivi del progetto e le libertà di implementazione concesse al team.
 }
 
 \vspace{2cm}
