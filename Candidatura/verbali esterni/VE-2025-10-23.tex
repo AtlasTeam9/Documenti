@@ -41,7 +41,7 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
 }
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v0.1} % <-- modifica qui la versione o ID
+\newcommand{\VersioneVerbale}{v1.0} % <-- modifica qui la versione o ID
 \newcommand{\VerbaleEsterno}{Esterno} 
 
 \pagestyle{fancy}
@@ -107,7 +107,9 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneVerbale & 2025/10/23 & Giacomo Giora &  & Prima stesura\\ 
+            \VersioneVerbale & 2025/10/23 & Giacomo Giora & Andrea Difino & Creazione Contenuto\\ 
+            \hline
+            v0.1 & 2025/10/23 & Giacomo Giora &  & Prima stesura\\ 
             \hline
        \end{tabular}
     \end{center}
@@ -140,27 +142,40 @@ In questo verbale vengono riportate le domande poste e le risposte ricevute dura
 
 \section{Domande e risposte}{
 
-    \subsection{Titolo domanda}
-    \textbf{Domanda:} Domanda
+    \subsection{Complessità dei Decision Tree e Controlli Automatici}
+    \textbf{Domanda:} Nell'esempio del Decision Tree riportato nel capitolato, le domande sembrano piuttosto semplici, ma non sappiamo quanto lo siano nella realtà. Potreste chiarirci quanto complessi saranno i Decision Tree reali e se dovremo solo visualizzare le domande e registrare le risposte oppure fare controlli automatici nei documenti caricati (ad esempio verificare parametri o valori tecnici)?
 
-    \textbf{Risposta:} Risposta
+    \textbf{Risposta:} Le domande dei Decision Tree reali saranno relativamente semplici. La parte più impegnativa del lavoro non riguarda tanto la complessità logica delle domande quanto la diversità delle interfacce possibili. La difficoltà maggiore sta nel gestire la struttura dei Decision Tree in modo iterativo, poiché il flusso delle domande può dipendere dal tipo di dispositivo o dai dati forniti in ingresso. In alcuni casi, infatti, un dispositivo potrebbe richiedere una sequenza di controlli diversa da un altro. Durante il primo incontro operativo verrà analizzata la norma di riferimento e si discuterà su come ripercorrere i Decision Tree nel modo corretto.
 
-    \subsection{Titolo domanda}
-    \textbf{Domanda:} Domanda
+    \subsection{Relazione tra Documenti di Caso Studio e Decision Tree}
+    \textbf{Domanda:} Nel capitolato si parla di due tipi di file da usare come input: i documenti che descrivono il caso studio e i file che contengono i Decision Tree. Potreste spiegarci come questi due elementi sono collegati tra loro? Ad esempio, il software dovrà semplicemente mostrarli separatamente oppure usare i dati dei documenti per rispondere o completare alcune domande dei Decision Tree?
 
-    \textbf{Risposta:} Risposta
+    \textbf{Risposta:} I file dei Decision Tree vengono caricati in ingresso e costituiscono la base del processo di analisi. L'input dipende dal tipo di dispositivo che si sta esaminando: in base a questo, il sistema mostrerà a schermo una serie di domande o risposte possibili, e sarà poi l'utente a fornire le risposte necessarie per completare il percorso del Decision Tree. 
+    
+    Per quanto riguarda gli altri documenti, non esiste un'integrazione diretta. Viene fornita la parte della norma di riferimento e un documento che descrive le interfacce, ma non ci sono altri file di input da cui ricavare automaticamente informazioni o risposte. La parte di collegamento tra i documenti e i Decision Tree non è già implementata: spetterà agli studenti decidere come gestire e organizzare queste informazioni all'interno dell'analisi.
 
-    \subsection{Titolo domanda}
-    \textbf{Domanda:} Domanda
 
-    \textbf{Risposta:} Risposta
+    \subsection{Ruolo di MQTT e TLS nella Verifica di Conformità}
+    \textbf{Domanda:} Nel caso della macchina del caffè viene citata una comunicazione tramite broker MQTT e una connessione sicura TLS. Potreste spiegarci a cosa servono questi elementi e in che modo influenzano la verifica di conformità? Ci interessa capire se dobbiamo considerarli solo come contesto di esempio o se fanno parte concreta della logica che il software dovrà gestire.
+
+    \textbf{Risposta:} Va preso come contesto di esempio. La macchina del caffè è un esempio dei dispositivi su cui può essere utilizzata e sulle informazioni che vengono fornite in input. Non è necessario capire il funzionamento delle tecnologie coinvolte (MQTT, TLS) ai fini di creare il software. Si possono fare altri esempi più facili o difficili.
+
+    \subsection{Tecnologie Consigliate e Supporto per Dispositivi Mobili}
+    \textbf{Domanda:} Nel capitolato è scritto che non ci sono vincoli particolari sulla tipologia di applicazione, ma viene citato Python per il backend. Avete tecnologie o strumenti che consigliate di usare per sviluppare il progetto (linguaggi, framework o database)? E secondo voi l'applicazione dovrebbe essere pensata solo per uso da computer o sarebbe utile prevedere anche un'interfaccia utilizzabile da dispositivi mobili?
+
+    \textbf{Risposta:} Il backend può essere sviluppato in Python, come indicato nel capitolato, ma non ci sono vincoli rigidi riguardo alla scelta delle tecnologie. È quindi possibile utilizzare altri linguaggi, framework o strumenti se il gruppo lo ritiene più opportuno. Se si preferisce, si può tranquillamente implementare l'intero progetto in Python. Per quanto riguarda l'interfaccia, l'applicazione non è pensata specificamente per l'uso da dispositivi mobili. Tuttavia, se il progetto viene sviluppato come applicazione web, sarà comunque accessibile anche da smartphone o tablet tramite browser, grazie al web server. In ogni caso, il supporto mobile non è un requisito necessario.
+
+    \subsection{Approccio Agile e Integrazione CI/CD}
+    \textbf{Domanda:} Nel capitolato si cita un metodo di lavoro tramite approccio Agile. Si potrebbero avere più informazioni a riguardo? (Integrazione con CI/CD)
+
+    \textbf{Risposta:} L'approccio previsto è di tipo Agile, con una struttura organizzata su riunioni periodiche. In particolare, sono previste riunioni settimanali e una riunione finale per fare il punto su quanto è stato realizzato. Ogni sprint avrà una durata di circa due settimane. All'inizio di ciascuno sprint si terrà una riunione di pianificazione in cui verranno definiti i task da affrontare. Durante il periodo dello sprint, si svolgeranno brevi riunioni giornaliere (daily meeting) per discutere lo stato di avanzamento, decidere quali attività prendere in carico e individuare eventuali problemi o urgenze. Al termine di ogni sprint si farà una revisione per valutare i risultati raggiunti e pianificare le attività successive.
 
 }
 \newpage
 
 \section{Conclusioni}{
   Durante l'incontro con il rappresentante di Bluewind S.r.l., il team ha ricevuto risposte chiare e dettagliate alle domande relative al capitolato C1 - Automated EN18031 Compliance Verification.
-  Sono stati approfonditi diversi aspetti tecnici e funzionali del progetto, tra cui .... .
+  Sono stati approfonditi aspetti tecnici e funzionali del progetto, come la complessità dei Decision Tree, l'integrazione tra documenti e logica decisionale, la gestione della comunicazione sicura, le tecnologie consigliate per lo sviluppo e l'approccio Agile con CI/CD. Il focus è sulla comprensione dei requisiti reali e sull'impatto delle scelte architetturali e metodologiche.
 }
 
 \vspace{2cm}
