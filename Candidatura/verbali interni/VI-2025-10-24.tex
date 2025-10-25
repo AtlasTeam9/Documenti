@@ -1,0 +1,173 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{Email}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/10/24}
+\newcommand{\OraInizio}{10:00}
+\newcommand{\OraFine}{12:00}
+\newcommand{\LuogoVerbale}{Chiamata Discord}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \space \OraFine .
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{0.1} % <-- modifica qui la versione o ID
+\newcommand{\VerbaleInterno}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleInterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleInterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l}
+        \textbf{Nome} & \textbf{Presenza} \\
+        \hline
+        Andrea Difino & SI \\
+        Federico Simonetto & SI \\
+        Riccardo Valerio & SI \\
+        Francesco Marcolongo & SI \\
+        Michele Tesser & NO \\
+        Giacomo Giora & SI \\
+        Bilal Sabic & SI \\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+             \VersioneVerbale & 2025/10/24 & Bilal Sabic & & Prima stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del Giorno}{
+    \begin{enumerate}
+        \item Discussione su capitolati
+        \item Creazione diario di bordo
+        \item Inizio discussione sul monte ore
+        \item Discussione sul sito web del team
+    \end{enumerate}
+}
+
+\section{Discussione}{
+	\subsection{Discussione su capitolati}{
+		Il gruppo ha discusso sui vari capitolati, analizzando le risposte ricevute negli incontri con le aziende e ha confermato la sua preferenza per il capitolato C1 - 		Automated EN 18031 Compliance Verification (Bluewind).
+}
+	\subsection{Creazione diario di bordo}{
+		Si è scelto di usare Canva per la creazione del diario di bordo, sono stati inseriti obiettivi raggiunti, obiettivi futuri e difficoltà incontrate.
+}
+	\subsection{Inizio discussione sul monte ore}{
+		E' stata fatta la prima discussione sulla distribuzione delle ore all'interno del gruppo e per ogni ruolo per la realizzazione del progetto.
+}
+	\subsection{Discussione sul sito web del team}{
+		Si è discusso del aspetto e delle funzionalità del sito web contenente i documenti del gruppo.	
+}
+}
+
+
+\section{Decisioni Prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{11cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D1-24/10/2025 & Fissato il prossimo incontro per il 2025/10/28 alle ore 15:00 \\
+        \hline
+	D2-24/10/2025 & Scrivere i pro e contro di ogni capitolato entro la prossima riunione \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+
+\end{document}
