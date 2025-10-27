@@ -51,14 +51,28 @@ jobs:
       - name: Sincronizza i PDF compilati nel sito
         run: |
           echo "Sincronizzo i PDF in site/docs..."
-          rsync -av --delete \
-                --exclude="site" \
-                --exclude=".git" \
-                --exclude=".github" \
-                --include="*/" \
-                --include="*.pdf" \
-                --exclude="*" \
-                . site/docs/
+
+          mkdir -p site/docs
+
+          FOLDERS_TO_SYNC=""
+          for dir in Candidatura PB RTB Presentazioni; do
+            if [ -d "$dir" ]; then
+              FOLDERS_TO_SYNC="$FOLDERS_TO_SYNC $dir/"
+              echo "Trovata cartella: $dir"
+            else
+              echo "Cartella $dir non presente, la salto"
+            fi
+          done
+
+          if [ -n "$FOLDERS_TO_SYNC" ]; then
+            rsync -av --delete \
+                  --include="*/" \
+                  --include="*.pdf" \
+                  --exclude="*" \
+                  $FOLDERS_TO_SYNC site/docs/
+          else
+            echo "Nessuna cartella da sincronizzare trovata!"
+          fi
           
           if [ -z "$(ls -A site/docs)" ]; then
             touch site/docs/.gitkeep
