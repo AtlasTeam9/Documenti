@@ -6,7 +6,7 @@ on:
       - "Candidatura/**"
       - "PB/**"
       - "RTB/**"
-      - "Presentazione/**"
+      - "Presentazioni/**"
     branches:
       - main
   workflow_dispatch: 
