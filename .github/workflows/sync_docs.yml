@@ -47,14 +47,18 @@ jobs:
         run: |
           git clone https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/AtlasTeam9/Atlas.git site
 
+      # --- Sincronizzazione ---
       - name: Sincronizza i PDF compilati nel sito
         run: |
           echo "Sincronizzo i PDF in site/docs..."
           rsync -av --delete \
+                --exclude="site" \
+                --exclude=".git" \
+                --exclude=".github" \
                 --include="*/" \
                 --include="*.pdf" \
                 --exclude="*" \
-                . site/docs/
+                site/docs/
           
           if [ -z "$(ls -A site/docs)" ]; then
             touch site/docs/.gitkeep
@@ -63,7 +67,7 @@ jobs:
           ls -laR site/docs
 
       # --- Pulizia ---
-      - name: Pulisci i PDF da cartella_con_documenti
+      - name: Pulisci i PDF da repo sorgente
         run: |
           echo "Pulisco i file compilati dal repository sorgente..."
           find . -name "*.pdf" -delete
