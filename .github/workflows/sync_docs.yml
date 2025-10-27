@@ -58,7 +58,7 @@ jobs:
                 --include="*/" \
                 --include="*.pdf" \
                 --exclude="*" \
-                site/docs/
+                . site/docs/
           
           if [ -z "$(ls -A site/docs)" ]; then
             touch site/docs/.gitkeep
