@@ -54,25 +54,18 @@ jobs:
 
           mkdir -p site/docs
 
-          FOLDERS_TO_SYNC=""
           for dir in Candidatura PB RTB Presentazioni; do
             if [ -d "$dir" ]; then
-              FOLDERS_TO_SYNC="$FOLDERS_TO_SYNC $dir/"
-              echo "Trovata cartella: $dir"
+              echo "Sincronizzando cartella: $dir"
+              rsync -av \
+                    --include="*/" \
+                    --include="*.pdf" \
+                    --exclude="*" \
+                    "$dir/" "site/docs/$dir/"
             else
               echo "Cartella $dir non presente, la salto"
             fi
           done
-
-          if [ -n "$FOLDERS_TO_SYNC" ]; then
-            rsync -av --delete \
-                  --include="*/" \
-                  --include="*.pdf" \
-                  --exclude="*" \
-                  $FOLDERS_TO_SYNC site/docs/
-          else
-            echo "Nessuna cartella da sincronizzare trovata!"
-          fi
           
           if [ -z "$(ls -A site/docs)" ]; then
             touch site/docs/.gitkeep
@@ -84,11 +77,15 @@ jobs:
       - name: Pulisci i PDF da repo sorgente
         run: |
           echo "Pulisco i file compilati dal repository sorgente..."
-          find . -name "*.pdf" -delete
-          find . -name "*.aux" -delete
-          find . -name "*.log" -delete
-          find . -name "*.out" -delete
-          find . -name "*.toc" -delete
+          for dir in Candidatura PB RTB Presentazioni; do
+            if [ -d "$dir" ]; then
+              find "$dir" -name "*.pdf" -delete
+              find "$dir" -name "*.aux" -delete
+              find "$dir" -name "*.log" -delete
+              find "$dir" -name "*.out" -delete
+              find "$dir" -name "*.toc" -delete
+            fi
+          done
 
       # --- Commit Finale ---
       - name: Commit e push delle modifiche
