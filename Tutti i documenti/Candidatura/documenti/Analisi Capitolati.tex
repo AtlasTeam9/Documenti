@@ -1,0 +1,507 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\Titolo}{Analisi Capitolati}
+\newcommand{\DataModifica}{28/10/2025}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v0.1} % <-- modifica qui la versione o ID
+\newcommand{\Interno}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Documento: \Interno \space - \space \DataModifica}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo in alto
+    \vspace*{0cm}
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\[0.8cm]
+
+    % Nome gruppo ed email sotto al logo
+    {\LARGE \textbf{\Gruppo}}\\[0.1cm]
+    {\large \Email}\\[1.2cm]
+
+    % Sottotitolo del progetto
+    {\Large \textit{Progetto di ingegneria del software A.A. 2025/2026}}\\[1.5cm]
+
+    % Titolo principale
+    {\Huge \textbf{\Titolo}}\\[1.5cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataModifica \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \Interno \\
+    \end{tabular}
+
+\end{titlepage}
+
+
+\section*{Tabella delle revisioni}{
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            v0.1 & 2025/10/28 & Andrea Difino & & Prima Stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Capitolato Scelto: C1 - Automated EN18031 Compliance Verification}{
+    Proponente: \textbf{Bluewind S.r.l}
+    \subsection*{Descrizione Capitolato}{
+        Il progetto prevede lo sviluppo di un'interfaccia grafica che guida nella compilazione delle domande presenti nelle decision tree relative ai requisiti RED, che specificano la conformità ai requisiti essenziali di sicurezza informatica.
+    }
+
+    \subsection*{Obiettivo}{
+        Creare un'applicazione (web o desktop a descrizione del gruppo) che permetta, tramite degli alberi di decisione, di eseguire test di verifica della conformità tramite input chiari e guidati, in accordo con gli standard definiti dalla normativa RED.
+    }
+
+    \subsection*{Tecnologie richieste}{
+        Uso di python3 per la parte di backend nel caso in cui nel progetto venga sviluppata un'applicazione web;
+    }
+
+    \subsection*{Motivazione Scelta}{
+        \begin{itemize}
+            \item Interesse per il progetto relativo ai concetti di sicurezza che si vogliono verificare;
+            \item L'azienda proponente si è mostrata molto disponibile alla comunicazione e al supporto sia durante questi primi incontri come durante lo sviluppo del progetto tramite incontri periodici e prefissati;
+            \item L'azienda ha lasciato molta libertà per quanto riguarda le tecnologie da utilizzare;
+            \item L'azienda offre un caso di studio per aiutare lo sviluppo dell'applicazione e una maggiore comprensione degli standard e della struttura degli alberi di decisione
+        \end{itemize}
+    }
+
+    \subsection*{Conclusioni}{
+        Il progetto Automated EN18031 Compliance Verification è risultato molto interessante e di complessità adeguata agli obiettivi del gruppo. La combinazione tra contenuti tecnici di rilievo e la collaborazione attiva con Bluewind S.r.l. ha portato alla scelta definitiva del capitolato C1 come progetto finale.
+    }
+}
+
+\newpage
+
+\section{C2 - Code Guardian}{
+    Proponente: \textbf{VarGroup}
+    \subsection*{Descrizione Capitolato}{
+        Il progetto proposto mira a sviluppare una soluzione avanzata in grado di facilitare l'analisi automatica e l'individuazione delle lacune di sicurezza presenti nelle repository ospitate su GitHub.
+        L'obiettivo è realizzare un sistema di agenti intelligenti, orchestrati tramite tecniche di Intelligenza Artificiale, capaci di cooperare per valutare la qualità del codice, la conformità alle best practice e la presenza di potenziali vulnerabilità, fornendo così un valido supporto ai team di sviluppo nel mantenimento della sicurezza e dell'affidabilità del software.
+    }
+
+    \subsection*{Obiettivo}{
+        L'obiettivo del progetto è realizzare una piattaforma web basata su un sistema ad agenti, capace di: 
+        
+        - Analizzare repository GitHub per valutarne qualità, sicurezza e manutenzione.
+        
+        - Fornire report automatici su test, sicurezza e documentazione. 
+        
+        - Suggerire remediation in caso di lacune (best practice, test mancanti, 
+        
+        vulnerabilità OWASP).
+    }
+
+    \subsection*{Tecnologie richieste}{
+        \begin{itemize}
+            \item Node.js, Python per quanto riguarda il backend/orchestratore;
+            \item React.js per il frontend;
+            \item MongoDB o PostgreSQL per la parte di database;
+            \item GitHub Actions per poter applicare la Continuous Integration e la Continuous Delivery;
+            \item AWS per quanto riguarda l'architettura Cloud.
+        \end{itemize}
+    }   
+
+    \subsection*{Pro e Contro}{
+
+        \begin{center} 
+            \begin{tabular}{|p{9cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Progetto molto utile e innovativo, ha suscitato interesse nel gruppo affrontare la tematica dell'analisi del codice e l'automazione dei controlli di qualità; & Parte riguardante 
+                l'architettura cloud con AWS sconosciuta al gruppo.\\
+                \hline
+                Azienda molto pronta al supporto. & \\
+                \hline
+            \end{tabular}
+        \end{center}
+
+    }
+
+    \subsection*{Conclusioni}{
+        Già dalla presentazione del capitolato l'azienda è stata molto chiara lasciando pochi spazi per dubbi e incertezze. Il capitolato è stato priorizzato rispetto ad altri progetti meno invoglianti ma la difficoltà superiore rispetto al capitolato C1 ci ha portato a preferirlo rispetto a questo.
+    }
+}
+
+\section{C3 - DIPReader}{
+    Proponente: \textbf{Sanmarco Informatica SPA}
+    \subsection*{Descrizione Capitolato}{
+        Il progetto si pone l'obiettivo di mettere a disposizione degli utenti uno strumento tecnologico che permetta di eseguire, anche in assenza di connettività, le ricerche sull'archivio dei documenti che sono stati richiesti al sistema di conservazione centralizzato (Distribution Information Package).
+    }
+
+    \subsection*{Obiettivo}{
+        Sviluppare un prodotto SW che permette la rappresentazione semplificata delle informazioni tecniche contenute nel pacchetto, la ricercabilità dei documenti esportati, la visualizzazione in anteprima dei formati più comuni, la selezione di un sottoinsieme di documenti da salvare nel computer dell'utente.
+    }
+
+    \subsection*{Tecnologie richieste}{
+        \begin{itemize}
+            \item SQLite per la parte riguardante il database relazionale;
+            \item FAISS: libreria che permette di facilitare la ricerca all'interno di database molto voluminosi;
+            \item React, Angular per il frontend.
+        \end{itemize}
+
+    }
+
+    \subsection*{Pro e Contro}{
+
+        \begin{center} 
+            \begin{tabular}{|p{9cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Progetto utile e innovativo affrontando una problematica concreta e di rilievo nel contesto della gestione documentale aziendale, ovvero la ricerca e consultazione offline dei dati.
+ & Tecnologie sconosciute alla maggior parte del team\\
+                \hline
+                & Tema del progetto non ha suscitato particolare interesse nel gruppo.\\
+                \hline
+            \end{tabular}
+        \end{center}
+
+    }
+
+    \subsection*{Conclusioni}{
+        Il capitolato proposto rappresenta un progetto tecnicamente solido e di chiara utilità pratica, orientato all'efficienza e alla disponibilità dei dati in contesti offline. Tuttavia, la scarsa familiarità con alcune tecnologie chiave e il limitato coinvolgimento tematico del gruppo hanno portato a considerare questo capitolato meno adatto alle competenze e agli interessi del team.
+    }
+}
+
+\newpage
+
+\section{C4 - L'app che Protegge e Trasforma}{
+    Proponente: \textbf{ MIRIADE srl }
+    \subsection*{Descrizione Capitolato}{
+        Il presente capitolato ha per oggetto l'affidamento dei servizi di progettazione, sviluppo e implementazione di un'applicazione mobile innovativa denominata "L'app che Protegge e Trasforma", finalizzata alla prevenzione e supporto delle vittime di violenza di genere.
+    }
+
+    \subsection*{Obiettivo}{
+        Creare un'applicazione per dispositivi mobili con vari requisiti di sicurezza e funzionalità per prevenire la violenza di genere.
+    }
+
+    \subsection*{Tecnologie richieste}{
+        \begin{itemize}
+            \item Flatter per lo sviluppo della parte mobile;
+            \item AWS (non obbligatorio) per ospitare la parte di backend;
+            \item Amazon API Gateway per le comunicazioni fra l'app mobile e il backend;
+            \item Database relazionali per dati strutturati e NoSQL per dati meno strutturati (risp. PostgreSQL e Amazon DynamoDB)
+        \end{itemize}
+    }
+
+    \subsection*{Pro e Contro}{
+
+        \begin{center} 
+            \begin{tabular}{|p{8cm}|p{6cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Il progetto presenta alte prospettive di crescita personale e professionale per via dei temi e delle tecnologie da utilizzare. & Il progetto non è sembrato interessante a primo acchito.\\
+                \hline
+                & Il progetto è molto complesso e molte delle tecnologie richieste sono estranee (al gruppo) \\
+                \hline
+                & I requisiti opzionali sono molto corposi di per sè. \\
+                \hline
+            \end{tabular}
+        \end{center}
+    }
+
+    \subsection*{Conclusioni}{
+        Il progetto sembra interessante ma data la sua difficoltà e l'esigenza dell'azienda proponente non rientra nelle nostre preferenze.
+    }
+}
+
+\newpage
+
+\section{C5 - NEXUM}{
+    Proponente: \textbf{Eggon}
+    \subsection*{Descrizione Capitolato}{
+        Lo scopo del progetto è la realizzazione e l'evoluzione della piattaforma NEXUM, attraverso lo sviluppo di nuove funzionalità intelligenti e interoperabili volte a ottimizzare la gestione delle risorse umane (HR), semplificare il dialogo con gli studi dei Consulenti del Lavoro e migliorare in modo significativo l'esperienza digitale dei dipendenti.
+        L'obiettivo è creare un ecosistema digitale avanzato, in grado di integrare dati provenienti da fonti diverse e supportare processi decisionali automatizzati e predittivi, favorendo una gestione più efficiente e trasparente delle attività aziendali legate al personale.
+
+    }
+
+    \subsection*{Obiettivo}{
+        Sviluppare una piattaforma digitale intelligente, modulare e scalabile che faccia uso di funzionalità AI-driven e data-driven per l'analisi e l'automazione con lo scopo di migliorare l'efficienza dei processi HR e la collaborazione con gli studi dei Consulenti del Lavoro.
+    }
+
+    \subsection*{Tecnologie richieste}{
+        \begin{itemize}
+            \item Frontend in Angular (per la dashboard amministrativa) e Next.js per utenti finali;
+            \item Ruby on Rails per quanto riguarda il backend;
+            \item PostgreSQL per la persistenza dei dati su database relazionali
+        \end{itemize}
+    }
+
+    \subsection*{Pro e Contro}{
+
+        \begin{center} 
+            \begin{tabular}{|p{10cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Il progetto presenta una forte vocazione verso l'intelligenza artificiale, ambito di grande interesse per il gruppo di lavoro. & Il progetto è molto complesso e richiede l'utilizzo di molte tecnologie. \\
+                \hline
+                L'iniziativa risulta innovativa e di reale utilità, sia per le aziende sia per i Consulenti del Lavoro, grazie al suo potenziale impatto sui processi HR e sulla digitalizzazione delle interazioni professionali & Il progetto richiede molte funzionalità obbligatorie che rappresentano una sfida per il team. \\
+                \hline
+                La modularità e la scalabilità del sistema offrono ottime prospettive di crescita e personalizzazione futura & \\
+                \hline
+            \end{tabular}
+        \end{center}
+
+    }
+
+    \subsection*{Conclusioni}{
+        Nel complesso, il progetto appare stimolante, moderno e di grande valore applicativo, con un potenziale impatto positivo nel campo della digitalizzazione dei processi HR. Tuttavia, la sua notevole complessità tecnica e organizzativa lo rende meno adatto rispetto ad altri capitolati, soprattutto in termini di tempi di sviluppo e gestione delle risorse necessarie.
+    }
+}
+
+\newpage
+
+\section{C6 - Second Brain}{
+    Proponente: \textbf{Zucchetti}
+    \subsection*{Descrizione Capitolato}{
+        Il progetto prevede lo sviluppo di un'applicazione web innovativa volta a esplorare e valutare le potenzialità dei Large Language Models (LLM) nel supportare gli utenti in attività legate alla creazione di testi, alla generazione di idee e ai processi di brainstorming creativo.
+        L'obiettivo principale è comprendere in che modo l'intelligenza artificiale generativa possa diventare un assistente efficace per la scrittura, la revisione dei contenuti e la stimolazione della creatività, fornendo suggerimenti contestuali e miglioramenti stilistici o semantici a comando.
+    }
+
+    \subsection*{Obiettivo}{
+        Il progetto si propone di realizzare una web application composta da due aree principali:
+
+        \
+
+        - Un editor Markdown, che consenta all'utente di scrivere, modificare e formattare il testo in modo semplice e intuitivo;
+        
+        - Un'area di risultato, nella quale visualizzare le risposte, i suggerimenti o le revisioni generate dal modello linguistico.
+
+        \
+        
+        \noindent L'applicazione dovrà integrare le capacità di un LLM, accessibile tramite API, per offrire funzionalità avanzate di correzione, miglioramento stilistico e riformulazione del testo, oltre a proporre spunti per lo sviluppo di idee e contenuti. In tal modo, la piattaforma fungerà da vero e proprio assistente alla scrittura intelligente, capace di affiancare l'utente durante l'intero processo creativo.
+    }
+
+    \subsection*{Tecnologie richieste}{
+        Uso di API che fanno riferimento a LLM (OpenAI).
+    }
+
+    \subsection*{Pro e Contro}{
+
+        \begin{center} 
+            \begin{tabular}{|p{5cm}|p{8cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                L'azienda proponente ha lasciato molta libertà nel complesso &  Il supporto fornito dall'azienda risulta più limitato rispetto ad altri capitolati: l'accompagnamento durante le fasi di sviluppo appare meno strutturato e meno presente, con un coinvolgimento inferiore rispetto a quello garantito dalle altre aziende partecipanti. \\
+                \hline
+                Possibilità di apprendere e applicare tecnologie riguardanti gli LLM & \\
+                \hline
+            \end{tabular}
+        \end{center}
+
+    }
+
+    \subsection*{Conclusioni}{
+        Pur trattando una tematica di grande interesse e con un buon margine di creatività, il progetto offre un livello di assistenza tecnica e di interazione con l'azienda proponente inferiore rispetto ad altre alternative disponibili. Questo aspetto riduce in parte l'attrattiva complessiva del capitolato.
+    }
+}
+
+\newpage
+
+\section{C7 - Sistema di acquisizione dati da sensori}{
+    Proponente: \textbf{M31}
+    \subsection*{Descrizione Capitolato}{
+        Il progetto proposto mira a sviluppare un sistema distribuito di acquisizione e smistamento dati da sensori BLE, articolato in tre livelli principali: dispositivi periferici raccolgono dati dal campo, nodi intermedi che li formattano e li inviano al cloud che li riceve, li bufferizza e li rende disponibili tramite API.
+    }
+
+    \subsection*{Obiettivo}{
+        Progettare un'infrastruttura scalabile e sicura per la gestione di dati sensibili provenienti da sensori, garantire segregazione dei dati fra diversi tenant, implementare meccanismi di comunicazione fra i vari livelli e fornire strumenti di visualizzazione dei dati per amministratori e utenti finali.
+    }
+
+    \subsection*{Tecnologie richieste}{
+        \begin{itemize}
+            \item Node.js e Nest.js vengono impiegati per lo sviluppo dei microservizi;
+            \item Go utilizzato per componenti ad alte prestazioni;
+            \item NATS o Apache Kafka per la comunicazione tra i microservizi;
+            \item Google Cloud Platform per ospitare il sistema di orchestrazione e gestione centralizzata;
+            \item PostgreSQL e MongoDB per la persistenza di dati strutturati e non;
+            \item Angular per quanto riguarda la parte di interfaccia utente.
+        \end{itemize}
+    }
+
+    \subsection*{Pro e Contro}{
+
+        \begin{center} 
+            \begin{tabular}{|p{9cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Il progetto offre ampie opportunità di formazione e crescita tecnica, consentendo di acquisire esperienza diretta con architetture distribuite, sistemi cloud e microservizi. & Il progetto richiede la padronanza di molte tecnologie, la maggior parte \\
+                \hline
+                Permette di operare in un contesto dinamico e professionalizzante, tipico delle soluzioni IoT di nuova generazione. & \\
+                \hline
+            \end{tabular}
+        \end{center}
+
+    }
+
+    \subsection*{Conclusioni}{
+        Il capitolato proposto da M31 si distingue per la sua complessità tecnica e rilevanza pratica, offrendo un'occasione formativa di grande valore per quanto riguarda l'IoT. Tuttavia, la ricchezza tecnologica e la difficoltà complessiva del progetto possono costituire un ostacolo per un gruppo che non possieda già competenze consolidate in questi ambiti.
+    }
+}
+
+\newpage
+
+\section{C8 - Smart Order}{
+    Proponente: \textbf{Ergon}
+    \subsection*{Descrizione Capitolato}{
+        Il progetto si colloca nell'ambito della gestione degli ordini di acquisto da parte dei clienti di un'azienda. Gli ordini di acquisto sono le richieste con cui un cliente domanda la fornitura di determinati prodotti, specificando in genere l'articolo e la quantità desiderata. Nella pratica, però, le informazioni fornite non
+        sempre risultano complete o precise. L'obiettivo del progetto è quindi automatizzare la ricezione di questi ordini, interpretarli correttamente e trasformarli in ordini cliente strutturati e pronti per l'inserimento nel database aziendale.
+    }
+
+    \subsection*{Obiettivo}{
+        Sviluppare una piattaforma intelligente in grado di analizzare input multimodali e convertirli automaticamente in ordini strutturati. Il sistema poi, grazie all'integrazione di modelli avanzati di ML è capace di riconoscere le intenzioni del cliente, estrarre le informazioni rilevanti e validarle in maniera coerente. Una volta processato, l'ordine viene archiviato all'interno di un database per essere utilizzato dai sistemi ERP aziendali.
+    }
+
+    \subsection*{Tecnologie richieste}{
+        \begin{itemize}
+            \item Libertà per quanto riguarda i database relazionali;
+            \item BERT e GPT sono i modelli di linguaggio da utilizzare per comprendere il contesto di una frase;
+            \item modelli come Tesseract OCR per applicare la visione computazionale;
+            \item Whisper (OpenAI) per lo speech-to-text;
+            \item .NET Blazor, React.js o Angular per quanto riguarda lo sviluppo della webapp;
+        \end{itemize}
+    }
+
+    \subsection*{Pro e Contro}{
+
+        \begin{center} 
+            \begin{tabular}{|p{9cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Il progetto presenta una forte vocazione verso l'intelligenza artificiale, ambito di grande interesse per il gruppo di lavoro; & Il progetto richiede lo sviluppo di un'architettura su vari livelli, il che rappresenta una grande difficoltà per il team. \\
+                \hline
+                Il tema del progetto è molto interessante; & La necessità di integrare più componenti eterogenee (AI, database, frontend …) comporta un'elevata complessità nella gestione del progetto.\\
+                \hline
+                L'azienda offre la condivisione di un set di dati relativi ad un caso di studio per facilitare la comprensione e l'implementazione del progetto. & \\
+                \hline 
+                Il tema è altamente stimolante e innovativo, con applicazioni dirette nel campo dell'automazione aziendale e dell'elaborazione del linguaggio naturale. & \\
+                \hline 
+                L'ampio spettro di tecnologie coinvolte consente di acquisire competenze avanzate in AI, NLP e visione artificiale. & \\
+                \hline 
+            \end{tabular}
+        \end{center}
+
+    }
+
+    \subsection*{Conclusioni}{
+        Nonostante il progetto proposto da Ergon presenti un'elevata componente innovativa e un forte orientamento verso l'intelligenza artificiale, la sua complessità architetturale e tecnologica ha rappresentato un fattore determinante nella decisione di non selezionarlo.
+    }
+}
+
+\newpage
+
+\section{C9 - View4Life}{
+    Proponente: \textbf{Vimar}
+    \subsection*{Descrizione Capitolato}{
+        L'obiettivo è progettare e realizzare View4Life, una piattaforma unica in ambito residenziale per la gestione completa degli impianti Smart nelle residenze protette. Questa dovrà interfacciarsi con vari dispositivi:
+        
+        - Attuatori e moduli smart per il controllo dell'illuminazione, degli accessi e degli allarmi;
+        
+        - Comandi smart per gestire tapparelle elettriche;
+        
+        - Sensori UWB (Ultra Wide Band) per il rilevamento di presenza e cadute;
+        
+        - Termostati Smart per il controllo di temperatura.
+    }
+
+    \subsection*{Obiettivo}{
+        Realizzare due macro componenti per la piattaforma View4Life: un applicativo web responsive per il personale sanitario e un'infrastruttura Cloud per ospitare tutte le funzioni dell'applicativo. L'applicativo deve essere responsive e funzionare via browser da smartphone, desktop e tablet mantenendo tuttavia la semplicità d'uso.
+    }
+
+    \subsection*{Tecnologie richieste}{
+        \begin{itemize}
+            \item Docker per l'infrastruttura Cloud;
+            \item Sistema di versionamento tramite GIT;
+            \item Uso della tecnologia KNX IoT 3rd party API per comunicare con gli impianti View Wireless;
+            \item Angular, React o Flask per lo sviluppo del frontend;
+            \item Node.js, Java, Python per lo sviluppo del backend.
+        \end{itemize}
+    }
+
+    \subsection*{Pro e Contro}{
+
+        \begin{center} 
+            \begin{tabular}{|p{9cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Azienda molto chiara sui vincoli obbligatori e opzionali per il software cosi come per la documentazione
+                & E' necessario lo studio di molti framework e API sconosciute al gruppo \\
+                \hline
+                Azienda fornisce supporto costante per tutta la durata del progetto & Il progetto è piuttosto difficile nel complesso\\
+                \hline
+            \end{tabular}
+        \end{center}
+
+    }
+
+    \subsection*{Conclusioni}{
+        Pur riconoscendo la solidità e l'elevato valore applicativo del progetto proposto da Vimar, il gruppo ha deciso di non selezionare il capitolato a causa della complessità tecnica e della rigidità dei vincoli imposti. L'elevato numero di tecnologie e API da apprendere (come KNX IoT), avrebbe richiesto un notevole investimento di tempo e un livello di competenze iniziali superiore a quello del team. Inoltre, la limitata flessibilità progettuale e la scarsa aderenza del tema agli interessi principali del gruppo hanno contribuito alla decisione di orientarsi verso proposte più in linea con le capacità e le preferenze tecniche del team.
+    }
+}
+
+\end{document}
