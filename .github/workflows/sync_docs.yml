@@ -3,10 +3,7 @@ name: Sync Documenti (compilati) a repo Atlas
 on:
   push:
     paths:
-      - "Candidatura/**"
-      - "PB/**"
-      - "RTB/**"
-      - "Presentazioni/**"
+      - "Tutti i documenti/**"
     branches:
       - main
   workflow_dispatch: 
@@ -16,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Documenti repo
+      - name: Checkout ProvaDocumenti repo
         uses: actions/checkout@v4
 
       # --- SOLUZIONE VELOCITÀ (CACHE EFFICIENTE) ---
@@ -30,9 +27,10 @@ jobs:
             collection-pictures
             babel-italian
 
-      # --- Compilazione ---
+      # --- Compilazione (CORRETTA per le immagini) ---
       - name: Compila i file .tex in PDF (mantenendo la struttura)
         run: |
+          cd Tutti i documenti
           echo "Compilo tutti i file .tex trovati..."
           find . -name "*.tex" -print0 | while IFS= read -r -d '' texfile; do
             echo "Compilando $texfile..."
@@ -41,31 +39,21 @@ jobs:
             pdflatex -interaction=nonstopmode -output-directory="$OUTPUT_DIR" "$texfile"
           done
           echo "Compilazione terminata."
+          cd ..
 
-      # --- Deploy  ---
+      # --- Deploy (con HTTPS Token) ---
       - name: Clona la repo del sito web
         run: |
           git clone https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/AtlasTeam9/Atlas.git site
 
-      # --- Sincronizzazione ---
       - name: Sincronizza i PDF compilati nel sito
         run: |
           echo "Sincronizzo i PDF in site/docs..."
-
-          mkdir -p site/docs
-
-          for dir in Candidatura PB RTB Presentazioni; do
-            if [ -d "$dir" ]; then
-              echo "Sincronizzando cartella: $dir"
-              rsync -av \
-                    --include="*/" \
-                    --include="*.pdf" \
-                    --exclude="*" \
-                    "$dir/" "site/docs/$dir/"
-            else
-              echo "Cartella $dir non presente, la salto"
-            fi
-          done
+          rsync -av --delete \
+                --include="*/" \
+                --include="*.pdf" \
+                --exclude="*" \
+                Tutti i documenti/ site/docs/
           
           if [ -z "$(ls -A site/docs)" ]; then
             touch site/docs/.gitkeep
@@ -74,18 +62,16 @@ jobs:
           ls -laR site/docs
 
       # --- Pulizia ---
-      - name: Pulisci i PDF da repo sorgente
+      - name: Pulisci i PDF da Tutti i documenti
         run: |
           echo "Pulisco i file compilati dal repository sorgente..."
-          for dir in Candidatura PB RTB Presentazioni; do
-            if [ -d "$dir" ]; then
-              find "$dir" -name "*.pdf" -delete
-              find "$dir" -name "*.aux" -delete
-              find "$dir" -name "*.log" -delete
-              find "$dir" -name "*.out" -delete
-              find "$dir" -name "*.toc" -delete
-            fi
-          done
+          cd Tutti i documenti
+          find . -name "*.pdf" -delete
+          find . -name "*.aux" -delete
+          find . -name "*.log" -delete
+          find . -name "*.out" -delete
+          find . -name "*.toc" -delete
+          cd ..
 
       # --- Commit Finale ---
       - name: Commit e push delle modifiche
@@ -95,13 +81,16 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           git add docs/
+          # Se stai aggiornando l'index, decommenta la riga seguente
+          # git add index.html 
           
           git commit -m "Sync new compiled docs" || echo "No changes to commit"
           git push
 
-      # --- STEP FINALE: Invia il segnale di Deploy ---
+      # --- NUOVO STEP FINALE: Invia il segnale di Deploy ---
       - name: Trigger Deploy su Atlas
         env:
+          # Usiamo il token che già hai, assicurati che abbia lo scope 'repo'
           GITHUB_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
           REPO_OWNER: "AtlasTeam9"
           REPO_NAME: "Atlas"
