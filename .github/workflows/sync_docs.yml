@@ -30,7 +30,7 @@ jobs:
       # --- Compilazione (CORRETTA per le immagini) ---
       - name: Compila i file .tex in PDF (mantenendo la struttura)
         run: |
-          cd Tutti i documenti
+          cd "Tutti i documenti"
           echo "Compilo tutti i file .tex trovati..."
           find . -name "*.tex" -print0 | while IFS= read -r -d '' texfile; do
             echo "Compilando $texfile..."
@@ -53,7 +53,7 @@ jobs:
                 --include="*/" \
                 --include="*.pdf" \
                 --exclude="*" \
-                Tutti i documenti/ site/docs/
+                "Tutti i documenti/" site/docs/
           
           if [ -z "$(ls -A site/docs)" ]; then
             touch site/docs/.gitkeep
@@ -65,7 +65,7 @@ jobs:
       - name: Pulisci i PDF da Tutti i documenti
         run: |
           echo "Pulisco i file compilati dal repository sorgente..."
-          cd Tutti i documenti
+          cd "Tutti i documenti"
           find . -name "*.pdf" -delete
           find . -name "*.aux" -delete
           find . -name "*.log" -delete
