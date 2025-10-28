@@ -1,0 +1,169 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{Email}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/10/28}
+\newcommand{\OraInizio}{15:00}
+\newcommand{\OraFine}{16:30}
+\newcommand{\LuogoVerbale}{Chiamata Discord}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \space \OraFine .
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v0.1} % <-- modifica qui la versione o ID
+\newcommand{\VerbaleInterno}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleInterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleInterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l}
+        \textbf{Nome} & \textbf{Presenza} \\
+        \hline
+        Andrea Difino & SI \\
+        Federico Simonetto & SI \\
+        Riccardo Valerio & SI \\
+        Francesco Marcolongo & SI \\
+        Michele Tesser & SI \\
+        Giacomo Giora & SI \\
+        Bilal Sabic & SI \\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            v0.1 & \DataVerbale & Bilal Sabic & & Prima stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del Giorno}{
+    \begin{enumerate}
+        \item Stesura della dichiarazione degli impegni
+        \item Discussione sull'analisi dei capitolati
+        \item Fine creazione del sito web del team
+    \end{enumerate}
+}
+
+\section{Discussione}{
+	\subsection{ Stesura della dichiarazione degli impegni}{
+		Il gruppo ha iniziato a compilare il documento della dichiarazione degli impegni, calcolando le ore richieste per ogni ruolo, il costo minimo del progetto e l'ipotetica data di consegna.
+}
+	\subsection{Discussione sull'analisi dei capitolati}{
+		Ogni componente del gruppo ha espresso i propri pro e contro riguardo ai progetti richiesti. Ed è stata creata la prima versione del documento dell'analisi di capitolati.
+}
+	\subsection{Fine creazione del sito web del team}{
+		E' stato sviluppato il primo scheletro del sito web. Il sito web è dinamico e  contiene tutti i documenti della repository del progetto.
+}
+}
+
+
+\section{Decisioni Prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{11cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D1-28/10/2025 &  Sono state calcolate le ore totali di impegno per ogni ruolo.\\
+        \hline
+	D2-28/10/2025 & Abbiamo deciso la data prevista di consegna. \\
+	\hline
+    \end{tabular}
+    \end{center}
+}
+
+
+\end{document}
