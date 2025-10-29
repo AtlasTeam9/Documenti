@@ -31,11 +31,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\Titolo}{Analisi Capitolati}
-\newcommand{\DataModifica}{28/10/2025}
+\newcommand{\DataModifica}{2025/10/29}
 \newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v0.1} % <-- modifica qui la versione o ID
+\newcommand{\VersioneVerbale}{v1.0} % <-- modifica qui la versione o ID
 \newcommand{\Interno}{Interno} 
 
 \pagestyle{fancy}
@@ -88,8 +88,12 @@
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            v0.1 & 2025/10/28 & Andrea Difino & & Prima Stesura \\
+            v1.0& 2025/10/29 & Riccardo Valerio & & Modifiche sulle analisi \\
             \hline
+            v0.1 & 2025/10/28 & Andrea Difino & Team & Prima Stesura \\
+            && Federico Simonetto &&\\
+            \hline
+            
         \end{tabular}
     \end{center}
 }
@@ -100,408 +104,520 @@
 
 \newpage
 
-\section{Capitolato Scelto: C1 - Automated EN18031 Compliance Verification}{
-    Proponente: \textbf{Bluewind S.r.l}
-    \subsection*{Descrizione Capitolato}{
-        Il progetto prevede lo sviluppo di un'interfaccia grafica che guida nella compilazione delle domande presenti nelle decision tree relative ai requisiti RED, che specificano la conformità ai requisiti essenziali di sicurezza informatica.
-    }
+\section{Capitolato Scelto: C1 - Automated EN18031 Compliance Verification}
+    Proponente: \textbf{Bluewind S.r.l.}
 
-    \subsection*{Obiettivo}{
-        Creare un'applicazione (web o desktop a descrizione del gruppo) che permetta, tramite degli alberi di decisione, di eseguire test di verifica della conformità tramite input chiari e guidati, in accordo con gli standard definiti dalla normativa RED.
-    }
+    \subsection{Descrizione Capitolato}{
+        Il capitolato proposto da Bluewind S.r.l. ha come obiettivo la realizzazione di un'applicazione, web o desktop, che supporti le aziende nel processo di verifica di conformità ai requisiti di sicurezza informatica previsti dalla direttiva \textbf{RED} (Radio Equipment Directive).
+        Tale verifica viene condotta tramite un sistema basato su \textbf{alberi decisionali}, nei quali l'utente è guidato attraverso una sequenza di domande e condizioni per determinare il livello di aderenza ai requisiti della normativa \textbf{EN18031}.
+        L'applicazione dovrà fornire un'interfaccia chiara e intuitiva per compilare e navigare le domande, permettere l'esportazione dei risultati e garantire la tracciabilità delle risposte.
+        L’obiettivo finale è rendere il processo di valutazione della conformità più accessibile, ripetibile e automatizzato, riducendo errori umani e tempi di verifica.
+    
 
-    \subsection*{Tecnologie richieste}{
-        Uso di python3 per la parte di backend nel caso in cui nel progetto venga sviluppata un'applicazione web;
-    }
-
-    \subsection*{Motivazione Scelta}{
+    \subsection{Obiettivo}
+        Il progetto mira a realizzare un software capace di:
         \begin{itemize}
-            \item Interesse per il progetto relativo ai concetti di sicurezza che si vogliono verificare;
-            \item L'azienda proponente si è mostrata molto disponibile alla comunicazione e al supporto sia durante questi primi incontri come durante lo sviluppo del progetto tramite incontri periodici e prefissati;
-            \item L'azienda ha lasciato molta libertà per quanto riguarda le tecnologie da utilizzare;
-            \item L'azienda offre un caso di studio per aiutare lo sviluppo dell'applicazione e una maggiore comprensione degli standard e della struttura degli alberi di decisione
+            \item Gestire la logica degli alberi decisionali definiti dallo standard EN18031 e dai requisiti della direttiva RED;
+            \item Guidare l’utente nella compilazione delle domande attraverso un’interfaccia interattiva e user-friendly;
+            \item Permettere il salvataggio, l’aggiornamento e la consultazione delle sessioni di verifica completate;
+            \item Generare \textbf{report} riepilogativi che sintetizzino i risultati ottenuti e i punti di non conformità;
+            \item Consentire la manutenzione e l’aggiornamento dei contenuti in modo modulare, così da recepire facilmente future revisioni della normativa.
         \end{itemize}
-    }
+    
 
-    \subsection*{Conclusioni}{
-        Il progetto Automated EN18031 Compliance Verification è risultato molto interessante e di complessità adeguata agli obiettivi del gruppo. La combinazione tra contenuti tecnici di rilievo e la collaborazione attiva con Bluewind S.r.l. ha portato alla scelta definitiva del capitolato C1 come progetto finale.
-    }
-}
+    \subsection{Tecnologie richieste}
+        Le tecnologie consigliate dal proponente includono:
+        \begin{itemize}
+            \item \textbf{Python 3} per la realizzazione del backend, nel caso in cui venga sviluppata un’applicazione web;
+            \item Librerie o framework per la creazione dell’interfaccia grafica, a discrezione del gruppo;
+            \item Possibilità di integrazione con strumenti di \textbf{data export} per generare i report finali in formati standard.
+        \end{itemize}
+        Il proponente lascia piena libertà nella scelta degli strumenti e dei framework, purché siano adeguatamente documentati e rispettino buone pratiche di progettazione software.
+    
+
+    \subsection{Motivazione Scelta}
+        La decisione di selezionare il capitolato proposto da Bluewind è stata motivata da diversi fattori:
+        \begin{itemize}
+            \item L’interesse del gruppo verso tematiche di \textbf{sicurezza informatica} e \textbf{verifica di conformità}, ambiti molto attuali e con forte valore industriale;
+            \item L’approccio metodologico basato su \textbf{alberi decisionali}, che unisce aspetti di logica, modellazione e automazione;
+            \item La \textbf{disponibilità e collaborazione} dimostrata dall’azienda, che si è resa parte attiva sin dalle fasi iniziali offrendo supporto tecnico e organizzativo tramite incontri periodici;
+            \item La possibilità di lavorare su un progetto con un chiaro risvolto pratico, ma al contempo flessibile, che permette di sperimentare scelte architetturali e tecnologiche in autonomia;
+            \item La presenza di un \textbf{caso di studio reale} fornito da Bluewind, utile per comprendere concretamente gli standard e la struttura degli alberi decisionali.
+        \end{itemize}
+    
+
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C1 - Automated EN18031 Compliance Verification} è stato ritenuto dal gruppo Atlas il più equilibrato tra complessità tecnica e valore applicativo. 
+        La possibilità di collaborare con un’azienda competente nel settore embedded e della sicurezza, unita alla libertà di scelta tecnologica, ha reso questa proposta ideale per raggiungere gli obiettivi formativi del progetto didattico.
+        La combinazione tra contenuti tecnici di rilievo, autonomia progettuale e disponibilità del proponente ha portato alla \textbf{scelta definitiva del C1} come progetto finale del gruppo.
+    
+
 
 \newpage
 
-\section{C2 - Code Guardian}{
-    Proponente: \textbf{VarGroup}
-    \subsection*{Descrizione Capitolato}{
-        Il progetto proposto mira a sviluppare una soluzione avanzata in grado di facilitare l'analisi automatica e l'individuazione delle lacune di sicurezza presenti nelle repository ospitate su GitHub.
-        L'obiettivo è realizzare un sistema di agenti intelligenti, orchestrati tramite tecniche di Intelligenza Artificiale, capaci di cooperare per valutare la qualità del codice, la conformità alle best practice e la presenza di potenziali vulnerabilità, fornendo così un valido supporto ai team di sviluppo nel mantenimento della sicurezza e dell'affidabilità del software.
-    }
+\section{C2 - Code Guardian}
+    Proponente: \textbf{Var Group S.p.A.}
 
-    \subsection*{Obiettivo}{
-        L'obiettivo del progetto è realizzare una piattaforma web basata su un sistema ad agenti, capace di: 
-        
-        - Analizzare repository GitHub per valutarne qualità, sicurezza e manutenzione.
-        
-        - Fornire report automatici su test, sicurezza e documentazione. 
-        
-        - Suggerire remediation in caso di lacune (best practice, test mancanti, 
-        
-        vulnerabilità OWASP).
-    }
+    \subsection{Descrizione Capitolato}{
+        Il capitolato proposto da Var Group ha come obiettivo la progettazione e lo sviluppo di una piattaforma in grado di effettuare \textbf{analisi automatizzate di repository GitHub} per individuare eventuali \textbf{lacune di sicurezza}, \textbf{debiti tecnici} o violazioni di \textbf{best practice} di sviluppo.
+        L’applicazione deve operare come un sistema di \textbf{agenti software cooperanti}, ognuno dei quali specializzato in una fase di analisi (test, sicurezza, documentazione, qualità del codice).
+        Tali agenti comunicano e si coordinano per fornire un \textbf{report complessivo} sullo stato della repository analizzata, segnalando i punti critici e proponendo raccomandazioni per il miglioramento della qualità e della sicurezza del codice.
+        Il progetto si inserisce nel contesto dell’\textbf{Application Security} e della \textbf{Code Quality Automation}, temi di crescente interesse nel settore dello sviluppo software professionale.
+    
 
-    \subsection*{Tecnologie richieste}{
+    \subsection{Obiettivo}
+        L’obiettivo principale del progetto è realizzare una piattaforma web che, attraverso un’architettura modulare ad agenti, permetta di:
         \begin{itemize}
-            \item Node.js, Python per quanto riguarda il backend/orchestratore;
-            \item React.js per il frontend;
-            \item MongoDB o PostgreSQL per la parte di database;
-            \item GitHub Actions per poter applicare la Continuous Integration e la Continuous Delivery;
-            \item AWS per quanto riguarda l'architettura Cloud.
+            \item Analizzare automaticamente le repository GitHub per valutarne la \textbf{qualità}, la \textbf{manutenibilità} e la \textbf{sicurezza};
+            \item Fornire \textbf{report dettagliati} contenenti risultati delle analisi, vulnerabilità rilevate e suggerimenti per la loro risoluzione;
+            \item Identificare carenze in termini di \textbf{test automatici}, copertura, gestione delle dipendenze e conformità a standard di codifica;
+            \item Applicare un sistema di \textbf{remediation} che suggerisca miglioramenti secondo le principali linee guida OWASP e le best practice di sviluppo sicuro;
+            \item Integrare l’analisi nei flussi di sviluppo tramite \textbf{GitHub Actions}, favorendo la \textbf{Continuous Integration} e la \textbf{Continuous Delivery}.
         \end{itemize}
-    }   
+    
 
-    \subsection*{Pro e Contro}{
+    \subsection{Tecnologie richieste}
+        Le tecnologie consigliate nel capitolato comprendono:
+        \begin{itemize}
+            \item \textbf{Node.js} e \textbf{Python} per la realizzazione del backend e dell’orchestratore degli agenti;
+            \item \textbf{React.js} per lo sviluppo del frontend web;
+            \item \textbf{MongoDB} o \textbf{PostgreSQL} come database per la gestione dei dati di analisi e dei risultati;
+            \item \textbf{GitHub Actions} per l’integrazione della pipeline CI/CD e l’automatizzazione dei test;
+            \item \textbf{AWS} come infrastruttura cloud per il deployment e l’orchestrazione dei servizi.
+        \end{itemize}
+        L’architettura è concepita per essere \textbf{scalabile}, \textbf{estendibile} e facilmente integrabile con strumenti di sviluppo già esistenti.
+    
 
-        \begin{center} 
+    \subsection{Pro e Contro}
+        \begin{center}
             \begin{tabular}{|p{9cm}|p{5cm}|}
                 \hline
                 \textbf{Pro} & \textbf{Contro} \\
                 \hline
-                Progetto molto utile e innovativo, ha suscitato interesse nel gruppo affrontare la tematica dell'analisi del codice e l'automazione dei controlli di qualità; & Parte riguardante 
-                l'architettura cloud con AWS sconosciuta al gruppo.\\
+                Progetto innovativo e attuale, incentrato su \textbf{analisi automatica del codice}, \textbf{sicurezza} e \textbf{miglioramento continuo della qualità del software}. & Utilizzo di componenti cloud su \textbf{AWS} inizialmente poco familiari al gruppo. \\
                 \hline
-                Azienda molto pronta al supporto. & \\
+                Buon livello di supporto e disponibilità da parte dell’azienda proponente. & Necessità di gestire un’architettura a microservizi distribuita. \\
                 \hline
             \end{tabular}
         \end{center}
+    
 
-    }
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C2 - Code Guardian} è stato valutato positivamente per la sua struttura tecnica chiara, la rilevanza del tema e l’elevata applicabilità nel contesto aziendale moderno.
+        Tuttavia, la complessità legata all’orchestrazione degli agenti e all’integrazione con infrastrutture cloud avanzate ha portato il gruppo a considerare questo progetto meno adatto come prima scelta.
+        Il gruppo ha pertanto deciso di orientarsi verso il \textbf{capitolato C1}, giudicato più coerente con le competenze di partenza e con la disponibilità temporale prevista.
+    
 
-    \subsection*{Conclusioni}{
-        Già dalla presentazione del capitolato l'azienda è stata molto chiara lasciando pochi spazi per dubbi e incertezze. Il capitolato è stato priorizzato rispetto ad altri progetti meno invoglianti ma la difficoltà superiore rispetto al capitolato C1 ci ha portato a preferirlo rispetto a questo.
-    }
-}
+\newpage
 
-\section{C3 - DIPReader}{
-    Proponente: \textbf{Sanmarco Informatica SPA}
-    \subsection*{Descrizione Capitolato}{
-        Il progetto si pone l'obiettivo di mettere a disposizione degli utenti uno strumento tecnologico che permetta di eseguire, anche in assenza di connettività, le ricerche sull'archivio dei documenti che sono stati richiesti al sistema di conservazione centralizzato (Distribution Information Package).
-    }
+\section{C3 - DIPReader}
+    Proponente: \textbf{Sanmarco Informatica S.p.A.}
 
-    \subsection*{Obiettivo}{
-        Sviluppare un prodotto SW che permette la rappresentazione semplificata delle informazioni tecniche contenute nel pacchetto, la ricercabilità dei documenti esportati, la visualizzazione in anteprima dei formati più comuni, la selezione di un sottoinsieme di documenti da salvare nel computer dell'utente.
-    }
+    \subsection{Descrizione Capitolato}
+        Il capitolato proposto da Sanmarco Informatica prevede la realizzazione di \textbf{DIPReader}, un’applicazione in grado di permettere la \textbf{consultazione} e la \textbf{ricerca} dei \textbf{Distribution Information Package (DIP)} provenienti da sistemi di conservazione documentale.
+        L’obiettivo è fornire uno strumento che consenta agli utenti di esplorare in modo intuitivo e immediato i pacchetti di archiviazione prodotti, anche \textbf{offline}, rendendo possibile la ricerca testuale, la visualizzazione dei documenti e la selezione di sottoinsiemi da esportare.
+        Il progetto si colloca nel contesto della \textbf{gestione documentale aziendale} e della \textbf{conservazione digitale}, ambiti fondamentali per la corretta amministrazione e tracciabilità dei dati.
+    
 
-    \subsection*{Tecnologie richieste}{
+    \subsection{Obiettivo}
+        Il progetto ha come scopo la realizzazione di un prodotto software che permetta di:
         \begin{itemize}
-            \item SQLite per la parte riguardante il database relazionale;
-            \item FAISS: libreria che permette di facilitare la ricerca all'interno di database molto voluminosi;
-            \item React, Angular per il frontend.
+            \item Visualizzare in modo strutturato le informazioni contenute nei pacchetti di archiviazione (DIP);
+            \item Effettuare ricerche e filtraggi efficienti tra i documenti esportati, anche in assenza di connessione;
+            \item Mostrare in anteprima i formati di file più comuni (come PDF, immagini o XML);
+            \item Selezionare e salvare un sottoinsieme dei documenti sul dispositivo locale;
+            \item Garantire un’interfaccia utente chiara, navigabile e coerente con i principi di accessibilità e usabilità.
         \end{itemize}
+        L’applicazione dovrà dunque migliorare la \textbf{fruibilità dei dati conservati}, fornendo strumenti moderni e performanti per la consultazione.
+    
 
-    }
+    \subsection{Tecnologie richieste}
+        Le tecnologie indicate dal proponente comprendono:
+        \begin{itemize}
+            \item \textbf{SQLite} come database relazionale per la memorizzazione locale dei metadati e dei riferimenti ai file;
+            \item \textbf{FAISS} come libreria per l’indicizzazione e la ricerca efficiente su grandi quantità di dati testuali;
+            \item Framework per il frontend quali \textbf{React} o \textbf{Angular} per la realizzazione di un’interfaccia interattiva e moderna;
+            \item Eventuale integrazione di strumenti per la \textbf{visualizzazione dei documenti} e la \textbf{stampa} diretta dei risultati di ricerca.
+        \end{itemize}
+        L’architettura complessiva deve essere progettata per operare anche in modalità \textbf{standalone}, senza dipendenze da servizi esterni.
+    
 
-    \subsection*{Pro e Contro}{
-
-        \begin{center} 
+    \subsection{Pro e Contro}
+        \begin{center}
             \begin{tabular}{|p{9cm}|p{5cm}|}
                 \hline
                 \textbf{Pro} & \textbf{Contro} \\
                 \hline
-                Progetto utile e innovativo affrontando una problematica concreta e di rilievo nel contesto della gestione documentale aziendale, ovvero la ricerca e consultazione offline dei dati.
- & Tecnologie sconosciute alla maggior parte del team\\
+                Progetto concreto e ben definito, con applicazione diretta nel campo della \textbf{gestione e consultazione documentale}. & Tecnologie (es. FAISS) poco note al gruppo e con curva di apprendimento significativa. \\
                 \hline
-                & Tema del progetto non ha suscitato particolare interesse nel gruppo.\\
+                Permette di approfondire tematiche di \textbf{indicizzazione}, \textbf{ricerca semantica} e \textbf{usabilità}. & Il dominio applicativo, legato alla conservazione digitale, ha suscitato minor interesse rispetto ad altri ambiti. \\
                 \hline
             \end{tabular}
         \end{center}
+    
 
-    }
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C3 - DIPReader} rappresenta un progetto ben strutturato e tecnicamente solido, con un chiaro valore applicativo nel settore della gestione documentale.
+        Tuttavia, la natura specifica del dominio e la necessità di acquisire familiarità con tecnologie nuove per il gruppo hanno portato a preferire altri capitolati più affini alle competenze e agli interessi del team.
+        Il gruppo ha pertanto deciso di non selezionare questo progetto come principale, pur riconoscendone la qualità e la rilevanza industriale.
+    
 
-    \subsection*{Conclusioni}{
-        Il capitolato proposto rappresenta un progetto tecnicamente solido e di chiara utilità pratica, orientato all'efficienza e alla disponibilità dei dati in contesti offline. Tuttavia, la scarsa familiarità con alcune tecnologie chiave e il limitato coinvolgimento tematico del gruppo hanno portato a considerare questo capitolato meno adatto alle competenze e agli interessi del team.
-    }
-}
 
 \newpage
 
-\section{C4 - L'app che Protegge e Trasforma}{
-    Proponente: \textbf{ MIRIADE srl }
-    \subsection*{Descrizione Capitolato}{
-        Il presente capitolato ha per oggetto l'affidamento dei servizi di progettazione, sviluppo e implementazione di un'applicazione mobile innovativa denominata "L'app che Protegge e Trasforma", finalizzata alla prevenzione e supporto delle vittime di violenza di genere.
-    }
+\section{C4 - L'app che Protegge e Trasforma}
+    Proponente: \textbf{Miriade S.r.l.}
 
-    \subsection*{Obiettivo}{
-        Creare un'applicazione per dispositivi mobili con vari requisiti di sicurezza e funzionalità per prevenire la violenza di genere.
-    }
+    \subsection{Descrizione Capitolato}
+        Il capitolato proposto da Miriade S.r.l. ha come obiettivo la progettazione e lo sviluppo di un’applicazione mobile denominata \textbf{“L’app che Protegge e Trasforma”}, pensata per la \textbf{prevenzione} e il \textbf{supporto} alle vittime di violenza di genere.
+        L’app mira a fornire uno strumento digitale sicuro, accessibile e intuitivo che consenta all’utente di ricevere aiuto in situazioni di emergenza, accedere a informazioni e servizi di assistenza, e promuovere la sensibilizzazione sul tema della violenza di genere.
+        Il progetto intende unire aspetti tecnologici e sociali, ponendo particolare attenzione alla \textbf{privacy}, alla \textbf{protezione dei dati personali} e alla \textbf{usabilità} in condizioni critiche.
+    
 
-    \subsection*{Tecnologie richieste}{
+    \subsection{Obiettivo}
+        L’obiettivo principale è realizzare un’applicazione per dispositivi \textbf{Android} e \textbf{iOS} che includa:
         \begin{itemize}
-            \item Flatter per lo sviluppo della parte mobile;
-            \item AWS (non obbligatorio) per ospitare la parte di backend;
-            \item Amazon API Gateway per le comunicazioni fra l'app mobile e il backend;
-            \item Database relazionali per dati strutturati e NoSQL per dati meno strutturati (risp. PostgreSQL e Amazon DynamoDB)
+            \item Funzionalità di \textbf{emergenza immediata}, per consentire all’utente di inviare richieste di aiuto in modo rapido e discreto;
+            \item Accesso a \textbf{contenuti informativi} e strumenti di prevenzione e sensibilizzazione;
+            \item Canali sicuri di comunicazione con strutture o enti di supporto;
+            \item Meccanismi di autenticazione e protezione dei dati sensibili;
+            \item Una struttura modulare che consenta la futura integrazione di nuove funzionalità.
         \end{itemize}
-    }
+        L’applicazione deve risultare semplice da utilizzare, affidabile e orientata all’accessibilità, in modo da garantire un’esperienza d’uso positiva anche in situazioni di difficoltà.
+    
 
-    \subsection*{Pro e Contro}{
-
-        \begin{center} 
-            \begin{tabular}{|p{8cm}|p{6cm}|}
-                \hline
-                \textbf{Pro} & \textbf{Contro} \\
-                \hline
-                Il progetto presenta alte prospettive di crescita personale e professionale per via dei temi e delle tecnologie da utilizzare. & Il progetto non è sembrato interessante a primo acchito.\\
-                \hline
-                & Il progetto è molto complesso e molte delle tecnologie richieste sono estranee (al gruppo) \\
-                \hline
-                & I requisiti opzionali sono molto corposi di per sè. \\
-                \hline
-            \end{tabular}
-        \end{center}
-    }
-
-    \subsection*{Conclusioni}{
-        Il progetto sembra interessante ma data la sua difficoltà e l'esigenza dell'azienda proponente non rientra nelle nostre preferenze.
-    }
-}
-
-\newpage
-
-\section{C5 - NEXUM}{
-    Proponente: \textbf{Eggon}
-    \subsection*{Descrizione Capitolato}{
-        Lo scopo del progetto è la realizzazione e l'evoluzione della piattaforma NEXUM, attraverso lo sviluppo di nuove funzionalità intelligenti e interoperabili volte a ottimizzare la gestione delle risorse umane (HR), semplificare il dialogo con gli studi dei Consulenti del Lavoro e migliorare in modo significativo l'esperienza digitale dei dipendenti.
-        L'obiettivo è creare un ecosistema digitale avanzato, in grado di integrare dati provenienti da fonti diverse e supportare processi decisionali automatizzati e predittivi, favorendo una gestione più efficiente e trasparente delle attività aziendali legate al personale.
-
-    }
-
-    \subsection*{Obiettivo}{
-        Sviluppare una piattaforma digitale intelligente, modulare e scalabile che faccia uso di funzionalità AI-driven e data-driven per l'analisi e l'automazione con lo scopo di migliorare l'efficienza dei processi HR e la collaborazione con gli studi dei Consulenti del Lavoro.
-    }
-
-    \subsection*{Tecnologie richieste}{
+    \subsection{Tecnologie richieste}
+        Le tecnologie e gli strumenti indicati nel capitolato comprendono:
         \begin{itemize}
-            \item Frontend in Angular (per la dashboard amministrativa) e Next.js per utenti finali;
-            \item Ruby on Rails per quanto riguarda il backend;
-            \item PostgreSQL per la persistenza dei dati su database relazionali
+            \item \textbf{Flutter} (o framework mobile equivalente) per lo sviluppo multipiattaforma;
+            \item \textbf{AWS} per la gestione del backend e l’hosting dei servizi cloud (non obbligatorio ma consigliato dal proponente);
+            \item \textbf{Amazon API Gateway} per la comunicazione tra frontend e backend;
+            \item \textbf{PostgreSQL} per la gestione di dati strutturati e \textbf{Amazon DynamoDB} per quelli non strutturati;
+            \item Meccanismi di \textbf{crittografia} e \textbf{autenticazione sicura} per la tutela dei dati personali.
         \end{itemize}
-    }
+        Il sistema dovrà inoltre prevedere politiche di sicurezza e conformità al GDPR per la gestione delle informazioni sensibili.
+    
 
-    \subsection*{Pro e Contro}{
-
-        \begin{center} 
-            \begin{tabular}{|p{10cm}|p{5cm}|}
-                \hline
-                \textbf{Pro} & \textbf{Contro} \\
-                \hline
-                Il progetto presenta una forte vocazione verso l'intelligenza artificiale, ambito di grande interesse per il gruppo di lavoro. & Il progetto è molto complesso e richiede l'utilizzo di molte tecnologie. \\
-                \hline
-                L'iniziativa risulta innovativa e di reale utilità, sia per le aziende sia per i Consulenti del Lavoro, grazie al suo potenziale impatto sui processi HR e sulla digitalizzazione delle interazioni professionali & Il progetto richiede molte funzionalità obbligatorie che rappresentano una sfida per il team. \\
-                \hline
-                La modularità e la scalabilità del sistema offrono ottime prospettive di crescita e personalizzazione futura & \\
-                \hline
-            \end{tabular}
-        \end{center}
-
-    }
-
-    \subsection*{Conclusioni}{
-        Nel complesso, il progetto appare stimolante, moderno e di grande valore applicativo, con un potenziale impatto positivo nel campo della digitalizzazione dei processi HR. Tuttavia, la sua notevole complessità tecnica e organizzativa lo rende meno adatto rispetto ad altri capitolati, soprattutto in termini di tempi di sviluppo e gestione delle risorse necessarie.
-    }
-}
-
-\newpage
-
-\section{C6 - Second Brain}{
-    Proponente: \textbf{Zucchetti}
-    \subsection*{Descrizione Capitolato}{
-        Il progetto prevede lo sviluppo di un'applicazione web innovativa volta a esplorare e valutare le potenzialità dei Large Language Models (LLM) nel supportare gli utenti in attività legate alla creazione di testi, alla generazione di idee e ai processi di brainstorming creativo.
-        L'obiettivo principale è comprendere in che modo l'intelligenza artificiale generativa possa diventare un assistente efficace per la scrittura, la revisione dei contenuti e la stimolazione della creatività, fornendo suggerimenti contestuali e miglioramenti stilistici o semantici a comando.
-    }
-
-    \subsection*{Obiettivo}{
-        Il progetto si propone di realizzare una web application composta da due aree principali:
-
-        \
-
-        - Un editor Markdown, che consenta all'utente di scrivere, modificare e formattare il testo in modo semplice e intuitivo;
-        
-        - Un'area di risultato, nella quale visualizzare le risposte, i suggerimenti o le revisioni generate dal modello linguistico.
-
-        \
-        
-        \noindent L'applicazione dovrà integrare le capacità di un LLM, accessibile tramite API, per offrire funzionalità avanzate di correzione, miglioramento stilistico e riformulazione del testo, oltre a proporre spunti per lo sviluppo di idee e contenuti. In tal modo, la piattaforma fungerà da vero e proprio assistente alla scrittura intelligente, capace di affiancare l'utente durante l'intero processo creativo.
-    }
-
-    \subsection*{Tecnologie richieste}{
-        Uso di API che fanno riferimento a LLM (OpenAI).
-    }
-
-    \subsection*{Pro e Contro}{
-
-        \begin{center} 
-            \begin{tabular}{|p{5cm}|p{8cm}|}
-                \hline
-                \textbf{Pro} & \textbf{Contro} \\
-                \hline
-                L'azienda proponente ha lasciato molta libertà nel complesso &  Il supporto fornito dall'azienda risulta più limitato rispetto ad altri capitolati: l'accompagnamento durante le fasi di sviluppo appare meno strutturato e meno presente, con un coinvolgimento inferiore rispetto a quello garantito dalle altre aziende partecipanti. \\
-                \hline
-                Possibilità di apprendere e applicare tecnologie riguardanti gli LLM & \\
-                \hline
-            \end{tabular}
-        \end{center}
-
-    }
-
-    \subsection*{Conclusioni}{
-        Pur trattando una tematica di grande interesse e con un buon margine di creatività, il progetto offre un livello di assistenza tecnica e di interazione con l'azienda proponente inferiore rispetto ad altre alternative disponibili. Questo aspetto riduce in parte l'attrattiva complessiva del capitolato.
-    }
-}
-
-\newpage
-
-\section{C7 - Sistema di acquisizione dati da sensori}{
-    Proponente: \textbf{M31}
-    \subsection*{Descrizione Capitolato}{
-        Il progetto proposto mira a sviluppare un sistema distribuito di acquisizione e smistamento dati da sensori BLE, articolato in tre livelli principali: dispositivi periferici raccolgono dati dal campo, nodi intermedi che li formattano e li inviano al cloud che li riceve, li bufferizza e li rende disponibili tramite API.
-    }
-
-    \subsection*{Obiettivo}{
-        Progettare un'infrastruttura scalabile e sicura per la gestione di dati sensibili provenienti da sensori, garantire segregazione dei dati fra diversi tenant, implementare meccanismi di comunicazione fra i vari livelli e fornire strumenti di visualizzazione dei dati per amministratori e utenti finali.
-    }
-
-    \subsection*{Tecnologie richieste}{
-        \begin{itemize}
-            \item Node.js e Nest.js vengono impiegati per lo sviluppo dei microservizi;
-            \item Go utilizzato per componenti ad alte prestazioni;
-            \item NATS o Apache Kafka per la comunicazione tra i microservizi;
-            \item Google Cloud Platform per ospitare il sistema di orchestrazione e gestione centralizzata;
-            \item PostgreSQL e MongoDB per la persistenza di dati strutturati e non;
-            \item Angular per quanto riguarda la parte di interfaccia utente.
-        \end{itemize}
-    }
-
-    \subsection*{Pro e Contro}{
-
-        \begin{center} 
+    \subsection{Pro e Contro}
+        \begin{center}
             \begin{tabular}{|p{9cm}|p{5cm}|}
                 \hline
                 \textbf{Pro} & \textbf{Contro} \\
                 \hline
-                Il progetto offre ampie opportunità di formazione e crescita tecnica, consentendo di acquisire esperienza diretta con architetture distribuite, sistemi cloud e microservizi. & Il progetto richiede la padronanza di molte tecnologie, la maggior parte \\
+                Progetto dal forte impatto sociale e umano, che coniuga tecnologia e responsabilità etica. & Alcune tecnologie richieste, come AWS e DynamoDB, non sono note al gruppo. \\
                 \hline
-                Permette di operare in un contesto dinamico e professionalizzante, tipico delle soluzioni IoT di nuova generazione. & \\
+                Opportunità di lavorare su un'applicazione reale con elevati requisiti di sicurezza e privacy. & La complessità architetturale e la necessità di garantire elevati standard di protezione aumentano la difficoltà del progetto. \\
+                \hline
+                & Interesse limitato da parte del gruppo verso il dominio applicativo specifico. \\
                 \hline
             \end{tabular}
         \end{center}
+    
 
-    }
-
-    \subsection*{Conclusioni}{
-        Il capitolato proposto da M31 si distingue per la sua complessità tecnica e rilevanza pratica, offrendo un'occasione formativa di grande valore per quanto riguarda l'IoT. Tuttavia, la ricchezza tecnologica e la difficoltà complessiva del progetto possono costituire un ostacolo per un gruppo che non possieda già competenze consolidate in questi ambiti.
-    }
-}
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C4 - L’app che Protegge e Trasforma} rappresenta un progetto tecnologicamente valido e con un importante valore sociale, che unisce sicurezza, accessibilità e innovazione.
+        Tuttavia, il gruppo ha scelto di non selezionare questa proposta a causa della complessità tecnica e organizzativa del progetto, nonché della distanza tra il dominio applicativo e gli interessi principali del team.
+    
 
 \newpage
 
-\section{C8 - Smart Order}{
-    Proponente: \textbf{Ergon}
-    \subsection*{Descrizione Capitolato}{
-        Il progetto si colloca nell'ambito della gestione degli ordini di acquisto da parte dei clienti di un'azienda. Gli ordini di acquisto sono le richieste con cui un cliente domanda la fornitura di determinati prodotti, specificando in genere l'articolo e la quantità desiderata. Nella pratica, però, le informazioni fornite non
-        sempre risultano complete o precise. L'obiettivo del progetto è quindi automatizzare la ricezione di questi ordini, interpretarli correttamente e trasformarli in ordini cliente strutturati e pronti per l'inserimento nel database aziendale.
-    }
+\section{C5 - NEXUM}
+    Proponente: \textbf{Eggon S.r.l.}
 
-    \subsection*{Obiettivo}{
-        Sviluppare una piattaforma intelligente in grado di analizzare input multimodali e convertirli automaticamente in ordini strutturati. Il sistema poi, grazie all'integrazione di modelli avanzati di ML è capace di riconoscere le intenzioni del cliente, estrarre le informazioni rilevanti e validarle in maniera coerente. Una volta processato, l'ordine viene archiviato all'interno di un database per essere utilizzato dai sistemi ERP aziendali.
-    }
+    \subsection{Descrizione Capitolato}{
+        Il capitolato proposto da Eggon S.r.l. riguarda lo sviluppo e l’evoluzione della piattaforma \textbf{NEXUM}, un ecosistema digitale avanzato per la gestione delle \textbf{risorse umane} (HR) e la collaborazione con gli \textbf{studi dei Consulenti del Lavoro}.
+        Il progetto nasce con l’obiettivo di ottimizzare e digitalizzare i processi HR aziendali, favorendo una comunicazione fluida tra aziende e consulenti, e offrendo strumenti intelligenti per l’analisi e la gestione dei dati dei dipendenti.
+        L’iniziativa punta a migliorare l’esperienza digitale del personale e la trasparenza delle attività amministrative, integrando funzionalità \textbf{AI-driven} e \textbf{data-driven} per l’automazione di flussi di lavoro e processi decisionali.
+    
 
-    \subsection*{Tecnologie richieste}{
+    \subsection{Obiettivo}
+        L’obiettivo del progetto è realizzare una piattaforma digitale modulare, scalabile e intelligente che consenta di:
         \begin{itemize}
-            \item Libertà per quanto riguarda i database relazionali;
-            \item BERT e GPT sono i modelli di linguaggio da utilizzare per comprendere il contesto di una frase;
-            \item modelli come Tesseract OCR per applicare la visione computazionale;
-            \item Whisper (OpenAI) per lo speech-to-text;
-            \item .NET Blazor, React.js o Angular per quanto riguarda lo sviluppo della webapp;
+            \item Automatizzare la gestione dei processi HR, riducendo tempi e costi operativi;
+            \item Migliorare l’efficienza nella comunicazione e nello scambio di documenti tra aziende e consulenti;
+            \item Integrare dati provenienti da fonti eterogenee per abilitare analisi predittive e decisionali;
+            \item Fornire strumenti basati su \textbf{Intelligenza Artificiale} per l’elaborazione, la classificazione e la validazione delle informazioni;
+            \item Assicurare un’esperienza utente fluida tramite un’interfaccia moderna e personalizzabile.
         \end{itemize}
-    }
+        L’approccio proposto mira a creare un sistema innovativo e sostenibile, in grado di evolversi nel tempo e adattarsi a differenti contesti aziendali.
+    
 
-    \subsection*{Pro e Contro}{
+    \subsection{Tecnologie richieste}
+        Le tecnologie indicate dal proponente includono:
+        \begin{itemize}
+            \item \textbf{Angular} per la realizzazione della dashboard amministrativa e \textbf{Next.js} per l’interfaccia destinata agli utenti finali;
+            \item \textbf{Ruby on Rails} per lo sviluppo del backend e l’implementazione delle logiche applicative;
+            \item \textbf{PostgreSQL} come database relazionale per la memorizzazione e gestione dei dati;
+            \item Integrazione con servizi e API esterne per la sincronizzazione dei dati HR e la generazione di analisi;
+            \item Architettura progettata per essere \textbf{scalabile}, modulare e predisposta a futuri ampliamenti funzionali.
+        \end{itemize}
+        L’utilizzo combinato di questi strumenti garantisce un ecosistema coerente e orientato alla crescita continua del prodotto.
+    
 
-        \begin{center} 
+    \subsection{Pro e Contro}
+        \begin{center}
             \begin{tabular}{|p{9cm}|p{5cm}|}
                 \hline
                 \textbf{Pro} & \textbf{Contro} \\
                 \hline
-                Il progetto presenta una forte vocazione verso l'intelligenza artificiale, ambito di grande interesse per il gruppo di lavoro; & Il progetto richiede lo sviluppo di un'architettura su vari livelli, il che rappresenta una grande difficoltà per il team. \\
+                Forte orientamento verso l’\textbf{Intelligenza Artificiale} e l’automazione dei processi aziendali, temi di grande interesse per il gruppo. & Richiede la padronanza di numerose tecnologie e un’architettura complessa da gestire. \\
                 \hline
-                Il tema del progetto è molto interessante; & La necessità di integrare più componenti eterogenee (AI, database, frontend …) comporta un'elevata complessità nella gestione del progetto.\\
+                Progetto con chiara applicabilità nel mondo del lavoro e potenziale impatto reale sulla digitalizzazione HR. & Presenza di molte funzionalità obbligatorie che aumentano i tempi di sviluppo. \\
                 \hline
-                L'azienda offre la condivisione di un set di dati relativi ad un caso di studio per facilitare la comprensione e l'implementazione del progetto. & \\
-                \hline 
-                Il tema è altamente stimolante e innovativo, con applicazioni dirette nel campo dell'automazione aziendale e dell'elaborazione del linguaggio naturale. & \\
-                \hline 
-                L'ampio spettro di tecnologie coinvolte consente di acquisire competenze avanzate in AI, NLP e visione artificiale. & \\
-                \hline 
+                Architettura modulare e scalabile, favorevole a una crescita evolutiva del sistema. & Complessità organizzativa nella gestione e integrazione dei vari componenti software. \\
+                \hline
             \end{tabular}
         \end{center}
+    
 
-    }
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C5 - NEXUM} è stato valutato come un progetto moderno, ambizioso e altamente innovativo, con un chiaro orientamento alla trasformazione digitale dei processi HR.
+        Nonostante la qualità e la rilevanza del tema, la complessità tecnica e la necessità di gestire numerosi moduli e tecnologie hanno portato il gruppo a non selezionare questo capitolato come principale.
+        Il gruppo riconosce comunque il valore formativo e professionale dell’iniziativa proposta da Eggon S.r.l., apprezzandone la visione tecnologica e la solidità architetturale.
 
-    \subsection*{Conclusioni}{
-        Nonostante il progetto proposto da Ergon presenti un'elevata componente innovativa e un forte orientamento verso l'intelligenza artificiale, la sua complessità architetturale e tecnologica ha rappresentato un fattore determinante nella decisione di non selezionarlo.
-    }
-}
 
 \newpage
 
-\section{C9 - View4Life}{
-    Proponente: \textbf{Vimar}
-    \subsection*{Descrizione Capitolato}{
-        L'obiettivo è progettare e realizzare View4Life, una piattaforma unica in ambito residenziale per la gestione completa degli impianti Smart nelle residenze protette. Questa dovrà interfacciarsi con vari dispositivi:
-        
-        - Attuatori e moduli smart per il controllo dell'illuminazione, degli accessi e degli allarmi;
-        
-        - Comandi smart per gestire tapparelle elettriche;
-        
-        - Sensori UWB (Ultra Wide Band) per il rilevamento di presenza e cadute;
-        
-        - Termostati Smart per il controllo di temperatura.
-    }
+\section{C6 - Second Brain}
+    Proponente: \textbf{Zucchetti S.p.A.}
 
-    \subsection*{Obiettivo}{
-        Realizzare due macro componenti per la piattaforma View4Life: un applicativo web responsive per il personale sanitario e un'infrastruttura Cloud per ospitare tutte le funzioni dell'applicativo. L'applicativo deve essere responsive e funzionare via browser da smartphone, desktop e tablet mantenendo tuttavia la semplicità d'uso.
-    }
+    \subsection{Descrizione Capitolato}
+        Il capitolato proposto da Zucchetti S.p.A. prevede la realizzazione di un’applicazione web innovativa, denominata \textbf{Second Brain}, progettata per esplorare e valutare le potenzialità dei \textbf{Large Language Models (LLM)} nel supportare gli utenti in attività legate alla creazione di contenuti testuali e alla generazione di idee.
+        Il progetto si colloca nel contesto dell’\textbf{intelligenza artificiale generativa}, con l’obiettivo di costruire un sistema capace di fungere da assistente virtuale per la scrittura, la revisione di testi e la stimolazione della creatività.
+        L’applicazione dovrà offrire un’interfaccia intuitiva e funzionale che consenta all’utente di interagire con il modello linguistico per migliorare il contenuto prodotto o ricevere suggerimenti contestuali.
+    
 
-    \subsection*{Tecnologie richieste}{
+    \subsection{Obiettivo}
+        L’obiettivo del progetto è realizzare una piattaforma web composta da due aree principali:
         \begin{itemize}
-            \item Docker per l'infrastruttura Cloud;
-            \item Sistema di versionamento tramite GIT;
-            \item Uso della tecnologia KNX IoT 3rd party API per comunicare con gli impianti View Wireless;
-            \item Angular, React o Flask per lo sviluppo del frontend;
-            \item Node.js, Java, Python per lo sviluppo del backend.
+            \item \textbf{Editor Markdown}: un ambiente di scrittura che permetta di redigere, formattare e modificare testi in modo semplice e immediato;
+            \item \textbf{Area di risultato}: uno spazio in cui visualizzare i suggerimenti, le riformulazioni e le risposte generate dal modello linguistico.
         \end{itemize}
-    }
+        L’applicazione deve integrare le capacità di uno o più \textbf{modelli di linguaggio (LLM)} accessibili tramite API, per fornire funzionalità avanzate di:
+        \begin{itemize}
+            \item correzione ortografica e grammaticale;
+            \item miglioramento stilistico e semantico;
+            \item generazione di nuove idee e varianti di testo;
+            \item sintesi o espansione dei contenuti.
+        \end{itemize}
+        Il sistema dovrà consentire inoltre di gestire lo storico delle sessioni di scrittura e mantenere un livello di interattività adeguato all’esperienza di un assistente personale virtuale.
+    
 
-    \subsection*{Pro e Contro}{
+    \subsection{Tecnologie richieste}
+        Le tecnologie suggerite dal proponente includono:
+        \begin{itemize}
+            \item \textbf{API} compatibili con modelli linguistici di tipo \textbf{LLM} (ad esempio OpenAI o equivalenti);
+            \item Strumenti per la creazione dell’interfaccia web, scelti liberamente dal gruppo, purché documentati e mantenibili;
+            \item Possibile integrazione con framework di backend leggeri per la gestione delle chiamate API e delle sessioni utente;
+            \item Utilizzo di strumenti di versionamento del codice e testing automatico per garantire qualità e riproducibilità.
+        \end{itemize}
+        Il capitolato lascia libertà di scelta per lo stack tecnologico, ponendo maggiore attenzione all’esperienza utente e alla qualità dell’interazione con il modello linguistico.
+    
 
-        \begin{center} 
+    \subsection{Pro e Contro}
+        \begin{center}
             \begin{tabular}{|p{9cm}|p{5cm}|}
                 \hline
                 \textbf{Pro} & \textbf{Contro} \\
                 \hline
-                Azienda molto chiara sui vincoli obbligatori e opzionali per il software cosi come per la documentazione
-                & E' necessario lo studio di molti framework e API sconosciute al gruppo \\
+                Elevata libertà tecnologica e possibilità di sperimentare con diversi modelli di intelligenza artificiale. & Supporto tecnico da parte dell’azienda proponente limitato rispetto ad altri capitolati. \\
                 \hline
-                Azienda fornisce supporto costante per tutta la durata del progetto & Il progetto è piuttosto difficile nel complesso\\
+                Tema moderno e stimolante, con ampio margine di creatività e ricerca. & Complessità nell’interazione con modelli linguistici e gestione delle API. \\
+                \hline
+                Opportunità di approfondire tecniche di \textbf{prompt engineering} e uso pratico di LLM. & Rischio di dipendenza da servizi esterni e costi associati alle API. \\
                 \hline
             \end{tabular}
         \end{center}
+    
 
-    }
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C6 - Second Brain} rappresenta un progetto di grande interesse, incentrato sull’uso dell’intelligenza artificiale generativa e sulla sperimentazione di nuovi paradigmi di scrittura assistita.
+        Tuttavia, la ridotta disponibilità di supporto diretto da parte del proponente e la necessità di acquisire competenze specifiche nella gestione dei modelli LLM hanno portato il gruppo a non selezionare questo capitolato come progetto principale.
+        Il gruppo ha comunque valutato positivamente la proposta, riconoscendone il potenziale didattico e la pertinenza con le tematiche attuali dell’AI generativa.
+    
 
-    \subsection*{Conclusioni}{
-        Pur riconoscendo la solidità e l'elevato valore applicativo del progetto proposto da Vimar, il gruppo ha deciso di non selezionare il capitolato a causa della complessità tecnica e della rigidità dei vincoli imposti. L'elevato numero di tecnologie e API da apprendere (come KNX IoT), avrebbe richiesto un notevole investimento di tempo e un livello di competenze iniziali superiore a quello del team. Inoltre, la limitata flessibilità progettuale e la scarsa aderenza del tema agli interessi principali del gruppo hanno contribuito alla decisione di orientarsi verso proposte più in linea con le capacità e le preferenze tecniche del team.
-    }
-}
+
+\newpage
+
+\section{C7 - Sistema di acquisizione dati da sensori}
+    Proponente: \textbf{M31 S.r.l.}
+
+    \subsection{Descrizione Capitolato}
+        Il capitolato proposto da M31 S.r.l. ha come obiettivo la progettazione e lo sviluppo di un \textbf{sistema distribuito per l’acquisizione e la gestione di dati provenienti da sensori Bluetooth Low Energy (BLE)}.
+        Il sistema deve essere in grado di raccogliere dati da dispositivi periferici, trasmetterli a nodi intermedi e inviarli successivamente a un’infrastruttura \textbf{cloud}, dove i dati vengono elaborati, bufferizzati e resi disponibili tramite \textbf{API}.
+        L’architettura proposta si articola in tre livelli principali:
+        \begin{itemize}
+            \item \textbf{Livello sensori}: dispositivi periferici BLE che raccolgono i dati dal campo;
+            \item \textbf{Livello gateway}: nodi intermedi che aggregano e formattano i dati ricevuti dai sensori, inoltrandoli al cloud;
+            \item \textbf{Livello cloud}: responsabile della memorizzazione, elaborazione e fornitura dei dati tramite interfacce di accesso.
+        \end{itemize}
+        Il progetto rientra nel dominio dell’\textbf{Internet of Things (IoT)} e punta alla creazione di un’infrastruttura scalabile e sicura per la gestione di dati sensibili provenienti da sensori distribuiti.
+    
+
+    \subsection{Obiettivo}
+        Gli obiettivi principali del progetto sono:
+        \begin{itemize}
+            \item Progettare un’infrastruttura \textbf{scalabile e sicura} per l’acquisizione, l’elaborazione e la gestione dei dati sensoriali;
+            \item Garantire la \textbf{segregazione dei dati} tra diversi tenant e la protezione delle informazioni scambiate;
+            \item Implementare meccanismi di \textbf{comunicazione efficiente} tra i vari livelli (sensori, gateway e cloud);
+            \item Fornire strumenti di \textbf{monitoraggio e visualizzazione} dei dati per amministratori e utenti finali;
+            \item Simulare il comportamento dei gateway per consentire attività di test e validazione del sistema.
+        \end{itemize}
+        Il sistema dovrà inoltre supportare tecniche di autenticazione e crittografia avanzate per garantire l’affidabilità e la sicurezza delle comunicazioni.
+    
+
+    \subsection{Tecnologie richieste}
+        Le tecnologie e gli strumenti indicati nel capitolato comprendono:
+        \begin{itemize}
+            \item \textbf{Node.js} e \textbf{Nest.js} per lo sviluppo dei microservizi del backend;
+            \item \textbf{Go} per componenti ad alte prestazioni, come moduli di sincronizzazione e comunicazione;
+            \item \textbf{NATS} o \textbf{Apache Kafka} per la messaggistica e la comunicazione asincrona tra microservizi;
+            \item \textbf{Google Cloud Platform} per l’orchestrazione e la gestione dell’infrastruttura distribuita;
+            \item \textbf{PostgreSQL} e \textbf{MongoDB} per la persistenza dei dati strutturati e non strutturati;
+            \item \textbf{Angular} per la realizzazione dell’interfaccia utente;
+            \item Strumenti di sicurezza come \textbf{TLS}, \textbf{JWT}, \textbf{OAuth2} e \textbf{mTLS} per la protezione dei dati e delle comunicazioni.
+        \end{itemize}
+        Il sistema dovrà includere inoltre una dashboard per la visualizzazione dei dati e il monitoraggio in tempo reale delle attività del sistema.
+    
+
+    \subsection{Pro e Contro}
+        \begin{center}
+            \begin{tabular}{|p{9cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Progetto tecnicamente avanzato e formativo, che consente di acquisire esperienza su \textbf{architetture distribuite}, \textbf{microservizi} e \textbf{IoT}. & Elevata complessità architetturale e numero significativo di tecnologie da apprendere. \\
+                \hline
+                Opportunità di approfondire la gestione della sicurezza, della comunicazione e della scalabilità dei sistemi cloud. & Rischio di un carico di lavoro elevato nella fase di integrazione e test. \\
+                \hline
+                Buon potenziale formativo e applicabilità industriale nel settore dei sistemi embedded e sensoristici. & Richiede competenze iniziali non ancora consolidate dal gruppo. \\
+                \hline
+            \end{tabular}
+        \end{center}
+    
+
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C7 - Sistema di acquisizione dati da sensori} rappresenta un progetto completo e altamente formativo nel campo dell’Internet of Things.
+        Nonostante l’interesse tecnico suscitato e la rilevanza del tema, la complessità complessiva e la necessità di gestire molteplici componenti e tecnologie hanno portato il gruppo a non selezionare questo progetto.
+        Il gruppo riconosce comunque l’alto valore didattico e professionale della proposta, apprezzandone la qualità architetturale e la chiarezza con cui è stato presentato dal proponente M31 S.r.l.
+    
+
+
+
+\newpage
+
+\section{C8 - Smart Order}
+    Proponente: \textbf{Ergon S.r.l.}
+
+    \subsection{Descrizione Capitolato}
+        Il capitolato proposto da Ergon S.r.l. ha come obiettivo la realizzazione di un sistema intelligente denominato \textbf{Smart Order}, in grado di automatizzare il processo di ricezione e interpretazione degli \textbf{ordini cliente}.
+        Il sistema dovrà essere capace di analizzare \textbf{input multimodali} testi, immagini o registrazioni vocali e convertirli in \textbf{ordini strutturati} pronti per l’inserimento nei sistemi informativi aziendali, come gli \textbf{ERP}.
+        Il progetto si inserisce nel dominio dell’\textbf{automazione dei processi aziendali} e dell’\textbf{intelligenza artificiale} applicata alla comprensione del linguaggio naturale, con l’obiettivo di ridurre gli errori umani e velocizzare le procedure di gestione degli ordini.
+    
+
+    \subsection{Obiettivo}
+        L’obiettivo principale del progetto è creare una piattaforma che consenta di:
+        \begin{itemize}
+            \item Analizzare ordini cliente non strutturati provenienti da diverse fonti (e-mail, immagini, audio);
+            \item Estrarre automaticamente i dati rilevanti, come codici articolo, quantità e informazioni logistiche;
+            \item Effettuare la validazione e normalizzazione dei dati prima dell’inserimento nel sistema ERP;
+            \item Gestire una base di conoscenza per migliorare progressivamente la precisione del riconoscimento;
+            \item Offrire un’interfaccia web che permetta di visualizzare, verificare e confermare gli ordini generati.
+        \end{itemize}
+        Il sistema dovrà garantire accuratezza, affidabilità e un alto grado di automazione, riducendo al minimo l’intervento manuale.
+    
+
+    \subsection{Tecnologie richieste}
+        Le tecnologie indicate nel capitolato comprendono:
+        \begin{itemize}
+            \item \textbf{BERT} e \textbf{GPT} per la comprensione del linguaggio naturale e il riconoscimento del contesto semantico;
+            \item \textbf{Tesseract OCR} per l’estrazione di testo da immagini e documenti;
+            \item \textbf{Whisper (OpenAI)} per la conversione di contenuti audio in testo (speech-to-text);
+            \item Framework web come \textbf{.NET Blazor}, \textbf{React.js} o \textbf{Angular} per la realizzazione dell’interfaccia utente;
+            \item Database relazionali a scelta per la memorizzazione degli ordini e dei metadati associati;
+            \item Integrazione con \textbf{API ERP} per l’inserimento automatico dei dati strutturati.
+        \end{itemize}
+        Il sistema dovrà inoltre essere progettato per garantire la \textbf{scalabilità} e la \textbf{modularità}, così da poter integrare facilmente nuovi modelli e componenti in futuro.
+    
+
+    \subsection{Pro e Contro}
+        \begin{center}
+            \begin{tabular}{|p{9cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Progetto fortemente innovativo che combina \textbf{AI}, \textbf{visione artificiale} e \textbf{NLP}, con applicazioni concrete nel mondo aziendale. & Elevata complessità architetturale dovuta all’integrazione di moduli eterogenei (AI, database, frontend, API ERP). \\
+                \hline
+                Possibilità di acquisire competenze avanzate su modelli linguistici e framework di machine learning. & Richiede un ampio lavoro di addestramento e validazione dei modelli per garantire risultati accurati. \\
+                \hline
+                Il proponente fornisce un set di dati reali per test e validazione, favorendo lo sviluppo del PoC. & Necessità di gestire la coerenza tra formati e sorgenti di dati differenti. \\
+                \hline
+            \end{tabular}
+        \end{center}
+    
+
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C8 - Smart Order} è stato valutato positivamente per l’originalità e il potenziale di innovazione, grazie all’integrazione di tecniche avanzate di intelligenza artificiale e automazione.
+        Tuttavia, la complessità derivante dalla gestione di input multimodali e dall’interconnessione con sistemi ERP ha portato il gruppo a considerare il progetto troppo impegnativo rispetto alle risorse disponibili.
+    
+
+\newpage
+
+\section{C9 - View4Life}
+    Proponente: \textbf{Vimar S.p.A.}
+
+    \subsection{Descrizione Capitolato}
+        Il capitolato proposto da Vimar S.p.A. riguarda lo sviluppo di una piattaforma denominata \textbf{View4Life}, progettata per la \textbf{gestione e il monitoraggio di impianti smart} installati all’interno di residenze protette.
+        Il sistema dovrà consentire la supervisione e il controllo remoto di dispositivi intelligenti come attuatori, sensori, termostati e comandi per tapparelle, al fine di migliorare la sicurezza e il comfort degli utenti finali.
+        L’applicazione dovrà offrire un’interfaccia web responsive, destinata principalmente al personale sanitario e agli operatori delle strutture, per consentire la gestione efficiente degli ambienti e il monitoraggio in tempo reale dello stato dei dispositivi.
+        Il progetto si inserisce nel contesto della \textbf{domotica intelligente} e dell’\textbf{Internet of Things (IoT)}, con un focus particolare sull’usabilità, l’affidabilità e la sicurezza dei sistemi interconnessi.
+    
+
+    \subsection{Obiettivo}
+        Gli obiettivi principali del progetto sono:
+        \begin{itemize}
+            \item Progettare un’applicazione web responsive per la gestione centralizzata degli impianti e dei dispositivi connessi;
+            \item Implementare un’infrastruttura \textbf{cloud} per l’elaborazione e l’archiviazione dei dati generati dai dispositivi smart;
+            \item Fornire strumenti per il \textbf{monitoraggio in tempo reale}, il \textbf{controllo remoto} e la \textbf{notifica di eventi o anomalie};
+            \item Garantire semplicità d’uso e accessibilità da diversi dispositivi (smartphone, tablet, PC);
+            \item Integrare un sistema di autenticazione e autorizzazione basato su ruoli, per differenziare i livelli di accesso degli utenti.
+        \end{itemize}
+        Il sistema dovrà favorire una gestione efficiente e sicura delle informazioni, offrendo una visione unificata degli impianti presenti nella struttura.
+    
+
+    \subsection{Tecnologie richieste}
+        Le tecnologie e gli strumenti indicati dal proponente comprendono:
+        \begin{itemize}
+            \item \textbf{Docker} per la gestione e il deploy dell’infrastruttura cloud;
+            \item \textbf{Git} come sistema di versionamento del codice;
+            \item \textbf{KNX IoT 3rd-party API} per la comunicazione con gli impianti View Wireless e i dispositivi KNX compatibili;
+            \item Framework per il frontend come \textbf{Angular}, \textbf{React} o \textbf{Flask};
+            \item Linguaggi per il backend come \textbf{Node.js}, \textbf{Java} o \textbf{Python};
+            \item Integrazione con protocolli di sicurezza e autenticazione quali \textbf{OAuth2} e meccanismi di \textbf{notifica push} per la gestione degli eventi in tempo reale.
+        \end{itemize}
+        L’architettura complessiva deve garantire \textbf{scalabilità}, \textbf{affidabilità} e un’elevata interoperabilità tra i diversi dispositivi connessi.
+    
+
+    \subsection{Pro e Contro}
+        \begin{center}
+            \begin{tabular}{|p{9cm}|p{5cm}|}
+                \hline
+                \textbf{Pro} & \textbf{Contro} \\
+                \hline
+                Progetto strutturato in modo chiaro, con requisiti tecnici ben definiti e supporto costante da parte dell’azienda proponente. & Richiede l’apprendimento e l’integrazione di molte tecnologie e API specifiche (es. KNX IoT). \\
+                \hline
+                Opportunità di lavorare in un contesto reale e professionale, con un impatto concreto nel campo della domotica e dell’assistenza. & Complessità elevata dovuta all’interazione tra più livelli applicativi e dispositivi eterogenei. \\
+                \hline
+                Focus su sicurezza, interoperabilità e architettura cloud, coerente con le tendenze tecnologiche attuali. & Maggiore rigidità nei vincoli tecnologici rispetto ad altri capitolati. \\
+                \hline
+            \end{tabular}
+        \end{center}
+    
+
+    \subsection{Conclusioni}
+        Il capitolato \textbf{C9 - View4Life} rappresenta un progetto completo e tecnicamente avanzato, con un impianto architetturale solido e un forte orientamento alla sicurezza e all’affidabilità.
+        Tuttavia, la notevole complessità tecnica e l’obbligo di utilizzare tecnologie e protocolli specifici hanno portato il gruppo a non selezionare questa proposta come principale.
+        Il gruppo riconosce comunque l’elevato valore tecnologico e la professionalità del proponente Vimar S.p.A., che ha presentato un progetto chiaro, ben documentato e di grande rilevanza nel settore della domotica intelligente.
+    
 
 \end{document}
