@@ -103,7 +103,7 @@
 \newpage
 
 \section{Introduzione}{
-    In questo documento è presente il preventivo del progetto, la stima delle ore previste e la ripartizione di quest'ultime tra i membri del gruppo, definiti in base a un ragionamento sui ruoli necessari a svolgere il progetto riguardante il capitolato \textbf{C1 - Automated EN18031 Compliance Verification} proposto dall'azienda \textbf{Bluewind S.r.l.}.
+    In questo documento è presente il preventivo del progetto, la stima delle ore previste e la ripartizione di queste ultime tra i membri del gruppo, definiti in base a un ragionamento sui ruoli necessari a svolgere il progetto riguardante il capitolato \textbf{C1 - Automated EN18031 Compliance Verification} proposto dall'azienda \textbf{Bluewind S.r.l.}.
 }
 
 \section{Impegni Orari}{
@@ -153,8 +153,8 @@
             \item \textbf{Amministratore}: Si occupa dell'efficienza e dell'operatività dell'ambiente di sviluppo, deve assicurarsi che in ogni istante le risorse siano presenti e operanti. Ha il compito di gestione del controllo della configurazione del prodotto, del versionamento e della documentazione di progetto e definisce procedure, strumenti e convenzioni;
             \item \textbf{Analista}: Si occupa di capire e formalizzare il problema in maniera chiara. Il suo lavoro ha grande impatto sulla riuscita del progetto, in quanto raccoglie i requisiti dal cliente, li analizza e li specifica in modo chiaro e verificabile;
             \item \textbf{Progettista}: Si occupa dello sviluppo della soluzione al problema presentato tramite le attività di progettazione. Traduce i requisiti in architettura e soluzioni tecniche, definisce la struttura del sistema e sceglie tecnologie, pattern, protocolli di comunicazione;
-            \item \textbf{Programmatore}: Si occupa di implementare la soluzione trovata dal progettista in codice in test di ausilio alla verifica, realizzando concretamente il software;
-            \item \textbf{Verificatore}: Deve essere a conoscenza delle norme e deve avere capacità di giudizio e relazione. Si occupa di attività di verifica e validazione, partecipando all'intero ciclo di vita e controllando che il prodotto rispetti i requisiti e sia di qualità;
+            \item \textbf{Programmatore}: Si occupa di implementare la soluzione trovata dal progettista in codice, realizzando concretamente il software, e di contribuire ai test unitari di ausilio alla verifica;
+            \item \textbf{Verificatore}: Deve essere a conoscenza delle norme e deve avere capacità di giudizio e relazione con il codice sorgente in particolare e con il sistema in generale. Si occupa di attività di verifica e validazione, partecipando all'intero ciclo di vita e controllando che il prodotto rispetti i requisiti e sia di qualità attraverso i test;
         \end{itemize}
     }
     
@@ -165,27 +165,27 @@
         La figura del responsabile non è coinvolta in tutte le attività operative, infatti il suo ruolo è principalmente di coordinamento, pianificazione e controllo. Con 56 ore, dedicherà il tempo a definire piani, supervisionare l'avanzamento e approvare le consegne.
         \vspace{0.3cm}
         \newline
-        L'amministratore deve impostare l'ambiente di lavoro e mantenerlo efficiente per tutto il progetto. Avendo un ruolo tecnico-organizzativo, le sue attività saranno periodiche ma non costanti: intense all'inizio e in corrispondenza dei rilasci, per un totale di 70 ore.
+        L'amministratore deve impostare l'ambiente di lavoro e mantenerlo efficiente per tutto il progetto. Avendo un ruolo tecnico-organizzativo, le sue attività saranno periodiche ma non costanti: intense all'inizio e in corrispondenza dei rilasci, per un totale di 70 ore. Centrale sarà la definizione di un way of working appropriato per il team nelle fasi iniziali.
         \vspace{0.3cm}
         \newline
-        La figura dell'analista invece impiega tempo significativo nella fase inziale per l'analisi dei requisiti, che richiede confronto con il committente e formalizzazione accurata, portando il suo monte ore a 84.
+        La figura dell'analista deve invece impiegare tempo significativo, in particolare nella fase iniziale, per l'analisi dei requisiti, che richiede confronto con il committente e formalizzazione accurata, portando il suo monte ore a 84. Questa valutazione si basa anche sul fatto che il capitolato lascia ampi margini di libertà nella scelta delle tecnologie e nella progettazione del software (e dunque è necessaria un'analisi opportuna).
         \vspace{0.3cm}
         \newline
-        Il progettista, con 112 ore, richiede tempo per la traduzione dei requisiti e per produrre scelte tecnologiche, ed è quindi una fase complessa che richiede precisione e revisione continua.
+        Il progettista, con 112 ore, richiede tempo per la traduzione dei requisiti e la produzione di scelte tecnologiche efficaci (come i design pattern), ed è quindi una fase complessa che richiede precisione e revisione continua.
         \vspace{0.3cm}
         \newline
         Il programmatore con una stima di 147 ore, costituisce la parte sostanziale del lavoro di implementazione del prodotto, richiedendo tempo per implementare e correggere funzionalità.
         \vspace{0.3cm}
         \newline
-        Il verificatore infine, con 168 ore, è la voce con più ore in assoluto, essendo necessario in tutte le fasi di progetto per garantire la qualità del prodotto attraverso test accurati.
+        Il verificatore infine, con 168 ore, è la voce con più ore in assoluto, essendo necessario in tutte le fasi di progetto per garantire la qualità del prodotto attraverso test accurati. Anche in questo caso il monte ore assegnato è motivato dalle esigenze progettuali: testare il funzionamento dei vari decision tree (passo per passo) per valutare la conformità con gli standard di sicurezza di diversi dispositivi rappresenta sicuramente un compito oneroso e dispendioso in termini di tempo.
         \vspace{0.3cm}
         \newline
-        Questa distribuzione mira a bilanciare le esigenze del progetto, essendo esso complesso dal punto di vista dell'analisi e della verifica, garantendo che ogni ruolo abbia il tempo necessario per adempiere alle proprie responsabilità in modo efficace.
+        In conclusione, questa distribuzione mira a bilanciare le esigenze del progetto, essendo esso complesso dal punto di vista dell'analisi e della verifica, e garantendo che ogni ruolo abbia il tempo necessario per adempiere alle proprie responsabilità in modo efficace.
     }
 }
 
 \section{Rotazione dei ruoli}{
-    Le ore di lavoro verranno suddivise equamente tra i membri del gruppo, in modo da garantire che ciascuno possa ricoprire tutti i ruoli nel corso del progetto. È previsto un periodo di assegnazione del ruolo di due settimane, al termine del quale avverrà una rotazione e ciascun membro assumerà un ruolo diverso rispetto a quello svolto in precedenza, rispettando i vincoli di progetto. In questo modo, ogni membro del gruppo avrà l'opportunità di acquisire esperienza in ogni fase di ciclo di vita del software, migliorando le proprie competenze e contribuendo in modo più completo al successo del progetto.
+    Le ore di lavoro verranno suddivise equamente tra i membri del gruppo, in modo da garantire che ciascuno possa ricoprire tutti i ruoli nel corso del progetto. È previsto un periodo di assegnazione del ruolo di due settimane, al termine del quale avverrà una rotazione e ciascun membro assumerà un ruolo diverso rispetto a quello svolto in precedenza, rispettando i vincoli di progetto. In questo modo, ogni membro del gruppo avrà l'opportunità di acquisire esperienza in ogni fase di ciclo di vita del software, migliorando le proprie competenze e contribuendo in modo più completo al successo del progetto, oltre che di valutarsi nello svolgimento dei vari ruoli.
 }
 
 \section{Preventivo e stima di consegna}{
