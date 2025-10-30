@@ -1,0 +1,8 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
+\contentsline {section}{\numberline {2}Impegni orari e struttura dei costi}{3}{section.2}%
+\contentsline {section}{\numberline {3}Descrizione dei ruoli}{4}{section.3}%
+\contentsline {section}{\numberline {4}Distribuzione delle ore}{4}{section.4}%
+\contentsline {section}{\numberline {5}Rotazione dei ruoli}{5}{section.5}%
+\contentsline {section}{\numberline {6}Preventivo e data di consegna}{6}{section.6}%
