@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloUno}{Lettera di Presentazione}
+\newcommand{\DataModifica}{2025/10/30}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneDocumento}{v0.1.0} % <-- modifica qui la versione o ID
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Lettera di Presentazione \space - \space \DataModifica}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo in alto
+    \vspace*{0cm}
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\[0.8cm]
+
+    % Nome gruppo ed email sotto al logo
+    {\LARGE \textbf{\Gruppo}}\\[0.1cm]
+    {\large \Email}\\[1.2cm]
+
+    % Sottotitolo del progetto
+    {\Large \textit{Progetto di ingegneria del software A.A. 2025/2026}}\\[1.5cm]
+
+    % Titolo principale
+    {\Huge \textbf{\TitoloUno}}\\[.5cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data ultima modifica:} & \DataModifica \\
+        \textbf{Versione:} & \VersioneDocumento \\
+    \end{tabular}
+
+    \hspace{1cm}
+
+     {\large \textbf{Componenti}}\\[0.5cm]
+    \begin{tabular}{l|l}
+        \textbf{Nome} & \textbf{matricola} \\
+        \hline
+        Andrea Difino & 2101072 \\
+        Federico Simonetto & 2113180 \\
+        Riccardo Valerio & 2075517 \\
+        Francesco Marcolongo & 2101093 \\
+        Michele Tesser & 2111012 \\
+        Giacomo Giora & 2101094 \\
+        Bilal Sabic & 2111022 \\
+    \end{tabular}
+
+\end{titlepage}
+
+
+\section*{Tabella delle revisioni}
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            v0.1.0 & 2025/10/30 & Michele Tesser & & Prima Stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+
+\newpage
+
+\section*{Presentazione gruppo Atlas}
+
+Il gruppo Atlas è lieto di manifestare il proprio interesse nel prendere parte allo sviluppo del capitolato \textbf{C1 – Automated EN18031 Compliance Verification}, proposto dall'azienda \textbf{Bluewind S.r.l.}.
+
+Abbiamo scelto questo progetto poiché il progetto offre l'opportunità di approfondire tematiche avanzate quali automazione dei processi di verifica, validazione dei sistemi software e gestione dei requisiti secondo standard internazionali. Il gruppo ritiene che tale esperienza possa contribuire in modo significativo alla nostra crescita tecnica e professionale, grazie al confronto con una realtà aziendale strutturata e con solide competenze nel settore embedded e nel software industriale.
+
+\section*{Piano di lavoro}
+
+Il gruppo Atlas dichiara piena disponibilità a collaborare attivamente con l’azienda ospitante e con i referenti accademici per garantire il corretto avanzamento delle attività.
+La data prevista di completamento del progetto è fissata al: \textbf{20 Marzo 2026}.
+Il costo stimato dell'attività del gruppo è pari a: \textbf{12 705\texteuro}.
+Ulteriori informazioni sul gruppo e sul progetto sono disponibili sul repository di riferimento:
+
+\begin{center}
+    \url{https://github.com/AtlasTeam9/Documenti} \\
+    \url{https://atlasteam9.github.io/Atlas/}
+\end{center}
+
+Dove sono presenti:
+\begin{itemize}
+    \item Lettera di presentazione
+    \item Dichiarazione d'Impegni
+    \item Analisi dei capitolati e motivazione della scelta
+    \item Verbali interni
+    \item Verbali esterni
+\end{itemize}
+
+\section*{Conclusioni}
+Vi ringraziamo per la vostra disponibilità e cordiali saluti, \\
+\textbf{Gruppo Atlas}
+
+\end{document}
