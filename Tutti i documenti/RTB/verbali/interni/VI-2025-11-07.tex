@@ -41,7 +41,7 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 }
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v0.2.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneVerbale}{v0.3.0} % <-- modifica qui la versione o ID
 \newcommand{\VerbaleInterno}{Interno} 
 
 \pagestyle{fancy}
@@ -87,27 +87,30 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 
     % Componenti e ruoli
     {\large \textbf{Partecipanti}}\\[0.5cm]
-    \begin{tabular}{l|l}
-        \textbf{Nome} & \textbf{Presenza} \\
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
         \hline
-        Andrea Difino & SI \\
-        Federico Simonetto & SI \\
-        Riccardo Valerio & SI \\
-        Francesco Marcolongo & SI \\
-        Michele Tesser & SI \\
-        Giacomo Giora & SI \\
-        Bilal Sabic & SI \\
+        Andrea Difino & SI & Responsabile\\
+        Federico Simonetto & SI & Progettista\\
+        Riccardo Valerio & SI & Progettista\\
+        Francesco Marcolongo & SI & Verificatore\\
+        Michele Tesser & SI & Amministratore\\
+        Giacomo Giora & SI & Analista\\
+        Bilal Sabic & SI & Analista\\
     \end{tabular}
 
 \end{titlepage}
 
 \section*{Registro delle modifiche}{
-    \begin{center} 
+    \begin{center}
         \begin{tabular}{|l|l|l|l|l|}
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneVerbale & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Sistemazione contenuto \\
+            \VersioneVerbale & \DataVerbale & Federico Simonetto & Francesco Marcolongo & Aggiunta ruoli e \\
+            & & & & tabella azioni \\
+            \hline
+            v0.2.0 & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Sistemazione contenuto \\
             \hline
             v0.1.0 & \DataVerbale & Giacomo Giora &  & Prima stesura \\
             \hline
@@ -158,7 +161,7 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 		Il gruppo ha esaminato le attuali pratiche di gestione dei branch sulla repo Github e ha proposto miglioramenti per facilitare la collaborazione.
     }
     \subsection{Creazione project board su Github}{
-        È stata creata una project board su Github per migliorare la gestione delle attività e il monitoraggio del progresso del progetto, discutendo su quante e quali fasi creare, e su come gestire le dipendenze tra di esse.
+        Verrà creata una project board su Github per migliorare la gestione delle attività e il monitoraggio del progresso del progetto, discutendo su quante e quali fasi creare, e su come gestire le dipendenze tra di esse.
     }
     \subsection{Discussione sull'utilizzo di un tool per la visualizzazione del cruscotto di progetto}{
         Il gruppo ha iniziato una discussione sull'adozione di un nuovo strumento per la visualizzazione del cruscotto di progetto, Grafana, valutandone i pro e i contro.
@@ -175,15 +178,32 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
         \hline
         \textbf{ID} & \textbf{Decisione} \\
         \hline
-            D1-07/11/2025 &  Definiti i seguenti ruoli per il primo sprint: Responsabile - Andrea Difino, Amministratore - Michele Tesser, Analista - Giacomo Giora e Bilal Sabic, Progettista - Riccardo Valerio e Federico Simonetto, Verificatore - Francesco Marcolongo.\\
+            D\{1\}-07/11/2025\_vi &  Definiti i seguenti ruoli per il primo sprint: Responsabile - Andrea Difino, Amministratore - Michele Tesser, Analista - Giacomo Giora e Bilal Sabic, Progettista - Riccardo Valerio e Federico Simonetto, Verificatore - Francesco Marcolongo.\\
         \hline
-            D2-07/11/2025 & Deciso che il nuovo sistema di versionamento sarà nella forma X.Y.Z. \\
+            D\{2\}-07/11/2025\_vi & Deciso che il nuovo sistema di versionamento sarà nella forma X.Y.Z. \\
 		\hline
-			D3-07/11/2025 & Creata la project board su Github. \\
+			D\{3\}-07/11/2025\_vi & Deciso l'utilizzo di una project board su Github per migliorare la gestione delle attività. \\
 		\hline
     \end{tabular}
     \end{center}
 }
+
+\section{Attivitá da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A\{1\}-07/11/2025\_vi &  Creare la project board su GitHub. & - & Andrea Difino \\
+        \hline
+            A\{2\}-07/11/2025\_vi & Modificare il way of \newline working. & - & Francesco \newline Marcolongo \\
+        \hline
+            A\{3\}-07/11/2025\_vi & Stesura iniziale del \newline glossario. & - & Team \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
 
 
 \end{document}
