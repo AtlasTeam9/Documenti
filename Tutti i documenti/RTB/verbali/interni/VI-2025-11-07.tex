@@ -33,7 +33,7 @@
 \newcommand{\TitoloVerbale}{Verbale della Riunione}
 \newcommand{\DataVerbale}{2025/11/07}
 \newcommand{\OraInizio}{9:30}
-\newcommand{\OraFine}{11:30}
+\newcommand{\OraFine}{11:45}
 \newcommand{\LuogoVerbale}{Chiamata Discord}
 \newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
 \newcommand{\AbstractVerbale}{%
@@ -41,7 +41,7 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 }
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v0.1.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneVerbale}{v0.2.0} % <-- modifica qui la versione o ID
 \newcommand{\VerbaleInterno}{Interno} 
 
 \pagestyle{fancy}
@@ -107,7 +107,9 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneVerbale & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Prima stesura \\
+            \VersioneVerbale & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Sistemazione contenuto \\
+            \hline
+            v0.1.0 & \DataVerbale & Giacomo Giora &  & Prima stesura \\
             \hline
         \end{tabular}
     \end{center}
@@ -135,33 +137,35 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
         \item Discussione su aggiudicazione appalti
         \item Assegnazione ruoli per il primo sprint
         \item Modifica al sistema di versionamento dei documenti
-        \item Discussione sulla gestione dei branch su Github
+        \item Discussione sulla gestione dei branch sulla repo Github
         \item Creazione project board su Github
         \item Discussione sull'utilizzo di un tool per la visualizzazione del cruscotto di progetto
-        
+        \item Confronto su documento "Glossario" da redigere
     \end{enumerate}
 }
 
 \section{Discussione}{
 	\subsection{Discussione su aggiudicazione appalti}{
-		Il gruppo ha discusso riguardo l'appalto aggiudicato e le richieste di integrazione, in particolare si è parlato della gestione delle sezioni del sito web del team.
+		Il gruppo ha discusso riguardo l'appalto aggiudicato, \textbf{C1 - Automated EN18031 Compliance Verification}, e ha cercato di capire le richieste di integrazione, concentrandosi in particolare sulla gestione delle sezioni del sito web del team.
     }
     \subsection{Assegnazione ruoli per il primo sprint}{
-        Sono stati assegnati i ruoli per il primo sprint del progetto, con particolare attenzione ai ruoli necessari nella prima fase del progetto, come l'Analista e il Progettista che disporranno di due membri. Il ruolo di Programmatore invece non è stato assegnato in questa fase iniziale.
+        Sono stati assegnati i ruoli per il primo sprint, con particolare attenzione ai ruoli necessari nella prima fase del progetto, come l'Analista e il Progettista che disporranno di due membri ciascuno. Il ruolo di Programmatore invece non è stato assegnato in quanto non necessario in questa fase iniziale.
     }
 	\subsection{Modifica al sistema di versionamento dei documenti}{
 		Il gruppo ha discusso le modifiche proposte al sistema di versionamento dei documenti, con particolare attenzione all'adozione di nuove convenzioni.
     }
-	\subsection{Discussione sulla gestione dei branch su Github}{
-		Il gruppo ha esaminato le attuali pratiche di gestione dei branch su Github e ha proposto miglioramenti per facilitare la collaborazione.
+	\subsection{Discussione sulla gestione dei branch sulla repo Github}{
+		Il gruppo ha esaminato le attuali pratiche di gestione dei branch sulla repo Github e ha proposto miglioramenti per facilitare la collaborazione.
     }
     \subsection{Creazione project board su Github}{
-        È stata creata una project board su Github per migliorare la gestione delle attività e il monitoraggio del progresso del progetto, discutendo su quante e quali fasi creare.
+        È stata creata una project board su Github per migliorare la gestione delle attività e il monitoraggio del progresso del progetto, discutendo su quante e quali fasi creare, e su come gestire le dipendenze tra di esse.
     }
     \subsection{Discussione sull'utilizzo di un tool per la visualizzazione del cruscotto di progetto}{
         Il gruppo ha iniziato una discussione sull'adozione di un nuovo strumento per la visualizzazione del cruscotto di progetto, Grafana, valutandone i pro e i contro.
     }
-    
+    \subsection{Confronto su documento "Glossario" da redigere}{
+        Il gruppo ha discusso la struttura e i contenuti del documento "Glossario" da redigere, definendo le linee guida per la sua compilazione.
+    }
 }
 
 
@@ -171,13 +175,12 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
         \hline
         \textbf{ID} & \textbf{Decisione} \\
         \hline
-            D1-07/11/2025 &  Definiti i seguenti ruoli per il primo sprint: responsabile - Andrea Difino, amministratore - Michele Tesser, analista - Giacomo Giora e Bilal Sabic, progettista - Riccardo Valerio e Federico Simonetto, verificatore - Francesco Marcolongo.\\
+            D1-07/11/2025 &  Definiti i seguenti ruoli per il primo sprint: Responsabile - Andrea Difino, Amministratore - Michele Tesser, Analista - Giacomo Giora e Bilal Sabic, Progettista - Riccardo Valerio e Federico Simonetto, Verificatore - Francesco Marcolongo.\\
         \hline
-            D2-07/11/2025 & È stata deciso che il nuovo sistema di versionamento è nella forma X.Y.Z. \\
+            D2-07/11/2025 & Deciso che il nuovo sistema di versionamento sarà nella forma X.Y.Z. \\
 		\hline
-			D3-07/11/2025 & È stata creata la project board su Github. \\
+			D3-07/11/2025 & Creata la project board su Github. \\
 		\hline
-
     \end{tabular}
     \end{center}
 }
