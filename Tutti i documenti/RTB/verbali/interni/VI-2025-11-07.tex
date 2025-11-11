@@ -1,0 +1,209 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/11/07}
+\newcommand{\OraInizio}{9:30}
+\newcommand{\OraFine}{11:45}
+\newcommand{\LuogoVerbale}{Chiamata Discord}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \space \OraFine .
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\VerbaleInterno}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleInterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleInterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        Andrea Difino & SI & Responsabile\\
+        Federico Simonetto & SI & Progettista\\
+        Riccardo Valerio & SI & Progettista\\
+        Francesco Marcolongo & SI & Verificatore\\
+        Michele Tesser & SI & Amministratore\\
+        Giacomo Giora & SI & Analista\\
+        Bilal Sabic & SI & Analista\\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center}
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneVerbale & \DataVerbale & Federico Simonetto & Francesco Marcolongo & Aggiunta ruoli e \\
+            & & & & tabella azioni \\
+            \hline
+            v0.2.0 & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Sistemazione contenuto \\
+            \hline
+            v0.1.0 & \DataVerbale & Giacomo Giora &  & Prima stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del Giorno}{
+    \begin{enumerate}
+        \item Discussione su aggiudicazione appalti
+        \item Assegnazione ruoli per il primo sprint
+        \item Modifica al sistema di versionamento dei documenti
+        \item Discussione sulla gestione dei branch sulla repo Github
+        \item Creazione project board su Github
+        \item Discussione sull'utilizzo di un tool per la visualizzazione del cruscotto di progetto
+        \item Confronto su documento "Glossario" da redigere
+    \end{enumerate}
+}
+
+\section{Discussione}{
+	\subsection{Discussione su aggiudicazione appalti}{
+		Il gruppo ha discusso riguardo l'appalto aggiudicato, \textbf{C1 - Automated EN18031 Compliance Verification}, e ha cercato di capire le richieste di integrazione, concentrandosi in particolare sulla gestione delle sezioni del sito web del team.
+    }
+    \subsection{Assegnazione ruoli per il primo sprint}{
+        Sono stati assegnati i ruoli per il primo sprint, con particolare attenzione ai ruoli necessari nella prima fase del progetto, come l'Analista e il Progettista che disporranno di due membri ciascuno. Il ruolo di Programmatore invece non è stato assegnato in quanto non necessario in questa fase iniziale.
+    }
+	\subsection{Modifica al sistema di versionamento dei documenti}{
+		Il gruppo ha discusso le modifiche proposte al sistema di versionamento dei documenti, con particolare attenzione all'adozione di nuove convenzioni.
+    }
+	\subsection{Discussione sulla gestione dei branch sulla repo Github}{
+		Il gruppo ha esaminato le attuali pratiche di gestione dei branch sulla repo Github e ha proposto miglioramenti per facilitare la collaborazione.
+    }
+    \subsection{Creazione project board su Github}{
+        Verrà creata una project board su Github per migliorare la gestione delle attività e il monitoraggio del progresso del progetto, discutendo su quante e quali fasi creare, e su come gestire le dipendenze tra di esse.
+    }
+    \subsection{Discussione sull'utilizzo di un tool per la visualizzazione del cruscotto di progetto}{
+        Il gruppo ha iniziato una discussione sull'adozione di un nuovo strumento per la visualizzazione del cruscotto di progetto, Grafana, valutandone i pro e i contro.
+    }
+    \subsection{Confronto su documento "Glossario" da redigere}{
+        Il gruppo ha discusso la struttura e i contenuti del documento "Glossario" da redigere, definendo le linee guida per la sua compilazione.
+    }
+}
+
+
+\section{Decisioni Prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{11cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D\{1\}-07/11/2025\_vi &  Definiti i seguenti ruoli per il primo sprint: Responsabile - Andrea Difino, Amministratore - Michele Tesser, Analista - Giacomo Giora e Bilal Sabic, Progettista - Riccardo Valerio e Federico Simonetto, Verificatore - Francesco Marcolongo.\\
+        \hline
+            D\{2\}-07/11/2025\_vi & Deciso che il nuovo sistema di versionamento sarà nella forma X.Y.Z. \\
+		\hline
+			D\{3\}-07/11/2025\_vi & Deciso l'utilizzo di una project board su Github per migliorare la gestione delle attività. \\
+		\hline
+    \end{tabular}
+    \end{center}
+}
+
+\section{Attivitá da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A\{1\}-07/11/2025\_vi &  Creare la project board su GitHub. & - & Andrea Difino \\
+        \hline
+            A\{2\}-07/11/2025\_vi & Modificare il way of \newline working. & - & Francesco \newline Marcolongo \\
+        \hline
+            A\{3\}-07/11/2025\_vi & Stesura iniziale del \newline glossario. & - & Team \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+
+
+\end{document}
