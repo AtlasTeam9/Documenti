@@ -1,0 +1,240 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/11/11}
+\newcommand{\OraInizio}{15:00}
+\newcommand{\OraFine}{16:00}
+\newcommand{\LuogoVerbale}{Chiamata Google Meet}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati gli argomenti discussi, le domande poste e le risposte ricevute, durante il secondo meeting effettuato del team \Gruppo \space con l'azienda \textbf{Bluewind S.r.l.}, del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v0.1.0} % <-- modifica qui la versione o ID
+\newcommand{\VerbaleEsterno}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleEsterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleEsterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        Andrea Difino & SI & Responsabile\\
+        Federico Simonetto & SI & Progettista\\
+        Riccardo Valerio & SI & Progettista\\
+        Francesco Marcolongo & SI & Verificatore\\
+        Michele Tesser & SI & Amministratore\\
+        Giacomo Giora & SI & Analista\\
+        Bilal Sabic & SI & Analista\\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            % & & & & \\
+            %\hline
+            \VersioneVerbale & 2025/11/11 & Federico Simonetto & Francesco Marcolongo & Prima stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Esposizione di domande riguardanti il progetto e le interazioni fra il team Atlas e l'azienda proponente
+    \end{itemize}
+}
+
+
+\section{Discussione}{
+    \subsection{Tecnologie da utilizzare nel progetto}
+    \textbf{Domanda:} Ci sono delle tecnologie precise che la proponente desidera vengano impiegate nello sviluppo del progetto?
+
+    \textbf{Risposta:} Viene lasciata molta libertà nella scelta delle tecnologie. Le principali caratteristiche che il prodotto software dovrà possedere sono modularità, comprensibilità e 
+    documentabilità. Viene imposta la persistenza dei dati: in caso di riavvio dell'applicazione, l'utente deve poter ricaricare il progetto su cui stava lavorando. Questo 
+    può essere implementato tramite l'uso di un database oppure, più semplicemente, mediante il salvataggio su file.
+
+    % ----------------------------------------------------
+
+    \subsection{Condivisione casi d'uso e documentazione}
+    \label{subsec:docu}
+    \textbf{Domanda:} È possibile ricevere la documentazione dello standard così come il caso d'uso nominato nel capitolato?
+
+    \textbf{Risposta:} Viene fornito un link al cloud aziendale dove sono presenti la documentazione RED EN18031 e gli standard che dovranno essere implementati nonché il caso d'uso 
+    della Macchina del Caffè menzionato nel capitolato di presentazione.
+
+    % ----------------------------------------------------
+
+    \subsection{Frequenza degli incontri con l'azienda proponente}
+    \textbf{Domanda:} Quanto spesso verranno svolti gli incontri tra il team Atlas e l'azienda proponente? E secondo quali modalità?
+
+    \textbf{Risposta:} Le riunioni possono essere svolte comodamente da remoto tramite piattaforme come Google Meet e Zoom. Per quanto riguarda la frequenza, nella prima parte del progetto, le riunioni
+    potranno avere cadenza bisettimanale aumentando successivamente durante la fase di codifica del prodotto. È stato inoltre deciso di utilizzare Telegram come canale di comunicazione aggiuntivo per poter ricevere feedback
+    immediati su questioni di minore entità. In seguito alla condivisione dei documenti citati nella sezione \ref{subsec:docu} viene fissata una riunione per il 18 novembre 2025 per chiarire eventuali dubbi a riguardo.
+
+    % ----------------------------------------------------
+
+    \subsection{Percorso di vita dell'utente nell'applicazione}
+    \textbf{Domanda:} Quale sarà il percorso di vita dell'utente all'interno dell'applicazione? È necessario fornire un pannello di autenticazione?
+
+    \textbf{Risposta:} Inizialmente, l'utente fornisce le informazioni sul dispositivo tramite file. L'applicazione presenta le domande dai decision tree, l'utente interagisce tramite le risposte che verranno poi salvate e analizzate per generare un output preciso. 
+    Questo dovrà poi essere trascritto su file e salvato all'esterno. L'autenticazione non viene richiesta, ma potrebbe essere considerata un requisito opzionale. 
+
+    % ----------------------------------------------------
+
+    \subsection{Decision tree}
+    \textbf{Domanda:} Si possono avere più informazioni riguardo ai decision tree?
+
+    \textbf{Risposta:} I decision tree dovranno essere implementati a partire dalle descrizioni presenti all'interno della documentazione.\newline
+    I decision tree sono gli stessi per ogni dispositivo. \newline 
+    L'utente deve sapere come rispondere ai decision tree; non è necessario fornire ulteriori informazioni aggiuntive.\newline 
+    Tutti i decision tree devono essere eseguibili per ogni dispositivo. \newline
+    Le domande all'interno dei decision tree devono essere presentate con una sequenza logica ben definita
+    poichE la risposta ad alcuni requisiti abilita domande relative ad altri requisiti.
+
+    % ----------------------------------------------------
+
+    \subsection{Interfaccia grafica}
+    \textbf{Domanda:} Ci sono idee di design per quanto riguarda la User Interface?
+
+    \textbf{Risposta:} Viene lasciata totale libertà al team di progetto per quanto riguarda il design della UI.
+
+}
+\newpage
+
+\section{Decisioni prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{12cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D\{1\}-\DataVerbale\_ve & Condivisione da parte dell'azienda proponente di documenti riguardanti il capitolato, finalizzata ad attività di studio. \\
+        \hline
+            D\{2\}-\DataVerbale\_ve & Fissata nuova riunione tramite Google Meet con l'azienda Bluewind S.r.l. in data 2025/11/08. \\
+        \hline 
+            D\{3\}-\DataVerbale\_ve & Decisa la creazione di un gruppo Telegram per poter contattare in modo istantaneo l'azienda proponente.\\    
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\section{Attivitá da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A\{1\}-\DataVerbale\_ve &  Iniziare lo studio dello standard RED e dei decision tree. & - & Team \\
+        \hline
+            A\{2\}-\DataVerbale\_ve & Brainstorming per iniziare a decidere le tecnologie da utilizzare. & - & Team \\
+        \hline
+            A\{3\}-\DataVerbale\_ve & Creare il gruppo Telegram per effettuare contatto istantaneo con l'azienda proponente. & - & Andrea Difino \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\vspace{2cm}
+\begin{flushright}
+    \textbf{Approvazione dell'azienda} \\
+    Il proponente,\\[0.5cm]
+    \rule{6cm}{0.4pt}\\
+\end{flushright}
+
+
+
+\end{document}
