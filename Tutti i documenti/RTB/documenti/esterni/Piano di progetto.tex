@@ -1,0 +1,194 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloDocumento}{Piano di progetto}
+\newcommand{\DataUltimaModifica}{16/11/2025}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneDocumento}{v0.1.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoDocumento}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Documento: \TipoDocumento}
+\fancyfoot[C]{\thepage}
+
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+
+    \begin{center}
+
+        % Logo
+        \vspace*{0cm}
+        \begin{tikzpicture}
+            \clip (0,-0.1) circle (5.6cm);
+            \node at (0,0) {\includegraphics[width=12cm]{\LogoGruppo}};
+        \end{tikzpicture}\\[0.8cm]
+
+        % Barra superiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+        % Titolo
+        \vspace{1cm}
+        {\Huge \textbf{\TitoloDocumento}}\\[0.4cm]
+        {\large Progetto di Ingegneria del Software A.A. 2025/2026}\\[0.8cm]
+        {\large Versione: \VersioneDocumento}
+        \vspace{1cm}
+
+        % Barra inferiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+    \end{center}
+
+    % Informazioni in basso
+    \vfill
+    \noindent
+    \begin{minipage}{0.5\textwidth}
+        \raggedright
+        \textbf{Autore:} \Gruppo\\
+        \textbf{Ultima modifica:} \DataUltimaModifica
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \raggedleft
+        \textbf{Tipo di documento:} \TipoDocumento
+    \end{minipage}
+
+\end{titlepage}
+
+
+
+\section*{Registro delle modifiche}{
+    \begin{center}
+    \rowcolors{2}{lightblue}{white} % Alternanza automatica dal secondo row
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneDocumento & 16/11/2025 & Andrea Difino & Francesco Marcolongo & Prima stesura e sez. 4.1\\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Introduzione}{
+    \subsection{Glossario}{
+
+    }
+    \subsection{Capitolato}{
+        
+    }
+    \subsection{Riferimenti utili}{
+        
+    }
+}
+
+\section{Informazioni del progetto}{
+    \subsection{Introduzione}{
+
+    }
+    \subsection{Date di consegna del progetto}{
+        
+    }
+    \subsection{Costi del progetto}{
+        
+    }
+    \subsection{Introduzione struttura per descrizione periodi}{
+
+    }
+    \subsection{Struttura della pianificazione}{
+        
+    }
+    \subsection{Struttura dell'esito effettivo}{
+        
+    }
+}
+
+\section{Gestione dei rischi}{
+    \subsection{Introduzione}{
+
+    }
+    \subsection{Rischi individuati}{
+        
+    }
+}
+
+\section{Pianificazione nel breve termine}{
+    \subsection{Introduzione}{
+        Atlas ha scelto di adottare un approccio \textit{Agile} per la gestione del progetto, individuando in due settimane la durata più efficace per ottenere risultati significativi. Per questo motivo il lavoro viene suddiviso in sprint di circa due settimane.
+
+        \
+
+        \noindent All'inizio di ogni sprint il gruppo definisce le attività previste per il periodo successivo e procede alla rotazione dei ruoli. Tale rotazione può comunque avvenire anche durante lo sprint, qualora emergano necessità organizzative. Questa scelta permette ai membri del team di maturare esperienza in ogni ruolo e di individuare un ritmo di rotazione adeguato.
+
+        \ 
+
+        \noindent Il gruppo programma inoltre incontri con il proponente \textbf{Bluewind} in prossimità della conclusione degli sprint, così da raccogliere feedback tempestivi sulle funzionalità sviluppate.
+
+        Le sezioni successive descrivono nel dettaglio i vari periodi di lavoro, riportando:
+        \begin{itemize}
+            \item Informazioni generali  
+            \item Attività pianificate  
+            \item Stima dei tempi e dei costi  
+            \item Rischi previsti  
+            \item Tempi e costi effettivi  
+            \item Aggiornamento delle risorse rimanenti  
+            \item Retrospettiva, comprensiva dei rischi riscontrati
+        \end{itemize}
+    }
+
+
+    \subsection{Sprint 1}{
+
+    }
+}
+
+\end{document}
