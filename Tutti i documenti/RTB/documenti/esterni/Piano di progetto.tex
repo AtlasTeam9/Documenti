@@ -15,6 +15,7 @@
 \usepackage{array}
 \usepackage{fancyhdr}
 \usepackage{tikz}
+\usepackage{float}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 
 % ----------------------------
@@ -35,11 +36,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Piano di progetto}
-\newcommand{\DataUltimaModifica}{16/11/2025}
+\newcommand{\DataUltimaModifica}{17/11/2025}
 \newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.1.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.2.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -115,7 +116,9 @@
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & 16/11/2025 & Andrea Difino & Francesco Marcolongo & Prima stesura e sez. 4.1\\
+            \VersioneDocumento & 17/11/2025 & Andrea Difino & Francesco Marcolongo & Scrittura sez 4.2\\
+            \hline
+            v0.1.0 & 16/11/2025 & Andrea Difino & Francesco Marcolongo & Prima stesura e sez. 4.1\\
             \hline
         \end{tabular}
     \end{center}
@@ -229,7 +232,7 @@
         \subsubsection{Preventivo}{
             Si prospetta l'utilizzo delle seguenti risorse:
 
-            \begin{table}[h!]
+            \begin{table}[H]
                 \centering
 
                 % intestazioni diagonali fuori dalla tabella
@@ -244,7 +247,7 @@
                     \hspace*{0.3cm}\rotatebox{60}{Verificatore}%
                 }
 
-                \rowcolors{2}{lightblue}{white}
+                \rowcolors{1}{lightblue}{white}
 
                 \begin{tabular}{
                     |>{\raggedright\arraybackslash}m{\namecol}
@@ -276,9 +279,7 @@
         }
 
         \subsubsection{Consuntivo}{
-            Si prospetta l'utilizzo delle seguenti risorse:
-
-            \begin{table}[h!]
+            \begin{table}[H]
                 \centering
                 % intestazioni diagonali fuori dalla tabella
                 \hspace*{-14cm}%
@@ -292,7 +293,7 @@
                     \hspace*{0.3cm}\rotatebox{60}{Verificatore}%
                 }
 
-                \rowcolors{2}{lightblue}{white}
+                \rowcolors{1}{lightblue}{white}
 
                 \begin{tabular}{
                     |>{\raggedright\arraybackslash}m{\namecol}
@@ -321,14 +322,60 @@
                 \caption{Consuntivo ore per ruolo - Sprint 1}
                 \label{tab:consuntivo-sprint1}
             \end{table}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=12cm]{img/OrePerRuolo-Sprint1.png}
+                \caption{Confronto ore previste ed effettive per ruolo - Sprint 1}
+                \label{fig:confronto-ore-sprint1}
+            \end{figure}
         }
         
-        \begin{figure}[h!]
-            \centering
-            \includegraphics[width=12cm]{img/OrePerRuolo-Sprint1.png}
-            \caption{Confronto ore previste ed effettive per ruolo - Sprint 1}
-            \label{fig:confronto-ore-sprint1}
-        \end{figure}
+        \subsubsection{Risorse rimanenti aggiornate}{
+            \begin{table}[h!]
+                \centering
+
+                \rowcolors{2}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}p{3.2cm}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{2.9cm}
+                    |>{\centering\arraybackslash}p{3.2cm}|}
+                    \hline 
+                    Ruolo & Costo & Ore & Costo & Ore rimanenti & Budget rimanenti \\
+                    \hline
+                    Responsabile         & 30\texteuro/h & 8 & 240\texteuro & 48 \textcolor{red}{(-8)}  &  1440\texteuro \textcolor{red}{(-240\texteuro)}\\
+                    \hline
+                    Amministratore       & 20\texteuro/h & 2 & 40\texteuro  & 68 \textcolor{red}{(-2)}  &  1400\texteuro \textcolor{red}{(-40\texteuro)}\\
+                    \hline
+                    Analista             & 25\texteuro/h & 5 & 125\texteuro & 79 \textcolor{red}{(-5)}  &  2100\texteuro \textcolor{red}{(-125\texteuro)}\\
+                    \hline
+                    Progettista          & 25\texteuro/h & 6 & 150\texteuro & 106 \textcolor{red}{(-6)} &  2800\texteuro \textcolor{red}{(-150\texteuro)}\\
+                    \hline
+                    Programmatore        & 15\texteuro/h & - & -            & 168                       &  2520\texteuro \\
+                    \hline
+                    Verificatore         & 15\texteuro/h & 6 & 90\texteuro  & 141 \textcolor{red}{(-6)} &  2205\texteuro \textcolor{red}{(-90\texteuro)}\\
+                    \hline
+                    Totale               & -             & 27& 645\texteuro & 610 \textcolor{red}{(-27)}&  12060\texteuro \textcolor{red}{(-645\texteuro)}\\
+                    \hline
+                \end{tabular}
+                \caption{Variazione risorse disponibili - Sprint 1}
+                \label{tab:risorse-rimanenti-sprint1}
+            \end{table}
+        }
+
+        \subsubsection{Rischi incontrati}{
+            //TODO necessitá la scrittura della sezione "Gestione dei rischi" 
+        }
+
+        \subsubsection{Retrospettiva}{
+            Nel primo periodo ci si è concentrati sulla risoluzione di problemi iniziali e sulla preparazione dei documenti fondamentali per l'avvio del progetto, includendo aggiornamenti al sito, 
+            organizzazione del versionamento, e prime stesure di linee guida, glossario e piano di progetto, 
+            oltre alla pianificazione di un incontro con l'azienda proponente.
+        }
     }
 }
 
