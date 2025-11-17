@@ -11,6 +11,8 @@
 \definecolor{lightblue}{RGB}{225,240,255}
 \usepackage{geometry}
 \usepackage{setspace}
+\usepackage{calc}
+\usepackage{array}
 \usepackage{fancyhdr}
 \usepackage{tikz}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
@@ -46,6 +48,14 @@
 \fancyhead[R]{Documento: \TipoDocumento}
 \fancyfoot[C]{\thepage}
 
+% larghezza della colonna dei nomi
+\newlength{\namecol}
+\setlength{\namecol}{4.5cm}
+
+\newlength{\colw}
+\setlength{\colw}{1.5cm}
+
+\definecolor{mioverde}{RGB}{20,150,60}
 
 % ----------------------------
 % Inizio documento
@@ -186,8 +196,139 @@
     }
 
 
-    \subsection{Sprint 1}{
+    \subsection{Sprint 1 - RTB}{
+        \subsubsection{Tempo}{
+            \begin{itemize}
+                \item[]Inizio:  \textbf{04/11/2025} 
+                \item[]Fine prevista:  \textbf{17/11/2025} 
+                \item[]Fine reale:  \textbf{17/11/2025} 
+            \end{itemize}
+        }
 
+        \subsubsection{Informazioni generali e attività da svolgere}{
+            Questo primo periodo ha l'obiettivo principale di risolvere i piccoli problemi sorti durante la candidatura; successivamente, avverrà la redazione dei documenti necessari per un buon inizio dei lavori. 
+            
+            \ 
+            
+            \noindent In particolare, le attività previste sono: • 
+            
+            \begin{itemize}
+                \item Aggiornamento del sito web;
+                \item Sistemazione del sistema di versionamento dei documenti con utilizzo della notazione MAJOR.MINOR.PATCH;
+                \item Prima stesura del Way of Working interno;
+                \item Prima redazione del Glossario;
+                \item Prima redazione del Piano di Progetto;
+                \item Stabilire un incontro con l'azienda proponente \textbf{Bluewind}.
+            \end{itemize}
+        }
+
+        \subsubsection{Rischi previsti}{
+            //TODO scrivere la sezione "Gestione dei rischi" 
+        }
+
+        \subsubsection{Preventivo}{
+            Si prospetta l'utilizzo delle seguenti risorse:
+
+            \begin{table}[h!]
+                \centering
+
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{Responsabile}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Verificatore}%
+                }
+
+                \rowcolors{2}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    \hline
+                    Andrea Difino        & 8 & - & - & - & - & - \\
+                    \hline
+                    Giacomo Giora        & - & - & 2 & - & - & - \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & - & - & 7 \\
+                    \hline
+                    Riccardo Valerio     & - & - & - & 4 & - & - \\
+                    \hline
+                    Michele Tesser       & - & 6 & - & - & - & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & 4 & - & - \\
+                    \hline
+                    Bilal Sabic          & - & - & 2 & - & - & - \\
+                    \hline
+                \end{tabular}
+                \caption{Preventivo ore per ruolo - Sprint 1}
+                \label{tab:preventivo-sprint1}
+            \end{table}
+        }
+
+        \subsubsection{Consuntivo}{
+            Si prospetta l'utilizzo delle seguenti risorse:
+
+            \begin{table}[h!]
+                \centering
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{Responsabile}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Verificatore}%
+                }
+
+                \rowcolors{2}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    \hline
+                    Andrea Difino        & 8 & - & - & - & - & - \\
+                    \hline
+                    Giacomo Giora        & - & - & 3 \textcolor{red}{(+1)} & - & - & - \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & - & - & 6 \textcolor{mioverde}{(-1)}\\
+                    \hline
+                    Riccardo Valerio     & - & - & - & 3 \textcolor{mioverde}{(-1)} & - & - \\
+                    \hline
+                    Michele Tesser       & - & 2 \textcolor{mioverde}{(-4)} & - & - & - & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & 3 \textcolor{mioverde}{(-1)} & - & - \\
+                    \hline
+                    Bilal Sabic          & - & - & 2 & - & - & - \\
+                    \hline
+                \end{tabular}
+                \caption{Consuntivo ore per ruolo - Sprint 1}
+                \label{tab:consuntivo-sprint1}
+            \end{table}
+        }
+        
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=12cm]{img/OrePerRuolo-Sprint1.png}
+            \caption{Confronto ore previste ed effettive per ruolo - Sprint 1}
+            \label{fig:confronto-ore-sprint1}
+        \end{figure}
     }
 }
 
