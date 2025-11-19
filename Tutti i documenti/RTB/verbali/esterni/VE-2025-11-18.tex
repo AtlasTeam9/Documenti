@@ -1,0 +1,215 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/11/18}
+\newcommand{\NumeroVerbaleEsterno}{terzo}
+\newcommand{\OraInizio}{15:00}
+\newcommand{\OraFine}{15:45}
+\newcommand{\LuogoVerbale}{Chiamata Google Meet}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati gli argomenti discussi, le domande poste e le risposte ricevute durante il \NumeroVerbaleEsterno \space meeting effettuato dal team \Gruppo \space con l'azienda \textbf{Bluewind S.r.l.} nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v0.1.0} % <-- modifica qui la versione o ID
+\newcommand{\VerbaleEsterno}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleEsterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleEsterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        Andrea Difino & SI & Amministratore\\
+        Federico Simonetto & SI & Verificatore\\
+        Riccardo Valerio & SI & Responsabile\\
+        Francesco Marcolongo & SI & Responsabile\\
+        Michele Tesser & SI & Analista\\
+        Giacomo Giora & SI & Amministratore\\
+        Bilal Sabic & SI & Progettista\\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            v0.1.0 & 2025/11/11 & Michele Tesser & Federico Simonetto & Prima stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Esposizione di domande riguardanti il progetto e le tecnologie candidate
+    \end{itemize}
+}
+
+
+\section{Discussione}{
+
+    \subsection{A2-2025/11/11-ve Brainstorming tecnologie}
+    \textbf{Domanda:} Abbiamo confrontato le nostre ricerce, pensiamo di realizzare una webapp composta dal backend in Python con FastAPI che si interfaccia con Angular o React. Vi sembra una baseline solida?
+
+    \textbf{Risposta:} Viene ribadito che viene lasciata molta libertà nella scelta delle tecnologie. Ad ogni modo le tecnologie proposte sono tutte consolidate e valide, viene quindi lasciata a noi la decisione finale soprattutto per quanto concerne il Frontend.
+
+    % ----------------------------------------------------
+
+    \subsection{Autorizzazione e Persistenza}
+    \textbf{Domanda:} Sono richiesti più livelli di autorizzazione? Come dovrà avvenire la persistenza dei dati?
+
+    \textbf{Risposta:} Salvo future necessità per ora non è richiesto che ci siano più livelli di autorizzazione (utente/amministratore). La persistenza dello stato di lavoro per ora può avvenire in un file locale in un qualsiasi formato csv/ecc... . Non è richiesto che la persistenza o i decision tree siano memorizzabili in più formati.
+
+    % ----------------------------------------------------
+
+    \subsection{Dubbi riguardanti la normativa e i decision tree}
+    \textbf{Domanda:} Leggendo i documenti da voi condivisi vediamo 8 requisiti, ci sono solo quindi 8 decision tree?
+
+    \textbf{Risposta:} Per il proof of concept 8 decision tree sono sufficienti, ma non si esclude la possibilità di espandere l'infrastruttura in futuro (opzionalmente anche attraverso mezzo grafico). Viene inoltre ricordata la seguente gerarchia: Device > Asset > Decision Tree; saranno anche presenti diversi cicli (anche annidati) per le varie feature: all'utente sarà richiesto di esplorarli totalmente. Viene inoltre ricordato che in caso di dipendenza l'esito non applicabile (na) implica non applicabile. E' possibile generalizzare  il superamento dei prerequisiti come una valutazione pigra della porta logica AND.
+
+    % ----------------------------------------------------
+
+    \subsection{Avvio a freddo dell'applicazione}
+    \textbf{Domanda:} Come deve comportarsi l'utente al primo avvio dell'applicazione?
+
+    \textbf{Risposta:} Al primo avvio dell'applicazione verrà chiesto all'utente di selezionare un file di ingresso del dispositivo, il quale conterrà i vari asset di quel dispositivo, alternativamente sarà possibile crearne uno con i vari asset al suo interno. Tutti i decision tree correlati ai vari asset vengono caricati automaticamente visto che vanno sempre eseguiti tutti ( anche se con eventuale esito "non applicabile").
+
+    % ----------------------------------------------------
+
+    %   \subsection{Avvio a freddo dell'applicazione}
+    % \textbf{Domanda:} 
+    %
+    % \textbf{Risposta:}
+    %
+    % % ----------------------------------------------------
+
+}
+\newpage
+
+\section{Decisioni prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{12cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D1-\DataVerbale\_ve & Fissata nuova riunione tramite Google Meet con l'azienda Bluewind S.r.l. in data 2025/12/02 alle ore 15.00. \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\section{Attivitá da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A1-\DataVerbale\_ve & Ricerca e studio fattibilità per le tecnlogie da utilizzare. & - & Team \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\vspace{2cm}
+\begin{flushright}
+    \textbf{Approvazione dell'azienda} \\
+    Il proponente,\\[0.5cm]
+    \rule{6cm}{0.4pt}\\
+\end{flushright}
+
+
+
+\end{document}
