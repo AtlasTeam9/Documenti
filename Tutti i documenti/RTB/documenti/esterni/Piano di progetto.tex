@@ -16,6 +16,7 @@
 \usepackage{fancyhdr}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{pgf-pie}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 
 % ----------------------------
@@ -133,27 +134,116 @@
 % Inizio contenuto verbale
 % ----------------------------
 \section{Introduzione}{
+    \subsection{Piano di progetto}{
+        Il Piano di progetto è un documento che registra le attività svolte e pianifica quelle da completare durante la realizzazione del progetto. Il suo scopo è fornire un consuntivo 
+        periodico, analizzando i rischi incontrati dal team, il loro impatto (economico e non) e le misure adottate per il loro superamento. Vengono inoltre evidenziate le differenze 
+        tra l'avanzamento previsto e quello effettivamente conseguito, con il relativo impatto sul preventivo. Il Piano di progetto include relazioni dettagliate per ogni sprint e 
+        deve essere aggiornato continuamente dall'inizio alla fine del progetto.
+    }
     \subsection{Glossario}{
-
+        All'interno della documentazione prodotta dal team possono comparire termini suscettibili di incomprensioni o ambiguità. Per evitare questo, è disponibile un glossario 
+        contenente i termini tecnici e le loro definizioni. Un termine è consultabile nel glossario se è indicato con la notazione \textbf{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
+        Premendo sulla G a pedice, l'utente verrà indirizzato alla pagina web del glossario.
     }
     \subsection{Capitolato}{
-        
+        Il capitolato ha come obiettivo la realizzazione di un'applicazione web che supporti le aziende nel processo di verifica di conformità ai requisiti di
+        sicurezza informatica previsti dalla direttiva RED (Radio Equipment Directive). Tale verifica viene condotta tramite un sistema basato su alberi decisionali, 
+        nei quali l'utente è guidato attraverso una sequenza di domande e condizioni per determinare il livello di aderenza ai requisiti della normativa EN18031. 
+        L'applicazione dovrà fornire un'interfaccia chiara e intuitiva per compilare e navigare le domande, permettere l'esportazione dei risultati e garantire la tracciabilità 
+        delle risposte. L'obiettivo finale è rendere il processo di valutazione della conformità più accessibile, ripetibile e automatizzato, riducendo errori umani e tempi di verifica.
     }
+    \newpage
     \subsection{Riferimenti utili}{
-        
+        \subsubsection{Riferimenti normativi}{
+            \begin{itemize}
+                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+            \end{itemize}
+        }
+        \subsubsection{Riferimenti informativi}{
+            \begin{itemize}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Regolamento del progetto didattico}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Modelli di sviluppo software}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T03.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Gestione di progetto}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf}
+            \end{itemize}
+        }
     }
 }
+\newpage
 
 \section{Informazioni del progetto}{
     \subsection{Introduzione}{
-
+        In questa sezione vengono riportate tutte le informazioni di tipo organizzativo-economico riguardanti il progetto.
     }
     \subsection{Date di consegna del progetto}{
-        
+        Il gruppo si impegna ad effettuare le consegne delle due milestone "Requirements and Technology Baseline" e "Product Baseline" entro le date riportate di seguito:
+        \begin{center}
+        \rowcolors{2}{lightblue}{white} % Alternanza automatica dal secondo row
+            \begin{tabular}{|p{10cm}|p{4cm}|}
+                \hline
+                \textbf{Milestone} & \textbf{Data} \\
+                \hline
+                Requirements and Technology Baseline & 2026/??/?? \\
+                \hline
+                Product Baseline & 2026/03/20 \\
+                \hline
+            \end{tabular}
+        \end{center}
+
     }
-    \subsection{Costi del progetto}{
-        
-    }
+    \subsection{Costi del progetto}
+        I costi del progetto sono riportati di seguito e sono soggetti a un limite prefissato, comunicato dal team all'azienda proponente prima dell'aggiudicazione degli appalti, e 
+        non negoziabile.
+        \begin{center}
+        \rowcolors{2}{white}{lightblue}
+        \begin{tabular}{|l|c|c|c|c|c|}
+            \hline
+            \textbf{Ruolo} & \textbf{Costo/h}(\texteuro) & \textbf{Ore Totali} & \textbf{Ore/Membro} & \textbf{Costo}(\texteuro) & \textbf{\%} \\
+            \hline
+            Responsabile & 30 & 56 & 8  & 1680 & 8.8 \\
+            \hline
+            Amministratore & 20 & 70 & 10 & 1400 & 11.0 \\
+            \hline
+            Analista & 25 & 84 & 12 & 2100 & 13.2 \\
+            \hline
+            Progettista & 25 & 112 & 16 & 2800 & 17.5 \\
+            \hline
+            Programmatore & 15 & 168 & 24 & 2520 & 26.4 \\
+            \hline
+            Verificatore & 15 & 147 & 21 & 2205 & 23.1 \\
+            \hline
+            \multicolumn{2}{|c|}{\textbf{Totale}} & \textbf{637} & \textbf{91} & \textbf{12\,705} & \textbf{100} \\
+            \hline
+        \end{tabular}
+        \end{center}   
+
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+            \pie{8.8/Responsabile, 11.0/Amministratore, 13.2/Analista, 17.5/Progettista, 26.4/Programmatore, 23.1/Verificatore}
+            \end{tikzpicture}
+            \caption{Distribuzione delle ore per ruolo}
+            \label{fig:piechart}
+        \end{figure}  
+
+
+    % CONTENUTO DELLA SUBSECTION FORSE RIPETUTO NELLA SEZ.4. POTREBBE ESSERE TOLTA
+
+    \subsection{Definizione del modello di sviluppo scelto dal team}
+        Il team ha deciso di adottare come modello di sviluppo Scrum, un framework di tipo Agile che consente la suddivisione del lavoro in piccoli incrementi a valore aggiunto.
+        Il progetto viene organizzato in sprint bisettimanali, al termine dei quali il team deve sempre presentare un prodotto potenzialmente utilizzabile.
+
+        Le principali motivazioni alla base della scelta di Scrum sono:
+
+        \begin{itemize}
+        \item \textbf{Flessibilità}: grazie all'adozione dello stesso framework da parte dell'azienda proponente, il team può condividere con i membri dell'azienda
+            le retrospettive degli sprint, permettendo un allineamento costante dei progressi del team con le esigenze dello stakeholder e ricevendo feedback continuo dalla proponente.
+        \item \textbf{Produttività e apprendimento}: alla fine di ogni sprint avviene una rotazione dei ruoli, permettendo a ciascun membro di apprendere le diverse funzioni del 
+            progetto. Inoltre, il cambio rapido di ruolo favorisce un livello di produttività costante, grazie alle nuove sfide che ogni membro affronta ad ogni sprint.
+        \item \textbf{Reattività}: sprint brevi consentono al team di reagire rapidamente a eventuali problemi o imprevisti che possono presentarsi durante lo sviluppo.
+        \item \textbf{Feedback continui}: la cadenza bisettimanale degli sprint permette al team di ricevere costantemente feedback sui punti di forza e sulle criticità 
+            del lavoro svolto. Le retrospettive degli sprint offrono un momento dedicato al controllo della qualità e al miglioramento dei processi.
+        \end{itemize}
+    
     \subsection{Introduzione struttura per descrizione periodi}{
 
     }
