@@ -41,7 +41,7 @@
 \newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.3.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.4.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -117,11 +117,11 @@
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Andrea Difino & Federico Simonetto & Scrittura sez 1 e inizio 2\\
+            v0.3.0 & 2025/11/23 & Andrea Difino & Federico Simonetto & Scrittura sez 1 e inizio 2\\
             \hline
-            v0.2.0 & 17/11/2025 & Andrea Difino & Francesco Marcolongo & Scrittura sez 4.2\\
+            v0.2.0 & 2025/11/17 & Andrea Difino & Francesco Marcolongo & Scrittura sez 4.2\\
             \hline
-            v0.1.0 & 16/11/2025 & Andrea Difino & Francesco Marcolongo & Prima stesura e sez. 4.1\\
+            v0.1.0 & 2025/11/16 & Andrea Difino & Francesco Marcolongo & Prima stesura e sez. 4.1\\
             \hline
         \end{tabular}
     \end{center}
@@ -247,13 +247,31 @@
         \end{itemize}
     
     \subsection{Introduzione struttura per descrizione periodi}{
-
+        In questa sezione viene riportata la struttura che il team utilizzerà per descrivere ogni singolo sprint. Come riportato nella sezione precedente, il team ha scelto il modello
+        di sviluppo Scrum e ritiene quindi necessario suddividere le informazioni relative a ciascun periodo in due sottosezioni: 
+        \begin{itemize}
+            \item \textbf{pianificazione}: le attività previste, assegnate e programmate dal team per lo sprint.
+            \item \textbf{esito reale}: resoconto a posteriori di ciò che ha funzionato, di ciò che non è andato come previsto e delle ore/costi effettivamente sostenuti.
+        \end{itemize}    
     }
     \subsection{Struttura della pianificazione}{
-        
+        \begin{enumerate}
+            \item \textbf{Titolo}: titolo dello sprint che di solito rappresenta il numero dello sprint.
+            \item \textbf{Periodo}: data di inizio e date di fine (prevista ed effettiva) dello sprint.
+            \item \textbf{Obiettivo previsto dello sprint}: breve descrizione degli obiettivi dello sprint, accompagnata dalle azioni che si intende svolgere.
+            \item \textbf{Rischi previsti}: elenco dei rischi che il team si aspetta di incontrare nello sprint, scelti tra quelli individuati nella \autoref{subsec:rischi}.
+            \item \textbf{Preventivo}: tabella con tutti i componenti del team, i relativi ruoli di progetto e il numero di ore (prime time) che si prevede verranno dedicate allo sprint.
+        \end{enumerate}    
     }
     \subsection{Struttura dell'esito effettivo}{
-        
+        \begin{enumerate}
+            \item \textbf{Consuntivo}: tabella "Preventivo" menzionata nella sezione precedente aggiornata con le ore realmente impiegate. Le ore in eccesso rispetto alla previsione
+                sono indicate con un "+" rosso mentre le ore risparmiate con un "-" verde. Viene inoltre mostrato anche un istogramma che confronta visivamente ore pianificate e ore effettive.
+            \item \textbf{Risorse rimanenti}: tabella con tutti i ruoli di progetto che evidenzia, con un "-" rosso, i costi sostenuti per lo sprint appena concluso.
+            \item \textbf{Rischi incontrati}: elenco dei rischi che si sono effettivamente verificati durante lo sprint.
+            \item \textbf{Retrospettiva}: resoconto finale dello sprint. Si riflette su cosa è andato bene e ciò che non ha funzionato come previsto. Vengono inoltre proposte modifiche e suggerimenti
+                per migliorare il processo produttivo dello sprint successivo.
+        \end{enumerate}  
     }
 }
 
@@ -261,7 +279,8 @@
     \subsection{Introduzione}{
 
     }
-    \subsection{Rischi individuati}{
+    \subsection{Rischi individuati}
+    \label{subsec:rischi}{
         
     }
 }
@@ -294,9 +313,9 @@
     \subsection{Sprint 1 - RTB}{
         \subsubsection{Tempo}{
             \begin{itemize}
-                \item[]Inizio:  \textbf{04/11/2025} 
-                \item[]Fine prevista:  \textbf{17/11/2025} 
-                \item[]Fine reale:  \textbf{17/11/2025} 
+                \item[]Inizio:  \textbf{2025/11/04} 
+                \item[]Fine prevista:  \textbf{2025/11/17} 
+                \item[]Fine reale:  \textbf{2025/11/17} 
             \end{itemize}
         }
 
@@ -305,7 +324,7 @@
             
             \ 
             
-            \noindent In particolare, le attività previste sono: • 
+            \noindent In particolare, le attività previste sono: %• 
             
             \begin{itemize}
                 \item Aggiornamento del sito web;
