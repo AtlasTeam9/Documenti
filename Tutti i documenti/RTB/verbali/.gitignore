@@ -1,14 +1,5 @@
-#File di compilazione latex
-*.aux
-*.out
-*.synctex
-*.toc
-*.txt
-*.log
-*.synctex.gz
-*.fdb_latexmk
-*.fls
-*.xdv
-
-#solo per i verbali
+#I pdf dei verbali non sono tracciati
 *.pdf
+
+#I pdf dei verbali esterni firmati sono tracciati
+!esterni/firmati/*.pdf
