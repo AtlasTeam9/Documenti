@@ -33,7 +33,6 @@
 
 \setstretch{1.2}
 
-\graphicspath{{../../../img/}}
 
 % ----------------------------
 % Dati personalizzabili
@@ -41,11 +40,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{27/11/2025}
-\newcommand{\LogoGruppo}{AtlasLogo.png} 
+\newcommand{\DataUltimaModifica}{2025/11/27}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.1.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.2.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -124,7 +123,9 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Giacomo Giora &  & Stesura template\\
+            \VersioneDocumento & \DataUltimaModifica & & Federico Simonetto & Prima stesura prima sezione\\
+            \hline
+            v0.1.0 & 2025/11/27 & Giacomo Giora &  & Stesura template\\
             \hline
         \end{tabular}
     \end{center}
@@ -148,16 +149,49 @@
 % ----------------------------
 \section{Introduzione}{
     \subsection{Scopo del documento}{
+        Il presente documento di \textit{Analisi dei requisiti} ha l'obiettivo di definire in modo chiaro, completo e verificabile l'insieme dei requisiti funzionali e non funzionali del prodotto software che il team
+        di sviluppo realizzerà.
+        \newline
+        I requisiti presenti nel documento saranno classificati secondo il seguente livello di priorità:
+        \begin{itemize}
+            \item \textbf{Obbligatorio:} requisito indispensabile, esplicitamente richiesto dallo stakeholder;
+            \item \textbf{Desiderabile:} requisito non essenziale, ma in grado di apportare un valore aggiunto riconoscibile;
+            \item \textbf{Opzionale:} requisito di importanza secondaria, la cui implementazione può essere rimandata o valutata in base a tempi e risorse disponibili.
+        \end{itemize}   
+        Lo scopo dell'analisi dei requisiti non è descrivere le soluzioni tecniche adottate per l'implementazione, bensì definire in maniera concettuale le funzionalità del sistema. 
+        In particolare, il documento si concentra su cosa il sistema deve fare, procedendo in modo gerarchico dall'esterno del sistema (utente e contesto) verso i suoi componenti interni.
+        \newline
+        In particolare questo documento cerca di garantire le seguenti qualità:
+        \begin{itemize}
+            \item \textbf{Completezza:} tutti i requisiti rilevanti sono identificati e descritti in maniera esaustiva;
+            \item \textbf{Chiarezza:} ogni requisito è formulato in maniera comprensibile e non ambigua, anche grazie all'uso di strumenti di modellazione semiformali, 
+                quali diagrammi e user story.
+            \item \textbf{Coerenza:} i requisiti non si contraddicono fra loro e sono uniformi nella terminologia utilizzata;
+            \item \textbf{Verificabilità:} ciascun requisito è formulato in modo tale da poter essere verificato tramite test o validazione;
+            \item \textbf{Tracciabilità:} ogni requisito è identificato e può essere ricondotto ad una specifica esigenza dello stakeholder;
+            \item \textbf{Modificabilità:} la struttura del documento consente di apportare modifiche senza comprometterne la coerenza complessiva.
+        \end{itemize}  
     }
 
     \subsection{Glossario}{
+        All'interno della documentazione prodotta dal team possono comparire termini suscettibili di incomprensioni o ambiguità. Per evitare questo, è disponibile un glossario 
+        contenente i termini tecnici e le loro definizioni. Un termine è consultabile nel glossario se è indicato con la notazione \textbf{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
+        Premendo sulla G a pedice, l'utente verrà indirizzato alla pagina web del glossario.
     }
 
     \subsection{Riferimenti}{
         \subsubsection{Riferimenti normativi}{
+            \begin{itemize}
+                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+            \end{itemize}
         }
 
         \subsubsection{Riferimenti informativi}{
+            \begin{itemize}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Regolamento del progetto didattico}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Gestione di progetto}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Analisi dei requisiti}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf}
+            \end{itemize}
         }
     }
 }
@@ -331,3 +365,5 @@
 }
 
 \end{document}
+  
+
