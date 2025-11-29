@@ -1,0 +1,333 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgf-pie}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{caption}
+
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+\graphicspath{{../../../img/}}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloDocumento}{Analisi dei Requisiti}
+\newcommand{\DataUltimaModifica}{27/11/2025}
+\newcommand{\LogoGruppo}{AtlasLogo.png} 
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneDocumento}{v0.1.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoDocumento}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Documento: \TipoDocumento}
+\fancyfoot[C]{\thepage}
+
+% larghezza della colonna dei nomi
+\newlength{\namecol}
+\setlength{\namecol}{4.5cm}
+
+\newlength{\colw}
+\setlength{\colw}{1.5cm}
+
+\definecolor{mioverde}{RGB}{20,150,60}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+
+    \begin{center}
+
+        % Logo
+        \vspace*{0cm}
+        \begin{tikzpicture}
+            \clip (0,-0.1) circle (5.6cm);
+            \node at (0,0) {\includegraphics[width=12cm]{\LogoGruppo}};
+        \end{tikzpicture}\\[0.8cm]
+
+        % Barra superiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+        % Titolo
+        \vspace{1cm}
+        {\Huge \textbf{\TitoloDocumento}}\\[0.4cm]
+        {\large Progetto di Ingegneria del Software A.A. 2025/2026}\\[0.8cm]
+        {\large Versione: \VersioneDocumento}
+        \vspace{1cm}
+
+        % Barra inferiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+    \end{center}
+
+    % Informazioni in basso
+    \vfill
+    \noindent
+    \begin{minipage}{0.5\textwidth}
+        \raggedright
+        \textbf{Autore:} \Gruppo\\
+        \textbf{Ultima modifica:} \DataUltimaModifica
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \raggedleft
+        \textbf{Tipo di documento:} \TipoDocumento
+    \end{minipage}
+
+\end{titlepage}
+
+
+\section*{Registro delle modifiche}{
+    \begin{center}
+    \rowcolors{2}{lightblue}{white}
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \rowcolor{lightgray}
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneDocumento & \DataUltimaModifica & Giacomo Giora &  & Stesura template\\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+
+\newpage
+
+\listoftables
+
+\newpage
+% ----------------------------
+% Inizio contenuto
+% ----------------------------
+\section{Introduzione}{
+    \subsection{Scopo del documento}{
+    }
+
+    \subsection{Glossario}{
+    }
+
+    \subsection{Riferimenti}{
+        \subsubsection{Riferimenti normativi}{
+        }
+
+        \subsubsection{Riferimenti informativi}{
+        }
+    }
+}
+
+\newpage
+
+\section{Descizione generale}{
+    \subsection{Obiettivi del prodotto}{
+    }
+
+    \subsection{Funzioni del prodotto}{
+    }
+
+    \subsection{Caratteristiche utente}{
+    }
+
+    \subsection{Tecnologie e struttura del prodotto}{
+    }
+}
+
+\newpage
+% ----------------------------
+% Casi d'uso
+% ----------------------------
+\section{Casi d'uso}{
+    \subsection{Obiettivi}{
+    }
+
+    \subsection{Attori}{
+    }
+
+    \subsection{Elenco casi d'uso}{
+
+        \subsubsection{UC1 - Titolo caso d'uso}
+        \label{uc:uc1}
+        Testo del caso d'uso padre...
+
+            \paragraph{UC1.1 - Titolo sottocaso d'uso} \mbox{} \\
+            Testo del sottocaso d'uso... 
+
+            \paragraph{UC1.2 - Titolo sottocaso d'uso} \mbox{} \\
+            Testo del sottocaso d'uso...
+
+        \subsubsection{UC2 - Titolo caso d'uso}
+        \label{uc:uc2}
+        Testo del caso d'uso padre...
+
+            \paragraph{UC2.1 - Titolo sottocaso d'uso} \mbox{} \\
+            Testo del sottocaso d'uso...
+
+            \paragraph{UC2.2 - Titolo sottocaso d'uso} \mbox{} \\
+            Testo del sottocaso d'uso...
+    }
+}
+
+\newpage
+% ----------------------------
+% Requisiti
+% ----------------------------
+\section{Requisiti}{
+    \subsection{Requisiti funzionali}{
+        Scrivere i requisiti funzionali qui. I requisiti funzionali sono: le funzionalità che il sistema deve offrire agli utenti finali per soddisfare le loro esigenze e aspettative.
+        
+        \begin{table}[H]
+        \centering
+        \rowcolors{2}{lightblue}{white}
+            \begin{tabular}{|l|l|l|l|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Rilevanza} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1} \\
+                \hline
+                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1}, \hyperref[uc:uc2]{UC2} \\
+                \hline
+            \end{tabular}
+            \caption{Tabella dei requisiti funzionali} 
+            \label{tab:requisiti-funzionali}
+        \end{table}
+    }
+
+    \subsection{Requisiti di qualità}{
+        Scrivere i requisiti di qualità qui. I requisiti di qualità sono: le caratteristiche non funzionali che il sistema deve possedere, come prestazioni, usabilità, affidabilità, sicurezza, ecc.
+
+        \begin{table}[H]
+        \centering
+        \rowcolors{2}{lightblue}{white}
+            \begin{tabular}{|l|l|l|l|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Rilevanza} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1} \\
+                \hline
+                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1}, \hyperref[uc:uc2]{UC2} \\
+                \hline
+            \end{tabular}
+            \caption{Tabella dei requisiti di qualità} 
+            \label{tab:requisiti-qualita}
+        \end{table}
+    }
+
+    \subsection{Requisiti di vincolo}{
+        Scrivere i requisiti di vincolo qui. I requisiti di vincolo sono: le limitazioni o condizioni imposte al sistema, come vincoli tecnologici, normativi, di budget, di tempo, ecc.
+
+        \begin{table}[H]
+        \centering
+        \rowcolors{2}{lightblue}{white}
+            \begin{tabular}{|l|l|l|l|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Rilevanza} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1} \\
+                \hline
+                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1}, \hyperref[uc:uc2]{UC2} \\
+                \hline
+            \end{tabular}
+            \caption{Tabella dei requisiti di vincolo} 
+            \label{tab:requisiti-vincolo}
+        \end{table}
+    }
+}
+
+\newpage
+
+\section{Tracciamento dei Requisiti}{
+    \begin{table}[H]
+    \centering
+    \rowcolors{2}{lightblue}{white}
+        \begin{tabular}{|p{5cm}|p{5cm}|}
+            \hline
+            \rowcolor{gold}
+            \textbf{Fonte} & \textbf{Requisito} \\
+            \hline
+            Capitolato & Id requisito \\
+            \hline
+            UC1 & Id requisito \\
+            \hline
+        \end{tabular}
+        \caption{Tabella di tracciamento dei requisiti} 
+        \label{tab:tracciamento-requisiti}
+    \end{table}
+
+    \subsection{Riepilogo}{
+        \begin{table}[H]
+        \centering
+        \rowcolors{2}{lightblue}{white}
+            \begin{tabular}{|l|l|l|l|l|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Desiderabili} & \textbf{Opzionali} & \textbf{Totali} \\
+                \hline
+                Funzionali & XX & XX & XX & XX \\
+                \hline
+                Qualità & XX & XX & XX & XX \\
+                \hline
+                Vincolo & XX & XX & XX & XX \\
+                \hline
+                \textbf{Totali} & \textbf{XX} & \textbf{XX} & \textbf{XX} & \textbf{XX} \\
+                \hline
+            \end{tabular}
+            \caption{Riepilogo dei requisiti} 
+            \label{tab:riepilogo-requisiti}
+        \end{table}
+    }
+
+    \subsection{Conclusioni}{
+        I requisiti individuati sono soggetti a possibili variazioni durante l'evoluzione del progetto, al fine di apportare miglioramenti e aggiornamenti. Nel corso del ciclo di vita del progetto sarà valutata l'opportunità di integrare ulteriori requisiti per elevare la qualità complessiva del prodotto. Tali modifiche verranno considerate progressivamente, seguendo un approccio di miglioramento continuo.
+    }
+}
+
+\end{document}
