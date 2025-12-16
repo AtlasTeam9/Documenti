@@ -1,0 +1,195 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/11/25}
+\newcommand{\NumeroVerbaleEsterno}{Quarto}
+\newcommand{\OraInizio}{15:30}
+\newcommand{\OraFine}{16:40}
+\newcommand{\LuogoVerbale}{Chiamata Discord}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoVerbale}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \TipoVerbale \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \TipoVerbale \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        Andrea Difino & SI & Amministratore\\ 
+        Federico Simonetto & SI & Verificatore\\
+        Riccardo Valerio & SI & Responsabile\\
+        Francesco Marcolongo & SI & Responsabile\\
+        Michele Tesser & SI & Analista\\
+        Giacomo Giora & SI & Amministratore\\
+        Bilal Sabic & SI & Progettista\\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneVerbale & 2025/11/27 & Andrea Difino & Federico Simonetto & Correzione errori \\
+            \hline
+            v0.1.0 & \DataVerbale & Team &  & Prima stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Scelta delle tecnologie da utilizzare
+        \item Aggiornamento sullo stato del glossario
+        \item Cambiare metodologia di lavoro
+        \item Discussione su Piano di progetto e Analisi dei requisiti
+    \end{itemize}
+}
+\
+
+\section{Discussione}{
+ 	\subsection{Scelta delle tecnologie da utilizzare} {
+	    La scelta delle tecnologie adottate si inserisce direttamente nell’attività descritta
+        nella decisione A1-2025/11/12\_vi. Abbiamo definito React come framework per l’interfaccia, TOML per la struttura degli alberi, JSON e CSV per la gestione dei documenti dei dispositivi e dei relativi asset, mentre Python e in particolare FastAPI sono stati selezionati per il backend.
+	}
+	\subsection{Aggiornamento sullo stato del glossario} {
+	    Il glossario sul sito del team é stato aggiornato in riferimento all'attività A2-2025/11/12\_vi.
+	}
+	\subsection{Cambiare metodologia di lavoro} {
+	      Si è discussa la struttura dei branch sulla repo Github del gruppo, in modo da ridurre al minimo il conflitto nella scrittura di documenti. Inoltre, si è deciso di utlizzare Overleaf per la scrittura e la visualizzazione in contemporanea, sfruttando l'accesso dallo stesso account.
+	}
+    \subsection{Discussione su Piano di progetto e Analisi dei requisiti} {
+	    In questa fase sono state completate le prime sezioni del Piano di progetto, includendo anche quella dedicata al primo sprint, così da definire l’impostazione iniziale del lavoro e la sua articolazione nel breve periodo. Per quanto riguarda l’Analisi dei requisiti è stato predisposto il template del documento e redatte alcune delle sezioni introduttive, stabilendo così la struttura di riferimento su cui proseguirà l’attività di dettaglio.
+	}
+	
+}
+
+\section{Decisioni prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{12cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D1-\DataVerbale\_vi & Cambiato il way of working \\
+        \hline
+	        D2-\DataVerbale\_vi & Abbiamo scelto le seguenti tecnologie: React, FastAPI, JSON, TOML \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\section{Attivitá da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A1-\DataVerbale\_vi & Scrivere il secondo sprint nel Pdp  & \#54 & Responsabili \\
+        \hline
+	        A2-\DataVerbale\_vi & Studiare le tecnologie scelte  & - & Team \\
+        \hline
+	        A3-\DataVerbale\_vi & Preparare prossimo incontro con l'azienda & - & Team \\
+        \hline
+            A4-\DataVerbale\_vi & Iniziare la sezione 2 del documento Analisi dei requisiti & \#55 & Analista \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+
+\end{document}
