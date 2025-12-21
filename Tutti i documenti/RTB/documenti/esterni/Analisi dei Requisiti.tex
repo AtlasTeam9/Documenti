@@ -7,6 +7,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{amssymb}
 \usepackage[table]{xcolor}
 \definecolor{lightblue}{RGB}{225,240,255}
 \definecolor{gold}{RGB}{255,215,0}
@@ -40,11 +43,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2025/11/27}
+\newcommand{\DataUltimaModifica}{2025/12/19}
 \newcommand{\LogoGruppo}{img/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.2.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.6.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -115,21 +118,33 @@
 \end{titlepage}
 
 
-\section*{Registro delle modifiche}{
+\section*{Registro delle modifiche}
     \begin{center}
-    \rowcolors{2}{lightblue}{white}
-        \begin{tabular}{|l|l|l|l|l|}
+    \rowcolors{2}{lightblue}{white} 
+        \begin{tabularx}{\textwidth}{|l|l|l|X|X|}
             \hline
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & & Federico Simonetto & Prima stesura prima sezione\\
+            \VersioneDocumento & \DataUltimaModifica & Andrea Difino & Giacomo Giora, Federico Simonetto & Aggiunti e sistemati UC da 1 a 12 \\
             \hline
-            v0.1.0 & 2025/11/27 & Giacomo Giora &  & Stesura template\\
+            v0.5.2 & 2025/12/15 & Riccardo Valerio & Giacomo Giora, Federico Simonetto & Migliorata coerenza \\
             \hline
-        \end{tabular}
+            v0.5.1 & 2025/12/07 & Michele Tesser & Riccardo Valerio & Link glossario \\
+            \hline
+            v0.5.0 & 2025/12/06 & Andrea Difino & Bilal Sabic & Aggiunte estensioni UC1 \\
+            \hline
+            v0.4.0 & 2025/12/04 & Andrea Difino & Bilal Sabic & Migliorata sez 2 e primo caso d'uso \\
+            \hline
+            v0.3.0 & 2025/11/28 & Michele Tesser & Federico Simonetto & Stesura sez 2 e inizio 3\\
+            \hline
+            v0.2.0 & 2025/11/27 & Giacomo Giora & Federico Simonetto & Prima stesura prima sezione\\
+            \hline
+            v0.1.0 & 2025/11/27 & Giacomo Giora & & Stesura template\\
+            \hline
+        \end{tabularx}
     \end{center}
-}
+
 
 \newpage
 
@@ -145,12 +160,13 @@
 
 \newpage
 % ----------------------------
-% Inizio contenuto
+% Inizio contenuto verbale
 % ----------------------------
 \section{Introduzione}{
     \subsection{Scopo del documento}{
-        Il presente documento di \textit{Analisi dei requisiti} ha l'obiettivo di definire in modo chiaro, completo e verificabile l'insieme dei requisiti funzionali e non funzionali del prodotto software che il team
-        di sviluppo realizzerà.
+        Il presente documento di \textit{Analisi dei requisiti} ha l'obiettivo di definire in modo chiaro, completo e verificabile l'insieme dei requisiti funzionali e non funzionali che il team \textit{Atlas} ha individuato nel corso dello sviluppo del progetto \textit{Automated EN18031 Compliance Verification}.
+        \newline
+        A tal fine, il documento include una descrizione approfondita dei Casi d'Uso, da cui derivano i requisiti elencati. Tali Casi d'Uso sono illustrati tramite diagrammi che utilizzano la notazione UML, per formalizzarne la descrizione.
         \newline
         I requisiti presenti nel documento saranno classificati secondo il seguente livello di priorità:
         \begin{itemize}
@@ -175,7 +191,7 @@
 
     \subsection{Glossario}{
         All'interno della documentazione prodotta dal team possono comparire termini suscettibili di incomprensioni o ambiguità. Per evitare questo, è disponibile un glossario 
-        contenente i termini tecnici e le loro definizioni. Un termine è consultabile nel glossario se è indicato con la notazione \textbf{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
+        contenente i termini tecnici e le loro definizioni. Un termine è consultabile nel glossario se è indicato con la notazione \textit{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
         Premendo sulla G a pedice, l'utente verrà indirizzato alla pagina web del glossario.
     }
 
@@ -191,6 +207,7 @@
                 \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Regolamento del progetto didattico}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf}
                 \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Gestione di progetto}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf}
                 \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Analisi dei requisiti}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Analisi e descrizione delle funzionalità: Use Case e relativi diagrammi (UML)}\newline \url{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf} 
             \end{itemize}
         }
     }
@@ -198,17 +215,31 @@
 
 \newpage
 
-\section{Descizione generale}{
+\section{Descrizione generale}{
     \subsection{Obiettivi del prodotto}{
+       Il prodotto ha l'obiettivo di supportare la verifica automatizzata della conformità dei dispositivi radio ai requisiti di sicurezza informatica definiti dalla Direttiva RED mediante l'uso di decision trees interattivi.
     }
 
     \subsection{Funzioni del prodotto}{
+        Il sistema permette all’utente di visualizzare e interagire con i decision trees per la verifica automatizzata della conformità normativa degli asset analizzati.
+        \newline
+        Le sue principali funzionalità includono:
+        \begin{itemize}
+            \item \textbf{Importazione da file:} il sistema deve consentire di importare file contenenti gli asset del dispositivo da analizzare, in formati strutturati standard;
+            \item \textbf{Creazione di asset:} il sistema permette la creazione diretta degli asset tramite interfaccia web, nel caso non sia disponibile un file di input predefinito;
+            \item \textbf{Interazione con i decision trees:} per ciascun asset, il sistema mostra i decision trees pertinenti attraverso una rappresentazione grafica intuitiva, facilitando la comprensione del flusso decisionale;
+            \item \textbf{Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (PDF, JSON, ecc.) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
+            \item \textbf{(Opzionale) Possibilità di modifica dei decision trees:} il sistema deve permettere all'utente di intervenire direttamente sui decision trees per adattarli a specifici casi di valutazione o a versioni aggiornate degli standard.
+        \end{itemize}    
     }
 
     \subsection{Caratteristiche utente}{
+        Gli utenti di \textit{EN18031 - Automated Compliance Verification} appartengono alla categoria degli utenti esperti. Essi possiedono competenze tecniche in ambito di sicurezza informatica e normativa europea e utilizzano il sistema per verificare la conformità dei dispositivi agli standard di sicurezza vigenti.
     }
 
     \subsection{Tecnologie e struttura del prodotto}{
+        Il progetto si basa sulla realizzazione di un tool interattivo per la verifica della conformità allo standard EN 18031. L'architettura del sistema è di tipo data-driven, dove la logica decisionale è definita dinamicamente attraverso un set strutturato di file organizzati secondo una gerarchia logica che guida l'interazione con l'utente.
+        Il prodotto si presenterà sotto forma di applicazione web e sarà consultabile dalla maggior parte dei browser.
     }
 }
 
@@ -218,32 +249,591 @@
 % ----------------------------
 \section{Casi d'uso}{
     \subsection{Obiettivi}{
+        La presente sezione riporta l'elenco dei Casi d'Uso individuati dal team di progetto a seguito di un'accurata analisi del capitolato e di diversi incontri di chiarimento effettuati con 
+        l'azienda proponente.
+        \newline
+        Oltre alla descrizione dei Casi d'Uso, vengono presentati anche i relativi diagrammi, che consentono una migliore comprensione degli attori coinvolti e delle funzionalità 
+        offerte dal sistema.  
     }
 
     \subsection{Attori}{
+        L'attore del sistema è uno solo: l'utente finale che potrà usare l'applicazione per effettuare le verifiche di sicurezza. Il team, assieme all'azienda proponente, ha deciso che non saranno necessarie altre tipologie di attori.
+        \begin{center}
+            \begin{figure}[H]
+                \centering
+                %\includegraphics[scale=0.55]{img/attore.png}
+                \caption{Attore principale}
+                \label{fig:attore-principale}
+            \end{figure}
+        \end{center}
+        
     }
 
-    \subsection{Elenco casi d'uso}{
+    \subsection{Elenco Casi d'Uso}{
 
-        \subsubsection{UC1 - Titolo caso d'uso}
+        Ogni caso d'uso sarà riportato secondo la seguente struttura:
+        \begin{itemize}
+            \item \textbf{Caso d'uso:} codice e nome del Caso d'Uso;
+            \item \textbf{Attore:} attore dello scenario;
+            \item \textbf{Precondizioni:} condizioni che devono essere soddisfatte affinchè l'attore possa accedere al Caso d'Uso;
+            \item \textbf{Postcondizioni:} stato del sistema dopo che il caso d'uso si è verificato;
+            \item \textbf{Scenario principale:} azioni che l'attore esegue per utilizzare la funzionalità descritta nel Caso d'Uso;
+            \item \textbf{Scenario alternativo:} Descrizione ragionevole degli eventi che possono accadere qualora una delle operazioni descritte nello \textbf{scenario principale} non vada a buon fine
+            \item \textbf{Estensioni:} Ulteriori Casi d’Uso che possono manifestarsi nel corso dell’esecuzione delle operazioni previste dal Caso d’Uso principale.
+            \item \textbf{Inclusioni:} Ulteriori Casi d’Uso che l’Attore è tenuto a eseguire per completare l’implementazione del Caso d’Uso attualmente in esame.
+        \end{itemize}  
+
+
+        \subsubsection{UC1 - Caricamento del dispositivo}
         \label{uc:uc1}
-        Testo del caso d'uso padre...
 
-            \paragraph{UC1.1 - Titolo sottocaso d'uso} \mbox{} \\
-            Testo del sottocaso d'uso... 
+         \begin{center}
+            \begin{figure}[H]
+                \centering
+                %\includegraphics[scale=0.58]{img/UC1.png}
+                \caption{UC1 - Caricamento del dispositivo}
+                \label{fig:uc1-sistema}
+            \end{figure}
+        \end{center}
+        
+        \begin{itemize}
+            \item \textbf{Attore principale}: Utente
+            \item \textbf{Pre-condizioni}:
+            \begin{itemize}
+                \item Il Sistema si trova allo stato iniziale
+            \end{itemize}
+            \item \textbf{Post-condizioni}:
+            \begin{itemize}
+                \item L’Utente visualizza una dashboard riassuntiva del dispositivo caricato
+            \end{itemize}
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item Il Sistema é avviato 
+                \item Il Sistema carica i decision Tree
+                \item L’Utente seleziona il pulsante per la funzionalità di caricamento del dispositivo
+                \item L’Utente carica il dispositivo nel Sistema
+                \item Il Sistema porta l’utente nella sezione “Resoconto caricamento”
+            \end{itemize}
+            \item \textbf{Scenario alternativo}:
+            \begin{itemize}
+                \item Il Sistema é avviato 
+                \item Il Sistema carica i decision Tree
+                \item L’Utente seleziona il pulsante per la funzionalità di caricamento del dispositivo
+                \item L’Utente carica il dispositivo nel Sistema
+                \item Il Sistema rileva che il file del dispositivo non é valido [\hyperref[uc:uc2]{UC2}] 
+            \end{itemize}
+            \item \textbf{Inclusioni}: Nessuna inclusione
+            \item \textbf{Estensioni}:
+            \begin{itemize}
+                \item[-] [\hyperref[uc:uc2]{UC2}] 
+            \end{itemize}
+        \end{itemize}
 
-            \paragraph{UC1.2 - Titolo sottocaso d'uso} \mbox{} \\
-            Testo del sottocaso d'uso...
-
-        \subsubsection{UC2 - Titolo caso d'uso}
+        \subsubsection{UC2 - Rilevamento file non valido}
         \label{uc:uc2}
-        Testo del caso d'uso padre...
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Pre-condizioni}:
+                    \begin{itemize}
+                        \item L’Utente ha selezionato una funzionalitá che prevede un caricamento di file esterno e il file presenta errori di struttura o contenuto.
+                    \end{itemize}
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item Il Sistema chiede all’utente se vuole tornare alla home o se vuole riprovare il caricamento del file
+                    \end{itemize}
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente seleziona la funzionalitá di caricamento del dispositivo
+                        \item L'Utente seleziona il file
+                        \item Il Sistema analizza il file e vede che non é valido
+                        \item Il Sistema chiede all’utente se vuole tornare alla home o se vuole riprovare il caricamento del file
+                    \end{itemize}
+                \end{itemize}  
 
-            \paragraph{UC2.1 - Titolo sottocaso d'uso} \mbox{} \\
-            Testo del sottocaso d'uso...
+        \subsubsection{UC3 - Visualizzazione dispositivo}
+        \label{uc:uc3}
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    %\includegraphics[scale=0.58]{img/UC3.png}
+                    \caption{UC3 - Visualizzazione dispositivo}
+                    \label{fig:uc3-sistema}
+                \end{figure}
+            \end{center}
+            \begin{itemize}
+                \item \textbf{Attore principale}: Utente
+                \item \textbf{Pre-condizioni}:
+                \begin{itemize}
+                    \item L’Utente ha importato con successo un file e il Sistema ha caricato il dispositivo corrispondente.
+                \end{itemize}
+                \item \textbf{Post-condizioni}:
+                \begin{itemize}
+                    \item Il Sistema mostra all’utente il dispositivo caricato
+                \end{itemize}
+                \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item Il Sistema recupera il dispositivo caricato dall’Utente.
+                        \item L’Utente si trova nella sezione “Resoconto caricamento”
+                        \item Il Sistema mostra il nome del dispositivo
+                    \end{itemize}
+                \item \textbf{Inclusioni}: Nessuna Inclusione
+                \item \textbf{Estensioni}:
+                \begin{itemize}
+                    \item[-] [\hyperref[uc:uc4]{UC4}] 
+                \end{itemize}
+                \end{itemize}  
+                
+         \subsubsection{UC4 - Espandi informazioni dispositivo}
+            \label{uc:uc4}
+                        \begin{itemize}
+                            \item \textbf{Attore principale}: Utente
+                            \item \textbf{Pre-condizioni}:
+                            \begin{itemize}
+                                \item Un dispositivo è già visualizzato
+                            \end{itemize}
+                            \item \textbf{Post-condizioni}:
+                            \begin{itemize}
+                                \item Il Sistema mostra la lista degli asset appartenenti al dispositivo
+                            \end{itemize}
+                            \item \textbf{Scenario principale}:
+                            \begin{itemize}
+                                \item L’Utente seleziona la funzionalità per espandere le informazioni sul dispositivo
+                                \item Il Sistema recupera gli asset associati al dispositivo 
+                                \item Il Sistema mostra la lista degli asset [\hyperref[uc:uc4.1]{UC4.1}]
+                            \end{itemize}
+                            \item \textbf{Inclusioni}:
+                            \begin{itemize}
+                                \item[-] [\hyperref[uc:uc4.1]{UC4.1}] 
+                            \end{itemize} 
+                            \item \textbf{Estensioni}: [\hyperref[uc:uc9]{UC9}] 
+                        \end{itemize}   
 
-            \paragraph{UC2.2 - Titolo sottocaso d'uso} \mbox{} \\
-            Testo del sottocaso d'uso...
+                        Il Caso d’Uso UC4 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                %\includegraphics[scale=0.58]{img/UC4Inclusioni.png}
+                                \caption{UC4 -  Inclusioni Caso d'Uso 4: UC4.1}
+                                \label{fig:uc4-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+                \paragraph{UC4.1 - Visualizzazione lista assets dispositivo} \mbox{}
+                \label{uc:uc4.1}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Pre-condizioni}:
+                    \begin{itemize}
+                        \item L’Utente ha richiesto l’espansione degli asset del dispositivo
+                    \end{itemize}
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item Il Sistema mostra la lista ordinata dei nomi e dei tipi degli asset appartenenti al dispositivo
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item Il Sistema ottiene l’elenco degli asset del dispositivo
+                        \item Il Sistema ordina la lista secondo l’ordine definito nel file
+                        \item Il Sistema visualizza la lista dei nomi degli asset associati al loro tipo 
+                    \end{itemize}
+                \end{itemize} 
+
+        \subsubsection{UC5 - Esecuzione del test}
+        \label{uc:uc5} 
+         \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    %\includegraphics[scale=0.58]{img/UC5.png}
+                    \caption{UC5 - Esecuzione del test}
+                    \label{fig:uc5-sistema}
+                \end{figure}
+            \end{center}
+        \begin{itemize}
+                \item \textbf{Attore principale}: Utente
+                \item \textbf{Pre-condizioni}:
+                \begin{itemize}
+                    \item L’Utente si trova nella sezione  “Resoconto caricamento” e seleziona il pulsante per l‘avvio del test. I file dei decision tree interni necessari sono disponibili e leggibili
+                \end{itemize}
+                \item \textbf{Post-condizioni}:
+                \begin{itemize}
+                    \item L’Utente si trova nella sezione “Risultati finali Test”
+                \end{itemize}
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente si trova nella sezione  “Resoconto caricamento”
+                    \item L’Utente clicca il pulsante per avviare la funzionalitá di avvio del test 
+                    \item Il Sistema determina la prima domanda in base a (decision tree + asset corrente)
+                    \item Il Sistema porta l’Utente nella sezione  “Test” e mostra:
+                    \begin{itemize}
+                        \item[a)] percentuale avanzamento,
+                        \item[b)] info dispositivo e asset,
+                        \item[c)] domanda [\hyperref[uc:uc5.1]{UC5.1}] 
+                    \end{itemize}
+                    \item L’utente risponde SÌ o NO
+                    \item Il sistema registra la risposta e determina la prossima domanda (o nodo finale) in base a:
+                    \begin{itemize}
+                        \item[a)] risposta data,
+                        \item[b)] decision tree,
+                        \item[c)] asset analizzato.
+                    \end{itemize}
+                    \item Il sistema aggiorna percentuale e contenuti e torna al passo 5 finché il test termina.
+                \end{itemize}
+                \item \textbf{Inclusioni}: [\hyperref[uc:uc5.1]{UC5.1}] 
+                \item \textbf{Estensioni}: 
+                \begin{itemize}
+                    \item[-] [\hyperref[uc:uc6]{UC6}] 
+                    \item[-] [\hyperref[uc:uc7]{UC7}] 
+                    \item[-] [\hyperref[uc:uc8]{UC8}] 
+                    \item[-] [\hyperref[uc:uc9]{UC9}] 
+                \end{itemize} 
+        \end{itemize}   
+
+        Il Caso d’Uso UC5 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                %\includegraphics[scale=0.58]{img/UC5Inclusioni.png}
+                                \caption{UC5 -  Inclusioni Caso d'Uso 5: UC5.1}
+                                \label{fig:uc5-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+                \paragraph{UC5.1 - Visualizzazione domanda} \mbox{}
+                \label{uc:uc5.1}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item Il Sistema mostra la domanda relativa al nodo del decision Tree corrente
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L’Utente entra nella sezione “Esecuzione del test”
+                        \item Il Sistema mostra all’Utente la domanda corrente del decision Tree
+                        \item La domanda é identificata da: 
+                        \begin{itemize}
+                            \item[a) ] Un nome univoco collegato al nodo del decision Tree
+                            \item[b)] Il testo della domanda stessa
+                        \end{itemize}
+                    \end{itemize}
+                \end{itemize} 
+
+        \subsubsection{UC6 - Caricamento domanda precedente}
+        \label{uc:uc6}
+
+        \begin{itemize}
+            \item \textbf{Attore principale}: Utente
+            \item \textbf{Pre-condizioni}:
+            \begin{itemize}
+                \item Il test è in corso nella sezione “Test”. Esiste almeno una domanda precedente nella cronologia (non si è alla prima)
+            \end{itemize}
+            \item \textbf{Post-condizioni}:
+            \begin{itemize}
+                \item  Il Sistema mostra la domanda precedente e i relativi dati (header invariato: dispositivo/asset; cambia solo la domanda). Viene creata ed aggiornata la storia in avanti, quindi la freccia avanti diventa utilizzabile.
+            \end{itemize}
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente preme il pulsante per tornare alla domanda precedente
+                \item Il Sistema sposta il puntatore alla domanda precedente nella cronologia 
+                \item Il Sistema mostra la domanda precedente (con percentuale e identificativi coerenti con lo stato mostrato)
+            \end{itemize} 
+        \end{itemize}   
+
+        \subsubsection{UC7 - Caricamento domanda successiva}
+        \label{uc:uc7}
+
+        \begin{itemize}
+            \item \textbf{Attore principale}: Utente
+            \item \textbf{Pre-condizioni}:
+            \begin{itemize}
+                \item Il test è in corso nella sezione “Test”.  Esiste una domanda successiva nella storia in avanti (cioè l’utente ha usato UC8 almeno una volta)
+            \end{itemize}
+            \item \textbf{Post-condizioni}:
+            \begin{itemize}
+                \item   Il Sistema mostra la domanda successiva nella storia in avanti. Se si raggiunge l’ultima, la freccia avanti torna disabilitata.
+            \end{itemize}
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente non ha apportato alcuna modifica alla risposta
+                \item L’Utente preme il pulsante per tornare alla domanda successiva
+                \item Il Sistema avanza nella storia in avanti
+                \item Il Sistema mostra la domanda corrispondente 
+            \end{itemize} 
+            \item \textbf{Scenario alternativo}:
+            \begin{itemize}
+                \item L’Utente ha modificato la risposta e ha quindi invalidato la storia successiva
+                \item Il Sistema cancella la storia successiva
+                \item Il Sistema porta l’Utente al nodo seguente del Decision Tree che ora risulta senza risposta
+            \end{itemize} 
+        \end{itemize}   
+
+        \subsubsection{UC8 - Uscita dal test non concluso}
+        \label{uc:uc8}
+        
+        \begin{itemize}
+            \item \textbf{Attore principale}: Utente
+            \item \textbf{Pre-condizioni}:
+            \begin{itemize}
+                \item Il test é ancora in corso e quindi non si trova nello stato “completato”
+            \end{itemize}
+            \item \textbf{Post-condizioni}:
+            \begin{itemize}
+                \item Il Sistema marca la sessione come incompleta e salva i progressi.
+            \end{itemize}
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente esce dalla sezione “Test”
+                \item Il Sistema esegue [\hyperref[uc:uc8.1]{UC8}]  – Salvataggio del test parziale
+                \item Il Sistema porta l’utente alla pagina principale
+            \end{itemize} 
+        \end{itemize}   
+
+         Il Caso d’Uso UC8 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                %\includegraphics[scale=0.58]{img/UC8Inclusioni.png}
+                                \caption{UC8 -  Inclusioni Caso d'Uso 8: UC8.1}
+                                \label{fig:uc8-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+                \paragraph{UC8.1 - Salvataggio del test parziale} \mbox{}
+                \label{uc:uc8.1}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item Il Sistema salva sul dispositivo dell’Utente lo stato del test non completato
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item Il Sistema serializza lo stato della sessione.
+                        \item Il Sistema salva lo stato su un file.
+                        \item Il Sistema conferma il salvataggio.
+                    \end{itemize}
+                \end{itemize} 
+
+        \subsubsection{UC9 - Completamento del test}
+        \label{uc:uc9}
+
+        \begin{itemize}
+            \item \textbf{Attore principale}: Utente
+            \item \textbf{Pre-condizioni}:
+            \begin{itemize}
+                \item L’Utente raggiunge un nodo finale nel percorso del decision tree per ogni asset
+            \end{itemize}
+            \item \textbf{Post-condizioni}:
+            \begin{itemize}
+                \item Il Sistema marca il test come completato e porta l’Utente alla sezione “Risultati finali test” 
+            \end{itemize}
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item Il Sistema rileva che non ci sono ulteriori domande (nodo terminale)
+                \item Il Sistema calcola e registra l’esito 
+                \item Il Sistema marca la sessione come completata
+                \item Il Sistema porta l’Utente nella sezione  “Risultati finali test”
+            \end{itemize} 
+        \end{itemize}   
+        
+        \subsubsection{UC10 - Inserimento manuale dei dati del dispositivo}
+        \label{uc:uc20}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Pre-condizioni}:
+                    \begin{itemize}
+                        \item Il Sistema si trova allo stato iniziale
+                    \end{itemize}
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item  L’Utente si trova nella sezione “Inserisci dati  dispositivo”
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item Il Sistema é avviato 
+                        \item Il Sistema carica i decision Tree
+                        \item L’Utente seleziona il pulsante per la funzionalità di caricamento manuale dei dati del dispositivo
+                        \item Il Sistema porta l’utente nella sezione “Inserisci dati  dispositivo”
+                        \item L’Utente visualizza il form di inserimento dati
+                    \end{itemize}
+                    \item \textbf{Inclusioni}: [\hyperref[uc:uc11]{UC11}] 
+                    \item \textbf{Estensioni}: [\hyperref[uc:uc10.1]{UC10.1}] 
+                \end{itemize}    
+        
+        Il Caso d’Uso UC10 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                %\includegraphics[scale=0.58]{img/UC10Inclusioni.png}
+                                \caption{UC10 -  Inclusioni Caso d'Uso 10: UC10.1}
+                                \label{fig:uc10-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+                \paragraph{UC10.1 - Visualizzazione form dati dispositivo} \mbox{}
+                \label{uc:uc10.1}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item Il Sistema mostra il form di inserimento manuale dei dati
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L’Utente seleziona la funzionalitá di caricamento manuale dei dati del dispositivo
+                        \item Il Sistema porta l’Utente alla sezione “Inserisci dati dispositivo”
+                        \item L’Utente visualizza il form per l’inserimento dei dati
+                    \end{itemize}
+                    \item \textbf{Inclusioni}:
+                    \begin{itemize}
+                        \item[-] [\hyperref[uc:uc10.1.1]{UC10.1.1}] 
+                        \item[-] [\hyperref[uc:uc10.1.2]{UC10.1.2}]
+                        \item[-] [\hyperref[uc:uc10.1.3]{UC10.1.3}]
+                        \item[-] [\hyperref[uc:uc10.1.4]{UC10.1.4}]
+                        \item[-] [\hyperref[uc:uc10.1.5]{UC10.1.5}]
+                    \end{itemize}
+                \end{itemize} 
+
+                Il Caso d’Uso UC10.1 include tre ulteriori Caso d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                %\includegraphics[scale=0.58]{img/UC10.1Inclusioni.png}
+                                \caption{UC10 -  Inclusioni Caso d'Uso 10.1: UC10.1.1, UC10.1.2, UC10.1.3, UC10.1.4, UC10.1.5}
+                                \label{fig:uc10.1-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+                \paragraph{UC10.1.1 - Inserimento nome} \mbox{}
+                \label{uc:uc10.1.1}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item  Il nome è stato inserito dall’Utente
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente si trova nella sezione "Inserisci dati dispositivo"
+                        \item L'Utente inserisce il nome del dispositivo
+                    \end{itemize}
+                \end{itemize} 
+
+                \paragraph{UC10.1.2 - Inserimento sistema operativo} \mbox{}
+                \label{uc:uc10.1.2}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item Il sistema operativo è stato inserito dall’Utente
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente si trova nella sezione "Inserisci dati dispositivo"
+                        \item L'Utente inserisce il sistema operativo del dispositivo
+                    \end{itemize}
+                \end{itemize} 
+
+                \paragraph{UC10.1.3 - Inserimento versione firmware} \mbox{}
+                \label{uc:uc10.1.3}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item La versione del firmware del dispositivo è stata inserita dall’utente
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente si trova nella sezione "Inserisci dati dispositivo"
+                        \item L'Utente inserisce la versione firmware del dispositivo
+                    \end{itemize}
+                \end{itemize} 
+
+                \paragraph{UC10.1.4 - Inserimento funzionalità} \mbox{}
+                \label{uc:uc10.1.4}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item La funzionalitá del dispositivo é stata inserita dall’Utente
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente si trova nella sezione "Inserisci dati dispositivo"
+                        \item L'Utente inserisce le funzionalitá del dispositivo
+                    \end{itemize}
+                \end{itemize} 
+
+                \paragraph{UC10.1.5 - Inserimento descrizione} \mbox{}
+                \label{uc:uc10.1.5}
+                \begin{itemize}
+                    \item \textbf{Attore principale}: Utente
+                    \item \textbf{Post-condizioni}:
+                    \begin{itemize}
+                        \item La descrizione del dispositivo é stata inserita dall’Utente
+                    \end{itemize} 
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente si trova nella sezione "Inserisci dati dispositivo"
+                        \item L'Utente inserisce una descrizione del dispositivo
+                    \end{itemize}
+                \end{itemize} 
+                
+        \subsubsection{UC11 - Salvataggio dati del dispositivo inseriti manualmente }
+        \label{uc:uc11}
+
+        \begin{itemize}
+            \item \textbf{Attore principale}: Utente
+            \item \textbf{Pre-condizioni}:
+            \begin{itemize}
+                \item L’Utente ha compilato tutti i campi obbligatori riguardanti il form del dispositivo 
+            \end{itemize}
+            \item \textbf{Post-condizioni}:
+            \begin{itemize}
+                \item L’Utente si trova nella sezione “Inserisci asset dispositivo” 
+            \end{itemize}
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente compila tutti i campi obbligatori del form
+                \item L'Utente seleziona la funzionalitá di salvataggio dei dati del dispostivo
+                \item Il Sistema registra e salva internamente i dati inseriti
+                \item Il Sistema porta l'Utente nella sezione "Assets dispositivo"
+            \end{itemize} 
+            \item \textbf{Estensioni}: [\hyperref[uc:uc12]{UC12}] 
+        \end{itemize}
+
+        \subsubsection{UC12 - Aggiunta asset dispositivo }
+        \label{uc:uc12}
+
+        \begin{itemize}
+            \item \textbf{Attore principale}: Utente
+            \item \textbf{Pre-condizioni}:
+            \begin{itemize}
+                \item Il Sistema ha salvato i dati del dispositivo inseriti manualmente
+            \end{itemize}
+            \item \textbf{Post-condizioni}:
+            \begin{itemize}
+                \item L'Utente si trova nella sezione "Inserisci Asset" 
+            \end{itemize}
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente si trova nella sezione "Assets dispositivo"
+                \item L'Utente seleziona la funzionalitá di inserimento di un asset
+                \item Il Sistema porta l'Utente nella sezione "Inserisci Asset"
+            \end{itemize} 
+            \item \textbf{Inclusioni}: [\hyperref[uc:uc12.1]{UC12.1}]
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item[] [\hyperref[uc:uc13]{UC13}]
+                \item[] [\hyperref[uc:uc14]{UC14}]
+            \end{itemize}
+        \end{itemize}
+        
     }
 }
 
@@ -274,7 +864,7 @@
     }
 
     \subsection{Requisiti di qualità}{
-        Scrivere i requisiti di qualità qui. I requisiti di qualità sono: le caratteristiche non funzionali che il sistema deve possedere, come prestazioni, usabilità, affidabilità, sicurezza, ecc.
+        Scrivere i requisiti di qualità qui. I requisiti di qualità sono: le caratteristiche non funzionali che il \textit{sistema}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sistema}{G}} deve possedere, come prestazioni, \textit{usabilità}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Usabilità}{G}}, affidabilità, \textit{sicurezza}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezza}{G}}, ecc.
 
         \begin{table}[H]
         \centering
@@ -295,7 +885,7 @@
     }
 
     \subsection{Requisiti di vincolo}{
-        Scrivere i requisiti di vincolo qui. I requisiti di vincolo sono: le limitazioni o condizioni imposte al sistema, come vincoli tecnologici, normativi, di budget, di tempo, ecc.
+        Scrivere i requisiti di vincolo qui. I requisiti di vincolo sono: le limitazioni o condizioni imposte al \textit{sistema}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sistema}{G}}, come vincoli tecnologici, normativi, di budget, di tempo, ecc.
 
         \begin{table}[H]
         \centering
@@ -360,10 +950,11 @@
     }
 
     \subsection{Conclusioni}{
-        I requisiti individuati sono soggetti a possibili variazioni durante l'evoluzione del progetto, al fine di apportare miglioramenti e aggiornamenti. Nel corso del ciclo di vita del progetto sarà valutata l'opportunità di integrare ulteriori requisiti per elevare la qualità complessiva del prodotto. Tali modifiche verranno considerate progressivamente, seguendo un approccio di miglioramento continuo.
+        I requisiti individuati sono soggetti a possibili variazioni durante l'evoluzione del progetto, al fine di apportare miglioramenti e aggiornamenti. Nel corso del ciclo di vita del progetto sarà valutata l'opportunità di integrare ulteriori requisiti per elevare qualità complessiva del prodotto. Tali modifiche verranno considerate progressivamente, seguendo un approccio di miglioramento continuo.
     }
 }
 
 \end{document}
   
+
 
