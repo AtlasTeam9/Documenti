@@ -1,0 +1,618 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgf-pie}
+\usepackage{longtable}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{pgffor}
+
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloDocumento}{Norme di progetto}
+\newcommand{\DataUltimaModifica}{2025/12/12}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneDocumento}{v0.4.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoDocumento}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Documento: \TipoDocumento}
+\fancyfoot[C]{\thepage}
+
+% larghezza della colonna dei nomi
+\newlength{\namecol}
+\setlength{\namecol}{4.5cm}
+\setlength{\headheight}{15pt} % messo per evitare warning di fancyhdr
+
+
+\newlength{\colw}
+\setlength{\colw}{1.5cm}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\definecolor{mioverde}{RGB}{20,150,60}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+
+    \begin{center}
+
+        % Logo
+        \vspace*{0cm}
+        \begin{tikzpicture}
+            \clip (0,-0.1) circle (5.6cm);
+            \node at (0,0) {\includegraphics[width=12cm]{\LogoGruppo}};
+        \end{tikzpicture}\\[0.8cm]
+
+        % Barra superiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+        % Titolo
+        \vspace{1cm}
+        {\Huge \textbf{\TitoloDocumento}}\\[0.4cm]
+        {\large Progetto di Ingegneria del Software A.A. 2025/2026}\\[0.8cm]
+        {\large Versione: \VersioneDocumento}
+        \vspace{1cm}
+
+        % Barra inferiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+    \end{center}
+
+    % Informazioni in basso
+    \vfill
+    \noindent
+    \begin{minipage}{0.5\textwidth}
+        \raggedright
+        \textbf{Autore:} \Gruppo\\
+        \textbf{Ultima modifica:} \DataUltimaModifica
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \raggedleft
+        \textbf{Tipo di documento:} \TipoDocumento
+    \end{minipage}
+
+\end{titlepage}
+
+
+
+\section*{Registro delle modifiche}{
+    \begin{center}
+    \rowcolors{2}{lightblue}{white} % Alternanza automatica dal secondo row
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneDocumento & \DataUltimaModifica & Federico Simonetto & Riccardo Valerio & Fine stesura sez. 2 \\
+            \hline
+            v0.3.0 & 2025/12/10 & Bilal Sabic & Riccardo Valerio & Inizio stesura sez. 3 \\
+            \hline
+            v0.2.0 & 2025/12/09 & Federico Simonetto & Riccardo Valerio  & Stesura sez. 2\\
+            \hline
+            v0.1.0 & 2025/12/05 & Federico Simonetto & Bilal Sabic & Prima stesura introduzione \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+
+% Nel caso in cui il tempo di compilazione sia più di quello consentito, creare nuovo file .tex con la sez da scrivere e includerlo 
+
+\section{Introduzione}{
+    \subsection{Scopo del documento}{
+        Lo scopo del documento \textit{Norme di Progetto} è definire le procedure e gli strumenti di lavoro che il team utilizzerà per tutta la durata del progetto didattico.
+        \newline
+        Per realizzare la stesura del documento, il team ha preso come riferimento lo standard ISO/IEC 12207:1995. Questo divide i processi di ciclo di vita software in tre categorie:
+        \begin{itemize}
+            \item \textbf{Primari}: processi senza i quali un progetto non può dirsi tale;
+            \item \textbf{Supporto}: processi che supportano i processi primari;
+            \item \textbf{Organizzativi}: processi di carattere più generale, trasversali rispetto ai singoli progetti.
+        \end{itemize}
+    }
+    \subsection{Glossario}{
+        All'interno della documentazione prodotta dal team possono comparire termini suscettibili di incomprensioni o ambiguità. Per evitare questo, è disponibile un glossario 
+        contenente i termini tecnici e le loro definizioni. Un termine è consultabile nel glossario se è indicato con la notazione \textit{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
+        Premendo sulla G a pedice, l'utente verrà indirizzato alla pagina web del glossario.
+    }
+    \subsection{Riferimenti utili}{
+        \subsubsection{Riferimenti normativi}{
+            \begin{itemize}
+                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item Riferimento al documento dello standard della descrizione dei processi del ciclo di vita software: \newline \textbf{ISO/IEC 12207:1995}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}
+            \end{itemize}
+        }
+        \subsubsection{Riferimenti informativi}{
+            \begin{itemize}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Regolamento del progetto didattico}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Processi di ciclo di vita}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T02.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Modelli di sviluppo software}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T03.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Gestione di progetto}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf}
+            \end{itemize}
+        }
+    }
+}
+
+% SEC 2 ########################################################################
+
+\section{Processi Primari}{
+    I processi primari comprendono l'insieme di attività che supportano il team di sviluppo e l'azienda fornitrice nell'avvio e nell'esecuzione dello sviluppo, nell'operazione e nella manutenzione di un prodotto software.
+    \newline
+    Sebbene cinque processi siano classificati come primari, in questo documento approfondiremo i processi di \textbf{fornitura} e di \textbf{sviluppo}, più interessanti dal punto di vista del progetto didattico.
+    
+    \subsection{Fornitura}{
+        Il processo di fornitura descrive le attività e gli incarichi del fornitore che hanno il fine di produrre e consegnare il prodotto software. Il processo ha avvio dopo l'aggiudicazione dell'appalto e prosegue con la definizione delle procedure e delle risorse necessarie per gestire e garantire il progetto, comprendendo lo sviluppo dei piani di progetto e la loro esecuzione, fino alla consegna del prodotto software al committente.
+
+        \subsubsection{Strumenti utilizzati}{
+            Sono stati utilizzati i seguenti strumenti per poter svolgere le attività previste:
+            \begin{itemize}
+                \item \textbf{GitHub:} per il sistema di ticketing, utile per fornire una panoramica generale delle attività previste all'intero team di progetto;
+                \item \textbf{Discord:} utilizzato come canale di comunicazione interno;
+                \item \textbf{Google Calendar:} utilizzato per tenere traccia delle riunioni, sia interne che esterne;
+                \item \textbf{Google Drive:} utilizzato per creare e archiviare i documenti condivisi del gruppo come il foglio delle ore;
+                \item \textbf{Google Meet:} utilizzato per partecipare alle riunioni esterne con l'azienda proponente;
+                \item \textbf{Telegram:} utilizzato come metodo di comunicazione asincrono con l'azienda proponente.
+            \end{itemize}
+        }
+        
+
+        \subsubsection{Attività previste}{
+            Il processo di fornitura prevede le seguenti attività:
+            \begin{enumerate}
+                \item \textbf{Avvio:} il fornitore effettua l'analisi delle richieste da parte del proponente, e ne valuta la fattibilità tecnica ed economica tenendo conto delle politiche organizzative e di altre normative applicabili. 
+                \item \textbf{Preparazione della risposta:} il fornitore prepara una risposta da inviare alla proponente, includendo le modifiche consigliate emerse durante l'attività di avvio.
+                \item \textbf{Negoziazione:} il fornitore presenta al proponente la risposta formalizzata derivante dall'attività precedente e si avvia una negoziazione finalizzata alla stipula di un contratto.
+                \item \textbf{Pianificazione:} il fornitore conduce un'attività di analisi e consolidamento dei requisiti finalizzata a stabilire un modello di ciclo di vita del software appropriato allo scopo e alla complessità del prodotto. Contestualmente, vengono definiti i requisiti di qualità che il prodotto dovrà soddisfare e viene effettuata un'analisi dei rischi associati a ciascuna opzione di sviluppo. 
+                \item \textbf{Esecuzione e controllo:} il fornitore deve attivare e controllare i processi di sviluppo, esercizio e manutenzione, garantendo la qualità e il rispetto dello stato di avanzamento definito dal ciclo di vita stabilito nel contratto. 
+                \item \textbf{Revisione e valutazione:} il fornitore organizza le attività di revisione e accettazione del prodotto insieme al proponente, fornendo i report di valutazione, test e revisione previsti dal contratto.
+                \item \textbf{Consegna e completamento:} il fornitore consegna il prodotto software al proponente, assicurando l'assistenza e il supporto previsti dal contratto.
+            \end{enumerate}
+
+        }
+
+        \subsubsection{Documentazione fornita}{
+            In questa sottosezione vengono elencati i documenti che il team ha sviluppato e si impegna a consegnare ai professori Vardanega e Cardin e all'azienda proponente \textit{Bluewind S.r.l.}.
+
+\begin{comment}
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[h]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Analisi dei capitolati}}\\
+                \hline
+                \textbf{Redattore} & Responsabile di progetto\\
+                \hline
+                \textbf{Tipo di documento} & Esterno\\
+                \hline
+                \textbf{Scopo e contenuti} & Il documento riporta un'analisi dettagliata di tutti i capitolati proposti. Il team ha poi mostrato una valutazione di ognuno con i relativi punti forti e criticità riscontrate.\\
+                \hline
+            \end{tabularx}       
+            \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[h]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Dichiarazione degli impegni}}\\
+                \hline
+                \textbf{Redattore} & Responsabile di progetto\\
+                \hline
+                \textbf{Tipo di documento} & Esterno\\
+                \hline
+                \textbf{Scopo e contenuti} & Il documento riporta una stima oraria e monetaria che il team ha previsto per lo svolgimento del progetto didattico.
+                Vengono mostrate le ore previste per ogni membro e per ogni ruolo con il loro relativo costo (tetto massimo invalicabile) e le motivazioni per le scelte fatte.\\
+                \hline
+            \end{tabularx}       
+            \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[h]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Lettera di presentazione}}\\
+                \hline
+                \textbf{Redattore} & Responsabile di progetto\\
+                \hline
+                \textbf{Tipo di documento} & Esterno\\
+                \hline
+                \textbf{Scopo e contenuti} & Il documento, segnalato tramite e-mail ai professori Vardanega e Cardin, riporta il capitolato scelto dal team, il costo stimato dell'attività del gruppo e la data prevista di completamento del progetto.\\
+                \hline
+            \end{tabularx}       
+            \end{table}
+            }
+\end{comment}
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[h]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Analisi dei requisiti}}\\
+                \hline
+                \textbf{Redattore} & Analisti di progetto\\
+                \hline
+                \textbf{Tipo di documento} & Esterno\\
+                \hline
+                \textbf{Scopo e contenuti} & Il documento riporta l'elenco dei Casi d'Uso (con relativi diagrammi UML)  degli attori coinvolti, i requisiti, funzionali e non, collegati ai Casi d'Uso e al capitolato, e le informazioni relative al loro tracciamento.\\
+                \hline
+            \end{tabularx}
+            \caption{Descrizione del documento "Analisi dei requisiti"}
+            \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Lettera di presentazione}}\\
+                \hline
+                \textbf{Redattore} & Responsabile\\
+                \hline
+                \textbf{Tipo di documento} & Esterno\\
+                \hline
+                \textbf{Scopo e contenuti} & Il documento ha come scopo la presentazione ufficiale ai prof. Tullio e Cardin della candidatura del team alle baseline di progetto.\\
+                \hline
+            \end{tabularx}   
+            \caption{Descrizione del documento "Lettera di presentazione"}
+            \end{table}
+            } 
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[h]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Norme di progetto}}\\
+                \hline
+                \textbf{Redattore} & Amministratore\\
+                \hline
+                \textbf{Tipo di documento} & Interno\\
+                \hline
+                \textbf{Scopo e contenuti} & Documento attuale, riporta gli strumenti e le procedure che il team utilizzerà per tutto lo sviluppo del progetto didattico. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione del documento "Norme di progetto"}
+            \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Piano di progetto}}\\
+                \hline
+                \textbf{Redattore} & Responsabile\\
+                \hline
+                \textbf{Tipo di documento} & Esterno\\
+                \hline
+                \textbf{Scopo e contenuti} & Lo scopo del documento è tracciare le attività che vengono svolte così come quelle che vengono pianificate durante tutta la realizzazione del progetto. Il \textit{Piano di progetto} riporta una descrizione di ogni sprint con l'aggiornamento delle ore utilizzate e i relativi costi.\\
+                \hline
+            \end{tabularx}     
+            \caption{Descrizione del documento "Piano di progetto"}
+            \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[h]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Piano di qualifica}}\\
+                \hline
+                \textbf{Redattore} & Amministratore\\
+                \hline
+                \textbf{Tipo di documento} & Esterno\\
+                \hline
+                \textbf{Scopo e contenuti} & Il documento riporta le strategie di verifica e di validazione che il team di progetto utilizzerà per garantire la qualità del prodotto e dei processi del progetto, oltre ai test effettuati e i rispettivi esiti.\\
+                \hline
+            \end{tabularx}    
+            \caption{Descrizione del documento "Piano di qualifica"}
+            \end{table}
+            }  
+        }
+    }
+    
+    \subsection{Sviluppo}
+    \label{subsec:sviluppo}{
+        Il processo di sviluppo si occupa di definire le attività che il team compie per implementare il prodotto software, rispettando le esigenze e le specifiche definite dal proponente.
+
+        \subsubsection{Strumenti utilizzati}{
+            Sono stati utilizzati i seguenti strumenti per poter svolgere le attività previste:
+            \begin{itemize}
+                \item \textbf{Draw.io:} utilizzato per la rappresentazione dei diagrammi degli Use Case;
+                \item \textbf{GitHub:} utilizzato come VCS per il prodotto software.
+            \end{itemize}
+        }
+
+        \subsubsection{Attività previste}{
+            Il processo di sviluppo prevede le seguenti attività:
+            \begin{enumerate}
+                \item \textbf{Implementazione del processo:} lo sviluppatore deve definire e adottare un modello di ciclo di vita del software adeguato agli obiettivi, alla natura e alla complessità del progetto.
+                \item \textbf{Analisi dei requisiti di sistema:} lo sviluppatore deve analizzare il contesto e l'utilizzo previsto del sistema da realizzare, al fine di identificare, definire e documentare in modo completo i requisiti di sistema. Tali requisiti devono includere funzionalità, prestazioni, vincoli operativi e requisiti dell'utente.
+                \item \textbf{Progettazione architetturale del sistema:} lo sviluppatore deve individuare e definire gli elementi hardware e software che compongono il sistema, descrivendone l'architettura a un livello tale da garantire la soddisfazione di tutti i requisiti identificati nella fase precedente.
+                \item \textbf{Analisi dei requisiti software:} per ciascun elemento software lo sviluppatore deve stabilire e documentare i requisiti software, ovvero i requisiti lato utente. Questi comprendono anche le specifiche di qualità.
+                \item \textbf{Progettazione architetturale del software:}lo sviluppatore deve trasformare i requisiti software in un'architettura software che descriva la struttura ad alto livello, i componenti e le loro interazioni.
+                \item \textbf{Progettazione in dettaglio del software:} per ogni elemento software, lo sviluppatore deve produrre una progettazione dettagliata, fino a definire le singole unità software.
+                \item \textbf{Codifica e test del software:} lo sviluppatore deve realizzare e testare ogni unità software, verificando che soddisfi i requisiti assegnati.
+                \item \textbf{Integrazione del software:} lo sviluppatore deve predisporre ed eseguire un piano di integrazione per combinare componenti e unità software in un unico elemento software coerente.
+                \item \textbf{Test di qualifica software:} lo sviluppatore deve condurre test di qualifica per ciascun elemento software, assicurando la conformità ai requisiti di qualifica stabiliti.
+                \item \textbf{Integrazione di sistema:} lo sviluppatore deve integrare gli elementi hardware e software in un sistema completo e operativo.
+                \item \textbf{Test di qualifica del sistema:} lo sviluppatore deve condurre test di qualifica dell'intero sistema, verificando la conformità ai requisiti di sistema.
+                \item \textbf{Installazione del software:} lo sviluppatore deve installare il prodotto software nell'ambiente operativo previsto dal contratto o dalla specifica di progetto.
+                \item \textbf{Supporto all'accettazione software:} lo sviluppatore deve supportare l'utente finale durante le attività di verifica, revisione e test previste per l'accettazione del prodotto.
+            \end{enumerate}
+        }
+        Il team ha deciso di approfondire di seguito le sole attività di analisi dei requisiti di sistema e codifica del software in vista della \textbf{Requirements and Technology Baseline}. Crediamo infatti che, per questa baseline di progetto, le due attività sopra menzionate siano quelle che richiedono una spiegazione più approfondita. Le altre principali attività che il team presenterà verranno aggiunte dopo il “semaforo verde” della RTB.
+
+        \subsubsection{Attività di analisi dei requisiti}{
+            L'analisi dei requisiti è un'attività cardine di ogni progetto e, in particolare, della baseline di progetto Requirements and Technology Baseline. Questa consiste nell'individuare tutti i requisiti, funzionali e non, che il prodotto software deve soddisfare. L'analisi effettuata dal team può essere visualizzata nell'\href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/.pdf}{apposito documento}.
+            \newline
+            In particolare, vengono riportati i casi d'uso ed i relativi requisiti secondo la seguente convenzione.
+            
+            \paragraph{Casi d'uso}\hfill\break{
+                I casi d'uso sono identificati secondo il seguente format: \textbf{UCPrincipale.Alternativo}\newline
+                dove:
+                \begin{itemize}
+                    \item \textbf{UC} è la sigla di Use Case, ovvero Caso d'Uso;
+                    \item \textbf{Principale} è rappresentato da un numero naturale maggiore di zero e indica che il Caso d'Uso attuale non è correlato ad altri casi d'uso. Il numero indicato dal campo \textbf{Principale} è univoco tra tutti i Casi d'Uso;
+                    \item \textbf{Alternativo} è rappresentato da un numero naturale maggiore di zero e indica che il Caso d'Uso è correlato al Caso d'Uso indicato dal campo \textbf{Principale}.
+                \end{itemize}
+                Ogni Caso d'Uso è accompagnato dal relativo diagramma UML, da una descrizione testuale e da un nome che ne riassume lo scenario.
+            }
+
+            \paragraph{Requisiti}\hfill\break{
+                I requisiti sono identificati secondo il seguente formato: \textbf{RIdTipologiaPriorità}\newline
+                dove:
+                \begin{itemize}
+                    \item \textbf{R} sta per requisito;
+                    \item \textbf{Id} è un numero naturale maggiore di zero, identificativo univoco di ogni requisito;
+                    \item \textbf{Tipologia} indica la tipologia del requisito. È rappresentata da uno di questi tre valori:
+                    \begin{itemize}
+                        \item \textbf{F}: funzionale;
+                        \item \textbf{Q}: qualità;
+                        \item \textbf{V}: vincolo.
+                    \end{itemize}
+                    \item \textbf{Priorità} indica la priorità del requisito. È rappresentata da uno di questi tre valori:
+                    \begin{itemize}
+                        \item \textbf{Ob}: obbligatorio;
+                        \item \textbf{D}: desiderabile;
+                        \item \textbf{Op}: opzionale.
+                    \end{itemize}
+                \end{itemize}
+                Ogni requisito viene poi associato al Caso d'Uso cui fa riferimento.
+            } 
+        }
+
+        \subsubsection{Codifica del software}\hfill{
+            L'attività di codifica del software viene svolta dai programmatori e rappresenta l'implementazione tramite codice del lavoro effettuato dai progettisti. Il software risultante dall'attività di codifica deve rispettare i requisiti individuati dagli analisti e soddisfare le metriche di verifica e validazione, e deve inoltre soddisfare le esigenze concordate con il proponente.
+            \newline
+            La codifica deve essere effettuata seguendo specifiche pratiche e diversi standard. Di seguito sono elencate le caratteristiche che il codice sviluppato dal team dovrà rispettare.
+
+            \paragraph{Stile della codifica}\hfill\break{
+                Per garantire uniformità, leggibilità e manutenibilità del codice, il team rispetterà le seguenti regole sintattiche e stilistiche:
+                \begin{itemize}
+                    \item \textbf{Convenzioni di Nomeclatura}:
+                    \begin{itemize}
+                        \item Backend:
+                        \begin{itemize}
+                            \item \textbf{Classi}: Pascal Case;
+                            \item \textbf{Variabili e Metodi}: si adotta lo Snake Case;
+                            \item \textbf{Nomi file}: Snake Case;
+                            \item \textbf{Costanti}: devono essere scritte interamente in MAIUSCOLO con underscore.
+                        \end{itemize}
+                        \item Frontend:
+                        \begin{itemize}
+                            \item \textbf{Classi}: Pascal Case;
+                            \item \textbf{Variabili e Metodi}: si adotta il Camel Case;
+                            \item \textbf{Nomi file}: Kebab Case;
+                            \item \textbf{Costanti}: uguale al Backend.
+                        \end{itemize}
+                    \end{itemize}
+                
+                    \item \textbf{Formattazione}:
+                    \begin{itemize}
+                        \item \textbf{Indentazione}: si utilizzano 4 spazi per ogni livello di annidamento;
+                        \item \textbf{Lunghezza righe}: per favorire la lettura su diversi schermi, ogni riga di codice non deve superare i 100 caratteri;
+                        \item \textbf{Blocchi di codice}: le funzioni e i blocchi logici devono essere separati da una riga vuota per migliorarne la visibilità.
+                    \end{itemize}
+                    
+                    \item \textbf{Best practices}:
+                    \begin{itemize}
+                        \item \textbf{Lunghezza metodi}: ogni metodo non dovrebbe superare le 20-30 righe di codice; se eccede, va rifattorizzato in sotto-metodi.
+                        \item \textbf{Annidamento}: è caldamente consigliato limitare i cicli e le condizioni annidate a un massimo di 3 livelli.
+                        \item \textbf{Variabili globali}: l'uso di variabili globali è da evitare dove possibile per prevenire effetti collaterali indesiderati.
+                        \item \textbf{Gestione errori}: le anomalie devono essere gestite in modo esplicito tramite l'uso di eccezioni, mantenendo il flusso di lavoro stabile.
+                    \end{itemize}
+                    
+                    \item \textbf{Lingua e Commenti}:
+                    \begin{itemize}
+                        \item \textbf{Lingua}: tutta la codifica, inclusi nomi di variabili, metodi e commenti, deve essere rigorosamente in lingua inglese.
+                        \item \textbf{Commenti}: non devono descrivere il "come" (spiegato dal codice stesso), ma il "perché" di una determinata scelta implementativa.
+                        \item \textbf{Documentazione (Docstrings)}: ogni funzione o metodo complesso deve essere preceduto da un commento descrittivo che ne specifichi lo scopo e gli argomenti.
+                    \end{itemize}
+                \end{itemize}
+            }
+
+            \paragraph{Strumenti e Tecnologie}\hfill{
+                \begin{itemize}
+                    \item Tecnologie di sviluppo:
+                    \begin{itemize}
+                        \item \textbf{Python}: utilizzato come linguaggio di programmazione ad alto livello orientato agli oggetti per la realizzazione della logica di backend. È stato scelto per la sua versatilità e l'ampia disponibilità di risorse.
+                        \item \textbf{React}: framework utilizzato per lo sviluppo dell'interfaccia grafica (frontend) dell'applicazione, permettendo un'interazione fluida e responsive.
+                        \item \textbf{FastAPI}: framework web moderno, veloce e ad alte prestazioni per la creazione di API RESTful con Python.
+                    \end{itemize}
+
+                    \item Infrastruttura:
+                        \begin{itemize}
+                            \item \textbf{Docker}: piattaforma per eseguire l'applicazione in container, ovvero ambienti isolati che includono tutto il necessario per funzionare correttamente in qualsiasi ambiente di esecuzione. Garantisce la portabilità e la stabilità del sistema indipendentemente dalla macchina locale dello sviluppatore.
+                        \end{itemize}
+                        
+                    \item Strumenti di supporto e versionamento:
+                    \begin{itemize}
+                        \item \textbf{Git}: Version Control System (VCS) utilizzato per tracciare l'evoluzione del codice sorgente e gestire gli sviluppi in branch separati.
+                        \item \textbf{GitHub}: Servizio di hosting per i repository Git che facilita la collaborazione asincrona tra i membri del team, il sistema di ticketing (Issue) e il monitoraggio delle Project Board.
+                        \item \textbf{Visual Studio Code (VS Code)}: IDE o editor di testo consigliato per la sua leggerezza e il supporto a estensioni personalizzabili che migliorano la produttività.
+                    \end{itemize}
+                    
+                    \item Automazione:
+                    \begin{itemize}
+                        \item \textbf{GitHub Actions}: Utilizzate per implementare la Continuous Integration (CI), automatizzando test e verifiche ad ogni commit o pull request per evitare l'introduzione di codice non funzionante nel branch principale.
+                    \end{itemize}
+                \end{itemize}
+                
+            }
+        }
+    }
+}
+
+% SEC 3 ########################################################################################
+
+\section{Processi di supporto}{
+    \subsection{Documentazione}
+    La documentazione è uno strumento potente usato per definire, descrivere, tracciare e supportare le attività svolte durante il progetto. Nel dettaglio, il processo di documentazione supporta la tracciabilità delle informazioni, assicurandone la registrazione e la conservazione lungo tutte le fasi del ciclo di vita delle attività e dei processi. 
+    \subsubsection{Strumenti utilizzati}
+    Per compilare la documentazione il gruppo utilizza tre strumenti utili:
+    \begin{itemize}
+    \item \textbf{LaTeX} : un linguaggio mark-up usato per la redazione dei documenti scientifici e altro. Richiede la compilazione ogni volta che si fanno delle modifiche, a differenza di altri linguaggi mark-up come ad esempio Typst. Il gruppo utilizza esclusivamente LaTeX per scrivere tutta la documentazione.
+    \item \textbf{Overleaf} :  è una piattaforma online che consente di scrivere, modificare e compilare documenti LaTeX direttamente dal browser, facilitando la collaborazione in tempo reale e la gestione dei progetti senza installare software locali. Il gruppo utilizza questo sito per scrivere i documenti piccoli come i verbali.
+    \item \textbf{GitHub} : l'adozione di GitHub consente di semplificare i processi di verifica e approvazione dei documenti, garantendo al contempo il controllo delle modifiche tramite le pull request e permette di pianificare i prossimi passi usando il sistema di Ticketing.
+    \end{itemize}
+    \subsubsection{Tipologie di documenti}
+    Il gruppo ha creato dei template per ogni tipo di documento e ogni documento ha una struttura specifica. I tipi di documenti con un template sono:
+    \begin{itemize}
+    \item \textbf{Verbale interno}
+    \item \textbf{Verbale esterno}
+    \item \textbf{Diaro di bordo}
+    \end{itemize}
+
+    \subsubsection{Verbali}
+    Generalmente i verbali seguono questa struttura:
+    \begin{itemize}
+    \item \textbf{Frontespizio}, composto da:
+    \begin{itemize}
+    \item Logo e nome del gruppo
+    \item Tipologia del documento e le informazioni di riferimento, tra cui versione, data e luogo.
+    \item La lista dei partecipanti alla riunione
+    \end{itemize}
+    \item La tabella delle versioni
+    \item Abstract che ha lo scopo di indicare il periodo della riunione e i principali argomenti trattati
+    \item Ordine del giorno che indica in modo strutturato gli argomenti discussi durante la riunione.
+    \item Discussione, dove vengono documentati i temi affrontati, le osservazioni dei partecipanti e le eventuali divergenze o punti di accordo.
+    \item La sezione Decisioni documenta le decisioni prese dal gruppo, organizzate in tabella per facilitare la consultazione e il monitoraggio delle azioni conseguenti.
+    \item La sezione Attività da svolgere elenca in modo dettagliato i compiti assegnati ai partecipanti, specificando i responsabili.
+    \end{itemize}
+    Ogni decisione ha un suo codice univoco e segue questo formato : "Dx (x numero della decisione)-ANNO/MESE/GIORNO\_vi" (se interno, ve se interno)
+    \\
+    Anche le attività hanno codici univoci e seguono questo formato : "Ax (x numero dell'attività)-ANNO/MESE/GIORNO\_vi"
+
+    \subsubsection{Diario di bordo}
+    Questi documenti, creati nell’ambito dell’attività coordinata dal Prof. Tullio Vardanega, sono utilizzati per monitorare lo stato di avanzamento di ciascun gruppo del I lotto e hanno carattere puramente informativo.
+    Sono presentazioni semplici che trattano tre argomenti.:
+    \begin{itemize}
+        \item Risultati raggiunti, qui vengono elencate le attività che sono state fate nel periodo corrente
+        \item Prossime attività, un elenco di attività pianificate dal gruppo
+        \item Difficoltà riscontrate, eventuali difficoltà riscontrate durante lo svolgimento delle attività
+    \end{itemize}
+
+    \subsubsection{La produzione}
+    La creazione di un documento prevede questi passaggi:
+    \begin{itemize}
+        \item Creazione della issue su github tramite sistemi di ticketing: viene aperta una issue per poter tenere traccia dell'andamento e per assegnare il responsabile di quel documento. Per file grandi come ad esempio il PdP vengono creati dei branch secondari per poter effettuare modifiche senza andare a modificare il branch principale. I documenti piccoli come i verbali vanno fatti direttamente in Overleaf senza dover aprire branch secondari.
+        \item Inizio stesura : La creazione del documento è determinata dall’assegnatario: ogni documento è prodotto dal soggetto responsabile delle relative attività.
+        \item Verifica : dopo la stesura il file va verificato tramite pull request di GitHub oppure se è un verbale va verificato direttamente su Overleaf.
+    \end{itemize}
+    Dopo la verifica, il responsabile approva la pull request, e il file viene integrato nel branch principale. Successivamente, il sistema automatizzato GitHub Actions provvede a inserire il file nella cartella corretta del sito web.
+    
+    \subsubsection{Denominazione dei documenti}
+    I documenti, per la denominazione, seguono questo formato:
+    \begin{itemize}
+        \item \textbf{Verbali interni} - VI-ANNO-MESE-GIORNO
+        \item \textbf{Verbali esterni} - VE-ANNO-MESE-GIORNO
+        \item \textbf{Diari di bordo} - DB-ANNO-MESE-GIORNO
+    \end{itemize}
+    È stato deciso di adottare il formato \textbf{AAAA-MM-GG} per le date, al fine di semplificare la lettura e l’ordinamento cronologico dei documenti.
+    La versione del documento si trova all'interno del file.
+
+    \subsubsection{Manutenzione}
+   È prevista la manutenzione della documentazione quando occorre apportare cambiamenti o aggiornamenti ai contenuti. Per fare la modifica si seguono i prossimi passi : 
+   \begin{enumerate}
+       \item Creare il nuovo branch di lavoro 
+       \item Effettuare le modifiche in locale
+       \item Dopo aver modificato il file, modificare il registro delle modifiche aggiungendo una nuova riga e fare il push sul branch di lavoro
+       \item Aprire una pull request per consentire la verifica della qualità del documento
+       \item Integrare il documento nel branch principale solo se il responsabile conferma la correttezza delle modifiche
+   \end{enumerate}
+}
+
+
+
+
+\end{document}
