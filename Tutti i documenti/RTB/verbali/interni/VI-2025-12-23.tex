@@ -1,0 +1,183 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/12/23}
+\newcommand{\OraInizio}{14:30}
+\newcommand{\OraFine}{16:00}
+\newcommand{\LuogoVerbale}{Chiamata Discord}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoVerbale}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \TipoVerbale \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \TipoVerbale \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        Andrea Difino & SI & Progettista\\
+        Federico Simonetto & SI & Verificatore\\
+        Riccardo Valerio & SI & Amministratore\\
+        Francesco Marcolongo & SI & Analista\\
+        Michele Tesser & SI & Programmatore\\
+        Giacomo Giora & SI & Verificatore\\
+        Bilal Sabic & SI & Responsabile\\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneVerbale & \DataVerbale & Bilal Sabic & Giacomo Giora & Correzioni varie \\
+            \hline
+            v0.1.0 & \DataVerbale & Michele Tesser &  & Prima stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Revisione suddivisione oraria sprint
+        \item Discussione metriche per il PdQ
+        \item Aggiornamento sullo stato dei documenti
+    \end{itemize}
+}
+\
+
+\section{Discussione}{
+ 	\subsection{Revisione suddivisione oraria sprint} {
+    E' stato migliorato il file interno per la suddivisione oraria, rendendolo più chiaro e più automatizzato nella parte di calcolo dei monte ore passati e futuri.
+	}
+    \subsection{Discussione metriche per il PdQ} {
+    Il team si confronta sulle metriche da inserire nel PdQ, attraverso un documento riassuntivo interno.
+	}
+    \subsection{Aggiornamento sullo stato dei documenti} {
+    I membri del team condividono lo stato di avanzamento dei documenti di cui sono responsabili, aggiornando il gruppo sul lavoro già svolto. Viene inoltre pianificata l'attività da svolgere per il prosieguo dello sprint attuale.
+	}
+	
+}
+
+\section{Decisioni prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{12cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D1-\DataVerbale\_vi & Modificata la distribuzione delle ore per gli sprint seguenti \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\section{Attività da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A1-\DataVerbale\_vi & Creare tabelle e grafici per visualizzare le metriche del PdQ & - & Team \\
+        \hline
+            A2-\DataVerbale\_vi & Continuare la stesura dei documenti & - & Team \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+
+\end{document}
