@@ -31,25 +31,24 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloVerbale}{Verbale della Riunione}
-\newcommand{\DataVerbale}{2025/10/28}
-\newcommand{\OraInizio}{15:00}
-\newcommand{\OraFine}{16:30}
+\newcommand{\DataVerbale}{2025/12/23}
+\newcommand{\OraInizio}{14:30}
+\newcommand{\OraFine}{16:00}
 \newcommand{\LuogoVerbale}{Chiamata Discord}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
 \newcommand{\AbstractVerbale}{%
-In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \space \OraFine .
+In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
 }
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v1.0} % <-- modifica qui la versione o ID
-\newcommand{\VerbaleInterno}{Interno} 
+\newcommand{\VersioneVerbale}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoVerbale}{Interno} 
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\Gruppo}
-\fancyhead[R]{Verbale: \VerbaleInterno \space - \space \DataVerbale}
+\fancyhead[R]{Verbale: \TipoVerbale \space - \space \DataVerbale}
 \fancyfoot[C]{\thepage}
-
 
 % ----------------------------
 % Inizio documento
@@ -80,23 +79,23 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
         \textbf{Data:} & \DataVerbale \\
         \textbf{Luogo:} & \LuogoVerbale \\
         \textbf{Versione:} & \VersioneVerbale \\
-        \textbf{Tipo:} & \VerbaleInterno \\
+        \textbf{Tipo:} & \TipoVerbale \\
     \end{tabular}
 
     \vspace{1.2cm}
 
     % Componenti e ruoli
     {\large \textbf{Partecipanti}}\\[0.5cm]
-    \begin{tabular}{l|l}
-        \textbf{Nome} & \textbf{Presenza} \\
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
         \hline
-        Andrea Difino & SI \\
-        Federico Simonetto & SI \\
-        Riccardo Valerio & SI \\
-        Francesco Marcolongo & SI \\
-        Michele Tesser & SI \\
-        Giacomo Giora & SI \\
-        Bilal Sabic & SI \\
+        Andrea Difino & SI & Progettista\\
+        Federico Simonetto & SI & Verificatore\\
+        Riccardo Valerio & SI & Amministratore\\
+        Francesco Marcolongo & SI & Analista\\
+        Michele Tesser & SI & Programmatore\\
+        Giacomo Giora & SI & Verificatore\\
+        Bilal Sabic & SI & Responsabile\\
     \end{tabular}
 
 \end{titlepage}
@@ -104,13 +103,12 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 \section*{Registro delle modifiche}{
     \begin{center} 
         \begin{tabular}{|l|l|l|l|l|}
-            \hline
+        \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneVerbale & 2025/10/30 & Andrea Difino & Bilal Sabic & Aggiunta contenuto sezione 3.3 \\
-            && Francesco Marcolongo && e decisione D3, correzioni \\
+            \VersioneVerbale & \DataVerbale & Bilal Sabic & Giacomo Giora & Correzioni varie \\
             \hline
-            v0.1 & \DataVerbale & Bilal Sabic & & Prima stesura \\
+            v0.1.0 & \DataVerbale & Michele Tesser &  & Prima stesura \\
             \hline
         \end{tabular}
     \end{center}
@@ -133,39 +131,50 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 }
 
 
-\section{Ordine del Giorno}{
-    \begin{enumerate}
-        \item Stesura della dichiarazione degli impegni
-        \item Discussione sull'analisi dei capitolati
-        \item Fine creazione del sito web del team
-    \end{enumerate}
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Revisione suddivisione oraria sprint
+        \item Discussione metriche per il PdQ
+        \item Aggiornamento sullo stato dei documenti
+    \end{itemize}
 }
+\
 
 \section{Discussione}{
-	\subsection{Stesura della dichiarazione degli impegni}{
-		Il gruppo ha raccolto le opinioni e formalizzato il contenuto del documento della dichiarazione degli impegni, calcolando le ore richieste per ogni ruolo, il costo minimo del progetto e la data di consegna tramite foglio di calcolo. È stata fatta la prima stesura del documento.
-}
-	\subsection{Discussione sull'analisi dei capitolati}{
-		Ogni componente del gruppo ha espresso i propri pro e contro riguardo a ciascun progetto delle proponenti. È stata creata la prima versione del documento dell'analisi dei capitolati.
-}
-	\subsection{Fine creazione del sito web del team}{
-		E' stato sviluppato il primo scheletro del sito web. Il sito web è dinamico e si aggiorna ogni volta che viene pushato un documento nel main. Tutto questo è possibile grazie all'utilizzo delle GitHub Actions.
-}
+ 	\subsection{Revisione suddivisione oraria sprint} {
+    E' stato migliorato il file interno per la suddivisione oraria, rendendolo più chiaro e più automatizzato nella parte di calcolo dei monte ore passati e futuri.
+	}
+    \subsection{Discussione metriche per il PdQ} {
+    Il team si confronta sulle metriche da inserire nel PdQ, attraverso un documento riassuntivo interno.
+	}
+    \subsection{Aggiornamento sullo stato dei documenti} {
+    I membri del team condividono lo stato di avanzamento dei documenti di cui sono responsabili, aggiornando il gruppo sul lavoro già svolto. Viene inoltre pianificata l'attività da svolgere per il prosieguo dello sprint attuale.
+	}
+	
 }
 
-
-\section{Decisioni Prese}{
+\section{Decisioni prese}{
     \begin{center}
-    \begin{tabular}{|c|p{11cm}|}
+    \begin{tabular}{|c|p{12cm}|}
         \hline
         \textbf{ID} & \textbf{Decisione} \\
         \hline
-            D1-28/10/2025 &  Sono state calcolate le ore totali di impegno per ogni ruolo.\\
+            D1-\DataVerbale\_vi & Modificata la distribuzione delle ore per gli sprint seguenti \\
         \hline
-            D2-28/10/2025 & È stata decisa la data prevista di consegna. \\
-		\hline
-			D3-28/10/2025 & È stato stabilito che il completamento dei documenti necessari alla candidatura avviene in modo asincrono. \\
-		\hline
+    \end{tabular}
+    \end{center}
+}
+
+\section{Attività da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A1-\DataVerbale\_vi & Creare tabelle e grafici per visualizzare le metriche del PdQ & - & Team \\
+        \hline
+            A2-\DataVerbale\_vi & Continuare la stesura dei documenti & - & Team \\
+        \hline
     \end{tabular}
     \end{center}
 }

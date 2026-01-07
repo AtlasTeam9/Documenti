@@ -31,10 +31,9 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloVerbale}{Verbale della Riunione}
-\newcommand{\DataVerbale}{2025/11/25}
-\newcommand{\NumeroVerbaleEsterno}{Quarto}
-\newcommand{\OraInizio}{15:30}
-\newcommand{\OraFine}{16:40}
+\newcommand{\DataVerbale}{2025/12/12}
+\newcommand{\OraInizio}{15:00}
+\newcommand{\OraFine}{17:00}
 \newcommand{\LuogoVerbale}{Chiamata Discord}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
 \newcommand{\AbstractVerbale}{%
@@ -90,13 +89,13 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
     \begin{tabular}{l|l|l}
         \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
         \hline
-        Andrea Difino & SI & Amministratore\\ 
-        Federico Simonetto & SI & Verificatore\\
-        Riccardo Valerio & SI & Responsabile\\
-        Francesco Marcolongo & SI & Responsabile\\
-        Michele Tesser & SI & Analista\\
-        Giacomo Giora & SI & Amministratore\\
-        Bilal Sabic & SI & Progettista\\
+        Andrea Difino & SI & Analista\\
+        Federico Simonetto & SI & Responsabile\\
+        Riccardo Valerio & SI & Verificatore\\
+        Francesco Marcolongo & SI & Amministratore\\
+        Michele Tesser & NO & Progettista\\
+        Giacomo Giora & SI & Programmatore\\
+        Bilal Sabic & SI & Verificatore\\
     \end{tabular}
 
 \end{titlepage}
@@ -107,9 +106,9 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
         \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneVerbale & 2025/11/27 & Andrea Difino & Federico Simonetto & Correzione errori \\
+            \VersioneVerbale & \DataVerbale & Federico Simonetto & Bilal Sabic & Sistemazione contenuto \\
             \hline
-            v0.1.0 & \DataVerbale & Team &  & Prima stesura \\
+            v0.1.0 & 2025/12/11 & Team &  & Prima stesura \\
             \hline
         \end{tabular}
     \end{center}
@@ -134,28 +133,31 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 
 \section{Ordine del giorno}{
     \begin{itemize}
-        \item Scelta delle tecnologie da utilizzare
-        \item Aggiornamento sullo stato del glossario
-        \item Cambiare metodologia di lavoro
-        \item Discussione su Piano di progetto e Analisi dei requisiti
+        \item Chiarimenti relativi ai documenti che il gruppo sta stilando
+        \item Cambiamenti al glossario
+        \item Chiarimenti relativi al modello grafico
+        \item Domande da porre all'azienda proponente
+        \item Ridistribuzione delle ore per sprint
     \end{itemize}
 }
 \
 
 \section{Discussione}{
- 	\subsection{Scelta delle tecnologie da utilizzare} {
-	    La scelta delle tecnologie adottate si inserisce direttamente nell’attività descritta
-        nella decisione A1-2025/11/12\_vi. Abbiamo definito React come framework per l’interfaccia, TOML per la struttura degli alberi, JSON e CSV per la gestione dei documenti dei dispositivi e dei relativi asset, mentre Python e in particolare FastAPI sono stati selezionati per il backend.
+ 	\subsection{Chiarimenti relativi ai documenti che il gruppo sta stilando} {
+        Il team ha richiesto chiarimenti su alcune sezioni dell'\textit{Analisi dei requisiti}. Gli analisti di progetto, responsabili della stesura del documento, hanno fornito le spiegazioni necessarie.
 	}
-	\subsection{Aggiornamento sullo stato del glossario} {
-	    Il glossario sul sito del team é stato aggiornato in riferimento all'attività A2-2025/11/12\_vi.
+    \subsection{Cambiamenti al glossario} {
+        Il team ha deciso di modificare il formato delle parole nei documenti che fanno riferimento a voci del glossario. È stata inoltre stabilita l'eliminazione di alcune voci precedentemente inserite, ritenute non necessarie.
 	}
-	\subsection{Cambiare metodologia di lavoro} {
-	      Si è discussa la struttura dei branch sulla repo Github del gruppo, in modo da ridurre al minimo il conflitto nella scrittura di documenti. Inoltre, si è deciso di utlizzare Overleaf per la scrittura e la visualizzazione in contemporanea, sfruttando l'accesso dallo stesso account.
+    \subsection{Chiarimenti relativi al modello grafico} {
+        Dopo la realizzazione di un primo modello grafico dell'applicazione su Figma, utile per individuare i casi d'uso, gli autori hanno chiarito i dubbi sollevati dagli altri membri del team. Sono state inoltre annotate indicazioni relative alla gestione della persistenza dei dati, da implementare nel prodotto software.
 	}
-    \subsection{Discussione su Piano di progetto e Analisi dei requisiti} {
-	    In questa fase sono state completate le prime sezioni del Piano di progetto, includendo anche quella dedicata al primo sprint, così da definire l’impostazione iniziale del lavoro e la sua articolazione nel breve periodo. Per quanto riguarda l’Analisi dei requisiti è stato predisposto il template del documento e redatte alcune delle sezioni introduttive, stabilendo così la struttura di riferimento su cui proseguirà l’attività di dettaglio.
+    \subsection{Domande da porre all'azienda proponente} {
+        Al termine della riunione, il team ha annotato ulteriori dubbi relativi al progetto da sottoporre all'azienda proponente. Considerata la brevità delle domande, si è deciso di inviarle in modalità asincrona tramite Telegram.
 	}
+    \subsection{Ridistribuzione delle ore per sprint}{
+        A seguito del ridotto utilizzo di alcuni ruoli e dell'elevato impiego di altri, le ore assegnate ai vari ruoli vengono modificate per il resto dello sprint corrente e per quelli successivi.
+    }
 	
 }
 
@@ -165,27 +167,23 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
         \hline
         \textbf{ID} & \textbf{Decisione} \\
         \hline
-            D1-\DataVerbale\_vi & Cambiato il way of working \\
+            D1-\DataVerbale\_vi & Modificata la distribuzione delle ore per gli sprint seguenti \\
         \hline
-	        D2-\DataVerbale\_vi & Abbiamo scelto le seguenti tecnologie: React, FastAPI, JSON, TOML \\
+            D2-\DataVerbale\_vi & Modificato il formato delle parole che fanno riferimento al glossario \\
         \hline
     \end{tabular}
     \end{center}
 }
 
-\section{Attivitá da svolgere}{
+\section{Attività da svolgere}{
     \begin{center}
     \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
         \hline
         \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
         \hline
-            A1-\DataVerbale\_vi & Scrivere il secondo sprint nel Pdp  & \#54 & Responsabili \\
+            A1-\DataVerbale\_vi & Scrivere all'azienda proponente domande su Telegram  & - & Team \\
         \hline
-	        A2-\DataVerbale\_vi & Studiare le tecnologie scelte  & - & Team \\
-        \hline
-	        A3-\DataVerbale\_vi & Preparare prossimo incontro con l'azienda & - & Team \\
-        \hline
-            A4-\DataVerbale\_vi & Iniziare la sezione 2 del documento Analisi dei requisiti & \#55 & Analista \\
+            A2-\DataVerbale\_vi & Proseguire la stesura dei documenti & - & Team \\
         \hline
     \end{tabular}
     \end{center}

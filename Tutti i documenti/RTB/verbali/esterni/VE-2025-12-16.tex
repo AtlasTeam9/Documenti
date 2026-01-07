@@ -7,7 +7,10 @@
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage{graphicx}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
+\usepackage{tabularx}
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{fancyhdr}
@@ -31,10 +34,10 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloVerbale}{Verbale della Riunione}
-\newcommand{\DataVerbale}{2025/11/18}
-\newcommand{\NumeroVerbaleEsterno}{terzo}
+\newcommand{\DataVerbale}{2025/12/16}
+\newcommand{\NumeroVerbaleEsterno}{sesto}
 \newcommand{\OraInizio}{15:00}
-\newcommand{\OraFine}{15:45}
+\newcommand{\OraFine}{15:30}
 \newcommand{\LuogoVerbale}{Chiamata Google Meet}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
 \newcommand{\AbstractVerbale}{%
@@ -92,28 +95,28 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
         \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
-        Andrea Difino & SI & Amministratore\\
+        Andrea Difino & SI & Progettista\\
         Federico Simonetto & SI & Verificatore\\
-        Riccardo Valerio & SI & Responsabile\\
-        Francesco Marcolongo & SI & Responsabile\\
-        Michele Tesser & SI & Analista\\
-        Giacomo Giora & SI & Amministratore\\
-        Bilal Sabic & SI & Progettista\\
+        Riccardo Valerio & SI & Amministratore\\
+        Francesco Marcolongo & SI & Analista\\
+        Michele Tesser & SI & Programmatore\\
+        Giacomo Giora & SI & Verificatore\\
+        Bilal Sabic & SI & Responsabile\\
     \end{tabular}
 
 \end{titlepage}
 
 \section*{Registro delle modifiche}{
     \begin{center} 
-        \begin{tabular}{|l|l|l|l|l|}
+        \begin{tabularx}{\textwidth}{|l|l|l|l|X|}
         \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            v1.0.0 & 2025/11/20 & Riccardo Valerio & Federico Simonetto & Documento firmato \\
+            \VersioneVerbale & \DataVerbale & Bilal Sabic & Federico Simonetto, Giacomo Giora & Correzioni varie \\
             \hline
-            v0.1.0 & 2025/11/19 & Michele Tesser & Federico Simonetto & Prima stesura \\
+            v0.1.0 & \DataVerbale & Bilal Sabic &  & Prima stesura \\
             \hline
-        \end{tabular}
+        \end{tabularx}
     \end{center}
 }
 
@@ -122,6 +125,8 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
 \tableofcontents
 
 \newpage
+
+
 % ----------------------------
 % Inizio contenuto verbale
 % ----------------------------
@@ -136,48 +141,35 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
 
 \section{Ordine del giorno}{
     \begin{itemize}
-        \item Esposizione di domande riguardanti il progetto e le tecnologie candidate
+        \item Presentazione del modello grafico dell'applicazione software
+        \item Esposizione di domande relative al progetto
+        \item Presentazione del PoC
     \end{itemize}
 }
 
 
 \section{Discussione}{
 
-    \subsection{A2-2025/11/11-ve Brainstorming tecnologie}
-    \textbf{Domanda:} Abbiamo confrontato le nostre ricerce, pensiamo di realizzare una webapp composta dal backend in Python con FastAPI che si interfaccia con Angular o React. Vi sembra una baseline solida?
-
-    \textbf{Risposta:} Viene ribadito che viene lasciata molta libertà nella scelta delle tecnologie. Ad ogni modo le tecnologie proposte sono tutte consolidate e valide, viene quindi lasciata a noi la decisione finale soprattutto per quanto concerne il Frontend.
-
     % ----------------------------------------------------
+    \subsection{Presentazione del modello grafico dell'applicazione software}{
+        Durante l'incontro è stato presentato il modello grafico (GUI) dell'applicazione sviluppata. In questa fase sono stati richiesti all'azienda proponente pareri, conferme e chiarimenti su alcuni aspetti funzionali.
+    }
+    
+    \subsection{Domande relative al progetto}{
+        \textbf{Domanda:} Quando devono essere caricati i file degli alberi di decisione?
+        
+        \textbf{Risposta:} Gli stakeholder hanno precisato che i file relativi agli alberi di decisione devono essere caricati all'avvio dell'applicazione, in quanto risultano identici per tutti i dispositivi che l'utente può successivamente inserire o caricare.
+        
 
-    \subsection{Autorizzazione e Persistenza}
-    \textbf{Domanda:} Sono richiesti più livelli di autorizzazione? Come dovrà avvenire la persistenza dei dati?
-
-    \textbf{Risposta:} Salvo future necessità per ora non è richiesto che ci siano più livelli di autorizzazione (utente/amministratore). La persistenza dello stato di lavoro per ora può avvenire in un file locale in un qualsiasi formato csv/ecc... . Non è richiesto che la persistenza o i decision tree siano memorizzabili in più formati.
-
-    % ----------------------------------------------------
-
-    \subsection{Dubbi riguardanti la normativa e i decision tree}
-    \textbf{Domanda:} Leggendo i documenti da voi condivisi vediamo 8 requisiti, ci sono solo quindi 8 decision tree?
-
-    \textbf{Risposta:} Per il proof of concept 8 decision tree sono sufficienti, ma non si esclude la possibilità di espandere l'infrastruttura in futuro (opzionalmente anche attraverso mezzo grafico). Viene inoltre ricordata la seguente gerarchia: Device > Asset > Decision Tree; saranno anche presenti diversi cicli (anche annidati) per le varie feature: all'utente sarà richiesto di esplorarli totalmente. Viene inoltre ricordato che in caso di dipendenza l'esito non applicabile (na) implica non applicabile. E' possibile generalizzare  il superamento dei prerequisiti come una valutazione pigra della porta logica AND.
-
-    % ----------------------------------------------------
-
-    \subsection{Avvio a freddo dell'applicazione}
-    \textbf{Domanda:} Come deve comportarsi l'utente al primo avvio dell'applicazione?
-
-    \textbf{Risposta:} Al primo avvio dell'applicazione verrà chiesto all'utente di selezionare un file di ingresso del dispositivo, il quale conterrà i vari asset di quel dispositivo, alternativamente sarà possibile crearne uno con i vari asset al suo interno. Tutti i decision tree correlati ai vari asset vengono caricati automaticamente visto che vanno sempre eseguiti tutti ( anche se con eventuale esito "non applicabile").
-
-    % ----------------------------------------------------
-
-    %   \subsection{Avvio a freddo dell'applicazione}
-    % \textbf{Domanda:} 
-    %
-    % \textbf{Risposta:}
-    %
-    % % ----------------------------------------------------
-
+        \textbf{Domanda:} Quali informazioni aggiuntive devono essere integrate negli asset e nei dispositivi?
+        
+        \textbf{Risposta:} Nel caso in cui un dispositivo venga inserito manualmente tramite l'applicazione, le informazioni aggiuntive da fornire sono quelle riportate negli esempi di file precedentemente inviati all'azienda. Ulteriori campi opzionali includono una descrizione del dispositivo e l'indicazione della sensibilità dell'asset.
+    }
+    
+    \subsection{Presentazione del PoC}{
+        È stato infine presentato il primo Proof of Concept (PoC) sviluppato dal team. L'azienda proponente è rimasta sorpresa ed ha espresso un riscontro positivo, apprezzando le funzionalità e l'impostazione generale dell'applicazione.
+    }
+   
 }
 \newpage
 
@@ -187,7 +179,7 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{ID} & \textbf{Decisione} \\
         \hline
-            D1-\DataVerbale\_ve & Fissata nuova riunione tramite Google Meet con l'azienda Bluewind S.r.l. in data 2025/12/02 alle ore 15.00. \\
+            D1-\DataVerbale\_ve & Fissata la successiva riunione in data 2026/01/13 alle ore 15.00 \\
         \hline
     \end{tabular}
     \end{center}
@@ -199,7 +191,7 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
         \hline
-            A1-\DataVerbale\_ve & Ricerca e studio fattibilità per le tecnlogie da utilizzare. & - & Team \\
+            A1-\DataVerbale\_ve & Creare la repository GitHub riguardante il PoC per permettere all'azienda proponente di visualizzarlo & - & Giacomo Giora\\
         \hline
     \end{tabular}
     \end{center}
@@ -211,7 +203,6 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
     Il proponente,\\[0.5cm]
     \rule{6cm}{0.4pt}\\
 \end{flushright}
-
 
 
 \end{document}
