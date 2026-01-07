@@ -43,11 +43,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2025/01/06}
+\newcommand{\DataUltimaModifica}{2026/01/07}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.7.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.8.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -126,7 +126,9 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Giacomo Giora & Andrea Difino & Modificati e sistemati UC da 1 a 12. Aggiunti da UC 13 a 15 \\
+            \VersioneDocumento & \DataUltimaModifica & Michele Tesser & Andrea Difino & Completati Casi d'Uso \\
+            \hline
+            v0.7.0 & 2026/01/06 & Giacomo Giora & Andrea Difino & Modificati e sistemati UC da 1 a 12. Aggiunti da UC 13 a 15 \\
             \hline
             v0.6.0 & 2025/12/19 & Andrea Difino & Giacomo Giora & Aggiunti e sistemati UC da 1 a 12 \\
             \hline
@@ -1057,6 +1059,486 @@
                     \item Il Sistema rende il dispositivo modificabile [\hyperref[uc:uc5]{UC5}].
                 \end{itemize} 
             \end{itemize}
+
+            \subsubsection{UC17 - Caricamento test precedente}
+            \label{uc:uc17}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L’Utente seleziona la funzionalitá per il caricamento di un test precedente 
+                \item \textbf{Post-condizioni}: Il Test é stato caricato nel sistema 
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalità di caricamento di un test precedente.
+                    \item Il Sistema richiede il file del test.
+                    \item L’Utente seleziona il file.
+                    \item Il Sistema valida il file.
+                    \item Il Sistema carica il test nel sistema.
+                    \item Il Sistema mostra i risultati del test [\hyperref[uc:uc6.2]{UC6.2}].
+                \end{itemize} 
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L’Utente carica un file che presenta errori di struttura o di formato [\hyperref[uc:uc2]{UC2}]
+                \end{itemize} 
+                \item \textbf{Estensioni}: \hyperref[uc:uc2]{UC2 Rilevamento file non valido}
+            \end{itemize}
+
+            \subsubsection{UC18 - Modifica dei risultati del test}
+            \label{uc:uc18}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: É presente nel sistema un test completato caricato dall’Utente o concluso in questa sessione
+                \item \textbf{Post-condizioni}: Il test è aggiornato a partire dal requisito selezionato e i nuovi risultati sono salvati.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente visualizza i risultati di un test completato [\hyperref[uc:uc6.2]{UC6.2}].
+                    \item L’Utente seleziona un requisito da modificare.
+                    \item Il Sistema identifica il nodo del decision tree associato al requisito selezionato.
+                    \item Il Sistema avvia l’esecuzione del test a partire da quel nodo.
+                \end{itemize} 
+                \item \textbf{Inclusioni}: \hyperref[uc:uc6]{UC6  Esecuzione del test }
+            \end{itemize}
+
+            \subsubsection{UC19 - Completamento di un test non finito}
+            \label{uc:uc19}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: È stato caricato un test non completato
+                \item \textbf{Post-condizioni}: Il test riprende dal nodo successivo a quello risposto dall’Utente
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente carica un test non completato.
+                    \item Il Sistema identifica l’ultimo nodo risposto.
+                    \item Il Sistema posiziona il test sul nodo successivo.
+                    \item Il Sistema avvia l’esecuzione del test da quel nodo [\hyperref[uc:uc6]{UC6}].
+                \end{itemize} 
+            \end{itemize}
+
+            \subsubsection{UC20 - Giustificazioni test}
+            \label{uc:uc20}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: E’ presente un test completato
+                \item \textbf{Post-condizioni}: Le giustificazioni sono visualizzate
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente visualizza i risultati di un test completato.
+                    \item L’Utente seleziona la funzionalità “Giustificazioni”.
+                    \item Il Sistema recupera le motivazioni associate a ciascun risultato.
+                    \item Il Sistema mostra le giustificazioni in modo strutturato. 
+                \end{itemize} 
+            \end{itemize}
+
+            \subsubsection{UC21 - Accesso all’editor grafico dei decision tree}
+            \label{uc:uc21}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Il Sistema è avviato e i file dei decision tree sono disponibili.
+                \item \textbf{Post-condizioni}: L’Utente si trova nella sezione per l'editing del decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalità di editing del decision tree.
+                    \item Il Sistema carica l’elenco dei decision tree disponibili.
+                    \item Il Sistema porta l’Utente nella sezione dedicata alla modifica del decision tree.
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L’Utente seleziona un decision tree da modificare [\hyperref[uc:uc22]{UC22}].
+                \end{itemize}
+                \item \textbf{Inclusioni}: \hyperref[uc:uc21.1]{UC21.1 Visualizzazione elenco decision tree} 
+                \item \textbf{Estensioni}: \hyperref[uc:uc22]{UC22 Selezione decision tree da modificare}
+            \end{itemize}
+
+            \noindent Il Caso d’Uso UC21 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            %\includegraphics[scale=0.58]{img/UC21Inclusioni.png}
+                            \caption{UC21 -  Inclusioni Caso d'Uso 21: UC21.1}
+                            \label{fig:uc21-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+                    \paragraph{UC21.1 - Visualizzazione elenco decision trees} \mbox{}
+                    \label{uc:uc21.1}
+                    \begin{itemize}
+                        \item \textbf{Attore}: Utente
+                        \item \textbf{Post-condizioni}: Il Sistema mostra l’elenco dei decision tree disponibili.
+                        \item \textbf{Scenario principale}:
+                        \begin{itemize}
+                            \item Il Sistema recupera i decision tree dal file di configurazione.
+                            \item Il Sistema mostra per ciascun tree:
+                            \begin{itemize}
+                                \item id del requisito
+                                \item titolo
+                                \item dipendenze (se presenti)
+                            \end{itemize}
+                        \end{itemize}
+                    \end{itemize}
+
+            \subsubsection{UC22 - Selezione decision tree da modificare}
+            \label{uc:uc22}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L’Utente visualizza l’elenco dei decision tree.
+                \item \textbf{Post-condizioni}: Il decision tree selezionato è caricato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona un decision tree.
+                    \item Il Sistema carica la struttura del tree.
+                    \item Il Sistema visualizza il decision tree.
+                \end{itemize}
+                \item \textbf{Inclusioni}: \hyperref[uc:uc22.1]{UC22.1 Visualizzazione grafica del decision tree} 
+            \end{itemize}
+
+            \noindent Il Caso d’Uso UC22 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            %\includegraphics[scale=0.58]{img/UC22Inclusioni.png}
+                            \caption{UC22 -  Inclusioni Caso d'Uso 22: UC22.1}
+                            \label{fig:uc22-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+                    \paragraph{UC22.1 - Visualizzazione grafica del decision tree} \mbox{}
+                    \label{uc:uc22.1}
+                    \begin{itemize}
+                        \item \textbf{Attore}: Utente
+                        \item \textbf{Post-condizioni}: Il Sistema mostra il decision tree come grafo orientato.
+                        \item \textbf{Scenario principale}:
+                        \begin{itemize}
+                            \item Il Sistema identifica:
+                            \begin{itemize}
+                                \item nodo root
+                                \item nodi intermedi
+                                \item nodi risultato (PASS / FAIL / NA)
+                            \end{itemize}
+                            \item Il Sistema visualizza:
+                            \begin{itemize}
+                                \item ogni nodo come elemento grafico
+                                \item i collegamenti true/false come archi direzionati
+                            \end{itemize}
+                            \item Il Sistema evidenzia l’id del requisito associato al tree.
+                        \end{itemize}
+                    \end{itemize}
+
+            \subsubsection{UC23 - Modifica del decision tree}
+            \label{uc:uc23}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Un decision tree è visualizzato nell’editor.
+                \item \textbf{Post-condizioni}: Il decision tree è aggiornato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona un nodo.
+                    \item Il Sistema mostra i dati modificabili.
+                    \begin{itemize}
+                        \item testo della domanda
+                        \item collegamenti true / false
+                    \end{itemize}
+                    \item L’Utente modifica uno o più campi.
+                    \item Il Sistema aggiorna il nodo nel tree.
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalitá di aggiunta di un nodo del decision tree \hyperref[uc:uc24]{UC24}.
+                    \item L’Utente seleziona la funzionalitá di eliminazione di un nodo del decision tree \hyperref[uc:uc25]{UC25}.
+                    \item L’Utente modifica il collegamento tra due nodi del decision tree \hyperref[uc:uc26]{UC26}.
+                \end{itemize}
+                \item \textbf{Estensioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc24]{UC24 Aggiunta nodo al decision tree}
+                    \item \hyperref[uc:uc25]{UC25 Eliminazione nodo del decision tree} 
+                    \item \hyperref[uc:uc26]{UC26 Modifica collegamenti tra nodi} 
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC24 - Aggiunta nodo al decision tree}
+            \label{uc:uc24}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Un decision tree è visualizzato nell’editor.
+                \item \textbf{Post-condizioni}: Un nuovo nodo è stato aggiunto al decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalità di aggiunta di un nodo.
+                    \item Il Sistema crea un nuovo nodo vuoto.
+                    \item L’Utente inserisce:
+                    \begin{itemize}
+                        \item testo della domanda
+                        \item tipo del nodo
+                    \end{itemize}
+                    \item Il Sistema aggiunge il nodo alla fine del tree.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC25 - Eliminazione nodo del decision tree}
+            \label{uc:uc25}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Il decision tree contiene almeno un nodo non root.
+                \item \textbf{Post-condizioni}: Il nodo selezionato è rimosso e i collegamenti aggiornati.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona un nodo.
+                    \item L’Utente seleziona la funzionalità di eliminazione.
+                    \item Il Sistema verifica che il nodo non sia root.
+                    \item Il Sistema rimuove il nodo.
+                    \item Il Sistema aggiorna i collegamenti.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC26 - Modifica collegamenti tra nodi}
+            \label{uc:uc26}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Un decision tree è visualizzato.
+                \item \textbf{Post-condizioni}: I collegamenti true/false sono aggiornati.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona un collegamento.
+                    \item L’Utente modifica il nodo di destinazione.
+                    \item Il Sistema aggiorna il grafo.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC27 - Validazione del decision tree}
+            \label{uc:uc27}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Il decision tree è stato modificato.
+                \item \textbf{Post-condizioni}: Il decision tree è validato e salvato nel Sistema
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalità di validazione del decision tree.
+                    \item Il Sistema verifica:
+                    \begin{itemize}
+                        \item esistenza del nodo root
+                        \item assenza di nodi orfani
+                        \item raggiungibilità dei nodi risultato
+                        \item coerenza degli id
+                    \end{itemize}
+                    \item Il Sistema mostra l’esito della validazione.
+                    \item Il decision tree é salvato nel Sistema.
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item Il decision tree modificato presenta uno o piú errori  [\hyperref[uc:uc28]{UC28}].
+                \end{itemize}
+                \item \textbf{Estensioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc28]{UC28 Segnalazione errori del decision tree}
+                \end{itemize} 
+            \end{itemize}
+
+            \subsubsection{UC28 - Segnalazione errori del decision tree}
+            \label{uc:uc28}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: La validazione del decision tree ha rilevato errori.
+                \item \textbf{Post-condizioni}: Gli errori sono mostrati all’Utente.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema evidenzia i nodi problematici.
+                    \item Il Sistema descrive il tipo di errore.
+                    \item L’Utente può tornare alla modifica.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC29 - Esportazione decision tree}
+            \label{uc:uc28}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: È presente un decision tree valido modificato.
+                \item \textbf{Post-condizioni}: Il file del decision tree è esportato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalità esportazione del decision tree.
+                    \item Il Sistema serializza il decision tree nel formato previsto.
+                    \item Il Sistema salva il file.
+                    \item Il Sistema conferma l’esportazione.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC30 - Accesso all’editor del documento del dispositivo}
+            \label{uc:uc30}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Un dispositivo con asset associati è visualizzato nel sistema.
+                \item \textbf{Post-condizioni}: L’Utente si trova nell’editor del documento dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente visualizza il resoconto del dispositivo con i suoi assets.
+                    \item L’Utente seleziona la funzionalità di modifica del documento.
+                    \item Il Sistema carica i dati del dispositivo e degli asset.
+                    \item Il Sistema porta l’Utente nell’editor del documento.
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L'Utente seleziona il pulsante per il salvataggio delle modifiche riguardo i dati identificativi del dispositivo [\hyperref[uc:uc31]{UC31}]
+                \end{itemize}
+                \item \textbf{Inclusioni}: \hyperref[uc:uc30.1]{UC30.1 Visualizzazione dati dispositivo in modalitá modifica}
+                \item \textbf{Estensioni}: \hyperref[uc:uc31]{UC31 Visualizzazione lista asset in modalità modifica}
+            \end{itemize}
+
+            \noindent Il Caso d’Uso UC30 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            %\includegraphics[scale=0.58]{img/UC30Inclusioni.png}
+                            \caption{UC30 -  Inclusioni Caso d'Uso 30: UC30.1}
+                            \label{fig:uc30-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+                    \paragraph{UC30.1 - Visualizzazione dati dispositivo in modalitá modifica} \mbox{}
+                    \label{uc:uc30.1}
+                    \begin{itemize}
+                        \item \textbf{Attore}: Utente
+                        \item \textbf{Post-condizioni}: I dati del dispositivo sono visualizzati in forma modificabile.
+                        \item \textbf{Scenario principale}:
+                        \begin{itemize}
+                            \item Il Sistema mostra i campi del dispositivo:
+                            \begin{itemize}
+                                \item nome
+                                \item sistema operativo
+                                \item versione firmware
+                                \item funzionalità
+                                \item descrizione
+                            \end{itemize}
+                            \item I campi sono modificabili dall’Utente.
+                        \end{itemize}
+                    \end{itemize}
+
+            \subsubsection{UC31 - Visualizzazione lista asset in modalità modifica}
+            \label{uc:uc31}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente ha salvato le modifiche riguardo i dati identificativi del dispositivo
+                \item \textbf{Post-condizioni}: La lista degli asset è visualizzata con funzionalità di selezione e modifica.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema mostra la lista degli asset associati al dispositivo.
+                    \item Per ogni asset, il Sistema mostra l’azione di modifica.
+                    \item L’Utente può selezionare un asset.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC32 - Selezione asset da modificare}
+            \label{uc:uc32}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: La lista degli asset è visualizzata.
+                \item \textbf{Post-condizioni}: L’asset è selezionato è aperto in modalità modifica.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza la lista degli assets modificabili
+                    \item L'Utente seleziona un asset che vuole modificare 
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L'Utente seleziona la funzionalità per modificare l'asset selezionato [\hyperref[uc:uc33]{UC33}]
+                \end{itemize}
+                \item \textbf{Estensioni}: \hyperref[uc:uc33]{UC33 Modifica dati asset}
+            \end{itemize}
+
+            \subsubsection{UC33 - Modifica dati asset}
+            \label{uc:uc33}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Un asset è stato aperto in modalità modifica.
+                \item \textbf{Post-condizioni}: Le modifiche all’asset sono salvate in memoria.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema mostra i campi dell’asset:
+                    \begin{itemize}
+                        \item nome
+                        \item tipo
+                        \item descrizione
+                        \item sensibilità
+                    \end{itemize}
+                    \item L’Utente modifica uno o più campi.
+                    \item Il Sistema aggiorna i dati dell’asset nello stato corrente.
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L'Utente seleziona la funzionalità per annullare la modifica dell'asset [\hyperref[uc:uc34]{UC34}]
+                    \item L'Utente seleziona la funzionalità per salvare la modifica dell'asset [\hyperref[uc:uc35]{UC35}]
+                \end{itemize}
+                \item \textbf{Estensioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33]{UC33 Annullamento modifica asset}
+                    \item \hyperref[uc:uc33]{UC33 Conferma modifica asset}
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC34 - Annullamento modifica asset}
+            \label{uc:uc34}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Un asset è in fase di modifica.
+                \item \textbf{Post-condizioni}: Le modifiche all'asset sono scartate.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente si trova nella sezione di modifica dell'asset.
+                    \item L’Utente seleziona il pulsante per l'annullamento della modifica dell'asset.
+                    \item Il Sistema ripristina i dati originali dell’asset.
+                    \item Il Sistema riporta l’Utente alla lista degli asset.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC35 - Conferma modifica asset}
+            \label{uc:uc35}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Un asset è in fase di modifica.
+                \item \textbf{Post-condizioni}: Le modifiche all’asset sono salvate in memoria.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalità di salvataggio.
+                    \item Il Sistema valida i dati inseriti.
+                    \item Il Sistema aggiorna l’asset nel documento dispositivo.
+                    \item Il Sistema riporta l’Utente alla lista degli asset.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC36 - Salvataggio documento dispositivo modificato}
+            \label{uc:uc36}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Il documento dispositivo è stato modificato.
+                \item \textbf{Post-condizioni}: Il dispositivo e la lista degli asset sono salvati nel sistema.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalità di salvataggio del documento.
+                    \item Il Sistema valida il documento complessivo.
+                    \item Il Sistema salva il dispositivo e gli asset.
+                    \item Il Sistema conferma il salvataggio.
+                \end{itemize}
+                \item \textbf{Inclusioni}: \hyperref[uc:uc16]{UC16 Salvataggio della lista di assets}
+            \end{itemize}
+
+            \subsubsection{UC37 - Uscita dall’editor senza salvataggio}
+            \label{uc:uc37}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L’Utente si trova nell’editor del documento.
+                \item \textbf{Post-condizioni}: L'Utente si trova allo stato iniziale dell'applicazione.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L’Utente seleziona il pulsante per l'uscita dall'editor.
+                    \item Il Sistema rileva modifiche non salvate.
+                    \item Il Sistema chiede conferma.
+                    \item L’Utente conferma l’uscita.
+                    \item Il Sistema annulla le modifiche 
+                    \item Il documento viene cancellato dal sistema 
+                    \item Il Sistema porta l'Utente allo stato iniziale dell'applicazione
+                \end{itemize}
+            \end{itemize}
+
 
             
         
