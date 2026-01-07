@@ -31,8 +31,8 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloVerbale}{Verbale della Riunione}
-\newcommand{\DataVerbale}{2025/11/18}
-\newcommand{\NumeroVerbaleEsterno}{terzo}
+\newcommand{\DataVerbale}{2025/12/02}
+\newcommand{\NumeroVerbaleEsterno}{quinto}
 \newcommand{\OraInizio}{15:00}
 \newcommand{\OraFine}{15:45}
 \newcommand{\LuogoVerbale}{Chiamata Google Meet}
@@ -92,13 +92,13 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
         \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
-        Andrea Difino & SI & Amministratore\\
-        Federico Simonetto & SI & Verificatore\\
-        Riccardo Valerio & SI & Responsabile\\
-        Francesco Marcolongo & SI & Responsabile\\
-        Michele Tesser & SI & Analista\\
-        Giacomo Giora & SI & Amministratore\\
-        Bilal Sabic & SI & Progettista\\
+        Andrea Difino & SI & Analista\\
+        Federico Simonetto & SI & Responsabile\\
+        Riccardo Valerio & SI & Verificatore\\
+        Francesco Marcolongo & SI & Amministratore\\
+        Michele Tesser & SI & Progettista\\
+        Giacomo Giora & SI & Programmatore\\
+        Bilal Sabic & SI & Verificatore\\
     \end{tabular}
 
 \end{titlepage}
@@ -109,9 +109,9 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            v1.0.0 & 2025/11/20 & Riccardo Valerio & Federico Simonetto & Documento firmato \\
+            \VersioneVerbale & 2025/12/02 & Michele Tesser & Bilal Sabic, Riccardo Valerio & Firma del documento \\
             \hline
-            v0.1.0 & 2025/11/19 & Michele Tesser & Federico Simonetto & Prima stesura \\
+            v0.1.0 & 2025/12/02 & Michele Tesser &  & Prima stesura \\
             \hline
         \end{tabular}
     \end{center}
@@ -136,47 +136,40 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
 
 \section{Ordine del giorno}{
     \begin{itemize}
-        \item Esposizione di domande riguardanti il progetto e le tecnologie candidate
+        \item Esposizione di domande riguardanti il progetto, i prototipi dei casi d'uso e dei requisiti funzionali e non.
     \end{itemize}
 }
 
 
 \section{Discussione}{
 
-    \subsection{A2-2025/11/11-ve Brainstorming tecnologie}
-    \textbf{Domanda:} Abbiamo confrontato le nostre ricerce, pensiamo di realizzare una webapp composta dal backend in Python con FastAPI che si interfaccia con Angular o React. Vi sembra una baseline solida?
-
-    \textbf{Risposta:} Viene ribadito che viene lasciata molta libertà nella scelta delle tecnologie. Ad ogni modo le tecnologie proposte sono tutte consolidate e valide, viene quindi lasciata a noi la decisione finale soprattutto per quanto concerne il Frontend.
+    % ----------------------------------------------------
+    \subsection{Superivisione casi d'uso}
+    \textbf{Domanda:} Abbiamo effettuato una prima stesura dei casi d'uso. Sono corretti? Ci consigliate alcuni cambiamenti?
+    
+    \textbf{Risposta:} I casi d'uso risultano nel complesso corretti; tuttavia, l'azienda propone alcune modifiche e integrazioni.
+    In particolare, considerando la possibilità di aggiungere asset direttamente tramite la web app, è necessario introdurre un'opzione che consenta di salvare gli asset inseriti all'interno di un file.\newline
+    Inoltre, durante l'esecuzione dei decision tree, dovrebbe essere previsto un pulsante per tornare al passo precedente, così da permettere la correzione di eventuali risposte inserite in modo errato.\newline
+    Infine, nel caso in cui l'utente apra, tramite la web app, un file relativo a un test precedente, questo non dovrà presentare i risultati in modalità sola lettura, bensì dovranno essere pienamente modificabili.
+    Qualora venga apportata una modifica a uno specifico requisito, anche i requisiti successivi che dipendono da quello modificato dovranno essere nuovamente proposti all'utente, così da garantire la coerenza dell'intero processo di valutazione.
 
     % ----------------------------------------------------
+    \subsection{Supervisione requisiti}
+    \textbf{Domanda:} Abbiamo effettuato una prima stesura dei requisiti. Sono corretti? Ci consigliate alcuni cambiamenti?
 
-    \subsection{Autorizzazione e Persistenza}
-    \textbf{Domanda:} Sono richiesti più livelli di autorizzazione? Come dovrà avvenire la persistenza dei dati?
-
-    \textbf{Risposta:} Salvo future necessità per ora non è richiesto che ci siano più livelli di autorizzazione (utente/amministratore). La persistenza dello stato di lavoro per ora può avvenire in un file locale in un qualsiasi formato csv/ecc... . Non è richiesto che la persistenza o i decision tree siano memorizzabili in più formati.
-
+    \textbf{Risposta:}  I requisiti presentati sono in buona parte corretti, ci sono alcune modifiche richieste dall'azienda. In particolare: sono sufficienti metodi molto semplicistici per il salvataggio dello stato di avanzamento, in contrasto con i metodi proposti più vicini ai DB.
+    % ----------------------------------------------------
+    \subsection{PoC}
+    \textbf{Domanda:} Per il Proof of Concept, in riferimento alla parte grafica, che quantità di funzionalità vi aspettate?
+    
+    \textbf{Risposta:} Per il Proof of Concept, nella parte grafica è richiesta solamente una dimostrazione del funzionamento della tecnologia scelta, tutte le funzionalità proprie dell'applicazione potranno essere verificabili attraverso una CLI. 
+    % ----------------------------------------------------
+    \subsection{Deployment}
+    \textbf{Domanda:} La vostra azienda offrirà metodi di hosting per la nostra web app oppure preferite utilizzare altri metodi di deployment?
+    
+    \textbf{Risposta:} L'azienda potrebbe mettere a disposizione una macchina per l'hosting dell'applicazione; tuttavia si preferisce l'adozione di soluzioni basate sulla containerizzazione come Docker o Podman.
     % ----------------------------------------------------
 
-    \subsection{Dubbi riguardanti la normativa e i decision tree}
-    \textbf{Domanda:} Leggendo i documenti da voi condivisi vediamo 8 requisiti, ci sono solo quindi 8 decision tree?
-
-    \textbf{Risposta:} Per il proof of concept 8 decision tree sono sufficienti, ma non si esclude la possibilità di espandere l'infrastruttura in futuro (opzionalmente anche attraverso mezzo grafico). Viene inoltre ricordata la seguente gerarchia: Device > Asset > Decision Tree; saranno anche presenti diversi cicli (anche annidati) per le varie feature: all'utente sarà richiesto di esplorarli totalmente. Viene inoltre ricordato che in caso di dipendenza l'esito non applicabile (na) implica non applicabile. E' possibile generalizzare  il superamento dei prerequisiti come una valutazione pigra della porta logica AND.
-
-    % ----------------------------------------------------
-
-    \subsection{Avvio a freddo dell'applicazione}
-    \textbf{Domanda:} Come deve comportarsi l'utente al primo avvio dell'applicazione?
-
-    \textbf{Risposta:} Al primo avvio dell'applicazione verrà chiesto all'utente di selezionare un file di ingresso del dispositivo, il quale conterrà i vari asset di quel dispositivo, alternativamente sarà possibile crearne uno con i vari asset al suo interno. Tutti i decision tree correlati ai vari asset vengono caricati automaticamente visto che vanno sempre eseguiti tutti ( anche se con eventuale esito "non applicabile").
-
-    % ----------------------------------------------------
-
-    %   \subsection{Avvio a freddo dell'applicazione}
-    % \textbf{Domanda:} 
-    %
-    % \textbf{Risposta:}
-    %
-    % % ----------------------------------------------------
 
 }
 \newpage
@@ -187,7 +180,9 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{ID} & \textbf{Decisione} \\
         \hline
-            D1-\DataVerbale\_ve & Fissata nuova riunione tramite Google Meet con l'azienda Bluewind S.r.l. in data 2025/12/02 alle ore 15.00. \\
+            D1-\DataVerbale\_ve & Fissata la successiva riunione in data 2025/12/16 alle ore 15.00 \\
+        \hline
+            D2-\DataVerbale\_ve & Deciso utilizzo di GitHub come sistema di versionamento per il prodotto software \\
         \hline
     \end{tabular}
     \end{center}
@@ -199,7 +194,11 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
         \hline
-            A1-\DataVerbale\_ve & Ricerca e studio fattibilità per le tecnlogie da utilizzare. & - & Team \\
+            A1-\DataVerbale\_ve & Creare alcuni Decision Tree in TOML & \#57 & Team \\
+        \hline
+            A2-\DataVerbale\_ve & Creare un template in JSON / CSV per gli assets & \#58 & Team \\
+        \hline
+            A3-\DataVerbale\_ve & Creare il supporto al versionamento & \#59 & Team \\
         \hline
     \end{tabular}
     \end{center}
@@ -211,7 +210,6 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
     Il proponente,\\[0.5cm]
     \rule{6cm}{0.4pt}\\
 \end{flushright}
-
 
 
 \end{document}
