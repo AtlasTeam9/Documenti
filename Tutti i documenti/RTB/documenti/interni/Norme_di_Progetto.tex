@@ -10,6 +10,7 @@
 \usepackage{tabularx}
 \usepackage[table]{xcolor}
 \definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{calc}
@@ -18,6 +19,7 @@
 \usepackage{comment}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{amsmath}
 \usepackage{pgf-pie}
 \usepackage{longtable}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
@@ -41,11 +43,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Norme di progetto}
-\newcommand{\DataUltimaModifica}{2025/12/12}
-\newcommand{\LogoGruppo}{img/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\DataUltimaModifica}{da scrivere alla fine}
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png}
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.4.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{da scrivere alla fine}
 \newcommand{\TipoDocumento}{Interno} 
 
 \pagestyle{fancy}
@@ -63,8 +65,8 @@
 \newlength{\colw}
 \setlength{\colw}{1.5cm}
 
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
 
 \definecolor{mioverde}{RGB}{20,150,60}
 
@@ -122,19 +124,37 @@
 \section*{Registro delle modifiche}{
     \begin{center}
     \rowcolors{2}{lightblue}{white} % Alternanza automatica dal secondo row
-        \begin{tabular}{|l|l|l|l|l|}
+        \begin{tabularx}{\textwidth}{|l|l|l|l|X|}
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Federico Simonetto & Riccardo Valerio & Fine stesura sez. 2 \\
+            v0.7.2 & 2025/12/31 & Bilal Sabic & Giacomo Giora & Fine stesura sez. 5\\
+            \hline
+            v0.7.1 & 2025/12/30 & Federico Simonetto & Giacomo Giora & Correzioni sez. 3\\
+            \hline
+            v0.7.0 & 2025/12/29 & Federico Simonetto & Giacomo Giora & Stesura sez. 6 \\
+            \hline
+            v0.6.0 & 2025/12/29 & Bilal Sabic & Giacomo Giora & Inizio stesura sez. 5\\
+            \hline
+            v0.5.3 & 2025/12/29 & Federico Simonetto & Giacomo Giora & Fine stesura sez. 3\\
+            \hline
+            v0.5.2 & 2025/12/29 & Giacomo Giora & Federico Simonetto & Fine stesura sez. 4\\
+            \hline
+            v0.5.1 & 2025/12/24 & Federico Simonetto & Giacomo Giora & Fine stesura sottosez. 3.2\\
+            \hline
+            v0.5.0 & 2025/12/24 & Giacomo Giora & Federico Simonetto & Inizio stesura sez. 4 \\
+            \hline
+            v0.4.0 & 2025/12/23 & Federico Simonetto & Giacomo Giora & Inizio stesura sottosez. 3.2 e correzione errori \\
+            \hline
+            v0.3.1 & 2025/12/12 & Federico Simonetto & Riccardo Valerio & Fine stesura sez. 2 \\
             \hline
             v0.3.0 & 2025/12/10 & Bilal Sabic & Riccardo Valerio & Inizio stesura sez. 3 \\
             \hline
-            v0.2.0 & 2025/12/09 & Federico Simonetto & Riccardo Valerio  & Stesura sez. 2\\
+            v0.2.0 & 2025/12/09 & Federico Simonetto & Riccardo Valerio & Stesura sez. 2\\
             \hline
             v0.1.0 & 2025/12/05 & Federico Simonetto & Bilal Sabic & Prima stesura introduzione \\
             \hline
-        \end{tabular}
+        \end{tabularx}
     \end{center}
 }
 
@@ -172,6 +192,7 @@
         \subsubsection{Riferimenti normativi}{
             \begin{itemize}
                 \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item \textbf{Standard ISO/IEC 9126}\newline \url{https://it.wikipedia.org/wiki/ISO/IEC_9126}
                 \item Riferimento al documento dello standard della descrizione dei processi del ciclo di vita software: \newline \textbf{ISO/IEC 12207:1995}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}
             \end{itemize}
         }
@@ -181,12 +202,13 @@
                 \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Processi di ciclo di vita}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T02.pdf}
                 \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Modelli di sviluppo software}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T03.pdf}
                 \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Gestione di progetto}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Verifica e validazione: introduzione}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T09.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Verifica e validazione: analisi statica}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T10.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Verifica e validazione: analisi dinamica}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T11.pdf}
             \end{itemize}
         }
     }
 }
-
-% SEC 2 ########################################################################
 
 \section{Processi Primari}{
     I processi primari comprendono l'insieme di attività che supportano il team di sviluppo e l'azienda fornitrice nell'avvio e nell'esecuzione dello sviluppo, nell'operazione e nella manutenzione di un prodotto software.
@@ -220,7 +242,6 @@
                 \item \textbf{Revisione e valutazione:} il fornitore organizza le attività di revisione e accettazione del prodotto insieme al proponente, fornendo i report di valutazione, test e revisione previsti dal contratto.
                 \item \textbf{Consegna e completamento:} il fornitore consegna il prodotto software al proponente, assicurando l'assistenza e il supporto previsti dal contratto.
             \end{enumerate}
-
         }
 
         \subsubsection{Documentazione fornita}{
@@ -251,6 +272,7 @@
             \rowcolors{2}{lightblue}{white}
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
+                \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Dichiarazione degli impegni}}\\
                 \hline
                 \textbf{Redattore} & Responsabile di progetto\\
@@ -270,6 +292,7 @@
             \rowcolors{2}{lightblue}{white}
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
+                \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Lettera di presentazione}}\\
                 \hline
                 \textbf{Redattore} & Responsabile di progetto\\
@@ -289,6 +312,7 @@
             \rowcolors{2}{lightblue}{white}
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
+                \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Analisi dei requisiti}}\\
                 \hline
                 \textbf{Redattore} & Analisti di progetto\\
@@ -308,6 +332,7 @@
             \rowcolors{2}{lightblue}{white}
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
+                \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Lettera di presentazione}}\\
                 \hline
                 \textbf{Redattore} & Responsabile\\
@@ -327,6 +352,7 @@
             \rowcolors{2}{lightblue}{white}
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
+                \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Norme di progetto}}\\
                 \hline
                 \textbf{Redattore} & Amministratore\\
@@ -344,17 +370,18 @@
             \begin{table}[H]
             \centering
             \rowcolors{2}{lightblue}{white}
-            \begin{tabularx}{\textwidth}{|l|X|}
-                \hline
-                \multicolumn{2}{|c|}{\textbf{Piano di progetto}}\\
-                \hline
-                \textbf{Redattore} & Responsabile\\
-                \hline
-                \textbf{Tipo di documento} & Esterno\\
-                \hline
-                \textbf{Scopo e contenuti} & Lo scopo del documento è tracciare le attività che vengono svolte così come quelle che vengono pianificate durante tutta la realizzazione del progetto. Il \textit{Piano di progetto} riporta una descrizione di ogni sprint con l'aggiornamento delle ore utilizzate e i relativi costi.\\
-                \hline
-            \end{tabularx}     
+                \begin{tabularx}{\textwidth}{|l|X|}
+                    \hline
+                    \rowcolor{gold}
+                    \multicolumn{2}{|c|}{\textbf{Piano di progetto}}\\
+                    \hline
+                    \textbf{Redattore} & Responsabile\\
+                    \hline
+                    \textbf{Tipo di documento} & Esterno\\
+                    \hline
+                    \textbf{Scopo e contenuti} & Lo scopo del documento è tracciare le attività che vengono svolte così come quelle che vengono pianificate durante tutta la realizzazione del progetto. Il \textit{Piano di progetto} riporta una descrizione di ogni sprint con l'aggiornamento delle ore utilizzate e i relativi costi.\\
+                    \hline
+                \end{tabularx}     
             \caption{Descrizione del documento "Piano di progetto"}
             \end{table}
             }
@@ -363,17 +390,18 @@
             \begin{table}[h]
             \centering
             \rowcolors{2}{lightblue}{white}
-            \begin{tabularx}{\textwidth}{|l|X|}
-                \hline
-                \multicolumn{2}{|c|}{\textbf{Piano di qualifica}}\\
-                \hline
-                \textbf{Redattore} & Amministratore\\
-                \hline
-                \textbf{Tipo di documento} & Esterno\\
-                \hline
-                \textbf{Scopo e contenuti} & Il documento riporta le strategie di verifica e di validazione che il team di progetto utilizzerà per garantire la qualità del prodotto e dei processi del progetto, oltre ai test effettuati e i rispettivi esiti.\\
-                \hline
-            \end{tabularx}    
+                \begin{tabularx}{\textwidth}{|l|X|}
+                    \hline
+                    \rowcolor{gold}
+                    \multicolumn{2}{|c|}{\textbf{Piano di qualifica}}\\
+                    \hline
+                    \textbf{Redattore} & Amministratore\\
+                    \hline
+                    \textbf{Tipo di documento} & Esterno\\
+                    \hline
+                    \textbf{Scopo e contenuti} & Il documento riporta le strategie di verifica e di validazione che il team di progetto utilizzerà per garantire la qualità del prodotto e dei processi del progetto, oltre ai test effettuati e i rispettivi esiti.\\
+                    \hline
+                \end{tabularx}    
             \caption{Descrizione del documento "Piano di qualifica"}
             \end{table}
             }  
@@ -410,26 +438,26 @@
                 \item \textbf{Supporto all'accettazione software:} lo sviluppatore deve supportare l'utente finale durante le attività di verifica, revisione e test previste per l'accettazione del prodotto.
             \end{enumerate}
         }
-        Il team ha deciso di approfondire di seguito le sole attività di analisi dei requisiti di sistema e codifica del software in vista della \textbf{Requirements and Technology Baseline}. Crediamo infatti che, per questa baseline di progetto, le due attività sopra menzionate siano quelle che richiedono una spiegazione più approfondita. Le altre principali attività che il team presenterà verranno aggiunte dopo il “semaforo verde” della RTB.
+        Il team ha deciso di approfondire di seguito le sole attività di analisi dei requisiti di sistema e codifica del software in vista della \textit{Requirements and Technology Baseline}. Crediamo infatti che, per questa baseline di progetto, le due attività sopra menzionate siano quelle che richiedono una spiegazione più approfondita. Le altre principali attività che il team presenterà verranno aggiunte dopo il “semaforo verde” della RTB.
 
         \subsubsection{Attività di analisi dei requisiti}{
-            L'analisi dei requisiti è un'attività cardine di ogni progetto e, in particolare, della baseline di progetto Requirements and Technology Baseline. Questa consiste nell'individuare tutti i requisiti, funzionali e non, che il prodotto software deve soddisfare. L'analisi effettuata dal team può essere visualizzata nell'\href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/.pdf}{apposito documento}.
+            L'analisi dei requisiti è un'attività cardine di ogni progetto e, in particolare, della baseline di progetto \textit{Requirements and Technology Baseline}. Questa consiste nell'individuare tutti i requisiti, funzionali e non, che il prodotto software deve soddisfare. L'analisi effettuata dal team può essere visualizzata nell'\href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/.pdf}{apposito documento}.
             \newline
             In particolare, vengono riportati i casi d'uso ed i relativi requisiti secondo la seguente convenzione.
             
             \paragraph{Casi d'uso}\hfill\break{
-                I casi d'uso sono identificati secondo il seguente format: \textbf{UCPrincipale.Alternativo}\newline
+                I casi d'uso sono identificati secondo il seguente formato: \textbf{UC-Principale.Alternativo}\newline
                 dove:
                 \begin{itemize}
                     \item \textbf{UC} è la sigla di Use Case, ovvero Caso d'Uso;
-                    \item \textbf{Principale} è rappresentato da un numero naturale maggiore di zero e indica che il Caso d'Uso attuale non è correlato ad altri casi d'uso. Il numero indicato dal campo \textbf{Principale} è univoco tra tutti i Casi d'Uso;
-                    \item \textbf{Alternativo} è rappresentato da un numero naturale maggiore di zero e indica che il Caso d'Uso è correlato al Caso d'Uso indicato dal campo \textbf{Principale}.
+                    \item \textbf{Principale} è rappresentato da un numero maggiore di zero e indica che il Caso d'Uso attuale non è correlato ad altri casi d'uso. Il numero indicato dal campo \textbf{Principale} è univoco tra tutti i Casi d'Uso;
+                    \item \textbf{Alternativo}, se presente, è rappresentato da un numero maggiore di zero e indica che il Caso d'Uso è correlato al Caso d'Uso indicato dal campo \textbf{Principale}.
                 \end{itemize}
                 Ogni Caso d'Uso è accompagnato dal relativo diagramma UML, da una descrizione testuale e da un nome che ne riassume lo scenario.
             }
 
             \paragraph{Requisiti}\hfill\break{
-                I requisiti sono identificati secondo il seguente formato: \textbf{RIdTipologiaPriorità}\newline
+                I requisiti sono identificati secondo il seguente formato: \textbf{R-Id-Tipologia-Priorità}\newline
                 dove:
                 \begin{itemize}
                     \item \textbf{R} sta per requisito;
@@ -451,7 +479,7 @@
             } 
         }
 
-        \subsubsection{Codifica del software}\hfill{
+        \subsubsection{Codifica del software}{
             L'attività di codifica del software viene svolta dai programmatori e rappresenta l'implementazione tramite codice del lavoro effettuato dai progettisti. Il software risultante dall'attività di codifica deve rispettare i requisiti individuati dagli analisti e soddisfare le metriche di verifica e validazione, e deve inoltre soddisfare le esigenze concordate con il proponente.
             \newline
             La codifica deve essere effettuata seguendo specifiche pratiche e diversi standard. Di seguito sono elencate le caratteristiche che il codice sviluppato dal team dovrà rispettare.
@@ -464,16 +492,16 @@
                         \item Backend:
                         \begin{itemize}
                             \item \textbf{Classi}: Pascal Case;
-                            \item \textbf{Variabili e Metodi}: si adotta lo Snake Case;
+                            \item \textbf{Variabili e Metodi}: Snake Case;
                             \item \textbf{Nomi file}: Snake Case;
-                            \item \textbf{Costanti}: devono essere scritte interamente in MAIUSCOLO con underscore.
+                            \item \textbf{Costanti}: Upper Snake Case.
                         \end{itemize}
                         \item Frontend:
                         \begin{itemize}
                             \item \textbf{Classi}: Pascal Case;
-                            \item \textbf{Variabili e Metodi}: si adotta il Camel Case;
+                            \item \textbf{Variabili e Metodi}: Camel Case;
                             \item \textbf{Nomi file}: Kebab Case;
-                            \item \textbf{Costanti}: uguale al Backend.
+                            \item \textbf{Costanti}: Upper Snake Case.
                         \end{itemize}
                     \end{itemize}
                 
@@ -533,86 +561,951 @@
     }
 }
 
-% SEC 3 ########################################################################################
-
-\section{Processi di supporto}{
-    \subsection{Documentazione}
-    La documentazione è uno strumento potente usato per definire, descrivere, tracciare e supportare le attività svolte durante il progetto. Nel dettaglio, il processo di documentazione supporta la tracciabilità delle informazioni, assicurandone la registrazione e la conservazione lungo tutte le fasi del ciclo di vita delle attività e dei processi. 
-    \subsubsection{Strumenti utilizzati}
-    Per compilare la documentazione il gruppo utilizza tre strumenti utili:
+\section{Processi di supporto}
+    I processi di supporto comprendono l'insieme di attività che forniscono assistenza ai processi primari e organizzativi durante l'intero ciclo di vita del prodotto software. Essi sono finalizzati a garantire la qualità del prodotto e del processo, a gestire in modo controllato le modifiche, la documentazione e le configurazioni, nonché a fornire i meccanismi necessari per la verifica, la validazione e la risoluzione dei problemi.\\
+    I processi di supporto che verranno descritti in questa sezione sono:
     \begin{itemize}
-    \item \textbf{LaTeX} : un linguaggio mark-up usato per la redazione dei documenti scientifici e altro. Richiede la compilazione ogni volta che si fanno delle modifiche, a differenza di altri linguaggi mark-up come ad esempio Typst. Il gruppo utilizza esclusivamente LaTeX per scrivere tutta la documentazione.
-    \item \textbf{Overleaf} :  è una piattaforma online che consente di scrivere, modificare e compilare documenti LaTeX direttamente dal browser, facilitando la collaborazione in tempo reale e la gestione dei progetti senza installare software locali. Il gruppo utilizza questo sito per scrivere i documenti piccoli come i verbali.
-    \item \textbf{GitHub} : l'adozione di GitHub consente di semplificare i processi di verifica e approvazione dei documenti, garantendo al contempo il controllo delle modifiche tramite le pull request e permette di pianificare i prossimi passi usando il sistema di Ticketing.
+        \item \textbf{Documentazione}
+        \item \textbf{Gestione delle configurazioni}
+        \item \textbf{Accertamento della qualità}
+        \item \textbf{Verifica}
+        \item \textbf{Validazione}
     \end{itemize}
-    \subsubsection{Tipologie di documenti}
-    Il gruppo ha creato dei template per ogni tipo di documento e ogni documento ha una struttura specifica. I tipi di documenti con un template sono:
-    \begin{itemize}
-    \item \textbf{Verbale interno}
-    \item \textbf{Verbale esterno}
-    \item \textbf{Diaro di bordo}
-    \end{itemize}
-
-    \subsubsection{Verbali}
-    Generalmente i verbali seguono questa struttura:
-    \begin{itemize}
-    \item \textbf{Frontespizio}, composto da:
-    \begin{itemize}
-    \item Logo e nome del gruppo
-    \item Tipologia del documento e le informazioni di riferimento, tra cui versione, data e luogo.
-    \item La lista dei partecipanti alla riunione
-    \end{itemize}
-    \item La tabella delle versioni
-    \item Abstract che ha lo scopo di indicare il periodo della riunione e i principali argomenti trattati
-    \item Ordine del giorno che indica in modo strutturato gli argomenti discussi durante la riunione.
-    \item Discussione, dove vengono documentati i temi affrontati, le osservazioni dei partecipanti e le eventuali divergenze o punti di accordo.
-    \item La sezione Decisioni documenta le decisioni prese dal gruppo, organizzate in tabella per facilitare la consultazione e il monitoraggio delle azioni conseguenti.
-    \item La sezione Attività da svolgere elenca in modo dettagliato i compiti assegnati ai partecipanti, specificando i responsabili.
-    \end{itemize}
-    Ogni decisione ha un suo codice univoco e segue questo formato : "Dx (x numero della decisione)-ANNO/MESE/GIORNO\_vi" (se interno, ve se interno)
-    \\
-    Anche le attività hanno codici univoci e seguono questo formato : "Ax (x numero dell'attività)-ANNO/MESE/GIORNO\_vi"
-
-    \subsubsection{Diario di bordo}
-    Questi documenti, creati nell’ambito dell’attività coordinata dal Prof. Tullio Vardanega, sono utilizzati per monitorare lo stato di avanzamento di ciascun gruppo del I lotto e hanno carattere puramente informativo.
-    Sono presentazioni semplici che trattano tre argomenti.:
-    \begin{itemize}
-        \item Risultati raggiunti, qui vengono elencate le attività che sono state fate nel periodo corrente
-        \item Prossime attività, un elenco di attività pianificate dal gruppo
-        \item Difficoltà riscontrate, eventuali difficoltà riscontrate durante lo svolgimento delle attività
-    \end{itemize}
-
-    \subsubsection{La produzione}
-    La creazione di un documento prevede questi passaggi:
-    \begin{itemize}
-        \item Creazione della issue su github tramite sistemi di ticketing: viene aperta una issue per poter tenere traccia dell'andamento e per assegnare il responsabile di quel documento. Per file grandi come ad esempio il PdP vengono creati dei branch secondari per poter effettuare modifiche senza andare a modificare il branch principale. I documenti piccoli come i verbali vanno fatti direttamente in Overleaf senza dover aprire branch secondari.
-        \item Inizio stesura : La creazione del documento è determinata dall’assegnatario: ogni documento è prodotto dal soggetto responsabile delle relative attività.
-        \item Verifica : dopo la stesura il file va verificato tramite pull request di GitHub oppure se è un verbale va verificato direttamente su Overleaf.
-    \end{itemize}
-    Dopo la verifica, il responsabile approva la pull request, e il file viene integrato nel branch principale. Successivamente, il sistema automatizzato GitHub Actions provvede a inserire il file nella cartella corretta del sito web.
     
-    \subsubsection{Denominazione dei documenti}
-    I documenti, per la denominazione, seguono questo formato:
-    \begin{itemize}
-        \item \textbf{Verbali interni} - VI-ANNO-MESE-GIORNO
-        \item \textbf{Verbali esterni} - VE-ANNO-MESE-GIORNO
-        \item \textbf{Diari di bordo} - DB-ANNO-MESE-GIORNO
-    \end{itemize}
-    È stato deciso di adottare il formato \textbf{AAAA-MM-GG} per le date, al fine di semplificare la lettura e l’ordinamento cronologico dei documenti.
-    La versione del documento si trova all'interno del file.
+    \subsection{Documentazione}
+    \label{subsec:documentazione}
+        La documentazione è uno strumento potente usato per definire, descrivere, tracciare e supportare le attività svolte durante il progetto. Nel dettaglio, il processo di documentazione supporta la tracciabilità delle informazioni, assicurandone la registrazione e la conservazione lungo tutte le fasi del ciclo di vita delle attività e dei processi. 
+
+        \subsubsection{Tipologie di documenti}
+            Il gruppo ha creato dei \textbf{template} per ogni tipo di documento e ogni documento ha una struttura specifica. I tipi di documenti con un template sono:
+            \begin{itemize}
+                \item \textbf{Verbale interno}
+                \item \textbf{Verbale esterno}
+                \item \textbf{Diario di bordo}
+            \end{itemize}
+
+        \paragraph{Verbali}\hfill\break
+            Generalmente i verbali seguono questa struttura:
+            \begin{itemize}
+                \item \textbf{Frontespizio}, composto da:
+                \begin{itemize}
+                    \item Logo e nome del gruppo
+                    \item Tipologia del documento e le informazioni di riferimento, tra cui versione, data e luogo
+                    \item La lista dei partecipanti alla riunione
+                \end{itemize}
+                \item La tabella delle versioni;
+                \item Abstract che ha lo scopo di indicare il periodo della riunione e i principali argomenti trattati;
+                \item Ordine del giorno che indica in modo strutturato gli argomenti discussi durante la riunione;
+                \item Discussione, dove vengono documentati i temi affrontati, le osservazioni dei partecipanti e le eventuali divergenze o punti di accordo;
+                \item La sezione Decisioni documenta le decisioni prese dal gruppo, organizzate in tabella per facilitare la consultazione e il monitoraggio delle azioni conseguenti;
+                \item La sezione Attività da svolgere elenca in modo dettagliato i compiti assegnati ai partecipanti, specificando i responsabili.
+            \end{itemize}
+            Ogni decisione ha un suo codice univoco e segue questo formato : "Dx (x numero della decisione)-ANNO/MESE/GIORNO\_vi" ("vi" se interno, "ve" se esterno).
+            \\
+            Anche le attività hanno codici univoci e seguono questo formato : "Ax (x numero dell'attività)-ANNO/MESE/GIORNO\_vi".
+        
+        \paragraph{Diario di bordo}\hfill\break
+            Questi documenti, creati nell'ambito dell'attività coordinata dal Prof. Tullio Vardanega, sono utilizzati per monitorare lo stato di avanzamento di ciascun gruppo del I lotto e hanno carattere puramente informativo.
+            Sono presentazioni semplici che trattano tre argomenti:
+            \begin{itemize}
+                \item Risultati raggiunti, qui vengono elencate le attività che sono state fatte nel periodo corrente;
+                \item Prossime attività, un elenco di attività pianificate dal gruppo;
+                \item Difficoltà riscontrate, eventuali difficoltà riscontrate durante lo svolgimento delle attività.
+            \end{itemize}
+
+        \paragraph{Denominazione dei documenti}\hfill\break
+            I documenti, per la denominazione, seguono questo formato:
+            \begin{itemize}
+                \item \textbf{Verbali interni} - VI-ANNO-MESE-GIORNO
+                \item \textbf{Verbali esterni} - VE-ANNO-MESE-GIORNO
+                \item \textbf{Diari di bordo} - DB-ANNO-MESE-GIORNO
+            \end{itemize}
+            È stato deciso di adottare il formato \textbf{AAAA-MM-GG} per le date, al fine di semplificare la lettura e l'ordinamento cronologico dei documenti.
+            La versione del documento si trova all'interno del file.    
+            
+    
+        
+    \subsubsection{Strumenti utilizzati}
+        Per compilare la documentazione il gruppo utilizza tre strumenti utili:
+        \begin{itemize}
+            \item \textbf{LaTeX} : un linguaggio mark-up usato per la redazione dei documenti scientifici e altro. Richiede la compilazione ogni volta che si fanno delle modifiche, a differenza di altri linguaggi mark-up come ad esempio Typst. Il gruppo utilizza esclusivamente LaTeX per scrivere tutta la documentazione.
+            \item \textbf{Overleaf} :  è una piattaforma online che consente di scrivere, modificare e compilare documenti LaTeX direttamente dal browser, facilitando la collaborazione in tempo reale e la gestione dei progetti senza installare software locali. Il gruppo utilizza questo sito per scrivere i documenti piccoli come i verbali.
+            \item \textbf{GitHub} : l'adozione di GitHub consente di semplificare i processi di verifica e approvazione dei documenti, garantendo al contempo il controllo delle modifiche tramite le Pull Request e permette di pianificare i prossimi passi usando il sistema di Ticketing.
+        \end{itemize}
+
+    \subsubsection{Attività previste}
+        Il processo di documentazione prevede le seguenti attività:
+        \begin{enumerate}
+            \item \textbf{Produzione:} produzione del documento;
+            \item \textbf{Manutenzione:} insieme di attività da svolgere quando un documento deve essere modificato.
+        \end{enumerate}
+        
+
+    \subsubsection{Produzione}
+    \label{subsubsec:prod}
+        La creazione di un documento prevede questi passaggi:
+        \begin{itemize}
+            \item Creazione della issue su GitHub tramite sistemi di ticketing: viene aperta una issue per poter tenere traccia dell'andamento e per assegnare il responsabile di quel documento. Per file grandi come ad esempio il PdP vengono creati dei branch secondari per poter effettuare modifiche senza andare a modificare il branch principale. I documenti piccoli come i verbali vanno fatti direttamente in Overleaf senza dover aprire branch secondari.
+            \item Inizio stesura : La creazione del documento è determinata dall'assegnatario: ogni documento è prodotto dal soggetto responsabile delle relative attività.
+            \item Verifica : dopo la stesura il file va verificato tramite Pull Request di GitHub oppure se è un verbale va verificato direttamente su Overleaf.
+        \end{itemize}
+        Dopo la verifica, il responsabile approva la Pull Request, e il file viene integrato nel branch principale. Successivamente, il sistema automatizzato \textbf{GitHub Actions} provvede a inserire il file nella cartella corretta del sito web.
+    
 
     \subsubsection{Manutenzione}
-   È prevista la manutenzione della documentazione quando occorre apportare cambiamenti o aggiornamenti ai contenuti. Per fare la modifica si seguono i prossimi passi : 
-   \begin{enumerate}
-       \item Creare il nuovo branch di lavoro 
-       \item Effettuare le modifiche in locale
-       \item Dopo aver modificato il file, modificare il registro delle modifiche aggiungendo una nuova riga e fare il push sul branch di lavoro
-       \item Aprire una pull request per consentire la verifica della qualità del documento
-       \item Integrare il documento nel branch principale solo se il responsabile conferma la correttezza delle modifiche
-   \end{enumerate}
-}
+    \label{subsubsec:maint}
+        È prevista la manutenzione della documentazione quando occorre apportare cambiamenti o aggiornamenti ai contenuti. Per fare la modifica si seguono i prossimi passi: 
+        \begin{enumerate}
+           \item Creare il nuovo branch di lavoro; 
+           \item Effettuare le modifiche in locale;
+           \item Dopo aver modificato il file, modificare il registro delle modifiche aggiungendo una nuova riga e fare il push sul branch di lavoro;
+           \item Aprire una Pull Request per consentire la verifica della qualità del documento;
+           \item Integrare il documento nel branch principale solo se il responsabile conferma la correttezza delle modifiche.
+        \end{enumerate}
+
+        
+
+    \subsection{Gestione delle configurazioni}
+        La gestione delle configurazioni è il processo che identifica le componenti software in un progetto e ne controlla le modifiche, i rilasci e gli stati di sviluppo.
+
+        \subsubsection{Strumenti utilizzati}
+            Per garantire lo svolgimento delle attività previste, il team utilizza:
+            \begin{itemize}
+                \item \textbf{GitHub:} per gestire creazione, modifiche e release di documenti e codice. Oltre a gestire il versionamento, GitHub permette anche l'assegnazione dei compiti e il loro tracciamento.
+            \end{itemize}
+        
+
+        \subsubsection{Attività previste}
+            Il processo di gestione delle configurazioni comprende le seguenti attività:
+            \begin{enumerate}
+                \item \textbf{Identificazione della configurazione:} definizione univoca degli elementi software che compongono il progetto e delle modalità con cui essi vengono identificati e versionati nel tempo;
+                \item \textbf{Controllo della configurazione:} gestione delle modifiche agli elementi software, comprendente la loro identificazione, approvazione, implementazione, verifica e rilascio;
+                \item \textbf{Rendicontazione dello stato della configurazione:} raccolta, registrazione e mantenimento della storia degli elementi software e delle loro modifiche;
+                \item \textbf{Valutazione della configurazione:} verifica della completezza funzionale del software, intesa come soddisfacimento dei requisiti, e della completezza fisica degli elementi software rispetto alle \textit{baseline} definite.
+            \end{enumerate}
+
+        
+
+        \subsubsection{Identificazione della configurazione}
+            L'attività di identificazione della configurazione riveste un ruolo essenziale nel progetto didattico. Essa prevede una descrizione accurata degli elementi software che compongono il sistema, svolta dai progettisti e formalizzata nel documento \textit{Specifica tecnica}. Tale documento viene redatto successivamente al raggiungimento della \textit{Requirements and Technology Baseline} e reso disponibile in vista della definizione della \textit{Product Baseline}.
+        
+
+        \subsubsection{Controllo della configurazione}
+            Il team ha deciso di utilizzare i seguenti strumenti messi a disposizione dalla piattaforma GitHub per svolgere tale attività:
+            \begin{itemize}
+                \item \textbf{Pull Request}
+                \item \textbf{Issue}
+                \item \textbf{Project Board}
+            \end{itemize}
+            
+            \paragraph{Pull Request}\hfill\break
+            \label{par:pullrequest}
+            Le \textbf{Pull Request} sono richieste effettuate da un membro del team per proporre l'operazione di merge tra due branch differenti. Ogni Pull Request deve essere approvata dai verificatori prima di poter essere integrata nel branch principale, riducendo così la probabilità di introdurre errori nel codice o nella documentazione.
+            
+            \paragraph{Issue}\hfill\break
+            Ogni modifica a un componente software o a un documento viene tracciata mediante una \textbf{issue}. Ciascuna issue:
+            \begin{itemize}
+                \item è identificata su GitHub tramite la notazione \textbf{\#NUMERO}, dove \textbf{NUMERO} rappresenta un identificativo univoco all'interno del repository;
+                \item fa riferimento a una e una sola milestone di progetto e a una Project Board, entrambe appartenenti allo stesso repository della issue;
+                \item è caratterizzata da un titolo e da una descrizione che ne specificano il contenuto;
+                \item può avere uno o più assegnatari responsabili dello svolgimento dell'attività;
+                \item viene chiusa quando il documento o il componente software a cui la issue fa riferimento viene integrato (merge) nel branch principale.
+            \end{itemize}
 
 
+            \paragraph{Project Board}\hfill\break
+                La \textbf{Project Board} viene utilizzata per migliorare l'organizzazione del lavoro asincrono svolto dal team. Ogni issue creata viene inizialmente inserita nella sezione \textit{Backlog} della Project Board, relativa allo sprint in corso. Quando un membro del team prende in carico una issue, questa viene spostata nella sezione \textit{In progress}. Al termine dell'attività, e contestualmente all'apertura della relativa Pull Request, la issue viene collocata nella sezione \textit{In review}, in attesa della verifica da parte dei verificatori. Una volta approvata la Pull Request e completata l'operazione di merge, la issue viene spostata nella sezione \textit{Done} e contrassegnata come chiusa.
+            
+        
 
+        \subsubsection{Rendicontazione dello stato della configurazione}
+            L'attività di rendicontazione dello stato della configurazione viene effettuata mediante il seguente sistema di versionamento: \textbf{MAJOR.MINOR.PATCH}, dove:
+            \begin{itemize}
+                \item la cifra \textbf{PATCH} viene incrementata in caso di modifiche di lieve entità al codice o alla documentazione, quali, ad esempio, la correzione di errori ortografici;
+                \item la cifra \textbf{MINOR} viene incrementata a fronte di modifiche rilevanti al codice o alla documentazione;
+                \item la cifra \textbf{MAJOR} viene incrementata quando il codice o la documentazione vengono approvati per una release ufficiale.
+            \end{itemize}
+            
+            Tale sistema di versionamento è stato adottato dal team tramite la decisione
+            \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2025-11-07.pdf}{D2-2025/11/07\_vi}.
+            Per quanto riguarda la documentazione, ogni modifica viene inoltre segnalata all'inizio del documento mediante il registro delle modifiche.
+        
+
+        \subsubsection{Valutazione della configurazione}
+            L'attività di valutazione della configurazione viene affrontata dal team mediante un'attività di tracciamento dei requisiti, definita all'interno del documento di
+            \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni}{Analisi dei Requisiti TODO:LINK!!!!}.
+            Tale attività viene svolta al fine di garantire che il prodotto software risulti funzionalmente completo, ossia che fornisca una risposta a tutti i requisiti richiesti dall'azienda proponente.
+        
+        
+      
+
+    \subsection{Accertamento della qualità}
+        Il processo di accertamento della qualità ha lo scopo di fornire adeguate garanzie che il prodotto software, i processi di sviluppo e la documentazione associata siano conformi ai requisiti specificati, agli standard adottati e alle pianificazioni stabilite.
+
+        \subsubsection{Attività previste}
+            Il processo di accertamento della qualità comprende le seguenti attività:
+            \begin{enumerate}
+                \item \textbf{Implementazione del processo:} definizione, adozione e applicazione degli standard di qualità, delle metriche e delle procedure da utilizzare durante l'intero ciclo di vita del prodotto software.
+                \item \textbf{Accertamento del prodotto:} verifica della conformità del prodotto software e della documentazione associata ai requisiti specificati, agli standard di qualità definiti e ai criteri di accettazione stabiliti.
+                \item \textbf{Accertamento del processo:} verifica dell'aderenza dei processi del ciclo di vita del software alle procedure, agli standard e alle pianificazioni stabilite, valutandone la corretta applicazione e l'efficacia.
+            \end{enumerate}    
+        
+        Le metriche individuate dal team di progetto sono descritte in modo dettagliato sia nel documento \href{LINK}{Piano di Qualifica TODO:LINK!!!!} sia nella sez. DA SCRIVERE E METTERE LINK.
+        %~\ref{sezione dedicata TODO:DA SCRIVERE!!!!!}
+        L'andamento delle attività del team di progetto viene monitorato e aggiornato al termine di ogni sprint e riportato nel Piano di Qualifica mediante grafici appositamente elaborati.
+    
+
+    \subsection{Verifica}
+        Il processo di verifica ha lo scopo di determinare se il prodotto software sviluppato sia conforme ai requisiti specificati e alle condizioni imposte. Al fine di ridurre i costi e massimizzare l'efficienza, tale processo viene integrato il più precocemente possibile all'interno del ciclo di vita del software, accompagnando le attività di sviluppo.
+
+        \subsubsection{Strumenti utilizzati}
+            Per garantire lo svolgimento delle attività previste, il team utilizza:
+            \begin{itemize}
+                \item \textbf{GitHub:} per la gestione del sistema di Pull Request (descritto nella sottosezione~\ref{par:pullrequest}), impiegato per supportare l'attività di verifica dei documenti.
+            \end{itemize}    
+        
+
+        \subsubsection{Attività previste}
+        \label{subsubsec:attVer}
+            Il processo di verifica comprende le seguenti attività:
+            \begin{enumerate}
+                \item \textbf{Implementazione del processo:} definizione e predisposizione del piano di verifica, nonché identificazione delle possibili criticità e dei rischi di non conformità nel progetto;
+                \item \textbf{Verifica:} esecuzione delle attività di verifica volte ad accertare la conformità di tutte le componenti di progetto (\textbf{processi, requisiti, progettazione, codice, integrazione e documentazione}) ai requisiti specificati, agli standard di riferimento e alle metriche e procedure definite dal team di progetto.
+            \end{enumerate}    
+        
+
+        \subsubsection{Implementazione del processo}
+            L'attività di implementazione del processo si basa sull'individuazione delle criticità che possono manifestarsi nel corso del progetto didattico.
+            Nella sezione ??????????????? del documento \href{LINK!!!!!}{Piano di progetto TODO:LINK!!!!} è riportata un'accurata analisi dei rischi che include gran parte delle criticità previste, insieme alla probabilità di occorrenza e alle relative strategie di mitigazione. Tuttavia, in coerenza con quanto previsto dallo standard ISO/IEC 12207:1995 si riportano di seguito ulteriori criticità che potrebbero manifestarsi durante lo svolgimento del progetto didattico:
+            \begin{itemize}
+                \item \textbf{Disponibilità di fondi:} rischio di superamento del tetto di spesa massimo stabilito prima dell'aggiudicazione degli appalti. Tale rischio viene mitigato mediante un'accurata pianificazione delle attività e dei ruoli all'interno degli sprint. Inoltre vengono svolte regolarmente riunioni interne per individuare tempestivamente ulteriori problemi;
+                \item \textbf{Rischi associati alla codifica del prodotto software.} Questo rischio viene mitigato tramite un'accurata attività di verifica del software, descritta nella seguente sottosezione.
+            \end{itemize}    
+        
+
+        \subsubsection{Verifica}
+            L'attività di verifica della documentazione avviene tramite il sistema di Pull Request, descritto nelle sottosezioni ~\ref{subsubsec:prod} e~\ref{subsubsec:maint}.
+            \newline
+            Le modalità di verifica del codice, invece, verranno definite successivamente, a Requirement and Technology Baseline inoltrata, poiché sarà in quel momento che il team avrà necessità di approfondire tale argomento.
+            In generale si distinguono due metodi principali per svolgere l'attività di Verifica: l'\textbf{analisi statica} e l'\textbf{analisi dinamica}.
+
+            \paragraph{Analisi statica}\hfill\break
+                L'analisi statica è definita tale in quanto non richiede l'esecuzione del programma oggetto di verifica. Essa mira ad assicurare la conformità alle regole e agli stili definiti, il rispetto delle proprietà attese e l'assenza di errori.\newline
+                L'analisi statica può essere realizzata mediante due principali tecniche:
+                \begin{enumerate}
+                    \item \textbf{Walkthrough:} si presuppone la presenza di difetti senza conoscerne a priori la posizione. Viene quindi effettuata un'analisi critica completa dell'intero oggetto di verifica. L'attività di Walkthrough viene svolta dagli sviluppatori e richiede un elevato impiego di tempo e risorse.
+                    \item \textbf{Inspection:} anche in questo caso si presuppone la presenza di errori, ma l'analisi è mirata a specifiche parti dell'oggetto di verifica. Questa attività è svolta dai verificatori ed è più facilmente automatizzabile rispetto al metodo precedente.
+                \end{enumerate}
+                Entrambe queste tecniche sono definite \textbf{di lettura}, in quanto si basano sull'analisi dell'oggetto di verifica tramite lettura, che può essere umana o automatizzata.
+
+            \paragraph{Analisi dinamica}\hfill\break
+                L'analisi dinamica, al contrario dell'analisi statica, richiede l'esecuzione dell'oggetto da verificare. Essa studia il comportamento di singole parti del programma su un insieme finito di "casi prova" mediante dei \textbf{test}, che devono essere ripetibili e automatizzabili.\newline
+                Ogni test è caratterizzato da:
+                \begin{itemize}
+                    \item \textbf{Stato iniziale} dell'esecuzione;
+                    \item \textbf{Dati in ingresso:} dati che vengono inseriti nel programma;
+                    \item \textbf{Dati in uscita:} risultati attesi dall'esecuzione del programma, dato lo specifico input.
+                \end{itemize}
+
+                I test svolti dal team, durante lo svolgimento del progetto didattico verranno identificati mediante il seguente formato:
+                TODO: DA DEFINIRE NEL PdQ!!!!!!!!!!!!!
+            
+                Esistono diversi tipi di test.
+                
+                \subparagraph{Test di unità}\hfill\break
+                    I test d'unità consistono nel testare singole unità software, quali funzioni, metodi o classi, in modo isolato rispetto al resto del sistema.\newline
+                    L'obiettivo principale dei test d'unità è verificare che ciascuna unità produca i risultati attesi a fronte di input noti, individuando eventuali errori logici o di implementazione nelle prime fasi dello sviluppo.
+                    Questi si dividono in due categorie:
+                    \begin{itemize}
+                        \item \textbf{Test funzionali:} detti anche \textbf{black-box} dato che fanno riferimento esclusivamente alla specifica degli ingressi e delle uscite dell'oggetto di verifica, senza considerarne la logica interna;
+                        \item \textbf{Test strutturali:} detti \textbf{white-box}, verificano la logica interna del codice dell'oggetto di verifica.
+                    \end{itemize}
+                    
+                \subparagraph{Test di integrazione}\hfill\break
+                    I test d'integrazione vengono eseguiti per verificare che le diverse unità software interagiscano correttamente fra loro.\newline
+                    Essi vengono sviluppati in modo incrementale, aumentando ad ogni passo le funzionalità disponibili del sistema.
+                    Si dividono in due categorie:
+                    \begin{itemize}
+                        \item \textbf{Bottom-up:} vengono sviluppate e integrate inizialmente le componenti con minori dipendenze d'uso e con maggiore utilità interna;
+                        \item \textbf{Top-down:} vengono sviluppate e integrate inizialmente le componenti con maggiori dipendenze d'uso e quindi maggiore valore aggiunto dal punto di vista esterno.
+                    \end{itemize}
+                    
+                \subparagraph{Test di sistema}\hfill\break
+                    I test di sistema verificano che il comportamento complessivo del sistema soddisfi tutti i requisiti software, definiti durante l'attività di analisi dei requisiti. Essi rientrano nella categoria dei test funzionali.
+                    
+                \subparagraph{Test di accettazione}\hfill\break
+                    I test di accettazione verificano che l'esecuzione del sistema soddisfi tutti i requisiti lato utente, definiti nel capitolato di presentazione.
+
+
+    \subsection{Validazione}
+       Il processo di validazione ha lo scopo di determinare se i requisiti definiti e il prodotto software finale soddisfino lo specifico uso inteso, così come concordato con gli utenti e gli stakeholder. In sintesi, il processo di validazione fornisce evidenza oggettiva della correttezza del prodotto dal punto di vista dell'utente finale, garantendo l'allineamento tra requisiti, implementazione e contesto operativo reale.
+
+        \subsubsection{Attività previste}
+            \begin{enumerate}
+                \item \textbf{Implementazione del processo:} definizione e predisposizione del piano di validazione, in accordo con gli standard utilizzati, al fine di stabilire criteri, metodi, responsabilità e risorse necessarie. Tale attività è finalizzata all'individuazione di eventuali non conformità rispetto ai requisiti e agli standard adottati, nonché alla pianificazione delle relative azioni correttive;
+                \item \textbf{Validazione:} esecuzione delle attività di validazione previste dal piano, attraverso test, revisioni e valutazioni del prodotto software nel suo contesto di utilizzo. I risultati ottenuti vengono documentati e analizzati per verificare la soddisfazione dei requisiti utente e per supportare il processo di accettazione del prodotto.
+            \end{enumerate}    
+
+\section{Processi Organizzativi}
+    I processi organizzativi, pur non producendo direttamente il software, supportano quelli primari e di supporto, regolando risorse, responsabilità e comunicazione, e consentendo il monitoraggio del progetto e interventi correttivi in caso di scostamenti dagli obiettivi. \\
+    Con lo scopo di garantire qualità, efficienza e sostenibilità lungo l'intero ciclo di vita del software, tra i processi organizzativi si individuano:
+    \begin{itemize}
+        \item \textbf{Gestione dei Processi}
+        \item \textbf{Gestione delle infrastrutture}
+        \item \textbf{Miglioramento del processo}
+        \item \textbf{Formazione del personale}
+    \end{itemize}
+    
+    \subsection{Gestione dei Processi}
+        Come previsto dallo Standard ISO/IEC 12207:1995, il processo organizzativo di gestione dei processi ha l'obiettivo di individuare le attività generali che ciascun membro del team è tenuto a svolgere. Si tratta di un'attività fondamentale per assicurare che il progetto venga portato a termine in modo efficiente e nel rispetto degli standard di qualità definiti.
+        
+        \subsubsection{Attività previste}
+            Le attività previste per questo processo sono:
+            \begin{itemize}
+                \item \textbf{Inizializzazione}: definizione delle risorse necessarie e dei requisiti delle attività;
+                \item \textbf{Pianificazione}: stima di tempi, costi e assegnazione dei compiti nel \textit{Piano di Progetto};
+                \item \textbf{Esecuzione e Controllo}: monitoraggio costante dell'avanzamento dei task rispetto alle scadenze;
+                \item \textbf{Revisione e Valutazione}: verifica periodica dei risultati prodotti per assicurarne la conformità;
+                \item \textbf{Chiusura}.            
+            \end{itemize}
+            
+        \subsubsection{Ruoli e responsabilità}
+            In conformità a quanto descritto nel regolamento del progetto didattico offerto dal committente, ogni componente del gruppo dovrà assumere ciascun ruolo per un numero di ore significativo. La gestione dei processi coinvolge tutti i membri del team, ciascuno secondo il proprio ruolo, e ognuno è responsabile dell'esecuzione delle attività assegnate, del rispetto delle scadenze e della segnalazione tempestiva di eventuali criticità o impedimenti. I ruoli richiesti dal progetto sono descritti qui di seguito.
+
+            \paragraph{Responsabile}\hfill\break{
+                È la figura centrale di coordinamento e il punto di riferimento primario per le comunicazioni con il committente e il proponente. Ha la responsabilità finale sulla pianificazione, la gestione delle risorse umane e il monitoraggio dell'avanzamento del progetto rispetto alle scadenze prefissate. Tra i suoi compiti principali figurano l'approvazione formale di tutta la documentazione, la gestione e mitigazione dei rischi e l'assegnazione delle issue ai membri del team.
+            }
+
+            \paragraph{Amministratore}\hfill\break{
+                L'Amministratore ha il compito fondamentale di gestire e mantenere l'infrastruttura tecnologica necessaria allo sviluppo, assicurandone l'efficienza e la sicurezza. È responsabile della gestione delle configurazioni, del versionamento del codice e della documentazione, nonché dell'implementazione di automazioni per ottimizzare il Way of Working. Supervisiona inoltre la corretta applicazione delle norme di progetto e la risoluzione di eventuali malfunzionamenti degli strumenti di supporto.
+            }
+
+            \paragraph{Analista}\hfill\break{
+                Questo ruolo è cruciale nelle fasi iniziali per trasformare i bisogni del proponente in requisiti tecnici dettagliati e non ambigui. L'Analista studia il dominio del problema, individua i casi d'uso e redige il documento di \textit{Analisi dei Requisiti}, che funge da base solida per tutta la progettazione successiva. Deve assicurarsi che ogni requisito (funzionale, di qualità o di vincolo) sia chiaramente definito per evitare errori che comprometterebbero l'intero progetto.
+            }
+
+            \paragraph{Progettista}\hfill\break{
+                Al Progettista spetta il compito di trasformare i requisiti in una struttura architetturale solida e scalabile. Effettua le scelte tecnologiche relative a framework e librerie, definisce l'interazione tra i componenti del sistema e produce i diagrammi UML (come i diagrammi delle classi) necessari alla codifica. Il suo obiettivo è garantire un basso accoppiamento tra i moduli e un'alta manutenibilità del prodotto finale.
+            }
+
+            \paragraph{Programmatore}\hfill\break{
+                Il Programmatore è responsabile dello sviluppo attivo del software, traducendo le specifiche tecniche e architetturali in codice sorgente funzionante. Deve rispettare rigorosamente gli standard di Clean Code e le convenzioni linguistiche stabilite. Oltre alla scrittura del codice, ha il compito di realizzare i test di unità automatici e di collaborare alla redazione del \textit{Manuale Utente} per l'utilizzatore finale.
+            }
+
+            \paragraph{Verificatore}\hfill\break{
+                È il garante della qualità e ha il compito trasversale di controllare che ogni prodotto (documento o codice) sia conforme alle \textit{Norme di Progetto} e ai requisiti stabiliti. Esegue attività di analisi statica e analisi dinamica, segnala le non conformità, fornisce feedback per le correzioni e redige la parte relativa agli esiti dei test nel \textit{Piano di Qualifica}.
+            }
+
+            
+        \subsubsection{Coordinamento e comunicazioni}
+            Per assicurare una circolazione delle informazioni rapida ed efficiente, di seguito viene illustrato il modo in cui il team collabora internamente e si relaziona con gli Stakeholder. Il coordinamento tra i membri del team avviene tramite incontri periodici e momenti di aggiornamento informale, mentre le comunicazioni sono gestite attraverso i canali definiti, così da garantire la tracciabilità e la trasparenza delle decisioni. Ogni componente del team è tenuto a mantenere un flusso comunicativo continuo, segnalando tempestivamente ritardi, rischi o eventuali necessità di supporto.
+
+            \paragraph{Comunicazioni Interne}\hfill\break{
+                Le comunicazioni interne riguardano esclusivamente i membri del gruppo e si distinguono in due categorie:
+                \begin{itemize}
+                    \item \textbf{Comunicazioni asincrone}: viene utilizzato Whatsapp per scambi rapidi, informali e risoluzione di dubbi minori che non richiedono una riunione.
+                    \item \textbf{Comunicazioni sincrone (Riunioni)}: per le discussioni complesse, le sessioni di brainstorming e il coordinamento settimanale. si utilizza Discord, che permette comunicazione vocale e condivisione dello schermo, facilitando il lavoro collaborativo.
+                \end{itemize}
+            }
+
+            \paragraph{Comunicazioni Esterne}\hfill\break{
+                Le comunicazioni esterne sono gestite dal Responsabile e  riguardano il rapporto con proponente e committente. Si distinguono in tre categorie:
+                \begin{itemize}
+                    \item \textbf{Incontri SAL (Stato Avanzamento Lavori)}: viene utilizzato Google Meet per riunioni con l'azienda proponente, per presentare il lavoro svolto e riceve feedback. La periodicità concordata è ogni due settimane, ma può subire variazioni in base al carico di lavoro da svolgere.
+                    \item \textbf{Comunicazioni formali}: per richieste ufficiali o invio di documenti, il Responsabile utilizza esclusivamente la posta elettronica del team, avente il seguente indirizzo: \Email.
+                    \item \textbf{Supporto rapido}: per comunicazioni veloci e dubbi di minore entità viene utilizzato un canale Telegram condiviso con i referenti aziendali.
+                \end{itemize}
+            }
+
+            \paragraph{Verbali}\hfill\break{
+                Ogni incontro sincrono, interno o esterno, deve essere documentato tramite un verbale redatto dal Responsabile e verificato dal Verificatore stabilito. I verbali esterni, una volta redatti e giunti alla versione stabile v1.0.0, vengono inviati al proponente per l'approvazione e la firma.
+            }
+
+        \subsubsection{Gestione delle attività}
+            L'obiettivo di questo processo è garantire un'organizzazione efficiente del lavoro durante il progetto. In questa sezione viene descritto il metodo di lavoro che permette al team di organizzare i compiti, monitorare l'avanzamento e garantire il rispetto delle scadenze.
+
+            \paragraph{Metodologia di lavoro}\hfill\break{
+                Il team adotta un approccio \textbf{Agile} allo sviluppo per garantire  flessibilità, maggiore produttività e una comunicazione trasparente sia internamente che verso gli Stakeholder. Il lavoro viene organizzato in cicli iterativi definiti Sprint, solitamente di durata bisettimanale, che permettono una scomposizione modulare delle attività e una pianificazione accurata basata su obiettivi misurabili. Le principali pratiche adottate dal gruppo includono:
+                \begin{itemize}
+                    \item \textbf{Pianificazione dello Sprint}: all'inizio di ogni ciclo, il team definisce gli obiettivi da raggiungere e predispone le unità di lavoro (issue) necessarie per lo svolgimento delle attività individuate.
+                    \item \textbf{Continuous Integration (CI)}: si promuove l'integrazione continua per favorire la collaborazione, garantendo una distribuzione efficace delle responsabilità e permettendo di risolvere le criticità in modo mirato e rapido.
+                    \item \textbf{Revisione e Retrospettiva}: al termine di ogni iterazione, il gruppo valuta il lavoro prodotto e analizza i processi adottati per identificare aree di miglioramento, ottimizzando costantemente il proprio Way of Working.
+                    \item \textbf{Adattabilità}: questo metodo iterativo assicura che il progetto possa adattarsi agilmente a cambiamenti nei requisiti o nelle priorità che potrebbero emergere durante il ciclo di vita del software.
+                \end{itemize}
+            }
+
+            \paragraph{Strumenti di Ticketing}\hfill\break{
+                Per la gestione operativa il team utilizza le GitHub Issues come Issue Tracking System. Ogni unità di lavoro è rappresentata da una issue che deve contenere informazioni precise:
+                \begin{itemize}
+                    \item \textbf{Titolo e Descrizione}: sintesi del compito da svolgere.
+                    \item \textbf{Assegnatario}: il membro del team responsabile dello svolgimento.
+                    \item \textbf{Etichette (Labels)}: per categorizzare la natura del task (es. bug, documentation, feature).
+                    \item \textbf{Project}: il GitHub Project a cui la issue è associata.
+                    \item \textbf{Milestone}: il traguardo o la revisione di progetto a cui il task è associato.
+                \end{itemize}
+            }
+
+            \paragraph{La Board Kanban}\hfill\break{
+                L'avanzamento delle attività è monitorato visivamente tramite una Project Board organizzata in colonne che rappresentano lo stato dei task:
+                \begin{itemize}
+                    \item \textbf{Backlog}: attività pianificate ma non ancora iniziate.
+                    \item \textbf{In Progress}: compiti attualmente in fase di svolgimento.
+                    \item \textbf{In Review}: attività completate che attendono la verifica da parte di un membro terzo.
+                    \item \textbf{Done}: task verificati, approvati e integrati nel ramo principale.
+                \end{itemize}
+            }
+
+            \paragraph{Workflow di un Task}\hfill\break{
+                Il ciclo di vita di ogni attività segue una procedura rigorosa per garantire la qualità:
+                \begin{itemize}
+                    \item \textbf{Creazione della Issue}: il Responsabile (o l'Amministratore) apre l'Issue e la assegna.
+                    \item \textbf{Creazione delle sotto-Issue}: l'assegnatario, dopo aver studiato il compito da svolgere, individua e crea sotto-issue per scomporre il problema in parti più piccole.
+                    \item \textbf{Sviluppo}: l'assegnatario sposta il task in "In Progress" e lavora sulle sotto-issue su un branch dedicato nel repository.
+                    \item \textbf{Pull Request}: al termine del lavoro, viene aperta una Pull Request (PR) collegata all'Issue principale, la issue passa allo stato "In review".
+                    \item \textbf{Verifica}: il Verificatore esamina la PR. Se l'esito è positivo, effettua il merge; in caso contrario, richiede modifiche tramite commenti, e la issue torna nello stato "In Progress" fino alla correzione.
+                    \item \textbf{Chiusura}: una volta effettuato il merge, la Issue passa automaticamente in "Done" e il branch di lavoro viene eliminato.
+                \end{itemize}
+            }
+
+    \subsection{Gestione delle infrastrutture}
+        La gestione delle infrastrutture ha l'obiettivo di definire tutti gli strumenti, gli ambienti e le risorse tecnologiche necessarie per garantire l'efficienza dei processi primari e di supporto. Questo processo permette al team di lavorare in modo stabile e sicuro, evitando interruzioni dovute a problemi tecnici o carenze di configurazione.
+
+
+        \subsubsection{Attività previste}
+            Il processo si articola in tre fasi principali:
+            \begin{itemize}
+                \item \textbf{Attuazione del processo}: identificazione e selezione degli strumenti più idonei per il progetto.
+                \item \textbf{Realizzazione dell'infrastruttura}: configurazione operativa degli ambienti di sviluppo, dei server e dei canali di comunicazione.
+                \item \textbf{Manutenzione dell'infrastruttura}: monitoraggio costante e aggiornamento degli strumenti per risolvere malfunzionamenti o adattarsi a nuove esigenze emerse durante gli sprint.
+            \end{itemize}
+            
+        \subsubsection{Strumenti di supporto}
+            Il gruppo fa uso di un insieme di strumenti per rendere più agevole la collaborazione:
+            \begin{itemize}
+                \item \textbf{Sviluppo e Containerizzazione}: Git è impiegato come sistema di controllo di versione per monitorare e gestire le modifiche al codice. Docker viene utilizzato per creare ambienti isolati, garantendo che l'applicazione funzioni correttamente in modo indipendente dalla macchina locale.
+                \item \textbf{Hosting e Collaborazione}: GitHub funge da piattaforma di hosting per i repository remoti e consente di organizzare e seguire il backlog tramite Issue e Project Board.
+                \item \textbf{Comunicazione}: per le comunicazioni asincrone e rapide si adottano WhatsApp e Telegram, mentre le riunioni sincrone interne vengono svolte su Discord. Gli incontri sincroni con il proponente esterno sono invece condotti tramite Google Meet.
+                \item \textbf{Pianificazione e Documentazione}: Google Calendar è utilizzato per la gestione di appuntamenti e scadenze, mentre LaTeX rappresenta lo standard per la redazione tipografica della documentazione tecnica.
+                \item \textbf{Visualizzazione e monitoraggio}: è stato predisposto un file condiviso Google Fogli, articolato in più schede, che offre una vista sempre aggiornata sulle ore pianificate, quelle effettivamente utilizzate e quelle residue per ciascun ruolo e membro del team, oltre a un dettaglio suddiviso per ogni sprint. Ogni componente è tenuto ad aggiornare le ore realmente svolte durante lo sprint, registrando ogni ora produttiva. È inoltre presente una rappresentazione grafica dei dati riportati.
+            \end{itemize}
+            
+        \subsubsection{Gestione repository}
+            Si adotta un modello ispirato a GitHub Flow e semplificato rispetto al Git Flow tradizionale, in modo da avere un workflow leggero basato sui seguenti principi:
+            \begin{itemize}
+                \item \textbf{Branching}: il branch \textit{main} contiene esclusivamente codice stabile e verificato, e documenti definitivi che vengono esposti nel \href{https://atlasteam9.github.io/Atlas/}{sito web del team}. Ogni nuova funzionalità o correzione di bug deve essere sviluppata in un branch dedicato creato a partire dal ramo di sviluppo chiamato \textit{develop}, che deriva da \textit{main}, contiene i nuovi documenti e il codice su cui il team sta lavorando. 
+                \item \textbf{Nomenclatura branch}: i nuovi rami devono seguire uno schema identificativo ben definito:
+                \begin{itemize}
+                    \item se il lavoro riguarda la stesura di un documento, il branch deve avere il nome docs/nome-documento;
+                    \item se il lavoro riguarda la stesura di codice, il branch deve avere il nome feature/nome-feature;
+                    \item se il lavoro riguarda la correzione di bug, il branch deve avere il nome bugfix/nome-bugfix.
+                \end{itemize}
+                \item \textbf{Integrazione}: l'unione del codice nel ramo principale avviene esclusivamente tramite Pull Request. Queste devono essere revisionate e approvate da almeno un Verificatore prima del merge.
+                \item \textbf{Automazione (CI/CD)}: sono configurate delle GitHub Actions per automatizzare compiti ripetitivi, come la compilazione della documentazione Latex in PDF e la sua pubblicazione sul sito vetrina del progetto.
+            \end{itemize}
+
+    \subsection{Miglioramento del processo}
+        Il processo di miglioramento ha l'obiettivo di individuare punti deboli nell'organizzazione del lavoro e ottimizzare il Way of Working del team nel corso del progetto. Si tratta di un ciclo continuo che accompagna tutte le fasi di sviluppo e gestione, e consente di stabilire, misurare e migliorare gli standard operativi adottati durante il ciclo di vita del software.
+
+        \subsubsection{Attività previste}
+        Il processo si articola in tre attività principali:
+            \begin{itemize}
+                \item \textbf{Inizializzazione dei processi}: definizione e formalizzazione dei processi organizzativi, con relativa documentazione nelle Norme di Progetto.
+                \item \textbf{Valutazione dei processi}: verifica periodica dell'efficacia dei processi tramite analisi di metriche, dati storici e risultati ottenuti.
+                \item \textbf{Miglioramento dei processi}: individuazione delle aree critiche e implementazione di soluzioni correttive, aggiornando la documentazione ufficiale quando necessario.
+            \end{itemize}
+
+        \subsubsection{Strumenti per il miglioramento}
+        Lo strumento principale per identificare le opportunità di miglioramento è la Sprint Retrospective. Al termine di ogni iterazione, il gruppo analizza ciò che ha funzionato e ciò che deve essere cambiato, attuando azioni correttive immediate per evitare di ripetere errori passati.
+        
+    \subsection{Formazione del personale}
+        Il processo di formazione ha lo scopo di garantire che ogni membro del team acquisisca le competenze tecniche e metodologiche necessarie per svolgere il proprio ruolo in modo efficace ed efficiente. L'obiettivo è mantenere il gruppo costantemente aggiornato e allineato sulle tecnologie scelte e sugli standard di qualità prefissati, favorendo al contempo la crescita professionale durante lo svolgimento del progetto. La formazione può riguardare tecnologie, metodologie di sviluppo, strumenti di collaborazione o aspetti organizzativi interni.
+
+        \subsubsection{Attività previste}
+             In conformità allo standard ISO/IEC 12207:1995, il gruppo articola il processo in tre attività principali:
+             \begin{itemize}
+                 \item \textbf{Pianificazione della formazione}: analisi dei requisiti del progetto per individuare le lacune di competenza e definire le risorse necessarie.
+                 \item \textbf{Sviluppo di materiale per la formazione}: ricerca, selezione e organizzazione di guide, tutorial, manuali ufficiali o mini-progetti di prova da mettere a disposizione del team.
+                 \item \textbf{Implementazione del piano per la formazione}: esecuzione delle attività di studio e verifica dell'apprendimento attraverso l'applicazione pratica.
+             \end{itemize}
+
+        \subsubsection{Metodologia di apprendimento}
+            Il team adotta un approccio "learning by doing", basato sullo studio autonomo e asincrono integrato dalla realizzazione pratica del prodotto. Ogni membro è libero di personalizzare il proprio percorso di studi in base alle proprie esigenze e interessi, ma è incoraggiata la condivisione interna della conoscenza: i membri più esperti in una determinata tecnologia sono tenuti a supportare i colleghi tramite canali di comunicazione dedicati.
+
+        \subsubsection{Piano di formazione e tempistiche di esecuzione}
+            La formazione è un processo continuo e dinamico che accompagna l'intero ciclo di vita del progetto. Il gruppo si impegna a: 
+            \begin{itemize}
+                \item sfruttare i momenti in cui vengono assegnati task di minore entità durante gli Sprint per dedicarsi allo studio; 
+                \item pianificare, se necessario, slot temporali dedicati esclusivamente all'approfondimento delle tecnologie necessarie come il linguaggio Python, la libreria React, la containerizzazione con Docker o l'uso di Latex per la documentazione.
+            \end{itemize}  
+            Si predilige l'uso di risorse gratuite reperibili online, come documentazione ufficiale, video tutorial e materiale di riferimento condiviso.   
+
+\section{Standard ISO/IEC 9126 per la qualità}
+\label{sec:qualStd}
+Il team ha scelto di utilizzare lo standard ISO/IEC 9126 come riferimento per l'analisi e la valutazione della qualità del prodotto software. ISO/IEC 9126 è uno standard internazionale che definisce un modello per la valutazione della qualità del prodotto software. Rappresenta un insieme di linee guida e criteri di valutazione per gli attributi chiavi della qualità del software. Identifica sei caratteristiche principali:
+\begin{itemize}
+    \item \textbf{Funzionalità}
+    \item \textbf{Affidabilità}
+    \item \textbf{Efficienza}
+    \item \textbf{Usabilità}
+    \item \textbf{Manutenibilità}
+    \item \textbf{Portabilità}
+\end{itemize}
+
+\subsection{Funzionalità}
+La funzionalità è la capacità di un prodotto software di fornire funzioni che soddisfano esigenze stabilite dal proponente. I suoi sotto-attributi sono:
+\begin{itemize}
+    \item \textbf{Adeguatezza}: misura quanto le funzionalità del software rispondono correttamente ai bisogni dell'utente.
+    \item \textbf{Accuratezza}: la capacità del prodotto software di fornire i risultati concordati o i precisi effetti richiesti. 
+    \item \textbf{Interoperabilità}: la capacità del prodotto software di interagire con altri sistemi.
+    \item \textbf{Sicurezza}: la capacità del prodotto software di proteggere informazioni e dati negando in ogni modo che persone o sistemi non autorizzati possano accedervi o modificarli.
+    \item \textbf{Conformità}: è la conformità del software agli standard, alle norme e alle specifiche funzionali pertinenti.
+\end{itemize}
+
+\subsection{Affidabilità}
+L'affidabilità è la capacità del prodotto software di mantenere uno specificato livello di prestazioni quando usato in date condizioni per un dato periodo. Le sue sotto-caratteristiche sono:
+\begin{itemize}
+    \item \textbf{Maturità}: la capacità del software di gestire in modo stabile le operazioni, cercando di evitare errori, malfunzionamenti e risultati scorretti.
+    \item \textbf{Tolleranza agli errori}: la capacità di mantenere livelli predeterminati di prestazioni anche in presenza di malfunzionamenti o usi scorretti del prodotto.
+    \item \textbf{Recuperabilità}: la capacità del software di ripristinare le prestazioni desiderate dopo che si è verificato un errore.
+    \item \textbf{Aderenza}: la capacità di aderire a standard, regole e convenzioni inerenti all'affidabilità.
+\end{itemize}
+\subsection{Efficienza}
+L'efficienza è la capacità di fornire appropriate prestazioni relativamente alla quantità di risorse usate. Le sue sotto-caratteristiche sono:
+\begin{itemize}
+    \item \textbf{Comportamento rispetto al tempo}: la capacità di fornire adeguati tempi di risorse, elaborazione e velocità di attraversamento, sotto condizioni specifiche e determinate.
+    \item \textbf{Utilizzo delle risorse}: la capacità di utilizzare le risorse in maniera adeguata.
+    \item \textbf{Conformità}: la capacità di aderire a standard e specifiche sull'efficienza.
+\end{itemize}
+\subsection{Usabilità}
+L'usabilità è la capacità del software di essere compreso, appreso e utilizzato dall'utente in condizioni specifiche. Le sue sotto-caratteristiche sono:
+\begin{itemize}
+    \item \textbf{Comprensibilità}: esprime quanto è facile comprendere i concetti del prodotto.
+    \item \textbf{Apprendibilità}: la capacità di ridurre l'impegno richiesto dall'utente per imparare ad usare la sua applicazione.
+    \item \textbf{Operabilità}: la capacità del software di consentire agli utenti di operare e controllare il sistema senza difficoltà.
+    \item \textbf{Attrattiva}: la capacità del software di essere piacevole per l'utente che ne fa uso.
+    \item \textbf{Conformità}: la capacità del software di aderire a standard o convenzioni relativi all'usabilità.
+\end{itemize}
+\subsection{Manutenibilità}
+La manutenibilità è la capacità del software di essere modificato, includendo correzioni, miglioramenti o adattamenti. Le sue sotto-caratteristiche sono:
+\begin{itemize}
+    \item \textbf{Analizzabilità}: rappresenta il grado di facilità con cui il codice può essere analizzato per individuare errori o difetti.
+    \item \textbf{Modificabilità }: la facilità con cui il software può essere modificato per aggiungere nuove funzionalità o per cambiare quelle esistenti.
+    \item \textbf{Stabilità}: la capacità del software di evitare effetti inaspettati derivanti da modifiche errate.
+    \item \textbf{Testabilità}: la capacità di essere facilmente testato per validare le modifiche apportate al software.
+\end{itemize}
+\subsection{Portabilità}
+La portabilità è la capacità del software di essere trasportato da un ambiente di lavoro ad un altro. Le sue sotto-caratteristiche sono:
+\begin{itemize}
+    \item \textbf{Adattabilità}: la capacità del software di adattarsi a diversi ambienti senza richiedere modifiche significative al codice sorgente o all'architettura.
+    \item \textbf{Installabilità }: la facilità con cui il software può essere installato in un nuovo ambiente.
+    \item \textbf{Conformità}: la capacità del software di aderire a convenzioni sulla portabilità.
+    \item \textbf{Sostituibilità}: la capacità di essere utilizzato al posto di un altro software per svolgere gli stessi compiti nello stesso ambiente.
+\end{itemize}
+
+\section{Metriche per la qualità del processo}
+    In questa sottosezione vengono esposte tutte le metriche utilizzate dal team per verificare la qualità del processo, ordinate per processo.
+    \newline
+    Le metriche sono identificate secondo il seguente formato: \textbf{MPCX}, dove:
+    \begin{itemize}
+        \item \textbf{MPC} indica che si tratta di una metrica riguardante la qualità del processo;
+        \item \textbf{X} indica il numero con cui viene identificata la metrica.
+    \end{itemize}
+    
+    \subsection{Processi primari}
+        \subsubsection{Fornitura}
+    
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Budget at Completion (BAC)}}\\
+                \hline
+                \textbf{Codice} & MPC01 \\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{BAC} = 12705 \)\texteuro\\
+                \hline
+                \textbf{Descrizione} & Il \textbf{BAC} rappresenta il budget totale pianificato per il completamento del progetto. Di fatto è il costo accettato all'aggiudicazione.\\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Budget at Completion"}
+            \end{table}
+            }
+    
+        
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Earned Value (EV)}}\\
+                \hline
+                \textbf{Codice} & MPC02\\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{EV} = \text{BAC}*(\text{Percentuale completamento progetto}) \) \\
+                \hline
+                \textbf{Descrizione} & L'\textbf{EV} rappresenta il valore guadagnato, ovvero il valore previsto di quanto è stato effettivamente realizzato in un certo momento. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Earned Value"}
+            \end{table}
+            }
+    
+    
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Planned Value (PV)}}\\
+                \hline
+                \textbf{Codice} & MPC03\\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{PV} = \text{BAC}*(\text{Percentuale pianificata completamento progetto}) \) \\
+                \hline
+                \textbf{Descrizione} & Il \textbf{PV} è il valore che il progetto dovrebbe avere in un dato momento nel tempo, come previsto in fase di pianificazione. Il calcolo viene fatto prima dell'inizio dei lavori, così da avere una base su cui tracciare i progressi. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Planned Value"}
+            \end{table}
+            }
+    
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Actual Cost (AC)}}\\
+                \hline
+                \textbf{Codice} & MPC04\\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{AC} = (\text{Ore impiegate})*(\text{Costo per ora}) \)\\
+                \hline
+                \textbf{Descrizione} & L'\textbf{AC} rappresenta la somma spesa per il progetto in quel determinato momento. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Actual Cost"}
+            \end{table}
+            }
+            
+            
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Cost Variance (CV)}}\\
+                \hline
+                \textbf{Codice} & MPC05\\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{CV} = \text{EV}-\text{AC} \)\\
+                \hline
+                \textbf{Descrizione} & Il \textbf{CV} rappresenta lo scostamento economico tra il valore del lavoro effettivamente completato e il costo sostenuto per realizzarlo. Viene calcolato come la differenza tra il valore guadagnato (EV) e il costo effettivo (AC). \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Cost Variance"}
+            \end{table}
+            }
+    
+    
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Scheduled Variance (SV)}}\\
+                \hline
+                \textbf{Codice} & MPC06\\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{SV} = \text{EV}-\text{PV} \)\\
+                \hline
+                \textbf{Descrizione} & L'\textbf{SV} rappresenta lo scostamento fra il lavoro effettivamente completato e quello pianificato. Esprime la differenza fra il valore guadagnato (EV) e il valore pianificato (PV). \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Scheduled Variance"}
+            \end{table}
+            }
+    
+    
+            {\renewcommand{\arraystretch}{1.7}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Cost Performance Index (CPI)}}\\
+                \hline
+                \textbf{Codice} & MPC07\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{CPI} = \frac{\text{EV}}{\text{AC}} \)}\\
+                \hline
+                \textbf{Descrizione} & Il \textbf{CPI} misura l'efficienza dei costi del progetto. Esprime il rapporto fra il valore del lavoro completato (EV) e il budget utilizzato per raggiungere tale valore. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Cost Performance Index"}
+            \end{table}
+            }
+    
+    
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Schedule Performance Index (SPI)}}\\
+                \hline
+                \textbf{Codice} & MPC08\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{SPI} = \frac{\text{EV}}{\text{PV}} \)}\\
+                \hline
+                \textbf{Descrizione} & L'\textbf{SPI} misura l'efficienza con cui il progetto sta rispettando la pianificazione temporale. Esprime il rapporto tra il valore del lavoro completato (EV) e il valore del lavoro pianificato (PV). \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Schedule Performance Index"}
+            \end{table}
+            }
+    
+    
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Estimate at Completion (EAC)}}\\
+                \hline
+                \textbf{Codice} & MPC09\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{EAC} = \frac{\text{BAC}}{\text{CPI}} \)}\\
+                \hline
+                \textbf{Descrizione} & L'\textbf{EAC} rappresenta il budget stimato per il completamento del progetto. Esprime il rapporto fra il budget totale prefissato per il progetto (BAC) e l'efficienza dei costi del progetto (CPI). \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Estimate at Completion"}
+            \end{table}
+            }
+    
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Estimate to Complete (ETC)}}\\
+                \hline
+                \textbf{Codice} & MPC10\\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{ETC} = \text{EAC}-\text{AC} \)\\
+                \hline
+                \textbf{Descrizione} & L'\textbf{ETC} rappresenta il costo residuo per il completamento del progetto. Esprime la differenza fra il budget stimato per il completamento del progetto (EAC) e il costo effettivamente sostenuto fino a quel momento. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Estimate to Complete"}
+            \end{table}
+            }
+    
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Variance at Completion (VAC)}}\\
+                \hline
+                \textbf{Codice} & MPC11\\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{VAC} = \text{BAC}-\text{EAC} \)\\
+                \hline
+                \textbf{Descrizione} & Il \textbf{VAC} misura la differenza in budget originario del progetto (BAC) e quello stimato per il completamento del progetto (EAC). \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Variance at Completion"}
+            \end{table}
+            }
+        
+        \subsubsection{Sviluppo}{
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Requirement Stability Index (RSI)}}\\
+                \hline
+                \textbf{Codice} & MPC12\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{RSI} = \left[1-\left(\frac{\text{RA}+\text{RM}+\text{RR}}{\text{RI}}\right)\right]*100 \)}\\
+                \hline
+                \textbf{Descrizione} & L'\textbf{RSI} specifica quanto i requisiti del progetto sono stabili nel tempo. Si misura rapportando i requisiti iniziali (RI) a quelli aggiunti (RA), quelli modificati (RM) e quelli rimossi (RR).\\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Requirement Stability Index"}
+            \end{table}
+            }
+        }
+        
+    \subsection{Processi di supporto}
+
+        \subsubsection{Documentazione}
+        
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Indice di Gulpease}}\\
+                \hline
+                \textbf{Codice} & MPC13\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Gulpease} = 89-\left(\frac{\text{Numero di lettere}}{\text{Numero di parole}}\right)*10+\left(\frac{\text{Numero di frasi}}{\text{Numero di parole}}\right)*300 \)}\\
+                \hline
+                \textbf{Descrizione} & L'\textbf{indice di Gulpease} è un indice di leggibilità del testo. Si misura rapportando il numero di parole (NP) di un testo al numero delle lettere (NL) e delle frasi (NF). Un indice $\ge80$ indica che il testo è comprensibile anche per le persone che hanno completato solo la scuola elementare. Un indice compreso fra 60 e 80 indica che il testo è di difficoltà media, comprensibile da persona con la licenza media. Un indice di Gulpease compreso fra 40 e 60 indica che il testo è abbastanza difficile, comprensibile per chi ha almeno un diploma di una scuola superiore. Un indice $<40$ indica che il testo è molto difficile, comprensibile dai lettori con un'istruzione universitaria. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Indice di Gulpease"}
+            \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Indice di correttezza ortografica}}\\
+                \hline
+                \textbf{Codice} & MPC14\\
+                \hline
+                \textbf{Descrizione} & L'\textbf{indice di correttezza ortografica} misura il numero di errori ortografici presenti in un documento. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Indice di correttezza ortografica"}
+            \end{table}
+            }
+        
+        \subsubsection{Verifica}
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Code Coverage}}\\
+                \hline
+                \textbf{Codice} & MPC15\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Code Coverage} = \left(\frac{\text{Numero di linee di codice testate}}{\text{Numero di linee di codice totali}}\right)*100 \)}\\
+                \hline
+                \textbf{Descrizione} & Il \textbf{Code Coverage} rappresenta la percentuale del codice coperto da test automatizzati. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Code Coverage"}
+            \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Test Success Rate}}\\
+                \hline
+                \textbf{Codice} & MPC16\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Test Success Rate} = \left(\frac{\text{Numero di test superati}}{\text{Numero di test totali}}\right)*100 \)}\\
+                \hline
+                \textbf{Descrizione} & Il \textbf{Test Success Rate} rappresenta la percentuale dei test che vengono passati con esito positivo. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Test Success Rate"}
+            \end{table}
+            }
+        
+        \subsubsection{Qualità}   
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Quality Metrics Satisfied}}\\
+                \hline
+                \textbf{Codice} & MPC17\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Quality Metrics Satisfied} = \left(\frac{\text{Numero di metriche soddisfatte}}{\text{Numero di metriche totali}}\right)*100 \)}\\
+                \hline
+                \textbf{Descrizione} & Il \textbf{Quality Metrics Satisfied} rappresenta la percentuale delle metriche di qualità soddisfatte. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Quality Metrics Satisfied"}
+            \end{table}
+            }
+           
+    \subsection{Processi organizzativi}
+
+        \subsubsection{Gestione dei processi}
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Non-Calculated Risk}}\\
+                \hline
+                \textbf{Codice} & MPC18\\
+                \hline
+                \textbf{Descrizione} & L'indice \textbf{Non-Calculated Risk} rappresenta al numero di rischi non previsti che si sono manifestati durante lo svolgimento del progetto. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Non-Calculated Risk"}
+            \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Time Efficiency}}\\
+                \hline
+                \textbf{Codice} & MPC19\\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Time Efficiency} = \left(\frac{\text{Numero di ore produttive}}{\text{Numero di ore totali}}\right)*100 \)}\\
+                \hline
+                \textbf{Descrizione} & L'indice \textbf{Time Efficiency} rappresenta la percentuale delle ore le quali sono risultate effettivamente produttive (a discapito delle ore utilizzate per la palestra personale). \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Time Efficiency"}
+            \end{table}
+            }
 
 \end{document}
