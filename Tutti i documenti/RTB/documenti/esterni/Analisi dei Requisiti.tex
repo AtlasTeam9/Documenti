@@ -43,11 +43,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2026/01/07}
+\newcommand{\DataUltimaModifica}{2026/01/08}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.8.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.8.1} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -126,7 +126,9 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Michele Tesser & Andrea Difino & Completati Casi d'Uso \\
+            \VersioneDocumento & \DataUltimaModifica & Riccardo Valerio & Andrea Difino & Iniziati requisiti funzionali da 1 a 13 \\
+            \hline
+            v0.8.0 & 2026/01/07 & Michele Tesser & Andrea Difino & Completati Casi d'Uso \\
             \hline
             v0.7.0 & 2026/01/06 & Giacomo Giora & Andrea Difino & Modificati e sistemati UC da 1 a 12. Aggiunti da UC 13 a 15 \\
             \hline
@@ -1518,7 +1520,7 @@
                     \item Il Sistema salva il dispositivo e gli asset.
                     \item Il Sistema conferma il salvataggio.
                 \end{itemize}
-                \item \textbf{Inclusioni}: \hyperref[uc:uc16]{UC16 Salvataggio della lista di assets}
+              \item \textbf{Inclusioni}: \hyperref[uc:uc16]{UC16 Salvataggio della lista di assets}
             \end{itemize}
 
             \subsubsection{UC37 - Uscita dall’editor senza salvataggio}
@@ -1550,22 +1552,51 @@
 % Requisiti
 % ----------------------------
 \section{Requisiti}{
+    Verranno ora descritti i requisiti che ALimitedGroup ha individuato, raggruppati per requisiti:
+    \begin{itemize}
+        \item \textbf{Funzionali}, ovvero requisiti che rappresentano qualcosa che il Sistema sviluppato deve avere per soddisfare un’aspettativa;
+        \item \textbf{Qualità}, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
+        \item \textbf{Vincolo}, ovvero restrizioni poste al Sistema, quali, a titolo di esempio, sull’uso di alcune tecnologie;
+    \end{itemize}
+    
+    \noindent Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.2 delle Norme di Progetto ver. 1.0.0
+
     \subsection{Requisiti funzionali}{
-        Scrivere i requisiti funzionali qui. I requisiti funzionali sono: le funzionalità che il sistema deve offrire agli utenti finali per soddisfare le loro esigenze e aspettative.
-        
         \begin{table}[H]
         \centering
         \rowcolors{2}{lightblue}{white}
-            \begin{tabular}{|l|l|l|l|}
+            \begin{tabularx}{\textwidth}{|l|X|l|}
                 \hline
                 \rowcolor{gold}
-                \textbf{Codice} & \textbf{Rilevanza} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
                 \hline
-                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1} \\
+                R-1-F-Ob & L'Utente deve poter caricare un dispositivo nel Sistema & \hyperref[uc:uc1]{UC1} \\
                 \hline
-                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1}, \hyperref[uc:uc2]{UC2} \\
+                R-2-F-Ob & L’Utente deve ricevere un errore in seguito ad un tentativo di caricamento di un file non valido & \hyperref[uc:uc2]{UC2}\\
                 \hline
-            \end{tabular}
+                R-3-F-Ob & L’Utente deve poter visualizzare il dispositivo caricato & \hyperref[uc:uc3]{UC3}\\
+                \hline
+                R-4-F-Ob & L’Utente deve poter visualizzare il nome del dispositivo caricato & \hyperref[uc:uc3]{UC3}\\
+                \hline
+                R-5-F-Ob & L'Utente deve poter espandere le informazioni del dispositivo & \hyperref[uc:uc4]{UC4}\\
+                \hline
+                R-6-F-Ob & L'Utente deve poter visualizzare la lista degli assets del dispositivo & \hyperref[uc:uc4.1]{UC4.1}\\
+                \hline
+                R-7-F-Ob & L'Utente deve poter visualizzare il nome di ogni assets del dispositivo & \hyperref[uc:uc4.1]{UC4.1}\\
+                \hline
+                R-8-F-Ob & L'Utente deve poter visualizzare il tipo di ogni assets del dispositivo & \hyperref[uc:uc4.1]{UC4.1}\\
+                \hline
+                R-9-F-Ob & L'Utente, dopo aver creato manualmente la lista di assets di un dispositivo, deve poter modificare gli assets del dispositivo & \hyperref[uc:uc5]{UC5} \hyperref[uc:uc16]{UC16}\\
+                \hline
+                R-10-F-Ob & L'Utente deve poter eliminare un asset del dispositivo & \hyperref[uc:uc5]{UC5}\\
+                \hline
+                R-11-F-Ob & L'Utente deve poter aggiungere un asset alla lista di assets creata manualmente & \hyperref[uc:uc5]{UC5}\\
+                \hline
+                R-12-F-Ob & L'Utente deve poter salvare le modifiche apportate alla lista degli asset creata manualmente & \hyperref[uc:uc5]{UC5}\\
+                \hline
+                R-13-F-Ob & L'Utente deve poter salvare le modifiche apportate alla lista degli asset creata manualmente & \hyperref[uc:uc6]{UC6}\\
+                \hline
+            \end{tabularx}
             \caption{Tabella dei requisiti funzionali} 
             \label{tab:requisiti-funzionali}
         \end{table}
