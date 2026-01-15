@@ -45,11 +45,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2026/01/14}
+\newcommand{\DataUltimaModifica}{2026/01/15}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.10.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.11.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -128,7 +128,9 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Michele Tesser & Andrea Difino & Prima stesura requisiti di qualità \\
+            \VersioneDocumento & \DataUltimaModifica & Michele Tesser & Andrea Difino & Prima stesura requisiti di vincolo \\
+            \hline
+            v0.10.0 & 2026/01/14 & Michele Tesser & Andrea Difino & Prima stesura requisiti di qualità \\
             \hline
             v0.9.0 & 2026/01/13 & Michele Tesser & Andrea Difino & Completati requisiti funzionali \\
             \hline
@@ -1836,6 +1838,8 @@
             \end{longtable}
     }
 
+    \newpage
+
     \subsection{Requisiti di qualità}{
 
         \rowcolors{2}{lightblue}{white}
@@ -1882,9 +1886,50 @@
             \end{longtable}
     }
 
+    \newpage
+
     \subsection{Requisiti di vincolo}{
-        
-    }
+        \rowcolors{2}{lightblue}{white}
+        \begin{longtable}{|l|p{0.6\textwidth}|l|}
+            \caption{Tabella dei requisiti di vincolo (obbligatori)} 
+            \label{tab:requisiti-vincolo} \\
+            \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                \endfirsthead
+                
+                \multicolumn{3}{c}%
+                {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                \endhead
+                
+                \hline
+                \multicolumn{3}{r}{\textit{continua nella pagina successiva}} \\
+                \endfoot
+                
+                \hline
+                \endlastfoot
+                \hline
+                \rowcolor{gold}
+                \hline
+                R-1-V-Ob & È necessario che il software possa importare documenti nei formati CSV o JSON & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-2-V-Ob & È necessario che il software possa eseguire automaticamente i decision tree per i requisiti della norma EN 18031 & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-3-V-Ob & È necessario che ogni requisito analizzato deve restituire output "Pass", "Fail" o "Not applicable" & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-4-V-Ob & È necessario che i decision tree siano rappresentabili in un formato modificabile esternamente JSON & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-5-V-Ob & È necessario che vengano rispettati i criteri di completamento: implementazione e test di tutti i requisiti obbligatori + documentazione completa & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-6-V-Ob & È necessario l'utilizzo di Python 3.x per il backend & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+            \end{longtable}
+        }
 }
 
 \newpage
