@@ -45,11 +45,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2026/01/13}
+\newcommand{\DataUltimaModifica}{2026/01/14}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.9.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.10.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -128,7 +128,9 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Michele Tesser & Andrea Difino & Completati requisiti funzionali \\
+            \VersioneDocumento & \DataUltimaModifica & Michele Tesser & Andrea Difino & Prima stesura requisiti di qualità \\
+            \hline
+            v0.9.0 & 2026/01/13 & Michele Tesser & Andrea Difino & Completati requisiti funzionali \\
             \hline
             v0.8.4 & 2026/01/12 & Michele Tesser & Andrea Difino & Continuati requisiti e aggiunti UC \\
             \hline
@@ -1835,45 +1837,53 @@
     }
 
     \subsection{Requisiti di qualità}{
-        Scrivere i requisiti di qualità qui. I requisiti di qualità sono: le caratteristiche non funzionali che il \textit{sistema}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sistema}{G}} deve possedere, come prestazioni, \textit{usabilità}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Usabilità}{G}}, affidabilità, \textit{sicurezza}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezza}{G}}, ecc.
 
-        \begin{table}[H]
-        \centering
         \rowcolors{2}{lightblue}{white}
-            \begin{tabular}{|l|l|l|l|}
+            \begin{longtable}{|l|p{0.6\textwidth}|l|}
+                \caption{Tabella dei requisiti funzionali} 
+                \label{tab:requisiti-funzionali} \\
                 \hline
                 \rowcolor{gold}
-                \textbf{Codice} & \textbf{Rilevanza} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
                 \hline
-                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1} \\
+                \endfirsthead
+                
+                \multicolumn{3}{c}%
+                {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
                 \hline
-                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1}, \hyperref[uc:uc2]{UC2} \\
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
                 \hline
-            \end{tabular}
-            \caption{Tabella dei requisiti di qualità} 
-            \label{tab:requisiti-qualita}
-        \end{table}
+                \endhead
+                
+                \hline
+                \multicolumn{3}{r}{\textit{continua nella pagina successiva}} \\
+                \endfoot
+                
+                \hline
+                \endlastfoot
+                \hline
+                \rowcolor{gold}
+                \hline
+                R-1-Q-Ob & È necessario rispettare tutte le norme presenti nelle \hyperref[]{Norme di Progetto ver. 1.0.0} & Interno \\ 
+                \hline 
+                R-2-Q-Ob & È necessario verificare che tutti i requisiti obbligatori vengano rispettati tramite test & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-3-Q-Ob & È necessario avere un'Interfaccia chiara e intuitiva & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-4-Q-Ob & È necessario avere una gestione robusta di file incompleti o incoerenti senza crash & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-5-Q-Ob & È necessario avere codice modulare e documentato per facilitare manutenzione ed estensioni future & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-6-Q-Ob & È necessario avere tempi di esecuzione dei decision tree rapidi & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-7-Q-Ob & È necessario avere possibilità di aggiungere nuovi requisiti e decision tree senza rifattorizzazione completa & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+            \end{longtable}
     }
 
     \subsection{Requisiti di vincolo}{
-        Scrivere i requisiti di vincolo qui. I requisiti di vincolo sono: le limitazioni o condizioni imposte al \textit{sistema}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sistema}{G}}, come vincoli tecnologici, normativi, di budget, di tempo, ecc.
-
-        \begin{table}[H]
-        \centering
-        \rowcolors{2}{lightblue}{white}
-            \begin{tabular}{|l|l|l|l|}
-                \hline
-                \rowcolor{gold}
-                \textbf{Codice} & \textbf{Rilevanza} & \textbf{Descrizione} & \textbf{Fonti} \\
-                \hline
-                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1} \\
-                \hline
-                Id requisito & Obbligatorio/Desiderabile/Opzionale & Descrizione & \hyperref[uc:uc1]{UC1}, \hyperref[uc:uc2]{UC2} \\
-                \hline
-            \end{tabular}
-            \caption{Tabella dei requisiti di vincolo} 
-            \label{tab:requisiti-vincolo}
-        \end{table}
+        
     }
 }
 
