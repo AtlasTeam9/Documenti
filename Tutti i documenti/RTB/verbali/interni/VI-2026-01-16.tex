@@ -29,27 +29,26 @@
 % Dati personalizzabili
 % ----------------------------
 \newcommand{\Gruppo}{Atlas}
-\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{Email}}}}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloVerbale}{Verbale della Riunione}
-\newcommand{\DataVerbale}{2025/11/12}
-\newcommand{\OraInizio}{16:00}
-\newcommand{\OraFine}{17:00}
+\newcommand{\DataVerbale}{2026/01/16}
+\newcommand{\OraInizio}{11:00}
+\newcommand{\OraFine}{12:30}
 \newcommand{\LuogoVerbale}{Chiamata Discord}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
 \newcommand{\AbstractVerbale}{%
-In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \space \OraFine .
+In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
 }
 
 % --- Nuove variabili aggiunte ---
 \newcommand{\VersioneVerbale}{v1.0.0} % <-- modifica qui la versione o ID
-\newcommand{\VerbaleInterno}{Interno} 
+\newcommand{\TipoVerbale}{Interno} 
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\Gruppo}
-\fancyhead[R]{Verbale: \VerbaleInterno \space - \space \DataVerbale}
+\fancyhead[R]{Verbale: \TipoVerbale \space - \space \DataVerbale}
 \fancyfoot[C]{\thepage}
-
 
 % ----------------------------
 % Inizio documento
@@ -80,7 +79,7 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
         \textbf{Data:} & \DataVerbale \\
         \textbf{Luogo:} & \LuogoVerbale \\
         \textbf{Versione:} & \VersioneVerbale \\
-        \textbf{Tipo:} & \VerbaleInterno \\
+        \textbf{Tipo:} & \TipoVerbale \\
     \end{tabular}
 
     \vspace{1.2cm}
@@ -90,29 +89,27 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
     \begin{tabular}{l|l|l}
         \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
         \hline
-        Andrea Difino & SI & Responsabile\\
-        Federico Simonetto & SI & Amministratore\\
-        Riccardo Valerio & SI & Verificatore\\
+        Andrea Difino & SI & Programmatore\\
+        Federico Simonetto & SI & Analista\\
+        Riccardo Valerio & SI & Amministratore\\
         Francesco Marcolongo & SI & Verificatore\\
-        Michele Tesser & SI & Amministratore\\
-        Giacomo Giora & SI & Analista\\
-        Bilal Sabic & SI & Analista\\
+        Michele Tesser & SI & Analista\\
+        Giacomo Giora & SI & Responsabile\\
+        Bilal Sabic & SI & Programmatore\\
     \end{tabular}
 
 \end{titlepage}
 
 \section*{Registro delle modifiche}{
-    \begin{center} 
+    \begin{center}
         \begin{tabular}{|l|l|l|l|l|}
-    \hline
-    \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
-	\hline
-	\VersioneVerbale&2025/11/18&Bilal Sabic & Riccardo Valerio&Versione definitiva \\
-	\hline
-	v.0.1.1&\DataVerbale &Bilal Sabic & Francesco Marcolongo&Piccole correzioni \\
-    \hline
-    v0.1.0&\DataVerbale &Bilal Sabic & Francesco Marcolongo&Prima stesura \\
-    \hline
+        \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneVerbale & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Correzioni varie \\
+            \hline
+            v0.1.0 & \DataVerbale & Federico Simonetto & Francesco Marcolongo & Prima stesura \\
+            \hline
         \end{tabular}
     \end{center}
 }
@@ -135,24 +132,19 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
 
 
 \section{Ordine del giorno}{
-    \begin{enumerate}
-        \item Discussione sul way of working
-        \item Discussione sulle tecnologie da utilizzare
-        \item Creazione di un canale di comunicazione con l'azienda Bluewind
-    \end{enumerate}
+    \begin{itemize}
+        \item Discussione sui casi d'uso
+        \item Discussione sul cruscotto
+    \end{itemize}
 }
 
+
 \section{Discussione}{
- 	\subsection{Discussione sul way of working} {
-	Il gruppo ha discusso del way of working e delle possibili modalità per ottimizzarlo, insieme a proposte di miglioramento riguardanti la struttura della repository GitHub. In particolare si è discusso sul problema della concorrenza. 
-	}
-	\subsection{Discussione sulle tecnologie da utilizzare} {
-	Il gruppo ha discusso sulle varie tecnologie da utilizzare per lo sviluppo del progetto, tenendo conto delle competenze attuali dei membri del team.
-	}
-	\subsection{Discussione sul canale di comunicazione con l'azienda Bluewind} {
-	Il gruppo ha creato un canale Telegram per mantenere una comunicazione più diretta e immediata con l’azienda.
-	}
-	
+    \subsection{Discussione sui casi d'uso} {
+    I membri del team discutono alcuni miglioramenti che si potrebbero applicare ai casi d'uso. Vengono discussi i casi d'uso migliorabili e vengono definite alcune funzionalità che necessitano di altri casi d'uso invece che essere estensioni di un singolo caso d'uso. Viene tutto annotato in un documento a parte in modo tale da essere consultabile dai membri del team.
+	}	
+    \subsection{Discussione sul cruscotto}
+    I membri del team si aggiornano nel metodo tramite il quale vengono controllate le metriche di progetto. Si è deciso di utilizzare le issue dell'Issue Tracking System come metrica di Earned Value.
 }
 
 \section{Decisioni prese}{
@@ -161,30 +153,27 @@ In questo verbale vengono riportati i principali argomenti discussi, le decision
         \hline
         \textbf{ID} & \textbf{Decisione} \\
         \hline
-            D1-\DataVerbale\_vi & Ridefinita la struttura della repo per risolvere il problema della concorrenza  \\
+            D1-\DataVerbale\_vi & Modificato il modo in cui vengono individuate estensioni e inlcusioni negli Use Case \\
         \hline
-	D2-\DataVerbale\_vi & Deciso Telegram come canale di comuncazione con l'azienda \\
+            D2-\DataVerbale\_vi & Utilizzate le issue come metrica di Earned Value sul cruscotto \\
         \hline
     \end{tabular}
     \end{center}
 }
 
-\section{Attivitá da svolgere}{
+\section{Attività da svolgere}{
     \begin{center}
     \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
         \hline
         \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
         \hline
-            A1-\DataVerbale\_vi & Definire quali tecnologie utilizzare per il \newline progetto  & -  & Team \\
+            A1-\DataVerbale\_vi & Continuare la stesura dei PdQ & - & Riccardo Valerio \\
         \hline
-	 A2-\DataVerbale\_vi & Continuare a scrivere il glossario  & -  & Team \\
-        \hline
-	A3-\DataVerbale\_vi & Studiare la documentazione condivisa \newline dall'azienda  & -  & Team \\
+            A2-\DataVerbale\_vi & Applicare le modifiche all'AdR & - & Michele Tesser \\
         \hline
     \end{tabular}
     \end{center}
 }
-
 
 
 \end{document}
