@@ -49,7 +49,7 @@
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.12.1} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.13.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -128,31 +128,33 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & 2026/01/18 & Michele Tesser & Andrea Difino & Sistemati indici casi d'uso \\
+            \VersioneDocumento & 2026/01/28 & Francesco Marcolongo & Andrea Difino & Aggiunti diagrammi dei Casi d'Uso \\
             \hline
-            v0.12.0 & 2026/01/17 & Michele Tesser & Andrea Difino & Aggiunti casi d'uso e modificate estensioni \\
+            v0.12.1 & 2026/01/18 & Federico Simonetto & Francesco Marcolongo & Sistemati indici casi d'uso \\
             \hline
-            v0.11.0 & 2026/01/15 & Michele Tesser & Andrea Difino & Prima stesura requisiti di vincolo \\
+            v0.12.0 & 2026/01/17 & Michele Tesser & Francesco Marcolongo & Aggiunti casi d'uso e modificate estensioni \\
             \hline
-            v0.10.0 & 2026/01/14 & Michele Tesser & Andrea Difino & Prima stesura requisiti di qualità \\
+            v0.11.0 & 2026/01/15 & Michele Tesser & Francesco Marcolongo & Prima stesura requisiti di vincolo \\
             \hline
-            v0.9.0 & 2026/01/13 & Michele Tesser & Andrea Difino & Completati requisiti funzionali \\
+            v0.10.0 & 2026/01/14 & Federico Simonetto & Francesco Marcolongo & Prima stesura requisiti di qualità \\
             \hline
-            v0.8.4 & 2026/01/12 & Michele Tesser & Andrea Difino & Continuati requisiti e aggiunti UC \\
+            v0.9.0 & 2026/01/13 & Michele Tesser & Francesco Marcolongo & Completati requisiti funzionali \\
             \hline
-            v0.8.3 & 2026/01/11 & Riccardo Valerio & Andrea Difino & Iniziati requisiti funzionali da 26 a 41 \\
+            v0.8.4 & 2026/01/12 & Michele Tesser & Francesco Marcolongo & Continuati requisiti e aggiunti UC \\
             \hline
-            v0.8.2 & 2026/01/10 & Michele Tesser & Andrea Difino & Iniziati requisiti funzionali da 14 a 25 \\
+            v0.8.3 & 2026/01/11 & Federico Simonetto & Francesco Marcolongo & Iniziati requisiti funzionali da 26 a 41 \\
             \hline
-            v0.8.1 & 2026/01/08 & Riccardo Valerio & Andrea Difino & Iniziati requisiti funzionali da 1 a 13 \\
+            v0.8.2 & 2026/01/10 & Michele Tesser & Francesco Marcolongo & Iniziati requisiti funzionali da 14 a 25 \\
             \hline
-            v0.8.0 & 2026/01/07 & Michele Tesser & Andrea Difino & Completati Casi d'Uso \\
+            v0.8.1 & 2026/01/08 & Michele Tesser & Francesco Marcolongo & Iniziati requisiti funzionali da 1 a 13 \\
             \hline
-            v0.7.0 & 2026/01/06 & Giacomo Giora & Andrea Difino & Modificati e sistemati UC da 1 a 12. Aggiunti da UC 13 a 15 \\
+            v0.8.0 & 2026/01/07 & Michele Tesser & Francesco Marcolongo & Completati Casi d'Uso \\
             \hline
-            v0.6.0 & 2025/12/19 & Andrea Difino & Giacomo Giora & Aggiunti e sistemati UC da 1 a 12 \\
+            v0.7.0 & 2026/01/06 & Giacomo Giora & Michele Tesser & Modificati e sistemati UC da 1 a 12. Aggiunti da UC 13 a 15 \\
             \hline
-            v0.5.2 & 2025/12/15 & Riccardo Valerio & Giacomo Giora, Federico Simonetto & Migliorata coerenza \\
+            v0.6.0 & 2025/12/19 & Andrea Difino & Michele Tesser & Aggiunti e sistemati UC da 1 a 12 \\
+            \hline
+            v0.5.2 & 2025/12/15 & Francesco Marcolongo & Michele Tesser & Migliorata coerenza \\
             \hline
             v0.5.1 & 2025/12/07 & Michele Tesser & Riccardo Valerio & Link glossario \\
             \hline
@@ -162,7 +164,7 @@
             \hline
             v0.3.0 & 2025/11/28 & Michele Tesser & Federico Simonetto & Stesura sez 2 e inizio 3\\
             \hline
-            v0.2.0 & 2025/11/27 & Giacomo Giora & Federico Simonetto & Prima stesura prima sezione\\
+            v0.2.0 & 2025/11/27 & Bilal Sabic & Federico Simonetto & Prima stesura prima sezione\\
             \hline
             v0.1.0 & 2025/11/27 & Giacomo Giora & & Stesura template\\
             \hline
@@ -305,629 +307,682 @@
             \item \textbf{Scenario alternativo:} Descrizione ragionevole degli eventi che possono accadere qualora una delle operazioni descritte nello \textbf{Scenario principale} non vada a buon fine
             \item \textbf{Estensioni:} Ulteriori Casi d’Uso che possono manifestarsi nel corso dell’esecuzione delle operazioni previste dal Caso d’Uso principale.
             \item \textbf{Inclusioni:} Ulteriori Casi d’Uso che l’Attore è tenuto a eseguire per completare l’implementazione del Caso d’Uso attualmente in esame.
+            \item \textbf{Generalizzazioni:} Ulteriori Casi d’Uso visti come specializzazione di un Caso d’Uso più generale, dal quale ereditano il comportamento comune, introducendo eventuali variazioni o funzionalità aggiuntive.
         \end{itemize}  
 
-
-        \subsubsection{UC1 - Caricamento del dispositivo}
+        \subsubsection{UC1 - Inserimento del dispositivo}
         \label{uc:uc1}
-
          \begin{center}
             \begin{figure}[H]
                 \centering
-                %\includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC1.png}
-                \caption{UC1 - Caricamento del dispositivo}
+                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC1.png}
+                \caption{UC1 - Inserimento del dispositivo}
                 \label{fig:uc1-sistema}
             \end{figure}
         \end{center}
-        
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il Sistema si trova allo stato iniziale
+            \item \textbf{Post-condizioni}: Il dispositivo è stato inserito e le sue informazioni sono salvate nel Sistema.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente inserisce il dispositivo
+                \item Il Sistema registra le informazioni del dispositivo
+            \end{itemize}
+            \item \textbf{Generalizzazioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc2]{UC2 Caricamento del dispositivo}
+                \item \hyperref[uc:uc12]{UC12 Creazione del dispositivo}
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection{UC2 - Caricamento del dispositivo}
+        \label{uc:uc2}
+         \begin{center}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC2.png}
+                \caption{UC2 - Caricamento del dispositivo}
+                \label{fig:uc2-sistema}
+            \end{figure}
+        \end{center}
         \begin{itemize}
             \item \textbf{Attore}: Utente
             \item \textbf{Pre-condizioni}: Il Sistema si trova allo stato iniziale
             \item \textbf{Post-condizioni}: Il dispositivo è stato caricato e le sue informazioni sono salvate nel Sistema.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item Il Sistema carica i decision Tree
                 \item L’Utente seleziona il pulsante per la funzionalità di caricamento del dispositivo
-                \item L’Utente carica il dispositivo nel Sistema
-                \item Il Sistema porta l’utente nella sezione “Resoconto caricamento”
+                \item L’Utente seleziona il file con le informazione del dispositivo
+                \item Il Sistema registra le informazioni del dispositivo caricato
             \end{itemize}
             \item \textbf{Scenari alternativi}:
             \begin{itemize}
-                \item L’Utente carica il dispositivo nel Sistema che rileva che il file del dispositivo non é valido [\hyperref[uc:uc2]{UC2}] 
+                \item L’Utente carica un file con informazioni del dispositivo non valide [\hyperref[uc:uc3]{UC3}] 
             \end{itemize}
-            \item \textbf{Estensioni}: \hyperref[uc:uc2]{UC2 Rilevamento file non valido}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc3]{UC3 Rilevamento file non valido}
+            \end{itemize}
         \end{itemize}
 
-        \subsubsection{UC2 - Rilevamento file non valido}
-        \label{uc:uc2}
-                \begin{itemize}
-                    \item \textbf{Attore}: Utente
-                    \item \textbf{Pre-condizioni}: L’Utente ha selezionato una funzionalitá che prevede un caricamento di file esterno e il file presenta errori di struttura o contenuto.
-                    \item \textbf{Post-condizioni}: Il Sistema chiede all’utente se vuole tornare alla home o se vuole riprovare il caricamento del file
-                    \item \textbf{Scenario principale}:
-                    \begin{itemize}
-                        \item Il Sistema rileva un errore di struttura o contenuto nel file caricato.
-                        \item Il Sistema interrompe il processo di caricamento.
-                        \item Il Sistema mostra un messaggio di errore.
-                        \item Il Sistema chiede all’utente se vuole tornare alla home o se vuole riprovare il caricamento del file
-                    \end{itemize}
-                \end{itemize}  
-
-        \subsubsection{UC3 - Visualizzazione dispositivo}
+        \subsubsection{UC3 - Rilevamento file non valido}
         \label{uc:uc3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L’Utente ha selezionato la funzionalitá che prevede il caricamento di file esterno e ha annullato il caricamento del file o ha caricato un file che presenta errori di struttura o contenuto.
+                \item \textbf{Post-condizioni}: Il Sistema mostra all'Utente il rilevamento di un file non valido
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema rileva un errore di struttura o contenuto nel file caricato.
+                    \item Il Sistema interrompe il processo di caricamento.
+                    \item Il Sistema mostra un messaggio di errore.
+                \end{itemize}
+            \end{itemize}  
+
+        \subsubsection{UC4 - Visualizzazione dispositivo inserito}
+        \label{uc:uc4}
             \begin{center}
                 \begin{figure}[H]
                     \centering
-                    %\includegraphics[scale=0.58]{img/UC3.png}
-                    \caption{UC3 - Visualizzazione dispositivo}
-                    \label{fig:uc3-sistema}
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC4.png}
+                    \caption{UC4 - Visualizzazione dispositivo inserito}
+                    \label{fig:uc4-sistema}
+                \end{figure}
+            \end{center}
+            \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L’Utente ha importato o creato con successo un dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema mostra il dispositivo appena importato o creato
+            \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema ha recuperato i dati del dispositivo.
+                    \item Il Sistema mostra il dispositivo caricato indicando il suo nome [\hyperref[uc:uc23.1]{UC23.1}]
+                \end{itemize}
+            \item \textbf{Inclusioni}: \hyperref[uc:uc23.1]{UC23.1 Visualizzazione nome dispositivo}
+            \end{itemize}
+
+                Il Caso d’Uso UC4 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC4Inclusioni.png}
+                            \caption{UC4 -  Inclusioni Caso d'Uso 4: UC23.1}
+                            \label{fig:uc4-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+                
+        \subsubsection{UC5 - Visualizzazione lista assets} 
+            \label{uc:uc5} 
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC5.png}
+                    \caption{UC5 - Visualizzazione lista assets}
+                    \label{fig:uc5-sistema}
                 \end{figure}
             \end{center}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L’Utente ha importato o creato con successo un dispositivo.
-                \item \textbf{Post-condizioni}: Il Sistema mostra all’utente il dispositivo
+                \item \textbf{Pre-condizioni}: Un dispositivo è stato inserito e viene visualizzato
+                \item \textbf{Post-condizioni}: Il Sistema mostra la lista degli assets appartenenti al dispositivo.
                 \item \textbf{Scenario principale}:
-                    \begin{itemize}
-                        \item Il Sistema recupera i dati del dispositivo.
-                        \item Il Sistema mostra il nome del dispositivo
-                    \end{itemize}
-                \end{itemize}  
-                
-         \subsubsection{UC4 - Espandi informazioni dispositivo} 
-            \label{uc:uc4} Guardare se unificare con UC4.1
-                        \begin{itemize}
-                            \item \textbf{Attore}: Utente
-                            \item \textbf{Pre-condizioni}: Un dispositivo è disponibile e viene visualizzato
-                            \item \textbf{Post-condizioni}: Il Sistema mostra la lista degli asset appartenenti al dispositivo.
-                            \item \textbf{Scenario principale}:
-                            \begin{itemize}
-                                \item L’Utente seleziona la funzionalità per espandere le informazioni sul dispositivo
-                                \item Il Sistema recupera gli asset associati al dispositivo 
-                                \item Il Sistema mostra la lista degli assets [\hyperref[uc:uc4.1]{UC4.1}]
-                            \end{itemize}
-                            \item \textbf{Inclusioni}: \hyperref[uc:uc4.1]{UC4.1 Visualizzazione lista assets dispositivo}
-                        \end{itemize}   
+                \begin{itemize}
+                    \item L’Utente seleziona la funzionalità di visualizzazione degli assets di un dispositivo
+                    \item Il Sistema mostra la lista degli asset associati al dispositivo [\hyperref[uc:uc5.1]{UC5.1}]
+                \end{itemize}
+                \item \textbf{Inclusioni}: \hyperref[uc:uc5.1]{UC5.1 Visualizzazione singolo asset}
+            \end{itemize}
 
-                        Il Caso d’Uso UC4 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                        \begin{center}
-                            \begin{figure}[H]
-                                \centering
-                                %\includegraphics[scale=0.58]{img/UC4Inclusioni.png}
-                                \caption{UC4 -  Inclusioni Caso d'Uso 4: UC4.1}
-                                \label{fig:uc4-inclusioni}
-                            \end{figure}
-                        \end{center}
+                Il Caso d’Uso UC5 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+        
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC5Inclusioni.png}
+                        \caption{UC5 -  Inclusioni Caso d'Uso 5: UC5.1}
+                        \label{fig:uc5-inclusioni}
+                    \end{figure}
+                \end{center}
 
-                \paragraph{UC4.1 - Visualizzazione lista assets dispositivo} \mbox{}
-                \label{uc:uc4.1}
+                \paragraph{UC5.1 - Visualizzazione singolo asset} \mbox{}
+                \label{uc:uc5.1}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il Sistema mostra la lista ordinata dei nomi e dei tipi degli asset appartenenti al dispositivo
+                    \item \textbf{Post-condizioni}: Il Sistema mostra il singolo asset nella lista degli assets appartenenti al dispositivo
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item Il Sistema ottiene l’elenco degli asset del dispositivo
-                        \item Il Sistema ordina la lista secondo l’ordine definito nel file
-                        \item Il Sistema visualizza la lista dei nomi degli asset associati al loro tipo 
+                        \item Viene visualizzato il singolo asset di un dispositivo: sono mostrati il nome [\hyperref[uc:uc22.1]{UC22.1}] e il tipo [\hyperref[uc:uc22.2]{UC22.2}] dell'asset
                     \end{itemize}
-                \end{itemize} 
-
-        \subsubsection{UC5 - Modifica asset dispositivo}
-        \label{uc:uc5} 
-        Inserire commento (se è presente una lista di asset salvata manualmente) UC16. Deve essere messo al singolare. Vedere se creare singoli casi d'uso per lo scenario principale
-         \begin{center}
-                \begin{figure}[H]
-                    \centering
-                    %\includegraphics[scale=0.58]{img/UC5.png}
-                    \caption{UC5 - Modifica assets dispositivo}
-                    \label{fig:uc5-sistema}
-                \end{figure}
-            \end{center}
-        \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Il dispositivo viene visualizzato ed esiste una lista di assets creata manualmente
-                \item \textbf{Post-condizioni}: L’asset del dispositivo è aggiornato e salvato nel sistema
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente visualizza il dispositivo e la lista degli assets
-                    \item L’Utente seleziona un asset da modificare 
-                    \item Il Sistema mostra i pulsanti per l’eliminazione degli assets.
-                    \item L’Utente decide se aggiungere o eliminare gli assets
-                    \item L’Utente conferma le modifiche.
-                    \item Il Sistema salva le informazioni aggiornate.
+                    \item \textbf{Inclusioni}: 
+                    \begin{itemize}
+                        \item \hyperref[uc:uc22.1]{UC22.1 Visualizzazione nome asset}
+                        \item \hyperref[uc:uc22.2]{UC22.2 Visualizzazione tipo asset}
+                    \end{itemize}
                 \end{itemize}
-        \end{itemize}
+
+                Il Caso d’Uso UC5.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC5.1Inclusioni.png}
+                            \caption{UC5.1 -  Inclusioni Caso d'Uso 5.1: UC22.1, UC22.2}
+                            \label{fig:uc5.1-inclusioni}
+                        \end{figure}
+                    \end{center}
 
         \subsubsection{UC6 - Esecuzione del test}
         \label{uc:uc6} 
          \begin{center}
                 \begin{figure}[H]
                     \centering
-                    %\includegraphics[scale=0.58]{img/UC6.png}
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC6.png}
                     \caption{UC6 - Esecuzione del test}
                     \label{fig:uc6-sistema}
                 \end{figure}
             \end{center}
         \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Il Sistema presenta un dispositivo con i relativi assets caricati. L’Utente seleziona un pulsante per l‘avvio del test.
-                \item \textbf{Post-condizioni}: Il Test è stato completato e sono disponibili i risultati 
+                \item \textbf{Pre-condizioni}: L'Utente ha inserito un dispositivo o sta gestendo un test
+                \item \textbf{Post-condizioni}: Il test è portato a termine e i suoi risultati sono disponibili 
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona il pulsante per avviare la funzionalitá di avvio del test
-                    \item Il Sistema porta l’Utente nella sezione  “Test” e mostra:
-                    \begin{itemize}
-                        \item[a)] percentuale avanzamento,
-                        \item[b)] info dispositivo e asset,
-                        \item[c)] domanda [\hyperref[uc:uc6.1]{UC6.1}] 
-                    \end{itemize}
+                    \item L’Utente ha inserito un dispositivo e seleziona il pulsante di avvio del test oppure sta gestendo (modificando o completando) un test e il Sistema avvia in automatico il test
+                    \item Il Sistema porta l’Utente nella sezione di test, dove di volta in volta mostra le informazioni relative all'avanzamento del test e sottopone l'Utente alla domanda [\hyperref[uc:uc6.1]{UC6.1}]
                 \end{itemize}
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
-                    \item L’Utente seleziona l’uscita dal test [\hyperref[uc:uc9]{UC9}]
+                    \item L’Utente seleziona l’uscita anticipata dal test [\hyperref[uc:uc9]{UC9}]
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                 \begin{itemize} 
-                    \item[-] \hyperref[uc:uc6.1]{UC6.1 Visualizzazione domanda}
-                    \item[-] \hyperref[uc:uc6.2]{UC6.2 Visualizzazione risultati test}
+                    \item[-] \hyperref[uc:uc6.1]{UC6.1 Risposta a domanda}
                 \end{itemize}
                 \item \textbf{Estensioni}: 
                 \begin{itemize}
-                    \item[-] \hyperref[uc:uc9]{UC9 Uscita dal test non concluso} 
+                    \item[-] \hyperref[uc:uc9]{UC9 Uscita anticipata dal test} 
                 \end{itemize} 
         \end{itemize}   
 
-        Il Caso d’Uso UC6 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+        Il Caso d’Uso UC6 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
                                 \centering
-                                %\includegraphics[scale=0.58]{img/UC6Inclusioni.png}
-                                \caption{UC6 -  Inclusioni Caso d'Uso 6: UC6.1, UC6.2}
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC6Inclusioni.png}
+                                \caption{UC6 -  Inclusioni Caso d'Uso 6: UC6.1}
                                 \label{fig:uc6-inclusioni}
                             \end{figure}
                         \end{center}
 
-                \paragraph{UC6.1 - Visualizzazione domanda} \mbox{}
+                \paragraph{UC6.1 - Risposta a domanda} \mbox{}
                 \label{uc:uc6.1}
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC6.1.png}
+                        \caption{UC6.1 -  Risposta a domanda}
+                        \label{fig:uc6.1}
+                    \end{figure}
+                \end{center}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il Sistema mostra la domanda relativa al nodo del decision Tree corrente
+                    \item \textbf{Post-condizioni}: Il Sistema riceve la risposta alla domanda relativa al nodo del decision tree
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item Il Sistema mostra all’Utente la domanda corrente del decision tree
-                        \item Il Sistema mostra i pulsanti di risposta SÌ e NO
-                        \item La domanda é identificata da: 
-                        \begin{itemize}
-                            \item Nome univoco collegato al nodo del decision Tree
-                            \item Testo della domanda
-                        \end{itemize}
+                        \item Il Sistema mostra all’Utente il testo e il nome della domanda corrente del decision tree
+                        \item Il Sistema registra la risposta (SÌ/NO) dell'Utente
+                    \end{itemize}
+                    \item \textbf{Scenari alternativi}:
+                    \begin{itemize}
+                        \item L'Utente seleziona il pulsante di navigazione alla domanda precedente per modificarne la risposta [\hyperref[uc:uc7]{UC7}]
+                        \item L'Utente seleziona il pulsante di navigazione alla domanda successiva per modificarne la risposta [\hyperref[uc:uc8]{UC8}]
+                    \end{itemize}
+                    \item \textbf{Estensioni}: 
+                    \begin{itemize}
+                        \item[-] \hyperref[uc:uc7]{UC7 Modifica risposta domanda precedente}
+                        \item[-] \hyperref[uc:uc8]{UC8 Modifica risposta domanda successiva}
                     \end{itemize}
                 \end{itemize} 
 
-                \paragraph{UC6.2 - Visualizzazione risultati test} \mbox{}
-                \label{uc:uc6.2}
-                \begin{itemize}
-                    \item \textbf{Attore}: Utente
-                    \item \textbf{Pre-condizioni}: L’Utente ha completato un test o ha caricato un test precedente nel sistema.
-                    \item \textbf{Post-condizioni}: L’Utente visualizza i risultati del test.
-                    \item \textbf{Scenario principale}:
-                    \begin{itemize}
-                        \item L’Utente ha caricato o completato un test.
-                        \item Il Sistema elabora i dati del test
-                        \item La domanda é identificata da: 
-                        \item L’Utente visualizza in maniera ordinata i risultati del test
-                    \end{itemize}
-                    \item \textbf{Inclusioni}: 
-                        \begin{itemize} 
-                            \item[-] \hyperref[uc:uc6.2.1]{UC6.2.1 Visualizzazione singolo risultato test}
-                        \end{itemize}
-                \end{itemize}
+        \subsubsection{UC7 - Modifica risposta domanda precedente}
+        \label{uc:uc7}
+        \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC7.png}
+                    \caption{UC7 - Esecuzione del test}
+                    \label{fig:uc7-sistema}
+                \end{figure}
+        \end{center}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il test è in corso ed esiste almeno una domanda precedente nella cronologia (non si è alla prima).
+            \item \textbf{Post-condizioni}: Il sistema registra la nuova risposta alla domanda precedente. 
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente seleziona il pulsante per tornare alla domanda precedente 
+                \item Il Sistema mostra la domanda precedente (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente
+                \item L'Utente seleziona la risposta
+            \end{itemize} 
+        \end{itemize}   
 
-                \noindent Il Caso d’Uso UC6.2 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+        \subsubsection{UC8 - Modifica risposta domanda successiva}
+        \label{uc:uc8}
+        \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC8.png}
+                    \caption{UC8 - Esecuzione del test}
+                    \label{fig:uc8-sistema}
+                \end{figure}
+        \end{center}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il test è in corso ed esiste una domanda successiva nella storia in avanti.
+            \item \textbf{Post-condizioni}: Il Sistema riceve la nuova risposta alla domanda successiva. 
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente preme il pulsante per tornare alla domanda successiva
+                \item Il Sistema mostra la domanda successiva (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente
+                \item L'Utente seleziona la risposta
+            \end{itemize} 
+        \end{itemize}
+
+
+        \subsubsection{UC9 - Uscita anticipata dal test}
+        \label{uc:uc9}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Un test è in corso 
+            \item \textbf{Post-condizioni}: Il Sistema marca la sessione come incompleta e salva i progressi.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente seleziona il pulsante si uscita dalla sezione di test
+                \item Il Sistema riconosce l'uscita anticipata e salva automaticamente i progressi
+            \end{itemize} 
+        \end{itemize}   
+
+        \subsubsection{UC10 - Visualizzazione risultati test}
+        \label{uc:uc10}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L’Utente ha portato a termine la compilazione di un test o ha caricato un test precedente nel sistema.
+            \item \textbf{Post-condizioni}: L’Utente visualizza i risultati del test.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente ha caricato o completato un test.
+                \item Il Sistema ha elaborato i dati del test.
+                \item L’Utente visualizza i risultati del test sotto forma di una lista di requisiti [\hyperref[uc:uc10.1]{UC10.1}]
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+                \begin{itemize} 
+                    \item \hyperref[uc:uc10.1]{UC10.1 Visualizzazione lista requisiti con risultati}
+                \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d’Uso UC10 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
 
                 \begin{center}
                     \begin{figure}[H]
                         \centering
-                        %\includegraphics[scale=0.58]{img/UC6.2Inclusioni.png}
-                        \caption{UC6.2 -  Inclusioni Caso d'Uso 6.2: UC6.2.1}
-                        \label{fig:uc6.2-inclusioni}
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC10Inclusioni.png}
+                        \caption{UC10 -  Inclusioni Caso d'Uso 10: UC10.1}
+                        \label{fig:uc10-inclusioni}
                     \end{figure}
                 \end{center}
 
-                \paragraph{UC6.2.1 - Visualizzazione singolo risultato test} \mbox{}
-                \label{uc:uc6.2.1}
+                \paragraph{UC10.1 - Visualizzazione lista requisiti con risultati} \mbox{}
+                \label{uc:uc10.1}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: É visualizzabile il singolo risultato del test.
+                    \item \textbf{Post-condizioni}: Il Sistema mostra la lista dei requisiti assieme ai loro risultati del test.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente visualizza il singolo risultato con il nome del requisito e il risultato collegato
-                        \item Il risultato puó essere di tre tipi: 
+                        \item L’Utente visualizza una lista, ciascuno dei quali elementi è un requisito affrontato durante il test con il risultato [\hyperref[uc:uc10.1.1]{UC10.1.1}]
+                    \end{itemize}
+                    \item \textbf{Inclusioni}: 
+                    \begin{itemize} 
+                        \item[-] \hyperref[uc:uc10.1.1]{UC10.1.1 Visualizzazione singolo requisito con risultato}
+                    \end{itemize}
+                \end{itemize}
+
+                \noindent Il Caso d’Uso UC10.1 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC10.1Inclusioni.png}
+                        \caption{UC10.1 -  Inclusioni Caso d'Uso 10.1: UC10.1.1}
+                        \label{fig:uc10.1-inclusioni}
+                    \end{figure}
+                \end{center} 
+
+                \paragraph{UC10.1.1 - Visualizzazione singolo requisito con risultato} \mbox{}
+                \label{uc:uc10.1.1}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema mostra il singolo requisito con risultato del test.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L’Utente visualizza il singolo requisito attraverso suo nome [\hyperref[uc:uc33.2]{UC33.2}] e il risultato ad esso associato [\hyperref[uc:uc10.1.1.1]{UC10.1.1.1}]
+                    \end{itemize}
+                    \item \textbf{Inclusioni}: 
+                    \begin{itemize} 
+                        \item[-] \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome requisito del decision tree}
+                        \item[-] \hyperref[uc:uc10.1.1.1]{UC10.1.1.1 Visualizzazione risultato requisito}
+                    \end{itemize}
+                \end{itemize}
+
+                \noindent Il Caso d’Uso UC10.1.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC10.1.1Inclusioni.png}
+                        \caption{UC10.1.1 -  Inclusioni Caso d'Uso 10.1.1: UC33.2, UC10.1.1.1}
+                        \label{fig:uc10.1.1-inclusioni}
+                    \end{figure}
+                \end{center}
+
+                \paragraph{UC10.1.1.1 - Visualizzazione risultato requisito} \mbox{}
+                \label{uc:uc10.1.1.1}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del requisito.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L’Utente visualizza il risultato del requisito, che può essere di tre tipi: 
                         \begin{itemize}
-                            \item[a)] \textbf{PASS}: Il requisito è stato rispettato
-                            \item[b)] \textbf{FAIL}: requisito non rispettato 
-                            \item[c)] \textbf{NA}: requisito non applicabile
+                            \item[a)] \textbf{PASS}: il requisito è stato rispettato
+                            \item[b)] \textbf{FAIL}: il requisito non è stato rispettato 
+                            \item[c)] \textbf{NA}: il requisito non è applicabile
                         \end{itemize}
                     \end{itemize}
                 \end{itemize}
 
-        \subsubsection{UC - Esportazione test completato} 
+        \subsubsection{UC11 - Esportazione test completato} 
             \label{uc:uc}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: E presente un test completato
+                \item \textbf{Pre-condizioni}: L’Utente ha portato a termine la compilazione di un test
                 \item \textbf{Post-condizioni}: Il test completato è esportato e reso disponibile all’Utente nei due formati previsti.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L’Utente seleziona la funzionalità di esportazione del test.
-                    \item Il Sistema raccoglie i dati del test.
-                    \item Il Sistema ordina e formatta i dati.
-                    \item Il Sistema genera il file di esportazione.
-                    \item Il Sistema rende disponibile il test nei formati:
+                    \item Il Sistema formatta i dati del test e li rende disponibili in file nei formati:
                     \begin{itemize}
                         \item[a)] PDF
                         \item[b)] JSON
                     \end{itemize}
                 \end{itemize}
             \end{itemize}
+    
 
-        \subsubsection{UC7 - Caricamento domanda precedente}
-        \label{uc:uc7}
-
+        \subsubsection{UC12 - Creazione del dispositivo}
+        \label{uc:uc12}
+        \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC12.png}
+                        \caption{UC12 - Creazione del dispositivo}
+                        \label{fig:uc12}
+                    \end{figure}
+                \end{center}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: Il test è in corso ed esiste almeno una domanda precedente nella cronologia (non si è alla prima).
-            \item \textbf{Post-condizioni}: Il sistema mostra la domanda precedente e i relativi dati. Viene creata ed aggiornata la storia in avanti, quindi il pulsante avanti diventa utilizzabile.
+            \item \textbf{Pre-condizioni}: Il Sistema si trova allo stato iniziale
+            \item \textbf{Post-condizioni}: Il dispositivo è stato creato e le sue informazioni sono salvate nel Sistema.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente seleziona il pulsante per tornare alla domanda precedente
-                \item Il Sistema sposta il puntatore alla domanda precedente nella cronologia 
-                \item Il Sistema mostra la domanda precedente (con percentuale e identificativi coerenti con lo stato mostrato)
-            \end{itemize} 
-            \item \textbf{Scenari alternativi}:
-            \begin{itemize}
-                    \item L'Utente seleziona il pulsante di navigazione alla domanda successiva [\hyperref[uc:uc8]{UC8}]
+                \item L’Utente seleziona il pulsante per la funzionalità di creazione del dispositivo
+                \item L'Utente compila i campi appositi relativi ai dati del dispositivo [\hyperref[uc:uc12.1]{UC12.1}]
+                \item L’Utente aggiunge almeno un asset relativo al dispositivo [\hyperref[uc:uc14]{UC14}]
+                \item Il Sistema registra le informazioni del dispositivo creato
             \end{itemize}
-            \item \textbf{Estensioni}: \hyperref[uc:uc8]{UC8 Caricamento domanda successiva}
-        \end{itemize}   
-
-        \subsubsection{UC8 - Caricamento domanda successiva}
-        \label{uc:uc8}
-        \begin{itemize}
-            \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: Il test è in corso ed esiste una domanda successiva nella storia in avanti.
-            \item \textbf{Post-condizioni}: Il Sistema mostra la domanda successiva nella storia in avanti aggiornata. Se si raggiunge l’ultima domanda, la freccia avanti torna disabilitata.
-            \item \textbf{Scenario principale}:
-            \begin{itemize}
-                \item L’Utente preme il pulsante per tornare alla domanda successiva
-                \item Il Sistema avanza nella storia in avanti
-                \item Il Sistema mostra la domanda corrispondente 
-            \end{itemize} 
             \item \textbf{Scenari alternativi}:
-            \begin{itemize}
-                \item La modifica della risposta porta alla conclusione del test \hyperref[uc:uc6.2]{[UC6.2]}
-            \end{itemize} 
-            \item \textbf{Estensioni}: \hyperref[uc:uc6.2]{UC6.2 Visualizzazione risultati test}
-        \end{itemize}   
-
-        \subsubsection{UC9 - Uscita dal test non concluso}
-        \label{uc:uc9}
-        
-        \begin{itemize}
-            \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: Il test é ancora in corso e quindi non si trova nello stato “completato”
-            \item \textbf{Post-condizioni}: Il Sistema marca la sessione come incompleta e salva i progressi.
-            \item \textbf{Scenario principale}:
-            \begin{itemize}
-                \item L’Utente esce dalla sezione di test
-                \item Il Sistema esegue [\hyperref[uc:uc9.1]{UC9.1}]
-                \item Il Sistema porta l’utente alla pagina principale
-            \end{itemize} 
-        \end{itemize}   
-
-         Il Caso d’Uso UC9 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                        \begin{center}
-                            \begin{figure}[H]
-                                \centering
-                                %\includegraphics[scale=0.58]{img/UC9Inclusioni.png}
-                                \caption{UC9 -  Inclusioni Caso d'Uso 9: UC9.1}
-                                \label{fig:uc9-inclusioni}
-                            \end{figure}
-                        \end{center}
-
-                \paragraph{UC9.1 - Salvataggio del test parziale} \mbox{}
-                \label{uc:uc9.1}
                 \begin{itemize}
-                    \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il Sistema salva sul dispositivo dell’Utente lo stato del test non completato
-                    \item \textbf{Scenario principale}:
-                    \begin{itemize}
-                        \item Il Sistema serializza lo stato del test.
-                        \item Il Sistema salva lo stato su un file.
-                        \item Il Sistema conferma il salvataggio.
-                    \end{itemize}
-                \end{itemize} 
-
-        \subsubsection{UC10 - Inserimento manuale dei dati del dispositivo}
-        \label{uc:uc10}
-        \begin{itemize}
-            \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente seleziona la funzionalitá per l’inserimento manuale dei dati del dispositivo
-            \item \textbf{Post-condizioni}: Il form per l'inserimento dei dati del dispositivo è caricato
-            \item \textbf{Scenario principale}:
+                    \item L'Utente seleziona il pulsante di annullamento relativo alla creazione di un dispositivo [\hyperref[uc:uc19]{UC19}]
+                \end{itemize}
+            \item \textbf{Inclusioni}: 
             \begin{itemize}
-                \item L'Utente si trova allo stato iniziale dell'applicazione 
-                \item Il Sistema carica i decision Tree
-                \item L’Utente seleziona il pulsante per la funzionalità di caricamento manuale dei dati del dispositivo
-                \item Il Sistema porta l’utente nella sezione apposita
-                \item L’Utente visualizza il form di inserimento dati
-            \end{itemize} 
-            \item \textbf{Inclusioni}: \hyperref[uc:uc10.1]{UC10.1 Visualizzazione form dati dispositivo}
+                \item \hyperref[uc:uc12.1]{UC12.1 Inserimento dati dispositivo}
+                \item \hyperref[uc:uc14]{UC14 Aggiungi asset}
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc19]{UC19 Annullamento creazione dispositivo}
+            \end{itemize}
         \end{itemize}
 
-        \noindent Il Caso d’Uso UC10 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                        \begin{center}
-                            \begin{figure}[H]
-                                \centering
-                                %\includegraphics[scale=0.58]{img/UC10Inclusioni.png}
-                                \caption{UC10 -  Inclusioni Caso d'Uso 10: UC10.1}
-                                \label{fig:uc10-inclusioni}
-                            \end{figure}
-                        \end{center}
+                    \noindent Il Caso d’Uso UC12 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+            
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC12Inclusioni.png}
+                            \caption{UC12 -  Inclusioni Caso d'Uso 12: UC12.1}
+                            \label{fig:uc12-inclusioni}
+                        \end{figure}
+                    \end{center}
 
-                \paragraph{UC10.1 - Visualizzazione form dati dispositivo} \mbox{}
-                \label{uc:uc10.1}
+                \paragraph{UC12.1 - Inserimento dati dispositivo} \mbox{}
+                \label{uc:uc12.1}
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC12.1.png}
+                        \caption{UC12.1 - Inserimento dati dispositivo}
+                        \label{fig:uc12.1}
+                    \end{figure}
+                \end{center}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il Sistema mostra il form di inserimento
+                    \item \textbf{Post-condizioni}: Il Sistema registra i dati inseriti per la creazione di un dispositivo
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L'Utente visualizza il form per l'inserimento dei dati
+                        \item L'Utente inserisce i vari dati relativi al dispositivo da creare: 
+                        \begin{itemize}
+                            \item[a)] il nome [\hyperref[uc:uc12.1.1]{UC12.1.1}]
+                            \item[b)] il sistema operativo [\hyperref[uc:uc12.1.2]{UC12.1.2}]
+                            \item[c)] la versione del firmware [\hyperref[uc:uc12.1.3]{UC12.1.3}]
+                            \item[d)] la funzionalità [\hyperref[uc:uc12.1.3]{UC12.1.3}]
+                            \item[e)] la descrizione [\hyperref[uc:uc12.1.4]{UC12.1.4}]
+                        \end{itemize}
+                    \end{itemize}
+                    \item \textbf{Scenari alternativi}:
+                    \begin{itemize}
+                        \item L'Utente inserisce in uno o più campi valori non validi [\hyperref[uc:uc13]{UC13}]
                     \end{itemize}
                     \item \textbf{Inclusioni}:
                     \begin{itemize}
-                        \item \hyperref[uc:uc10.1.1]{UC10.1.1 Inserimento campo dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.1]{UC12.1.1 Inserimento nome dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.2]{UC12.1.2 Inserimento sistema operativo dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.3]{UC12.1.3 Inserimento versione firmware dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.4]{UC12.1.4 Inserimento funzionalità dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.5]{UC12.1.5 Inserimento descrizione dispositivo} 
                     \end{itemize}
-                \end{itemize} 
-        
-        \noindent Il Caso d’Uso UC10.1 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                    \item \textbf{Estensioni}: 
+                    \begin{itemize}
+                        \item[-] \hyperref[uc:uc13]{UC13 Inserimento dati non validi}
+                    \end{itemize}
+                \end{itemize}
+
+                \noindent Il Caso d’Uso UC12.1 include cinque ulteriori Caso d’Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
                                 \centering
-                                %\includegraphics[scale=0.58]{img/UC10.1Inclusioni.png}
-                                \caption{UC10.1 -  Inclusioni Caso d'Uso 10.1: UC10.1.1}
-                                \label{fig:uc10.1-inclusioni}
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC12.1Inclusioni.png}
+                                \caption{UC12.1 -  Inclusioni Caso d'Uso 12.1: UC12.1.1, UC12.1.2, UC12.1.3, UC12.1.4, UC12.1.5}
+                                \label{fig:uc12.1-inclusioni}
                             \end{figure}
-                        \end{center}
+                        \end{center} 
 
-                \paragraph{UC10.1.1 - Inserimento campo dispositivo} \mbox{}
-                \label{uc:uc10.1.1}
+                \paragraph{UC12.1.1 - Inserimento nome dispositivo} \mbox{}
+                \label{uc:uc12.1.1}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Un campo del dispositivo è stato inserito/modificato
+                    \item \textbf{Post-condizioni}: Il Sistema registra il nome del dispositivo inserito
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L'Utente seleziona un campo del form
-                        \item L'Utente inserisce o modifica il valore
-                        \item Il Sistema memorizza il valore inserito
-                    \end{itemize}
-                    \item \textbf{Generalizzazioni}:
-                    \begin{itemize}
-                        \item[-] \hyperref[uc:uc10.1.1.1]{UC10.1.1.1 Inserimento nome }
-                        \item[-] \hyperref[uc:uc10.1.1.2]{UC10.1.1.2 Inserimento sistema operativo}
-                        \item[-] \hyperref[uc:uc10.1.1.3]{UC10.1.1.3 Inserimento versione firmware}
-                        \item[-] \hyperref[uc:uc10.1.1.4]{UC10.1.1.4 Inserimento funzionalità}
-                        \item[-] \hyperref[uc:uc10.1.1.5]{UC10.11..5 Inserimento descrizione}
-                    \end{itemize}
-                \end{itemize} 
-
-                \noindent Il Caso d’Uso UC10.1.1 é generalizzato in cinque ulteriori Caso d’Uso come raffigurato nella seguente immagine:
-                
-                        \begin{center}
-                            \begin{figure}[H]
-                                \centering
-                                %\includegraphics[scale=0.58]{img/UC10.1.1Generalizzazioni.png}
-                                \caption{UC10.1.1 -  Generalizzazioni Caso d'Uso 10.1.1: UC10.1.1.1, UC10.1.1.2, UC10.1.1.3, UC10.1.1.4, UC10.1.1.5}
-                                \label{fig:uc10.1.1-generalizzazioni}
-                            \end{figure}
-                        \end{center}
-
-                \paragraph{UC10.1.1.1 - Inserimento nome} \mbox{}
-                \label{uc:uc10.1.1.1}
-                \begin{itemize}
-                    \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il nome è stato inserito dall’Utente
-                    \item \textbf{Scenario principale}:
-                    \begin{itemize}
-                        \item L’Utente visualizza il form di inserimento dati del dispositivo
-                        \item L’Utente seleziona il campo “Nome”
-                        \item L’Utente inserisce il nome del dispositivo
+                        \item L’Utente inserisce il nome del dispositivo nel campo dati corrispondente
                         \item Il Sistema memorizza il valore inserito
                     \end{itemize}
                 \end{itemize} 
 
-                \paragraph{UC10.1.1.2 - Inserimento sistema operativo} \mbox{}
-                \label{uc:uc10.1.1.2}
+                \paragraph{UC12.1.2 - Inserimento sistema operativo dispositivo} \mbox{}
+                \label{uc:uc12.1.2}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il sistema operativo è stato inserito dall’Utente
+                    \item \textbf{Post-condizioni}: Il Sistema registra il nome del sistema operativo del dispositivo inserito
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente visualizza il form di inserimento dati del dispositivo.
-                        \item L’Utente seleziona il campo “Sistema operativo”.
-                        \item L’Utente inserisce il sistema operativo del dispositivo.
+                        \item L’Utente inserisce il nome del sistema operativo del dispositivo nel campo dati corrispondente.
                         \item Il Sistema memorizza il valore inserito.
                     \end{itemize}
                 \end{itemize} 
 
-                \paragraph{UC10.1.1.3 - Inserimento versione firmware} \mbox{}
-                \label{uc:uc10.1.1.3}
+                \paragraph{UC12.1.3 - Inserimento versione firmware dispositivo} \mbox{}
+                \label{uc:uc12.1.3}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: La versione del firmware del dispositivo è stata inserita dall’Utente
+                    \item \textbf{Post-condizioni}: Il Sistema registra la versione del firmware del dispositivo inserita
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente visualizza il form di inserimento dati del dispositivo.
-                        \item L’Utente seleziona il campo “Versione firmware”.
-                        \item L’Utente inserisce la versione del firmware del dispositivo.
+                        \item L’Utente inserisce la versione del firmware del dispositivo nel corrispondente campo dati.
                         \item Il Sistema memorizza il valore inserito.
                     \end{itemize}
                 \end{itemize} 
 
-                \paragraph{UC10.1.1.4 - Inserimento funzionalità} \mbox{}
-                \label{uc:uc10.1.1.4}
+                \paragraph{UC12.1.4 - Inserimento funzionalità dispositivo} \mbox{}
+                \label{uc:uc12.1.4}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: La funzionalitá del dispositivo é stata inserita dall’Utente
+                    \item \textbf{Post-condizioni}: Il Sistema registra la funzionalità del dispositivo inserita
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente visualizza il form di inserimento dati del dispositivo.
-                        \item L’Utente seleziona il campo “Funzionalitá”.
-                        \item L’Utente inserisce le funzionalità del dispositivo.
+                        \item L’Utente inserisce le funzionalità del dispositivo nel corrispondente campo dati.
                         \item Il Sistema memorizza il valore inserito.
                     \end{itemize}
                 \end{itemize} 
 
-                \paragraph{UC10.1.1.5 - Inserimento descrizione} \mbox{}
-                \label{uc:uc10.1.1.5}
+                \paragraph{UC12.1.5 - Inserimento descrizione dispositivo} \mbox{}
+                \label{uc:uc12.1.5}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: La descrizione del dispositivo é stata inserita dall’Utente
+                    \item \textbf{Post-condizioni}:Il Sistema registra la descrizione del dispositivo inserita
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente visualizza il form di inserimento dati del dispositivo.
-                        \item L’Utente seleziona il campo “Descrizione”.
-                        \item L’Utente inserisce la descrizione del dispositivo.
+                        \item L’Utente inserisce la descrizione del dispositivo nel rispettivo campo dati
                         \item Il Sistema memorizza il valore inserito.
                     \end{itemize}
                 \end{itemize} 
-                
-        \subsubsection{UC11 - Salvataggio dati del dispositivo inseriti manualmente }
-        \label{uc:uc11}
 
+        \subsubsection{UC13 - Inserimento dati non validi}
+        \label{uc:uc13}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente ha compilato tutti i campi obbligatori riguardanti il form del dispositivo
-            \item \textbf{Post-condizioni}: L’Utente si trova nella sezione per l'aggiunta degli assets del dispositivo
+            \item \textbf{Pre-condizioni}: L’Utente ha compilato almeno un campo con dati non validi
+            \item \textbf{Post-condizioni}: Il Sistema segnala l'errore all'Utente
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente ha completato il form dei dati del dispositivo.
-                \item L’Utente seleziona la funzionalità di salvataggio
-                \item Il Sistema valida i dati inseriti.
-                \item Il Sistema salva il dispositivo.
-                \item Il Sistema porta l’Utente alla sezione per l'inserimento degli assets del dispositivo.
+                \item L’Utente ha compilato uno o più campi con dati nulli o comunque non validi
+                \item Il Sistema segnala all'Utente l'errore di inserimento e l'impossibilità di procedere.
             \end{itemize} 
         \end{itemize}
-
-        \subsubsection{UC12 - Visualizzazione form per creazione asset}
-        \label{uc:uc12}
         
+
+        \subsubsection{UC14 - Creazione asset}
+        \label{uc:uc14}
+        \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC14.png}
+                    \caption{UC14 - Creazione asset}
+                    \label{fig:uc14-sistema}
+                \end{figure}
+        \end{center}
         \begin{itemize}
             \item \textbf{Attore}: Utente
             \item \textbf{Pre-condizioni}: L'Utente si trova nella sezione di gestione asset del dispositivo
-            \item \textbf{Post-condizioni}: L'Utente visualizza il form per la creazione di un nuovo asset
+            \item \textbf{Post-condizioni}: Il Sistema registra l'asset creato
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona la funzionalità di aggiunta asset
-                \item Il Sistema mostra il form vuoto per la creazione dell'asset
-                \item Il Sistema abilita i campi per l'inserimento dati
-            \end{itemize}
-            \item \textbf{Scenari alternativi}:
-            \begin{itemize}
-                \item L'Utente decide di annullare l'operazione [\hyperref[uc:uc13]{UC13}]
-            \end{itemize}
-            \item \textbf{Estensioni}: \hyperref[uc:uc13]{UC13 Annullamento creazione asset}
-        \end{itemize}
-        
-        \paragraph{UC13 - Annullamento creazione asset} \mbox{}
-        \label{uc:uc13}
-        
-        \begin{itemize}
-            \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L'Utente sta visualizzando il form per la creazione asset
-            \item \textbf{Post-condizioni}: L'Utente ritorna alla lista degli asset senza aver creato l'asset
-            \item \textbf{Scenario principale}:
-            \begin{itemize}
-                \item L'Utente seleziona la funzionalità di annullamento
-                \item Il Sistema chiude il form di creazione
-                \item Il Sistema mostra nuovamente la lista degli asset
-            \end{itemize}
-        \end{itemize}
-        
-        \subsubsection{UC14 - Inserimento dati asset}
-        \label{uc:uc14}
-        
-        \begin{itemize}
-            \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: Il form per la creazione asset è visualizzato
-            \item \textbf{Post-condizioni}: I dati dell'asset sono stati inseriti nel form
-            \item \textbf{Scenario principale}:
-            \begin{itemize}
-                \item L'Utente compila i seguenti campi:
+                \item L'Utente seleziona la funzionalità di aggiunta di un nuovo asset
+                \item L'Utente compila i campi relativi alle informazioni dell'asset, inserendo:
                 \begin{itemize}
-                    \item Nome dell'asset [\hyperref[uc:uc14.1]{UC14.1}]
-                    \item Tipo dell'asset [\hyperref[uc:uc14.2]{UC14.2}]
-                    \item Descrizione dell'asset [\hyperref[uc:uc14.3]{UC14.3}]
-                    \item Sensibilità dell'asset [\hyperref[uc:uc14.4]{UC14.4}]
+                    \item nome dell'asset [\hyperref[uc:uc14.1]{UC14.1}]
+                    \item tipo dell'asset [\hyperref[uc:uc14.2]{UC14.2}]
+                    \item descrizione dell'asset [\hyperref[uc:uc14.3]{UC14.3}]
+                    \item sensibilità dell'asset [\hyperref[uc:uc14.4]{UC14.4}]
                 \end{itemize}
-                \item Il Sistema memorizza temporaneamente i valori inseriti
             \end{itemize}
             \item \textbf{Scenari alternativi}:
             \begin{itemize}
-                \item L'Utente inserisce dati non validi [\hyperref[uc:uc15]{UC15}]
+                \item L'Utente inserisce in uno o più campi valori non validi [\hyperref[uc:uc13]{UC13}]
+                \item L'Utente seleziona l'annullamento della creazione dell'asset [\hyperref[uc:uc15]{UC15}]
             \end{itemize}
             \item \textbf{Inclusioni}:
             \begin{itemize}
-                    \item \hyperref[uc:uc14.1]{UC14.1 Inserimento nome asset}
-                    \item \hyperref[uc:uc14.2]{UC14.2 Selezione tipo asset}
-                    \item \hyperref[uc:uc14.3]{UC14.3 Inserimento descrizione asset}
-                    \item \hyperref[uc:uc14.4]{UC14.4 Selezione sensibilità asset}
-                \end{itemize}
-            \item \textbf{Estensioni}: \hyperref[uc:uc15]{UC15 Validazione dati asset non riuscita}
+                \item \hyperref[uc:uc14.1]{UC14.1 Inserimento nome asset}
+                \item \hyperref[uc:uc14.2]{UC14.2 Selezione tipo asset}
+                \item \hyperref[uc:uc14.3]{UC14.3 Inserimento descrizione asset}
+                \item \hyperref[uc:uc14.4]{UC14.4 Selezione sensibilità asset}
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc13]{UC13 Inserimento dati non validi}
+                \item \hyperref[uc:uc15]{UC15 Annullamento creazione asset}
+            \end{itemize}
         \end{itemize}
+
+        \noindent Il Caso d’Uso UC14 include cinque ulteriori Caso d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC14Inclusioni.png}
+                                \caption{UC14 -  Inclusioni Caso d'Uso 14: UC14.1, UC14.2, UC14.3, UC14.4, UC14.5}
+                                \label{fig:uc14-inclusioni}
+                            \end{figure}
+                        \end{center} 
+        
         
         \paragraph{UC14.1 - Inserimento nome asset} \mbox{}
         \label{uc:uc14.1}
-        
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Post-condizioni}: Il nome dell'asset è stato inserito
+            \item \textbf{Post-condizioni}: Il Sistema registra il nome dell'asset inserito
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona il campo "Nome asset"
-                \item L'Utente inserisce il nome dell'asset
+                \item L'Utente inserisce il nome dell'asset nel rispettivo campo dati
                 \item Il Sistema memorizza il valore
             \end{itemize}
         \end{itemize}
         
         \paragraph{UC14.2 - Selezione tipo asset} \mbox{}
         \label{uc:uc14.2}
-        
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Post-condizioni}: Il tipo dell'asset è stato selezionato
+            \item \textbf{Post-condizioni}: Il Sistema registra la selezione del tipo dell'asset
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona il campo "Tipo asset"
-                \item L'Utente sceglie il tipo dall'elenco disponibile
+                \item L'Utente seleziona il tipo dell'asset dall'elenco disponibile nel corrispondente campo
                 \item Il Sistema memorizza la selezione
             \end{itemize}
         \end{itemize}
         
         \paragraph{UC14.3 - Inserimento descrizione asset} \mbox{}
         \label{uc:uc14.3}
-        
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Post-condizioni}: La descrizione dell'asset è stata inserita
+            \item \textbf{Post-condizioni}: Il Sistema registra la descrizione dell'asset inserita
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona il campo "Descrizione"
                 \item L'Utente inserisce la descrizione dell'asset
                 \item Il Sistema memorizza il valore
             \end{itemize}
@@ -935,250 +990,461 @@
         
         \paragraph{UC14.4 - Selezione sensibilità asset} \mbox{}
         \label{uc:uc14.4}
-        
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Post-condizioni}: La sensibilità dell'asset è stata selezionata
+            \item \textbf{Post-condizioni}: Il Sistema registra la sensibilità dell'asset
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona il campo "Sensibilità"
-                \item L'Utente sceglie il livello di sensibilità dall'elenco
+                \item L'Utente seleziona il livello di sensibilità dall'elenco disponibile nel corrispondente campo
                 \item Il Sistema memorizza la selezione
             \end{itemize}
         \end{itemize}
-        
-        \paragraph{UC15 - Validazione dati asset non riuscita} \mbox{}
+
+        \paragraph{UC15 - Annullamento creazione asset} \mbox{}
         \label{uc:uc15}
-        
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L'Utente ha inserito dati non validi per l'asset
-            \item \textbf{Post-condizioni}: Il Sistema segnala gli errori all'Utente
+            \item \textbf{Pre-condizioni}: L'Utente sta creando un asset
+            \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di creazione dell'asset 
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item Il Sistema rileva errori nei dati inseriti
-                \item Il Sistema mostra messaggi di errore per i campi problematici
-                \item Il Sistema impedisce il proseguimento fino alla correzione
-                \item L'Utente corregge i dati errati
+                \item L'Utente seleziona la funzionalità di annullamento della creazione dell'asset e conferma
+                \item Il sistema elimina i dati dell'asset immessi
             \end{itemize}
         \end{itemize}
-        
-        \subsubsection{UC16 - Salvataggio asset creato}
+
+        \subsubsection{UC16 - Eliminazione asset}
         \label{uc:uc16}
-        
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L'Utente ha compilato tutti i campi obbligatori dell'asset
-            \item \textbf{Post-condizioni}: L'asset è stato salvato nel sistema
+            \item \textbf{Pre-condizioni}: Il dispositivo inserito ha almeno un asset e l'Utente visualizza la lista degli assets
+            \item \textbf{Post-condizioni}: Il Sistema ha effettuato l'eliminazione dell'asset
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona la funzionalità di salvataggio dell'asset
-                \item Il Sistema valida i dati inseriti
-                \item Il Sistema aggiunge l'asset alla lista degli asset del dispositivo
-                \item Il Sistema aggiorna la visualizzazione della lista asset
-                \item Il Sistema conferma il salvataggio
+                \item L'Utente seleziona un asset dalla lista
+                \item L'Utente seleziona la funzionalità di eliminazione e conferma
+                \item Il Sistema rimuove l'asset dal dispositivo, aggiornando la lista degli assets
             \end{itemize}
         \end{itemize}
-        
-        \subsubsection{UC17 - Visualizzazione lista asset}
+
+        \subsubsection{UC17 - Modifica asset}
         \label{uc:uc17}
-        
+        \begin{center}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC17.png}
+                \caption{UC17 - Modifica asset}
+                \label{fig:uc17}
+            \end{figure}
+        \end{center} 
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: Il dispositivo ha almeno un asset associato
-            \item \textbf{Post-condizioni}: L'Utente visualizza la lista degli asset
+            \item \textbf{Pre-condizioni}: L'Utente si trova nella sezione di gestione asset del dispositivo
+            \item \textbf{Post-condizioni}: Il Sistema registra le modifiche apportate all'asset
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item Il Sistema recupera gli asset associati al dispositivo
-                \item Il Sistema ordina gli asset secondo criteri definiti
-                \item Il Sistema mostra la lista degli asset con:
+                \item L'Utente seleziona un asset
+                \item L'Utente seleziona la funzionalità di modifica
+                \item L'Utente modifica i campi relativi alle informazioni dell'asset, eventualmente modificando:
                 \begin{itemize}
-                    \item Nome dell'asset
-                    \item Tipo dell'asset
+                    \item nome dell'asset [\hyperref[uc:uc17.1]{UC17.1}]
+                    \item tipo dell'asset [\hyperref[uc:uc17.2]{UC17.2}]
+                    \item descrizione dell'asset [\hyperref[uc:uc17.3]{UC17.3}]
+                    \item sensibilità dell'asset [\hyperref[uc:uc17.4]{UC17.4}]
                 \end{itemize}
-            \end{itemize}
-            \item \textbf{Inclusioni}: \hyperref[uc:uc18]{UC18 Visualizzazione dettagli asset}
-        \end{itemize}
-        
-        \paragraph{UC18 - Visualizzazione dettagli asset} \mbox{}
-        \label{uc:uc18}
-        
-        \begin{itemize}
-            \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L'Utente seleziona un asset dalla lista
-            \item \textbf{Post-condizioni}: Vengono visualizzati i dettagli dell'asset selezionato
-            \item \textbf{Scenario principale}:
-            \begin{itemize}
-                \item L'Utente seleziona un asset dalla lista
-                \item Il Sistema mostra i dettagli completi dell'asset:
-                \begin{itemize}
-                    \item Nome
-                    \item Tipo
-                    \item Descrizione
-                    \item Sensibilità
-                \end{itemize}
-            \end{itemize}
-        \end{itemize}
-        
-        \subsubsection{UC19 - Eliminazione asset}
-        \label{uc:uc19}
-        
-        \begin{itemize}
-            \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: È presente almeno un asset nella lista
-            \item \textbf{Post-condizioni}: L'asset selezionato è stato eliminato
-            \item \textbf{Scenario principale}:
-            \begin{itemize}
-                \item L'Utente seleziona un asset dalla lista
-                \item L'Utente seleziona la funzionalità di eliminazione
-                \item Il Sistema chiede conferma dell'eliminazione
-                \item L'Utente conferma l'eliminazione
-                \item Il Sistema rimuove l'asset dal dispositivo
-                \item Il Sistema aggiorna la lista degli asset
-                \item Il Sistema conferma l'eliminazione
-            \end{itemize}
-        \end{itemize}
-        
-        \subsubsection{UC20 - Modifica asset esistente}
-        \label{uc:uc20}
-        
-        \begin{itemize}
-            \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L'Utente ha selezionato un asset dalla lista
-            \item \textbf{Post-condizioni}: L'asset è stato modificato e salvato
-            \item \textbf{Scenario principale}:
-            \begin{itemize}
-                \item L'Utente seleziona la funzionalità di modifica di un asset
-                \item Il Sistema mostra il form con i dati correnti dell'asset
-                \item L'Utente modifica i campi desiderati [\hyperref[uc:uc14]{UC14}]
-                \item L'Utente conferma le modifiche
-                \item Il Sistema valida e aggiorna l'asset
-                \item Il Sistema aggiorna la lista degli asset
             \end{itemize}
             \item \textbf{Scenari alternativi}:
             \begin{itemize}
-                \item L'Utente annulla la modifica [\hyperref[uc:uc21]{UC21}]
+                \item L'Utente inserisce in uno o più campi valori non validi [\hyperref[uc:uc13]{UC13}]
+                \item L'Utente seleziona l'annullamento della modifica dell'asset [\hyperref[uc:uc18]{UC18}]
+            \end{itemize}
+            \item \textbf{Inclusioni}:
+            \begin{itemize}
+                \item \hyperref[uc:uc17.1]{UC17.1 Modifica nome asset}
+                \item \hyperref[uc:uc17.2]{UC17.2 Modifica selezione tipo asset}
+                \item \hyperref[uc:uc17.3]{UC17.3 Modifica descrizione asset}
+                \item \hyperref[uc:uc17.4]{UC17.4 Modifica selezione sensibilità asset}
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc13]{UC13 Inserimento dati non validi}
+                \item \hyperref[uc:uc18]{UC18 Annullamento modifica asset}
             \end{itemize}
         \end{itemize}
-        
-        \paragraph{UC21 - Annullamento modifica asset} \mbox{}
-        \label{uc:uc21}
-        
+
+                \noindent Il Caso d’Uso UC17 include quattro ulteriori Caso d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC17Inclusioni.png}
+                                \caption{UC17 -  Inclusioni Caso d'Uso 17: UC17.1, UC17.2, UC17.3, UC17.4}
+                                \label{fig:uc17-inclusioni}
+                            \end{figure}
+                        \end{center} 
+
+            \paragraph{UC17.1 - Modifica nome asset} \mbox{}
+            \label{uc:uc17.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il nuovo nome dell'asset inserito
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica il nome precedentemente inserito nel rispettivo campo dati
+                    \item L'Utente inserisce il nuovo nome dell'asset
+                    \item Il Sistema memorizza il valore
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC17.2 - Modifica selezione tipo asset} \mbox{}
+            \label{uc:uc17.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova selezione del tipo dell'asset
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la selezione del tipo dell'asset precedentemente effettuata
+                    \item L'Utente seleziona il tipo dell'asset dall'elenco disponibile nel corrispondente campo
+                    \item Il Sistema memorizza la selezione
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC17.3 - Modifica descrizione asset} \mbox{}
+            \label{uc:uc17.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova descrizione dell'asset inserita
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la descrizione precedentemente inserita nel rispettivo campo dati
+                    \item L'Utente inserisce la nuova descrizione dell'asset
+                    \item Il Sistema memorizza il valore
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC17.4 - Modifica selezione sensibilità asset} \mbox{}
+            \label{uc:uc17.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova sensibilità dell'asset selezionata
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la selezione della sensibilità dell'asset precedentemente effettuata
+                    \item L'Utente seleziona il livello di sensibilità dall'elenco disponibile nel corrispondente campo
+                    \item Il Sistema memorizza la selezione
+                \end{itemize}
+            \end{itemize}
+
+
+        \subsubsection{UC18 - Annullamento modifica asset}
+        \label{uc:uc18}
         \begin{itemize}
             \item \textbf{Attore}: Utente
             \item \textbf{Pre-condizioni}: L'Utente sta modificando un asset
-            \item \textbf{Post-condizioni}: Le modifiche vengono scartate
+            \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di modifica dell'asset
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona la funzionalità di annullamento durante la modifica
-                \item Il Sistema chiede conferma dell'annullamento
-                \item L'Utente conferma
-                \item Il Sistema scarta le modifiche non salvate
+                \item L'Utente seleziona la funzionalità di annullamento durante la modifica e conferma
+                \item Il Sistema scarta le modifiche inserite
                 \item Il Sistema ritorna alla visualizzazione della lista asset
             \end{itemize}
         \end{itemize}
 
-        \subsubsection{UC22 - Annullamento inserimento dati dispositivo}
-            \label{uc:uc22}
+        \subsubsection{UC19 - Annullamento creazione dispositivo}
+        \label{uc:uc19}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L’Utente sta creando manualmente un dispositivo
+            \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di creazione del dispositivo
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente ha selezionato il processo di annullamento della creazione del dispositivo
+                \item L’Utente seleziona la funzionalità di annullamento e conferma.
+                \item Il Sistema elimina i dati del dispositivo e/o degli asset immessi.
+                \item Il Sistema riporta l’Utente allo stato iniziale.
+            \end{itemize} 
+        \end{itemize}
+
+        \subsubsection{UC20 - Visualizzazione presenza di modifiche non salvate dispositivo}
+        \label{uc:uc20}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L’Utente ha creato un nuovo dispositivo oppure ha effettuato modifiche ai dati o alla lista degli assets del dispositivo caricato
+            \item \textbf{Post-condizioni}: L’Utente visualizza la segnalazione di modifiche non salvate relative al dispositivo
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente ha creato un nuovo dispositivo oppure ha modificato i dati di un dispositivo esistente.
+                \item Il Sistema segnala l’Utente della presenza di modifiche non salvate relative al dispositivo.
+            \end{itemize} 
+        \end{itemize}
+
+        \subsubsection{UC21 - Salvataggio modifiche non salvate del dispositivo}
+        \label{uc:uc21}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L’Utente visualizza la presenza di modifiche non salvate relative al dispositivo
+            \item \textbf{Post-condizioni}: Il Sistema salva le modifiche non salvate del dispositivo 
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente visualizza la presenza di modifiche non salvate relative al dispositivo.
+                \item L’Utente seleziona la funzionalità di salvataggio delle modifiche non salvate.
+                \item Il Sistema salva i dati non salvati del dispositivo in locale.
+            \end{itemize} 
+        \end{itemize}
+
+        \subsubsection{UC22 - Visualizzazione singolo asset nel dettaglio}
+        \label{uc:uc22}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L’Utente visualizza la lista degli assets
+            \item \textbf{Post-condizioni}: Il Sistema mostra tutte le informazioni dell'asset nel dettaglio
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona un asset dalla lista degli assets per la visualizzazione in dettaglio
+                \item Viene visualizzato il singolo asset di un dispositivo con i suoi dettagli: 
+                \begin{itemize}
+                    \item[a)] il nome [\hyperref[uc:uc22.1]{UC22.1}]
+                    \item[b)] il tipo [\hyperref[uc:uc22.2]{UC22.2}]
+                    \item[c)] la descrizione [\hyperref[uc:uc22.3]{UC22.3}]
+                    \item[d)] la sensibilità [\hyperref[uc:uc22.4]{UC22.4}]
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc22.1]{UC22.1 Visualizzazione nome asset}
+                \item \hyperref[uc:uc22.2]{UC22.2 Visualizzazione tipo asset}
+                \item \hyperref[uc:uc22.3]{UC22.3 Visualizzazione descrizione asset}
+                \item \hyperref[uc:uc22.4]{UC22.4 Visualizzazione sensibilità asset}
+            \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d’Uso UC22 include quattro ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC22Inclusioni.png}
+                                \caption{UC22 -  Inclusioni Caso d'Uso 22: UC22.1, UC22.2, UC22.3, UC22.4}
+                                \label{fig:uc22-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+            \paragraph{UC22.1 - Visualizzazione nome asset} \mbox{}
+            \label{uc:uc22.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L’Utente sta creando manualmente un dispositivo
-                \item \textbf{Post-condizioni}: L’Utente si trova allo stato iniziale dell’applicazione
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nome dell'asset
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente si trova nel processo di creazione del dispositivo
-                    \item L’Utente seleziona la funzionalità di annullamento.
-                    \item Il Sistema chiede conferma dell’operazione.
-                    \item L’Utente conferma l'operazione.
-                    \item Il Sistema elimina i dati del dispositivo e degli asset.
-                    \item Il Sistema riporta l’Utente allo stato iniziale.
-                \end{itemize} 
+                    \item Viene visualizzato il nome dell'asset
+                \end{itemize}
             \end{itemize}
-
-            \subsubsection{UC23 - Controllo dati del dispositivo}
-            \label{uc:uc23}
+    
+            \paragraph{UC22.2 - Visualizzazione tipo asset} \mbox{}
+            \label{uc:uc22.2}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: I dati identificativi del dispositivo sono stati creati e salvati
-                \item \textbf{Post-condizioni}: 
-                \begin{itemize}
-                    \item I dati del dispositivo risultano aggiornati
-                    \item L’Utente viene riportato alla sezione di gestione degli assets
-                \end{itemize}
+                \item \textbf{Post-condizioni}: Il Sistema mostra il tipo dell'asset
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente si trova nella sezione di inserimento o visualizzazione degli asset
-                    \item L’Utente seleziona la funzionalità di controllo dei dati del dispositivo
-                    \item Il Sistema carica il form dei dati del dispositivo precedetemente compilato
-                    \item L’Utente controlla/modifica uno o più campi del dispositivo
-                    \item Il Sistema riporta l’Utente alla sezione di gestione degli asset
-                \end{itemize}
-                \item \textbf{Inclusioni}: 
-                \begin{itemize}
-                    \item[-] \hyperref[uc:uc10.1]{UC10.1 Visualizzazione form dati dispositivo}
-                    \item[-] \hyperref[uc:uc11]{UC11 Salvataggio dati del dispositivo inseriti manualmente}
+                    \item Viene visualizzato il tipo dell'asset
                 \end{itemize}
             \end{itemize}
 
-            \subsubsection{UC24 - Salvataggio della lista di assets}
+            \paragraph{UC22.3 - Visualizzazione descrizione asset} \mbox{}
+            \label{uc:uc22.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la descrizione dell'asset
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la descrizione dell'asset
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC22.4 - Visualizzazione sensibilità asset} \mbox{}
+            \label{uc:uc22.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la sensibilità dell'asset
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la sensibilità dell'asset
+                \end{itemize}
+            \end{itemize}   
+
+        \subsubsection{UC23 - Visualizzazione dettaglio dati dispositivo}
+        \label{uc:uc23}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L’Utente ha creato o caricato un dispositivo
+            \item \textbf{Post-condizioni}: Il Sistema mostra i dati del dispositivo in dettaglio
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di visualizzazione in dettaglio dei dati del dispositivo
+                \item Vengono visualizzati i dati del dispositivo in dettaglio: 
+                \begin{itemize}
+                    \item[a)] il nome [\hyperref[uc:uc23.1]{UC23.1}]
+                    \item[b)] il sistema operativo [\hyperref[uc:uc23.2]{UC23.2}]
+                    \item[c)] la versione del firmware [\hyperref[uc:uc23.3]{UC23.3}]
+                    \item[d)] la funzionalità [\hyperref[uc:uc23.4]{UC23.4}]
+                    \item[d)] la descrizione [\hyperref[uc:uc23.5]{UC23.5}]
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc23.1]{UC23.1 Visualizzazione nome dispositivo}
+                \item \hyperref[uc:uc23.2]{UC23.2 Visualizzazione sistema operativo dispositivo}
+                \item \hyperref[uc:uc23.3]{UC23.3 Visualizzazione versione firmware dispositivo}
+                \item \hyperref[uc:uc23.4]{UC23.4 Visualizzazione funzionalità dispositivo}
+                \item \hyperref[uc:uc23.5]{UC23.5 Visualizzazione descrizione dispositivo}
+            \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d’Uso UC23 include quattro ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC23Inclusioni.png}
+                                \caption{UC23 -  Inclusioni Caso d'Uso 23: UC23.1, UC23.2, UC23.3, UC23.4, UC23.5}
+                                \label{fig:uc23-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+            \paragraph{UC23.1 - Visualizzazione nome dispositivo} \mbox{}
+            \label{uc:uc23.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nome del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato il nome del dispositivo 
+                \end{itemize}
+            \end{itemize} 
+    
+            \paragraph{UC23.2 - Visualizzazione sistema operativo dispositivo} \mbox{}
+            \label{uc:uc23.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il sistema operativo del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato il sistema operativo del dispositivo
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC23.3 - Visualizzazione versione firmware dispositivo} \mbox{}
+            \label{uc:uc23.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la versione del firmware del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la versione del firmware del dispositivo
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC23.4 - Visualizzazione funzionalità dispositivo} \mbox{}
+            \label{uc:uc23.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la funzionalità del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la funzionalità del dispositivo
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC23.5 - Visualizzazione descrizione dispositivo} \mbox{}
+            \label{uc:uc23.5}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la descrizione del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la descrizione del dispositivo
+                \end{itemize}
+            \end{itemize}
+        
+
+            \subsubsection{UC24 - Caricamento test precedente}
             \label{uc:uc24}
+            \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC24.png}
+                        \caption{UC24 - Caricamento test precedente}
+                        \label{fig:uc24}
+                    \end{figure}
+                \end{center}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: La lista di assets creati manualmente nella sezione di riepilogo degli assets creati presenta almeno un asset 
-                \item \textbf{Post-condizioni}: Il dispositivo con la sua lista di assets è salvato
+                \item \textbf{Pre-condizioni}: Il Sistema si trova allo stato iniziale 
+                \item \textbf{Post-condizioni}: Il test selezionato dall'utente é stato caricato nel Sistema 
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente ha completato la creazione della lista di asset.
-                    \item L’Utente seleziona la funzionalità di salvataggio.
-                    \item Il Sistema rende il dispositivo modificabile.
-                \end{itemize} 
-            \end{itemize}
-
-            \subsubsection{UC25 - Caricamento test precedente}
-            \label{uc:uc25}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L’Utente seleziona la funzionalitá per il caricamento di un test precedente 
-                \item \textbf{Post-condizioni}: Il Test é stato caricato nel sistema 
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di caricamento di un test precedente.
-                    \item Il Sistema richiede il file del test.
+                    \item L’Utente seleziona la funzionalità di caricamento di un test precedente (salvato in locale)
                     \item L’Utente seleziona il file.
                     \item Il Sistema valida e carica il test.
-                    \item Il Sistema mostra i risultati del test [\hyperref[uc:uc6.2]{UC6.2}].
                 \end{itemize} 
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
                     \item L’Utente carica un file che presenta errori di struttura o di formato [\hyperref[uc:uc2]{UC2}]
                 \end{itemize} 
-                \item \textbf{Inclusioni}: \hyperref[uc:uc6.2]{UC6.2 Visualizzazione risultati test}
-                \item \textbf{Estensioni}: \hyperref[uc:uc2]{UC2 Rilevamento file non valido}
+                \item \textbf{Estensioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc2]{UC2 Rilevamento file non valido}
+                \end{itemize}
             \end{itemize}
 
-             \noindent Il Caso d’Uso UC25 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                    \begin{center}
-                        \begin{figure}[H]
-                            \centering
-                            %\includegraphics[scale=0.58]{img/UC25Inclusioni.png}
-                            \caption{UC25 -  Inclusioni Caso d'Uso 25: UC6.2}
-                            \label{fig:uc25-inclusioni}
-                        \end{figure}
-                    \end{center}
 
-            \subsubsection{UC26 - Modifica del risultato del test}
+        \subsubsection{UC25 - Modifica risultati test}
+        \label{uc:uc25}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha portato a termine l'esecuzione del test o ha caricato un test completato
+            \item \textbf{Post-condizioni}: Il test viene completato e i suoi dati sono aggiornati.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente visualizza i risultati di un test completato
+                \item L’Utente seleziona la funzionalità di modifica del test
+                \item L’Utente seleziona un requisito e l'asset del dispositivo per individuare il nodo da cui riprendere il test e avvia la modifica del test
+                \item Il Sistema esegue nuovamente il test a partire dal punto selezionato [\hyperref[uc:uc6]{UC6}]
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc6]{UC6  Esecuzione del test}
+            \end{itemize}
+        \end{itemize}
+
+        \noindent Il Caso d’Uso UC25 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+            
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC25Inclusioni.png}
+                        \caption{UC25 -  Inclusioni Caso d'Uso 25: UC6}
+                        \label{fig:uc25-inclusioni}
+                    \end{figure}
+                \end{center}
+
+
+            \subsubsection{UC26 - Esecuzione di un test non completato}
             \label{uc:uc26}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: É presente nel sistema un test completato
-                \item \textbf{Post-condizioni}: Il test è aggiornato e i nuovi risultati sono salvati.
+                \item \textbf{Pre-condizioni}: L'Utente ha caricato un test non completato
+                \item \textbf{Post-condizioni}: Il test viene completato e i suoi dati sono aggiornati
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona un requisito da modificare.
-                    \item Il Sistema avvia l’esecuzione del test a partire da quel requisito.
+                    \item L’Utente ha caricato un test non completato.
+                    \item Il Sistema riprende l'esecuzione del test dall'ultimo nodo [\hyperref[uc:uc6]{UC6}].
                 \end{itemize} 
-                \item \textbf{Inclusioni}: \hyperref[uc:uc6]{UC6  Esecuzione del test }
+                 \item \textbf{Inclusioni}: 
+                 \begin{itemize}
+                    \item \hyperref[uc:uc6]{UC6  Esecuzione del test}
+                \end{itemize}
             \end{itemize}
 
             \noindent Il Caso d’Uso UC26 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
@@ -1186,39 +1452,14 @@
                     \begin{center}
                         \begin{figure}[H]
                             \centering
-                            %\includegraphics[scale=0.58]{img/UC26Inclusioni.png}
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC26Inclusioni.png}
                             \caption{UC26 -  Inclusioni Caso d'Uso 26: UC6}
                             \label{fig:uc26-inclusioni}
                         \end{figure}
                     \end{center}
 
-            \subsubsection{UC27 - Completamento di un test non finito}
+            \subsubsection{UC27 - Visualizzazione lista giustificazioni test}
             \label{uc:uc27}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: È stato caricato un test non completato
-                \item \textbf{Post-condizioni}: Il test riprende dall'ultimo nodo
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente carica un test non completato.
-                    \item L'Utente riprende l'esecuzione del test dall'ultimo nodo [\hyperref[uc:uc6]{UC6}].
-                \end{itemize} 
-                 \item \textbf{Inclusioni}: \hyperref[uc:uc6]{UC6  Esecuzione del test}
-            \end{itemize}
-
-            \noindent Il Caso d’Uso UC27 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                    \begin{center}
-                        \begin{figure}[H]
-                            \centering
-                            %\includegraphics[scale=0.58]{img/UC27Inclusioni.png}
-                            \caption{UC27 -  Inclusioni Caso d'Uso 27: UC6}
-                            \label{fig:uc27-inclusioni}
-                        \end{figure}
-                    \end{center}
-
-            \subsubsection{UC28 - Giustificazioni test}
-            \label{uc:uc28}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
                 \item \textbf{Pre-condizioni}: E’ presente un test completato
@@ -1226,530 +1467,710 @@
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L’Utente visualizza i risultati di un test completato.
-                    \item L’Utente seleziona la funzionalità “Giustificazioni”.
-                    \item Il Sistema mostra le giustificazioni in modo strutturato. 
+                    \item L’Utente seleziona la funzionalità di visualizzazione delle giustificazioni.
+                    \item L'Utente visualizza la lista delle giustificazioni associate ad ogni requisito del test [\hyperref[uc:uc27.1]{UC27.1}]. 
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                 \begin{itemize}
+                    \item \hyperref[uc:uc27.1]{UC27.1  Visualizzazione singolo requisito con giustificazione}
+                \end{itemize}
+            \end{itemize}
+
+            \noindent Il Caso d’Uso UC27 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC27Inclusioni.png}
+                            \caption{UC27 -  Inclusioni Caso d'Uso 27: UC27.1}
+                            \label{fig:uc27-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \paragraph{UC27.1 - Visualizzazione singolo requisito con giustificazione} \mbox{}
+            \label{uc:uc27.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la singola giustificazione relativa ad un requisito.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il singolo elemento della lista, costituito dal nome del requisito [\hyperref[uc:uc33.2]{UC33.2}] e dalla giustificazione ad esso associata [\hyperref[uc:uc27.1.1]{UC27.1.1}]
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome requisito del decision tree}
+                    \item \hyperref[uc:uc27.1.1]{UC27.1.1 Visualizzazione giustificazione requisito}
+                \end{itemize}
+            \end{itemize}
+
+            \noindent Il Caso d’Uso UC27.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC27.1Inclusioni.png}
+                            \caption{UC27.1 -  Inclusioni Caso d'Uso 27.1: UC33.2, UC27.1.1}
+                            \label{fig:uc27.1-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \paragraph{UC27.1.1 - Visualizzazione giustificazione requisito} \mbox{}
+            \label{uc:uc27.1.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la giustificazione del requisito.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza la giustificazione del requisito
+                \end{itemize}
+            \end{itemize}
+
+
+        \subsubsection{UC28 - Visualizzazione lista assets con risultati nel dettaglio di un requisito} 
+        \label{uc:uc28}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Un test è stato completato e l'Utente sta visualizzando i risultati
+            \item \textbf{Post-condizioni}: Il Sistema mostra la lista degli assets con i relativi risultati appartenenti al requisito.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L’Utente seleziona la funzionalità di espansione dei risultati di un requisito nella lista dei risultati del test
+                \item Il Sistema mostra la lista degli assets con i relativi risultati, specifici di un requisito [\hyperref[uc:uc28.1]{UC28.1}]
+            \end{itemize}
+            \item \textbf{Inclusioni}: \hyperref[uc:uc28.1]{UC28.1 Visualizzazione singolo asset con risultato}
+        \end{itemize}
+
+                    Il Caso d’Uso UC28 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+            
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC28Inclusioni.png}
+                            \caption{UC28 -  Inclusioni Caso d'Uso 28: UC28.1}
+                            \label{fig:uc28-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \paragraph{UC28.1 - Visualizzazione singolo asset con risultato} \mbox{}
+            \label{uc:uc28.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il singolo asset nella lista degli assets del dispositivo con il risultato
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato l'esito associato all'asset: sono mostrati il nome dell'asset [\hyperref[uc:uc22.1]{UC22.1}] e il risultato del requisito associato all'asset [\hyperref[uc:uc28.1.1]{UC28.1.1}]
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc22.1]{UC22.1 Visualizzazione nome asset}
+                    \item \hyperref[uc:uc28.1.1]{UC28.1.1 Visualizzazione risultato del requisito associato all'asset}
+                \end{itemize}
+            \end{itemize}
+
+            Il Caso d’Uso UC28.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC28.1Inclusioni.png}
+                            \caption{UC28.1 -  Inclusioni Caso d'Uso 28.1: UC22.1, UC28.1.1}
+                            \label{fig:uc28.1-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \paragraph{UC28.1.1 - Visualizzazione risultato del requisito associato all'asset} \mbox{}
+            \label{uc:uc28.1.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del requisito associato all'asset
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato il risultato associato all'asset (e relativo al requisito selezionato)
+                \end{itemize}
+            \end{itemize}
+
+        \subsubsection{UC29 - Eliminazione dispositivo}
+        \label{uc:uc29}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha caricato o creato un dispositivo
+            \item \textbf{Post-condizioni}: Il Sistema ha effettuato l'eliminazione del dispositivo
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente ha creato o caricato un dispositivo
+                \item L'Utente seleziona la funzionalità di eliminazione del dispositivo e conferma
+                \item Il Sistema rimuove tutti i dati del dispositivo e torna allo stato iniziale
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection{UC30 - Modifica dati dispositivo}
+        \label{uc:uc30}
+        \begin{center}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC30.png}
+                \caption{UC30 - Modifica dati dispositivo}
+                \label{fig:uc30}
+            \end{figure}
+        \end{center} 
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha creato o caricato un dispositivo
+            \item \textbf{Post-condizioni}: Il Sistema registra le modifiche apportate ai dati del dispositivo
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di modifica dei dati del dispositivo
+                \item L'Utente modifica i campi relativi alle informazioni del dispositivo, eventualmente modificando:
+                \begin{itemize}
+                    \item nome del dispositivo [\hyperref[uc:uc30.1]{UC30.1}]
+                    \item sistema operativo del dispositivo [\hyperref[uc:uc30.2]{UC30.2}]
+                    \item versione del firmware del dispositivo [\hyperref[uc:uc30.3]{UC30.3}]
+                    \item funzionalità del dispositivo [\hyperref[uc:uc30.4]{UC30.4}]
+                    \item descrizione del dispositivo [\hyperref[uc:uc30.5]{UC30.5}]
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Scenari alternativi}:
+            \begin{itemize}
+                \item L'Utente inserisce in uno o più campi valori non validi [\hyperref[uc:uc13]{UC13}]
+                \item L'Utente seleziona l'annullamento della modifica dei dati del dispositivo [\hyperref[uc:uc31]{UC31}]
+            \end{itemize}
+            \item \textbf{Inclusioni}:
+            \begin{itemize}
+                \item \hyperref[uc:uc30.1]{UC30.1 Modifica nome dispositivo}
+                \item \hyperref[uc:uc30.2]{UC30.2 Modifica sistema operativo dispositivo}
+                \item \hyperref[uc:uc30.3]{UC30.3 Modifica versione firmware dispositivo}
+                \item \hyperref[uc:uc30.4]{UC30.4 Modifica funzionalità dispositivo}
+                \item \hyperref[uc:uc30.5]{UC30.5 Modifica descrizione dispositivo}
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc13]{UC13 Inserimento dati non validi}
+                \item \hyperref[uc:uc31]{UC31 Annullamento modifica dati dispositivo}
+            \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d’Uso UC30 include cinque ulteriori Caso d’Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC30Inclusioni.png}
+                                \caption{UC30 -  Inclusioni Caso d'Uso 30: UC30.1, UC30.2, UC30.3, UC30.4, UC30.5}
+                                \label{fig:uc30-inclusioni}
+                            \end{figure}
+                        \end{center} 
+
+            \paragraph{UC30.1 - Modifica nome dispositivo} \mbox{}
+            \label{uc:uc30.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il nuovo nome del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica il nome precedentemente inserito nel rispettivo campo dati
+                    \item L'Utente inserisce il nuovo nome del dispositivo
+                    \item Il Sistema memorizza il valore
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC30.2 - Modifica sistema operativo dispositivo} \mbox{}
+            \label{uc:uc30.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il nuovo nome del sistema operativo del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica il nome del sistema operativo precedentemente inserito nel rispettivo campo dati
+                    \item L'Utente inserisce il nuovo nome del sistema operativo del dispositivo
+                    \item Il Sistema memorizza il valore
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC30.3 - Modifica versione firmware dispositivo} \mbox{}
+            \label{uc:uc30.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova versione del firmware del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la versione del firmware precedentemente inserita nel rispettivo campo dati
+                    \item L'Utente inserisce la nuova versione del firmware del dispositivo
+                    \item Il Sistema memorizza il valore
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC30.4 - Modifica funzionalità dispositivo} \mbox{}
+            \label{uc:uc30.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova funzionalità del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la funzionalità precedentemente inserita nel rispettivo campo dati
+                    \item L'Utente inserisce la nuova funzionalità del dispositivo
+                    \item Il Sistema memorizza il valore
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC30.5 - Modifica descrizione dispositivo} \mbox{}
+            \label{uc:uc30.5}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova descrizione del dispositivo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la descrizione precedentemente inserita nel rispettivo campo dati
+                    \item L'Utente inserisce la nuova descrizione del dispositivo
+                    \item Il Sistema memorizza il valore
+                \end{itemize}
+            \end{itemize}
+
+        \subsubsection{UC31 - Annullamento modifica dati dispositivo}
+        \label{uc:uc31}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente sta modificando i dati di un dispositivo
+            \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di modifica dei dati del dispositivo
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di annullamento durante la modifica e conferma
+                \item Il Sistema scarta le modifiche inserite
+                \item Il Sistema ritorna alla visualizzazione del dispositivo inserito
+            \end{itemize}
+        \end{itemize}
+
+
+        \subsubsection{UC32 - Visualizzazione elenco decision trees}
+        \label{uc:uc32}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il Sistema è allo stato iniziale
+            \item \textbf{Post-condizioni}: Il Sistema mostra l’elenco dei decision tree disponibili.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di visualizzazione dei decision tree.
+                \item Il Sistema recupera i decision tree dal file di configurazione.
+                \item Il Sistema mostra una lista ordinata dei decision tree [\hyperref[uc:uc32.1]{UC32.1}]
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc32.1]{UC32.1 Visualizzazione singolo decision tree} 
+            \end{itemize}
+        \end{itemize}
+
+            \noindent Il Caso d’Uso UC32 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+        
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC32Inclusioni.png}
+                    \caption{UC32 -  Inclusioni Caso d'Uso 32: UC32.1}
+                    \label{fig:uc32-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC32.1 - Visualizzazione singolo decision tree} \mbox{}
+            \label{uc:uc32.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il singolo decision tree é visualizzato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il singolo decision tree.
+                    \item Il decision tree viene descritto da:
+                    \begin{itemize}
+                        \item id del requisito associato [\hyperref[uc:uc33.1]{UC33.1}]
+                        \item nome del requisito associato [\hyperref[uc:uc33.2]{UC33.2}]
+                    \end{itemize}
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.1]{UC33.1 Visualizzazione id del requisito del decision tree}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome del requisito del decision tree}
                 \end{itemize} 
             \end{itemize}
 
-            \subsubsection{UC29 - Accesso all’editor grafico dei decision tree}
-            \label{uc:uc29}
-            Sostituire visualizzazione elenco con questo caso d'uso .
-            Togliere estensione 
+            \noindent Il Caso d’Uso UC32.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC32.1Inclusioni.png}
+                    \caption{UC32.1 -  Inclusioni Caso d'Uso 32.1: UC33.1, UC33.2}
+                    \label{fig:uc32.1-inclusioni}
+                \end{figure}
+            \end{center}
+
+
+        \subsubsection{UC33 - Visualizzazione in dettaglio del decision tree}
+        \label{uc:uc33}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Il Sistema è avviato e i file dei decision tree sono disponibili.
-                \item \textbf{Post-condizioni}: L’Utente si trova nella sezione per l'editing del decision tree.
+                \item \textbf{Post-condizioni}: Il Sistema mostra le informazioni e il grafo del decision tree in dettaglio.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di editing del decision tree.
-                    \item Il Sistema carica l’elenco dei decision tree disponibili.
-                    \item Il Sistema porta l’Utente nella sezione dedicata alla modifica del decision tree.
+                    \item L'Utente seleziona un decision tree per la visualizzazione in dettaglio
+                    \item L'Utente visualizza l'id [\hyperref[uc:uc33.1]{UC33.1}] e il titolo [\hyperref[uc:uc33.2]{UC33.2}] del requisito associato
+                    \item L'Utente visualizza le dipendenze del decision tree [\hyperref[uc:uc33.3]{UC33.3}]
+                    \item L'Utente visualizza il grafo del decision tree [\hyperref[uc:uc33.4]{UC33.4}]
                 \end{itemize}
-                \item \textbf{Inclusioni}: \hyperref[uc:uc29.1]{UC29.1 Visualizzazione elenco decision tree} 
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.1]{UC33.1 Visualizzazione id del requisito del decision tree}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome del requisito del decision tree}
+                    \item \hyperref[uc:uc33.3]{UC33.3 Visualizzazione dipendenze del decision tree}
+                    \item \hyperref[uc:uc33.4]{UC33.4 Visualizzazione grafo del decision tree}
+                \end{itemize} 
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC29 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                    \begin{center}
-                        \begin{figure}[H]
-                            \centering
-                            %\includegraphics[scale=0.58]{img/UC29Inclusioni.png}
-                            \caption{UC29 -  Inclusioni Caso d'Uso 29: UC29.1}
-                            \label{fig:uc29-inclusioni}
-                        \end{figure}
-                    \end{center}
+            \noindent Il Caso d’Uso UC33 include quattro ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC33Inclusioni.png}
+                    \caption{UC33 -  Inclusioni Caso d'Uso 33: UC33.1, UC33.2, UC33.3, UC33.4}
+                    \label{fig:uc33-inclusioni}
+                \end{figure}
+            \end{center}
 
-                    \paragraph{UC29.1 - Visualizzazione elenco decision trees} \mbox{}
-                    \label{uc:uc29.1}
-                    \begin{itemize}
-                        \item \textbf{Attore}: Utente
-                        \item \textbf{Post-condizioni}: Il Sistema mostra l’elenco dei decision tree disponibili.
-                        \item \textbf{Scenario principale}:
-                        \begin{itemize}
-                            \item Il Sistema recupera i decision tree dal file di configurazione.
-                            \item Il Sistema mostra una lista ordinata dei decision tree
-                        \end{itemize}
-                        \item \textbf{Inclusioni}: \hyperref[uc:uc29.1.1]{UC29.1.1 Visualizzazione singolo decision tree} 
-                    \end{itemize}
-
-                    \noindent Il Caso d’Uso UC29.1 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                    \begin{center}
-                        \begin{figure}[H]
-                            \centering
-                            %\includegraphics[scale=0.58]{img/UC29.1Inclusioni.png}
-                            \caption{UC29.1 -  Inclusioni Caso d'Uso 29.1: UC29.1.1}
-                            \label{fig:uc29.1-inclusioni}
-                        \end{figure}
-                    \end{center}
-
-                    \paragraph{UC29.1.1 - Visualizzazione singolo decision tree} \mbox{}
-                    \label{uc:uc29.1.1}
-                    \begin{itemize}
-                        \item \textbf{Attore}: Utente
-                        \item \textbf{Post-condizioni}: Il singolo decision tree é visualizzato.
-                        \item \textbf{Scenario principale}:
-                        \begin{itemize}
-                            \item L'Utente visualizza il singolo decision tree.
-                            \item Il decision tree viene descritto da:
-                            \begin{itemize}
-                                \item id del requisito [\hyperref[uc:uc29.1.1.1]{UC29.1.1.1}]
-                                \item titolo [\hyperref[uc:uc29.1.1.2]{UC29.1.1.2}]
-                                \item dipendenze (se presenti) [\hyperref[uc:uc29.1.1.3]{UC29.1.1.3}]
-                            \end{itemize}
-                        \end{itemize}
-                        \item \textbf{Inclusioni}: 
-                        \begin{itemize}
-                            \item \hyperref[uc:uc29.1.1.1]{UC29.1.1.1 Visualizzazione id del requisito del decision tree}
-                            \item \hyperref[uc:uc29.1.1.2]{UC29.1.1.2 Visualizzazione titolo del decision tree}
-                            \item \hyperref[uc:uc29.1.1.3]{UC29.1.1.3 Visualizzazione dipendenze del decision tree}
-                        \end{itemize} 
-                    \end{itemize}
-
-                    \noindent Il Caso d’Uso UC29.1.1 include tre ulteriori Casi d’Uso come raffigurato nella seguente immagine:
-                
-                    \begin{center}
-                        \begin{figure}[H]
-                            \centering
-                            %\includegraphics[scale=0.58]{img/UC29.1.1Inclusioni.png}
-                            \caption{UC29.1.1 -  Inclusioni Caso d'Uso 29.1.1: UC29.1.1.1, UC29.1.1.2, UC29.1.1.3, UC29.1.1.4}
-                            \label{fig:uc29.1.1-inclusioni}
-                        \end{figure}
-                    \end{center}
-
-                    \paragraph{UC29.1.1.1 - Visualizzazione id del requisito del decision tree} \mbox{}
-                    \label{uc:uc29.1.1.1}
-                    \begin{itemize}
-                        \item \textbf{Attore}: Utente
-                        \item \textbf{Post-condizioni}: L'id del requisito del decision tree é visualizzato
-                        \item \textbf{Scenario principale}:
-                        \begin{itemize}
-                            \item L'Utente visualizza l'id del requisito rappresentato dal decision tree.
-                        \end{itemize}
-                    \end{itemize}
-
-                     \paragraph{UC29.1.1.2 - Visualizzazione titolo del decision tree} \mbox{}
-                    \label{uc:uc29.1.1.2}
-                    \begin{itemize}
-                        \item \textbf{Attore}: Utente
-                        \item \textbf{Post-condizioni}: Il titolo del decision tree é visualizzato
-                        \item \textbf{Scenario principale}:
-                        \begin{itemize}
-                            \item L'Utente visualizza il titolo del decision tree.
-                        \end{itemize}
-                    \end{itemize}
-
-                     \paragraph{UC29.1.1.3 - Visualizzazione dipendenze del decision tree} \mbox{}
-                    \label{uc:uc29.1.1.3}
-                    \begin{itemize}
-                        \item \textbf{Attore}: Utente
-                        \item \textbf{Pre-condizioni}: Il decision tree presenta delle dipendenze
-                        \item \textbf{Post-condizioni}: Le dipendenze del decision tree sono visualizzate
-                        \item \textbf{Scenario principale}:
-                        \begin{itemize}
-                            \item L'Utente visualizza le dipendenze del decision tree.
-                        \end{itemize}
-                    \end{itemize}
-                    
-
-            \subsubsection{UC30 - Selezione decision tree da modificare}
-            \label{uc:uc30}
-            Sostituire UC22.1 con questo caso d'uso padre
+            \paragraph{UC33.1 - Visualizzazione id del requisito del decision tree} \mbox{}
+            \label{uc:uc33.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L’Utente visualizza l’elenco dei decision tree.
-                \item \textbf{Post-condizioni}: Il decision tree selezionato è caricato.
+                \item \textbf{Post-condizioni}: Il Sistema mostra l'id del requisito del decision tree
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona un decision tree.
-                    \item Il Sistema carica la struttura del tree.
-                    \item Il Sistema visualizza il decision tree.
+                    \item L'Utente visualizza l'id del requisito associato al decision tree.
                 \end{itemize}
-                \item \textbf{Inclusioni}: \hyperref[uc:uc30.1]{UC30.1 Visualizzazione grafica del decision tree} 
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC30 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                    \begin{center}
-                        \begin{figure}[H]
-                            \centering
-                            %\includegraphics[scale=0.58]{img/UC30Inclusioni.png}
-                            \caption{UC30 -  Inclusioni Caso d'Uso 30: UC30.1}
-                            \label{fig:uc30-inclusioni}
-                        \end{figure}
-                    \end{center}
-
-                    \paragraph{UC30.1 - Visualizzazione grafica del decision tree} \mbox{}
-                    \label{uc:uc30.1}
-                    \begin{itemize}
-                        \item \textbf{Attore}: Utente
-                        \item \textbf{Post-condizioni}: Il Sistema mostra il decision tree come grafo orientato.
-                        \item \textbf{Scenario principale}:
-                        \begin{itemize}
-                            \item Il Sistema identifica:
-                            \begin{itemize}
-                                \item nodo root
-                                \item nodi intermedi
-                                \item nodi risultato (PASS / FAIL / NA)
-                            \end{itemize}
-                            \item Il Sistema visualizza:
-                            \begin{itemize}
-                                \item ogni nodo come elemento grafico
-                                \item i collegamenti true/false come archi direzionati
-                            \end{itemize}
-                            \item Il Sistema evidenzia l’id del requisito associato al tree.
-                        \end{itemize}
-                    \end{itemize}
-
-            \subsubsection{UC31 - Modifica del decision tree}
-            \label{uc:uc31}
+            \paragraph{UC33.2 - Visualizzazione nome del requisito del decision tree} \mbox{}
+            \label{uc:uc33.2}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Un decision tree è visualizzato nell’editor.
-                \item \textbf{Post-condizioni}: Il decision tree è aggiornato.
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nome del requisito del decision tree
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
+                    \item L'Utente visualizza il nome del requisito associato al decision tree, che è il suo titolo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.3 - Visualizzazione dipendenze del decision tree} \mbox{}
+            \label{uc:uc33.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra le dipendenze del decision tree
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza le dipendenze (anche nulle) del decision tree.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.4 - Visualizzazione grafo del decision tree} \mbox{}
+            \label{uc:uc33.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il grafo del decision tree
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il grafo del decision tree sottoforma di:
+                    \begin{itemize}
+                        \item nodi interni [\hyperref[uc:uc33.4.1]{UC33.4.1}]
+                        \item nodi foglia (con risultati) [\hyperref[uc:uc33.4.2]{UC33.4.2}]
+                        \item collegamenti fra nodi [\hyperref[uc:uc33.4.3]{UC33.4.3}]
+                    \end{itemize}
+                \end{itemize}
+            \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.4.1]{UC33.4.1 Visualizzazione nodo interno del decision tree}
+                    \item \hyperref[uc:uc33.4.2]{UC33.4.2 Visualizzazione nodo foglia del decision tree}
+                    \item \hyperref[uc:uc33.4.3]{UC33.4.3 Visualizzazione collegamento fra nodi del decision tree}
+                \end{itemize} 
+            \end{itemize}
+
+            \noindent Il Caso d’Uso UC33.4 include tre ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC33.4Inclusioni.png}
+                    \caption{UC33.4 -  Inclusioni Caso d'Uso 33.4: UC33.4.1, UC33.4.2, UC33.4.3}
+                    \label{fig:uc33.4-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC33.4.1 - Visualizzazione nodo interno del decision tree} \mbox{}
+            \label{uc:uc33.4.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nodo interno del decision tree
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il nodo del decision tree, descritto da:
+                    \begin{itemize}
+                        \item codice univoco del nodo [\hyperref[uc:uc33.4.1.1]{UC33.4.1.1}]
+                        \item testo domanda del nodo [\hyperref[uc:uc33.4.1.2]{UC33.4.1.2}]
+                    \end{itemize}
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.4.1.1]{UC33.4.1.1 Visualizzazione codice univoco del nodo}
+                    \item \hyperref[uc:uc33.4.1.2]{UC33.4.1.2 Visualizzazione testo domanda del nodo}
+                \end{itemize} 
+            \end{itemize}
+
+            \noindent Il Caso d’Uso UC33.4.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC33.4.1Inclusioni.png}
+                    \caption{UC33.4.1 -  Inclusioni Caso d'Uso 33.4.1: UC33.4.1.1, UC33.4.1.2}
+                    \label{fig:uc33.4.1-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC33.4.1.1 - Visualizzazione codice univoco del nodo} \mbox{}
+            \label{uc:uc33.4.1.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il codice univoco del nodo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il codice univoco del nodo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.4.1.2 - Visualizzazione testo domanda del nodo} \mbox{}
+            \label{uc:uc33.4.1.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il testo della domanda del nodo
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il testo della domanda del nodo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.4.2 - Visualizzazione nodo foglia del decision tree} \mbox{}
+            \label{uc:uc33.4.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nodo foglia del decision tree
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il nodo foglia del decision tree, descritto con uno dei tre risultati: PASS, FAIL, NA
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.4.3 - Visualizzazione collegamento fra nodi del decision tree} 
+            \label{uc:uc33.4.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il collegamento fra due nodi del decision tree
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il collegamento fra due nodi del decision tree (consecutivi) come un arco direzionato con l'etichetta true/false.
+                \end{itemize}
+            \end{itemize}
+
+
+            \subsubsection{UC34 - Modifica del decision tree}
+            \label{uc:uc34}
+            \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC34.png}
+                                \caption{UC34 - Modifica del decision tree}
+                                \label{fig:uc34}
+                            \end{figure}
+                        \end{center} 
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
+                \item \textbf{Post-condizioni}: Il decision tree è aggiornato con le nuove modifiche.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica 
                     \item L'Utente seleziona un nodo o un collegamento.
-                    \item Il Sistema mostra i dati modificabili.
-                    \item L'Utente modifica uno o più campi.
-                    \item Il Sistema aggiorna il decision tree.
+                    \item L'Utente effettua la modifica.
+                    \item Il Sistema valida la struttura e aggiorna il decision tree, salvando le modifiche in locale.
                 \end{itemize}
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
-                    \item L’Utente annulla l'operazione di modifica [\hyperref[uc:uc38]{UC38}].
+                    \item Le modifiche apportate hanno portato a errori nella struttura dell'albero [\hyperref[uc:uc39]{UC39}]
+                    \item L’Utente annulla l'operazione di modifica [\hyperref[uc:uc40]{UC40}].
                 \end{itemize}
                 \item \textbf{Estensioni}:
                 \begin{itemize}
-                    \item \hyperref[uc:uc38]{UC38 Annullamento dell'operazione di modifica}.
+                    \item \hyperref[uc:uc39]{UC39 Validazione fallita modifica decision tree}
+                    \item \hyperref[uc:uc40]{UC40 Annullamento modifica decision tree}
                 \end{itemize}
                 \item \textbf{Generalizzazioni}:
                 \begin{itemize}
-                    \item \hyperref[uc:uc32]{UC32 Aggiunta nodo al decision tree}
-                    \item \hyperref[uc:uc33]{UC33 Eliminazione nodo del decision tree}
-                    \item \hyperref[uc:uc35]{UC35 Modifica collegamenti tra nodi}
+                    \item \hyperref[uc:uc35]{UC35 Aggiunta nodo al decision tree}
+                    \item \hyperref[uc:uc36]{UC36 Eliminazione nodo del decision tree}
+                    \item \hyperref[uc:uc38]{UC38 Modifica destinazione di un collegamento del decision tree}
                 \end{itemize}
             \end{itemize}
 
-            \subsubsection{UC32 - Aggiunta nodo al decision tree}
-            \label{uc:uc32}
+            \subsubsection{UC35 - Aggiunta nodo al decision tree}
+            \label{uc:uc35}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Un decision tree è visualizzato nell’editor.
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
                 \item \textbf{Post-condizioni}: Un nuovo nodo è stato aggiunto al decision tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di aggiunta di un nodo.
+                    \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica 
+                    \item L’Utente seleziona la funzionalità di aggiunta di un nodo in una specifica posizione del decision tree.
                     \item Il Sistema crea un nuovo nodo vuoto.
                     \item L’Utente inserisce:
                     \begin{itemize}
-                        \item testo della domanda
-                        \item tipo del nodo
+                        \item nome univoco del nodo [\hyperref[uc:uc35.1]{UC35.1}]
+                        \item testo della domanda del nodo [\hyperref[uc:uc35.2]{UC35.2}]
                     \end{itemize}
                     \item Il Sistema aggiunge il nodo al decision tree.
-                    \item Il Sistema aggiorna la visualizzazione.
+                    \item Il Sistema aggiorna la visualizzazione e salva le modifiche in locale.
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc35.1]{UC35.1 Inserimento codice univoco del nodo}
+                    \item \hyperref[uc:uc35.2]{UC35.2 Inserimento testo domanda del nodo}
                 \end{itemize}
             \end{itemize}
 
-            \subsubsection{UC33 - Eliminazione nodo del decision tree}
-            \label{uc:uc33}
+            \noindent Il Caso d’Uso UC35 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC35Inclusioni.png}
+                    \caption{UC35 -  Inclusioni Caso d'Uso 35: UC35.1, UC35.2}
+                    \label{fig:uc35-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC35.1 - Inserimento codice univoco del nodo} \mbox{}
+            \label{uc:uc35.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Il decision tree contiene almeno un nodo non root.
+                \item \textbf{Post-condizioni}: Il Sistema registra il codice univoco del nodo inserito
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente inserisce il codice univoco del nodo nel rispettivo campo dati.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC35.2 - Inserimento testo domanda del nodo} \mbox{}
+            \label{uc:uc35.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il testo della domanda del nodo inserito
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente inserisce il testo della domanda del nodo nel rispettivo campo dati.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC36 - Eliminazione nodo del decision tree}
+            \label{uc:uc36}
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC36.png}
+                    \caption{UC36 - Eliminazione nodo del decision tree}
+                    \label{fig:uc36}
+                \end{figure}
+            \end{center} 
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
                 \item \textbf{Post-condizioni}: Il nodo selezionato è rimosso e i collegamenti aggiornati.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona un nodo.
-                    \item L’Utente seleziona la funzionalità di eliminazione.
-                    \item Il Sistema verifica che il nodo non sia root.
-                    \item Il Sistema rimuove il nodo.
-                    \item Il Sistema aggiorna i collegamenti.
+                    \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica.
+                    \item L’Utente seleziona la funzionalità di eliminazione di un nodo.
+                    \item L’Utente seleziona un nodo e conferma.
+                    \item Il Sistema valida la rimozione e aggiorna i collegamenti, salvando le modifiche in locale.
                 \end{itemize}
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
-                    \item L'Utente cerca di eliminare il nodo root [\hyperref[uc:uc34]{UC34}]
+                    \item L'Utente cerca di eliminare il nodo root [\hyperref[uc:uc37]{UC37}]
                 \end{itemize}
                 \item \textbf{Estensioni}:
                 \begin{itemize}
-                    \item \hyperref[uc:uc34]{UC34 Tentativo eliminazione nodo root}
+                    \item \hyperref[uc:uc37]{UC37 Tentativo eliminazione nodo root}
                 \end{itemize}
             \end{itemize}
 
-            \subsubsection{UC34 - Tentativo eliminazione nodo root}
-            \label{uc:uc34}
+            \subsubsection{UC37 - Tentativo eliminazione nodo root}
+            \label{uc:uc37}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L'Utente cerca di eliminare il nodo root.
-                \item \textbf{Post-condizioni}: L'eliminazione non viene eseguita.
+                \item \textbf{Pre-condizioni}: L'Utente ha selezionato la funzionalità di eliminazione di un nodo del decision tree e ha selezionato il nodo root.
+                \item \textbf{Post-condizioni}: L'errore è segnalato all'Utente e l'eliminazione non viene eseguita.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item Il Sistema rileva che il nodo selezionato è il root.
                     \item Il Sistema mostra un messaggio di errore.
-                    \item Il Sistema spiega che il nodo root non può essere eliminato.
                 \end{itemize}
             \end{itemize}
 
-            \subsubsection{UC35 - Modifica collegamenti tra nodi}
-            \label{uc:uc35}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Un decision tree è visualizzato.
-                \item \textbf{Post-condizioni}: I collegamenti true/false sono aggiornati.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente seleziona un collegamento.
-                    \item L’Utente modifica il nodo di destinazione.
-                    \item Il Sistema aggiorna il grafo.
-                \end{itemize}
-            \end{itemize}
-
-            \subsubsection{UC36 - Validazione del decision tree}
-            \label{uc:uc36}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Il decision tree è stato modificato.
-                \item \textbf{Post-condizioni}: Il decision tree è validato e salvato nel Sistema
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di validazione del decision tree.
-                    \item Il Sistema verifica:
-                    \begin{itemize}
-                        \item assenza di cicli
-                        \item assenza di nodi orfani
-                        \item raggiungibilità dei nodi risultato
-                        \item coerenza degli id
-                    \end{itemize}
-                    \item Il Sistema mostra l’esito della validazione.
-                    \item Il decision tree é salvato nel Sistema.
-                \end{itemize}
-                \item \textbf{Scenari alternativi}:
-                \begin{itemize}
-                    \item Il decision tree modificato presenta uno o piú errori  [\hyperref[uc:uc37]{UC37}].
-                \end{itemize}
-                \item \textbf{Estensioni}: 
-                \begin{itemize}
-                    \item \hyperref[uc:uc37]{UC37 Segnalazione errori del decision tree}
-                \end{itemize} 
-            \end{itemize}
-
-            \subsubsection{UC37 - Segnalazione errori del decision tree}
-            \label{uc:uc37}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: La validazione del decision tree ha rilevato errori.
-                \item \textbf{Post-condizioni}: Gli errori sono mostrati all’Utente.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item Il Sistema evidenzia i nodi problematici.
-                    \item Il Sistema descrive il tipo di errore.
-                    \item L’Utente può tornare alla modifica.
-                \end{itemize}
-            \end{itemize}
-
-            \subsubsection{UC38 - Annullamento dell'operazione di modifica}
+            \subsubsection{UC38 - Modifica destinazione di un collegamento del decision tree}
             \label{uc:uc38}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
+                \item \textbf{Post-condizioni}: Il collegamento del decision tree è aggiornato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica.
+                    \item L’Utente seleziona la funzionalità di modifica di un collegamento.
+                    \item L’Utente seleziona un collegamento e ne modifica il nodo di destinazione.
+                    \item Il Sistema aggiorna il grafo e salva le modifiche in locale.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC39 - Validazione fallita modifica decision tree}
+            \label{uc:uc39}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente effettua una modifica con errori alla struttura del decision tree.
+                \item \textbf{Post-condizioni}: Il sistema mostra l'errore di validazione fallita della modifica apportata al deciison tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema individua un nodo problematico durante la validazione della struttura del decision tree.
+                    \item Il Sistema segnala l'errore all'utente.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC40 - Annullamento modifica decision tree}
+            \label{uc:uc40}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
                 \item \textbf{Pre-condizioni}: L'Utente sta modificando il decision tree.
-                \item \textbf{Post-condizioni}: La modifica viene annullata.
+                \item \textbf{Post-condizioni}: Il Sistema annulla la modifica effettuata.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente seleziona l'annullamento durante il processo di modifica.
                     \item Il Sistema interrompe la modifica.
-                    \item Il Sistema ripristina lo stato precedente.
+                    \item Il Sistema ripristina lo stato precedente, scartando le modifiche.
                 \end{itemize}
-                \item \textbf{Inclusioni}: \hyperref[uc:uc22.1]{UC22.1 Visualizzazione grafica del decision tree}
             \end{itemize}
 
-            \subsubsection{UC39 - Esportazione decision tree}
-            \label{uc:uc39}
+            \subsubsection{UC41 - Esportazione decision tree}
+            \label{uc:uc41}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: È presente un decision tree valido modificato.
+                \item \textbf{Pre-condizioni}: L'utente sta visualizzando un singolo decision tree in dettaglio.
                 \item \textbf{Post-condizioni}: Il file del decision tree è esportato.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L’Utente seleziona la funzionalità esportazione del decision tree.
                     \item Il Sistema serializza il decision tree nel formato previsto.
+                    \item L'Utente seleziona il percorso locale dove salvare il file.
                     \item Il Sistema salva il file.
-                    \item Il Sistema conferma l’esportazione.
                 \end{itemize}
             \end{itemize}
-
-            \subsubsection{UC40 - Caricamento dei dati del dispositivo per la modifica}
-            \label{uc:uc40}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Un dispositivo con asset associati è visualizzato nel sistema.
-                \item \textbf{Post-condizioni}: L’Utente si trova nell’editor del dispositivo.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente visualizza il resoconto del dispositivo con i suoi assets.
-                    \item L’Utente seleziona la funzionalità di modifica del documento.
-                    \item Il Sistema carica i dati del dispositivo e degli asset.
-                    \item Il Sistema porta l’Utente nell’editor del dispositivo.
-                \end{itemize}
-                \item \textbf{Inclusioni}: \hyperref[uc:uc40.1]{UC40.1 Visualizzazione dati dispositivo in modalitá modifica}
-            \end{itemize}
-
-            \noindent Il Caso d’Uso UC40 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
-                
-                    \begin{center}
-                        \begin{figure}[H]
-                            \centering
-                            %\includegraphics[scale=0.58]{img/UC40Inclusioni.png}
-                            \caption{UC40 -  Inclusioni Caso d'Uso 40: UC40.1}
-                            \label{fig:uc40-inclusioni}
-                        \end{figure}
-                    \end{center}
-
-                    \paragraph{UC40.1 - Modifica dei dati del dispositivo} \mbox{}
-                    \label{uc:uc40.1}
-                    \begin{itemize}
-                        \item \textbf{Attore}: Utente
-                        \item \textbf{Post-condizioni}: I dati identificativi del dispositivo sono stati modificati e salvati
-                        \item \textbf{Scenario principale}:
-                        \begin{itemize}
-                            \item Il Sistema mostra i campi del dispositivo.
-                            \item I campi del dispositivo vengono caricati. 
-                            \item I campi sono modificabili dall’Utente. [\hyperref[uc:uc10.1.1]{UC10.1.1}]
-                        \end{itemize}
-                        \item \textbf{Scenario alternativo}:
-                        \begin{itemize}
-                            \item L'Utente esce dalla modifica senza salvare [\hyperref[uc:uc47]{UC47}]
-                        \end{itemize}
-                        \item \textbf{Inclusioni}: \hyperref[uc:uc10.1.1]{UC10.1.1 Inserimento campo dispositivo}
-                        \item \textbf{Estensioni}: 
-                        \hyperref[uc:uc47]{UC47 Uscita dalla modalità di modifica senza salvataggio}
-                    \end{itemize}
-
-            \subsubsection{UC41 - Visualizzazione lista asset in modalità modifica}
-            \label{uc:uc41}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L'Utente ha salvato le modifiche riguardo i dati identificativi del dispositivo
-                \item \textbf{Post-condizioni}: La lista degli asset è visualizzata con funzionalità di selezione e modifica.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item Il Sistema mostra la lista degli asset associati al dispositivo.
-                    \item Per ogni asset, il Sistema mostra l’azione di modifica.
-                    \item L’Utente può selezionare un asset.
-                \end{itemize}
-            \end{itemize}
-
-            \subsubsection{UC42 - Selezione asset da modificare}
-            \label{uc:uc42}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: La lista degli asset è visualizzata.
-                \item \textbf{Post-condizioni}: L’asset è selezionato è aperto in modalità modifica.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L'Utente visualizza la lista degli assets modificabili
-                    \item L'Utente seleziona un asset che vuole modificare 
-                \end{itemize}
-                \item \textbf{Scenari alternativi}:
-                \begin{itemize}
-                    \item L'Utente seleziona la funzionalità per modificare l'asset selezionato [\hyperref[uc:uc43]{UC43}]
-                \end{itemize}
-                \item \textbf{Estensioni}: \hyperref[uc:uc43]{UC43 Modifica dati asset}
-            \end{itemize}
-
-            \subsubsection{UC43 - Modifica dati asset}
-            \label{uc:uc43}
-            Vedere se includere la selezione al posto di fare un caso d'uso a parte. 
-            Togliere UC45 da estensioni
-            Mettere UC47 come estensione
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Un asset è stato aperto in modalità modifica.
-                \item \textbf{Post-condizioni}: Le modifiche all’asset sono salvate in memoria.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item Il Sistema mostra i campi dell’asset:
-                    \begin{itemize}
-                        \item nome
-                        \item tipo
-                        \item descrizione
-                        \item sensibilità
-                    \end{itemize}
-                    \item L’Utente modifica uno o più campi.
-                    \item Il Sistema aggiorna i dati dell’asset nello stato corrente.
-                \end{itemize}
-                \item \textbf{Scenari alternativi}:
-                \begin{itemize}
-                    \item L'Utente seleziona la funzionalità per annullare la modifica dell'asset [\hyperref[uc:uc44]{UC44}]
-                    \item L'Utente seleziona la funzionalità per salvare la modifica dell'asset [\hyperref[uc:uc45]{UC45}]
-                \end{itemize}
-                \item \textbf{Estensioni}: 
-                \begin{itemize}
-                    \item \hyperref[uc:uc44]{UC44 Annullamento modifica asset}
-                    \item \hyperref[uc:uc45]{UC45 Conferma modifica asset}
-                \end{itemize}
-            \end{itemize}
-
-            \subsubsection{UC44 - Annullamento modifica asset}
-            \label{uc:uc44}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Un asset è in fase di modifica.
-                \item \textbf{Post-condizioni}: Le modifiche all'asset sono scartate.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente si trova nella sezione di modifica dell'asset.
-                    \item L’Utente seleziona il pulsante per l'annullamento della modifica dell'asset.
-                    \item Il Sistema ripristina i dati originali dell’asset.
-                    \item Il Sistema riporta l’Utente alla lista degli asset.
-                \end{itemize}
-            \end{itemize}
-
-            \subsubsection{UC45 - Conferma modifica asset}
-            \label{uc:uc45}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Un asset è in fase di modifica.
-                \item \textbf{Post-condizioni}: Le modifiche all’asset sono salvate in memoria.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di salvataggio.
-                    \item Il Sistema valida i dati inseriti.
-                    \item Il Sistema aggiorna l’asset nel documento dispositivo.
-                    \item Il Sistema riporta l’Utente alla lista degli asset.
-                \end{itemize}
-            \end{itemize}
-
-            \subsubsection{UC46 - Salvataggio documento dispositivo modificato}
-            \label{uc:uc46}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: Il documento dispositivo è stato modificato.
-                \item \textbf{Post-condizioni}: Il dispositivo e la lista degli asset sono salvati nel sistema.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di salvataggio del documento.
-                    \item Il Sistema valida il documento complessivo.
-                    \item Il Sistema salva il dispositivo e gli asset.
-                    \item Il Sistema conferma il salvataggio.
-                \end{itemize}
-              \item \textbf{Inclusioni}: \hyperref[uc:uc24]{UC24 Salvataggio della lista di assets}
-            \end{itemize}
-
-            \subsubsection{UC47 - Uscita dalla modalità di modifica senza salvataggio}
-            \label{uc:uc47}
-            \begin{itemize}
-                \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L’Utente sta modificando i dati di un dispositivo
-                \item \textbf{Post-condizioni}: L'Utente si trova allo stato iniziale dell'applicazione.
-                \item \textbf{Scenario principale}:
-                \begin{itemize}
-                    \item L’Utente seleziona la funzionalità per l'annullamento delle modifiche.
-                    \item Il Sistema rileva modifiche non salvate.
-                    \item Il Sistema annulla le modifiche apportate al documento.
-                    \item l'Utente si trova allo stato iniziale dell'applicazione
-                \end{itemize}
-            \end{itemize}
-
-
-            
         
     }
 }
