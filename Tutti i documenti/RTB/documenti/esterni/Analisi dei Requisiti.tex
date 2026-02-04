@@ -45,11 +45,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2026/01/15}
+\newcommand{\DataUltimaModifica}{2026/02/04}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.13.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v0.15.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -128,7 +128,11 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & 2026/01/28 & Francesco Marcolongo & Andrea Difino & Aggiunti diagrammi dei Casi d'Uso \\
+            \VersioneDocumento & \DataUltimaModifica & Riccardo Valerio & Giacomo Giora & Completati requisiti \\
+            \hline
+            v0.14.0 & 2026/02/04 & Riccardo Valerio & Giacomo Giora & Modificati requisiti funzionali \\
+            \hline
+            v0.13.0 & 2026/01/28 & Francesco Marcolongo & Andrea Difino & Aggiunti diagrammi dei Casi d'Uso \\
             \hline
             v0.12.1 & 2026/01/18 & Federico Simonetto & Francesco Marcolongo & Sistemati indici casi d'uso \\
             \hline
@@ -247,7 +251,7 @@
     }
 
     \subsection{Funzioni del prodotto}{
-        Il sistema permette all’utente di visualizzare e interagire con i decision trees per la verifica automatizzata della conformità normativa degli asset analizzati.
+        Il sistema permette all'utente di visualizzare e interagire con i decision trees per la verifica automatizzata della conformità normativa degli asset analizzati.
         \newline
         Le sue principali funzionalità includono:
         \begin{itemize}
@@ -305,9 +309,9 @@
             \item \textbf{Postcondizioni:} stato del sistema dopo che il caso d'uso si è verificato;
             \item \textbf{Scenario principale:} azioni che l'attore esegue per utilizzare la funzionalità descritta nel Caso d'Uso;
             \item \textbf{Scenario alternativo:} Descrizione ragionevole degli eventi che possono accadere qualora una delle operazioni descritte nello \textbf{Scenario principale} non vada a buon fine
-            \item \textbf{Estensioni:} Ulteriori Casi d’Uso che possono manifestarsi nel corso dell’esecuzione delle operazioni previste dal Caso d’Uso principale.
-            \item \textbf{Inclusioni:} Ulteriori Casi d’Uso che l’Attore è tenuto a eseguire per completare l’implementazione del Caso d’Uso attualmente in esame.
-            \item \textbf{Generalizzazioni:} Ulteriori Casi d’Uso visti come specializzazione di un Caso d’Uso più generale, dal quale ereditano il comportamento comune, introducendo eventuali variazioni o funzionalità aggiuntive.
+            \item \textbf{Estensioni:} Ulteriori Casi d'Uso che possono manifestarsi nel corso dell'esecuzione delle operazioni previste dal Caso d'Uso principale.
+            \item \textbf{Inclusioni:} Ulteriori Casi d'Uso che l'Attore è tenuto a eseguire per completare l'implementazione del Caso d'Uso attualmente in esame.
+            \item \textbf{Generalizzazioni:} Ulteriori Casi d'Uso visti come specializzazione di un Caso d'Uso più generale, dal quale ereditano il comportamento comune, introducendo eventuali variazioni o funzionalità aggiuntive.
         \end{itemize}  
 
         \subsubsection{UC1 - Inserimento del dispositivo}
@@ -326,7 +330,7 @@
             \item \textbf{Post-condizioni}: Il dispositivo è stato inserito e le sue informazioni sono salvate nel Sistema.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente inserisce il dispositivo
+                \item L'Utente inserisce il dispositivo
                 \item Il Sistema registra le informazioni del dispositivo
             \end{itemize}
             \item \textbf{Generalizzazioni}: 
@@ -352,13 +356,13 @@
             \item \textbf{Post-condizioni}: Il dispositivo è stato caricato e le sue informazioni sono salvate nel Sistema.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente seleziona il pulsante per la funzionalità di caricamento del dispositivo
-                \item L’Utente seleziona il file con le informazione del dispositivo
+                \item L'Utente seleziona il pulsante per la funzionalità di caricamento del dispositivo
+                \item L'Utente seleziona il file con le informazione del dispositivo
                 \item Il Sistema registra le informazioni del dispositivo caricato
             \end{itemize}
             \item \textbf{Scenari alternativi}:
             \begin{itemize}
-                \item L’Utente carica un file con informazioni del dispositivo non valide [\hyperref[uc:uc3]{UC3}] 
+                \item L'Utente carica un file con informazioni del dispositivo non valide [\hyperref[uc:uc3]{UC3}] 
             \end{itemize}
             \item \textbf{Estensioni}: 
             \begin{itemize}
@@ -370,7 +374,7 @@
         \label{uc:uc3}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L’Utente ha selezionato la funzionalitá che prevede il caricamento di file esterno e ha annullato il caricamento del file o ha caricato un file che presenta errori di struttura o contenuto.
+                \item \textbf{Pre-condizioni}: L'Utente ha selezionato la funzionalitá che prevede il caricamento di file esterno e ha annullato il caricamento del file o ha caricato un file che presenta errori di struttura o contenuto.
                 \item \textbf{Post-condizioni}: Il Sistema mostra all'Utente il rilevamento di un file non valido
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
@@ -392,7 +396,7 @@
             \end{center}
             \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente ha importato o creato con successo un dispositivo.
+            \item \textbf{Pre-condizioni}: L'Utente ha importato o creato con successo un dispositivo.
             \item \textbf{Post-condizioni}: Il Sistema mostra il dispositivo appena importato o creato
             \item \textbf{Scenario principale}:
                 \begin{itemize}
@@ -402,7 +406,7 @@
             \item \textbf{Inclusioni}: \hyperref[uc:uc23.1]{UC23.1 Visualizzazione nome dispositivo}
             \end{itemize}
 
-                Il Caso d’Uso UC4 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                Il Caso d'Uso UC4 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
                 
                     \begin{center}
                         \begin{figure}[H]
@@ -430,13 +434,13 @@
                 \item \textbf{Post-condizioni}: Il Sistema mostra la lista degli assets appartenenti al dispositivo.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di visualizzazione degli assets di un dispositivo
+                    \item L'Utente seleziona la funzionalità di visualizzazione degli assets di un dispositivo
                     \item Il Sistema mostra la lista degli asset associati al dispositivo [\hyperref[uc:uc5.1]{UC5.1}]
                 \end{itemize}
                 \item \textbf{Inclusioni}: \hyperref[uc:uc5.1]{UC5.1 Visualizzazione singolo asset}
             \end{itemize}
 
-                Il Caso d’Uso UC5 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                Il Caso d'Uso UC5 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
         
                 \begin{center}
                     \begin{figure}[H]
@@ -463,7 +467,7 @@
                     \end{itemize}
                 \end{itemize}
 
-                Il Caso d’Uso UC5.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+                Il Caso d'Uso UC5.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
                 
                     \begin{center}
                         \begin{figure}[H]
@@ -490,12 +494,12 @@
                 \item \textbf{Post-condizioni}: Il test è portato a termine e i suoi risultati sono disponibili 
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente ha inserito un dispositivo e seleziona il pulsante di avvio del test oppure sta gestendo (modificando o completando) un test e il Sistema avvia in automatico il test
-                    \item Il Sistema porta l’Utente nella sezione di test, dove di volta in volta mostra le informazioni relative all'avanzamento del test e sottopone l'Utente alla domanda [\hyperref[uc:uc6.1]{UC6.1}]
+                    \item L'Utente ha inserito un dispositivo e seleziona il pulsante di avvio del test oppure sta gestendo (modificando o completando) un test e il Sistema avvia in automatico il test
+                    \item Il Sistema porta l'Utente nella sezione di test, dove di volta in volta mostra le informazioni relative all'avanzamento del test e sottopone l'Utente alla domanda [\hyperref[uc:uc6.1]{UC6.1}]
                 \end{itemize}
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
-                    \item L’Utente seleziona l’uscita anticipata dal test [\hyperref[uc:uc9]{UC9}]
+                    \item L'Utente seleziona l'uscita anticipata dal test [\hyperref[uc:uc9]{UC9}]
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                 \begin{itemize} 
@@ -507,7 +511,7 @@
                 \end{itemize} 
         \end{itemize}   
 
-        Il Caso d’Uso UC6 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+        Il Caso d'Uso UC6 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
@@ -533,7 +537,7 @@
                     \item \textbf{Post-condizioni}: Il Sistema riceve la risposta alla domanda relativa al nodo del decision tree
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item Il Sistema mostra all’Utente il testo e il nome della domanda corrente del decision tree
+                        \item Il Sistema mostra all'Utente il testo e il nome della domanda corrente del decision tree
                         \item Il Sistema registra la risposta (SÌ/NO) dell'Utente
                     \end{itemize}
                     \item \textbf{Scenari alternativi}:
@@ -564,7 +568,7 @@
             \item \textbf{Post-condizioni}: Il sistema registra la nuova risposta alla domanda precedente. 
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente seleziona il pulsante per tornare alla domanda precedente 
+                \item L'Utente seleziona il pulsante per tornare alla domanda precedente 
                 \item Il Sistema mostra la domanda precedente (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente
                 \item L'Utente seleziona la risposta
             \end{itemize} 
@@ -586,7 +590,7 @@
             \item \textbf{Post-condizioni}: Il Sistema riceve la nuova risposta alla domanda successiva. 
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente preme il pulsante per tornare alla domanda successiva
+                \item L'Utente preme il pulsante per tornare alla domanda successiva
                 \item Il Sistema mostra la domanda successiva (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente
                 \item L'Utente seleziona la risposta
             \end{itemize} 
@@ -601,7 +605,7 @@
             \item \textbf{Post-condizioni}: Il Sistema marca la sessione come incompleta e salva i progressi.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente seleziona il pulsante si uscita dalla sezione di test
+                \item L'Utente seleziona il pulsante si uscita dalla sezione di test
                 \item Il Sistema riconosce l'uscita anticipata e salva automaticamente i progressi
             \end{itemize} 
         \end{itemize}   
@@ -610,13 +614,13 @@
         \label{uc:uc10}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente ha portato a termine la compilazione di un test o ha caricato un test precedente nel sistema.
-            \item \textbf{Post-condizioni}: L’Utente visualizza i risultati del test.
+            \item \textbf{Pre-condizioni}: L'Utente ha portato a termine la compilazione di un test o ha caricato un test precedente nel sistema.
+            \item \textbf{Post-condizioni}: L'Utente visualizza i risultati del test.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente ha caricato o completato un test.
+                \item L'Utente ha caricato o completato un test.
                 \item Il Sistema ha elaborato i dati del test.
-                \item L’Utente visualizza i risultati del test sotto forma di una lista di requisiti [\hyperref[uc:uc10.1]{UC10.1}]
+                \item L'Utente visualizza i risultati del test sotto forma di una lista di requisiti [\hyperref[uc:uc10.1]{UC10.1}]
             \end{itemize}
             \item \textbf{Inclusioni}: 
                 \begin{itemize} 
@@ -624,7 +628,7 @@
                 \end{itemize}
         \end{itemize}
 
-                \noindent Il Caso d’Uso UC10 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                \noindent Il Caso d'Uso UC10 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 
                 \begin{center}
                     \begin{figure}[H]
@@ -642,7 +646,7 @@
                     \item \textbf{Post-condizioni}: Il Sistema mostra la lista dei requisiti assieme ai loro risultati del test.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente visualizza una lista, ciascuno dei quali elementi è un requisito affrontato durante il test con il risultato [\hyperref[uc:uc10.1.1]{UC10.1.1}]
+                        \item L'Utente visualizza una lista, ciascuno dei quali elementi è un requisito affrontato durante il test con il risultato [\hyperref[uc:uc10.1.1]{UC10.1.1}]
                     \end{itemize}
                     \item \textbf{Inclusioni}: 
                     \begin{itemize} 
@@ -650,7 +654,7 @@
                     \end{itemize}
                 \end{itemize}
 
-                \noindent Il Caso d’Uso UC10.1 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                \noindent Il Caso d'Uso UC10.1 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 
                 \begin{center}
                     \begin{figure}[H]
@@ -668,7 +672,7 @@
                     \item \textbf{Post-condizioni}: Il Sistema mostra il singolo requisito con risultato del test.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente visualizza il singolo requisito attraverso suo nome [\hyperref[uc:uc33.2]{UC33.2}] e il risultato ad esso associato [\hyperref[uc:uc10.1.1.1]{UC10.1.1.1}]
+                        \item L'Utente visualizza il singolo requisito attraverso suo nome [\hyperref[uc:uc33.2]{UC33.2}] e il risultato ad esso associato [\hyperref[uc:uc10.1.1.1]{UC10.1.1.1}]
                     \end{itemize}
                     \item \textbf{Inclusioni}: 
                     \begin{itemize} 
@@ -677,7 +681,7 @@
                     \end{itemize}
                 \end{itemize}
 
-                \noindent Il Caso d’Uso UC10.1.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+                \noindent Il Caso d'Uso UC10.1.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 
                 \begin{center}
                     \begin{figure}[H]
@@ -695,7 +699,7 @@
                     \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del requisito.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente visualizza il risultato del requisito, che può essere di tre tipi: 
+                        \item L'Utente visualizza il risultato del requisito, che può essere di tre tipi: 
                         \begin{itemize}
                             \item[a)] \textbf{PASS}: il requisito è stato rispettato
                             \item[b)] \textbf{FAIL}: il requisito non è stato rispettato 
@@ -705,19 +709,15 @@
                 \end{itemize}
 
         \subsubsection{UC11 - Esportazione test completato} 
-            \label{uc:uc}
+            \label{uc:uc11}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L’Utente ha portato a termine la compilazione di un test
-                \item \textbf{Post-condizioni}: Il test completato è esportato e reso disponibile all’Utente nei due formati previsti.
+                \item \textbf{Pre-condizioni}: L'Utente ha portato a termine la compilazione di un test
+                \item \textbf{Post-condizioni}: Il test completato è esportato e reso disponibile all'Utente nei due formati previsti.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di esportazione del test.
-                    \item Il Sistema formatta i dati del test e li rende disponibili in file nei formati:
-                    \begin{itemize}
-                        \item[a)] PDF
-                        \item[b)] JSON
-                    \end{itemize}
+                    \item L'Utente seleziona la funzionalità di esportazione del test e il formato desiderato.
+                    \item Il Sistema formatta i dati del test ed effetta l'esportazione nel formato richiesto.
                 \end{itemize}
             \end{itemize}
     
@@ -738,9 +738,9 @@
             \item \textbf{Post-condizioni}: Il dispositivo è stato creato e le sue informazioni sono salvate nel Sistema.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente seleziona il pulsante per la funzionalità di creazione del dispositivo
+                \item L'Utente seleziona il pulsante per la funzionalità di creazione del dispositivo
                 \item L'Utente compila i campi appositi relativi ai dati del dispositivo [\hyperref[uc:uc12.1]{UC12.1}]
-                \item L’Utente aggiunge almeno un asset relativo al dispositivo [\hyperref[uc:uc14]{UC14}]
+                \item L'Utente aggiunge almeno un asset relativo al dispositivo [\hyperref[uc:uc14]{UC14}]
                 \item Il Sistema registra le informazioni del dispositivo creato
             \end{itemize}
             \item \textbf{Scenari alternativi}:
@@ -758,7 +758,7 @@
             \end{itemize}
         \end{itemize}
 
-                    \noindent Il Caso d’Uso UC12 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                    \noindent Il Caso d'Uso UC12 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
             
                     \begin{center}
                         \begin{figure}[H]
@@ -789,8 +789,8 @@
                             \item[a)] il nome [\hyperref[uc:uc12.1.1]{UC12.1.1}]
                             \item[b)] il sistema operativo [\hyperref[uc:uc12.1.2]{UC12.1.2}]
                             \item[c)] la versione del firmware [\hyperref[uc:uc12.1.3]{UC12.1.3}]
-                            \item[d)] la funzionalità [\hyperref[uc:uc12.1.3]{UC12.1.3}]
-                            \item[e)] la descrizione [\hyperref[uc:uc12.1.4]{UC12.1.4}]
+                            \item[d)] la funzionalità [\hyperref[uc:uc12.1.4]{UC12.1.4}]
+                            \item[e)] la descrizione [\hyperref[uc:uc12.1.5]{UC12.1.5}]
                         \end{itemize}
                     \end{itemize}
                     \item \textbf{Scenari alternativi}:
@@ -811,7 +811,7 @@
                     \end{itemize}
                 \end{itemize}
 
-                \noindent Il Caso d’Uso UC12.1 include cinque ulteriori Caso d’Uso come raffigurato nella seguente immagine:
+                \noindent Il Caso d'Uso UC12.1 include cinque ulteriori Caso d'Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
@@ -829,7 +829,7 @@
                     \item \textbf{Post-condizioni}: Il Sistema registra il nome del dispositivo inserito
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente inserisce il nome del dispositivo nel campo dati corrispondente
+                        \item L'Utente inserisce il nome del dispositivo nel campo dati corrispondente
                         \item Il Sistema memorizza il valore inserito
                     \end{itemize}
                 \end{itemize} 
@@ -841,7 +841,7 @@
                     \item \textbf{Post-condizioni}: Il Sistema registra il nome del sistema operativo del dispositivo inserito
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente inserisce il nome del sistema operativo del dispositivo nel campo dati corrispondente.
+                        \item L'Utente inserisce il nome del sistema operativo del dispositivo nel campo dati corrispondente.
                         \item Il Sistema memorizza il valore inserito.
                     \end{itemize}
                 \end{itemize} 
@@ -853,7 +853,7 @@
                     \item \textbf{Post-condizioni}: Il Sistema registra la versione del firmware del dispositivo inserita
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente inserisce la versione del firmware del dispositivo nel corrispondente campo dati.
+                        \item L'Utente inserisce la versione del firmware del dispositivo nel corrispondente campo dati.
                         \item Il Sistema memorizza il valore inserito.
                     \end{itemize}
                 \end{itemize} 
@@ -865,7 +865,7 @@
                     \item \textbf{Post-condizioni}: Il Sistema registra la funzionalità del dispositivo inserita
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente inserisce le funzionalità del dispositivo nel corrispondente campo dati.
+                        \item L'Utente inserisce le funzionalità del dispositivo nel corrispondente campo dati.
                         \item Il Sistema memorizza il valore inserito.
                     \end{itemize}
                 \end{itemize} 
@@ -877,7 +877,7 @@
                     \item \textbf{Post-condizioni}:Il Sistema registra la descrizione del dispositivo inserita
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L’Utente inserisce la descrizione del dispositivo nel rispettivo campo dati
+                        \item L'Utente inserisce la descrizione del dispositivo nel rispettivo campo dati
                         \item Il Sistema memorizza il valore inserito.
                     \end{itemize}
                 \end{itemize} 
@@ -886,11 +886,11 @@
         \label{uc:uc13}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente ha compilato almeno un campo con dati non validi
+            \item \textbf{Pre-condizioni}: L'Utente ha compilato almeno un campo con dati non validi
             \item \textbf{Post-condizioni}: Il Sistema segnala l'errore all'Utente
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente ha compilato uno o più campi con dati nulli o comunque non validi
+                \item L'Utente ha compilato uno o più campi con dati nulli o comunque non validi
                 \item Il Sistema segnala all'Utente l'errore di inserimento e l'impossibilità di procedere.
             \end{itemize} 
         \end{itemize}
@@ -940,7 +940,7 @@
             \end{itemize}
         \end{itemize}
 
-        \noindent Il Caso d’Uso UC14 include cinque ulteriori Caso d’Uso come raffigurato nella seguente immagine:
+        \noindent Il Caso d'Uso UC14 include cinque ulteriori Caso d'Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
@@ -1072,7 +1072,7 @@
             \end{itemize}
         \end{itemize}
 
-                \noindent Il Caso d’Uso UC17 include quattro ulteriori Caso d’Uso come raffigurato nella seguente immagine:
+                \noindent Il Caso d'Uso UC17 include quattro ulteriori Caso d'Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
@@ -1154,14 +1154,14 @@
         \label{uc:uc19}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente sta creando manualmente un dispositivo
+            \item \textbf{Pre-condizioni}: L'Utente sta creando manualmente un dispositivo
             \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di creazione del dispositivo
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente ha selezionato il processo di annullamento della creazione del dispositivo
-                \item L’Utente seleziona la funzionalità di annullamento e conferma.
+                \item L'Utente ha selezionato il processo di annullamento della creazione del dispositivo
+                \item L'Utente seleziona la funzionalità di annullamento e conferma.
                 \item Il Sistema elimina i dati del dispositivo e/o degli asset immessi.
-                \item Il Sistema riporta l’Utente allo stato iniziale.
+                \item Il Sistema riporta l'Utente allo stato iniziale.
             \end{itemize} 
         \end{itemize}
 
@@ -1169,12 +1169,12 @@
         \label{uc:uc20}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente ha creato un nuovo dispositivo oppure ha effettuato modifiche ai dati o alla lista degli assets del dispositivo caricato
-            \item \textbf{Post-condizioni}: L’Utente visualizza la segnalazione di modifiche non salvate relative al dispositivo
+            \item \textbf{Pre-condizioni}: L'Utente ha creato un nuovo dispositivo oppure ha effettuato modifiche ai dati o alla lista degli assets del dispositivo caricato
+            \item \textbf{Post-condizioni}: L'Utente visualizza la segnalazione di modifiche non salvate relative al dispositivo
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente ha creato un nuovo dispositivo oppure ha modificato i dati di un dispositivo esistente.
-                \item Il Sistema segnala l’Utente della presenza di modifiche non salvate relative al dispositivo.
+                \item L'Utente ha creato un nuovo dispositivo oppure ha modificato i dati di un dispositivo esistente.
+                \item Il Sistema segnala l'Utente della presenza di modifiche non salvate relative al dispositivo.
             \end{itemize} 
         \end{itemize}
 
@@ -1182,12 +1182,12 @@
         \label{uc:uc21}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente visualizza la presenza di modifiche non salvate relative al dispositivo
+            \item \textbf{Pre-condizioni}: L'Utente visualizza la presenza di modifiche non salvate relative al dispositivo
             \item \textbf{Post-condizioni}: Il Sistema salva le modifiche non salvate del dispositivo 
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente visualizza la presenza di modifiche non salvate relative al dispositivo.
-                \item L’Utente seleziona la funzionalità di salvataggio delle modifiche non salvate.
+                \item L'Utente visualizza la presenza di modifiche non salvate relative al dispositivo.
+                \item L'Utente seleziona la funzionalità di salvataggio delle modifiche non salvate.
                 \item Il Sistema salva i dati non salvati del dispositivo in locale.
             \end{itemize} 
         \end{itemize}
@@ -1196,7 +1196,7 @@
         \label{uc:uc22}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente visualizza la lista degli assets
+            \item \textbf{Pre-condizioni}: L'Utente visualizza la lista degli assets
             \item \textbf{Post-condizioni}: Il Sistema mostra tutte le informazioni dell'asset nel dettaglio
             \item \textbf{Scenario principale}:
             \begin{itemize}
@@ -1218,7 +1218,7 @@
             \end{itemize}
         \end{itemize}
 
-                \noindent Il Caso d’Uso UC22 include quattro ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+                \noindent Il Caso d'Uso UC22 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
@@ -1277,7 +1277,7 @@
         \label{uc:uc23}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L’Utente ha creato o caricato un dispositivo
+            \item \textbf{Pre-condizioni}: L'Utente ha creato o caricato un dispositivo
             \item \textbf{Post-condizioni}: Il Sistema mostra i dati del dispositivo in dettaglio
             \item \textbf{Scenario principale}:
             \begin{itemize}
@@ -1301,7 +1301,7 @@
             \end{itemize}
         \end{itemize}
 
-                \noindent Il Caso d’Uso UC23 include quattro ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+                \noindent Il Caso d'Uso UC23 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
@@ -1384,13 +1384,13 @@
                 \item \textbf{Post-condizioni}: Il test selezionato dall'utente é stato caricato nel Sistema 
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona la funzionalità di caricamento di un test precedente (salvato in locale)
-                    \item L’Utente seleziona il file.
+                    \item L'Utente seleziona la funzionalità di caricamento di un test precedente (salvato in locale)
+                    \item L'Utente seleziona il file.
                     \item Il Sistema valida e carica il test.
                 \end{itemize} 
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
-                    \item L’Utente carica un file che presenta errori di struttura o di formato [\hyperref[uc:uc2]{UC2}]
+                    \item L'Utente carica un file che presenta errori di struttura o di formato [\hyperref[uc:uc2]{UC2}]
                 \end{itemize} 
                 \item \textbf{Estensioni}: 
                 \begin{itemize}
@@ -1407,9 +1407,9 @@
             \item \textbf{Post-condizioni}: Il test viene completato e i suoi dati sono aggiornati.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente visualizza i risultati di un test completato
-                \item L’Utente seleziona la funzionalità di modifica del test
-                \item L’Utente seleziona un requisito e l'asset del dispositivo per individuare il nodo da cui riprendere il test e avvia la modifica del test
+                \item L'Utente visualizza i risultati di un test completato
+                \item L'Utente seleziona la funzionalità di modifica del test
+                \item L'Utente seleziona un requisito e l'asset del dispositivo per individuare il nodo da cui riprendere il test e avvia la modifica del test
                 \item Il Sistema esegue nuovamente il test a partire dal punto selezionato [\hyperref[uc:uc6]{UC6}]
             \end{itemize}
             \item \textbf{Inclusioni}: 
@@ -1418,7 +1418,7 @@
             \end{itemize}
         \end{itemize}
 
-        \noindent Il Caso d’Uso UC25 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+        \noindent Il Caso d'Uso UC25 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
             
                 \begin{center}
                     \begin{figure}[H]
@@ -1438,7 +1438,7 @@
                 \item \textbf{Post-condizioni}: Il test viene completato e i suoi dati sono aggiornati
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente ha caricato un test non completato.
+                    \item L'Utente ha caricato un test non completato.
                     \item Il Sistema riprende l'esecuzione del test dall'ultimo nodo [\hyperref[uc:uc6]{UC6}].
                 \end{itemize} 
                  \item \textbf{Inclusioni}: 
@@ -1447,7 +1447,7 @@
                 \end{itemize}
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC26 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC26 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
                 
                     \begin{center}
                         \begin{figure}[H]
@@ -1462,12 +1462,12 @@
             \label{uc:uc27}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: E’ presente un test completato
+                \item \textbf{Pre-condizioni}: E' presente un test completato
                 \item \textbf{Post-condizioni}: Le giustificazioni sono visualizzate
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente visualizza i risultati di un test completato.
-                    \item L’Utente seleziona la funzionalità di visualizzazione delle giustificazioni.
+                    \item L'Utente visualizza i risultati di un test completato.
+                    \item L'Utente seleziona la funzionalità di visualizzazione delle giustificazioni.
                     \item L'Utente visualizza la lista delle giustificazioni associate ad ogni requisito del test [\hyperref[uc:uc27.1]{UC27.1}]. 
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
@@ -1476,7 +1476,7 @@
                 \end{itemize}
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC27 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC27 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
                 
                     \begin{center}
                         \begin{figure}[H]
@@ -1503,7 +1503,7 @@
                 \end{itemize}
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC27.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC27.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
                 
                     \begin{center}
                         \begin{figure}[H]
@@ -1534,13 +1534,13 @@
             \item \textbf{Post-condizioni}: Il Sistema mostra la lista degli assets con i relativi risultati appartenenti al requisito.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L’Utente seleziona la funzionalità di espansione dei risultati di un requisito nella lista dei risultati del test
+                \item L'Utente seleziona la funzionalità di espansione dei risultati di un requisito nella lista dei risultati del test
                 \item Il Sistema mostra la lista degli assets con i relativi risultati, specifici di un requisito [\hyperref[uc:uc28.1]{UC28.1}]
             \end{itemize}
             \item \textbf{Inclusioni}: \hyperref[uc:uc28.1]{UC28.1 Visualizzazione singolo asset con risultato}
         \end{itemize}
 
-                    Il Caso d’Uso UC28 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+                    Il Caso d'Uso UC28 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
             
                     \begin{center}
                         \begin{figure}[H]
@@ -1567,7 +1567,7 @@
                 \end{itemize}
             \end{itemize}
 
-            Il Caso d’Uso UC28.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            Il Caso d'Uso UC28.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
             
                     \begin{center}
                         \begin{figure}[H]
@@ -1649,7 +1649,7 @@
             \end{itemize}
         \end{itemize}
 
-                \noindent Il Caso d’Uso UC30 include cinque ulteriori Caso d’Uso come raffigurato nella seguente immagine:
+                \noindent Il Caso d'Uso UC30 include cinque ulteriori Caso d'Uso come raffigurato nella seguente immagine:
                 
                         \begin{center}
                             \begin{figure}[H]
@@ -1745,7 +1745,7 @@
         \begin{itemize}
             \item \textbf{Attore}: Utente
             \item \textbf{Pre-condizioni}: Il Sistema è allo stato iniziale
-            \item \textbf{Post-condizioni}: Il Sistema mostra l’elenco dei decision tree disponibili.
+            \item \textbf{Post-condizioni}: Il Sistema mostra l'elenco dei decision tree disponibili.
             \item \textbf{Scenario principale}:
             \begin{itemize}
                 \item L'Utente seleziona la funzionalità di visualizzazione dei decision tree.
@@ -1758,7 +1758,7 @@
             \end{itemize}
         \end{itemize}
 
-            \noindent Il Caso d’Uso UC32 include un ulteriore Caso d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC32 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
         
             \begin{center}
                 \begin{figure}[H]
@@ -1790,7 +1790,7 @@
                 \end{itemize} 
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC32.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC32.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
             \begin{center}
                 \begin{figure}[H]
                     \centering
@@ -1822,7 +1822,7 @@
                 \end{itemize} 
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC33 include quattro ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC33 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine:
             \begin{center}
                 \begin{figure}[H]
                     \centering
@@ -1887,7 +1887,7 @@
                 \end{itemize} 
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC33.4 include tre ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC33.4 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
             \begin{center}
                 \begin{figure}[H]
                     \centering
@@ -1917,7 +1917,7 @@
                 \end{itemize} 
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC33.4.1 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC33.4.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
             \begin{center}
                 \begin{figure}[H]
                     \centering
@@ -1996,7 +1996,7 @@
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
                     \item Le modifiche apportate hanno portato a errori nella struttura dell'albero [\hyperref[uc:uc39]{UC39}]
-                    \item L’Utente annulla l'operazione di modifica [\hyperref[uc:uc40]{UC40}].
+                    \item L'Utente annulla l'operazione di modifica [\hyperref[uc:uc40]{UC40}].
                 \end{itemize}
                 \item \textbf{Estensioni}:
                 \begin{itemize}
@@ -2020,9 +2020,9 @@
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica 
-                    \item L’Utente seleziona la funzionalità di aggiunta di un nodo in una specifica posizione del decision tree.
+                    \item L'Utente seleziona la funzionalità di aggiunta di un nodo in una specifica posizione del decision tree.
                     \item Il Sistema crea un nuovo nodo vuoto.
-                    \item L’Utente inserisce:
+                    \item L'Utente inserisce:
                     \begin{itemize}
                         \item nome univoco del nodo [\hyperref[uc:uc35.1]{UC35.1}]
                         \item testo della domanda del nodo [\hyperref[uc:uc35.2]{UC35.2}]
@@ -2037,7 +2037,7 @@
                 \end{itemize}
             \end{itemize}
 
-            \noindent Il Caso d’Uso UC35 include due ulteriori Casi d’Uso come raffigurato nella seguente immagine:
+            \noindent Il Caso d'Uso UC35 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
             \begin{center}
                 \begin{figure}[H]
                     \centering
@@ -2074,13 +2074,13 @@
             \subsubsection{UC36 - Eliminazione nodo del decision tree}
             \label{uc:uc36}
             \begin{center}
-                \begin{figure}[H]
-                    \centering
-                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC36.png}
-                    \caption{UC36 - Eliminazione nodo del decision tree}
-                    \label{fig:uc36}
-                \end{figure}
-            \end{center} 
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC36.png}
+                                \caption{UC36 - Eliminazione nodo del decision tree}
+                                \label{fig:uc36}
+                            \end{figure}
+                        \end{center} 
             \begin{itemize}
                 \item \textbf{Attore}: Utente
                 \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
@@ -2088,8 +2088,8 @@
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica.
-                    \item L’Utente seleziona la funzionalità di eliminazione di un nodo.
-                    \item L’Utente seleziona un nodo e conferma.
+                    \item L'Utente seleziona la funzionalità di eliminazione di un nodo.
+                    \item L'Utente seleziona un nodo e conferma.
                     \item Il Sistema valida la rimozione e aggiorna i collegamenti, salvando le modifiche in locale.
                 \end{itemize}
                 \item \textbf{Scenari alternativi}:
@@ -2117,6 +2117,14 @@
 
             \subsubsection{UC38 - Modifica destinazione di un collegamento del decision tree}
             \label{uc:uc38}
+            \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC38.png}
+                                \caption{UC38 - Modifica destinazione di un collegamento del decision tree}
+                                \label{fig:uc38}
+                            \end{figure}
+            \end{center}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
                 \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
@@ -2124,8 +2132,8 @@
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica.
-                    \item L’Utente seleziona la funzionalità di modifica di un collegamento.
-                    \item L’Utente seleziona un collegamento e ne modifica il nodo di destinazione.
+                    \item L'Utente seleziona la funzionalità di modifica di un collegamento.
+                    \item L'Utente seleziona un collegamento e ne modifica il nodo di destinazione.
                     \item Il Sistema aggiorna il grafo e salva le modifiche in locale.
                 \end{itemize}
             \end{itemize}
@@ -2159,13 +2167,21 @@
 
             \subsubsection{UC41 - Esportazione decision tree}
             \label{uc:uc41}
+            \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC41.png}
+                                \caption{UC41 - Esportazione decision tree}
+                                \label{fig:uc41}
+                            \end{figure}
+            \end{center} 
             \begin{itemize}
                 \item \textbf{Attore}: Utente
                 \item \textbf{Pre-condizioni}: L'utente sta visualizzando un singolo decision tree in dettaglio.
                 \item \textbf{Post-condizioni}: Il file del decision tree è esportato.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L’Utente seleziona la funzionalità esportazione del decision tree.
+                    \item L'Utente seleziona la funzionalità esportazione del decision tree.
                     \item Il Sistema serializza il decision tree nel formato previsto.
                     \item L'Utente seleziona il percorso locale dove salvare il file.
                     \item Il Sistema salva il file.
@@ -2182,17 +2198,17 @@
 \section{Requisiti}{
     Verranno ora descritti i requisiti che ALimitedGroup ha individuato, raggruppati per requisiti:
     \begin{itemize}
-        \item \textbf{Funzionali}, ovvero requisiti che rappresentano qualcosa che il Sistema sviluppato deve avere per soddisfare un’aspettativa;
+        \item \textbf{Funzionali}, ovvero requisiti che rappresentano qualcosa che il Sistema sviluppato deve avere per soddisfare un'aspettativa;
         \item \textbf{Qualità}, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
-        \item \textbf{Vincolo}, ovvero restrizioni poste al Sistema, quali, a titolo di esempio, sull’uso di alcune tecnologie;
+        \item \textbf{Vincolo}, ovvero restrizioni poste al Sistema, quali, a titolo di esempio, sull'uso di alcune tecnologie;
     \end{itemize}
     
     \noindent Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.2 delle Norme di Progetto ver. 1.0.0
 
     \subsection{Requisiti funzionali}{
-        \rowcolors{2}{lightblue}{white}
-            \begin{longtable}{|l|p{0.6\textwidth}|l|}
-                \caption{Tabella dei requisiti funzionali} 
+            \rowcolors{2}{lightblue}{white}
+                \begin{longtable}{|l|p{0.6\textwidth}|p{0.15\textwidth}|}
+                \caption{Tabella dei requisiti funzionali}
                 \label{tab:requisiti-funzionali} \\
                 \hline
                 \rowcolor{gold}
@@ -2214,166 +2230,111 @@
                 
                 \hline
                 \endlastfoot
-                \hline
-                R-1-F-Ob & L'Utente deve poter caricare un dispositivo nel Sistema & \hyperref[uc:uc1]{UC1} \\
-                \hline
-                R-2-F-Ob & L’Utente deve ricevere un errore in seguito ad un tentativo di caricamento di un file non valido & \hyperref[uc:uc2]{UC2}\\
-                \hline
-                R-3-F-Ob & L’Utente deve poter visualizzare il dispositivo caricato & \hyperref[uc:uc3]{UC3}\\
-                \hline
-                R-4-F-Ob & L’Utente deve poter visualizzare il nome del dispositivo caricato & \hyperref[uc:uc3]{UC3}\\
-                \hline
-                R-5-F-Ob & L'Utente deve poter espandere le informazioni del dispositivo & \hyperref[uc:uc4]{UC4}\\
-                \hline
-                R-6-F-Ob & L'Utente deve poter visualizzare la lista degli assets del dispositivo & \hyperref[uc:uc4.1]{UC4.1}\\
-                \hline
-                R-7-F-Ob & L'Utente deve poter visualizzare il nome di ogni asset del dispositivo & \hyperref[uc:uc4.1]{UC4.1}\\
-                \hline
-                R-8-F-Ob & L'Utente deve poter visualizzare il tipo di ogni asset del dispositivo & \hyperref[uc:uc4.1]{UC4.1}\\
-                \hline
-                R-9-F-Ob & L'Utente, dopo aver creato manualmente la lista di assets di un dispositivo, deve poter modificare gli assets del dispositivo & \hyperref[uc:uc5]{UC5}, \hyperref[uc:uc16]{UC16}\\
-                \hline
-                R-10-F-Ob & L'Utente deve poter eliminare un asset del dispositivo & \hyperref[uc:uc5]{UC5}\\
-                \hline
-                R-11-F-Ob & L'Utente deve poter aggiungere un asset alla lista di assets creata manualmente & \hyperref[uc:uc5]{UC5}\\
-                \hline
-                R-12-F-Ob & L'Utente deve poter salvare le modifiche apportate alla lista degli assets creata manualmente & \hyperref[uc:uc5]{UC5}\\
-                \hline
-                R-13-F-Ob & L'Utente deve poter iniziare il test per la verifica dei requisiti della norma per il dispositivo & \hyperref[uc:uc6]{UC6}\\
-                \hline
-                R-14-F-Ob & L'Utente deve poter visualizzare ogni domanda del test durante la sua esecuzione & \hyperref[uc:uc6.1]{UC6.1}\\
-                \hline
-                R-15-F-Ob & L'Utente deve poter rispondere ad ogni domanda & \hyperref[uc:uc6]{UC6}\\
-                \hline
-                R-16-F-Ob & L'Utente deve poter visualizzare i risultati del test una volta completato & \hyperref[uc:uc6.2]{UC6.2}\\
-                \hline
-                R-17-F-Ob & L'Utente deve poter visualizzare i risultati del test in una lista ordinata & \hyperref[uc:uc6.2]{UC6.2}\\
-                \hline
-                R-18-F-Ob & L'Utente deve poter visualizzare il singolo risultato con il nome del requisito e l'esito associati & \hyperref[uc:uc6.2.1]{UC6.2.1}\\
-                \hline
-                R-19-F-Ob & L'Utente deve poter visualizzare PASS se il requisito é stato rispettato & \hyperref[uc:uc6.2.1]{UC6.2.1}\\
-                \hline
-                R-20-F-Ob & L'Utente deve poter visualizzare FAIL se il requisito non é stato rispettato  & \hyperref[uc:uc6.2.1]{UC6.2.1}\\
-                \hline
-                R-21-F-Ob & L'Utente deve poter visualizzare NA se il requisito non é applicabile & \hyperref[uc:uc6.2.1]{UC6.2.1}\\
-                \hline
-                R-22-F-D & L'Utente deve poter esportare il test completato nei formati previsti dall'applicazione & \hyperref[uc:uc6.2.2]{UC6.2.2}\\
-                \hline
-                R-23-F-Ob & L'Utente deve poter caricare la domanda precedente durante l'esecuzione di un test se non si é alla prima & \hyperref[uc:uc7]{U7}\\
-                \hline
-                R-24-F-Ob & L'Utente deve poter modificare una domanda a cui ha precedentemente risposto & \hyperref[uc:uc7]{U7}\\
-                \hline
-                R-25-F-Ob & L'Utente deve poter caricare la domanda successiva durante l'esecuzione di un test se é stato prima selezionato il pulsante per tornare alla domanda precedente & \hyperref[uc:uc8]{UC8}\\
-                \hline
-                R-26-F-Ob & L'Utente deve poter uscire dal test in qualsiasi momento della sua esecuzione & \hyperref[uc:uc9]{UC9}\\
-                \hline
-                R-27-F-Ob & L'Utente deve avere un salvataggio del test parziale nel caso in cui esca da un test durante la sua esecuzione & \hyperref[uc:uc9.1]{UC9.1}\\
-                \hline
-                R-28-F-Ob & L'Utente deve poter inserire manualmente i dati di un dispositivo & \hyperref[uc:uc10]{UC10}\\
-                \hline
-                R-29-F-Ob & L'Utente deve poter visualizzare il form per l'inserimento dei dati del dispositivo & \hyperref[uc:uc10.1]{UC10.1}\\
-                \hline
-                R-30-F-Ob & L'Utente deve poter inserire il nome del dispositivo nell'apposito form di creazione & \hyperref[uc:uc10.1.1]{UC10.1.1}\\
-                \hline
-                R-31-F-Ob & L'Utente deve poter inserire il sistema operativo del dispositivo nell'apposito form di creazione & \hyperref[uc:uc10.1.2]{UC10.1.2}\\
-                \hline
-                R-32-F-Ob & L'Utente deve poter inserire la versione del firmware del dispositivo nell'apposito form di creazione & \hyperref[uc:uc10.1.3]{UC10.1.3}\\
-                \hline
-                R-33-F-Ob & L'Utente deve poter inserire le funzionalitá del dispositivo nell'apposito form di creazione & \hyperref[uc:uc10.1.4]{UC10.1.4}\\
-                \hline
-                R-34-F-Ob & L'Utente deve poter inserire la descrizone del dispositivo nell'apposito form di creazione & \hyperref[uc:uc10.1.5]{UC10.1.5}\\
-                \hline
-                R-35-F-Ob & L'Utente deve poter salvare il form per l'inserimento manuale dei dati del dispositivo & \hyperref[uc:uc11]{UC11}\\
-                \hline
-                R-36-F-Ob & L'Utente deve poter inserire manualmente gli asset del dispositivo & \hyperref[uc:uc12]{UC12}\\
-                \hline
-                R-37-F-Ob & L'Utente deve poter visualizzare il form per l'inserimento dei dati di un singolo asset & \hyperref[uc:uc12.1]{UC12.1}\\
-                \hline
-                R-38-F-Ob & L'Utente deve poter inserire il nome dell'asset nel form apposito & \hyperref[uc:uc12.1.1]{UC12.1.1}\\
-                \hline
-                R-39-F-Ob & L'Utente deve poter scegliere il tipo dell'asset nel form apposito & \hyperref[uc:uc12.1.2]{UC12.1.2}\\
-                \hline
-                R-40-F-Ob & L'Utente deve poter inserire la descrizione dell'asset nel form apposito & \hyperref[uc:uc12.1.3]{UC12.1.3}\\
-                \hline
-                R-41-F-Ob & L'Utente deve poter inserire la sensibilitá dell'asset nel form apposito & \hyperref[uc:uc12.1.4]{UC12.1.4}\\
-                \hline
-                R-42-F-Ob & L'Utente deve poter salvare il form per la creazione manuale dell'asset & \hyperref[uc:uc13]{UC13}\\
-                \hline
-                R-43-F-Ob & L'Utente deve poter visualizzare la lista di assets creati fino a quel momento & \hyperref[uc:uc13.1]{UC13.1}\\
-                \hline
-                R-44-F-Ob & L'Utente deve poter visualizzare il nome del singolo asset creato & \hyperref[uc:uc13.1.1]{UC13.1.1}\\
-                \hline
-                R-45-F-Ob & L'Utente deve poter eliminare il singolo asset creato & \hyperref[uc:uc14]{UC14}\\
-                \hline
-                R-46-F-Ob & L'Utente deve poter annullare la creazione degli assets & \hyperref[uc:uc15]{UC15}\\
-                \hline
-                R-47-F-Ob & L'Utente deve poter salvare la lista di assets creati manualmente & \hyperref[uc:uc16]{UC16}\\
-                \hline
-                R-48-F-Ob & L'Utente deve poter effettuare il caricamento di un test precedente & \hyperref[uc:uc17]{UC17}\\
-                \hline
-                R-49-F-Ob & L'Utente deve poter annullare la creazione degli assets & \hyperref[uc:uc15]{UC15}\\
-                \hline
-                R-50-F-Ob & L'Utente deve poter modificare i risultati di un test completato o caricato & \hyperref[uc:uc18]{UC18}\\
-                \hline
-                R-51-F-Ob & L'Utente deve poter modificare un test a partire da un nodo scelto & \hyperref[uc:uc18]{UC18}\\
-                \hline
-                R-52-F-Ob & L'Utente deve poter riprendere l'esecuzione di un test non completato & \hyperref[uc:uc19]{UC19}\\
-                \hline
-                R-53-F-Op & L'Utente deve poter ottenere le giustificazioni riguardo ai risultati di un test completato & \hyperref[uc:uc20]{UC20}\\
-                \hline
-                R-54-F-Op & L'Utente deve poter accedere all'editor grafico per la modifica del decision tree & \hyperref[uc:uc21]{UC21}\\
-                \hline
-                R-55-F-Op & L'Utente deve poter visualizzare l'elenco dei decision tree & \hyperref[uc:uc21.1]{UC21.1}\\
-                \hline
-                R-56-F-Op & L'Utente deve poter visualizzare il singolo decision tree & \hyperref[uc:uc21.1.1]{UC21.1.1}\\
-                \hline
-                R-57-F-Op & L'Utente deve poter visualizzare l'id del requisito rappresentato dal decision tree & \hyperref[uc:uc21.1.1.1]{UC21.1.1.1}\\
-                \hline
-                R-58-F-Op & L'Utente deve poter visualizzare il titolo del decision tree & \hyperref[uc:uc21.1.1.2]{UC21.1.1.2}\\
-                \hline
-                R-59-F-Op & L'Utente deve poter visualizzare le dipendenze del decision tree se presenti & \hyperref[uc:uc21.1.1.3]{UC21.1.1.3}\\
-                \hline
-                R-60-F-Op & L'Utente deve poter selezionare un decision tree che intende modificare & \hyperref[uc:uc22]{UC22}\\
-                \hline
-                R-61-F-Op & L'Utente deve poter visualizzare graficamente il decision tree che intende modificare & \hyperref[uc:uc22.1]{UC22.1}\\
-                \hline
-                R-62-F-Op & L'Utente deve poter selezionare un nodo del decision tree da modificare & \hyperref[uc:uc23]{UC23}\\
-                \hline
-                R-63-F-Op & L'Utente deve poter visualizzare il testo della domanda che intende modificare & \hyperref[uc:uc23]{UC23}\\
-                \hline
-                R-64-F-Op & L'Utente deve poter visualizzare i collegamenti che intende modificare del decision tree & \hyperref[uc:uc23]{UC23}\\
-                \hline
-                R-65-F-Op & L'Utente deve poter aggiungere un nodo al decision tree & \hyperref[uc:uc24]{UC24}\\
-                \hline
-                R-66-F-Op & L'Utente deve poter eliminare un nodo del decision tree & \hyperref[uc:uc25]{UC25}\\
-                \hline
-                R-67-F-Op & L'Utente deve poter modificare i collegamenti tra i nodi di un decision tree & \hyperref[uc:uc26]{UC26}\\
-                \hline
-                R-68-F-Op & L'Utente deve poter sapere se il decision tree modificato é valido o meno & \hyperref[uc:uc27]{UC27}\\
-                \hline
-                R-69-F-Op & L'Utente deve ricevere una segnalazione in seguito a degli errori nella modifica di un decision tree & \hyperref[uc:uc28]{UC28}\\
-                \hline
-                R-70-F-Op & L'Utente deve poter esportare il decision tree correttamente modificato & \hyperref[uc:uc29]{UC29}\\
-                \hline
-                R-71-F-Op & L'Utente deve poter accedere all'editor del documento di un dispositivo & \hyperref[uc:uc30]{UC30}\\
-                \hline
-                R-72-F-Op & L'Utente deve poter visualizzare i dati del dispositivo in modalitá modifica & \hyperref[uc:uc30.1]{UC30.1}\\
-                \hline
-                R-73-F-Op & L'Utente deve poter visualizzare la lista di assets del dispositivo con funzionalitá di seleziona e modifica & \hyperref[uc:uc31]{UC31}\\
-                \hline
-                R-74-F-Op & L'Utente deve poter selezionare l'asset da modificare & \hyperref[uc:uc32]{UC32}\\
-                \hline
-                R-75-F-Op & L'Utente deve poter modificare i dati dell'asset & \hyperref[uc:uc33]{UC33}\\
-                \hline
-                R-76-F-Op & L'Utente deve poter annullare la modifica dei dati dalle'asset & \hyperref[uc:uc34]{UC34}\\
-                \hline
-                R-77-F-Op & L'Utente deve poter confermare la modifica dei dati dell'asset & \hyperref[uc:uc35]{UC35}\\
-                \hline
-                R-78-F-Op & L'Utente deve poter salvare il documento modificato del dispositivo & \hyperref[uc:uc36]{UC36}\\
-                \hline
-                R-79-F-Op & L'Utente deve uscire dall'editor prima del salvataggio, riportando i dati del documento del dispositivo alla versione originale & \hyperref[uc:uc37]{UC37}\\
-                \hline
-            \end{longtable}
+                
+                R-1-F-Ob & L'Utente deve poter inserire un dispositivo & \hyperref[uc:uc1]{UC1} \\ \hline
+                R-2-F-Ob & L'Utente, per inserire un dispositivo, deve poter caricare un dispositivo nel Sistema & \hyperref[uc:uc2]{UC2} \\ \hline
+                R-3-F-Ob & L'Utente deve poter ricevere un errore in seguito ad un tentativo di caricamento di un file non valido & \hyperref[uc:uc3]{UC3} \\ \hline
+                R-4-F-Ob & L'Utente deve poter visualizzare il dispositivo inserito (caricato o creato) & \hyperref[uc:uc4]{UC4} \\ \hline
+                R-5-F-Ob & L'Utente, nel visualizzare il dispositivo inserito, deve poter visualizzare il nome del dispositivo & \hyperref[uc:uc4]{UC4}, \hyperref[uc:uc23.1]{UC23.1} \\ \hline
+                R-6-F-Ob & L'Utente deve poter visualizzare la lista degli assets di un dispositivo & \hyperref[uc:uc5]{UC5} \\ \hline
+                R-7-F-Ob & L'Utente, nel visualizzare la lista degli assets di un dispositivo, deve poter visualizzare un singolo asset & \hyperref[uc:uc5]{UC5}, \hyperref[uc:uc5.1]{UC5.1} \\ \hline
+                R-8-F-Ob & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il nome dell'asset & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-9-F-Ob & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il tipo dell'asset & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.2]{UC22.2} \\ \hline
+                R-10-F-Ob & L'Utente, dopo aver inserito un dispositivo, deve poter avviare e completare l'esecuzione di un test su quel dispositivo & \hyperref[uc:uc6]{UC6} \\ \hline
+                R-11-F-Ob & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere a una particolare domanda del test & \hyperref[uc:uc6]{UC6}, \hyperref[uc:uc6.1]{UC6.1} \\ \hline
+                R-12-F-Ob & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda precedente se seleziona la funzionalità corrispondente & \hyperref[uc:uc7]{UC7} \\ \hline
+                R-13-F-Ob & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda successiva se seleziona la funzionalità corrispondente & \hyperref[uc:uc8]{UC8} \\ \hline
+                R-14-F-Ob & L'Utente deve poter uscire anticipatamente da un test in fase di esecuzione su un dispositivo & \hyperref[uc:uc9]{UC9} \\ \hline
+                R-15-F-Ob & L'Utente deve poter visualizzare i risultati di un test (completato o caricato) & \hyperref[uc:uc10]{UC10} \\ \hline
+                R-16-F-Ob & L'Utente, nel visualizzare i risultati di un test, deve poter visualizzare la lista ordinata dei requisiti del test con i risultati & \hyperref[uc:uc10]{UC10}, \hyperref[uc:uc10.1]{UC10.1} \\ \hline
+                R-17-F-Ob & L'Utente, nel visualizzare la lista dei requisiti del test con i risultati, deve poter visualizzare un singolo requisito con risultato & \hyperref[uc:uc10.1]{UC10.1}, \hyperref[uc:uc10.1.1]{UC10.1.1} \\ \hline
+                R-18-F-Ob & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il nome del requisito & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-19-F-Ob & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato ottenuto per il requisito & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc10.1.1.1]{UC10.1.1.1}\\ \hline
+                R-20-F-D & L'Utente deve poter esportare un test completato & \hyperref[uc:uc11]{UC11} \\ \hline
+                R-21-F-Ob & L'Utente, per inserire un dispositivo, deve poter creare un dispositivo & \hyperref[uc:uc12]{UC12} \\ \hline
+                R-22-F-Ob & L'Utente, nel processo di creazione di un dispositivo, deve poter inserire i dati del dispositivo & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc12.1]{UC12.1} \\ \hline
+                R-23-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il nome del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.1]{UC12.1.1} \\ \hline
+                R-24-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il sistema operativo del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.2]{UC12.1.2} \\ \hline
+                R-25-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la versione del firmware del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.3]{UC12.1.3} \\ \hline
+                R-26-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la funzionalità del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.4]{UC12.1.4} \\ \hline
+                R-27-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la descrizione del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.5]{UC12.1.5} \\ \hline
+                R-28-F-Ob & L'Utente, nel processo di inserimento dei dati del dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi & \hyperref[uc:uc13]{UC13} \\ \hline
+                R-29-F-Ob & L'Utente, nel processo di creazione di un dispositivo, deve poter aggiungere almeno un asset & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc14]{UC14} \\ \hline
+                R-30-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter inserire il nome dell'asset & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.1]{UC14.1} \\ \hline
+                R-31-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter selezionare il tipo dell'asset & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.2]{UC14.2} \\ \hline
+                R-32-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter inserire la descrizione dell'asset &  \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.3]{UC14.3} \\ \hline
+                R-33-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter selezionare la sensibilità dell'asset &  \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.4]{UC14.4} \\ \hline
+                R-34-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi & \hyperref[uc:uc13]{UC13} \\ \hline
+                R-35-F-Ob & L'Utente deve poter annullare il processo di creazione di un asset & \hyperref[uc:uc15]{UC15} \\ \hline
+                R-36-F-Ob & L'Utente deve poter annullare il processo di creazione di un dispositivo & \hyperref[uc:uc19]{UC19} \\ \hline
+                R-37-F-Ob & L'Utente deve poter eliminare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente & \hyperref[uc:uc16]{UC16} \\ \hline
+                R-38-F-Op & L'Utente deve poter modificare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente & \hyperref[uc:uc17]{UC17} \\ \hline
+                R-39-F-Op & L'Utente, nel processo di modifica di un asset, deve poter modificare il nome del dispositivo & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.1]{UC17.1} \\ \hline
+                R-40-F-Op & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione del tipo del dispositivo & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.2]{UC17.2} \\ \hline
+                R-41-F-Op & L'Utente, nel processo di modifica di un asset, deve poter modificare la descrizione del dispositivo & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.3]{UC17.3} \\ \hline
+                R-42-F-Op & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione della sensibilità del dispositivo & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.4]{UC17.4} \\ \hline
+                R-43-F-Op & L'Utente, nel processo di modifica di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi & \hyperref[uc:uc13]{UC13} \\ \hline
+                R-44-F-Op & L'Utente deve poter annullare il processo di modifica di un asset & \hyperref[uc:uc18]{UC18} \\ \hline
+                R-45-F-Ob & L'Utente deve poter visualizzare un avviso che indica la presenza di modifiche non salvate se ha creato un dispositivo o ha apportato modifiche ad un dispositivo esistente & \hyperref[uc:uc19]{UC19} \\ \hline
+                R-46-F-Ob & L'Utente deve poter effettuare il salvataggio delle modifiche non salvate quando visualizza l'avviso che indica la presenza di modifiche non salvate & \hyperref[uc:uc20]{UC20}, \hyperref[uc:uc21]{UC21}\\ \hline
+                R-47-F-Ob & L'Utente deve poter visualizzare le informazioni di un singolo asset nel dettaglio selezionandolo dalla lista degli assets di un dispositivo & \hyperref[uc:uc22]{UC22} \\ \hline
+                R-48-F-Ob & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il nome dell'asset & \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-49-F-Ob & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il tipo dell'asset & \hyperref[uc:uc22.2]{UC22.2} \\ \hline
+                R-50-F-Ob & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la descrizione dell'asset & \hyperref[uc:uc22.3]{UC22.3} \\ \hline
+                R-51-F-Ob & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la sensibilità dell'asset & \hyperref[uc:uc22.4]{UC22.4} \\ \hline
+                R-52-F-Ob & L'Utente deve poter visualizzare i dati del dispositivo inserito nel dettaglio & \hyperref[uc:uc23]{UC23} \\ \hline
+                R-53-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il nome del dispositivo & \hyperref[uc:uc23.1]{UC23.1} \\ \hline
+                R-54-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il sistema operativo del dispositivo & \hyperref[uc:uc23.2]{UC23.2} \\ \hline
+                R-55-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la versione del firmware del dispositivo & \hyperref[uc:uc23.3]{UC23.3} \\ \hline
+                R-56-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la funzionalità del dispositivo & \hyperref[uc:uc23.4]{UC23.4} \\ \hline
+                R-57-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la descrizione del dispositivo & \hyperref[uc:uc23.5]{UC23.5} \\ \hline
+                R-58-F-Ob & L'Utente deve poter caricare un test precedentemente effettuato & \hyperref[uc:uc24]{UC24} \\ \hline
+                R-59-F-Ob & L'Utente deve poter ricevere un errore se carica come test precedente un file non valido & \hyperref[uc:uc24]{UC24}, \hyperref[uc:uc2]{UC2} \\ \hline
+                R-60-F-Ob & L'Utente deve poter modificare i risultati di un test che ha caricato o completato selezionando un particolare asset da cui riprendere l'esecuzione & \hyperref[uc:uc25]{UC25} \\ \hline
+                R-61-F-Ob & L'Utente, nel modificare i risultati di un test che ha caricato o completato, deve poter riprendere l'esecuzione del test a partire dall'asset selezionato & \hyperref[uc:uc25]{UC25}, \hyperref[uc:uc6]{UC6} \\ \hline
+                R-62-F-Ob & L'Utente deve poter completare l'esecuzione di un test caricato non completato & \hyperref[uc:uc26]{UC26} \\ \hline
+                R-63-F-Ob & L'Utente, nel completare l'esecuzione di un test non completato, deve poter riprendere l'esecuzione del test a partire dal punto in cui era stato precedentemente fermato & \hyperref[uc:uc26]{UC26}, \hyperref[uc:uc6]{UC6} \\ \hline
+                R-64-F-Op & L'Utente deve poter visualizzare la lista delle giustificazioni di un test & \hyperref[uc:uc27]{UC27} \\ \hline
+                R-65-F-Op & L'Utente, nel visualizzare la lista delle giustificazioni di un test, deve poter visualizzare una singola giustificazione & \hyperref[uc:uc27.1]{UC27.1} \\ \hline
+                R-66-F-Op & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il nome del requisito & \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-67-F-Op & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il testo della giustificazione associata al requisito & \hyperref[uc:uc27.1.1]{UC27.1.1} \\ \hline
+                R-68-F-Ob & L'Utente deve poter visualizzare la lista degli assets con risultati di un requisito nel dettaglio selezionando un particolare requisito dalla lista dei requisiti del test con i risultati & \hyperref[uc:uc28]{UC28} \\ \hline
+                R-69-F-Ob & L'Utente, nel visualizzare la lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare un singolo asset con risultato & \hyperref[uc:uc28.1]{UC28.1} \\ \hline
+                R-70-F-Ob & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il nome dell'asset & \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-71-F-Ob & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il risultato dell'asset & \hyperref[uc:uc28.1.1]{UC28.1.1} \\ \hline
+                R-72-F-Ob & L'Utente deve poter eliminare un dispositivo che ha inserito & \hyperref[uc:uc29]{UC29} \\ \hline
+                R-73-F-Op & L'Utente deve poter modificare i dati del dispositivo che ha inserito & \hyperref[uc:uc30]{UC30} \\ \hline
+                R-74-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il nome del dispositivo & \hyperref[uc:uc30.1]{UC30.1} \\ \hline
+                R-75-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il sistema operativo del dispositivo & \hyperref[uc:uc30.2]{UC30.2} \\ \hline
+                R-76-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la versione del firmware del dispositivo & \hyperref[uc:uc30.3]{UC30.3} \\ \hline
+                R-77-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la funzionalità del dispositivo & \hyperref[uc:uc30.4]{UC30.4} \\ \hline
+                R-78-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la descrizione del dispositivo & \hyperref[uc:uc30.5]{UC30.5} \\ \hline
+                R-79-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-80-F-Op & L'Utente deve poter annullare il processo di modifica dei dati di un dispositivo & \hyperref[uc:uc31]{UC31} \\ \hline
+                R-81-F-Op & L'Utente deve poter visualizzare l'elenco dei decision trees selezionando la funzionalità corrispondente & \hyperref[uc:uc32]{UC32} \\ \hline
+                R-82-F-Op & L'Utente, nel visualizzare l'elenco dei decision trees, deve poter visualizzare un singolo decision tree & \hyperref[uc:uc32.1]{UC32.1} \\ \hline
+                R-83-F-Op & L'Utente deve poter visualizzare un singolo decision tree nel dettaglio selezionandolo dalla lista dei decision trees & \hyperref[uc:uc33]{UC33} \\ \hline
+                R-84-F-Op & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare l'id del requisito associato al decision tree & \hyperref[uc:uc33.1]{UC33.1} \\ \hline
+                R-85-F-Op & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare il nome del requisito associato al decision tree & \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-86-F-Op & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare le dipendenze del requisito associato al decision tree & \hyperref[uc:uc33.3]{UC33.3} \\ \hline
+                R-87-F-Op & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il grafo che rappresenta il decision tree & \hyperref[uc:uc33.4]{UC33.4} \\ \hline
+                R-88-F-Op & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi interni del grafo & \hyperref[uc:uc33.4.1]{UC33.4.1} \\ \hline
+                R-89-F-Op & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il codice univoco del nodo &  \hyperref[uc:uc33.4.1.1]{UC33.4.1.1} \\ \hline
+                R-90-F-Op & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il testo della domanda del nodo & \hyperref[uc:uc33.4.1.2]{UC33.4.1.2}  \\ \hline
+                R-91-F-Op & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi foglia del grafo & \hyperref[uc:uc33.4.2]{UC33.4.2} \\ \hline
+                R-92-F-Op & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i collegamenti fra i nodi del grafo & \hyperref[uc:uc33.4.3]{UC33.4.3} \\ \hline
+                R-93-F-Op & L'Utente deve poter modificare un decision tree & \hyperref[uc:uc34]{UC34} \\ \hline
+                R-94-F-Op & L'Utente, per modificare un decision tree, deve poter aggiungere un nodo al decision tree & \hyperref[uc:uc35]{UC35} \\ \hline
+                R-95-F-Op & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il codice univoco del nodo & \hyperref[uc:uc35.1]{UC35.1} \\ \hline
+                R-96-F-Op & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il testo della domanda del nodo & \hyperref[uc:uc35.2]{UC35.2} \\ \hline
+                R-97-F-Op & L'Utente, per modificare un decision tree, deve poter eliminare un nodo dal decision tree & \hyperref[uc:uc36]{UC36} \\ \hline
+                R-98-F-Op & L'Utente deve poter ricevere un errore se cerca di eliminare il nodo root di un decision tree & \hyperref[uc:uc37]{UC37} \\ \hline
+                R-99-F-Op & L'Utente, per modificare un decision tree, deve poter modificare la destinazione di un collegamento del decision tree & \hyperref[uc:uc38]{UC38} \\ \hline
+                R-100-F-Op & L'Utente deve poter ricevere un errore se la validazione della modifica del decision tree fallisce & \hyperref[uc:uc39]{UC39} \\ \hline
+                R-101-F-Op & L'Utente deve poter annullare il processo di modifica di un decision tree & \hyperref[uc:uc40]{UC40} \\ \hline
+                R-102-F-Op & L'Utente deve poter esportare un decision tree & \hyperref[uc:uc41]{UC41} \\ \hline
+                
+                \end{longtable}
     }
 
     \newpage
@@ -2473,22 +2434,138 @@
 \newpage
 
 \section{Tracciamento dei Requisiti}{
-    \begin{table}[H]
-    \centering
     \rowcolors{2}{lightblue}{white}
-        \begin{tabular}{|p{5cm}|p{5cm}|}
-            \hline
-            \rowcolor{gold}
-            \textbf{Fonte} & \textbf{Requisito} \\
-            \hline
-            Capitolato & Id requisito \\
-            \hline
-            UC1 & Id requisito \\
-            \hline
-        \end{tabular}
-        \caption{Tabella di tracciamento dei requisiti} 
-        \label{tab:tracciamento-requisiti}
-    \end{table}
+                \begin{longtable}{|
+                    >{\centering\arraybackslash}p{.5\textwidth}|
+                    >{\centering\arraybackslash}p{.5\textwidth}|
+                }
+                \caption{Tabella di tracciamento dei requisiti} 
+                \label{tab:tracciamento-requisiti} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Requisito} & \textbf{Casi d'Uso} \\
+                \hline
+                \endfirsthead
+                
+                \multicolumn{2}{c}%
+                {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Requisito} & \textbf{Casi d'Uso} \\
+                \hline
+                \endhead
+                
+                \hline
+                \multicolumn{2}{r}{\textit{continua nella pagina successiva}} \\
+                \endfoot
+                
+                \hline
+                \endlastfoot
+                
+                R-1-F-Ob & \hyperref[uc:uc1]{UC1} \\ \hline
+                R-2-F-Ob & \hyperref[uc:uc2]{UC2} \\ \hline
+                R-3-F-Ob & \hyperref[uc:uc3]{UC3} \\ \hline
+                R-4-F-Ob & \hyperref[uc:uc4]{UC4} \\ \hline
+                R-5-F-Ob & \hyperref[uc:uc4]{UC4}, \hyperref[uc:uc23.1]{UC23.1} \\ \hline
+                R-6-F-Ob & \hyperref[uc:uc5]{UC5} \\ \hline
+                R-7-F-Ob & \hyperref[uc:uc5]{UC5}, \hyperref[uc:uc5.1]{UC5.1} \\ \hline
+                R-8-F-Ob & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-9-F-Ob & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.2]{UC22.2} \\ \hline
+                R-10-F-Ob & \hyperref[uc:uc6]{UC6} \\ \hline
+                R-11-F-Ob & \hyperref[uc:uc6]{UC6}, \hyperref[uc:uc6.1]{UC6.1} \\ \hline
+                R-12-F-Ob & \hyperref[uc:uc7]{UC7} \\ \hline
+                R-13-F-Ob & \hyperref[uc:uc8]{UC8} \\ \hline
+                R-14-F-Ob & \hyperref[uc:uc9]{UC9} \\ \hline
+                R-15-F-Ob & \hyperref[uc:uc10]{UC10} \\ \hline
+                R-16-F-Ob & \hyperref[uc:uc10]{UC10}, \hyperref[uc:uc10.1]{UC10.1} \\ \hline
+                R-17-F-Ob & \hyperref[uc:uc10.1]{UC10.1}, \hyperref[uc:uc10.1.1]{UC10.1.1} \\ \hline
+                R-18-F-Ob & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-19-F-Ob & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc10.1.1.1]{UC10.1.1.1}\\ \hline
+                R-20-F-D &  \hyperref[uc:uc11]{UC11} \\ \hline
+                R-21-F-Ob & \hyperref[uc:uc12]{UC12} \\ \hline
+                R-22-F-Ob & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc12.1]{UC12.1} \\ \hline
+                R-23-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.1]{UC12.1.1} \\ \hline
+                R-24-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.2]{UC12.1.2} \\ \hline
+                R-25-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.3]{UC12.1.3} \\ \hline
+                R-26-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.4]{UC12.1.4} \\ \hline
+                R-27-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.5]{UC12.1.5} \\ \hline
+                R-28-F-Ob & \hyperref[uc:uc13]{UC13} \\ \hline
+                R-29-F-Ob & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc14]{UC14} \\ \hline
+                R-30-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.1]{UC14.1} \\ \hline
+                R-31-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.2]{UC14.2} \\ \hline
+                R-32-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.3]{UC14.3} \\ \hline
+                R-33-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.4]{UC14.4} \\ \hline
+                R-34-F-Ob & \hyperref[uc:uc13]{UC13} \\ \hline
+                R-35-F-Ob & \hyperref[uc:uc15]{UC15} \\ \hline
+                R-36-F-Ob & \hyperref[uc:uc19]{UC19} \\ \hline
+                R-37-F-Ob & \hyperref[uc:uc16]{UC16} \\ \hline
+                R-38-F-Op & \hyperref[uc:uc17]{UC17} \\ \hline
+                R-39-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.1]{UC17.1} \\ \hline
+                R-40-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.2]{UC17.2} \\ \hline
+                R-41-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.3]{UC17.3} \\ \hline
+                R-42-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.4]{UC17.4} \\ \hline
+                R-43-F-Op & \hyperref[uc:uc13]{UC13} \\ \hline
+                R-44-F-Op & \hyperref[uc:uc18]{UC18} \\ \hline
+                R-45-F-Ob & \hyperref[uc:uc19]{UC19} \\ \hline
+                R-46-F-Ob & \hyperref[uc:uc20]{UC20}, \hyperref[uc:uc21]{UC21}\\ \hline
+                R-47-F-Ob & \hyperref[uc:uc22]{UC22} \\ \hline
+                R-48-F-Ob & \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-49-F-Ob & \hyperref[uc:uc22.2]{UC22.2} \\ \hline
+                R-50-F-Ob & \hyperref[uc:uc22.3]{UC22.3} \\ \hline
+                R-51-F-Ob & \hyperref[uc:uc22.4]{UC22.4} \\ \hline
+                R-52-F-Ob & \hyperref[uc:uc23]{UC23} \\ \hline
+                R-53-F-Ob & \hyperref[uc:uc23.1]{UC23.1} \\ \hline
+                R-54-F-Ob & \hyperref[uc:uc23.2]{UC23.2} \\ \hline
+                R-55-F-Ob & \hyperref[uc:uc23.3]{UC23.3} \\ \hline
+                R-56-F-Ob & \hyperref[uc:uc23.4]{UC23.4} \\ \hline
+                R-57-F-Ob & \hyperref[uc:uc23.5]{UC23.5} \\ \hline
+                R-58-F-Ob & \hyperref[uc:uc24]{UC24} \\ \hline
+                R-59-F-Ob & \hyperref[uc:uc24]{UC24}, \hyperref[uc:uc2]{UC2} \\ \hline
+                R-60-F-Ob & \hyperref[uc:uc25]{UC25} \\ \hline
+                R-61-F-Ob & \hyperref[uc:uc25]{UC25}, \hyperref[uc:uc6]{UC6} \\ \hline
+                R-62-F-Ob & \hyperref[uc:uc26]{UC26} \\ \hline
+                R-63-F-Ob & \hyperref[uc:uc26]{UC26}, \hyperref[uc:uc6]{UC6} \\ \hline
+                R-64-F-Op & \hyperref[uc:uc27]{UC27} \\ \hline
+                R-65-F-Op & \hyperref[uc:uc27.1]{UC27.1} \\ \hline
+                R-66-F-Op & \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-67-F-Op & \hyperref[uc:uc27.1.1]{UC27.1.1} \\ \hline
+                R-68-F-Ob & \hyperref[uc:uc28]{UC28} \\ \hline
+                R-69-F-Ob & \hyperref[uc:uc28.1]{UC28.1} \\ \hline
+                R-70-F-Ob & \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-71-F-Ob & \hyperref[uc:uc28.1.1]{UC28.1.1} \\ \hline
+                R-72-F-Ob & \hyperref[uc:uc29]{UC29} \\ \hline
+                R-73-F-Op & \hyperref[uc:uc30]{UC30} \\ \hline
+                R-74-F-Op & \hyperref[uc:uc30.1]{UC30.1} \\ \hline
+                R-75-F-Op & \hyperref[uc:uc30.2]{UC30.2} \\ \hline
+                R-76-F-Op & \hyperref[uc:uc30.3]{UC30.3} \\ \hline
+                R-77-F-Op & \hyperref[uc:uc30.4]{UC30.4} \\ \hline
+                R-78-F-Op & \hyperref[uc:uc30.5]{UC30.5} \\ \hline
+                R-79-F-Op & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-80-F-Op & \hyperref[uc:uc31]{UC31} \\ \hline
+                R-81-F-Op & \hyperref[uc:uc32]{UC32} \\ \hline
+                R-82-F-Op & \hyperref[uc:uc32.1]{UC32.1} \\ \hline
+                R-83-F-Op & \hyperref[uc:uc33]{UC33} \\ \hline
+                R-84-F-Op & \hyperref[uc:uc33.1]{UC33.1} \\ \hline
+                R-85-F-Op & \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-86-F-Op & \hyperref[uc:uc33.3]{UC33.3} \\ \hline
+                R-87-F-Op & \hyperref[uc:uc33.4]{UC33.4} \\ \hline
+                R-88-F-Op & \hyperref[uc:uc33.4.1]{UC33.4.1} \\ \hline
+                R-89-F-Op & \hyperref[uc:uc33.4.1.1]{UC33.4.1.1} \\ \hline
+                R-90-F-Op & \hyperref[uc:uc33.4.1.2]{UC33.4.1.2}  \\ \hline
+                R-91-F-Op & \hyperref[uc:uc33.4.2]{UC33.4.2} \\ \hline
+                R-92-F-Op & \hyperref[uc:uc33.4.3]{UC33.4.3} \\ \hline
+                R-93-F-Op & \hyperref[uc:uc34]{UC34} \\ \hline
+                R-94-F-Op & \hyperref[uc:uc35]{UC35} \\ \hline
+                R-95-F-Op & \hyperref[uc:uc35.1]{UC35.1} \\ \hline
+                R-96-F-Op & \hyperref[uc:uc35.2]{UC35.2} \\ \hline
+                R-97-F-Op & \hyperref[uc:uc36]{UC36} \\ \hline
+                R-98-F-Op & \hyperref[uc:uc37]{UC37} \\ \hline
+                R-99-F-Op & \hyperref[uc:uc38]{UC38} \\ \hline
+                R-100-F-Op & \hyperref[uc:uc39]{UC39} \\ \hline
+                R-101-F-Op & \hyperref[uc:uc40]{UC40} \\ \hline
+                R-102-F-Op & \hyperref[uc:uc41]{UC41} \\ \hline
+                
+                \end{longtable}
 
     \subsection{Riepilogo}{
         \begin{table}[H]
@@ -2499,13 +2576,13 @@
                 \rowcolor{gold}
                 \textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Desiderabili} & \textbf{Opzionali} & \textbf{Totali} \\
                 \hline
-                Funzionali & XX & XX & XX & XX \\
+                Funzionali & 60 & 1 & 41 & 102 \\
                 \hline
-                Qualità & XX & XX & XX & XX \\
+                Qualità & 7 & 0 & 0 & 7 \\
                 \hline
-                Vincolo & XX & XX & XX & XX \\
+                Vincolo & 6 & 0 & 0 & 6 \\
                 \hline
-                \textbf{Totali} & \textbf{XX} & \textbf{XX} & \textbf{XX} & \textbf{XX} \\
+                \textbf{Totali} & \textbf{73} & \textbf{1} & \textbf{41} & \textbf{115} \\
                 \hline
             \end{tabular}
             \caption{Riepilogo dei requisiti} 
