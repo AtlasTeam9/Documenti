@@ -128,6 +128,8 @@
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
+            v0.8.1 & 2026/02/05 & Andrea Difino & Giacomo Giora & Correzioni varie\\
+            \hline
             v0.8.0 & 2026/01/07 & Riccardo Valerio & Francesco Marcolongo & Stesura sez. 7\\
             \hline
             v0.7.2 & 2025/12/31 & Federico Simonetto & Michele Tesser & Fine stesura sez. 5\\
@@ -385,12 +387,12 @@
         Il team ha deciso di approfondire di seguito le sole attività di analisi dei requisiti di sistema e codifica del software in vista della \textit{Requirements and Technology Baseline}. Crediamo infatti che, per questa baseline di progetto, le due attività sopra menzionate siano quelle che richiedono una spiegazione più approfondita. Le altre principali attività che il team presenterà verranno aggiunte dopo il “semaforo verde” della RTB.
 
         \subsubsection{Attività di analisi dei requisiti}{
-            L'analisi dei requisiti è un'attività cardine di ogni progetto e, in particolare, della baseline di progetto \textit{Requirements and Technology Baseline}. Questa consiste nell'individuare tutti i requisiti, funzionali e non, che il prodotto software deve soddisfare. L'analisi effettuata dal team può essere visualizzata nell'\href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Analisi dei Requisiti.pdf}{apposito documento}.
+            L'analisi dei requisiti è un'attività cardine di ogni progetto e, in particolare, della baseline di progetto \textit{Requirements and Technology Baseline}. Questa consiste nell'individuare tutti i requisiti, funzionali e non, che il prodotto software deve soddisfare. L'analisi effettuata dal team può essere visualizzata nell'\href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{apposito documento}.
             \newline
             In particolare, vengono riportati i casi d'uso ed i relativi requisiti secondo la seguente convenzione.
             
             \paragraph{Casi d'uso}\hfill\break{
-                I casi d'uso sono identificati secondo il seguente formato: \textbf{UC-Principale.Alternativo}\newline
+                I casi d'uso sono identificati secondo il seguente formato: \textbf{UCPrincipale.Alternativo}\newline
                 dove:
                 \begin{itemize}
                     \item \textbf{UC} è la sigla di Use Case, ovvero Caso d'Uso;
@@ -548,7 +550,7 @@
             \end{itemize}
             Ogni decisione ha un suo codice univoco e segue questo formato : "Dx (x numero della decisione)-ANNO/MESE/GIORNO\_vx" ("vi" se interno, "ve" se esterno).
             \\
-            Anche le attività hanno codici univoci e seguono questo formato : "Ax (x numero dell'attività)-ANNO/MESE/GIORNO\_vx".
+            Anche le attività hanno codici univoci e seguono questo formato : "Ax (x numero dell'attività)-ANNO/MESE/GIORNO\_vx" ("vi" se interno, "ve" se esterno).
         
         \paragraph{Diario di bordo}\hfill\break
             Questi documenti, creati nell'ambito dell'attività coordinata dal Prof. Tullio Vardanega, sono utilizzati per monitorare lo stato di avanzamento di ciascun gruppo del I lotto e hanno carattere puramente informativo.
@@ -562,9 +564,9 @@
         \paragraph{Denominazione dei documenti}\hfill\break
             I documenti, per la denominazione, seguono questo formato:
             \begin{itemize}
-                \item \textbf{Verbali interni} - VI-ANNO-MESE-GIORNO
-                \item \textbf{Verbali esterni} - VE-ANNO-MESE-GIORNO
-                \item \textbf{Diari di bordo} - DB-ANNO-MESE-GIORNO
+                \item \textbf{Verbali interni}: VI-ANNO-MESE-GIORNO
+                \item \textbf{Verbali esterni}: VE-ANNO-MESE-GIORNO
+                \item \textbf{Diari di bordo}: DB-ANNO-MESE-GIORNO
             \end{itemize}
             È stato deciso di adottare il formato \textbf{AAAA-MM-GG} per le date, al fine di semplificare la lettura e l'ordinamento cronologico dei documenti.
             La versione del documento si trova all'interno del file.    
@@ -574,9 +576,9 @@
     \subsubsection{Strumenti utilizzati}
         Per compilare la documentazione il gruppo utilizza tre strumenti utili:
         \begin{itemize}
-            \item \textbf{LaTeX}: un linguaggio mark-up usato per la redazione dei documenti scientifici e altro. Richiede la compilazione ogni volta che si fanno delle modifiche, a differenza di altri linguaggi mark-up come ad esempio Typst. Il gruppo utilizza esclusivamente LaTeX per scrivere tutta la documentazione.
-            \item \textbf{Overleaf}:  è una piattaforma online che consente di scrivere, modificare e compilare documenti LaTeX direttamente dal browser, facilitando la collaborazione in tempo reale e la gestione dei progetti senza installare software locali. Il gruppo utilizza questo sito per scrivere i documenti piccoli come i verbali.
-            \item \textbf{GitHub}: l'adozione di GitHub consente di semplificare i processi di verifica e approvazione dei documenti, garantendo al contempo il controllo delle modifiche tramite le Pull Request e permette di pianificare i prossimi passi usando il sistema di Ticketing.
+            \item \textbf{LaTeX}: un linguaggio mark-up usato per la redazione di documenti di alta qualità, specialmente scientifici e accademici. Richiede la compilazione a ogni nuova modifica, a differenza di altri linguaggi mark-up come ad esempio Typst. Il gruppo utilizza esclusivamente LaTeX per scrivere tutta la documentazione.
+            \item \textbf{Overleaf}: è una piattaforma online che consente di scrivere, modificare e compilare documenti LaTeX direttamente dal browser, facilitando la collaborazione in tempo reale e la gestione dei progetti senza installare software locali. Il gruppo utilizza questo editor online per scrivere i documenti piccoli come i verbali.
+            \item \textbf{GitHub}: l'adozione di GitHub consente di semplificare i processi di verifica e approvazione dei documenti, garantendo al contempo il controllo delle modifiche tramite le Pull Request. Permette inoltre di pianificare i passi successivi usando il sistema di Ticketing.
         \end{itemize}
 
     \subsubsection{Attività previste}
@@ -591,7 +593,7 @@
     \label{subsubsec:prod}
         La creazione di un documento prevede questi passaggi:
         \begin{itemize}
-            \item \textbf{Creazione della issue su GitHub tramite sistemi di ticketing}: viene aperta una issue per poter tenere traccia dell'andamento e per assegnare il responsabile di quel documento. Per file grandi come ad esempio il PdP vengono creati dei branch secondari per poter effettuare modifiche senza andare a modificare il branch principale. I documenti piccoli come i verbali vanno fatti direttamente in Overleaf senza dover aprire branch secondari.
+            \item \textbf{Creazione della issue su GitHub tramite sistemi di ticketing}: viene aperta una issue per poter tenere traccia dell'andamento e per assegnare il responsabile di quel documento. Per documenti grandi vengono creati dei branch secondari per poter effettuare modifiche senza andare a modificare il branch principale. I documenti piccoli come i verbali vanno fatti direttamente in Overleaf senza dover aprire branch secondari.
             \item \textbf{Inizio stesura}: La creazione del documento è determinata dall'assegnatario: ogni documento è prodotto dal soggetto responsabile delle relative attività.
             \item \textbf{Verifica}: dopo la stesura il file va verificato tramite Pull Request di GitHub oppure se è un verbale va verificato direttamente su Overleaf.
         \end{itemize}
@@ -600,7 +602,7 @@
 
     \subsubsection{Manutenzione}
     \label{subsubsec:maint}
-        È prevista la manutenzione della documentazione quando occorre apportare cambiamenti o aggiornamenti ai contenuti. Per fare la modifica si seguono i seguenti passi: 
+        È prevista la manutenzione della documentazione quando occorre apportare cambiamenti o aggiornamenti ai contenuti. Per fare una modifica si seguono i seguenti passi: 
         \begin{enumerate}
            \item Creare il nuovo branch di lavoro; 
            \item Effettuare le modifiche in locale;
@@ -672,31 +674,28 @@
                 \item la cifra \textbf{MAJOR} viene incrementata quando il codice o la documentazione vengono approvati per una release ufficiale.
             \end{itemize}
             
-            Tale sistema di versionamento è stato adottato dal team tramite la decisione
-            \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2025-11-07.pdf}{D2-2025/11/07\_vi}.
+            Tale sistema di versionamento è stato adottato dal team tramite la decisione \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2025-11-07.pdf}{D2-2025/11/07\_vi}.
             Per quanto riguarda la documentazione, ogni modifica viene inoltre segnalata all'inizio del documento mediante il registro delle modifiche.
         
 
         \subsubsection{Valutazione della configurazione}
             L'attività di valutazione della configurazione viene affrontata dal team mediante un'attività di tracciamento dei requisiti, definita all'interno del documento di
-            \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Analisi dei Requisiti.pdf}{Analisi dei Requisiti}.
+            \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti}.
             Tale attività viene svolta al fine di garantire che il prodotto software risulti funzionalmente completo, ossia che fornisca una risposta a tutti i requisiti richiesti dall'azienda proponente.
         
         
-      
-
     \subsection{Accertamento della qualità}
         Il processo di accertamento della qualità ha lo scopo di fornire adeguate garanzie che il prodotto software, i processi di sviluppo e la documentazione associata siano conformi ai requisiti specificati, agli standard adottati e alle pianificazioni stabilite.
 
         \subsubsection{Attività previste}
             Il processo di accertamento della qualità comprende le seguenti attività:
             \begin{enumerate}
-                \item \textbf{Implementazione del processo:} definizione, adozione e applicazione degli standard di qualità, delle metriche e delle procedure da utilizzare durante l'intero ciclo di vita del prodotto software.
-                \item \textbf{Accertamento del prodotto:} verifica della conformità del prodotto software e della documentazione associata ai requisiti specificati, agli standard di qualità definiti e ai criteri di accettazione stabiliti.
-                \item \textbf{Accertamento del processo:} verifica dell'aderenza dei processi del ciclo di vita del software alle procedure, agli standard e alle pianificazioni stabilite, valutandone la corretta applicazione e l'efficacia.
+                \item \textbf{Implementazione del processo}: definizione, adozione e applicazione degli standard di qualità, delle metriche e delle procedure da utilizzare durante l'intero ciclo di vita del prodotto software.
+                \item \textbf{Accertamento del prodotto}: verifica della conformità del prodotto software e della documentazione associata ai requisiti specificati, agli standard di qualità definiti e ai criteri di accettazione stabiliti.
+                \item \textbf{Accertamento del processo}: verifica dell'aderenza dei processi del ciclo di vita del software alle procedure, agli standard e alle pianificazioni stabilite, valutandone la corretta applicazione e l'efficacia.
             \end{enumerate}    
         
-        Le metriche individuate dal team di progetto sono descritte in modo dettagliato sia nel documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano_di_Qualifica.pdf}{Piano di Qualifica} sia nelle sezioni~\ref{sec:mpc} e \ref{sec:mpd} del documento attuale.
+        Le metriche individuate dal team di progetto sono descritte in modo dettagliato sia nel documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano%20di%20Qualifica.pdf}{Piano di Qualifica} sia nelle sezioni~\ref{sec:mpc} e \ref{sec:mpd} del documento attuale.
         L'andamento delle attività del team di progetto viene monitorato e aggiornato al termine di ogni sprint e riportato nel Piano di Qualifica mediante grafici appositamente elaborati.
     
 
@@ -721,7 +720,7 @@
 
         \subsubsection{Implementazione del processo}
             L'attività di implementazione del processo si basa sull'individuazione delle criticità che possono manifestarsi nel corso del progetto didattico.
-            Nella sezione 3 del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano_di_Progetto.pdf}{Piano di Progetto} è riportata un'accurata analisi dei rischi che include gran parte delle criticità previste, insieme alla probabilità di occorrenza e alle relative strategie di mitigazione. Tuttavia, in coerenza con quanto previsto dallo standard ISO/IEC 12207:1995 si riportano di seguito ulteriori criticità che potrebbero manifestarsi durante lo svolgimento del progetto didattico:
+            Nella sezione 3 del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano%20di%20Progetto.pdf}{Piano di Progetto} è riportata un'accurata analisi dei rischi che include gran parte delle criticità previste, insieme alla probabilità di occorrenza e alle relative strategie di mitigazione. Tuttavia, in coerenza con quanto previsto dallo standard ISO/IEC 12207:1995 si riportano di seguito ulteriori criticità che potrebbero manifestarsi durante lo svolgimento del progetto didattico:
             \begin{itemize}
                 \item \textbf{Disponibilità di fondi:} rischio di superamento del tetto di spesa massimo stabilito prima dell'aggiudicazione degli appalti. Tale rischio viene mitigato mediante un'accurata pianificazione delle attività e dei ruoli all'interno degli sprint. Inoltre vengono svolte regolarmente riunioni interne per individuare tempestivamente ulteriori problemi;
                 \item \textbf{Rischi associati alla codifica del prodotto software.} Questo rischio viene mitigato tramite un'accurata attività di verifica del software, descritta nella seguente sottosezione.
@@ -752,10 +751,20 @@
                     \item \textbf{Dati in uscita:} risultati attesi dall'esecuzione del programma, dato lo specifico input.
                 \end{itemize}
 
-                I test svolti dal team, durante lo svolgimento del progetto didattico verranno identificati mediante il seguente formato:
-                TODO: DA DEFINIRE NEL PdQ!!!!!!!!!!!!!
-            
-                Esistono diversi tipi di test.
+                I test effettuati dal team, durante lo svolgimento del progetto didattico verranno identificati mediante il formato \textbf{T-Id-Tipologia}, dove:
+                \begin{itemize}
+                    \item \textbf{T} sta per test;
+                    \item \textbf{Id} è un numero maggiore di zero, identificativo univoco di ogni test;
+                    \item \textbf{Tipologia} indica la tipologia del test. È rappresentata da uno di questi cinque valori:
+                    \begin{itemize}
+                        \item \textbf{U}: unità;
+                        \item \textbf{I}: integrazione;
+                        \item \textbf{S}: sistema;
+                        \item \textbf{R}: regressione;
+                        \item \textbf{A}: accettazione.
+                    \end{itemize}
+                \end{itemize}            
+                Come si può notare dalle diverse tipologie, esistono vari tipi di test.
                 
                 \subparagraph{Test di unità}\hfill\break
                     I test d'unità consistono nel testare singole unità software, quali funzioni, metodi o classi, in modo isolato rispetto al resto del sistema.\newline
@@ -777,6 +786,9 @@
                     
                 \subparagraph{Test di sistema}\hfill\break
                     I test di sistema verificano che il comportamento complessivo del sistema soddisfi tutti i requisiti software, definiti durante l'attività di analisi dei requisiti. Essi rientrano nella categoria dei test funzionali.
+
+                \subparagraph{Test di regressione}\hfill\break
+                    I test di regressione vengono eseguiti per verificare che modifiche o aggiornamenti al software non abbiano introdotto nuovi difetti o problemi nelle funzionalità già esistenti.
                     
                 \subparagraph{Test di accettazione}\hfill\break
                     I test di accettazione verificano che l'esecuzione del sistema soddisfi tutti i requisiti lato utente, definiti nel capitolato di presentazione.
@@ -939,7 +951,7 @@
         \subsubsection{Gestione repository}
             Si adotta un modello ispirato a GitHub Flow e semplificato rispetto al Git Flow tradizionale, in modo da avere un workflow leggero basato sui seguenti principi:
             \begin{itemize}
-                \item \textbf{Branching}: il branch \textit{main} contiene esclusivamente codice stabile e verificato, e documenti definitivi che vengono esposti nel \href{https://atlasteam9.github.io/Atlas/}{sito web del team}. Ogni nuova funzionalità o correzione di bug deve essere sviluppata in un branch dedicato creato a partire dal ramo di sviluppo chiamato \textit{develop}, che deriva da \textit{main}, contiene i nuovi documenti e il codice su cui il team sta lavorando. 
+                \item \textbf{Branching}: il branch \textit{main} contiene esclusivamente codice stabile e verificato, e documenti definitivi che vengono esposti nel \href{https://atlasteam9.github.io/Atlas/}{sito web del team}. Ogni nuova funzionalità o correzione di bug deve essere sviluppata in un branch dedicato creato a partire dal ramo di sviluppo chiamato \textit{develop}, che deriva da \textit{main}, contenente i nuovi documenti e il codice su cui il team sta lavorando. 
                 \item \textbf{Nomenclatura branch}: i nuovi rami devono seguire uno schema identificativo ben definito:
                 \begin{itemize}
                     \item se il lavoro riguarda la stesura di un documento, il branch deve avere il nome docs/nome-documento;
@@ -956,7 +968,7 @@
         \subsubsection{Attività previste}
         Il processo si articola in tre attività principali:
             \begin{itemize}
-                \item \textbf{Inizializzazione dei processi}: definizione e formalizzazione dei processi organizzativi, con relativa documentazione nelle Norme di Progetto.
+                \item \textbf{Inizializzazione dei processi}: definizione e formalizzazione dei processi organizzativi, con relativa documentazione nelle \textit{Norme di Progetto}.
                 \item \textbf{Valutazione dei processi}: verifica periodica dell'efficacia dei processi tramite analisi di metriche, dati storici e risultati ottenuti.
                 \item \textbf{Miglioramento dei processi}: individuazione delle aree critiche e implementazione di soluzioni correttive, aggiornando la documentazione ufficiale quando necessario.
             \end{itemize}
@@ -1003,51 +1015,51 @@ Il team ha scelto di utilizzare lo standard ISO/IEC 9126 come riferimento per l'
 \subsection{Funzionalità}
 La funzionalità è la capacità di un prodotto software di fornire funzioni che soddisfano esigenze stabilite dal proponente. I suoi sotto-attributi sono:
 \begin{itemize}
-    \item \textbf{Adeguatezza}: misura quanto le funzionalità del software rispondono correttamente ai bisogni dell'utente.
-    \item \textbf{Accuratezza}: la capacità del prodotto software di fornire i risultati concordati o i precisi effetti richiesti. 
-    \item \textbf{Interoperabilità}: la capacità del prodotto software di interagire con altri sistemi.
-    \item \textbf{Sicurezza}: la capacità del prodotto software di proteggere informazioni e dati negando in ogni modo che persone o sistemi non autorizzati possano accedervi o modificarli.
+    \item \textbf{Adeguatezza}: misura quanto le funzionalità del software rispondono correttamente ai bisogni dell'utente;
+    \item \textbf{Accuratezza}: la capacità del prodotto software di fornire i risultati concordati o i precisi effetti richiesti; 
+    \item \textbf{Interoperabilità}: la capacità del prodotto software di interagire con altri sistemi;
+    \item \textbf{Sicurezza}: la capacità del prodotto software di proteggere informazioni e dati negando in ogni modo che persone o sistemi non autorizzati possano accedervi o modificarli;
     \item \textbf{Conformità}: è la conformità del software agli standard, alle norme e alle specifiche funzionali pertinenti.
 \end{itemize}
 
 \subsection{Affidabilità}
 L'affidabilità è la capacità del prodotto software di mantenere uno specificato livello di prestazioni quando usato in date condizioni per un dato periodo. Le sue sotto-caratteristiche sono:
 \begin{itemize}
-    \item \textbf{Maturità}: la capacità del software di gestire in modo stabile le operazioni, cercando di evitare errori, malfunzionamenti e risultati scorretti.
-    \item \textbf{Tolleranza agli errori}: la capacità di mantenere livelli predeterminati di prestazioni anche in presenza di malfunzionamenti o usi scorretti del prodotto.
-    \item \textbf{Recuperabilità}: la capacità del software di ripristinare le prestazioni desiderate dopo che si è verificato un errore.
+    \item \textbf{Maturità}: la capacità del software di gestire in modo stabile le operazioni, cercando di evitare errori, malfunzionamenti e risultati scorretti;
+    \item \textbf{Tolleranza agli errori}: la capacità di mantenere livelli predeterminati di prestazioni anche in presenza di malfunzionamenti o usi scorretti del prodotto;
+    \item \textbf{Recuperabilità}: la capacità del software di ripristinare le prestazioni desiderate dopo che si è verificato un errore;
     \item \textbf{Aderenza}: la capacità di aderire a standard, regole e convenzioni inerenti all'affidabilità.
 \end{itemize}
 \subsection{Efficienza}
 L'efficienza è la capacità di fornire appropriate prestazioni relativamente alla quantità di risorse usate. Le sue sotto-caratteristiche sono:
 \begin{itemize}
-    \item \textbf{Comportamento rispetto al tempo}: la capacità di fornire adeguati tempi di risorse, elaborazione e velocità di attraversamento, sotto condizioni specifiche e determinate.
-    \item \textbf{Utilizzo delle risorse}: la capacità di utilizzare le risorse in maniera adeguata.
+    \item \textbf{Comportamento rispetto al tempo}: la capacità di fornire adeguati tempi di risorse, elaborazione e velocità di attraversamento, sotto condizioni specifiche e determinate;
+    \item \textbf{Utilizzo delle risorse}: la capacità di utilizzare le risorse in maniera adeguata;
     \item \textbf{Conformità}: la capacità di aderire a standard e specifiche sull'efficienza.
 \end{itemize}
 \subsection{Usabilità}
 L'usabilità è la capacità del software di essere compreso, appreso e utilizzato dall'utente in condizioni specifiche. Le sue sotto-caratteristiche sono:
 \begin{itemize}
-    \item \textbf{Comprensibilità}: esprime quanto è facile comprendere i concetti del prodotto.
-    \item \textbf{Apprendibilità}: la capacità di ridurre l'impegno richiesto dall'utente per imparare ad usare la sua applicazione.
-    \item \textbf{Operabilità}: la capacità del software di consentire agli utenti di operare e controllare il sistema senza difficoltà.
-    \item \textbf{Attrattiva}: la capacità del software di essere piacevole per l'utente che ne fa uso.
+    \item \textbf{Comprensibilità}: esprime quanto è facile comprendere i concetti del prodotto;
+    \item \textbf{Apprendibilità}: la capacità di ridurre l'impegno richiesto dall'utente per imparare ad usare la sua applicazione;
+    \item \textbf{Operabilità}: la capacità del software di consentire agli utenti di operare e controllare il sistema senza difficoltà;
+    \item \textbf{Attrattiva}: la capacità del software di essere piacevole per l'utente che ne fa uso;
     \item \textbf{Conformità}: la capacità del software di aderire a standard o convenzioni relativi all'usabilità.
 \end{itemize}
 \subsection{Manutenibilità}
 La manutenibilità è la capacità del software di essere modificato, includendo correzioni, miglioramenti o adattamenti. Le sue sotto-caratteristiche sono:
 \begin{itemize}
-    \item \textbf{Analizzabilità}: rappresenta il grado di facilità con cui il codice può essere analizzato per individuare errori o difetti.
-    \item \textbf{Modificabilità }: la facilità con cui il software può essere modificato per aggiungere nuove funzionalità o per cambiare quelle esistenti.
-    \item \textbf{Stabilità}: la capacità del software di evitare effetti inaspettati derivanti da modifiche errate.
+    \item \textbf{Analizzabilità}: rappresenta il grado di facilità con cui il codice può essere analizzato per individuare errori o difetti;
+    \item \textbf{Modificabilità }: la facilità con cui il software può essere modificato per aggiungere nuove funzionalità o per cambiare quelle esistenti;
+    \item \textbf{Stabilità}: la capacità del software di evitare effetti inaspettati derivanti da modifiche errate;
     \item \textbf{Testabilità}: la capacità di essere facilmente testato per validare le modifiche apportate al software.
 \end{itemize}
 \subsection{Portabilità}
 La portabilità è la capacità del software di essere trasportato da un ambiente di lavoro ad un altro. Le sue sotto-caratteristiche sono:
 \begin{itemize}
-    \item \textbf{Adattabilità}: la capacità del software di adattarsi a diversi ambienti senza richiedere modifiche significative al codice sorgente o all'architettura.
-    \item \textbf{Installabilità }: la facilità con cui il software può essere installato in un nuovo ambiente.
-    \item \textbf{Conformità}: la capacità del software di aderire a convenzioni sulla portabilità.
+    \item \textbf{Adattabilità}: la capacità del software di adattarsi a diversi ambienti senza richiedere modifiche significative al codice sorgente o all'architettura;
+    \item \textbf{Installabilità }: la facilità con cui il software può essere installato in un nuovo ambiente;
+    \item \textbf{Conformità}: la capacità del software di aderire a convenzioni sulla portabilità;
     \item \textbf{Sostituibilità}: la capacità di essere utilizzato al posto di un altro software per svolgere gli stessi compiti nello stesso ambiente.
 \end{itemize}
 
