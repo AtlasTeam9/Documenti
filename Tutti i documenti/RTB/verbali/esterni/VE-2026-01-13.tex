@@ -34,18 +34,18 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloVerbale}{Verbale della Riunione}
-\newcommand{\DataVerbale}{2025/12/16}
-\newcommand{\NumeroVerbaleEsterno}{sesto}
+\newcommand{\DataVerbale}{2026/01/13}
+\newcommand{\NumeroVerbaleEsterno}{settimo}
 \newcommand{\OraInizio}{15:00}
-\newcommand{\OraFine}{15:30}
+\newcommand{\OraFine}{15:25}
 \newcommand{\LuogoVerbale}{Chiamata Google Meet}
-\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
-\newcommand{\AbstractVerbale}{%
-In questo verbale vengono riportati gli argomenti discussi, le domande poste e le risposte ricevute durante il \NumeroVerbaleEsterno \space meeting effettuato dal team \Gruppo \space con l'azienda \textbf{Bluewind S.r.l.} nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % DA CAMBIARE UNA VOLTA MESSO NELLA REPO IN ../../../Assets/AtlasLogo.png
+\newcommand{\AbstractVerbale}{
+    In questo verbale vengono riportati gli argomenti discussi, le domande poste e le risposte ricevute durante il \NumeroVerbaleEsterno \space meeting effettuato dal team \Gruppo \space con l'azienda \textbf{Bluewind S.r.l.} nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
 }
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneVerbale}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneVerbale}{v1.0.0}
 \newcommand{\VerbaleEsterno}{Esterno} 
 
 \pagestyle{fancy}
@@ -95,13 +95,13 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
         \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
-        Andrea Difino & SI & Analista\\
-        Federico Simonetto & SI & Amministratore\\
-        Riccardo Valerio & SI & Programmatore\\
-        Francesco Marcolongo & SI & Analista\\
-        Michele Tesser & SI & Verificatore\\
-        Giacomo Giora & SI & Analista\\
-        Bilal Sabic & SI & Responsabile\\
+        Andrea Difino & SI & Programmatore\\
+        Federico Simonetto & SI & Analista\\
+        Riccardo Valerio & SI & Amministratore\\
+        Francesco Marcolongo & SI & Verificatore\\
+        Michele Tesser & SI & Analista\\
+        Giacomo Giora & SI & Responsabile\\
+        Bilal Sabic & SI & Programmatore\\
     \end{tabular}
 
 \end{titlepage}
@@ -112,9 +112,9 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneVerbale & \DataVerbale & Bilal Sabic & Michele Tesser & Correzioni varie \\
+            \VersioneVerbale & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Correzioni varie \\
             \hline
-            v0.1.0 & \DataVerbale & Bilal Sabic &  & Prima stesura \\
+            v0.1.0 & \DataVerbale & Federico Simonetto &  & Prima stesura \\
             \hline
         \end{tabularx}
     \end{center}
@@ -141,9 +141,9 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
 
 \section{Ordine del giorno}{
     \begin{itemize}
-        \item Presentazione del modello grafico dell'applicazione software
-        \item Esposizione di domande relative al progetto
-        \item Presentazione del PoC
+        \item Presentazione dei cambiamenti nel Proof of Concept
+        \item Presentazione dei requisiti individuati
+        \item Riferimento all'azienda proponente della data per la fine della RTB
     \end{itemize}
 }
 
@@ -151,24 +151,18 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
 \section{Discussione}{
 
     % ----------------------------------------------------
-    \subsection{Presentazione del modello grafico dell'applicazione software}{
-        Durante l'incontro è stato presentato il modello grafico (GUI) dell'applicazione sviluppata. In questa fase sono stati richiesti all'azienda proponente pareri, conferme e chiarimenti su alcuni aspetti funzionali.
+    \subsection{Presentazione dei cambiamenti  nel Proof of Concept}{
+        Vengono mostrati all'azienda proponente i cambiamenti effettuati nel Proof of Concept, riguardanti un miglioramento nell'interfaccia grafica e nell'architettura del prodotto software.
     }
-    
-    \subsection{Domande relative al progetto}{
-        \textbf{Domanda:} Quando devono essere caricati i file degli alberi di decisione?
-        
-        \textbf{Risposta:} Gli stakeholder hanno precisato che i file relativi agli alberi di decisione devono essere caricati all'avvio dell'applicazione, in quanto risultano identici per tutti i dispositivi che l'utente può successivamente inserire o caricare.
-        
 
-        \textbf{Domanda:} Quali informazioni aggiuntive devono essere integrate negli asset e nei dispositivi?
-        
-        \textbf{Risposta:} Nel caso in cui un dispositivo venga inserito manualmente tramite l'applicazione, le informazioni aggiuntive da fornire sono quelle riportate negli esempi di file precedentemente inviati all'azienda. Ulteriori campi opzionali includono una descrizione del dispositivo e l'indicazione della sensibilità dell'asset.
+    \subsection{Presentazione dei requisiti individuati}{
+        Viene mostrata la lista dei requisiti funzionali agli stakeholder al fine di far venire a galla evenutali dubbi o perplessità riguardo le funzionalità che il prodotto software dovrà poi possedere. 
     }
     
-    \subsection{Presentazione del PoC}{
-        È stato infine presentato il primo Proof of Concept (PoC) sviluppato dal team. L'azienda proponente è rimasta sorpresa ed ha espresso un riscontro positivo, apprezzando le funzionalità e l'impostazione generale dell'applicazione.
+    \subsection{Riferimento all'azienda proponente della data per la fine della RTB}{
+        Viene comunicato all'azienda proponente il periodo in cui il team intende effettuare la presentazione della Requirements and Technology Baseline, individuato nella prima settimana di febbraio 2026.
     }
+    
    
 }
 \newpage
@@ -179,11 +173,12 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{ID} & \textbf{Decisione} \\
         \hline
-            D1-\DataVerbale\_ve & Fissata la successiva riunione in data 2026/01/13 alle ore 15.00 \\
+            D1-\DataVerbale\_ve & Concordato con l'azienda l'invio del file d'esempio di caso d'uso della macchina del caffè, proposto per la seguente settimana.\\
         \hline
     \end{tabular}
     \end{center}
 }
+
 
 \section{Attivitá da svolgere}{
     \begin{center}
@@ -191,7 +186,7 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
         \hline
         \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
         \hline
-            A1-\DataVerbale\_ve & Creare la repository GitHub riguardante il PoC per permettere all'azienda proponente di visualizzarlo & - & Giacomo Giora\\
+            A1-\DataVerbale\_ve & Inviare all'azienda proponente il file riguardante l'analisi dei requisiti effettuata & - & Andrea Difino\\
         \hline
     \end{tabular}
     \end{center}
@@ -206,3 +201,4 @@ In questo verbale vengono riportati gli argomenti discussi, le domande poste e l
 
 
 \end{document}
+
