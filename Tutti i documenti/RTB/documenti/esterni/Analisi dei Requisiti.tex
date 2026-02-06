@@ -196,15 +196,15 @@
 % ----------------------------
 \section{Introduzione}{
     \subsection{Scopo del documento}{
-        Il presente documento di \textit{Analisi dei requisiti} ha l'obiettivo di definire in modo chiaro, completo e verificabile l'insieme dei requisiti funzionali e non funzionali che il team \textit{Atlas} ha individuato nel corso dello sviluppo del progetto \textit{Automated EN18031 Compliance Verification}.
+        Il presente documento di \textit{Analisi dei requisiti} ha l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di definire in modo chiaro, completo e verificabile l'insieme dei requisiti funzionali e non funzionali che il team \textit{Atlas} ha individuato nel corso dello \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}} del progetto \textit{Automated EN18031 Compliance Verification}.
         \newline
-        A tal fine, il documento include una descrizione approfondita dei Casi d'Uso, da cui derivano i requisiti elencati. Tali Casi d'Uso sono illustrati tramite diagrammi che utilizzano la notazione UML, per formalizzarne la descrizione.
+        A tal fine, il documento include una descrizione approfondita dei Casi d'Uso, da cui derivano i requisiti elencati. Tali Casi d'Uso sono illustrati tramite diagrammi che utilizzano la notazione \textit{UML}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UML}{G}}, per formalizzarne la descrizione.
         \newline
         I requisiti presenti nel documento saranno classificati secondo il seguente livello di priorità:
         \begin{itemize}
-            \item \textbf{Obbligatorio:} requisito indispensabile, esplicitamente richiesto dallo stakeholder;
-            \item \textbf{Desiderabile:} requisito non essenziale, ma in grado di apportare un valore aggiunto riconoscibile;
-            \item \textbf{Opzionale:} requisito di importanza secondaria, la cui implementazione può essere rimandata o valutata in base a tempi e risorse disponibili.
+            \item \textbf{Obbligatorio:} \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} indispensabile, esplicitamente richiesto dallo \textit{stakeholder}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Stakeholder}{G}};
+            \item \textbf{Desiderabile:} \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non essenziale, ma in grado di apportare un valore aggiunto riconoscibile;
+            \item \textbf{Opzionale:} \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} di importanza secondaria, la cui implementazione può essere rimandata o valutata in base a tempi e risorse disponibili.
         \end{itemize}   
         Lo scopo dell'analisi dei requisiti non è descrivere le soluzioni tecniche adottate per l'implementazione, bensì definire in maniera concettuale le funzionalità del sistema. 
         In particolare, il documento si concentra su cosa il sistema deve fare, procedendo in modo gerarchico dall'esterno del sistema (utente e contesto) verso i suoi componenti interni.
@@ -212,11 +212,11 @@
         In particolare questo documento cerca di garantire le seguenti qualità:
         \begin{itemize}
             \item \textbf{Completezza:} tutti i requisiti rilevanti sono identificati e descritti in maniera esaustiva;
-            \item \textbf{Chiarezza:} ogni requisito è formulato in maniera comprensibile e non ambigua, anche grazie all'uso di strumenti di modellazione semiformali, 
+            \item \textbf{Chiarezza:} ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è formulato in maniera comprensibile e non ambigua, anche grazie all'uso di strumenti di modellazione semiformali, 
                 quali diagrammi e user story.
             \item \textbf{Coerenza:} i requisiti non si contraddicono fra loro e sono uniformi nella terminologia utilizzata;
-            \item \textbf{Verificabilità:} ciascun requisito è formulato in modo tale da poter essere verificato tramite test o validazione;
-            \item \textbf{Tracciabilità:} ogni requisito è identificato e può essere ricondotto ad una specifica esigenza dello stakeholder;
+            \item \textbf{Verificabilità:} ciascun \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è formulato in modo tale da poter essere verificato tramite test o \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}};
+            \item \textbf{Tracciabilità:} ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è identificato e può essere ricondotto ad una specifica esigenza dello \textit{stakeholder}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Stakeholder}{G}};
             \item \textbf{Modificabilità:} la struttura del documento consente di apportare modifiche senza comprometterne la coerenza complessiva.
         \end{itemize}  
     }
@@ -230,7 +230,7 @@
     \subsection{Riferimenti}{
         \subsubsection{Riferimenti normativi}{
             \begin{itemize}
-                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item Riferimento al \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
             \end{itemize}
         }
 
@@ -249,7 +249,7 @@
 
 \section{Descrizione generale}{
     \subsection{Obiettivi del prodotto}{
-       Il prodotto ha l'obiettivo di supportare la verifica automatizzata della conformità dei dispositivi radio ai requisiti di sicurezza informatica definiti dalla Direttiva RED mediante l'uso di decision trees interattivi.
+       Il prodotto ha l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di supportare la verifica automatizzata della conformità dei dispositivi radio ai requisiti di \textit{sicurezza informatica}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezzainformatica}{G}} definiti dalla Direttiva \textit{RED}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RED}{G}} mediante l'uso di decision trees interattivi.
     }
 
     \subsection{Funzioni del prodotto}{
@@ -258,19 +258,19 @@
         Le sue principali funzionalità includono:
         \begin{itemize}
             \item \textbf{Importazione da file:} il sistema deve consentire di importare file contenenti gli asset del dispositivo da analizzare, in formati strutturati standard;
-            \item \textbf{Creazione di asset:} il sistema permette la creazione diretta degli asset tramite interfaccia web, nel caso non sia disponibile un file di input predefinito;
+            \item \textbf{Creazione di asset:} il sistema permette la creazione diretta degli asset tramite \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} web, nel caso non sia disponibile un file di \textit{input}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Input}{G}} predefinito;
             \item \textbf{Interazione con i decision trees:} per ciascun asset, il sistema mostra i decision trees pertinenti attraverso una rappresentazione grafica intuitiva, facilitando la comprensione del flusso decisionale;
-            \item \textbf{Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (PDF, JSON, ecc.) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
+            \item \textbf{Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, JSON, ecc.) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
             \item \textbf{(Opzionale) Possibilità di modifica dei decision trees:} il sistema deve permettere all'utente di intervenire direttamente sui decision trees per adattarli a specifici casi di valutazione o a versioni aggiornate degli standard.
         \end{itemize}    
     }
 
     \subsection{Caratteristiche utente}{
-        Gli utenti di \textit{EN18031 - Automated Compliance Verification} appartengono alla categoria degli utenti esperti. Essi possiedono competenze tecniche in ambito di sicurezza informatica e normativa europea e utilizzano il sistema per verificare la conformità dei dispositivi agli standard di sicurezza vigenti.
+        Gli utenti di \textit{EN18031 - Automated Compliance Verification} appartengono alla categoria degli utenti esperti. Essi possiedono competenze tecniche in ambito di \textit{sicurezza informatica}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezzainformatica}{G}} e normativa europea e utilizzano il sistema per verificare la conformità dei dispositivi agli standard di \textit{sicurezza}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezza}{G}} vigenti.
     }
 
     \subsection{Tecnologie e struttura del prodotto}{
-        Il progetto si basa sulla realizzazione di un tool interattivo per la verifica della conformità allo standard EN 18031. L'architettura del sistema è di tipo data-driven, dove la logica decisionale è definita dinamicamente attraverso un set strutturato di file organizzati secondo una gerarchia logica che guida l'interazione con l'utente.
+        Il progetto si basa sulla realizzazione di un tool \textit{interattivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interattivo}{G}} per la verifica della conformità allo standard EN 18031. L'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} del sistema è di tipo data-driven, dove la logica decisionale è definita dinamicamente attraverso un set strutturato di file organizzati secondo una gerarchia logica che guida l'interazione con l'utente.
         Il prodotto si presenterà sotto forma di applicazione web e sarà consultabile dalla maggior parte dei browser.
     }
 }
@@ -281,7 +281,7 @@
 % ----------------------------
 \section{Casi d'uso}{
     \subsection{Obiettivi}{
-        La presente sezione riporta l'elenco dei Casi d'Uso individuati dal team di progetto a seguito di un'accurata analisi del capitolato e di diversi incontri di chiarimento effettuati con 
+        La presente sezione riporta l'elenco dei Casi d'Uso individuati dal team di progetto a seguito di un'accurata analisi del \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} e di diversi incontri di chiarimento effettuati con 
         l'azienda proponente.
         \newline
         Oltre alla descrizione dei Casi d'Uso, vengono presentati anche i relativi diagrammi, che consentono una migliore comprensione degli attori coinvolti e delle funzionalità 
@@ -289,7 +289,7 @@
     }
 
     \subsection{Attori}{
-        L'attore del sistema è uno solo: l'utente finale che potrà usare l'applicazione per effettuare le verifiche di sicurezza. Il team, assieme all'azienda proponente, ha deciso che non saranno necessarie altre tipologie di attori.
+        L'\textit{attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} del sistema è uno solo: l'utente finale che potrà usare l'applicazione per effettuare le verifiche di sicurezza. Il team, assieme all'azienda proponente, ha deciso che non saranno necessarie altre tipologie di attori.
         \begin{center}
             \begin{figure}[H]
                 \centering
@@ -306,13 +306,13 @@
         Ogni caso d'uso sarà riportato secondo la seguente struttura:
         \begin{itemize}
             \item \textbf{Caso d'uso}: codice e nome del Caso d'Uso;
-            \item \textbf{Attore}: attore dello scenario;
-            \item \textbf{Precondizioni}: condizioni che devono essere soddisfatte affinchè l'attore possa accedere al Caso d'Uso;
+            \item \textbf{Attore}: \textit{attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} dello scenario;
+            \item \textbf{Precondizioni}: condizioni che devono essere soddisfatte affinchè l'\textit{attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} possa accedere al Caso d'Uso;
             \item \textbf{Postcondizioni}: stato del sistema dopo che il caso d'uso si è verificato;
-            \item \textbf{Scenario principale}: azioni che l'attore esegue per utilizzare la funzionalità descritta nel Caso d'Uso;
+            \item \textbf{Scenario principale}: azioni che l'\textit{attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} esegue per utilizzare la funzionalità descritta nel Caso d'Uso;
             \item \textbf{Scenario alternativo}: descrizione ragionevole degli eventi che possono accadere qualora una delle operazioni descritte nello \textbf{Scenario principale} non vada a buon fine;
             \item \textbf{Estensioni}: ulteriori Casi d'Uso che possono manifestarsi nel corso dell'esecuzione delle operazioni previste dal Caso d'Uso principale.
-            \item \textbf{Inclusioni}: ulteriori Casi d'Uso che l'Attore è tenuto a eseguire per completare l'implementazione del Caso d'Uso attualmente in esame;
+            \item \textbf{Inclusioni}: ulteriori Casi d'Uso che l'\textit{Attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} è tenuto a eseguire per completare l'implementazione del Caso d'Uso attualmente in esame;
             \item \textbf{Generalizzazioni}: ulteriori Casi d'Uso visti come specializzazione di un Caso d'Uso più generale, dal quale ereditano il comportamento comune, introducendo eventuali variazioni o funzionalità aggiuntive.
         \end{itemize}  
 
@@ -380,7 +380,7 @@
                 \item \textbf{Post-condizioni}: Il Sistema mostra all'Utente il rilevamento di un file non valido.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item Il Sistema rileva un errore di struttura o contenuto nel file caricato.
+                    \item Il Sistema rileva un \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di struttura o contenuto nel file caricato.
                     \item Il Sistema interrompe il processo di caricamento.
                     \item Il Sistema mostra un messaggio di errore.
                 \end{itemize}
@@ -433,11 +433,11 @@
             \begin{itemize}
                 \item \textbf{Attore}: Utente
                 \item \textbf{Pre-condizioni}: Un dispositivo è stato inserito e viene visualizzato.
-                \item \textbf{Post-condizioni}: Il Sistema mostra la lista degli assets appartenenti al dispositivo.
+                \item \textbf{Post-condizioni}: Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets appartenenti al dispositivo.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente seleziona la funzionalità di visualizzazione degli assets di un dispositivo.
-                    \item Il Sistema mostra la lista degli asset associati al dispositivo [\hyperref[uc:uc5.1]{UC5.1}].
+                    \item Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset associati al dispositivo [\hyperref[uc:uc5.1]{UC5.1}].
                 \end{itemize}
                 \item \textbf{Inclusioni}: \hyperref[uc:uc5.1]{UC5.1 Visualizzazione singolo asset}
             \end{itemize}
@@ -457,7 +457,7 @@
                 \label{uc:uc5.1}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il Sistema mostra il singolo asset nella lista degli assets appartenenti al dispositivo.
+                    \item \textbf{Post-condizioni}: Il Sistema mostra il singolo asset nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets appartenenti al dispositivo.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
                         \item Viene visualizzato il singolo asset di un dispositivo: sono mostrati il nome [\hyperref[uc:uc22.1]{UC22.1}] e il tipo [\hyperref[uc:uc22.2]{UC22.2}] dell'asset.
@@ -536,7 +536,7 @@
                 \end{center}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il Sistema riceve la risposta alla domanda relativa al nodo del decision tree.
+                    \item \textbf{Post-condizioni}: Il Sistema riceve la risposta alla domanda relativa al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del decision tree.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
                         \item Il Sistema mostra all'Utente il testo e il nome della domanda corrente del decision tree.
@@ -622,11 +622,11 @@
             \begin{itemize}
                 \item L'Utente ha caricato o completato un test.
                 \item Il Sistema ha elaborato i dati del test.
-                \item L'Utente visualizza i risultati del test sotto forma di una lista di requisiti [\hyperref[uc:uc10.1]{UC10.1}].
+                \item L'Utente visualizza i risultati del test sotto forma di una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di requisiti [\hyperref[uc:uc10.1]{UC10.1}].
             \end{itemize}
             \item \textbf{Inclusioni}: 
                 \begin{itemize} 
-                    \item \hyperref[uc:uc10.1]{UC10.1 Visualizzazione lista requisiti con risultati}
+                    \item \hyperref[uc:uc10.1]{UC10.1 Visualizzazione \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} requisiti con risultati}
                 \end{itemize}
         \end{itemize}
 
@@ -645,14 +645,14 @@
                 \label{uc:uc10.1}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il Sistema mostra la lista dei requisiti assieme ai loro risultati del test.
+                    \item \textbf{Post-condizioni}: Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei requisiti assieme ai loro risultati del test.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L'Utente visualizza una lista, ciascuno dei quali elementi è un requisito affrontato durante il test con il risultato [\hyperref[uc:uc10.1.1]{UC10.1.1}].
+                        \item L'Utente visualizza una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}}, ciascuno dei quali elementi è un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} affrontato durante il test con il risultato [\hyperref[uc:uc10.1.1]{UC10.1.1}].
                     \end{itemize}
                     \item \textbf{Inclusioni}: 
                     \begin{itemize} 
-                        \item[-] \hyperref[uc:uc10.1.1]{UC10.1.1 Visualizzazione singolo requisito con risultato}
+                        \item[-] \hyperref[uc:uc10.1.1]{UC10.1.1 Visualizzazione singolo \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con risultato}
                     \end{itemize}
                 \end{itemize}
 
@@ -671,15 +671,15 @@
                 \label{uc:uc10.1.1}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
-                    \item \textbf{Post-condizioni}: Il Sistema mostra il singolo requisito con risultato del test.
+                    \item \textbf{Post-condizioni}: Il Sistema mostra il singolo \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con risultato del test.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L'Utente visualizza il singolo requisito attraverso suo nome [\hyperref[uc:uc33.2]{UC33.2}] e il risultato ad esso associato [\hyperref[uc:uc10.1.1.1]{UC10.1.1.1}].
+                        \item L'Utente visualizza il singolo \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} attraverso suo nome [\hyperref[uc:uc33.2]{UC33.2}] e il risultato ad esso associato [\hyperref[uc:uc10.1.1.1]{UC10.1.1.1}].
                     \end{itemize}
                     \item \textbf{Inclusioni}: 
                     \begin{itemize} 
-                        \item[-] \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome requisito del decision tree}
-                        \item[-] \hyperref[uc:uc10.1.1.1]{UC10.1.1.1 Visualizzazione risultato requisito}
+                        \item[-] \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                        \item[-] \hyperref[uc:uc10.1.1.1]{UC10.1.1.1 Visualizzazione risultato \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}}}
                     \end{itemize}
                 \end{itemize}
 
@@ -701,11 +701,11 @@
                     \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del requisito.
                     \item \textbf{Scenario principale}:
                     \begin{itemize}
-                        \item L'Utente visualizza il risultato del requisito, che può essere di tre tipi: 
+                        \item L'Utente visualizza il risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}}, che può essere di tre tipi: 
                         \begin{itemize}
-                            \item[a)] \textbf{PASS}: il requisito è stato rispettato
-                            \item[b)] \textbf{FAIL}: il requisito non è stato rispettato 
-                            \item[c)] \textbf{NA}: il requisito non è applicabile.
+                            \item[a)] \textbf{PASS}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è stato rispettato
+                            \item[b)] \textbf{FAIL}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non è stato rispettato 
+                            \item[c)] \textbf{NA}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non è applicabile.
                         \end{itemize}
                     \end{itemize}
                 \end{itemize}
@@ -718,8 +718,8 @@
                 \item \textbf{Post-condizioni}: Il test completato è esportato e reso disponibile all'Utente nei due formati previsti.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente seleziona la funzionalità di esportazione del test e il formato desiderato.
-                    \item Il Sistema formatta i dati del test ed effetta l'esportazione nel formato richiesto.
+                    \item L'Utente seleziona la funzionalità di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} del test e il formato desiderato.
+                    \item Il Sistema formatta i dati del test ed effetta l'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} nel formato richiesto.
                 \end{itemize}
             \end{itemize}
     
@@ -889,11 +889,11 @@
         \begin{itemize}
             \item \textbf{Attore}: Utente
             \item \textbf{Pre-condizioni}: L'Utente ha compilato almeno un campo con dati non validi.
-            \item \textbf{Post-condizioni}: Il Sistema segnala l'errore all'Utente.
+            \item \textbf{Post-condizioni}: Il Sistema segnala l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} all'Utente.
             \item \textbf{Scenario principale}:
             \begin{itemize}
                 \item L'Utente ha compilato uno o più campi con dati nulli o comunque non validi.
-                \item Il Sistema segnala all'Utente l'errore di inserimento e l'impossibilità di procedere.
+                \item Il Sistema segnala all'Utente l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di inserimento e l'impossibilità di procedere.
             \end{itemize} 
         \end{itemize}
         
@@ -1019,13 +1019,13 @@
         \label{uc:uc16}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: Il dispositivo inserito ha almeno un asset e l'Utente visualizza la lista degli assets.
+            \item \textbf{Pre-condizioni}: Il dispositivo inserito ha almeno un asset e l'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets.
             \item \textbf{Post-condizioni}: Il Sistema ha effettuato l'eliminazione dell'asset.
             \item \textbf{Scenario principale}:
             \begin{itemize}
                 \item L'Utente seleziona un asset dalla lista.
                 \item L'Utente seleziona la funzionalità di eliminazione e conferma.
-                \item Il Sistema rimuove l'asset dal dispositivo, aggiornando la lista degli assets.
+                \item Il Sistema rimuove l'asset dal dispositivo, aggiornando la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets.
             \end{itemize}
         \end{itemize}
 
@@ -1148,7 +1148,7 @@
             \begin{itemize}
                 \item L'Utente seleziona la funzionalità di annullamento durante la modifica e conferma.
                 \item Il Sistema scarta le modifiche inserite.
-                \item Il Sistema ritorna alla visualizzazione della lista asset.
+                \item Il Sistema ritorna alla visualizzazione della \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} asset.
             \end{itemize}
         \end{itemize}
 
@@ -1171,7 +1171,7 @@
         \label{uc:uc20}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L'Utente ha creato un nuovo dispositivo oppure ha effettuato modifiche ai dati o alla lista degli assets del dispositivo caricato.
+            \item \textbf{Pre-condizioni}: L'Utente ha creato un nuovo dispositivo oppure ha effettuato modifiche ai dati o alla \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets del dispositivo caricato.
             \item \textbf{Post-condizioni}: L'Utente visualizza la segnalazione di modifiche non salvate relative al dispositivo.
             \item \textbf{Scenario principale}:
             \begin{itemize}
@@ -1198,11 +1198,11 @@
         \label{uc:uc22}
         \begin{itemize}
             \item \textbf{Attore}: Utente
-            \item \textbf{Pre-condizioni}: L'Utente visualizza la lista degli assets.
+            \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets.
             \item \textbf{Post-condizioni}: Il Sistema mostra tutte le informazioni dell'asset nel dettaglio.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona un asset dalla lista degli assets per la visualizzazione in dettaglio.
+                \item L'Utente seleziona un asset dalla \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets per la visualizzazione in dettaglio.
                 \item Viene visualizzato il singolo asset di un dispositivo con i suoi dettagli: 
                 \begin{itemize}
                     \item[a)] il nome [\hyperref[uc:uc22.1]{UC22.1}]
@@ -1411,7 +1411,7 @@
             \begin{itemize}
                 \item L'Utente visualizza i risultati di un test completato.
                 \item L'Utente seleziona la funzionalità di modifica del test.
-                \item L'Utente seleziona un requisito e l'asset del dispositivo per individuare il nodo da cui riprendere il test e avvia la modifica del test.
+                \item L'Utente seleziona un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} e l'asset del dispositivo per individuare il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} da cui riprendere il test e avvia la modifica del test.
                 \item Il Sistema esegue nuovamente il test a partire dal punto selezionato [\hyperref[uc:uc6]{UC6}].
             \end{itemize}
             \item \textbf{Inclusioni}: 
@@ -1441,7 +1441,7 @@
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente ha caricato un test non completato.
-                    \item Il Sistema riprende l'esecuzione del test dall'ultimo nodo [\hyperref[uc:uc6]{UC6}].
+                    \item Il Sistema riprende l'esecuzione del test dall'ultimo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc6]{UC6}].
                 \end{itemize} 
                  \item \textbf{Inclusioni}: 
                  \begin{itemize}
@@ -1470,11 +1470,11 @@
                 \begin{itemize}
                     \item L'Utente visualizza i risultati di un test completato.
                     \item L'Utente seleziona la funzionalità di visualizzazione delle giustificazioni.
-                    \item L'Utente visualizza la lista delle giustificazioni associate ad ogni requisito del test [\hyperref[uc:uc27.1]{UC27.1}]. 
+                    \item L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} delle giustificazioni associate ad ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del test [\hyperref[uc:uc27.1]{UC27.1}]. 
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                  \begin{itemize}
-                    \item \hyperref[uc:uc27.1]{UC27.1  Visualizzazione singolo requisito con giustificazione}
+                    \item \hyperref[uc:uc27.1]{UC27.1  Visualizzazione singolo \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con giustificazione}
                 \end{itemize}
             \end{itemize}
 
@@ -1496,12 +1496,12 @@
                 \item \textbf{Post-condizioni}: Il Sistema mostra la singola giustificazione relativa ad un requisito.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente visualizza il singolo elemento della lista, costituito dal nome del requisito [\hyperref[uc:uc33.2]{UC33.2}] e dalla giustificazione ad esso associata [\hyperref[uc:uc27.1.1]{UC27.1.1}].
+                    \item L'Utente visualizza il singolo elemento della \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}}, costituito dal nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} [\hyperref[uc:uc33.2]{UC33.2}] e dalla giustificazione ad esso associata [\hyperref[uc:uc27.1.1]{UC27.1.1}].
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                 \begin{itemize}
-                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome requisito del decision tree}
-                    \item \hyperref[uc:uc27.1.1]{UC27.1.1 Visualizzazione giustificazione requisito}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc27.1.1]{UC27.1.1 Visualizzazione giustificazione \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}}}
                 \end{itemize}
             \end{itemize}
 
@@ -1533,11 +1533,11 @@
         \begin{itemize}
             \item \textbf{Attore}: Utente
             \item \textbf{Pre-condizioni}: Un test è stato completato e l'Utente sta visualizzando i risultati.
-            \item \textbf{Post-condizioni}: Il Sistema mostra la lista degli assets con i relativi risultati appartenenti al requisito.
+            \item \textbf{Post-condizioni}: Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets con i relativi risultati appartenenti al requisito.
             \item \textbf{Scenario principale}:
             \begin{itemize}
-                \item L'Utente seleziona la funzionalità di espansione dei risultati di un requisito nella lista dei risultati del test.
-                \item Il Sistema mostra la lista degli assets con i relativi risultati, specifici di un requisito [\hyperref[uc:uc28.1]{UC28.1}].
+                \item L'Utente seleziona la funzionalità di espansione dei risultati di un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei risultati del test.
+                \item Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets con i relativi risultati, specifici di un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} [\hyperref[uc:uc28.1]{UC28.1}].
             \end{itemize}
             \item \textbf{Inclusioni}: \hyperref[uc:uc28.1]{UC28.1 Visualizzazione singolo asset con risultato}
         \end{itemize}
@@ -1557,15 +1557,15 @@
             \label{uc:uc28.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema mostra il singolo asset nella lista degli assets del dispositivo con il risultato.
+                \item \textbf{Post-condizioni}: Il Sistema mostra il singolo asset nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets del dispositivo con il risultato.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item Viene visualizzato l'esito associato all'asset: sono mostrati il nome dell'asset [\hyperref[uc:uc22.1]{UC22.1}] e il risultato del requisito associato all'asset [\hyperref[uc:uc28.1.1]{UC28.1.1}].
+                    \item Viene visualizzato l'esito associato all'asset: sono mostrati il nome dell'asset [\hyperref[uc:uc22.1]{UC22.1}] e il risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato all'asset [\hyperref[uc:uc28.1.1]{UC28.1.1}].
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                 \begin{itemize}
                     \item \hyperref[uc:uc22.1]{UC22.1 Visualizzazione nome asset}
-                    \item \hyperref[uc:uc28.1.1]{UC28.1.1 Visualizzazione risultato del requisito associato all'asset}
+                    \item \hyperref[uc:uc28.1.1]{UC28.1.1 Visualizzazione risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato all'asset}
                 \end{itemize}
             \end{itemize}
 
@@ -1584,10 +1584,10 @@
             \label{uc:uc28.1.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del requisito associato all'asset.
+                \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato all'asset.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item Viene visualizzato il risultato associato all'asset (e relativo al requisito selezionato).
+                    \item Viene visualizzato il risultato associato all'asset (e relativo al \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} selezionato).
                 \end{itemize}
             \end{itemize}
 
@@ -1747,16 +1747,16 @@
         \begin{itemize}
             \item \textbf{Attore}: Utente
             \item \textbf{Pre-condizioni}: Il Sistema è allo stato iniziale.
-            \item \textbf{Post-condizioni}: Il Sistema mostra l'elenco dei decision tree disponibili.
+            \item \textbf{Post-condizioni}: Il Sistema mostra l'elenco dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} disponibili.
             \item \textbf{Scenario principale}:
             \begin{itemize}
                 \item L'Utente seleziona la funzionalità di visualizzazione dei decision tree.
-                \item Il Sistema recupera i decision tree dal file di configurazione.
-                \item Il Sistema mostra una lista ordinata dei decision tree [\hyperref[uc:uc32.1]{UC32.1}].
+                \item Il Sistema recupera i \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} dal file di configurazione.
+                \item Il Sistema mostra una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} ordinata dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} [\hyperref[uc:uc32.1]{UC32.1}].
             \end{itemize}
             \item \textbf{Inclusioni}: 
             \begin{itemize}
-                \item \hyperref[uc:uc32.1]{UC32.1 Visualizzazione singolo decision tree} 
+                \item \hyperref[uc:uc32.1]{UC32.1 Visualizzazione singolo \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}} 
             \end{itemize}
         \end{itemize}
 
@@ -1775,20 +1775,20 @@
             \label{uc:uc32.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il singolo decision tree è visualizzato.
+                \item \textbf{Post-condizioni}: Il singolo \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} è visualizzato.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente visualizza il singolo decision tree.
-                    \item Il decision tree viene descritto da:
+                    \item Il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} viene descritto da:
                     \begin{itemize}
-                        \item id del requisito associato [\hyperref[uc:uc33.1]{UC33.1}]
-                        \item nome del requisito associato [\hyperref[uc:uc33.2]{UC33.2}].
+                        \item id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato [\hyperref[uc:uc33.1]{UC33.1}]
+                        \item nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato [\hyperref[uc:uc33.2]{UC33.2}].
                     \end{itemize}
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                 \begin{itemize}
-                    \item \hyperref[uc:uc33.1]{UC33.1 Visualizzazione id del requisito del decision tree}
-                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome del requisito del decision tree}
+                    \item \hyperref[uc:uc33.1]{UC33.1 Visualizzazione id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
                 \end{itemize} 
             \end{itemize}
 
@@ -1807,20 +1807,20 @@
         \label{uc:uc33}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema mostra le informazioni e il grafo del decision tree in dettaglio.
+                \item \textbf{Post-condizioni}: Il Sistema mostra le informazioni e il grafo del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} in dettaglio.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente seleziona un decision tree per la visualizzazione in dettaglio.
-                    \item L'Utente visualizza l'id [\hyperref[uc:uc33.1]{UC33.1}] e il titolo [\hyperref[uc:uc33.2]{UC33.2}] del requisito associato.
-                    \item L'Utente visualizza le dipendenze del decision tree [\hyperref[uc:uc33.3]{UC33.3}].
-                    \item L'Utente visualizza il grafo del decision tree [\hyperref[uc:uc33.4]{UC33.4}].
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} per la visualizzazione in dettaglio.
+                    \item L'Utente visualizza l'id [\hyperref[uc:uc33.1]{UC33.1}] e il titolo [\hyperref[uc:uc33.2]{UC33.2}] del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato.
+                    \item L'Utente visualizza le dipendenze del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} [\hyperref[uc:uc33.3]{UC33.3}].
+                    \item L'Utente visualizza il grafo del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} [\hyperref[uc:uc33.4]{UC33.4}].
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                 \begin{itemize}
-                    \item \hyperref[uc:uc33.1]{UC33.1 Visualizzazione id del requisito del decision tree}
-                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome del requisito del decision tree}
-                    \item \hyperref[uc:uc33.3]{UC33.3 Visualizzazione dipendenze del decision tree}
-                    \item \hyperref[uc:uc33.4]{UC33.4 Visualizzazione grafo del decision tree}
+                    \item \hyperref[uc:uc33.1]{UC33.1 Visualizzazione id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.3]{UC33.3 Visualizzazione dipendenze del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.4]{UC33.4 Visualizzazione grafo del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
                 \end{itemize} 
             \end{itemize}
 
@@ -1838,10 +1838,10 @@
             \label{uc:uc33.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema mostra l'id del requisito del decision tree.
+                \item \textbf{Post-condizioni}: Il Sistema mostra l'id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del decision tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente visualizza l'id del requisito associato al decision tree.
+                    \item L'Utente visualizza l'id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato al decision tree.
                 \end{itemize}
             \end{itemize}
 
@@ -1849,10 +1849,10 @@
             \label{uc:uc33.2}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema mostra il nome del requisito del decision tree.
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del decision tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente visualizza il nome del requisito associato al decision tree, che è il suo titolo.
+                    \item L'Utente visualizza il nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato al \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}, che è il suo titolo.
                 \end{itemize}
             \end{itemize}
 
@@ -1874,7 +1874,7 @@
                 \item \textbf{Post-condizioni}: Il Sistema mostra il grafo del decision tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente visualizza il grafo del decision tree sottoforma di:
+                    \item L'Utente visualizza il grafo del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} sottoforma di:
                     \begin{itemize}
                         \item nodi interni [\hyperref[uc:uc33.4.1]{UC33.4.1}]
                         \item nodi foglia (con risultati) [\hyperref[uc:uc33.4.2]{UC33.4.2}]
@@ -1883,9 +1883,9 @@
                 \end{itemize}
             \item \textbf{Inclusioni}: 
                 \begin{itemize}
-                    \item \hyperref[uc:uc33.4.1]{UC33.4.1 Visualizzazione nodo interno del decision tree}
-                    \item \hyperref[uc:uc33.4.2]{UC33.4.2 Visualizzazione nodo foglia del decision tree}
-                    \item \hyperref[uc:uc33.4.3]{UC33.4.3 Visualizzazione collegamento fra nodi del decision tree}
+                    \item \hyperref[uc:uc33.4.1]{UC33.4.1 Visualizzazione \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} interno del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.4.2]{UC33.4.2 Visualizzazione \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} foglia del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.4.3]{UC33.4.3 Visualizzazione collegamento fra nodi del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
                 \end{itemize} 
             \end{itemize}
 
@@ -1903,19 +1903,19 @@
             \label{uc:uc33.4.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema mostra il nodo interno del decision tree.
+                \item \textbf{Post-condizioni}: Il Sistema mostra il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} interno del decision tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente visualizza il nodo del decision tree, descritto da:
+                    \item L'Utente visualizza il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}, descritto da:
                     \begin{itemize}
-                        \item codice univoco del nodo [\hyperref[uc:uc33.4.1.1]{UC33.4.1.1}]
-                        \item testo domanda del nodo [\hyperref[uc:uc33.4.1.2]{UC33.4.1.2}].
+                        \item codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc33.4.1.1]{UC33.4.1.1}]
+                        \item testo domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc33.4.1.2]{UC33.4.1.2}].
                     \end{itemize}
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                 \begin{itemize}
-                    \item \hyperref[uc:uc33.4.1.1]{UC33.4.1.1 Visualizzazione codice univoco del nodo}
-                    \item \hyperref[uc:uc33.4.1.2]{UC33.4.1.2 Visualizzazione testo domanda del nodo}
+                    \item \hyperref[uc:uc33.4.1.1]{UC33.4.1.1 Visualizzazione codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}}
+                    \item \hyperref[uc:uc33.4.1.2]{UC33.4.1.2 Visualizzazione testo domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}}
                 \end{itemize} 
             \end{itemize}
 
@@ -1955,10 +1955,10 @@
             \label{uc:uc33.4.2}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema mostra il nodo foglia del decision tree.
+                \item \textbf{Post-condizioni}: Il Sistema mostra il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} foglia del decision tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente visualizza il nodo foglia del decision tree, descritto con uno dei tre risultati: PASS, FAIL, NA.
+                    \item L'Utente visualizza il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} foglia del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}, descritto con uno dei tre risultati: \textit{PASS}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Pass}{G}}, \textit{FAIL}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Fail}{G}}, NA.
                 \end{itemize}
             \end{itemize}
 
@@ -1969,7 +1969,7 @@
                 \item \textbf{Post-condizioni}: Il Sistema mostra il collegamento fra due nodi del decision tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente visualizza il collegamento fra due nodi del decision tree (consecutivi) come un arco direzionato con l'etichetta true/false.
+                    \item L'Utente visualizza il collegamento fra due nodi del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} (consecutivi) come un arco direzionato con l'etichetta true/false.
                 \end{itemize}
             \end{itemize}
 
@@ -1986,14 +1986,14 @@
                         \end{center} 
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
-                \item \textbf{Post-condizioni}: Il decision tree è aggiornato con le nuove modifiche.
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees.
+                \item \textbf{Post-condizioni}: Il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} è aggiornato con le nuove modifiche.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica. 
-                    \item L'Utente seleziona un nodo o un collegamento.
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e avvia la funzionalità di modifica. 
+                    \item L'Utente seleziona un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} o un collegamento.
                     \item L'Utente effettua la modifica.
-                    \item Il Sistema valida la struttura e aggiorna il decision tree, salvando le modifiche in locale.
+                    \item Il Sistema valida la struttura e aggiorna il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}, salvando le modifiche in locale.
                 \end{itemize}
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
@@ -2002,14 +2002,14 @@
                 \end{itemize}
                 \item \textbf{Estensioni}:
                 \begin{itemize}
-                    \item \hyperref[uc:uc39]{UC39 Validazione fallita modifica decision tree}
-                    \item \hyperref[uc:uc40]{UC40 Annullamento modifica decision tree}
+                    \item \hyperref[uc:uc39]{UC39 \textit{Validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} fallita modifica \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc40]{UC40 Annullamento modifica \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
                 \end{itemize}
                 \item \textbf{Generalizzazioni}:
                 \begin{itemize}
-                    \item \hyperref[uc:uc35]{UC35 Aggiunta nodo al decision tree}
-                    \item \hyperref[uc:uc36]{UC36 Eliminazione nodo del decision tree}
-                    \item \hyperref[uc:uc38]{UC38 Modifica destinazione di un collegamento del decision tree}
+                    \item \hyperref[uc:uc35]{UC35 Aggiunta \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} al \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc36]{UC36 Eliminazione \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc38]{UC38 Modifica destinazione di un collegamento del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
                 \end{itemize}
             \end{itemize}
 
@@ -2017,25 +2017,25 @@
             \label{uc:uc35}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
-                \item \textbf{Post-condizioni}: Un nuovo nodo è stato aggiunto al decision tree.
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees.
+                \item \textbf{Post-condizioni}: Un nuovo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} è stato aggiunto al decision tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica. 
-                    \item L'Utente seleziona la funzionalità di aggiunta di un nodo in una specifica posizione del decision tree.
-                    \item Il Sistema crea un nuovo nodo vuoto.
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e avvia la funzionalità di modifica. 
+                    \item L'Utente seleziona la funzionalità di aggiunta di un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} in una specifica posizione del decision tree.
+                    \item Il Sistema crea un nuovo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} vuoto.
                     \item L'Utente inserisce:
                     \begin{itemize}
-                        \item nome univoco del nodo [\hyperref[uc:uc35.1]{UC35.1}]
-                        \item testo della domanda del nodo [\hyperref[uc:uc35.2]{UC35.2}].
+                        \item nome univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc35.1]{UC35.1}]
+                        \item testo della domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc35.2]{UC35.2}].
                     \end{itemize}
-                    \item Il Sistema aggiunge il nodo al decision tree.
+                    \item Il Sistema aggiunge il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} al decision tree.
                     \item Il Sistema aggiorna la visualizzazione e salva le modifiche in locale.
                 \end{itemize}
                 \item \textbf{Inclusioni}: 
                 \begin{itemize}
-                    \item \hyperref[uc:uc35.1]{UC35.1 Inserimento codice univoco del nodo}
-                    \item \hyperref[uc:uc35.2]{UC35.2 Inserimento testo domanda del nodo}
+                    \item \hyperref[uc:uc35.1]{UC35.1 Inserimento codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}}
+                    \item \hyperref[uc:uc35.2]{UC35.2 Inserimento testo domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}}
                 \end{itemize}
             \end{itemize}
 
@@ -2053,10 +2053,10 @@
             \label{uc:uc35.1}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema registra il codice univoco del nodo inserito.
+                \item \textbf{Post-condizioni}: Il Sistema registra il codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} inserito.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente inserisce il codice univoco del nodo nel rispettivo campo dati.
+                    \item L'Utente inserisce il codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} nel rispettivo campo dati.
                     \item Il Sistema memorizza il valore.
                 \end{itemize}
             \end{itemize}
@@ -2065,10 +2065,10 @@
             \label{uc:uc35.2}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Post-condizioni}: Il Sistema registra il testo della domanda del nodo inserito.
+                \item \textbf{Post-condizioni}: Il Sistema registra il testo della domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} inserito.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente inserisce il testo della domanda del nodo nel rispettivo campo dati.
+                    \item L'Utente inserisce il testo della domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} nel rispettivo campo dati.
                     \item Il Sistema memorizza il valore.
                 \end{itemize}
             \end{itemize}
@@ -2085,22 +2085,22 @@
                         \end{center} 
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
-                \item \textbf{Post-condizioni}: Il nodo selezionato è rimosso e i collegamenti aggiornati.
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees.
+                \item \textbf{Post-condizioni}: Il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} selezionato è rimosso e i collegamenti aggiornati.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica.
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e avvia la funzionalità di modifica.
                     \item L'Utente seleziona la funzionalità di eliminazione di un nodo.
-                    \item L'Utente seleziona un nodo e conferma.
+                    \item L'Utente seleziona un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} e conferma.
                     \item Il Sistema valida la rimozione e aggiorna i collegamenti, salvando le modifiche in locale.
                 \end{itemize}
                 \item \textbf{Scenari alternativi}:
                 \begin{itemize}
-                    \item L'Utente cerca di eliminare il nodo root [\hyperref[uc:uc37]{UC37}].
+                    \item L'Utente cerca di eliminare il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} root [\hyperref[uc:uc37]{UC37}].
                 \end{itemize}
                 \item \textbf{Estensioni}:
                 \begin{itemize}
-                    \item \hyperref[uc:uc37]{UC37 Tentativo eliminazione nodo root}
+                    \item \hyperref[uc:uc37]{UC37 Tentativo eliminazione \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} root}
                 \end{itemize}
             \end{itemize}
 
@@ -2108,11 +2108,11 @@
             \label{uc:uc37}
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L'Utente ha selezionato la funzionalità di eliminazione di un nodo del decision tree e ha selezionato il nodo root.
-                \item \textbf{Post-condizioni}: L'errore è segnalato all'Utente e l'eliminazione non viene eseguita.
+                \item \textbf{Pre-condizioni}: L'Utente ha selezionato la funzionalità di eliminazione di un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e ha selezionato il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} root.
+                \item \textbf{Post-condizioni}: L'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} è segnalato all'Utente e l'eliminazione non viene eseguita.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item Il Sistema rileva che il nodo selezionato è il root.
+                    \item Il Sistema rileva che il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} selezionato è il root.
                     \item Il Sistema mostra un messaggio di errore.
                 \end{itemize}
             \end{itemize}
@@ -2129,13 +2129,13 @@
             \end{center} 
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L'Utente visualizza la lista dei decision trees.
-                \item \textbf{Post-condizioni}: Il collegamento del decision tree è aggiornato.
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees.
+                \item \textbf{Post-condizioni}: Il collegamento del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} è aggiornato.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente seleziona un decision tree e avvia la funzionalità di modifica.
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e avvia la funzionalità di modifica.
                     \item L'Utente seleziona la funzionalità di modifica di un collegamento.
-                    \item L'Utente seleziona un collegamento e ne modifica il nodo di destinazione.
+                    \item L'Utente seleziona un collegamento e ne modifica il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} di destinazione.
                     \item Il Sistema aggiorna il grafo e salva le modifiche in locale.
                 \end{itemize}
             \end{itemize}
@@ -2145,11 +2145,11 @@
             \begin{itemize}
                 \item \textbf{Attore}: Utente
                 \item \textbf{Pre-condizioni}: L'Utente effettua una modifica con errori alla struttura del decision tree.
-                \item \textbf{Post-condizioni}: Il sistema mostra l'errore di validazione fallita della modifica apportata al deciison tree.
+                \item \textbf{Post-condizioni}: Il sistema mostra l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} fallita della modifica apportata al deciison tree.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item Il Sistema individua un nodo problematico durante la validazione della struttura del decision tree.
-                    \item Il Sistema segnala l'errore all'utente.
+                    \item Il Sistema individua un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} problematico durante la \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} della struttura del decision tree.
+                    \item Il Sistema segnala l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} all'utente.
                 \end{itemize}
             \end{itemize}
 
@@ -2179,12 +2179,12 @@
             \end{center} 
             \begin{itemize}
                 \item \textbf{Attore}: Utente
-                \item \textbf{Pre-condizioni}: L'utente sta visualizzando un singolo decision tree in dettaglio.
-                \item \textbf{Post-condizioni}: Il file del decision tree è esportato.
+                \item \textbf{Pre-condizioni}: L'utente sta visualizzando un singolo \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} in dettaglio.
+                \item \textbf{Post-condizioni}: Il file del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} è esportato.
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente seleziona la funzionalità esportazione del decision tree.
-                    \item Il Sistema serializza il decision tree nel formato previsto.
+                    \item L'Utente seleziona la funzionalità \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} del decision tree.
+                    \item Il Sistema serializza il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} nel formato previsto.
                     \item L'Utente seleziona il percorso locale dove salvare il file.
                     \item Il Sistema salva il file.
                 \end{itemize}
@@ -2202,7 +2202,7 @@
     \begin{itemize}
         \item \textbf{Funzionali}, ovvero requisiti che rappresentano qualcosa che il Sistema sviluppato deve avere per soddisfare un'aspettativa;
         \item \textbf{Qualità}, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
-        \item \textbf{Vincolo}, ovvero restrizioni poste al Sistema, quali, a titolo di esempio, sull'uso di alcune tecnologie;
+        \item \textbf{Vincolo}, ovvero restrizioni poste al Sistema, quali, a titolo di \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}}, sull'uso di alcune tecnologie;
     \end{itemize}
     
     \noindent Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.2 del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme%20di%20Progetto}{Norme di Progetto}.
