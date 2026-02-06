@@ -1,0 +1,2607 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{ltablex}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgf-pie}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{caption}
+
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloDocumento}{Analisi dei Requisiti}
+\newcommand{\DataUltimaModifica}{2026/02/05}
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneDocumento}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoDocumento}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Documento: \TipoDocumento}
+\fancyfoot[C]{\thepage}
+
+% larghezza della colonna dei nomi
+\newlength{\namecol}
+\setlength{\namecol}{4.5cm}
+
+\newlength{\colw}
+\setlength{\colw}{1.5cm}
+
+\definecolor{mioverde}{RGB}{20,150,60}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+
+    \begin{center}
+
+        % Logo
+        \vspace*{0cm}
+        \begin{tikzpicture}
+            \clip (0,-0.1) circle (5.6cm);
+            \node at (0,0) {\includegraphics[width=12cm]{\LogoGruppo}};
+        \end{tikzpicture}\\[0.8cm]
+
+        % Barra superiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+        % Titolo
+        \vspace{1cm}
+        {\Huge \textbf{\TitoloDocumento}}\\[0.4cm]
+        {\large Progetto di Ingegneria del Software A.A. 2025/2026}\\[0.8cm]
+        {\large Versione: \VersioneDocumento}
+        \vspace{1cm}
+
+        % Barra inferiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+    \end{center}
+
+    % Informazioni in basso
+    \vfill
+    \noindent
+    \begin{minipage}{0.5\textwidth}
+        \raggedright
+        \textbf{Autore:} \Gruppo\\
+        \textbf{Ultima modifica:} \DataUltimaModifica
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \raggedleft
+        \textbf{Tipo di documento:} \TipoDocumento
+    \end{minipage}
+
+\end{titlepage}
+
+
+\section*{Registro delle modifiche}
+    \begin{center}
+    \rowcolors{2}{lightblue}{white} 
+        \begin{tabularx}{\textwidth}{|l|l|l|X|X|}
+            \hline
+            \rowcolor{lightgray}
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneDocumento & \DataUltimaModifica & Francesco Marcolongo & Giacomo Giora & Aggiunte g del glossario. Ricevuta approvazione. \\
+            \hline
+            v0.15.0 & 2026/02/04 & Riccardo Valerio & Giacomo Giora & Completati requisiti \\
+            \hline
+            v0.14.0 & 2026/02/04 & Riccardo Valerio & Giacomo Giora & Modificati requisiti funzionali \\
+            \hline
+            v0.13.0 & 2026/01/28 & Francesco Marcolongo & Andrea Difino & Aggiunti diagrammi dei Casi d'Uso \\
+            \hline
+            v0.12.1 & 2026/01/18 & Federico Simonetto & Francesco Marcolongo & Sistemati indici casi d'uso \\
+            \hline
+            v0.12.0 & 2026/01/17 & Michele Tesser & Francesco Marcolongo & Aggiunti casi d'uso e modificate estensioni \\
+            \hline
+            v0.11.0 & 2026/01/15 & Michele Tesser & Francesco Marcolongo & Prima stesura requisiti di vincolo \\
+            \hline
+            v0.10.0 & 2026/01/14 & Federico Simonetto & Francesco Marcolongo & Prima stesura requisiti di qualità \\
+            \hline
+            v0.9.0 & 2026/01/13 & Michele Tesser & Francesco Marcolongo & Completati requisiti funzionali \\
+            \hline
+            v0.8.4 & 2026/01/12 & Michele Tesser & Francesco Marcolongo & Continuati requisiti e aggiunti UC \\
+            \hline
+            v0.8.3 & 2026/01/11 & Federico Simonetto & Francesco Marcolongo & Iniziati requisiti funzionali da 26 a 41 \\
+            \hline
+            v0.8.2 & 2026/01/10 & Michele Tesser & Francesco Marcolongo & Iniziati requisiti funzionali da 14 a 25 \\
+            \hline
+            v0.8.1 & 2026/01/08 & Michele Tesser & Francesco Marcolongo & Iniziati requisiti funzionali da 1 a 13 \\
+            \hline
+            v0.8.0 & 2026/01/07 & Michele Tesser & Francesco Marcolongo & Completati Casi d'Uso \\
+            \hline
+            v0.7.0 & 2026/01/06 & Giacomo Giora & Michele Tesser & Modificati e sistemati UC da 1 a 12. Aggiunti da UC 13 a 15 \\
+            \hline
+            v0.6.0 & 2025/12/19 & Andrea Difino & Michele Tesser & Aggiunti e sistemati UC da 1 a 12 \\
+            \hline
+            v0.5.2 & 2025/12/15 & Francesco Marcolongo & Michele Tesser & Migliorata coerenza \\
+            \hline
+            v0.5.1 & 2025/12/07 & Michele Tesser & Riccardo Valerio & Link glossario \\
+            \hline
+            v0.5.0 & 2025/12/06 & Andrea Difino & Bilal Sabic & Aggiunte estensioni UC1 \\
+            \hline
+            v0.4.0 & 2025/12/04 & Andrea Difino & Bilal Sabic & Migliorata sez 2 e primo caso d'uso \\
+            \hline
+            v0.3.0 & 2025/11/28 & Michele Tesser & Federico Simonetto & Stesura sez 2 e inizio 3\\
+            \hline
+            v0.2.0 & 2025/11/27 & Bilal Sabic & Federico Simonetto & Prima stesura prima sezione\\
+            \hline
+            v0.1.0 & 2025/11/27 & Giacomo Giora & & Stesura template\\
+            \hline
+        \end{tabularx}
+    \end{center}
+
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+
+\newpage
+
+\listoftables
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Introduzione}{
+    \subsection{Scopo del documento}{
+        Il presente documento di \textit{Analisi dei requisiti} ha l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di definire in modo chiaro, completo e verificabile l'insieme dei requisiti funzionali e non funzionali che il team \textit{Atlas} ha individuato nel corso dello \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}} del progetto \textit{Automated EN18031 Compliance Verification}.
+        \newline
+        A tal fine, il documento include una descrizione approfondita dei Casi d'Uso, da cui derivano i requisiti elencati. Tali Casi d'Uso sono illustrati tramite diagrammi che utilizzano la notazione \textit{UML}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UML}{G}}, per formalizzarne la descrizione.
+        \newline
+        I requisiti presenti nel documento saranno classificati secondo il seguente livello di priorità:
+        \begin{itemize}
+            \item \textbf{Obbligatorio:} \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} indispensabile, esplicitamente richiesto dallo \textit{stakeholder}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Stakeholder}{G}};
+            \item \textbf{Desiderabile:} \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non essenziale, ma in grado di apportare un valore aggiunto riconoscibile;
+            \item \textbf{Opzionale:} \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} di importanza secondaria, la cui implementazione può essere rimandata o valutata in base a tempi e risorse disponibili.
+        \end{itemize}   
+        Lo scopo dell'analisi dei requisiti non è descrivere le soluzioni tecniche adottate per l'implementazione, bensì definire in maniera concettuale le funzionalità del sistema. 
+        In particolare, il documento si concentra su cosa il sistema deve fare, procedendo in modo gerarchico dall'esterno del sistema (utente e contesto) verso i suoi componenti interni.
+        \newline
+        In particolare questo documento cerca di garantire le seguenti qualità:
+        \begin{itemize}
+            \item \textbf{Completezza:} tutti i requisiti rilevanti sono identificati e descritti in maniera esaustiva;
+            \item \textbf{Chiarezza:} ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è formulato in maniera comprensibile e non ambigua, anche grazie all'uso di strumenti di modellazione semiformali, 
+                quali diagrammi e user story.
+            \item \textbf{Coerenza:} i requisiti non si contraddicono fra loro e sono uniformi nella terminologia utilizzata;
+            \item \textbf{Verificabilità:} ciascun \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è formulato in modo tale da poter essere verificato tramite test o \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}};
+            \item \textbf{Tracciabilità:} ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è identificato e può essere ricondotto ad una specifica esigenza dello \textit{stakeholder}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Stakeholder}{G}};
+            \item \textbf{Modificabilità:} la struttura del documento consente di apportare modifiche senza comprometterne la coerenza complessiva.
+        \end{itemize}  
+    }
+
+    \subsection{Glossario}{
+        All'interno della documentazione prodotta dal team possono comparire termini suscettibili di incomprensioni o ambiguità. Per evitare questo, è disponibile un glossario 
+        contenente i termini tecnici e le loro definizioni. Un termine è consultabile nel glossario se è indicato con la notazione \textit{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
+        Premendo sulla G a pedice, l'utente verrà indirizzato alla pagina web del glossario.
+    }
+
+    \subsection{Riferimenti}{
+        \subsubsection{Riferimenti normativi}{
+            \begin{itemize}
+                \item Riferimento al \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+            \end{itemize}
+        }
+
+        \subsubsection{Riferimenti informativi}{
+            \begin{itemize}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Regolamento del progetto didattico}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Gestione di progetto}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Analisi dei requisiti}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Analisi e descrizione delle funzionalità: Use Case e relativi diagrammi (UML)}\newline \url{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf} 
+            \end{itemize}
+        }
+    }
+}
+
+\newpage
+
+\section{Descrizione generale}{
+    \subsection{Obiettivi del prodotto}{
+       Il prodotto ha l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di supportare la verifica automatizzata della conformità dei dispositivi radio ai requisiti di \textit{sicurezza informatica}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezzainformatica}{G}} definiti dalla Direttiva \textit{RED}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RED}{G}} mediante l'uso di decision trees interattivi.
+    }
+
+    \subsection{Funzioni del prodotto}{
+        Il sistema permette all'utente di visualizzare e interagire con i decision trees per la verifica automatizzata della conformità normativa degli asset analizzati.
+        \newline
+        Le sue principali funzionalità includono:
+        \begin{itemize}
+            \item \textbf{Importazione da file:} il sistema deve consentire di importare file contenenti gli asset del dispositivo da analizzare, in formati strutturati standard;
+            \item \textbf{Creazione di asset:} il sistema permette la creazione diretta degli asset tramite \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} web, nel caso non sia disponibile un file di \textit{input}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Input}{G}} predefinito;
+            \item \textbf{Interazione con i decision trees:} per ciascun asset, il sistema mostra i decision trees pertinenti attraverso una rappresentazione grafica intuitiva, facilitando la comprensione del flusso decisionale;
+            \item \textbf{Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, JSON, ecc.) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
+            \item \textbf{(Opzionale) Possibilità di modifica dei decision trees:} il sistema deve permettere all'utente di intervenire direttamente sui decision trees per adattarli a specifici casi di valutazione o a versioni aggiornate degli standard.
+        \end{itemize}    
+    }
+
+    \subsection{Caratteristiche utente}{
+        Gli utenti di \textit{EN18031 - Automated Compliance Verification} appartengono alla categoria degli utenti esperti. Essi possiedono competenze tecniche in ambito di \textit{sicurezza informatica}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezzainformatica}{G}} e normativa europea e utilizzano il sistema per verificare la conformità dei dispositivi agli standard di \textit{sicurezza}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezza}{G}} vigenti.
+    }
+
+    \subsection{Tecnologie e struttura del prodotto}{
+        Il progetto si basa sulla realizzazione di un tool \textit{interattivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interattivo}{G}} per la verifica della conformità allo standard EN 18031. L'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} del sistema è di tipo data-driven, dove la logica decisionale è definita dinamicamente attraverso un set strutturato di file organizzati secondo una gerarchia logica che guida l'interazione con l'utente.
+        Il prodotto si presenterà sotto forma di applicazione web e sarà consultabile dalla maggior parte dei browser.
+    }
+}
+
+\newpage
+% ----------------------------
+% Casi d'uso
+% ----------------------------
+\section{Casi d'uso}{
+    \subsection{Obiettivi}{
+        La presente sezione riporta l'elenco dei Casi d'Uso individuati dal team di progetto a seguito di un'accurata analisi del \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} e di diversi incontri di chiarimento effettuati con 
+        l'azienda proponente.
+        \newline
+        Oltre alla descrizione dei Casi d'Uso, vengono presentati anche i relativi diagrammi, che consentono una migliore comprensione degli attori coinvolti e delle funzionalità 
+        offerte dal sistema.  
+    }
+
+    \subsection{Attori}{
+        L'\textit{attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} del sistema è uno solo: l'utente finale che potrà usare l'applicazione per effettuare le verifiche di sicurezza. Il team, assieme all'azienda proponente, ha deciso che non saranno necessarie altre tipologie di attori.
+        \begin{center}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.55]{../../../Assets/Diagrammi/attore.png}
+                \caption{Attore}
+                \label{fig:attore-principale}
+            \end{figure}
+        \end{center}
+        
+    }
+
+    \subsection{Elenco Casi d'Uso}{
+
+        Ogni caso d'uso sarà riportato secondo la seguente struttura:
+        \begin{itemize}
+            \item \textbf{Caso d'uso}: codice e nome del Caso d'Uso;
+            \item \textbf{Attore}: \textit{attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} dello scenario;
+            \item \textbf{Precondizioni}: condizioni che devono essere soddisfatte affinchè l'\textit{attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} possa accedere al Caso d'Uso;
+            \item \textbf{Postcondizioni}: stato del sistema dopo che il caso d'uso si è verificato;
+            \item \textbf{Scenario principale}: azioni che l'\textit{attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} esegue per utilizzare la funzionalità descritta nel Caso d'Uso;
+            \item \textbf{Scenario alternativo}: descrizione ragionevole degli eventi che possono accadere qualora una delle operazioni descritte nello \textbf{Scenario principale} non vada a buon fine;
+            \item \textbf{Estensioni}: ulteriori Casi d'Uso che possono manifestarsi nel corso dell'esecuzione delle operazioni previste dal Caso d'Uso principale.
+            \item \textbf{Inclusioni}: ulteriori Casi d'Uso che l'\textit{Attore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Attore}{G}} è tenuto a eseguire per completare l'implementazione del Caso d'Uso attualmente in esame;
+            \item \textbf{Generalizzazioni}: ulteriori Casi d'Uso visti come specializzazione di un Caso d'Uso più generale, dal quale ereditano il comportamento comune, introducendo eventuali variazioni o funzionalità aggiuntive.
+        \end{itemize}  
+
+        \subsubsection{UC1 - Inserimento del dispositivo}
+        \label{uc:uc1}
+         \begin{center}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC1.png}
+                \caption{UC1 - Inserimento del dispositivo}
+                \label{fig:uc1-sistema}
+            \end{figure}
+        \end{center}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il Sistema si trova allo stato iniziale.
+            \item \textbf{Post-condizioni}: Il dispositivo è stato inserito e le sue informazioni sono salvate nel Sistema.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente inserisce il dispositivo.
+                \item Il Sistema registra le informazioni del dispositivo.
+            \end{itemize}
+            \item \textbf{Generalizzazioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc2]{UC2 Caricamento del dispositivo}
+                \item \hyperref[uc:uc12]{UC12 Creazione del dispositivo}
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection{UC2 - Caricamento del dispositivo}
+        \label{uc:uc2}
+         \begin{center}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC2.png}
+                \caption{UC2 - Caricamento del dispositivo}
+                \label{fig:uc2-sistema}
+            \end{figure}
+        \end{center}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il Sistema si trova allo stato iniziale.
+            \item \textbf{Post-condizioni}: Il dispositivo è stato caricato e le sue informazioni sono salvate nel Sistema.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona il pulsante per la funzionalità di caricamento del dispositivo.
+                \item L'Utente seleziona il file con le informazione del dispositivo.
+                \item Il Sistema registra le informazioni del dispositivo caricato.
+            \end{itemize}
+            \item \textbf{Scenari alternativi}:
+            \begin{itemize}
+                \item L'Utente carica un file con informazioni del dispositivo non valide [\hyperref[uc:uc3]{UC3}]. 
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc3]{UC3 Rilevamento file non valido}
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection{UC3 - Rilevamento file non valido}
+        \label{uc:uc3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente ha selezionato la funzionalitá che prevede il caricamento di file esterno e ha annullato il caricamento del file o ha caricato un file che presenta errori di struttura o contenuto.
+                \item \textbf{Post-condizioni}: Il Sistema mostra all'Utente il rilevamento di un file non valido.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema rileva un \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di struttura o contenuto nel file caricato.
+                    \item Il Sistema interrompe il processo di caricamento.
+                    \item Il Sistema mostra un messaggio di errore.
+                \end{itemize}
+            \end{itemize}  
+
+        \subsubsection{UC4 - Visualizzazione dispositivo inserito}
+        \label{uc:uc4}
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC4.png}
+                    \caption{UC4 - Visualizzazione dispositivo inserito}
+                    \label{fig:uc4-sistema}
+                \end{figure}
+            \end{center}
+            \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha importato o creato con successo un dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema mostra il dispositivo appena importato o creato.
+            \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema ha recuperato i dati del dispositivo.
+                    \item Il Sistema mostra il dispositivo caricato indicando il suo nome [\hyperref[uc:uc23.1]{UC23.1}].
+                \end{itemize}
+            \item \textbf{Inclusioni}: \hyperref[uc:uc23.1]{UC23.1 Visualizzazione nome dispositivo}
+            \end{itemize}
+
+                Il Caso d'Uso UC4 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC4Inclusioni.png}
+                            \caption{UC4 -  Inclusioni Caso d'Uso 4: UC23.1}
+                            \label{fig:uc4-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+                
+        \subsubsection{UC5 - Visualizzazione lista assets} 
+            \label{uc:uc5} 
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC5.png}
+                    \caption{UC5 - Visualizzazione lista assets}
+                    \label{fig:uc5-sistema}
+                \end{figure}
+            \end{center}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Un dispositivo è stato inserito e viene visualizzato.
+                \item \textbf{Post-condizioni}: Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets appartenenti al dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona la funzionalità di visualizzazione degli assets di un dispositivo.
+                    \item Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset associati al dispositivo [\hyperref[uc:uc5.1]{UC5.1}].
+                \end{itemize}
+                \item \textbf{Inclusioni}: \hyperref[uc:uc5.1]{UC5.1 Visualizzazione singolo asset}
+            \end{itemize}
+
+                Il Caso d'Uso UC5 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+        
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC5Inclusioni.png}
+                        \caption{UC5 -  Inclusioni Caso d'Uso 5: UC5.1}
+                        \label{fig:uc5-inclusioni}
+                    \end{figure}
+                \end{center}
+
+                \paragraph{UC5.1 - Visualizzazione singolo asset} \mbox{}
+                \label{uc:uc5.1}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema mostra il singolo asset nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets appartenenti al dispositivo.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item Viene visualizzato il singolo asset di un dispositivo: sono mostrati il nome [\hyperref[uc:uc22.1]{UC22.1}] e il tipo [\hyperref[uc:uc22.2]{UC22.2}] dell'asset.
+                    \end{itemize}
+                    \item \textbf{Inclusioni}: 
+                    \begin{itemize}
+                        \item \hyperref[uc:uc22.1]{UC22.1 Visualizzazione nome asset}
+                        \item \hyperref[uc:uc22.2]{UC22.2 Visualizzazione tipo asset}
+                    \end{itemize}
+                \end{itemize}
+
+                Il Caso d'Uso UC5.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC5.1Inclusioni.png}
+                            \caption{UC5.1 -  Inclusioni Caso d'Uso 5.1: UC22.1, UC22.2}
+                            \label{fig:uc5.1-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+        \subsubsection{UC6 - Esecuzione del test}
+        \label{uc:uc6} 
+         \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC6.png}
+                    \caption{UC6 - Esecuzione del test}
+                    \label{fig:uc6-sistema}
+                \end{figure}
+            \end{center}
+        \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente ha inserito un dispositivo o sta gestendo un test.
+                \item \textbf{Post-condizioni}: Il test è portato a termine e i suoi risultati sono disponibili. 
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente ha inserito un dispositivo e seleziona il pulsante di avvio del test oppure sta gestendo (modificando o completando) un test e il Sistema avvia in automatico il test.
+                    \item Il Sistema porta l'Utente nella sezione di test, dove di volta in volta mostra le informazioni relative all'avanzamento del test e sottopone l'Utente alla domanda. [\hyperref[uc:uc6.1]{UC6.1}]
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L'Utente seleziona l'uscita anticipata dal test [\hyperref[uc:uc9]{UC9}].
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize} 
+                    \item[-] \hyperref[uc:uc6.1]{UC6.1 Risposta a domanda}
+                \end{itemize}
+                \item \textbf{Estensioni}: 
+                \begin{itemize}
+                    \item[-] \hyperref[uc:uc9]{UC9 Uscita anticipata dal test} 
+                \end{itemize} 
+        \end{itemize}   
+
+        Il Caso d'Uso UC6 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC6Inclusioni.png}
+                                \caption{UC6 -  Inclusioni Caso d'Uso 6: UC6.1}
+                                \label{fig:uc6-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+                \paragraph{UC6.1 - Risposta a domanda} \mbox{}
+                \label{uc:uc6.1}
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC6.1.png}
+                        \caption{UC6.1 -  Risposta a domanda}
+                        \label{fig:uc6.1}
+                    \end{figure}
+                \end{center}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema riceve la risposta alla domanda relativa al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del decision tree.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item Il Sistema mostra all'Utente il testo e il nome della domanda corrente del decision tree.
+                        \item Il Sistema registra la risposta (SÌ/NO) dell'Utente.
+                    \end{itemize}
+                    \item \textbf{Scenari alternativi}:
+                    \begin{itemize}
+                        \item L'Utente seleziona il pulsante di navigazione alla domanda precedente per modificarne la risposta [\hyperref[uc:uc7]{UC7}].
+                        \item L'Utente seleziona il pulsante di navigazione alla domanda successiva per modificarne la risposta [\hyperref[uc:uc8]{UC8}].
+                    \end{itemize}
+                    \item \textbf{Estensioni}: 
+                    \begin{itemize}
+                        \item[-] \hyperref[uc:uc7]{UC7 Modifica risposta domanda precedente}
+                        \item[-] \hyperref[uc:uc8]{UC8 Modifica risposta domanda successiva}
+                    \end{itemize}
+                \end{itemize} 
+
+        \subsubsection{UC7 - Modifica risposta domanda precedente}
+        \label{uc:uc7}
+        \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC7.png}
+                    \caption{UC7 - Esecuzione del test}
+                    \label{fig:uc7-sistema}
+                \end{figure}
+        \end{center}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il test è in corso ed esiste almeno una domanda precedente nella cronologia (non si è alla prima).
+            \item \textbf{Post-condizioni}: Il sistema registra la nuova risposta alla domanda precedente. 
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona il pulsante per tornare alla domanda precedente. 
+                \item Il Sistema mostra la domanda precedente (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente.
+                \item L'Utente seleziona la risposta.
+            \end{itemize} 
+        \end{itemize}   
+
+        \subsubsection{UC8 - Modifica risposta domanda successiva}
+        \label{uc:uc8}
+        \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC8.png}
+                    \caption{UC8 - Esecuzione del test}
+                    \label{fig:uc8-sistema}
+                \end{figure}
+        \end{center}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il test è in corso ed esiste una domanda successiva nella storia in avanti.
+            \item \textbf{Post-condizioni}: Il Sistema riceve la nuova risposta alla domanda successiva. 
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente preme il pulsante per tornare alla domanda successiva.
+                \item Il Sistema mostra la domanda successiva (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente.
+                \item L'Utente seleziona la risposta.
+            \end{itemize} 
+        \end{itemize}
+
+
+        \subsubsection{UC9 - Uscita anticipata dal test}
+        \label{uc:uc9}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Un test è in corso. 
+            \item \textbf{Post-condizioni}: Il Sistema marca la sessione come incompleta e salva i progressi.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona il pulsante si uscita dalla sezione di test.
+                \item Il Sistema riconosce l'uscita anticipata e salva automaticamente i progressi.
+            \end{itemize} 
+        \end{itemize}   
+
+        \subsubsection{UC10 - Visualizzazione risultati test}
+        \label{uc:uc10}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha portato a termine la compilazione di un test o ha caricato un test precedente nel sistema.
+            \item \textbf{Post-condizioni}: L'Utente visualizza i risultati del test.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente ha caricato o completato un test.
+                \item Il Sistema ha elaborato i dati del test.
+                \item L'Utente visualizza i risultati del test sotto forma di una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di requisiti [\hyperref[uc:uc10.1]{UC10.1}].
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+                \begin{itemize} 
+                    \item \hyperref[uc:uc10.1]{UC10.1 Visualizzazione \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} requisiti con risultati}
+                \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d'Uso UC10 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC10Inclusioni.png}
+                        \caption{UC10 -  Inclusioni Caso d'Uso 10: UC10.1}
+                        \label{fig:uc10-inclusioni}
+                    \end{figure}
+                \end{center}
+
+                \paragraph{UC10.1 - Visualizzazione lista requisiti con risultati} \mbox{}
+                \label{uc:uc10.1}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei requisiti assieme ai loro risultati del test.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente visualizza una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}}, ciascuno dei quali elementi è un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} affrontato durante il test con il risultato [\hyperref[uc:uc10.1.1]{UC10.1.1}].
+                    \end{itemize}
+                    \item \textbf{Inclusioni}: 
+                    \begin{itemize} 
+                        \item[-] \hyperref[uc:uc10.1.1]{UC10.1.1 Visualizzazione singolo \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con risultato}
+                    \end{itemize}
+                \end{itemize}
+
+                \noindent Il Caso d'Uso UC10.1 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC10.1Inclusioni.png}
+                        \caption{UC10.1 -  Inclusioni Caso d'Uso 10.1: UC10.1.1}
+                        \label{fig:uc10.1-inclusioni}
+                    \end{figure}
+                \end{center} 
+
+                \paragraph{UC10.1.1 - Visualizzazione singolo requisito con risultato} \mbox{}
+                \label{uc:uc10.1.1}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema mostra il singolo \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con risultato del test.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente visualizza il singolo \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} attraverso suo nome [\hyperref[uc:uc33.2]{UC33.2}] e il risultato ad esso associato [\hyperref[uc:uc10.1.1.1]{UC10.1.1.1}].
+                    \end{itemize}
+                    \item \textbf{Inclusioni}: 
+                    \begin{itemize} 
+                        \item[-] \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                        \item[-] \hyperref[uc:uc10.1.1.1]{UC10.1.1.1 Visualizzazione risultato \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}}}
+                    \end{itemize}
+                \end{itemize}
+
+                \noindent Il Caso d'Uso UC10.1.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC10.1.1Inclusioni.png}
+                        \caption{UC10.1.1 -  Inclusioni Caso d'Uso 10.1.1: UC33.2, UC10.1.1.1}
+                        \label{fig:uc10.1.1-inclusioni}
+                    \end{figure}
+                \end{center}
+
+                \paragraph{UC10.1.1.1 - Visualizzazione risultato requisito} \mbox{}
+                \label{uc:uc10.1.1.1}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del requisito.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente visualizza il risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}}, che può essere di tre tipi: 
+                        \begin{itemize}
+                            \item[a)] \textbf{PASS}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è stato rispettato
+                            \item[b)] \textbf{FAIL}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non è stato rispettato 
+                            \item[c)] \textbf{NA}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non è applicabile.
+                        \end{itemize}
+                    \end{itemize}
+                \end{itemize}
+
+        \subsubsection{UC11 - Esportazione test completato} 
+            \label{uc:uc11}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente ha portato a termine la compilazione di un test.
+                \item \textbf{Post-condizioni}: Il test completato è esportato e reso disponibile all'Utente nei due formati previsti.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona la funzionalità di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} del test e il formato desiderato.
+                    \item Il Sistema formatta i dati del test ed effetta l'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} nel formato richiesto.
+                \end{itemize}
+            \end{itemize}
+    
+
+        \subsubsection{UC12 - Creazione del dispositivo}
+        \label{uc:uc12}
+        \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC12.png}
+                        \caption{UC12 - Creazione del dispositivo}
+                        \label{fig:uc12}
+                    \end{figure}
+                \end{center}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il Sistema si trova allo stato iniziale.
+            \item \textbf{Post-condizioni}: Il dispositivo è stato creato e le sue informazioni sono salvate nel Sistema.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona il pulsante per la funzionalità di creazione del dispositivo.
+                \item L'Utente compila i campi appositi relativi ai dati del dispositivo [\hyperref[uc:uc12.1]{UC12.1}].
+                \item L'Utente aggiunge almeno un asset relativo al dispositivo [\hyperref[uc:uc14]{UC14}].
+                \item Il Sistema registra le informazioni del dispositivo creato.
+            \end{itemize}
+            \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L'Utente seleziona il pulsante di annullamento relativo alla creazione di un dispositivo [\hyperref[uc:uc19]{UC19}].
+                \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc12.1]{UC12.1 Inserimento dati dispositivo}
+                \item \hyperref[uc:uc14]{UC14 Aggiungi asset}
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc19]{UC19 Annullamento creazione dispositivo}
+            \end{itemize}
+        \end{itemize}
+
+                    \noindent Il Caso d'Uso UC12 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+            
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC12Inclusioni.png}
+                            \caption{UC12 -  Inclusioni Caso d'Uso 12: UC12.1}
+                            \label{fig:uc12-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+                \paragraph{UC12.1 - Inserimento dati dispositivo} \mbox{}
+                \label{uc:uc12.1}
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC12.1.png}
+                        \caption{UC12.1 - Inserimento dati dispositivo}
+                        \label{fig:uc12.1}
+                    \end{figure}
+                \end{center}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema registra i dati inseriti per la creazione di un dispositivo.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente inserisce i vari dati relativi al dispositivo da creare: 
+                        \begin{itemize}
+                            \item[a)] il nome [\hyperref[uc:uc12.1.1]{UC12.1.1}]
+                            \item[b)] il sistema operativo [\hyperref[uc:uc12.1.2]{UC12.1.2}]
+                            \item[c)] la versione del firmware [\hyperref[uc:uc12.1.3]{UC12.1.3}]
+                            \item[d)] la funzionalità [\hyperref[uc:uc12.1.4]{UC12.1.4}]
+                            \item[e)] la descrizione [\hyperref[uc:uc12.1.5]{UC12.1.5}].
+                        \end{itemize}
+                    \end{itemize}
+                    \item \textbf{Scenari alternativi}:
+                    \begin{itemize}
+                        \item L'Utente inserisce in uno o più campi valori non validi [\hyperref[uc:uc13]{UC13}].
+                    \end{itemize}
+                    \item \textbf{Inclusioni}:
+                    \begin{itemize}
+                        \item[-] \hyperref[uc:uc12.1.1]{UC12.1.1 Inserimento nome dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.2]{UC12.1.2 Inserimento sistema operativo dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.3]{UC12.1.3 Inserimento versione firmware dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.4]{UC12.1.4 Inserimento funzionalità dispositivo}
+                        \item[-] \hyperref[uc:uc12.1.5]{UC12.1.5 Inserimento descrizione dispositivo} 
+                    \end{itemize}
+                    \item \textbf{Estensioni}: 
+                    \begin{itemize}
+                        \item[-] \hyperref[uc:uc13]{UC13 Inserimento dati non validi}
+                    \end{itemize}
+                \end{itemize}
+
+                \noindent Il Caso d'Uso UC12.1 include cinque ulteriori Caso d'Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC12.1Inclusioni.png}
+                                \caption{UC12.1 -  Inclusioni Caso d'Uso 12.1: UC12.1.1, UC12.1.2, UC12.1.3, UC12.1.4, UC12.1.5}
+                                \label{fig:uc12.1-inclusioni}
+                            \end{figure}
+                        \end{center} 
+
+                \paragraph{UC12.1.1 - Inserimento nome dispositivo} \mbox{}
+                \label{uc:uc12.1.1}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema registra il nome del dispositivo inserito.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente inserisce il nome del dispositivo nel campo dati corrispondente.
+                        \item Il Sistema memorizza il valore inserito.
+                    \end{itemize}
+                \end{itemize} 
+
+                \paragraph{UC12.1.2 - Inserimento sistema operativo dispositivo} \mbox{}
+                \label{uc:uc12.1.2}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema registra il nome del sistema operativo del dispositivo inserito.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente inserisce il nome del sistema operativo del dispositivo nel campo dati corrispondente.
+                        \item Il Sistema memorizza il valore inserito.
+                    \end{itemize}
+                \end{itemize} 
+
+                \paragraph{UC12.1.3 - Inserimento versione firmware dispositivo} \mbox{}
+                \label{uc:uc12.1.3}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema registra la versione del firmware del dispositivo inserita.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente inserisce la versione del firmware del dispositivo nel corrispondente campo dati.
+                        \item Il Sistema memorizza il valore inserito.
+                    \end{itemize}
+                \end{itemize} 
+
+                \paragraph{UC12.1.4 - Inserimento funzionalità dispositivo} \mbox{}
+                \label{uc:uc12.1.4}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}: Il Sistema registra la funzionalità del dispositivo inserita.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente inserisce le funzionalità del dispositivo nel corrispondente campo dati.
+                        \item Il Sistema memorizza il valore inserito.
+                    \end{itemize}
+                \end{itemize} 
+
+                \paragraph{UC12.1.5 - Inserimento descrizione dispositivo} \mbox{}
+                \label{uc:uc12.1.5}
+                \begin{itemize}
+                    \item \textbf{Attore}: Utente
+                    \item \textbf{Post-condizioni}:Il Sistema registra la descrizione del dispositivo inserita.
+                    \item \textbf{Scenario principale}:
+                    \begin{itemize}
+                        \item L'Utente inserisce la descrizione del dispositivo nel rispettivo campo dati.
+                        \item Il Sistema memorizza il valore inserito.
+                    \end{itemize}
+                \end{itemize} 
+
+        \subsubsection{UC13 - Inserimento dati non validi}
+        \label{uc:uc13}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha compilato almeno un campo con dati non validi.
+            \item \textbf{Post-condizioni}: Il Sistema segnala l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} all'Utente.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente ha compilato uno o più campi con dati nulli o comunque non validi.
+                \item Il Sistema segnala all'Utente l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di inserimento e l'impossibilità di procedere.
+            \end{itemize} 
+        \end{itemize}
+        
+
+        \subsubsection{UC14 - Creazione asset}
+        \label{uc:uc14}
+        \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC14.png}
+                    \caption{UC14 - Creazione asset}
+                    \label{fig:uc14-sistema}
+                \end{figure}
+        \end{center}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente si trova nella sezione di gestione asset del dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema registra l'asset creato.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di aggiunta di un nuovo asset.
+                \item L'Utente compila i campi relativi alle informazioni dell'asset, inserendo:
+                \begin{itemize}
+                    \item nome dell'asset [\hyperref[uc:uc14.1]{UC14.1}]
+                    \item tipo dell'asset [\hyperref[uc:uc14.2]{UC14.2}]
+                    \item descrizione dell'asset [\hyperref[uc:uc14.3]{UC14.3}]
+                    \item sensibilità dell'asset [\hyperref[uc:uc14.4]{UC14.4}].
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Scenari alternativi}:
+            \begin{itemize}
+                \item L'Utente inserisce in uno o più campi valori non validi [\hyperref[uc:uc13]{UC13}].
+                \item L'Utente seleziona l'annullamento della creazione dell'asset [\hyperref[uc:uc15]{UC15}].
+            \end{itemize}
+            \item \textbf{Inclusioni}:
+            \begin{itemize}
+                \item \hyperref[uc:uc14.1]{UC14.1 Inserimento nome asset}
+                \item \hyperref[uc:uc14.2]{UC14.2 Selezione tipo asset}
+                \item \hyperref[uc:uc14.3]{UC14.3 Inserimento descrizione asset}
+                \item \hyperref[uc:uc14.4]{UC14.4 Selezione sensibilità asset}
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc13]{UC13 Inserimento dati non validi}
+                \item \hyperref[uc:uc15]{UC15 Annullamento creazione asset}
+            \end{itemize}
+        \end{itemize}
+
+        \noindent Il Caso d'Uso UC14 include cinque ulteriori Caso d'Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC14Inclusioni.png}
+                                \caption{UC14 -  Inclusioni Caso d'Uso 14: UC14.1, UC14.2, UC14.3, UC14.4, UC14.5}
+                                \label{fig:uc14-inclusioni}
+                            \end{figure}
+                        \end{center} 
+        
+        
+        \paragraph{UC14.1 - Inserimento nome asset} \mbox{}
+        \label{uc:uc14.1}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Post-condizioni}: Il Sistema registra il nome dell'asset inserito.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente inserisce il nome dell'asset nel rispettivo campo dati.
+                \item Il Sistema memorizza il valore.
+            \end{itemize}
+        \end{itemize}
+        
+        \paragraph{UC14.2 - Selezione tipo asset} \mbox{}
+        \label{uc:uc14.2}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Post-condizioni}: Il Sistema registra la selezione del tipo dell'asset.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona il tipo dell'asset dall'elenco disponibile nel corrispondente campo.
+                \item Il Sistema memorizza la selezione.
+            \end{itemize}
+        \end{itemize}
+        
+        \paragraph{UC14.3 - Inserimento descrizione asset} \mbox{}
+        \label{uc:uc14.3}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Post-condizioni}: Il Sistema registra la descrizione dell'asset inserita.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente inserisce la descrizione dell'asset.
+                \item Il Sistema memorizza il valore.
+            \end{itemize}
+        \end{itemize}
+        
+        \paragraph{UC14.4 - Selezione sensibilità asset} \mbox{}
+        \label{uc:uc14.4}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Post-condizioni}: Il Sistema registra la sensibilità dell'asset.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona il livello di sensibilità dall'elenco disponibile nel corrispondente campo.
+                \item Il Sistema memorizza la selezione.
+            \end{itemize}
+        \end{itemize}
+
+        \paragraph{UC15 - Annullamento creazione asset} \mbox{}
+        \label{uc:uc15}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente sta creando un asset.
+            \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di creazione dell'asset. 
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di annullamento della creazione dell'asset e conferma.
+                \item Il sistema elimina i dati dell'asset immessi.
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection{UC16 - Eliminazione asset}
+        \label{uc:uc16}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il dispositivo inserito ha almeno un asset e l'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets.
+            \item \textbf{Post-condizioni}: Il Sistema ha effettuato l'eliminazione dell'asset.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona un asset dalla lista.
+                \item L'Utente seleziona la funzionalità di eliminazione e conferma.
+                \item Il Sistema rimuove l'asset dal dispositivo, aggiornando la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets.
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection{UC17 - Modifica asset}
+        \label{uc:uc17}
+        \begin{center}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC17.png}
+                \caption{UC17 - Modifica asset}
+                \label{fig:uc17}
+            \end{figure}
+        \end{center} 
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente si trova nella sezione di gestione asset del dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema registra le modifiche apportate all'asset.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona un asset.
+                \item L'Utente seleziona la funzionalità di modifica.
+                \item L'Utente modifica i campi relativi alle informazioni dell'asset, eventualmente modificando:
+                \begin{itemize}
+                    \item nome dell'asset [\hyperref[uc:uc17.1]{UC17.1}]
+                    \item tipo dell'asset [\hyperref[uc:uc17.2]{UC17.2}]
+                    \item descrizione dell'asset [\hyperref[uc:uc17.3]{UC17.3}]
+                    \item sensibilità dell'asset [\hyperref[uc:uc17.4]{UC17.4}].
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Scenari alternativi}:
+            \begin{itemize}
+                \item L'Utente inserisce in uno o più campi valori non validi [\hyperref[uc:uc13]{UC13}].
+                \item L'Utente seleziona l'annullamento della modifica dell'asset [\hyperref[uc:uc18]{UC18}].
+            \end{itemize}
+            \item \textbf{Inclusioni}:
+            \begin{itemize}
+                \item \hyperref[uc:uc17.1]{UC17.1 Modifica nome asset}
+                \item \hyperref[uc:uc17.2]{UC17.2 Modifica selezione tipo asset}
+                \item \hyperref[uc:uc17.3]{UC17.3 Modifica descrizione asset}
+                \item \hyperref[uc:uc17.4]{UC17.4 Modifica selezione sensibilità asset}
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc13]{UC13 Inserimento dati non validi}
+                \item \hyperref[uc:uc18]{UC18 Annullamento modifica asset}
+            \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d'Uso UC17 include quattro ulteriori Caso d'Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC17Inclusioni.png}
+                                \caption{UC17 -  Inclusioni Caso d'Uso 17: UC17.1, UC17.2, UC17.3, UC17.4}
+                                \label{fig:uc17-inclusioni}
+                            \end{figure}
+                        \end{center} 
+
+            \paragraph{UC17.1 - Modifica nome asset} \mbox{}
+            \label{uc:uc17.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il nuovo nome dell'asset inserito.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica il nome precedentemente inserito nel rispettivo campo dati.
+                    \item L'Utente inserisce il nuovo nome dell'asset.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC17.2 - Modifica selezione tipo asset} \mbox{}
+            \label{uc:uc17.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova selezione del tipo dell'asset.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la selezione del tipo dell'asset precedentemente effettuata.
+                    \item L'Utente seleziona il tipo dell'asset dall'elenco disponibile nel corrispondente campo.
+                    \item Il Sistema memorizza la selezione.
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC17.3 - Modifica descrizione asset} \mbox{}
+            \label{uc:uc17.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova descrizione dell'asset inserita.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la descrizione precedentemente inserita nel rispettivo campo dati.
+                    \item L'Utente inserisce la nuova descrizione dell'asset.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC17.4 - Modifica selezione sensibilità asset} \mbox{}
+            \label{uc:uc17.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova sensibilità dell'asset selezionata.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la selezione della sensibilità dell'asset precedentemente effettuata.
+                    \item L'Utente seleziona il livello di sensibilità dall'elenco disponibile nel corrispondente campo.
+                    \item Il Sistema memorizza la selezione.
+                \end{itemize}
+            \end{itemize}
+
+
+        \subsubsection{UC18 - Annullamento modifica asset}
+        \label{uc:uc18}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente sta modificando un asset.
+            \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di modifica dell'asset.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di annullamento durante la modifica e conferma.
+                \item Il Sistema scarta le modifiche inserite.
+                \item Il Sistema ritorna alla visualizzazione della \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} asset.
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection{UC19 - Annullamento creazione dispositivo}
+        \label{uc:uc19}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente sta creando manualmente un dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di creazione del dispositivo.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente ha selezionato il processo di annullamento della creazione del dispositivo.
+                \item L'Utente seleziona la funzionalità di annullamento e conferma.
+                \item Il Sistema elimina i dati del dispositivo e/o degli asset immessi.
+                \item Il Sistema riporta l'Utente allo stato iniziale.
+            \end{itemize} 
+        \end{itemize}
+
+        \subsubsection{UC20 - Visualizzazione presenza di modifiche non salvate dispositivo}
+        \label{uc:uc20}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha creato un nuovo dispositivo oppure ha effettuato modifiche ai dati o alla \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets del dispositivo caricato.
+            \item \textbf{Post-condizioni}: L'Utente visualizza la segnalazione di modifiche non salvate relative al dispositivo.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente ha creato un nuovo dispositivo oppure ha modificato i dati di un dispositivo esistente.
+                \item Il Sistema segnala l'Utente della presenza di modifiche non salvate relative al dispositivo.
+            \end{itemize} 
+        \end{itemize}
+
+        \subsubsection{UC21 - Salvataggio modifiche non salvate del dispositivo}
+        \label{uc:uc21}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente visualizza la presenza di modifiche non salvate relative al dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema salva le modifiche non salvate del dispositivo. 
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente visualizza la presenza di modifiche non salvate relative al dispositivo.
+                \item L'Utente seleziona la funzionalità di salvataggio delle modifiche non salvate.
+                \item Il Sistema salva i dati non salvati del dispositivo in locale.
+            \end{itemize} 
+        \end{itemize}
+
+        \subsubsection{UC22 - Visualizzazione singolo asset nel dettaglio}
+        \label{uc:uc22}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets.
+            \item \textbf{Post-condizioni}: Il Sistema mostra tutte le informazioni dell'asset nel dettaglio.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona un asset dalla \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets per la visualizzazione in dettaglio.
+                \item Viene visualizzato il singolo asset di un dispositivo con i suoi dettagli: 
+                \begin{itemize}
+                    \item[a)] il nome [\hyperref[uc:uc22.1]{UC22.1}]
+                    \item[b)] il tipo [\hyperref[uc:uc22.2]{UC22.2}]
+                    \item[c)] la descrizione [\hyperref[uc:uc22.3]{UC22.3}]
+                    \item[d)] la sensibilità [\hyperref[uc:uc22.4]{UC22.4}].
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc22.1]{UC22.1 Visualizzazione nome asset}
+                \item \hyperref[uc:uc22.2]{UC22.2 Visualizzazione tipo asset}
+                \item \hyperref[uc:uc22.3]{UC22.3 Visualizzazione descrizione asset}
+                \item \hyperref[uc:uc22.4]{UC22.4 Visualizzazione sensibilità asset}
+            \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d'Uso UC22 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC22Inclusioni.png}
+                                \caption{UC22 -  Inclusioni Caso d'Uso 22: UC22.1, UC22.2, UC22.3, UC22.4}
+                                \label{fig:uc22-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+            \paragraph{UC22.1 - Visualizzazione nome asset} \mbox{}
+            \label{uc:uc22.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nome dell'asset.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato il nome dell'asset.
+                \end{itemize}
+            \end{itemize}
+    
+            \paragraph{UC22.2 - Visualizzazione tipo asset} \mbox{}
+            \label{uc:uc22.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il tipo dell'asset.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato il tipo dell'asset.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC22.3 - Visualizzazione descrizione asset} \mbox{}
+            \label{uc:uc22.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la descrizione dell'asset.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la descrizione dell'asset.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC22.4 - Visualizzazione sensibilità asset} \mbox{}
+            \label{uc:uc22.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la sensibilità dell'asset.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la sensibilità dell'asset.
+                \end{itemize}
+            \end{itemize}   
+
+        \subsubsection{UC23 - Visualizzazione dettaglio dati dispositivo}
+        \label{uc:uc23}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha creato o caricato un dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema mostra i dati del dispositivo in dettaglio.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di visualizzazione in dettaglio dei dati del dispositivo.
+                \item Vengono visualizzati i dati del dispositivo in dettaglio: 
+                \begin{itemize}
+                    \item[a)] il nome [\hyperref[uc:uc23.1]{UC23.1}]
+                    \item[b)] il sistema operativo [\hyperref[uc:uc23.2]{UC23.2}]
+                    \item[c)] la versione del firmware [\hyperref[uc:uc23.3]{UC23.3}]
+                    \item[d)] la funzionalità [\hyperref[uc:uc23.4]{UC23.4}]
+                    \item[d)] la descrizione [\hyperref[uc:uc23.5]{UC23.5}].
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc23.1]{UC23.1 Visualizzazione nome dispositivo}
+                \item \hyperref[uc:uc23.2]{UC23.2 Visualizzazione sistema operativo dispositivo}
+                \item \hyperref[uc:uc23.3]{UC23.3 Visualizzazione versione firmware dispositivo}
+                \item \hyperref[uc:uc23.4]{UC23.4 Visualizzazione funzionalità dispositivo}
+                \item \hyperref[uc:uc23.5]{UC23.5 Visualizzazione descrizione dispositivo}
+            \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d'Uso UC23 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC23Inclusioni.png}
+                                \caption{UC23 -  Inclusioni Caso d'Uso 23: UC23.1, UC23.2, UC23.3, UC23.4, UC23.5}
+                                \label{fig:uc23-inclusioni}
+                            \end{figure}
+                        \end{center}
+
+            \paragraph{UC23.1 - Visualizzazione nome dispositivo} \mbox{}
+            \label{uc:uc23.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nome del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato il nome del dispositivo. 
+                \end{itemize}
+            \end{itemize} 
+    
+            \paragraph{UC23.2 - Visualizzazione sistema operativo dispositivo} \mbox{}
+            \label{uc:uc23.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il sistema operativo del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato il sistema operativo del dispositivo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC23.3 - Visualizzazione versione firmware dispositivo} \mbox{}
+            \label{uc:uc23.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la versione del firmware del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la versione del firmware del dispositivo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC23.4 - Visualizzazione funzionalità dispositivo} \mbox{}
+            \label{uc:uc23.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la funzionalità del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la funzionalità del dispositivo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC23.5 - Visualizzazione descrizione dispositivo} \mbox{}
+            \label{uc:uc23.5}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la descrizione del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzata la descrizione del dispositivo.
+                \end{itemize}
+            \end{itemize}
+        
+
+            \subsubsection{UC24 - Caricamento test precedente}
+            \label{uc:uc24}
+            \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC24.png}
+                        \caption{UC24 - Caricamento test precedente}
+                        \label{fig:uc24}
+                    \end{figure}
+                \end{center}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: Il Sistema si trova allo stato iniziale. 
+                \item \textbf{Post-condizioni}: Il test selezionato dall'utente è stato caricato nel Sistema. 
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona la funzionalità di caricamento di un test precedente (salvato in locale).
+                    \item L'Utente seleziona il file.
+                    \item Il Sistema valida e carica il test.
+                \end{itemize} 
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L'Utente carica un file che presenta errori di struttura o di formato [\hyperref[uc:uc2]{UC2}].
+                \end{itemize} 
+                \item \textbf{Estensioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc2]{UC2 Rilevamento file non valido}
+                \end{itemize}
+            \end{itemize}
+
+
+        \subsubsection{UC25 - Modifica risultati test}
+        \label{uc:uc25}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha portato a termine l'esecuzione del test o ha caricato un test completato.
+            \item \textbf{Post-condizioni}: Il test viene completato e i suoi dati sono aggiornati.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente visualizza i risultati di un test completato.
+                \item L'Utente seleziona la funzionalità di modifica del test.
+                \item L'Utente seleziona un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} e l'asset del dispositivo per individuare il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} da cui riprendere il test e avvia la modifica del test.
+                \item Il Sistema esegue nuovamente il test a partire dal punto selezionato [\hyperref[uc:uc6]{UC6}].
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc6]{UC6  Esecuzione del test}
+            \end{itemize}
+        \end{itemize}
+
+        \noindent Il Caso d'Uso UC25 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+            
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC25Inclusioni.png}
+                        \caption{UC25 -  Inclusioni Caso d'Uso 25: UC6}
+                        \label{fig:uc25-inclusioni}
+                    \end{figure}
+                \end{center}
+
+
+            \subsubsection{UC26 - Esecuzione di un test non completato}
+            \label{uc:uc26}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente ha caricato un test non completato.
+                \item \textbf{Post-condizioni}: Il test viene completato e i suoi dati sono aggiornati.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente ha caricato un test non completato.
+                    \item Il Sistema riprende l'esecuzione del test dall'ultimo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc6]{UC6}].
+                \end{itemize} 
+                 \item \textbf{Inclusioni}: 
+                 \begin{itemize}
+                    \item \hyperref[uc:uc6]{UC6  Esecuzione del test}
+                \end{itemize}
+            \end{itemize}
+
+            \noindent Il Caso d'Uso UC26 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC26Inclusioni.png}
+                            \caption{UC26 -  Inclusioni Caso d'Uso 26: UC6}
+                            \label{fig:uc26-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \subsubsection{UC27 - Visualizzazione lista giustificazioni test}
+            \label{uc:uc27}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: E' presente un test completato.
+                \item \textbf{Post-condizioni}: Le giustificazioni sono visualizzate.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza i risultati di un test completato.
+                    \item L'Utente seleziona la funzionalità di visualizzazione delle giustificazioni.
+                    \item L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} delle giustificazioni associate ad ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del test [\hyperref[uc:uc27.1]{UC27.1}]. 
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                 \begin{itemize}
+                    \item \hyperref[uc:uc27.1]{UC27.1  Visualizzazione singolo \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con giustificazione}
+                \end{itemize}
+            \end{itemize}
+
+            \noindent Il Caso d'Uso UC27 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC27Inclusioni.png}
+                            \caption{UC27 -  Inclusioni Caso d'Uso 27: UC27.1}
+                            \label{fig:uc27-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \paragraph{UC27.1 - Visualizzazione singolo requisito con giustificazione} \mbox{}
+            \label{uc:uc27.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la singola giustificazione relativa ad un requisito.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il singolo elemento della \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}}, costituito dal nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} [\hyperref[uc:uc33.2]{UC33.2}] e dalla giustificazione ad esso associata [\hyperref[uc:uc27.1.1]{UC27.1.1}].
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc27.1.1]{UC27.1.1 Visualizzazione giustificazione \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}}}
+                \end{itemize}
+            \end{itemize}
+
+            \noindent Il Caso d'Uso UC27.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC27.1Inclusioni.png}
+                            \caption{UC27.1 -  Inclusioni Caso d'Uso 27.1: UC33.2, UC27.1.1}
+                            \label{fig:uc27.1-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \paragraph{UC27.1.1 - Visualizzazione giustificazione requisito} \mbox{}
+            \label{uc:uc27.1.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra la giustificazione del requisito.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza la giustificazione del requisito.
+                \end{itemize}
+            \end{itemize}
+
+
+        \subsubsection{UC28 - Visualizzazione lista assets con risultati nel dettaglio di un requisito} 
+        \label{uc:uc28}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Un test è stato completato e l'Utente sta visualizzando i risultati.
+            \item \textbf{Post-condizioni}: Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets con i relativi risultati appartenenti al requisito.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di espansione dei risultati di un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei risultati del test.
+                \item Il Sistema mostra la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets con i relativi risultati, specifici di un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} [\hyperref[uc:uc28.1]{UC28.1}].
+            \end{itemize}
+            \item \textbf{Inclusioni}: \hyperref[uc:uc28.1]{UC28.1 Visualizzazione singolo asset con risultato}
+        \end{itemize}
+
+                    Il Caso d'Uso UC28 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+            
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC28Inclusioni.png}
+                            \caption{UC28 -  Inclusioni Caso d'Uso 28: UC28.1}
+                            \label{fig:uc28-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \paragraph{UC28.1 - Visualizzazione singolo asset con risultato} \mbox{}
+            \label{uc:uc28.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il singolo asset nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets del dispositivo con il risultato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato l'esito associato all'asset: sono mostrati il nome dell'asset [\hyperref[uc:uc22.1]{UC22.1}] e il risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato all'asset [\hyperref[uc:uc28.1.1]{UC28.1.1}].
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc22.1]{UC22.1 Visualizzazione nome asset}
+                    \item \hyperref[uc:uc28.1.1]{UC28.1.1 Visualizzazione risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato all'asset}
+                \end{itemize}
+            \end{itemize}
+
+            Il Caso d'Uso UC28.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+            
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC28.1Inclusioni.png}
+                            \caption{UC28.1 -  Inclusioni Caso d'Uso 28.1: UC22.1, UC28.1.1}
+                            \label{fig:uc28.1-inclusioni}
+                        \end{figure}
+                    \end{center}
+
+            \paragraph{UC28.1.1 - Visualizzazione risultato del requisito associato all'asset} \mbox{}
+            \label{uc:uc28.1.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato all'asset.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato il risultato associato all'asset (e relativo al \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} selezionato).
+                \end{itemize}
+            \end{itemize}
+
+        \subsubsection{UC29 - Eliminazione dispositivo}
+        \label{uc:uc29}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha caricato o creato un dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema ha effettuato l'eliminazione del dispositivo.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente ha creato o caricato un dispositivo.
+                \item L'Utente seleziona la funzionalità di eliminazione del dispositivo e conferma.
+                \item Il Sistema rimuove tutti i dati del dispositivo e torna allo stato iniziale.
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection{UC30 - Modifica dati dispositivo}
+        \label{uc:uc30}
+        \begin{center}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC30.png}
+                \caption{UC30 - Modifica dati dispositivo}
+                \label{fig:uc30}
+            \end{figure}
+        \end{center} 
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente ha creato o caricato un dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema registra le modifiche apportate ai dati del dispositivo.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di modifica dei dati del dispositivo.
+                \item L'Utente modifica i campi relativi alle informazioni del dispositivo, eventualmente modificando:
+                \begin{itemize}
+                    \item nome del dispositivo [\hyperref[uc:uc30.1]{UC30.1}]
+                    \item sistema operativo del dispositivo [\hyperref[uc:uc30.2]{UC30.2}]
+                    \item versione del firmware del dispositivo [\hyperref[uc:uc30.3]{UC30.3}]
+                    \item funzionalità del dispositivo [\hyperref[uc:uc30.4]{UC30.4}]
+                    \item descrizione del dispositivo [\hyperref[uc:uc30.5]{UC30.5}].
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Scenari alternativi}:
+            \begin{itemize}
+                \item L'Utente inserisce in uno o più campi valori non validi [\hyperref[uc:uc13]{UC13}].
+                \item L'Utente seleziona l'annullamento della modifica dei dati del dispositivo [\hyperref[uc:uc31]{UC31}].
+            \end{itemize}
+            \item \textbf{Inclusioni}:
+            \begin{itemize}
+                \item \hyperref[uc:uc30.1]{UC30.1 Modifica nome dispositivo}
+                \item \hyperref[uc:uc30.2]{UC30.2 Modifica sistema operativo dispositivo}
+                \item \hyperref[uc:uc30.3]{UC30.3 Modifica versione firmware dispositivo}
+                \item \hyperref[uc:uc30.4]{UC30.4 Modifica funzionalità dispositivo}
+                \item \hyperref[uc:uc30.5]{UC30.5 Modifica descrizione dispositivo}
+            \end{itemize}
+            \item \textbf{Estensioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc13]{UC13 Inserimento dati non validi}
+                \item \hyperref[uc:uc31]{UC31 Annullamento modifica dati dispositivo}
+            \end{itemize}
+        \end{itemize}
+
+                \noindent Il Caso d'Uso UC30 include cinque ulteriori Caso d'Uso come raffigurato nella seguente immagine:
+                
+                        \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC30Inclusioni.png}
+                                \caption{UC30 -  Inclusioni Caso d'Uso 30: UC30.1, UC30.2, UC30.3, UC30.4, UC30.5}
+                                \label{fig:uc30-inclusioni}
+                            \end{figure}
+                        \end{center} 
+
+            \paragraph{UC30.1 - Modifica nome dispositivo} \mbox{}
+            \label{uc:uc30.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il nuovo nome del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica il nome precedentemente inserito nel rispettivo campo dati.
+                    \item L'Utente inserisce il nuovo nome del dispositivo.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC30.2 - Modifica sistema operativo dispositivo} \mbox{}
+            \label{uc:uc30.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il nuovo nome del sistema operativo del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica il nome del sistema operativo precedentemente inserito nel rispettivo campo dati.
+                    \item L'Utente inserisce il nuovo nome del sistema operativo del dispositivo.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC30.3 - Modifica versione firmware dispositivo} \mbox{}
+            \label{uc:uc30.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova versione del firmware del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la versione del firmware precedentemente inserita nel rispettivo campo dati.
+                    \item L'Utente inserisce la nuova versione del firmware del dispositivo.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+            
+            \paragraph{UC30.4 - Modifica funzionalità dispositivo} \mbox{}
+            \label{uc:uc30.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova funzionalità del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la funzionalità precedentemente inserita nel rispettivo campo dati.
+                    \item L'Utente inserisce la nuova funzionalità del dispositivo.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC30.5 - Modifica descrizione dispositivo} \mbox{}
+            \label{uc:uc30.5}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra la nuova descrizione del dispositivo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema carica la descrizione precedentemente inserita nel rispettivo campo dati.
+                    \item L'Utente inserisce la nuova descrizione del dispositivo.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+
+        \subsubsection{UC31 - Annullamento modifica dati dispositivo}
+        \label{uc:uc31}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: L'Utente sta modificando i dati di un dispositivo.
+            \item \textbf{Post-condizioni}: Il Sistema annulla il procedimento di modifica dei dati del dispositivo.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di annullamento durante la modifica e conferma.
+                \item Il Sistema scarta le modifiche inserite.
+                \item Il Sistema ritorna alla visualizzazione del dispositivo inserito.
+            \end{itemize}
+        \end{itemize}
+
+
+        \subsubsection{UC32 - Visualizzazione elenco decision trees}
+        \label{uc:uc32}
+        \begin{itemize}
+            \item \textbf{Attore}: Utente
+            \item \textbf{Pre-condizioni}: Il Sistema è allo stato iniziale.
+            \item \textbf{Post-condizioni}: Il Sistema mostra l'elenco dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} disponibili.
+            \item \textbf{Scenario principale}:
+            \begin{itemize}
+                \item L'Utente seleziona la funzionalità di visualizzazione dei decision tree.
+                \item Il Sistema recupera i \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} dal file di configurazione.
+                \item Il Sistema mostra una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} ordinata dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} [\hyperref[uc:uc32.1]{UC32.1}].
+            \end{itemize}
+            \item \textbf{Inclusioni}: 
+            \begin{itemize}
+                \item \hyperref[uc:uc32.1]{UC32.1 Visualizzazione singolo \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}} 
+            \end{itemize}
+        \end{itemize}
+
+            \noindent Il Caso d'Uso UC32 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+        
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC32Inclusioni.png}
+                    \caption{UC32 -  Inclusioni Caso d'Uso 32: UC32.1}
+                    \label{fig:uc32-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC32.1 - Visualizzazione singolo decision tree} \mbox{}
+            \label{uc:uc32.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il singolo \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} è visualizzato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il singolo decision tree.
+                    \item Il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} viene descritto da:
+                    \begin{itemize}
+                        \item id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato [\hyperref[uc:uc33.1]{UC33.1}]
+                        \item nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato [\hyperref[uc:uc33.2]{UC33.2}].
+                    \end{itemize}
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.1]{UC33.1 Visualizzazione id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                \end{itemize} 
+            \end{itemize}
+
+            \noindent Il Caso d'Uso UC32.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC32.1Inclusioni.png}
+                    \caption{UC32.1 -  Inclusioni Caso d'Uso 32.1: UC33.1, UC33.2}
+                    \label{fig:uc32.1-inclusioni}
+                \end{figure}
+            \end{center}
+
+
+        \subsubsection{UC33 - Visualizzazione in dettaglio del decision tree}
+        \label{uc:uc33}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra le informazioni e il grafo del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} in dettaglio.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} per la visualizzazione in dettaglio.
+                    \item L'Utente visualizza l'id [\hyperref[uc:uc33.1]{UC33.1}] e il titolo [\hyperref[uc:uc33.2]{UC33.2}] del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato.
+                    \item L'Utente visualizza le dipendenze del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} [\hyperref[uc:uc33.3]{UC33.3}].
+                    \item L'Utente visualizza il grafo del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} [\hyperref[uc:uc33.4]{UC33.4}].
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.1]{UC33.1 Visualizzazione id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.2]{UC33.2 Visualizzazione nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.3]{UC33.3 Visualizzazione dipendenze del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.4]{UC33.4 Visualizzazione grafo del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                \end{itemize} 
+            \end{itemize}
+
+            \noindent Il Caso d'Uso UC33 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC33Inclusioni.png}
+                    \caption{UC33 -  Inclusioni Caso d'Uso 33: UC33.1, UC33.2, UC33.3, UC33.4}
+                    \label{fig:uc33-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC33.1 - Visualizzazione id del requisito del decision tree} \mbox{}
+            \label{uc:uc33.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra l'id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza l'id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato al decision tree.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.2 - Visualizzazione nome del requisito del decision tree} \mbox{}
+            \label{uc:uc33.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} del decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} associato al \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}, che è il suo titolo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.3 - Visualizzazione dipendenze del decision tree} \mbox{}
+            \label{uc:uc33.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra le dipendenze del decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza le dipendenze (anche nulle) del decision tree.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.4 - Visualizzazione grafo del decision tree} \mbox{}
+            \label{uc:uc33.4}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il grafo del decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il grafo del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} sottoforma di:
+                    \begin{itemize}
+                        \item nodi interni [\hyperref[uc:uc33.4.1]{UC33.4.1}]
+                        \item nodi foglia (con risultati) [\hyperref[uc:uc33.4.2]{UC33.4.2}]
+                        \item collegamenti fra nodi [\hyperref[uc:uc33.4.3]{UC33.4.3}].
+                    \end{itemize}
+                \end{itemize}
+            \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.4.1]{UC33.4.1 Visualizzazione \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} interno del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.4.2]{UC33.4.2 Visualizzazione \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} foglia del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc33.4.3]{UC33.4.3 Visualizzazione collegamento fra nodi del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                \end{itemize} 
+            \end{itemize}
+
+            \noindent Il Caso d'Uso UC33.4 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC33.4Inclusioni.png}
+                    \caption{UC33.4 -  Inclusioni Caso d'Uso 33.4: UC33.4.1, UC33.4.2, UC33.4.3}
+                    \label{fig:uc33.4-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC33.4.1 - Visualizzazione nodo interno del decision tree} \mbox{}
+            \label{uc:uc33.4.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} interno del decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}, descritto da:
+                    \begin{itemize}
+                        \item codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc33.4.1.1]{UC33.4.1.1}]
+                        \item testo domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc33.4.1.2]{UC33.4.1.2}].
+                    \end{itemize}
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc33.4.1.1]{UC33.4.1.1 Visualizzazione codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}}
+                    \item \hyperref[uc:uc33.4.1.2]{UC33.4.1.2 Visualizzazione testo domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}}
+                \end{itemize} 
+            \end{itemize}
+
+            \noindent Il Caso d'Uso UC33.4.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC33.4.1Inclusioni.png}
+                    \caption{UC33.4.1 -  Inclusioni Caso d'Uso 33.4.1: UC33.4.1.1, UC33.4.1.2}
+                    \label{fig:uc33.4.1-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC33.4.1.1 - Visualizzazione codice univoco del nodo} \mbox{}
+            \label{uc:uc33.4.1.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il codice univoco del nodo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il codice univoco del nodo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.4.1.2 - Visualizzazione testo domanda del nodo} \mbox{}
+            \label{uc:uc33.4.1.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il testo della domanda del nodo.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il testo della domanda del nodo.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.4.2 - Visualizzazione nodo foglia del decision tree} \mbox{}
+            \label{uc:uc33.4.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} foglia del decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} foglia del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}, descritto con uno dei tre risultati: \textit{PASS}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Pass}{G}}, \textit{FAIL}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Fail}{G}}, NA.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC33.4.3 - Visualizzazione collegamento fra nodi del decision tree} 
+            \label{uc:uc33.4.3}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema mostra il collegamento fra due nodi del decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il collegamento fra due nodi del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} (consecutivi) come un arco direzionato con l'etichetta true/false.
+                \end{itemize}
+            \end{itemize}
+
+
+            \subsubsection{UC34 - Modifica del decision tree}
+            \label{uc:uc34}
+            \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC34.png}
+                                \caption{UC34 - Modifica del decision tree}
+                                \label{fig:uc34}
+                            \end{figure}
+                        \end{center} 
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees.
+                \item \textbf{Post-condizioni}: Il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} è aggiornato con le nuove modifiche.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e avvia la funzionalità di modifica. 
+                    \item L'Utente seleziona un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} o un collegamento.
+                    \item L'Utente effettua la modifica.
+                    \item Il Sistema valida la struttura e aggiorna il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}, salvando le modifiche in locale.
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item Le modifiche apportate hanno portato a errori nella struttura dell'albero [\hyperref[uc:uc39]{UC39}].
+                    \item L'Utente annulla l'operazione di modifica [\hyperref[uc:uc40]{UC40}].
+                \end{itemize}
+                \item \textbf{Estensioni}:
+                \begin{itemize}
+                    \item \hyperref[uc:uc39]{UC39 \textit{Validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} fallita modifica \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc40]{UC40 Annullamento modifica \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                \end{itemize}
+                \item \textbf{Generalizzazioni}:
+                \begin{itemize}
+                    \item \hyperref[uc:uc35]{UC35 Aggiunta \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} al \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc36]{UC36 Eliminazione \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                    \item \hyperref[uc:uc38]{UC38 Modifica destinazione di un collegamento del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}}
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC35 - Aggiunta nodo al decision tree}
+            \label{uc:uc35}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees.
+                \item \textbf{Post-condizioni}: Un nuovo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} è stato aggiunto al decision tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e avvia la funzionalità di modifica. 
+                    \item L'Utente seleziona la funzionalità di aggiunta di un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} in una specifica posizione del decision tree.
+                    \item Il Sistema crea un nuovo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} vuoto.
+                    \item L'Utente inserisce:
+                    \begin{itemize}
+                        \item nome univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc35.1]{UC35.1}]
+                        \item testo della domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc35.2]{UC35.2}].
+                    \end{itemize}
+                    \item Il Sistema aggiunge il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} al decision tree.
+                    \item Il Sistema aggiorna la visualizzazione e salva le modifiche in locale.
+                \end{itemize}
+                \item \textbf{Inclusioni}: 
+                \begin{itemize}
+                    \item \hyperref[uc:uc35.1]{UC35.1 Inserimento codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}}
+                    \item \hyperref[uc:uc35.2]{UC35.2 Inserimento testo domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}}
+                \end{itemize}
+            \end{itemize}
+
+            \noindent Il Caso d'Uso UC35 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC35Inclusioni.png}
+                    \caption{UC35 -  Inclusioni Caso d'Uso 35: UC35.1, UC35.2}
+                    \label{fig:uc35-inclusioni}
+                \end{figure}
+            \end{center}
+
+            \paragraph{UC35.1 - Inserimento codice univoco del nodo} \mbox{}
+            \label{uc:uc35.1}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} inserito.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente inserisce il codice univoco del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} nel rispettivo campo dati.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+
+            \paragraph{UC35.2 - Inserimento testo domanda del nodo} \mbox{}
+            \label{uc:uc35.2}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Post-condizioni}: Il Sistema registra il testo della domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} inserito.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente inserisce il testo della domanda del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} nel rispettivo campo dati.
+                    \item Il Sistema memorizza il valore.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC36 - Eliminazione nodo del decision tree}
+            \label{uc:uc36}
+            \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC36.png}
+                                \caption{UC36 - Eliminazione nodo del decision tree}
+                                \label{fig:uc36}
+                            \end{figure}
+                        \end{center} 
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees.
+                \item \textbf{Post-condizioni}: Il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} selezionato è rimosso e i collegamenti aggiornati.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e avvia la funzionalità di modifica.
+                    \item L'Utente seleziona la funzionalità di eliminazione di un nodo.
+                    \item L'Utente seleziona un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} e conferma.
+                    \item Il Sistema valida la rimozione e aggiorna i collegamenti, salvando le modifiche in locale.
+                \end{itemize}
+                \item \textbf{Scenari alternativi}:
+                \begin{itemize}
+                    \item L'Utente cerca di eliminare il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} root [\hyperref[uc:uc37]{UC37}].
+                \end{itemize}
+                \item \textbf{Estensioni}:
+                \begin{itemize}
+                    \item \hyperref[uc:uc37]{UC37 Tentativo eliminazione \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} root}
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC37 - Tentativo eliminazione nodo root}
+            \label{uc:uc37}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente ha selezionato la funzionalità di eliminazione di un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e ha selezionato il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} root.
+                \item \textbf{Post-condizioni}: L'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} è segnalato all'Utente e l'eliminazione non viene eseguita.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema rileva che il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} selezionato è il root.
+                    \item Il Sistema mostra un messaggio di errore.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC38 - Modifica destinazione di un collegamento del decision tree}
+            \label{uc:uc38}
+            \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC38.png}
+                                \caption{UC38 - Modifica destinazione di un collegamento del decision tree}
+                                \label{fig:uc38}
+                            \end{figure}
+            \end{center} 
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente visualizza la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees.
+                \item \textbf{Post-condizioni}: Il collegamento del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} è aggiornato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} e avvia la funzionalità di modifica.
+                    \item L'Utente seleziona la funzionalità di modifica di un collegamento.
+                    \item L'Utente seleziona un collegamento e ne modifica il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} di destinazione.
+                    \item Il Sistema aggiorna il grafo e salva le modifiche in locale.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC39 - Validazione fallita modifica decision tree}
+            \label{uc:uc39}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente effettua una modifica con errori alla struttura del decision tree.
+                \item \textbf{Post-condizioni}: Il sistema mostra l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} fallita della modifica apportata al deciison tree.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema individua un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} problematico durante la \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} della struttura del decision tree.
+                    \item Il Sistema segnala l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} all'utente.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC40 - Annullamento modifica decision tree}
+            \label{uc:uc40}
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'Utente sta modificando il decision tree.
+                \item \textbf{Post-condizioni}: Il Sistema annulla la modifica effettuata.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona l'annullamento durante il processo di modifica.
+                    \item Il Sistema interrompe la modifica.
+                    \item Il Sistema ripristina lo stato precedente, scartando le modifiche.
+                \end{itemize}
+            \end{itemize}
+
+            \subsubsection{UC41 - Esportazione decision tree}
+            \label{uc:uc41}
+            \begin{center}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC41.png}
+                                \caption{UC41 - Esportazione decision tree}
+                                \label{fig:uc41}
+                            \end{figure}
+            \end{center} 
+            \begin{itemize}
+                \item \textbf{Attore}: Utente
+                \item \textbf{Pre-condizioni}: L'utente sta visualizzando un singolo \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} in dettaglio.
+                \item \textbf{Post-condizioni}: Il file del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} è esportato.
+                \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona la funzionalità \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} del decision tree.
+                    \item Il Sistema serializza il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} nel formato previsto.
+                    \item L'Utente seleziona il percorso locale dove salvare il file.
+                    \item Il Sistema salva il file.
+                \end{itemize}
+            \end{itemize}
+        
+    }
+}
+
+\newpage
+% ----------------------------
+% Requisiti
+% ----------------------------
+\section{Requisiti}{
+    Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tipologia:
+    \begin{itemize}
+        \item \textbf{Funzionali}, ovvero requisiti che rappresentano qualcosa che il Sistema sviluppato deve avere per soddisfare un'aspettativa;
+        \item \textbf{Qualità}, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
+        \item \textbf{Vincolo}, ovvero restrizioni poste al Sistema, quali, a titolo di \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}}, sull'uso di alcune tecnologie;
+    \end{itemize}
+    
+    \noindent Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.2 del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme%20di%20Progetto}{Norme di Progetto}.
+
+    \subsection{Requisiti funzionali}{
+            \rowcolors{2}{lightblue}{white}
+                \begin{longtable}{|l|p{0.6\textwidth}|p{0.15\textwidth}|}
+                \caption{Tabella dei requisiti funzionali}
+                \label{tab:requisiti-funzionali} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                \endfirsthead
+                
+                \multicolumn{3}{c}%
+                {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                \endhead
+                
+                \hline
+                \multicolumn{3}{r}{\textit{continua nella pagina successiva}} \\
+                \endfoot
+                
+                \hline
+                \endlastfoot
+                
+                R-1-F-Ob & L'Utente deve poter inserire un dispositivo & \hyperref[uc:uc1]{UC1} \\ \hline
+                R-2-F-Ob & L'Utente, per inserire un dispositivo, deve poter caricare un dispositivo nel Sistema & \hyperref[uc:uc2]{UC2} \\ \hline
+                R-3-F-Ob & L'Utente deve poter ricevere un errore in seguito ad un tentativo di caricamento di un file di dispositivo non valido & \hyperref[uc:uc2]{UC2}, \hyperref[uc:uc3]{UC3} \\ \hline
+                R-4-F-Ob & L'Utente deve poter visualizzare il dispositivo inserito (caricato o creato) & \hyperref[uc:uc4]{UC4} \\ \hline
+                R-5-F-Ob & L'Utente, nel visualizzare il dispositivo inserito, deve poter visualizzare il nome del dispositivo & \hyperref[uc:uc4]{UC4}, \hyperref[uc:uc23.1]{UC23.1} \\ \hline
+                R-6-F-Ob & L'Utente deve poter visualizzare la lista degli assets di un dispositivo & \hyperref[uc:uc5]{UC5} \\ \hline
+                R-7-F-Ob & L'Utente, nel visualizzare la lista degli assets di un dispositivo, deve poter visualizzare un singolo asset & \hyperref[uc:uc5]{UC5}, \hyperref[uc:uc5.1]{UC5.1} \\ \hline
+                R-8-F-Ob & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il nome dell'asset & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-9-F-Ob & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il tipo dell'asset & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.2]{UC22.2} \\ \hline
+                R-10-F-Ob & L'Utente, dopo aver inserito un dispositivo, deve poter avviare e completare l'esecuzione di un test su quel dispositivo & \hyperref[uc:uc6]{UC6} \\ \hline
+                R-11-F-Ob & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere a una particolare domanda del test & \hyperref[uc:uc6]{UC6}, \hyperref[uc:uc6.1]{UC6.1} \\ \hline
+                R-12-F-Ob & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda precedente se seleziona la funzionalità corrispondente & \hyperref[uc:uc7]{UC7} \\ \hline
+                R-13-F-Ob & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda successiva se seleziona la funzionalità corrispondente & \hyperref[uc:uc8]{UC8} \\ \hline
+                R-14-F-Ob & L'Utente deve poter uscire anticipatamente da un test in fase di esecuzione su un dispositivo & \hyperref[uc:uc9]{UC9} \\ \hline
+                R-15-F-Ob & L'Utente deve poter visualizzare i risultati di un test (completato o caricato) & \hyperref[uc:uc10]{UC10} \\ \hline
+                R-16-F-Ob & L'Utente, nel visualizzare i risultati di un test, deve poter visualizzare la lista ordinata dei requisiti del test con i risultati & \hyperref[uc:uc10]{UC10}, \hyperref[uc:uc10.1]{UC10.1} \\ \hline
+                R-17-F-Ob & L'Utente, nel visualizzare la lista dei requisiti del test con i risultati, deve poter visualizzare un singolo requisito con risultato & \hyperref[uc:uc10.1]{UC10.1}, \hyperref[uc:uc10.1.1]{UC10.1.1} \\ \hline
+                R-18-F-Ob & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il nome del requisito & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-19-F-Ob & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato ottenuto per il requisito & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc10.1.1.1]{UC10.1.1.1}\\ \hline
+                R-20-F-D & L'Utente deve poter esportare un test completato & \hyperref[uc:uc11]{UC11} \\ \hline
+                R-21-F-Ob & L'Utente, per inserire un dispositivo, deve poter creare un dispositivo & \hyperref[uc:uc12]{UC12} \\ \hline
+                R-22-F-Ob & L'Utente, nel processo di creazione di un dispositivo, deve poter inserire i dati del dispositivo & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc12.1]{UC12.1} \\ \hline
+                R-23-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il nome del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.1]{UC12.1.1} \\ \hline
+                R-24-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il sistema operativo del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.2]{UC12.1.2} \\ \hline
+                R-25-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la versione del firmware del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.3]{UC12.1.3} \\ \hline
+                R-26-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la funzionalità del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.4]{UC12.1.4} \\ \hline
+                R-27-F-Ob & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la descrizione del dispositivo & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.5]{UC12.1.5} \\ \hline
+                R-28-F-Ob & L'Utente, nel processo di inserimento dei dati del dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-29-F-Ob & L'Utente, nel processo di creazione di un dispositivo, deve poter aggiungere almeno un asset & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc14]{UC14} \\ \hline
+                R-30-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter inserire il nome dell'asset & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.1]{UC14.1} \\ \hline
+                R-31-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter selezionare il tipo dell'asset & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.2]{UC14.2} \\ \hline
+                R-32-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter inserire la descrizione dell'asset &  \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.3]{UC14.3} \\ \hline
+                R-33-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter selezionare la sensibilità dell'asset &  \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.4]{UC14.4} \\ \hline
+                R-34-F-Ob & L'Utente, nel processo di creazione di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-35-F-Ob & L'Utente deve poter annullare il processo di creazione di un asset & \hyperref[uc:uc15]{UC15} \\ \hline
+                R-36-F-Ob & L'Utente deve poter annullare il processo di creazione di un dispositivo & \hyperref[uc:uc19]{UC19} \\ \hline
+                R-37-F-Ob & L'Utente deve poter eliminare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente & \hyperref[uc:uc16]{UC16} \\ \hline
+                R-38-F-Op & L'Utente deve poter modificare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente & \hyperref[uc:uc17]{UC17} \\ \hline
+                R-39-F-Op & L'Utente, nel processo di modifica di un asset, deve poter modificare il nome del dispositivo & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.1]{UC17.1} \\ \hline
+                R-40-F-Op & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione del tipo del dispositivo & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.2]{UC17.2} \\ \hline
+                R-41-F-Op & L'Utente, nel processo di modifica di un asset, deve poter modificare la descrizione del dispositivo & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.3]{UC17.3} \\ \hline
+                R-42-F-Op & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione della sensibilità del dispositivo & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.4]{UC17.4} \\ \hline
+                R-43-F-Op & L'Utente, nel processo di modifica di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-44-F-Op & L'Utente deve poter annullare il processo di modifica di un asset & \hyperref[uc:uc18]{UC18} \\ \hline
+                R-45-F-Ob & L'Utente deve poter visualizzare un avviso che indica la presenza di modifiche non salvate se ha creato un dispositivo o ha apportato modifiche ad un dispositivo esistente & \hyperref[uc:uc20]{UC20} \\ \hline
+                R-46-F-Ob & L'Utente deve poter effettuare il salvataggio delle modifiche non salvate quando visualizza l'avviso che indica la presenza di modifiche non salvate & \hyperref[uc:uc21]{UC21}\\ \hline
+                R-47-F-Ob & L'Utente deve poter visualizzare le informazioni di un singolo asset nel dettaglio selezionandolo dalla lista degli assets di un dispositivo & \hyperref[uc:uc22]{UC22} \\ \hline
+                R-48-F-Ob & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il nome dell'asset & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-49-F-Ob & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il tipo dell'asset & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.2]{UC22.2} \\ \hline
+                R-50-F-Ob & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la descrizione dell'asset & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.3]{UC22.3} \\ \hline
+                R-51-F-Ob & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la sensibilità dell'asset & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.4]{UC22.4} \\ \hline
+                R-52-F-Ob & L'Utente deve poter visualizzare i dati del dispositivo inserito nel dettaglio & \hyperref[uc:uc23]{UC23} \\ \hline
+                R-53-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il nome del dispositivo & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.1]{UC23.1} \\ \hline
+                R-54-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il sistema operativo del dispositivo & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.2]{UC23.2} \\ \hline
+                R-55-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la versione del firmware del dispositivo & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.3]{UC23.3} \\ \hline
+                R-56-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la funzionalità del dispositivo & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.4]{UC23.4} \\ \hline
+                R-57-F-Ob & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la descrizione del dispositivo & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.5]{UC23.5} \\ \hline
+                R-58-F-Ob & L'Utente deve poter caricare un test precedentemente effettuato & \hyperref[uc:uc24]{UC24} \\ \hline
+                R-59-F-Ob & L'Utente deve poter ricevere un errore se carica come test precedente un file non valido & \hyperref[uc:uc24]{UC24}, \hyperref[uc:uc2]{UC2} \\ \hline
+                R-60-F-Ob & L'Utente deve poter modificare i risultati di un test che ha caricato o completato selezionando un particolare asset da cui riprendere l'esecuzione & \hyperref[uc:uc25]{UC25} \\ \hline
+                R-61-F-Ob & L'Utente, nel modificare i risultati di un test che ha caricato o completato, deve poter riprendere l'esecuzione del test a partire dall'asset selezionato & \hyperref[uc:uc25]{UC25}, \hyperref[uc:uc6]{UC6} \\ \hline
+                R-62-F-Ob & L'Utente deve poter completare l'esecuzione di un test caricato non completato & \hyperref[uc:uc26]{UC26} \\ \hline
+                R-63-F-Ob & L'Utente, nel completare l'esecuzione di un test non completato, deve poter riprendere l'esecuzione del test a partire dal punto in cui era stato precedentemente fermato & \hyperref[uc:uc26]{UC26}, \hyperref[uc:uc6]{UC6} \\ \hline
+                R-64-F-Op & L'Utente deve poter visualizzare la lista delle giustificazioni di un test & \hyperref[uc:uc27]{UC27} \\ \hline
+                R-65-F-Op & L'Utente, nel visualizzare la lista delle giustificazioni di un test, deve poter visualizzare una singola giustificazione & \hyperref[uc:uc27]{UC27}, \hyperref[uc:uc27.1]{UC27.1} \\ \hline
+                R-66-F-Op & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il nome del requisito & \hyperref[uc:uc27.1]{UC27.1}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-67-F-Op & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il testo della giustificazione associata al requisito & \hyperref[uc:uc27.1]{UC27.1}, \hyperref[uc:uc27.1.1]{UC27.1.1} \\ \hline
+                R-68-F-Ob & L'Utente deve poter visualizzare la lista degli assets con risultati di un requisito nel dettaglio selezionando un particolare requisito dalla lista dei requisiti del test con i risultati & \hyperref[uc:uc28]{UC28} \\ \hline
+                R-69-F-Ob & L'Utente, nel visualizzare la lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare un singolo asset con risultato & \hyperref[uc:uc28]{UC28}, \hyperref[uc:uc28.1]{UC28.1} \\ \hline
+                R-70-F-Ob & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il nome dell'asset & \hyperref[uc:uc28.1]{UC28.1}, \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-71-F-Ob & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il risultato dell'asset & \hyperref[uc:uc28.1]{UC28.1}, \hyperref[uc:uc28.1.1]{UC28.1.1} \\ \hline
+                R-72-F-Ob & L'Utente deve poter eliminare un dispositivo che ha inserito & \hyperref[uc:uc29]{UC29} \\ \hline
+                R-73-F-Op & L'Utente deve poter modificare i dati del dispositivo che ha inserito & \hyperref[uc:uc30]{UC30} \\ \hline
+                R-74-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il nome del dispositivo & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.1]{UC30.1} \\ \hline
+                R-75-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il sistema operativo del dispositivo & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.2]{UC30.2} \\ \hline
+                R-76-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la versione del firmware del dispositivo & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.3]{UC30.3} \\ \hline
+                R-77-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la funzionalità del dispositivo & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.4]{UC30.4} \\ \hline
+                R-78-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la descrizione del dispositivo & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.5]{UC30.5} \\ \hline
+                R-79-F-Op & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-80-F-Op & L'Utente deve poter annullare il processo di modifica dei dati di un dispositivo & \hyperref[uc:uc31]{UC31} \\ \hline
+                R-81-F-Op & L'Utente deve poter visualizzare l'elenco dei decision trees selezionando la funzionalità corrispondente & \hyperref[uc:uc32]{UC32} \\ \hline
+                R-82-F-Op & L'Utente, nel visualizzare l'elenco dei decision trees, deve poter visualizzare un singolo decision tree & \hyperref[uc:uc32]{UC32}, \hyperref[uc:uc32.1]{UC32.1} \\ \hline
+                R-83-F-Op & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare l'id del requisito associato al decision tree & \hyperref[uc:uc32.1]{UC32.1}, \hyperref[uc:uc33.1]{UC33.1} \\ \hline
+                R-84-F-Op & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare il nome del requisito associato al decision tree & \hyperref[uc:uc32.1]{UC32.1}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-85-F-Op & L'Utente deve poter visualizzare un singolo decision tree nel dettaglio selezionandolo dalla lista dei decision trees & \hyperref[uc:uc33]{UC33} \\ \hline
+                R-86-F-Op & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare l'id del requisito associato al decision tree & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.1]{UC33.1} \\ \hline
+                R-87-F-Op & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il nome del requisito associato al decision tree & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-88-F-Op & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare le dipendenze del requisito associato al decision tree & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.3]{UC33.3} \\ \hline
+                R-89-F-Op & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il grafo che rappresenta il decision tree & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.4]{UC33.4} \\ \hline
+                R-90-F-Op & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi interni del grafo & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.1]{UC33.4.1} \\ \hline
+                R-91-F-Op & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il codice univoco del nodo &  \hyperref[uc:uc33.4.1]{UC33.4.1}, \hyperref[uc:uc33.4.1.1]{UC33.4.1.1} \\ \hline
+                R-92-F-Op & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il testo della domanda del nodo & \hyperref[uc:uc33.4.1]{UC33.4.1}, \hyperref[uc:uc33.4.1.2]{UC33.4.1.2}  \\ \hline
+                R-93-F-Op & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi foglia del grafo & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.2]{UC33.4.2} \\ \hline
+                R-94-F-Op & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i collegamenti fra i nodi del grafo & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.3]{UC33.4.3} \\ \hline
+                R-95-F-Op & L'Utente deve poter modificare un decision tree & \hyperref[uc:uc34]{UC34} \\ \hline
+                R-96-F-Op & L'Utente, per modificare un decision tree, deve poter aggiungere un nodo al decision tree & \hyperref[uc:uc35]{UC35} \\ \hline
+                R-97-F-Op & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il codice univoco del nodo & \hyperref[uc:uc35]{UC35}, \hyperref[uc:uc35.1]{UC35.1} \\ \hline
+                R-98-F-Op & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il testo della domanda del nodo & \hyperref[uc:uc35]{UC35}, \hyperref[uc:uc35.2]{UC35.2} \\ \hline
+                R-99-F-Op & L'Utente, per modificare un decision tree, deve poter eliminare un nodo dal decision tree & \hyperref[uc:uc36]{UC36} \\ \hline
+                R-100-F-Op & L'Utente deve poter ricevere un errore se cerca di eliminare il nodo root di un decision tree & \hyperref[uc:uc37]{UC37} \\ \hline
+                R-101-F-Op & L'Utente, per modificare un decision tree, deve poter modificare la destinazione di un collegamento del decision tree & \hyperref[uc:uc38]{UC38} \\ \hline
+                R-102-F-Op & L'Utente deve poter ricevere un errore se la validazione della modifica del decision tree fallisce & \hyperref[uc:uc39]{UC39} \\ \hline
+                R-103-F-Op & L'Utente deve poter annullare il processo di modifica di un decision tree & \hyperref[uc:uc40]{UC40} \\ \hline
+                R-104-F-Op & L'Utente deve poter esportare un decision tree & \hyperref[uc:uc41]{UC41} \\ \hline
+                
+                \end{longtable}
+    }
+
+    \newpage
+
+    \subsection{Requisiti di qualità}{
+
+        \rowcolors{2}{lightblue}{white}
+            \begin{longtable}{|l|p{0.6\textwidth}|l|}
+                \caption{Tabella dei requisiti funzionali} 
+                \label{tab:requisiti-funzionali} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                \endfirsthead
+                
+                \multicolumn{3}{c}%
+                {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                \endhead
+                
+                \hline
+                \multicolumn{3}{r}{\textit{continua nella pagina successiva}} \\
+                \endfoot
+                
+                \hline
+                \endlastfoot
+                \hline
+                \rowcolor{gold}
+                \hline
+                R-1-Q-Ob & È necessario rispettare tutte le norme presenti nelle \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme%20di%20Progetto}{Norme di Progetto} & Interno \\ 
+                \hline 
+                R-2-Q-Ob & È necessario verificare che tutti i requisiti obbligatori vengano rispettati tramite test & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-3-Q-Ob & È necessario avere un'Interfaccia chiara e intuitiva & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-4-Q-Ob & È necessario avere una gestione robusta di file incompleti o incoerenti senza crash & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-5-Q-Ob & È necessario avere codice modulare e documentato per facilitare manutenzione ed estensioni future & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-6-Q-Ob & È necessario avere tempi di esecuzione dei decision tree rapidi & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-7-Q-Ob & È necessario avere possibilità di aggiungere nuovi requisiti e decision tree senza rifattorizzazione completa & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+            \end{longtable}
+    }
+
+    \newpage
+
+    \subsection{Requisiti di vincolo}{
+        \rowcolors{2}{lightblue}{white}
+        \begin{longtable}{|l|p{0.6\textwidth}|l|}
+            \caption{Tabella dei requisiti di vincolo (obbligatori)} 
+            \label{tab:requisiti-vincolo} \\
+            \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                \endfirsthead
+                
+                \multicolumn{3}{c}%
+                {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+                \hline
+                \endhead
+                
+                \hline
+                \multicolumn{3}{r}{\textit{continua nella pagina successiva}} \\
+                \endfoot
+                
+                \hline
+                \endlastfoot
+                \hline
+                \rowcolor{gold}
+                \hline
+                R-1-V-Ob & È necessario che il software possa importare documenti nei formati CSV o JSON & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-2-V-Ob & È necessario che il software possa eseguire automaticamente i decision tree per i requisiti della norma EN 18031 & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-3-V-Ob & È necessario che ogni requisito analizzato deve restituire output "Pass", "Fail" o "Not applicable" & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-4-V-Ob & È necessario che i decision tree siano rappresentabili in un formato modificabile esternamente JSON & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-5-V-Ob & È necessario che vengano rispettati i criteri di completamento: implementazione e test di tutti i requisiti obbligatori + documentazione completa & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+                R-6-V-Ob & È necessario l'utilizzo di Python 3.x per il backend & \href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto} \\
+                \hline
+            \end{longtable}
+        }
+}
+
+\newpage
+
+\section{Tracciamento dei Requisiti}{
+    \rowcolors{2}{lightblue}{white}
+                \begin{longtable}{|
+                    >{\centering\arraybackslash}p{.5\textwidth}|
+                    >{\centering\arraybackslash}p{.5\textwidth}|
+                }
+                \caption{Tabella di tracciamento dei requisiti} 
+                \label{tab:tracciamento-requisiti} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Requisito} & \textbf{Casi d'Uso} \\
+                \hline
+                \endfirsthead
+                
+                \multicolumn{2}{c}%
+                {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Requisito} & \textbf{Casi d'Uso} \\
+                \hline
+                \endhead
+                
+                \hline
+                \multicolumn{2}{r}{\textit{continua nella pagina successiva}} \\
+                \endfoot
+                
+                \hline
+                \endlastfoot
+                
+                R-1-F-Ob & \hyperref[uc:uc1]{UC1} \\ \hline
+                R-2-F-Ob & \hyperref[uc:uc2]{UC2} \\ \hline
+                R-3-F-Ob & \hyperref[uc:uc2]{UC2}, \hyperref[uc:uc3]{UC3} \\ \hline
+                R-4-F-Ob & \hyperref[uc:uc4]{UC4} \\ \hline
+                R-5-F-Ob & \hyperref[uc:uc4]{UC4}, \hyperref[uc:uc23.1]{UC23.1} \\ \hline
+                R-6-F-Ob & \hyperref[uc:uc5]{UC5} \\ \hline
+                R-7-F-Ob & \hyperref[uc:uc5]{UC5}, \hyperref[uc:uc5.1]{UC5.1} \\ \hline
+                R-8-F-Ob & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-9-F-Ob & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.2]{UC22.2} \\ \hline
+                R-10-F-Ob & \hyperref[uc:uc6]{UC6} \\ \hline
+                R-11-F-Ob & \hyperref[uc:uc6]{UC6}, \hyperref[uc:uc6.1]{UC6.1} \\ \hline
+                R-12-F-Ob & \hyperref[uc:uc7]{UC7} \\ \hline
+                R-13-F-Ob & \hyperref[uc:uc8]{UC8} \\ \hline
+                R-14-F-Ob & \hyperref[uc:uc9]{UC9} \\ \hline
+                R-15-F-Ob & \hyperref[uc:uc10]{UC10} \\ \hline
+                R-16-F-Ob & \hyperref[uc:uc10]{UC10}, \hyperref[uc:uc10.1]{UC10.1} \\ \hline
+                R-17-F-Ob & \hyperref[uc:uc10.1]{UC10.1}, \hyperref[uc:uc10.1.1]{UC10.1.1} \\ \hline
+                R-18-F-Ob & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-19-F-Ob & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc10.1.1.1]{UC10.1.1.1} \\ \hline
+                R-20-F-D & \hyperref[uc:uc11]{UC11} \\ \hline
+                R-21-F-Ob & \hyperref[uc:uc12]{UC12} \\ \hline
+                R-22-F-Ob & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc12.1]{UC12.1} \\ \hline
+                R-23-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.1]{UC12.1.1} \\ \hline
+                R-24-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.2]{UC12.1.2} \\ \hline
+                R-25-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.3]{UC12.1.3} \\ \hline
+                R-26-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.4]{UC12.1.4} \\ \hline
+                R-27-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.5]{UC12.1.5} \\ \hline
+                R-28-F-Ob & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-29-F-Ob & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc14]{UC14} \\ \hline
+                R-30-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.1]{UC14.1} \\ \hline
+                R-31-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.2]{UC14.2} \\ \hline
+                R-32-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.3]{UC14.3} \\ \hline
+                R-33-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.4]{UC14.4} \\ \hline
+                R-34-F-Ob & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-35-F-Ob & \hyperref[uc:uc15]{UC15} \\ \hline
+                R-36-F-Ob & \hyperref[uc:uc19]{UC19} \\ \hline
+                R-37-F-Ob & \hyperref[uc:uc16]{UC16} \\ \hline
+                R-38-F-Op & \hyperref[uc:uc17]{UC17} \\ \hline
+                R-39-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.1]{UC17.1} \\ \hline
+                R-40-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.2]{UC17.2} \\ \hline
+                R-41-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.3]{UC17.3} \\ \hline
+                R-42-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.4]{UC17.4} \\ \hline
+                R-43-F-Op & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-44-F-Op & \hyperref[uc:uc18]{UC18} \\ \hline
+                R-45-F-Ob & \hyperref[uc:uc20]{UC20} \\ \hline
+                R-46-F-Ob & \hyperref[uc:uc21]{UC21} \\ \hline
+                R-47-F-Ob & \hyperref[uc:uc22]{UC22} \\ \hline
+                R-48-F-Ob & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-49-F-Ob & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.2]{UC22.2} \\ \hline
+                R-50-F-Ob & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.3]{UC22.3} \\ \hline
+                R-51-F-Ob & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.4]{UC22.4} \\ \hline
+                R-52-F-Ob & \hyperref[uc:uc23]{UC23} \\ \hline
+                R-53-F-Ob & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.1]{UC23.1} \\ \hline
+                R-54-F-Ob & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.2]{UC23.2} \\ \hline
+                R-55-F-Ob & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.3]{UC23.3} \\ \hline
+                R-56-F-Ob & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.4]{UC23.4} \\ \hline
+                R-57-F-Ob & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.5]{UC23.5} \\ \hline
+                R-58-F-Ob & \hyperref[uc:uc24]{UC24} \\ \hline
+                R-59-F-Ob & \hyperref[uc:uc24]{UC24}, \hyperref[uc:uc2]{UC2} \\ \hline
+                R-60-F-Ob & \hyperref[uc:uc25]{UC25} \\ \hline
+                R-61-F-Ob & \hyperref[uc:uc25]{UC25}, \hyperref[uc:uc6]{UC6} \\ \hline
+                R-62-F-Ob & \hyperref[uc:uc26]{UC26} \\ \hline
+                R-63-F-Ob & \hyperref[uc:uc26]{UC26}, \hyperref[uc:uc6]{UC6} \\ \hline
+                R-64-F-Op & \hyperref[uc:uc27]{UC27} \\ \hline
+                R-65-F-Op & \hyperref[uc:uc27]{UC27}, \hyperref[uc:uc27.1]{UC27.1} \\ \hline
+                R-66-F-Op & \hyperref[uc:uc27.1]{UC27.1}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-67-F-Op & \hyperref[uc:uc27.1]{UC27.1}, \hyperref[uc:uc27.1.1]{UC27.1.1} \\ \hline
+                R-68-F-Ob & \hyperref[uc:uc28]{UC28} \\ \hline
+                R-69-F-Ob & \hyperref[uc:uc28]{UC28}, \hyperref[uc:uc28.1]{UC28.1} \\ \hline
+                R-70-F-Ob & \hyperref[uc:uc28.1]{UC28.1}, \hyperref[uc:uc22.1]{UC22.1} \\ \hline
+                R-71-F-Ob & \hyperref[uc:uc28.1]{UC28.1}, \hyperref[uc:uc28.1.1]{UC28.1.1} \\ \hline
+                R-72-F-Ob & \hyperref[uc:uc29]{UC29} \\ \hline
+                R-73-F-Op & \hyperref[uc:uc30]{UC30} \\ \hline
+                R-74-F-Op & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.1]{UC30.1} \\ \hline
+                R-75-F-Op & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.2]{UC30.2} \\ \hline
+                R-76-F-Op & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.3]{UC30.3} \\ \hline
+                R-77-F-Op & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.4]{UC30.4} \\ \hline
+                R-78-F-Op & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.5]{UC30.5} \\ \hline
+                R-79-F-Op & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc13]{UC13} \\ \hline
+                R-80-F-Op & \hyperref[uc:uc31]{UC31} \\ \hline
+                R-81-F-Op & \hyperref[uc:uc32]{UC32} \\ \hline
+                R-82-F-Op & \hyperref[uc:uc32]{UC32}, \hyperref[uc:uc32.1]{UC32.1} \\ \hline
+                R-83-F-Op & \hyperref[uc:uc32.1]{UC32.1}, \hyperref[uc:uc33.1]{UC33.1} \\ \hline
+                R-84-F-Op & \hyperref[uc:uc32.1]{UC32.1}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-85-F-Op & \hyperref[uc:uc33]{UC33} \\ \hline
+                R-86-F-Op & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.1]{UC33.1} \\ \hline
+                R-87-F-Op & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.2]{UC33.2} \\ \hline
+                R-88-F-Op & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.3]{UC33.3} \\ \hline
+                R-89-F-Op & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.4]{UC33.4} \\ \hline
+                R-90-F-Op & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.1]{UC33.4.1} \\ \hline
+                R-91-F-Op & \hyperref[uc:uc33.4.1]{UC33.4.1}, \hyperref[uc:uc33.4.1.1]{UC33.4.1.1} \\ \hline
+                R-92-F-Op & \hyperref[uc:uc33.4.1]{UC33.4.1}, \hyperref[uc:uc33.4.1.2]{UC33.4.1.2} \\ \hline
+                R-93-F-Op & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.2]{UC33.4.2} \\ \hline
+                R-94-F-Op & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.3]{UC33.4.3} \\ \hline
+                R-95-F-Op & \hyperref[uc:uc34]{UC34} \\ \hline
+                R-96-F-Op & \hyperref[uc:uc35]{UC35} \\ \hline
+                R-97-F-Op & \hyperref[uc:uc35]{UC35}, \hyperref[uc:uc35.1]{UC35.1} \\ \hline
+                R-98-F-Op & \hyperref[uc:uc35]{UC35}, \hyperref[uc:uc35.2]{UC35.2} \\ \hline
+                R-99-F-Op & \hyperref[uc:uc36]{UC36} \\ \hline
+                R-100-F-Op & \hyperref[uc:uc37]{UC37} \\ \hline
+                R-101-F-Op & \hyperref[uc:uc38]{UC38} \\ \hline
+                R-102-F-Op & \hyperref[uc:uc39]{UC39} \\ \hline
+                R-103-F-Op & \hyperref[uc:uc40]{UC40} \\ \hline
+                R-104-F-Op & \hyperref[uc:uc41]{UC41} \\ \hline
+                
+                \end{longtable}
+
+    \subsection{Riepilogo}{
+        \begin{table}[H]
+        \centering
+        \rowcolors{2}{lightblue}{white}
+            \begin{tabular}{|l|l|l|l|l|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Desiderabili} & \textbf{Opzionali} & \textbf{Totali} \\
+                \hline
+                Funzionali & 60 & 1 & 43 & 104 \\
+                \hline
+                Qualità & 7 & 0 & 0 & 7 \\
+                \hline
+                Vincolo & 6 & 0 & 0 & 6 \\
+                \hline
+                \textbf{Totali} & \textbf{73} & \textbf{1} & \textbf{43} & \textbf{117} \\
+                \hline
+            \end{tabular}
+            \caption{Riepilogo dei requisiti} 
+            \label{tab:riepilogo-requisiti}
+        \end{table}
+    }
+
+    \subsection{Conclusioni}{
+        I requisiti individuati sono soggetti a possibili variazioni durante l'evoluzione del progetto, al fine di apportare miglioramenti e aggiornamenti. Nel corso del ciclo di vita del progetto sarà valutata l'opportunità di integrare ulteriori requisiti per elevare qualità complessiva del prodotto. Tali modifiche verranno considerate progressivamente, seguendo un approccio di miglioramento continuo.
+    }
+}
+
+\end{document}
+  
+
+
