@@ -1,0 +1,208 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2025/12/16}
+\newcommand{\NumeroVerbaleEsterno}{sesto}
+\newcommand{\OraInizio}{15:00}
+\newcommand{\OraFine}{15:30}
+\newcommand{\LuogoVerbale}{Chiamata Google Meet}
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati gli argomenti discussi, le domande poste e le risposte ricevute durante il \NumeroVerbaleEsterno \space meeting effettuato dal team \Gruppo \space con l'azienda \textbf{Bluewind S.r.l.} nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\VerbaleEsterno}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleEsterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleEsterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        Andrea Difino & SI & Analista\\
+        Federico Simonetto & SI & Amministratore\\
+        Riccardo Valerio & SI & Programmatore\\
+        Francesco Marcolongo & SI & Analista\\
+        Michele Tesser & SI & Verificatore\\
+        Giacomo Giora & SI & Analista\\
+        Bilal Sabic & SI & Responsabile\\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabularx}{\textwidth}{|l|l|l|l|X|}
+        \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneVerbale & \DataVerbale & Bilal Sabic & Michele Tesser & Correzioni varie \\
+            \hline
+            v0.1.0 & \DataVerbale & Bilal Sabic &  & Prima stesura \\
+            \hline
+        \end{tabularx}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Presentazione del modello grafico dell'applicazione software
+        \item Esposizione di domande relative al progetto
+        \item Presentazione del PoC
+    \end{itemize}
+}
+
+
+\section{Discussione}{
+
+    % ----------------------------------------------------
+    \subsection{Presentazione del modello grafico dell'applicazione software}{
+        Durante l'incontro è stato presentato il modello grafico (GUI) dell'applicazione sviluppata. In questa fase sono stati richiesti all'azienda proponente pareri, conferme e chiarimenti su alcuni aspetti funzionali.
+    }
+    
+    \subsection{Domande relative al progetto}{
+        \textbf{Domanda:} Quando devono essere caricati i file degli alberi di decisione?
+        
+        \textbf{Risposta:} Gli stakeholder hanno precisato che i file relativi agli alberi di decisione devono essere caricati all'avvio dell'applicazione, in quanto risultano identici per tutti i dispositivi che l'utente può successivamente inserire o caricare.
+        
+
+        \textbf{Domanda:} Quali informazioni aggiuntive devono essere integrate negli asset e nei dispositivi?
+        
+        \textbf{Risposta:} Nel caso in cui un dispositivo venga inserito manualmente tramite l'applicazione, le informazioni aggiuntive da fornire sono quelle riportate negli esempi di file precedentemente inviati all'azienda. Ulteriori campi opzionali includono una descrizione del dispositivo e l'indicazione della sensibilità dell'asset.
+    }
+    
+    \subsection{Presentazione del PoC}{
+        È stato infine presentato il primo Proof of Concept (PoC) sviluppato dal team. L'azienda proponente è rimasta sorpresa ed ha espresso un riscontro positivo, apprezzando le funzionalità e l'impostazione generale dell'applicazione.
+    }
+   
+}
+\newpage
+
+\section{Decisioni prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{12cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D1-\DataVerbale\_ve & Fissata la successiva riunione in data 2026/01/13 alle ore 15.00 \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\section{Attivitá da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A1-\DataVerbale\_ve & Creare la repository GitHub riguardante il PoC per permettere all'azienda proponente di visualizzarlo & - & Giacomo Giora\\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\vspace{2cm}
+\begin{flushright}
+    \textbf{Approvazione dell'azienda} \\
+    Il proponente,\\[0.5cm]
+    \rule{6cm}{0.4pt}\\
+\end{flushright}
+
+
+\end{document}
