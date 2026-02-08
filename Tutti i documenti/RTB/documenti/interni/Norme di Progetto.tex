@@ -1091,7 +1091,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Budget at Completion (BAC)}}\\
                 \hline
-                \textbf{Codice} & MPC01 \\
+                \textbf{Codice} & / \\
                 \hline
                 \textbf{Formula} & \( \displaystyle \text{BAC} = 12705 \)\texteuro\\
                 \hline
@@ -1112,7 +1112,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Earned Value (EV)}}\\
                 \hline
-                \textbf{Codice} & MPC02\\
+                \textbf{Codice} & MPC01\\
                 \hline
                 \textbf{Formula} & \( \displaystyle \text{EV} = \text{BAC}*(\text{Percentuale completamento progetto}) \) \\
                 \hline
@@ -1133,7 +1133,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Planned Value (PV)}}\\
                 \hline
-                \textbf{Codice} & MPC03\\
+                \textbf{Codice} & MPC02\\
                 \hline
                 \textbf{Formula} & \( \displaystyle \text{PV} = \text{BAC}*(\text{Percentuale pianificata completamento progetto}) \) \\
                 \hline
@@ -1153,7 +1153,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Actual Cost (AC)}}\\
                 \hline
-                \textbf{Codice} & MPC04\\
+                \textbf{Codice} & MPC03\\
                 \hline
                 \textbf{Formula} & \( \displaystyle \text{AC} = (\text{Ore impiegate})*(\text{Costo per ora}) \)\\
                 \hline
@@ -1174,7 +1174,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Cost Variance (CV)}}\\
                 \hline
-                \textbf{Codice} & MPC05\\
+                \textbf{Codice} & MPC04\\
                 \hline
                 \textbf{Formula} & \( \displaystyle \text{CV} = \text{EV}-\text{AC} \)\\
                 \hline
@@ -1195,7 +1195,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Scheduled Variance (SV)}}\\
                 \hline
-                \textbf{Codice} & MPC06\\
+                \textbf{Codice} & MPC05\\
                 \hline
                 \textbf{Formula} & \( \displaystyle \text{SV} = \text{EV}-\text{PV} \)\\
                 \hline
@@ -1216,7 +1216,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Cost Performance Index (CPI)}}\\
                 \hline
-                \textbf{Codice} & MPC07\\
+                \textbf{Codice} & MPC06\\
                 \hline
                 \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{CPI} = \frac{\text{EV}}{\text{AC}} \)}\\
                 \hline
@@ -1237,7 +1237,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Schedule Performance Index (SPI)}}\\
                 \hline
-                \textbf{Codice} & MPC08\\
+                \textbf{Codice} & MPC07\\
                 \hline
                 \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{SPI} = \frac{\text{EV}}{\text{PV}} \)}\\
                 \hline
@@ -1258,7 +1258,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Estimate at Completion (EAC)}}\\
                 \hline
-                \textbf{Codice} & MPC09\\
+                \textbf{Codice} & MPC08\\
                 \hline
                 \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{EAC} = \frac{\text{BAC}}{\text{CPI}} \)}\\
                 \hline
@@ -1278,7 +1278,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Estimate to Complete (ETC)}}\\
                 \hline
-                \textbf{Codice} & MPC10\\
+                \textbf{Codice} & MPC09\\
                 \hline
                 \textbf{Formula} & \( \displaystyle \text{ETC} = \text{EAC}-\text{AC} \)\\
                 \hline
@@ -1286,26 +1286,6 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \hline
             \end{tabularx}      
             \caption{Descrizione della metrica "Estimate to Complete"}
-            \end{table}
-            }
-    
-            {\renewcommand{\arraystretch}{1.4}
-            \begin{table}[H]
-            \centering
-            \rowcolors{2}{lightblue}{white}
-            \begin{tabularx}{\textwidth}{|l|X|}
-                \hline
-                \rowcolor{gold}
-                \multicolumn{2}{|c|}{\textbf{Variance at Completion (VAC)}}\\
-                \hline
-                \textbf{Codice} & MPC11\\
-                \hline
-                \textbf{Formula} & \( \displaystyle \text{VAC} = \text{BAC}-\text{EAC} \)\\
-                \hline
-                \textbf{Descrizione} & Il \textbf{VAC} misura la differenza in budget originario del progetto (BAC) e quello stimato per il completamento del progetto (EAC). \\
-                \hline
-            \end{tabularx}      
-            \caption{Descrizione della metrica "Variance at Completion"}
             \end{table}
             }
         
@@ -1319,7 +1299,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Requirement Stability Index (RSI)}}\\
                 \hline
-                \textbf{Codice} & MPC12\\
+                \textbf{Codice} & MPC10\\
                 \hline
                 \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{RSI} = \left[1-\left(\frac{\text{RA}+\text{RM}+\text{RR}}{\text{RI}}\right)\right]*100 \)}\\
                 \hline
@@ -1328,6 +1308,46 @@ La portabilità è la capacità del software di essere trasportato da un \textit
             \end{tabularx}      
             \caption{Descrizione della metrica "Requirement Stability Index"}
             \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+                \begin{table}[H]
+                \centering
+                \rowcolors{2}{lightblue}{white}
+                \begin{tabularx}{\textwidth}{|l|X|}
+                    \hline
+                    \rowcolor{gold}
+                    \multicolumn{2}{|c|}{\textbf{Structural Fan-In (SFIN)}}\\
+                    \hline
+                    \textbf{Codice} & MPC11 \\
+                    \hline
+                    \textbf{Esempio} & \( \displaystyle \text{SFIN(Procedura)} = \text{Numero di procedure che chiama questa procedura} \)\\
+                    \hline
+                    \textbf{Descrizione} & La metrica \textbf{SFIN} indica il grado di riutilizzo di un dato modulo o componente (file, metodo, classe) da altre componenti. Un valore alto indica che il modulo è spesso riutilizzato e quindi potenzialmente critico. Un valore basso indica, invece, un maggiore isolamento. Nella formula sopracitata viene riportato l'esempio di una procedura, tuttavia lo stesso ragionamento può essere utilizzato per altre componenti del prodotto software.\\
+                    \hline
+                \end{tabularx}      
+                \caption{Descrizione della metrica "Structural Fan-In"}
+                \end{table}
+            }
+
+            {\renewcommand{\arraystretch}{1.4}
+                \begin{table}[H]
+                \centering
+                \rowcolors{2}{lightblue}{white}
+                \begin{tabularx}{\textwidth}{|l|X|}
+                    \hline
+                    \rowcolor{gold}
+                    \multicolumn{2}{|c|}{\textbf{Structural Fan-Out(SFOUT)}}\\
+                    \hline
+                    \textbf{Codice} & MPC12 \\
+                    \hline
+                    \textbf{Esempio} & \( \displaystyle \text{SFOUT(Procedura)} = \text{Numero di procedure chiamate da questa procedura} \)\\
+                    \hline
+                    \textbf{Descrizione} & La metrica \textbf{SFOUT} indica il grado di accoppiamento di un dato modulo o componente (file, metodo, classe) ad altre componenti. Un valore alto indica un alto grado di accoppiamento che può rendere più difficoltoso il testing e la sua manutenzione. Un valore basso, al contrario, indica maggiore semplicità e coesione. Nella formula sopracitata viene riportato l'esempio di una procedura, tuttavia lo stesso ragionamento può essere utilizzato per altre componenti del prodotto software.\\
+                    \hline
+                \end{tabularx}      
+                \caption{Descrizione della metrica "Structural Fan-Out"}
+                \end{table}
             }
         }
         
@@ -1456,26 +1476,6 @@ La portabilità è la capacità del software di essere trasportato da un \textit
             \end{table}
             }
 
-            {\renewcommand{\arraystretch}{1.4}
-            \begin{table}[H]
-            \centering
-            \rowcolors{2}{lightblue}{white}
-            \begin{tabularx}{\textwidth}{|l|X|}
-                \hline
-                \rowcolor{gold}
-                \multicolumn{2}{|c|}{\textbf{Time Efficiency}}\\
-                \hline
-                \textbf{Codice} & MPC19\\
-                \hline
-                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Time Efficiency} = \left(\frac{\text{Numero di ore produttive}}{\text{Numero di ore totali}}\right)*100 \)}\\
-                \hline
-                \textbf{Descrizione} & L'indice \textbf{Time Efficiency} rappresenta la percentuale delle ore che sono risultate effettivamente produttive (a discapito delle ore utilizzate per la palestra personale). \\
-                \hline
-            \end{tabularx}      
-            \caption{Descrizione della metrica "Time Efficiency"}
-            \end{table}
-            }
-
 \newpage
 
 \section{Metriche per la qualità del prodotto}
@@ -1530,7 +1530,6 @@ La portabilità è la capacità del software di essere trasportato da un \textit
             \end{table}
         }
 
-
         {\renewcommand{\arraystretch}{1.4}
             \begin{table}[H]
             \centering
@@ -1552,25 +1551,6 @@ La portabilità è la capacità del software di essere trasportato da un \textit
         }
 
         \subsection{Affidabilità}
-        {\renewcommand{\arraystretch}{1.4}
-            \begin{table}[H]
-            \centering
-            \rowcolors{2}{lightblue}{white}
-            \begin{tabularx}{\textwidth}{|l|X|}
-                \hline
-                \rowcolor{gold}
-                \multicolumn{2}{|c|}{\textbf{Statement Coverage}}\\
-                \hline
-                \textbf{Codice} & MPD04 \\
-                \hline
-                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Statement Coverage} = \frac{\text{Statement eseguiti}}{\text{Statement totali}}*100 \)}\\
-                \hline
-                \textbf{Descrizione} & La metrica \textbf{Statement Coverage} rappresenta la percentuale di \textit{statement} (istruzioni) eseguiti almeno una volta con l'esito atteso, rispetto al totale di \textit{statement} presenti. \\
-                \hline
-            \end{tabularx}      
-            \caption{Descrizione della metrica "Statement Coverage"}
-            \end{table}
-        }
 
         {\renewcommand{\arraystretch}{1.4}
             \begin{table}[H]
@@ -1581,7 +1561,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Branch Coverage}}\\
                 \hline
-                \textbf{Codice} & MPD05 \\
+                \textbf{Codice} & MPD04 \\
                 \hline
                 \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Branch Coverage} = \frac{\text{Branch eseguiti}}{\text{Branch totali}}*100 \)}\\
                 \hline
@@ -1599,20 +1579,105 @@ La portabilità è la capacità del software di essere trasportato da un \textit
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
                 \rowcolor{gold}
-                \multicolumn{2}{|c|}{\textbf{Condition Coverage}}\\
+                \multicolumn{2}{|c|}{\textbf{Statement Coverage}}\\
+                \hline
+                \textbf{Codice} & MPD05 \\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Statement Coverage} = \frac{\text{Statement eseguiti}}{\text{Statement totali}}*100 \)}\\
+                \hline
+                \textbf{Descrizione} & La metrica \textbf{Statement Coverage} rappresenta la percentuale di \textit{statement} (istruzioni) eseguiti almeno una volta con l'esito atteso, rispetto al totale di \textit{statement} presenti. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Statement Coverage"}
+            \end{table}
+        }
+
+        {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Failure Density}}\\
                 \hline
                 \textbf{Codice} & MPD06 \\
                 \hline
-                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Condition Coverage} = \frac{\text{Condizioni eseguite}}{\text{Condizioni totali}}*100 \)}\\
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Failure Density} = \frac{\text{Numero di fallimenti totali}}{\text{Dimensione dell'Unità di codice}} \)}\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{Condition Coverage} rappresenta la percentuale di condizioni eseguite, sul totale di condizioni presenti, che assume almeno una volta entrambi i valori di verità in un test dedicato.\\
+                \textbf{Descrizione} & La metrica \textbf{Failure Density} rappresenta il numero di fallimenti correttamente riscontrati durante i test per unità di dimensione del codice.\\
                 \hline
             \end{tabularx}      
-            \caption{Descrizione della metrica "Condition Coverage"}
+            \caption{Descrizione della metrica "Failure Density"}
+            \end{table}
+        }
+
+        \subsection{Usabilità}
+
+        {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Time on Task}}\\
+                \hline
+                \textbf{Codice} & MPD07 \\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{Time on Task} = \text{Tempo medio per completare un'attività} \)\\
+                \hline
+                \textbf{Descrizione} & La metrica \textbf{Time on Task} rappresenta il tempo medio necessario per completare un'attività da parte dell'utente. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Time on Task"}
+            \end{table}
+        }
+
+        {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Error Rate}}\\
+                \hline
+                \textbf{Codice} & MPD08 \\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Error Rate} = \frac{\text{Numero di errori totali}}{\text{Numero di azioni totali}}*100 \)}\\
+                \hline
+                \textbf{Descrizione} & La metrica \textbf{Error Rate} rappresenta la percentuale di errori rispetto al numero totale di azioni eseguite. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Error Rate"}
+            \end{table}
+        }
+
+        \subsection{Efficienza}
+
+        {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Response Time}}\\
+                \hline
+                \textbf{Codice} & MPD09 \\
+                \hline
+                \textbf{Formula} & \( \displaystyle \text{Response Time} = {\text{Tempo medio di risposta}} \)\\
+                \hline
+                \textbf{Descrizione} & La metrica \textbf{Response Time} rappresenta il tempo medio impiegato dal sistema per rispondere a una richiesta. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Response Time"}
             \end{table}
         }
 
         \subsection{Manutenibilità}
+        
         {\renewcommand{\arraystretch}{1.4}
             \begin{table}[H]
             \centering
@@ -1620,16 +1685,16 @@ La portabilità è la capacità del software di essere trasportato da un \textit
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
                 \rowcolor{gold}
-                \multicolumn{2}{|c|}{\textbf{Structural Fan-In (SFIN)}}\\
+                \multicolumn{2}{|c|}{\textbf{Code Smells}}\\
                 \hline
-                \textbf{Codice} & MPD07 \\
+                \textbf{Codice} & MPD10 \\
                 \hline
-                \textbf{Esempio} & \( \displaystyle \text{SFIN(Procedura)} = \text{Numero di procedure che chiama questa procedura} \)\\
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Code Smells} = \frac{\text{Numero di code smells}}{\text{Dimensione dell'Unità di codice}} \)}\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{SFIN} indica il grado di riutilizzo di un dato modulo o componente (file, metodo, classe) da altre componenti. Un valore alto indica che il modulo è spesso riutilizzato e quindi potenzialmente critico. Un valore basso indica, invece, un maggiore isolamento. Nella formula sopracitata viene riportato l'esempio di una procedura, tuttavia lo stesso ragionamento può essere utilizzato per altre componenti del prodotto software.\\
+                \textbf{Descrizione} & La metrica \textbf{Code Smells} rappresenta il numero di \textit{code smells} presenti in un'unità di codice. \\
                 \hline
             \end{tabularx}      
-            \caption{Descrizione della metrica "Structural Fan-In"}
+            \caption{Descrizione della metrica "Code Smells"}
             \end{table}
         }
         {\renewcommand{\arraystretch}{1.4}
@@ -1639,16 +1704,96 @@ La portabilità è la capacità del software di essere trasportato da un \textit
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
                 \rowcolor{gold}
-                \multicolumn{2}{|c|}{\textbf{Structural Fan-Out(SFOUT)}}\\
+                \multicolumn{2}{|c|}{\textbf{Coefficient of Coupling}}\\
                 \hline
-                \textbf{Codice} & MPD08 \\
+                \textbf{Codice} & MPD04 \\
                 \hline
-                \textbf{Esempio} & \( \displaystyle \text{SFOUT(Procedura)} = \text{Numero di procedure chiamate da questa procedura} \)\\
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Coefficient of Coupling} = \frac{\text{Numero di classi accoppiate}}{\text{Numero totale di classi}}*100 \)}\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{SFOUT} indica il grado di accoppiamento di un dato modulo o componente (file, metodo, classe) ad altre componenti. Un valore alto indica un alto grado di accoppiamento che può rendere più difficoltoso il testing e la sua manutenzione. Un valore basso, al contrario, indica maggiore semplicità e coesione. Nella formula sopracitata viene riportato l'esempio di una procedura, tuttavia lo stesso ragionamento può essere utilizzato per altre componenti del prodotto software.\\
+                \textbf{Descrizione} & La metrica \textbf{Coefficient of Coupling} rappresenta la percentuale di classi accoppiate rispetto al numero totale di classi presenti. \\
                 \hline
             \end{tabularx}      
-            \caption{Descrizione della metrica "Structural Fan-Out"}
+            \caption{Descrizione della metrica "Coefficient of Coupling"}
+            \end{table}
+        }
+
+        {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Cyclomatic complexity}}\\
+                \hline
+                \textbf{Codice} & MPD12 \\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Cyclomatic complexity} = \frac{\text{Branch eseguiti}}{\text{Branch totali}}*100 \)}\\
+                \hline
+                \textbf{Descrizione} & La metrica \textbf{Cyclomatic complexity} rappresenta la percentuale di \textit{branch} (rami) che sono stati eseguiti almeno una volta con l'esito atteso, rispetto al totale di \textit{branch} presenti. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Cyclomatic complexity"}
+            \end{table}
+        }
+
+        {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Parametri per metodo}}\\
+                \hline
+                \textbf{Codice} & MPD13 \\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Parametri per metodo} = \frac{\text{Numero di parametri}}{\text{Numero totale di metodi}}*100 \)}\\
+                \hline
+                \textbf{Descrizione} & La metrica \textbf{Parametri per metodo} rappresenta la media del numero di parametri per metodo all'interno del progetto. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Parametri per metodo"}
+            \end{table}
+        }
+
+        {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Linee di codice per metodo}}\\
+                \hline
+                \textbf{Codice} & MPD14 \\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Linee di codice per metodo} = \frac{\text{Linee di codice totali}}{\text{Numero totale di metodi}} \)}\\
+                \hline
+                \textbf{Descrizione} & La metrica \textbf{Linee di codice per metodo} rappresenta la media del numero di linee di codice per metodo all'interno del progetto. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Linee di codice per metodo"}
+            \end{table}
+        }
+
+        {\renewcommand{\arraystretch}{1.4}
+            \begin{table}[H]
+            \centering
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \multicolumn{2}{|c|}{\textbf{Profondità delle gerarchie}}\\
+                \hline
+                \textbf{Codice} & MPD15 \\
+                \hline
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Profondità delle gerarchie} = \frac{\text{Livello massimo di profondità}}{\text{Numero totale di classi}} \)}\\
+                \hline
+                \textbf{Descrizione} & La metrica \textbf{Profondità delle gerarchie} rappresenta la profondità massima delle gerarchie di classi all'interno del progetto. \\
+                \hline
+            \end{tabularx}      
+            \caption{Descrizione della metrica "Profondità delle gerarchie"}
             \end{table}
         }
     
