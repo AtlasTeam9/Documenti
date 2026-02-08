@@ -44,12 +44,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Piano di Qualifica}
-\newcommand{\DataUltimaModifica}{2026/02/04}
+\newcommand{\DataUltimaModifica}{2026/02/08}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
-
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v0.5.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v1.0.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -126,7 +125,13 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & 2026/02/04 & Andrea Difino & Giacomo Giora & Modificati test di sistema \\ 
+            \VersioneDocumento & 2026/02/08 & Francesco Marcolongo & Giacomo Giora & Approvazione \\ 
+            \hline
+            v0.7.0 & 2026/02/07 & Andrea Difino & Giacomo Giora & Scritta sezione automiglioramento \\ 
+            \hline
+            v0.6.0 & 2026/02/06 & Andrea Difino & Giacomo Giora & Inseriti grafici nel cruscotto \\ 
+            \hline
+            v0.5.0 & 2026/02/04 & Andrea Difino & Giacomo Giora & Modificati test di sistema \\ 
             \hline
             v0.4.0 & 2026/01/13 & Riccardo Valerio & Francesco Marcolongo & Definiti test di sistema e di accettazione \\ 
             \hline
@@ -200,7 +205,7 @@
 % ----------------------------
 
 \section{Metriche per la qualità}{
-    In questa sezione vengono delineate le soglie quantitative, composte da valore accettabile e valore ottimo, per valutare l'efficacia e l'efficienza dei processi e del prodotto. Le definizioni delle metriche applicate sono dettagliate nelle sezioni Metriche di qualità del processo e Metriche di qualità del prodotto del documento Norme di Progetto v1.0.0.
+    In questa sezione vengono delineate le soglie quantitative, composte da valore accettabile e valore ottimo, per valutare l'efficacia e l'efficienza dei processi e del prodotto. Le definizioni delle metriche applicate sono dettagliate nelle sezioni 6 e 7 del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme%20di%20Progetto.pdf}{Norme di Progetto}.
     
     \subsection{Qualità di processo}{
     La qualità di processo rappresenta un’esigenza primaria nello sviluppo software, poiché è grazie alla corretta applicazione di best practice ben definite che è possibile sviluppare un prodotto finale di alta qualità. Queste devono guidare tutte le attività, pratiche e metodologie adottate lungo l’intero ciclo di vita del software. La qualità di processo si fonda sull’idea che il raggiungimento di standard elevati nel prodotto dipenda da controlli regolari e dall’ottimizzazione continua dei processi che lo supportano, garantendo risultati che rispondano pienamente alle aspettative.
@@ -223,13 +228,13 @@
                         \hline
                         MPC03 & Actual Cost (AC) & $\ge 0$ & $\le EAC$ \\
                         \hline
-                        MPC04 & Cost Variance (CV) & $\ge -7.5\%$ & $\ge 0$ \\
+                        MPC04 & Cost Variance (CV) & $\ge -7,5\%$ & $\ge 0$ \\
                         \hline
-                        MPC05 & Schedule Variance (SV) & $\ge -7.5\%$ & $\ge 0$ \\
+                        MPC05 & Schedule Variance (SV) & $\ge -7,5\%$ & $\ge 0$ \\
                         \hline
-                        MPC06 & Cost Performance Index (CPI) & $\ge 0$ & 1 \\
+                        MPC06 & Cost Performance Index (CPI) & $\ge 0,85$ & 1 \\
                         \hline
-                        MPC07 & Schedule Performance Index (SPI) & $\ge 0$ & 1 \\
+                        MPC07 & Schedule Performance Index (SPI) & $\ge 0,85$ & 1 \\
                         \hline
                         MPC08 & Estimate At Completion (EAC) & $\pm7\%$ rispetto a BAC & $= BAC$ \\
                         \hline
@@ -278,7 +283,7 @@
                         \hline
                         MPC13 & Indice Gulpease & $\ge 60\%$ & $\ge 80\%$ \\
                         \hline
-                        MPC14 & Correttezza ortografica & 0 & 0 \\
+                        MPC14 & Correttezza ortografica & $\le 2$ & 0 \\
                         \hline
                     \end{tabular}
                     \caption{Dettagli delle metriche del processo di documentazione} 
@@ -346,7 +351,7 @@
     \subsection{Qualità di prodotto}{
         La qualità del prodotto rappresenta l’obiettivo centrale di un progetto software e consiste nella capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti. Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto. Un prodotto software è considerato di alta qualità quando:
         \begin{itemize}
-            \item È funzionale, ovvero rispetta i requisiti funzionali e non funzionali definiti nel documento di Analisi dei Requisiti v1.0.0;
+            \item È funzionale, ovvero rispetta i requisiti funzionali e non funzionali definiti nel documento di \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti};
             \item È affidabile, ossia garantisce prestazioni consistenti e prive di errori;
             \item È usabile, in quanto rende semplice e intuitiva l'interazione per gli utenti finali;
             \item È efficiente, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste;
@@ -466,7 +471,7 @@
 % ----------------------------
 \section{Strategie di testing}{
 
-    Come stabilito nelle Norme di Progetto v1.0.0, i test effettuati saranno:
+    Come stabilito nelle \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme%20di%20Progetto.pdf}{Norme di Progetto}, i test effettuati saranno:
     \begin{itemize}
         \item test di Unità
         \item test di Integrazione
@@ -759,6 +764,145 @@
             \end{longtable}
     }
 
+    \subsection{Tracciamento dei test di sistema}{
+        \rowcolors{2}{lightblue}{white}
+               \begin{longtable}{|
+                    >{\centering\arraybackslash}p{.5\textwidth}|
+                    >{\centering\arraybackslash}p{.5\textwidth}|
+                }
+                \caption{Tabella di tracciamento dei test di sistema} 
+                \label{tab:tracciamento-test-sistema} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice test} & \textbf{Requisito} \\
+                \hline
+                \endfirsthead
+                
+                \multicolumn{2}{c}%
+                {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice test} & \textbf{Requisito} \\
+                \hline
+                \endhead
+                
+                \hline
+                \multicolumn{2}{r}{\textit{continua nella pagina successiva}} \\
+                \endfoot
+                
+                \hline
+                \endlastfoot
+            
+                \hline T-1-S   & R-1-F-Ob   \\ \hline
+                T-2-S   & R-2-F-Ob   \\ \hline
+                T-3-S   & R-3-F-Ob   \\ \hline
+                T-4-S   & R-4-F-Ob   \\ \hline
+                T-5-S   & R-5-F-Ob   \\ \hline
+                T-6-S   & R-6-F-Ob   \\ \hline
+                T-7-S   & R-7-F-Ob   \\ \hline
+                T-8-S   & R-8-F-Ob   \\ \hline
+                T-9-S   & R-9-F-Ob   \\ \hline
+                T-10-S  & R-10-F-Ob  \\ \hline
+                T-11-S  & R-11-F-Ob  \\ \hline
+                T-12-S  & R-12-F-Ob  \\ \hline
+                T-13-S  & R-13-F-Ob  \\ \hline
+                T-14-S  & R-14-F-Ob  \\ \hline
+                T-15-S  & R-15-F-Ob  \\ \hline
+                T-16-S  & R-16-F-Ob  \\ \hline
+                T-17-S  & R-17-F-Ob  \\ \hline
+                T-18-S  & R-18-F-Ob  \\ \hline
+                T-19-S  & R-19-F-Ob  \\ \hline
+                T-20-S  & R-20-F-D   \\ \hline
+                T-21-S  & R-21-F-Ob  \\ \hline
+                T-22-S  & R-22-F-Ob  \\ \hline
+                T-23-S  & R-23-F-Ob  \\ \hline
+                T-24-S  & R-24-F-Ob  \\ \hline
+                T-25-S  & R-25-F-Ob  \\ \hline
+                T-26-S  & R-26-F-Ob  \\ \hline
+                T-27-S  & R-27-F-Ob  \\ \hline
+                T-28-S  & R-28-F-Ob  \\ \hline
+                T-29-S  & R-29-F-Ob  \\ \hline
+                T-30-S  & R-30-F-Ob  \\ \hline
+                T-31-S  & R-31-F-Ob  \\ \hline
+                T-32-S  & R-32-F-Ob  \\ \hline
+                T-33-S  & R-33-F-Ob  \\ \hline
+                T-34-S  & R-34-F-Ob  \\ \hline
+                T-35-S  & R-35-F-Ob  \\ \hline
+                T-36-S  & R-36-F-Ob  \\ \hline
+                T-37-S  & R-37-F-Ob  \\ \hline
+                T-38-S  & R-38-F-Op  \\ \hline
+                T-39-S  & R-39-F-Op  \\ \hline
+                T-40-S  & R-40-F-Op  \\ \hline
+                T-41-S  & R-41-F-Op  \\ \hline
+                T-42-S  & R-42-F-Op  \\ \hline
+                T-43-S  & R-43-F-Op  \\ \hline
+                T-44-S  & R-44-F-Op  \\ \hline
+                T-45-S  & R-45-F-Ob  \\ \hline
+                T-46-S  & R-46-F-Ob  \\ \hline
+                T-47-S  & R-47-F-Ob  \\ \hline
+                T-48-S  & R-48-F-Ob  \\ \hline
+                T-49-S  & R-49-F-Ob  \\ \hline
+                T-50-S  & R-50-F-Ob  \\ \hline
+                T-51-S  & R-51-F-Ob  \\ \hline
+                T-52-S  & R-52-F-Ob  \\ \hline
+                T-53-S  & R-53-F-Ob  \\ \hline
+                T-54-S  & R-54-F-Ob  \\ \hline
+                T-55-S  & R-55-F-Ob  \\ \hline
+                T-56-S  & R-56-F-Ob  \\ \hline
+                T-57-S  & R-57-F-Ob  \\ \hline
+                T-58-S  & R-58-F-Ob  \\ \hline
+                T-59-S  & R-59-F-Ob  \\ \hline
+                T-60-S  & R-60-F-Ob  \\ \hline
+                T-61-S  & R-61-F-Ob  \\ \hline
+                T-62-S  & R-62-F-Ob  \\ \hline
+                T-63-S  & R-63-F-Ob  \\ \hline
+                T-64-S  & R-64-F-Op  \\ \hline
+                T-65-S  & R-65-F-Op  \\ \hline
+                T-66-S  & R-66-F-Op  \\ \hline
+                T-67-S  & R-67-F-Op  \\ \hline
+                T-68-S  & R-68-F-Ob  \\ \hline
+                T-69-S  & R-69-F-Ob  \\ \hline
+                T-70-S  & R-70-F-Ob  \\ \hline
+                T-71-S  & R-71-F-Ob  \\ \hline
+                T-72-S  & R-72-F-Ob  \\ \hline
+                T-73-S  & R-73-F-Op  \\ \hline
+                T-74-S  & R-74-F-Op  \\ \hline
+                T-75-S  & R-75-F-Op  \\ \hline
+                T-76-S  & R-76-F-Op  \\ \hline
+                T-77-S  & R-77-F-Op  \\ \hline
+                T-78-S  & R-78-F-Op  \\ \hline
+                T-79-S  & R-79-F-Op  \\ \hline
+                T-80-S  & R-80-F-Op  \\ \hline
+                T-81-S  & R-81-F-Op  \\ \hline
+                T-82-S  & R-82-F-Op  \\ \hline
+                T-83-S  & R-83-F-Op  \\ \hline
+                T-84-S  & R-84-F-Op  \\ \hline
+                T-85-S  & R-85-F-Op  \\ \hline
+                T-86-S  & R-86-F-Op  \\ \hline
+                T-87-S  & R-87-F-Op  \\ \hline
+                T-88-S  & R-88-F-Op  \\ \hline
+                T-89-S  & R-89-F-Op  \\ \hline
+                T-90-S  & R-90-F-Op  \\ \hline
+                T-91-S  & R-91-F-Op  \\ \hline
+                T-92-S  & R-92-F-Op  \\ \hline
+                T-93-S  & R-93-F-Op  \\ \hline
+                T-94-S  & R-94-F-Op  \\ \hline
+                T-95-S  & R-95-F-Op  \\ \hline
+                T-96-S  & R-96-F-Op  \\ \hline
+                T-97-S  & R-97-F-Op  \\ \hline
+                T-98-S  & R-98-F-Op  \\ \hline
+                T-99-S  & R-99-F-Op  \\ \hline
+                T-100-S & R-100-F-Op \\ \hline
+                T-101-S & R-101-F-Op \\ \hline
+                T-102-S & R-102-F-Op \\ \hline
+                T-103-S & R-103-F-Op \\ \hline
+                T-104-S & R-104-F-Op \\ \hline
+            \end{longtable}
+
+
+    }
+    
+
 
 \newpage
 % ------------------
@@ -768,29 +912,107 @@
 
     Vengono ora esposte le misurazioni eseguite durante il periodo intercorso tra l’aggiudicazione del capitolato e la Requirements and Technology Baseline (RTB). Le misurazioni elencate all'inizio ma qui non presenti saranno prese in considerazione durante lo svolgimento delle attività per la Product Baseline (PB).
 
-    \subsection{MCP: Earned Value e Planned Value}{
+    \subsection{MPC - Earned Value, Planned Value e Estimate At Completion}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/EV_PV_EAC.png}}
+            \caption{Grafico per sprint di MPC01, MPC02 e MPC08}
+        \end{figure}
+
+        \noindent Il grafico mostra il rapporto fra le metriche Earned Value e Planned Value e le confronta con la metrica Estimate At Completion. Si può notare che il valore dell'Earned Value in alcuni casi coincide con quello del Planned Value, in altri è superiore. Questo significa che il team ha sempre completato gli obiettivi pianificati e in alcuni casi ha prodotto anche più del necessario. 
+    }
+    \newpage
+    \subsection{MPC - Actual Cost, Estimate At Completion e Estimate To Complete}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/AC_EAC_ETC.png}}
+            \caption{Grafico per sprint di MPC03, MPC08 e MPC09}
+        \end{figure}
+
+        \noindent Il grafico mostra le metriche Actual Cost, Estimate At Completion e Estimate To Complete a confronto. All'aumentare del valore dell'Actual Cost, il valore di Estimate To Complete, (calcolato a partire da Estimate At Completion) diminuisce più o meno della stessa quantità in quasi tutti gli sprint, e questo è un segnale del fatto che ciò che deve essere fatto viene bene compensato da ciò che è stato fatto nei vari periodi. Solo durante lo sprint 5, il valore di Estimate At Completion si mantiene inalterato nonostante un incremento dell'Actual Cost per poi scendere nuovamente in occasione dell'ultimo sprint. Da ciò si comprende che durante il periodo 5 il team non ha fatto realmente dei progressi sostanziali per terminare il lavoro necessario alla candidatura per la RTB, ma li ha anzi relegati quasi totalmente allo sprint finale.
+    }
+    \newpage
+    \subsection{MPC - Budget At Completion e Estimate At Completion}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/BAC_EAC.png}}
+            \caption{Grafico per sprint di MPC08}
+        \end{figure}
+
+        \noindent Il grafico mostra nel dettaglio la metrica Estimate At Completion e la confronta con il valore Budget At Completion. Mentre nel primo sprint rimane pressoché invariato, diminuisce fin sotto il limite accettabile inferiore duranti gli sprint 2 e 4. Ciò evidenzia che durante questo periodo il team ha prodotto più di quanto pianificato. Il valore si alza poi oltre il budget in corrispondenza dello sprint 5, e questo sostiene quanto affermato prima circa i rallentamenti registrati in tale periodo. Il team considera comunque positivo il fatto che Estimate At Completion non abbia mai superato il limite accettabile superiore .
+    }
+    \newpage
+    \subsection{MPC - Cost Variance e Schedule Variance}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/CV_SV.png}}
+            \caption{Grafico per sprint di MPC04 e MPC05}
+        \end{figure}
+
+        \noindent Il grafico evidenzia le metriche Cost Variance e Schedule Variance, che, calcolate in percentuale, misurano lo scostamento di Earned Value rispettivamente da Actual Cost e da Planned Value. Cost Variance rimane quasi sempre positivo, indicando che il progetto è in generale sotto budget. Solo in corrispondenza dello sprint 5, il progetto va leggermente sopra budget. Si nota anche che durante lo sprint 3 il valore prodotto supera di quasi il 15\% in più l'ammontare dei costi. Schedule Variance assume valore positivo. Il progetto in generale è in linea o avanti con i tempi. Durante lo sprint 3, è evidente come il valore prodotto superi quasi del 20\% quello pianificato. In questo periodo, infatti, il team ha avuto la possibilità di rendere le proprie ore molto produttive.
+    }
+    \newpage
+    \subsection{MPC - Cost Performance Index e Schedule Performance Index}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/CPI_SPI.png}}
+            \caption{Grafico per sprint di MPC06 e MPC07}
+        \end{figure}
+
+        \noindent Il grafico mostra le misurazioni di Cost Performance Index e Schedule Performance Index (che sono analoghe a quelle illustrate nel grafico precedente). Si nota chiaramente che i due valori non solo sono sempre sopra il limite accettabile inferiore, ma quasi in ogni sprint coincidono o sono superiori al valore ottimo. Il fatto che Cost Performance Index sia spesso sopra il valore ottimo segnala la quasi assenza del rischio di superamento dei costi (solo lo sprint 5 presenta questa possibilità). Schedule Performance Index rimane sempre maggiore di 1, cioè il progetto non è mai in ritardo con i tempi, e questo è dovuto a una attenta e costante programmazione delle attività da svolgere. 
+    }
+    \newpage
+    \subsection{MPC - Requirements Stability Index}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/RSI.png}}
+            \caption{Grafico per sprint di MPC10}
+        \end{figure}
+
+        \noindent Il grafico mostra che il team ha iniziato a individuare i requisiti a partire dallo sprint 1 (questo è il motivo per cui il valore di Requirements Stability Index è pari allo zero per cento). Si notano inoltre dei picchi al di sotto del limite inferiore di accettabilità in corrispondenza degli sprint 3 e 4. Durante questi periodi, infatti, il team ha effettuato degli ulteriori colloqui con l'azienda proponente per analizzare in profondità il capitolato d'appalto e ha di conseguenza aggiunto e modificato diversi requisiti. Il valore diventa infine accettabile a partire dallo sprint 5. 
          
     }
-    \subsection{MCP: Actual Cost e Estimated To Complete}{
+    \newpage
+    \subsection{MPC - Indice di Gulpease}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/Gulpease.png}}
+            \caption{Grafico per sprint di MPC13}
+        \end{figure}
+
+        \noindent Il grafico mostra una chiara propensione del team alla cura della leggibilità dei documenti. L'indice di Gulpease si è infatti mantenuto al di sopra del valore di accettabilità per tutti i documenti durante tutti gli sprint. In particolare, i documenti Analisi dei Requisiti, Piano di Progetto e Piano di Qualifica hanno registrato un valore di leggibilità sempre ottimo (e tra l'altro in crescita per i primi due). I documenti Norme di Progetto e Glossario risultano essere invece quelli meno leggibili nonostante alcuni tentativi di innalzamento dell'indice. Il team riconosce comunque che si tratta di documenti con linguaggio tecnico e elementi non sempre testuali.
+    }
+    \newpage
+    \subsection{MPC - Correttezza ortografica}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/Correttezza.png}}
+            \caption{Grafico per sprint di MPC14}
+        \end{figure}
+
+        \noindent Dal grafico si evince che durante i primi sprint non sono stati commessi errori ortografici. Al termine degli sprint 3 e 4 sono invece stati rilevati degli errori rispettivamente in due e in un documento. Comunque, il team considera positiva questa misurazione in quanto riconosce che il valore si è sempre tenuto sotto il limite superiore di accettabilità e che la scrittura dei documenti si è svolta principalmente proprio negli sprint appena citati.
+    }
+    \newpage
+    \subsection{MPC - Non Calculated Risk}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/NonCalculatedRisk.png}}
+            \caption{Grafico per sprint di MPC18}
+        \end{figure}
+
+        \noindent Il grafico mostra chiaramente che non si sono mai presentati rischi non attesi durante gli sprint. Ciò significa che il team è riuscito a individuare efficacemente e sapientemente i rischi all'inizio della RTB e prima di ogni nuovo sprint e che si è adoperato fin da subito per cercare di mitigarli.
          
     }
-    \subsection{MCP: Cost Performance Index e Schedule Performance Index}{
-         
-    }
-    \subsection{MCP: Estimate At Completion}{
-         
-    }
-    \subsection{MCP: Requirements Stability Index}{
-         
-    }
-    \subsection{MCP: Indice di Gulpease}{
-         
-    }
-    \subsection{MCP: Correttezza ortografica}{
-         
-    }
-    \subsection{MCP: Quality metrics satisfied}{
-         
+    \newpage
+    \subsection{MPC - Quality Metrics Satisfied}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/QualityMetricsSatisfied.png}}
+            \caption{Grafico per sprint di MPC17}
+        \end{figure}
+
+        \noindent Questo grafico, che mostra la misurazione Quality Metrics Satisfied, consente di avere una visione generale sul rispetto della qualità del lavoro svolto. Fin dal primo sprint, non tutte le metriche sono risultate soddisfatte. Durante gli sprint 2, 3 e 4, centrali per lo svolgimento dei compiti, il valore è rimasto basso, ma comunque sopra la soglia di accettabilità. Il team giustifica questo con la poca esperienza dei membri nel gestire un tale progetto in modo efficiente. Durante gli sprint 5 e 6, è evidente una autoanalisi e una conseguente risoluzione dei problemi da parte del team.
+        
     }
 }
 
@@ -801,23 +1023,121 @@
 \section{Valutazioni per l'automiglioramento}{
 
     \subsection{Introduzione}{
-         
+        Il miglioramento continuo rappresenta forse il più importante obiettivo per assicurare la resa e la qualità di un progetto software collaborativo. In questa sezione sono illustrate le principali criticità riscontrate e le contromisure adottate per mitigare o eliminare i rallentamenti derivanti, con alcune considerazioni finali.
     }
 
     \subsection{Valutazione sull'organizzazione}{
-         
+        \rowcolors{4}{white}{lightblue}
+            \begin{longtable}{|
+                >{\centering\arraybackslash}p{.47\textwidth}|
+                >{\centering\arraybackslash}p{.47\textwidth}|
+            }
+            \hline
+            \rowcolor{gold}
+            \textbf{Descrizione problema} & \textbf{Contromisura adottata} \\
+            \hline
+            \endfirsthead
+            
+            \multicolumn{2}{c}%
+            {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+            \hline
+            \rowcolor{gold}
+            \textbf{Descrizione problema} & \textbf{Contromisura adottata} \\
+            \hline
+            \endhead
+            
+            \hline
+            \multicolumn{2}{r}{\textit{continua nella pagina successiva}} \\
+            \endfoot
+            
+            \endlastfoot
+            
+            La mancanza di tracciabilità delle attività rende complicato l'avanzamento produttivo e la pianificazione del lavoro & Implementazione del sistema di ticketing su GitHub per migliorare la gestione e il monitoraggio delle attività \\ \hline
+            L'assenza di controllo sulle modifiche dirette al branch principale può causare problemi di integrazione e qualità del codice & Implementazione della branch protection su GitHub per evitare modifiche non autorizzate e garantire la revisione del codice \\ \hline
+
+            \rowcolor{white}
+            \caption{Tabella con le contromisure adottate per migliorare l'organizzazione} 
+            \label{tab:contromisure-problemi-organizzazione} 
+            \end{longtable}
     }
 
-    \subsection{Valutazione sugli strumenti}{
-         
+    \subsection{Valutazione sugli strumenti di lavoro}{
+         \rowcolors{2}{white}{lightblue}
+            \begin{longtable}{|
+                >{\centering\arraybackslash}p{.2\textwidth}|
+                >{\centering\arraybackslash}p{.36\textwidth}|
+                >{\centering\arraybackslash}p{.36\textwidth}|
+            }
+            \hline
+            \rowcolor{gold}
+            \textbf{Strumento} & \textbf{Descrizione problema} & \textbf{Contromisura adottata} \\
+            \hline
+            \endfirsthead
+            
+            \multicolumn{3}{c}%
+            {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+            \hline
+            \rowcolor{gold}
+            \textbf{Strumento} & \textbf{Descrizione problema} & \textbf{Contromisura adottata} \\
+            \hline
+            \endhead
+            
+            \hline
+            \multicolumn{3}{r}{\textit{continua nella pagina successiva}} \\
+            \endfoot
+            
+            \endlastfoot
+            
+            GitHub & Difficoltà nell'organizzazione e nella gestione della documentazione & Uso combinato di Overleaf per i verbali e di un way of warking dettagliato e sempre consultabile per gli altri documenti \\ \hline
+            LaTeX, Git, Python, FastAPI & Assenza di familiarità con queste tecnologie da parte di alcuni membri del gruppo con potenziali problemi di ritardo e disallineamento & Studio autonomo dei linguaggi e delle tecnologie non conosciute e confronto sui dubbi riscontrati \\ \hline
+            Glossario & Assicurarsi manualmente che ogni occorrenza di una parola del glossario sia opportunamente marcata in ogni documento è un processo molto dispendioso & Implementazione e utilizzo di uno script Python per marcare ogni occorrenza dei termini del glossario su tutti i documenti completati\\ \hline
+           
+            \rowcolor{white}
+            \caption{Tabella con le contromisure adottate per migliorare il rapporto con gli strumenti di lavoro} 
+            \label{tab:contromisure-problemi-strumenti}
+            \end{longtable}
     }
 
     \subsection{Valutazione sui ruoli}{
+        \rowcolors{2}{white}{lightblue}
+            \begin{longtable}{|
+                >{\centering\arraybackslash}p{.2\textwidth}|
+                >{\centering\arraybackslash}p{.36\textwidth}|
+                >{\centering\arraybackslash}p{.36\textwidth}|
+            }
+            \hline
+            \rowcolor{gold}
+            \textbf{Ruolo} & \textbf{Descrizione problema} & \textbf{Contromisura adottata} \\
+            \hline
+            \endfirsthead
+            
+            \multicolumn{3}{c}%
+            {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}} \\
+            \hline
+            \rowcolor{gold}
+            \textbf{Ruolo} & \textbf{Descrizione problema} & \textbf{Contromisura adottata} \\
+            \hline
+            \endhead
+            
+            \hline
+            \multicolumn{3}{r}{\textit{continua nella pagina successiva}} \\
+            \endfoot
+            
+            \endlastfoot
+            
+            Responsabile & È difficile assegnare i compiti in modo equo, causando sovraccarico per alcuni e inattività per altri & Consultazione ad ogni riunione interna per l'individuazione e la suddivisione delle attività da svolgere \\ \hline
+            Verificatore & L'attività di verifica è vincolante per garantire una rapida ed efficiente prosecuzione del progetto & Invio di una notifica ai verificatori al fine di svolgere il loro ruolo quanto prima \\ \hline
+            Tutti & L'interruzione delle proprie attività per la presa in carico dei compiti del nuovo ruolo a cavallo di ogni sprint comporta un dispendio ulteriore di tempo & Comunicazione reciproca e coordinamento su quanto fatto al termine di ogni sprint \\ \hline
+
+            \rowcolor{white}
+            \caption{Tabella con le contromisure adottate per migliorare la gestione dei ruoli} 
+            \label{tab:contromisure-problemi-ruoli} 
+            \end{longtable}
          
     }
 
     \subsection{Considerazioni finali}{
-         
+         All'inizio del progetto, le valutazioni sul miglioramento erano piuttosto marginali in quanto il gruppo non aveva esperienza con i progetti e non era in grado di determinare se stava operando correttamente. Con il tempo, il numero di autocorrezioni è aumentato grazie a una maggiore presa di consapevolezza sulla complessità di gestione dei progetti software, e le relative contromisure adottate hanno a poco a poco permesso di risolvere o ridurre i problemi individuati, migliorando l'efficienza del lavoro svolto. Il team è quindi concorde nell'affermare che il processo di automiglioramento è un'attività fondamentale per garantire la qualità del progetto e si impegna di conseguenza a mantenere un approccio proattivo e collaborativo per individuare e risolvere tempestivamente eventuali criticità.
     }
 }
 
