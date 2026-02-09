@@ -1691,7 +1691,7 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \hline
                 \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Code Smells} = \frac{\text{Numero di code smells}}{\text{Dimensione dell'Unità di codice}} \)}\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{Code Smells} rappresenta il numero di \textit{code smells} presenti in un'unità di codice. \\
+                \textbf{Descrizione} & La metrica \textbf{Code Smells} rappresenta il numero di \textit{code smells} presenti in un'Unità di codice. \\
                 \hline
             \end{tabularx}      
             \caption{Descrizione della metrica "Code Smells"}
@@ -1706,11 +1706,11 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \rowcolor{gold}
                 \multicolumn{2}{|c|}{\textbf{Coefficient of Coupling}}\\
                 \hline
-                \textbf{Codice} & MPD04 \\
+                \textbf{Codice} & MPD11 \\
                 \hline
-                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Coefficient of Coupling} = \frac{\text{Numero di classi accoppiate}}{\text{Numero totale di classi}}*100 \)}\\
+                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Coefficient of Coupling} = \frac{\text{Numero di dipendenze}}{\text{Numero di componenti}}\)}\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{Coefficient of Coupling} rappresenta la percentuale di classi accoppiate rispetto al numero totale di classi presenti. \\
+                \textbf{Descrizione} & La metrica \textbf{Coefficient of Coupling} rappresenta il numero di dipendenze tra i componenti del sistema. \\
                 \hline
             \end{tabularx}      
             \caption{Descrizione della metrica "Coefficient of Coupling"}
@@ -1728,9 +1728,9 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \hline
                 \textbf{Codice} & MPD12 \\
                 \hline
-                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Cyclomatic complexity} = \frac{\text{Branch eseguiti}}{\text{Branch totali}}*100 \)}\\
+                \textbf{Formula} & \( \displaystyle \text{Cyclomatic complexity} = \text{E}-\text{N}+\text{P} \)\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{Cyclomatic complexity} rappresenta la percentuale di \textit{branch} (rami) che sono stati eseguiti almeno una volta con l'esito atteso, rispetto al totale di \textit{branch} presenti. \\
+                \textbf{Descrizione} & E rappresenta il numero di archi nel grafo di controllo del programma, N rappresenta il numero di nodi nel grafo, e P rappresenta il numero di componenti connesse. La metrica \textbf{Cyclomatic complexity} quantifica la complessità logica e strutturale del programma contando il numero di percorsi linearmente indipendenti attraverso il suo codice sorgente. \\
                 \hline
             \end{tabularx}      
             \caption{Descrizione della metrica "Cyclomatic complexity"}
@@ -1748,9 +1748,9 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \hline
                 \textbf{Codice} & MPD13 \\
                 \hline
-                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Parametri per metodo} = \frac{\text{Numero di parametri}}{\text{Numero totale di metodi}}*100 \)}\\
+                \textbf{Formula} & \( \displaystyle \text{Parametri(Metodo)} = \text{Numero di argomenti nella firma della funzione} \)\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{Parametri per metodo} rappresenta la media del numero di parametri per metodo all'interno del progetto. \\
+                \textbf{Descrizione} & La metrica \textbf{Parametri per metodo} rappresenta il numero di argomenti presenti nella firma di ciascun metodo all'interno del progetto. \\
                 \hline
             \end{tabularx}      
             \caption{Descrizione della metrica "Parametri per metodo"}
@@ -1768,9 +1768,9 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \hline
                 \textbf{Codice} & MPD14 \\
                 \hline
-                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Linee di codice per metodo} = \frac{\text{Linee di codice totali}}{\text{Numero totale di metodi}} \)}\\
+                \textbf{Formula} & \( \displaystyle \text{Linee di codice(Metodo)} = \text{Linee di istruzioni eseguibili nel metodo} \)\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{Linee di codice per metodo} rappresenta la media del numero di linee di codice per metodo all'interno del progetto. \\
+                \textbf{Descrizione} & La metrica \textbf{Linee di codice per metodo} rappresenta una misura quantitativa della dimensione di ciascun metodo all'interno del progetto. \\
                 \hline
             \end{tabularx}      
             \caption{Descrizione della metrica "Linee di codice per metodo"}
@@ -1788,9 +1788,9 @@ La portabilità è la capacità del software di essere trasportato da un \textit
                 \hline
                 \textbf{Codice} & MPD15 \\
                 \hline
-                \raisebox{0.6\height}{\textbf{Formula}} &  \rule{0pt}{5ex}\raisebox{0.3\height}{\( \displaystyle \text{Profondità delle gerarchie} = \frac{\text{Livello massimo di profondità}}{\text{Numero totale di classi}} \)}\\
+                \textbf{Formula} & \( \displaystyle \text{Profondità delle gerarchie} = \text{Massima profondità delle gerarchie di classi} \)\\
                 \hline
-                \textbf{Descrizione} & La metrica \textbf{Profondità delle gerarchie} rappresenta la profondità massima delle gerarchie di classi all'interno del progetto. \\
+                \textbf{Descrizione} & La metrica \textbf{Profondità delle gerarchie} descrive l'equilibrio tra riutilizzo del codice e complessità strutturale. Rappresenta il livello massimo di profondità delle gerarchie di classi all'interno del progetto. \\
                 \hline
             \end{tabularx}      
             \caption{Descrizione della metrica "Profondità delle gerarchie"}
