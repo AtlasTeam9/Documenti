@@ -1,0 +1,186 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2026/02/02}
+\newcommand{\OraInizio}{15:00}
+\newcommand{\OraFine}{16:30}
+\newcommand{\LuogoVerbale}{Chiamata Discord}
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
+\newcommand{\AbstractVerbale}{%
+In questo verbale vengono riportati i principali argomenti discussi, le decisioni prese e le attività pianificate durante la riunione del gruppo nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoVerbale}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \TipoVerbale \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \TipoVerbale \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        % Responsabile
+        % Amministratore
+        % Analista
+        % Progettista
+        % Programmatore
+        % Verificatore
+        Andrea Difino & SI & Amministratore \\
+        Federico Simonetto & SI & Progettista\\
+        Riccardo Valerio & SI & Analista\\
+        Francesco Marcolongo & SI & Responsabile\\
+        Michele Tesser & SI & Programmatore\\
+        Giacomo Giora & SI & Verificatore\\
+        Bilal Sabic & SI & Progettista\\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center}
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneVerbale & \DataVerbale & Francesco Marcolongo & Giacomo Giora & Correzioni varie \\
+            \hline
+            v0.1.0 & \DataVerbale & Federico Simonetto & Giacomo Giora & Prima stesura \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Modifica del Glossario
+        \item Ripartizione dei ruoli
+    \end{itemize}
+}
+
+
+\section{Discussione}{
+    \subsection{Modifica del Glossario} 
+        Il team decide di apportare modifiche al Glossario per evitare che parole troppo comuni nei documenti appaiano nella notazione \textit{parola}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Glossario}{G}}.
+        In particolare il termine \textit{Sistema} viene eliminato dal Glossario.
+		
+    \subsection{Ripartizione dei ruoli}
+        Il team decide di modificare la ripartizione delle ore nei ruoli negli sprint a seguire. Sono state infatti sopravvalutate alcune posizioni che hanno richiesto meno lavoro e sono state sottovalutate altre che hanno richiesto un impegno maggiore. La tabella con la ripartizione aggiornata è disponibile alla visione nel Piano di Progetto, in corrispondenza dello sprint 6.
+}
+
+\section{Decisioni prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{12cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D1-\DataVerbale\_vi &  Modificata la ripartizione delle ore dei ruoli di progetto\\
+        \hline
+            D2-\DataVerbale\_vi & Modificate alcune voci del Glossario \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\section{Attività da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A1-\DataVerbale\_vi & Continuare la stesura del PdQ & - & Giacomo Giora \\
+        \hline
+            A2-\DataVerbale\_vi & Creare le slide di presentazione per RTB & - & Team \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+
+\end{document}

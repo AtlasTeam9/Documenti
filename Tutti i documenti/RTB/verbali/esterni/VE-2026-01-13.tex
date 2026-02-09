@@ -1,0 +1,204 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2026/01/13}
+\newcommand{\NumeroVerbaleEsterno}{settimo}
+\newcommand{\OraInizio}{15:00}
+\newcommand{\OraFine}{15:25}
+\newcommand{\LuogoVerbale}{Chiamata Google Meet}
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % DA CAMBIARE UNA VOLTA MESSO NELLA REPO IN ../../../Assets/AtlasLogo.png
+\newcommand{\AbstractVerbale}{
+    In questo verbale vengono riportati gli argomenti discussi, le domande poste e le risposte ricevute durante il \NumeroVerbaleEsterno \space meeting effettuato dal team \Gruppo \space con l'azienda \textbf{Bluewind S.r.l.} nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v1.0.0}
+\newcommand{\VerbaleEsterno}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleEsterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleEsterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        Andrea Difino & SI & Programmatore\\
+        Federico Simonetto & SI & Analista\\
+        Riccardo Valerio & SI & Amministratore\\
+        Francesco Marcolongo & SI & Verificatore\\
+        Michele Tesser & SI & Analista\\
+        Giacomo Giora & SI & Responsabile\\
+        Bilal Sabic & SI & Programmatore\\
+    \end{tabular}
+
+\end{titlepage}
+
+\section*{Registro delle modifiche}{
+    \begin{center} 
+        \begin{tabularx}{\textwidth}{|l|l|l|l|X|}
+        \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            \VersioneVerbale & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Correzioni varie \\
+            \hline
+            v0.1.0 & \DataVerbale & Federico Simonetto &  & Prima stesura \\
+            \hline
+        \end{tabularx}
+    \end{center}
+}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Presentazione dei cambiamenti nel Proof of Concept
+        \item Presentazione dei requisiti individuati
+        \item Riferimento all'azienda proponente della data per la fine della RTB
+    \end{itemize}
+}
+
+
+\section{Discussione}{
+
+    % ----------------------------------------------------
+    \subsection{Presentazione dei cambiamenti  nel Proof of Concept}{
+        Vengono mostrati all'azienda proponente i cambiamenti effettuati nel Proof of Concept, riguardanti un miglioramento nell'interfaccia grafica e nell'architettura del prodotto software.
+    }
+
+    \subsection{Presentazione dei requisiti individuati}{
+        Viene mostrata la lista dei requisiti funzionali agli stakeholder al fine di far venire a galla evenutali dubbi o perplessità riguardo le funzionalità che il prodotto software dovrà poi possedere. 
+    }
+    
+    \subsection{Riferimento all'azienda proponente della data per la fine della RTB}{
+        Viene comunicato all'azienda proponente il periodo in cui il team intende effettuare la presentazione della Requirements and Technology Baseline, individuato nella prima settimana di febbraio 2026.
+    }
+    
+   
+}
+\newpage
+
+\section{Decisioni prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{12cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+            D1-\DataVerbale\_ve & Concordato con l'azienda l'invio del file d'esempio di caso d'uso della macchina del caffè, proposto per la seguente settimana.\\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+
+\section{Attivitá da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+            A1-\DataVerbale\_ve & Inviare all'azienda proponente il file riguardante l'analisi dei requisiti effettuata & - & Andrea Difino\\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\vspace{2cm}
+\begin{flushright}
+    \textbf{Approvazione dell'azienda} \\
+    Il proponente,\\[0.5cm]
+    \rule{6cm}{0.4pt}\\
+\end{flushright}
+
+
+\end{document}
+
