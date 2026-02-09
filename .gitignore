@@ -1,11 +1,70 @@
 #File di compilazione latex
+
+# =========================
+# File LaTeX temporanei
+# =========================
 *.aux
-*.out
-*.synctex
-*.toc
-*.txt
 *.log
-*.synctex.gz
-*.fdb_latexmk
+*.toc
+*.out
+*.lof
+*.lot
 *.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.synctex
+*.nav
+*.txt
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.blg
+*.bbl
+*.brf
+*.cb
+*.cb2
+*.run.xml
+*.bcf
 *.xdv
+
+# =========================
+# BibTeX / Biber
+# =========================
+*.bib.bak
+*.bib.sav
+
+# =========================
+# Glossaries
+# =========================
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+
+# =========================
+# Makeindex
+# =========================
+*.idx
+*.ind
+*.ilg
+
+# =========================
+# Latexmk
+# =========================
+latexmk.out
+
+# =========================
+# File di backup editor
+# =========================
+*~
+*.bak
+*.backup
+*.swp
+*.swo
+*.tmp
