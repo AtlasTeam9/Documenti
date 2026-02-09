@@ -1,0 +1,511 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgf-pie}
+\usepackage{longtable}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{pgffor}
+\usepackage{textcomp}
+
+
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloDocumento}{Glossario}
+\newcommand{\DataUltimaModifica}{2026/02/09}
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneDocumento}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\TipoDocumento}{Interno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Documento: \TipoDocumento}
+\fancyfoot[C]{\thepage}
+
+% larghezza della colonna dei nomi
+\newlength{\namecol}
+\setlength{\namecol}{4.5cm}
+\setlength{\headheight}{15pt} % messo per evitare warning di fancyhdr
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\newlength{\colw}
+\newlength{\colwS}
+\setlength{\colw}{1.5cm}
+\setlength{\colwS}{1.2cm}
+
+\definecolor{mioverde}{RGB}{20,150,60}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+
+    \begin{center}
+
+        % Logo
+        \vspace*{0cm}
+        \begin{tikzpicture}
+            \clip (0,-0.1) circle (5.6cm);
+            \node at (0,0) {\includegraphics[width=12cm]{\LogoGruppo}};
+        \end{tikzpicture}\\[0.8cm]
+
+        % Barra superiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+        % Titolo
+        \vspace{1cm}
+        {\Huge \textbf{\TitoloDocumento}}\\[0.4cm]
+        {\large Progetto di Ingegneria del Software A.A. 2025/2026}\\[0.8cm]
+        {\large Versione: \VersioneDocumento}
+        \vspace{1cm}
+
+        % Barra inferiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+    \end{center}
+
+    % Informazioni in basso
+    \vfill
+    \noindent
+    \begin{minipage}{0.5\textwidth}
+        \raggedright
+        \textbf{Autore:} \Gruppo\\
+        \textbf{Ultima modifica:} \DataUltimaModifica
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \raggedleft
+        \textbf{Tipo di documento:} \TipoDocumento
+    \end{minipage}
+
+\end{titlepage}
+
+
+
+\section*{Registro delle modifiche}
+    \begin{center}
+    \rowcolors{2}{lightblue}{white} % Alternanza automatica dal secondo row
+        \begin{tabularx}{\textwidth}{|l|l|l|l|X|}
+            \hline
+            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+            \hline
+            v1.0.0 & 2025/12/09 & Francesco Marcolongo & Giacomo Giora & Approvazione documento\\
+            \hline
+            v0.2.3 & 2026/02/06 & Andrea Difino & Giacomo Giora & Rimozione voce 'Sistema' dal documento\\
+            \hline
+            v0.2.2 & 2025/12/16 & Federico Simonetto & Michele Tesser & Rimozione voce 'Stato' dal documento\\
+            \hline
+            v0.2.1 & 2025/12/11 & Francesco Marcolongo & Bilal Sabic & Rimozione voce 'Qualità' dal documento\\
+            \hline
+            v0.2.0 & 2025/11/25 & Andrea Difino & Federico Simonetto & Inserimento termini\\
+            \hline
+            v0.1.0 & 2025/11/10 & Federico Simonetto & Francesco Marcolongo & Prima stesura documento\\
+            \hline
+        \end{tabularx}
+    \end{center}
+
+
+\newpage
+
+\tableofcontents
+
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Introduzione}
+    
+    \subsection{Scopo del documento}
+        All'interno della documentazione prodotta dal team possono comparire termini suscettibili di incomprensioni o ambiguità. Il documento corrente è stato reso disponibile per ovviare a questo problema. Un termine presente nei documenti è consultabile nel Glossario se è indicato con la notazione \textit{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
+        Premendo sulla G a pedice, l'utente verrà indirizzato alla pagina web del Glossario.
+    
+    
+
+\newpage
+
+\newpage
+
+        \section{A}
+        
+          \subsection*{Agile}
+			Metodologia di sviluppo basata su iterazioni brevi e feedback continui.
+          \subsection*{Ambiente di lavoro}
+			Contesto operativo e organizzativo in cui il team svolge le proprie attività progettuali.
+          \subsection*{API}
+			Insieme di funzioni e protocolli che permettono la comunicazione tra software differenti.
+          \subsection*{Architettura}
+			Modello concettuale che descrive la struttura, il comportamento e le relazioni tra i componenti di un sistema, garantendo la soddisfazione dei requisiti funzionali e non funzionali. Si può intendere come la progettazione di alto livello e le decisioni fondanti che definiscono come il sistema è organizzato, come i suoi elementi interagiscono e quali principi ne guidano lo sviluppo e l'evoluzione.
+          \subsection*{Attore}
+			Entità esterna al sistema che interagisce con esso, svolgendo un ruolo specifico e scambiando informazioni.
+          \subsection*{Ausilio}
+			Aiuto o supporto, sia materiale che morale.
+          \subsection*{Automazione}
+			Tecnologia che si usa per gestire macchine e processi, riducendo la necessità dell'intervento umano, ovvero per l'esecuzione di operazioni ripetitive o complesse.
+        
+      
+\newpage
+        \section{B}
+        
+          \subsection*{Back-end}
+			Parte di un sistema che gestisce logica, dati e comunicazione con il database.
+          \subsection*{Baseline}
+			Versione approvata di un prodotto o documento che serve come riferimento per successive modifiche.
+          \subsection*{Branch}
+			Linea di sviluppo separata all'interno di un progetto software.
+          \subsection*{Broker}
+			Intermediario che facilita la comunicazione e la cooperazione tra sistemi, applicazioni o servizi diversi.
+          \subsection*{BT}
+			Abbreviazione di Bluetooth, la tecnologia wireless per collegare dispositivi a corto raggio.
+        
+      
+
+      
+\newpage      
+        \section{C}
+        
+          \subsection*{Capitolato}
+			Documento stipulato tra il committente (azienda) e il gruppo incaricato dello sviluppo, nel quale viene illustrato il problema che il committente intende risolvere e vengono definiti le norme e i vincoli da seguire durante la progettazione e la realizzazione del prodotto software richiesto. 
+          \subsection*{Commit}
+			Azione che registra le modifiche apportate ai file in un sistema di versionamento come Git.
+          \subsection*{Continuous Delivery}
+			Pratica che automatizza il rilascio delle nuove versioni.
+          \subsection*{Continuous Integration}
+			Pratica che prevede l'integrazione continua del codice in un repository condiviso.
+          \subsection*{Cruscotto}
+			Strumento che offre una visione sintetica e immediata dello stato delle attività di progetto. Si aggiorna dinamicamente con il progredire dei lavori e consente a chi lo utilizza di ottenere un quadro chiaro e intuitivo della situazione.
+      
+  \newpage    
+        \section{D}
+        
+          \subsection*{Decision Tree}
+			Strumento grafico usato per rappresentare un processo decisionale. Ogni nodo mostra una condizione e ogni ramo mostra le varie alternative o conseguenze.
+          \subsection*{Deliverable}
+			Prodotto o documento che deve essere consegnato come risultato di una fase di progetto.
+          \subsection*{Design Pattern}
+			Soluzione riutilizzabile a un problema comune nel design del software.
+          \subsection*{Diagramma dei casi d'uso}
+			Rappresentazione grafica usata per rappresentare interazioni fra attori e sistema.
+          \subsection*{Diagramma delle attività}
+			Rappresentazione grafica usata per rappresentare logica procedurale.
+          \subsection*{Diagramma delle classi}
+			Rappresentazione grafica usata per rappresentare la struttura del progetto.
+          \subsection*{Diagramma di Gantt}
+			Strumento grafico per la rappresentazione sull'asse temporale delle attività che concorrono al completamento di un progetto, permettendone così la programmazione ed il controllo dell'avanzamento.
+          \subsection*{Diario di bordo}
+			Documento nel quale vengono mostrate le attività intraprese e segnalate le maggiori difficoltà incontrate in un certo momento del progetto.
+          \subsection*{Discord}
+			Piattaforma di comunicazione online che permette l'invio di messaggi così come l'avvio di chiamate vocali e video. È organizzato in server e viene utilizzato per collaborare e condividere informazioni.  
+      
+     \newpage 
+        \section{E}
+        
+          \subsection*{Endpoint}
+			URL che rappresenta un punto di accesso a un servizio web o API.
+          \subsection*{Entity}
+			Elemento persistente del modello dati che rappresenta un oggetto del dominio applicativo.
+          \subsection*{Efficacia}
+			Capacità del sistema di soddisfare gli obiettivi stabiliti e rispondere correttamente ai bisogni degli stakeholder.
+          \subsection*{Efficienza}
+			Capacità del sistema o del processo di ottenere il risultato desiderato usando il minor numero possibile di risorse, tempo e sforzo.
+          \subsection*{Errore}
+			Difetto o imperfezione introdotta nel processo o nel codice che può generare un comportamento inatteso o un malfunzionamento.
+          \subsection*{EN 18031}
+			Norma europea che definisce requisiti e test di sicurezza per dispositivi IoT, utilizzata per la verifica della loro conformità.
+          \subsection*{Esempio}
+			Caso illustrativo utilizzato per chiarire il funzionamento di un modello, di una funzione o di un processo.
+          \subsection*{Editor}
+			Interfaccia che permette la creazione, modifica e gestione strutturata di contenuti, come decision tree o configurazioni.
+          \subsection*{Esportazione}
+			Funzionalità che consente di generare un output riutilizzabile (documenti, report o dati) in un formato definito.
+          \subsection*{Esecuzione automatizzata}
+			Processo in cui una serie di controlli, analisi o procedure viene eseguita automaticamente da un sistema senza intervento umano.
+          \subsection*{Evolutivo}
+			(Di un modello) Approccio allo sviluppo che prevede iterazioni successive nelle quali il sistema viene raffinato e ampliato progressivamente.
+          \subsection*{Estensione}
+			Meccanismo che permette di aggiungere comportamento opzionale o alternativo a un caso d'uso principale.
+          \subsection*{Esecuzione condizionale}
+			Esecuzione di un comportamento che avviene solo se una determinata condizione risulta vera.
+
+\newpage    
+        \section{F}
+        
+          \subsection*{Fail}
+			Possibile output ottenuto percorrendo un Decision Tree, indica che il requisito non è rispettato.
+          \subsection*{Front-end}
+			Parte visibile di un'applicazione con cui l'utente interagisce direttamente.
+          \subsection*{Framework}
+			Struttura software che fornisce strumenti e librerie per lo sviluppo di applicazioni.
+        
+\newpage 
+      
+        \section{G}
+        
+          \subsection*{Git}
+			Sistema di controllo versione distribuito per la gestione del codice sorgente.
+          \subsection*{GitHub}
+			Piattaforma per la collaborazione e la pubblicazione di progetti Git.
+          \subsection*{Glossario}
+			Elenco dei termini tecnici utilizzati in un progetto, con relative definizioni.
+        
+\newpage
+        \section{H}
+        
+\newpage
+        \section{I}
+        
+          \subsection*{Interattivo}
+			Sistema che richiede la partecipazione attiva dell'utilizzatore, che può rispondere alle azioni per progredire.
+          \subsection*{Interfaccia}
+			Punto di interazione tra due sistemi o componenti, che consente loro di comunicare e scambiare informazioni.
+          \subsection*{Interfaccia grafica}
+			(detta anche GUI) è un'interfaccia visiva che permette di interagire con un computer o un'applicazione attraverso elementi grafici come icone, pulsanti, menu e finestre.
+          \subsection*{Input}
+			Dati, informazioni, istruzioni, risorse, immessi in un sistema.
+          \subsection*{IoT}
+			Acronimo di "Internet of Things", ovvero "Internet delle cose". Si riferisce a una rete di oggetti fisici, dotati di sensori, software e altre tecnologie, che possono connettersi e scambiare dati tra loro e con altri sistemi su Internet. Questa interconnessione permette il monitoraggio e il controllo remoto dei dispositivi.
+        
+\newpage
+        \section{J}
+        
+          \subsection*{Just-In-Time}
+			Approccio basato sull'idea di produrre o fornire qualcosa solo quando serve, evitando sprechi e riducendo al minimo le risorse inutilizzate.
+        
+\newpage
+        \section{K}
+        
+\newpage 
+        \section{L}
+        
+          \subsection*{LaTeX}
+			Sistema di composizione professionale utilizzato per creare documenti tecnici e scientifici con struttura e formattazione rigorosa.
+          \subsection*{Legge di Parkinson}
+			Principio secondo cui il lavoro tende ad espandersi fino a occupare tutto il tempo disponibile per completarlo.
+          \subsection*{Lettera di presentazione}
+			Documento introduttivo che accompagna una consegna formale, spiegandone contenuto, obiettivi e struttura.
+          \subsection*{Lezione}
+			Unità di attività formativa dedicata a spiegazioni teoriche, chiarimenti o discussioni collegate al progetto.
+          \subsection*{Lista}
+			Struttura che contiene una serie ordinata di elementi, spesso usata per gestire insiemi di oggetti associati o monitorati.
+          \subsection*{Livello di astrazione}
+			Gradazione del dettaglio con cui un sistema viene descritto, usata per separare aspetti concettuali da quelli implementativi.
+        
+\newpage
+        \section{M}
+        
+          \subsection*{Memory Leak}
+			Quando un programma usa memoria e non la libera più, anche quando non serve più.
+          \subsection*{Merge}
+			Operazione Git che integra linee di sviluppo indipendenti in un unico branch.
+          \subsection*{Monolite}
+			Software costruito tutto insieme, in un unico blocco. Tutte le parti (login, database, API, interfaccia, logica) sono dentro lo stesso programma.
+          \subsection*{MQTT}
+			Acronimo di Message Queuing Telemetry Transport, è un protocollo di messaggistica leggero, progettato per la comunicazione tra dispositivi con risorse limitate, come quelli dell'IoT.
+        
+\newpage
+        \section{N}
+        
+          \subsection*{NA}
+			Acronimo di Not Applicable: possibile output ottenuto percorrendo un Decision Tree, indica che il requisito non è applicabile.
+          \subsection*{Negoziazione}
+			Processo di discussione e mediazione tra stakeholder per risolvere conflitti e priorità contrastanti tra diversi requisiti.
+          \subsection*{Nodo}
+			Unità logica di un decision tree che rappresenta una condizione di decisione o un risultato, a seconda della sua posizione nel processo decisionale.
+          \subsection*{Norma}
+			Documento che definisce requisiti e procedure per garantire sicurezza, affidabilità, qualità ed efficienza di prodotti, processi e servizi.
+        
+\newpage
+      
+        \section{O}
+        
+          \subsection*{Obiettivo}
+			Risultato da raggiungere nell'ambito di un'attività o di un'impresa.
+          \subsection*{Operatività}
+			Capacità di svolgere determinate attività; efficacia.
+        
+\newpage
+        \section{P}
+        
+          \subsection*{Pass}
+			Possibile output ottenuto percorrendo un Decision Tree, indica che il requisito è stato rispettato.
+          \subsection*{PDF}
+			Acronimo di Portable Document Format, che significa "formato di documento portatile". È un formato di file che permette di presentare e scambiare documenti in modo affidabile e indipendente.
+          \subsection*{Pull}
+			Operazione Git che consente di aggiornare il branch locale recuperando e integrando le modifiche dal corrispondente branch remoto.
+          \subsection*{Push}
+			Operazione Git che trasferisce (propaga) i riferimenti e gli oggetti del repository locale verso un repository remoto.
+          \subsection*{Python Packaging}
+			Processo di creazione e distribuzione di progetti Python in un formato standardizzato (chiamato package o pacchetto), in modo che altri possano facilmente installarli e utilizzarli. Il file pyproject.toml è un file di configurazione moderno e unificato che gestisce questo processo.
+        
+\newpage
+        \section{Q}
+        
+\newpage
+      
+        \section{R}
+        
+          \subsection*{RED}
+			Normativa europea che stabilisce requisiti per la sicurezza, la compatibilità elettromagnetica e l'uso dello spettro radio per le apparecchiature che trasmettono o ricevono onde radio.
+          \subsection*{Repository}
+			Spazio di archiviazione digitale usato per memorizzare codice, documenti o risorse di progetto. Consente il versionamento dei file e facilità la collaborazione tra i membri del team.
+          \subsection*{Requisito}
+			Capacità necessaria a un utente per raggiungere un obiettivo (lato bisogno) così come capacità necessaria a un sistema per rispondere a un'aspettativa.
+          \subsection*{Responsabile}
+			Membro di progetto che coordina le attività di gruppo e approva il rilascio di prodotti parziali o finali.
+          \subsection*{Retrospective}
+			Attività collocata alla fine di uno sprint. Il team riflette su cosa è andato bene, cosa può essere migliorato e come ottimizzare il lavoro futuro.
+          \subsection*{Revisione}
+			Attività di controllo che consiste nello scovare eventuali errori prima dell'approvazione.
+          \subsection*{Router}
+			Dispositivo di rete che indirizza i pacchetti di dati fra diverse reti.
+          \subsection*{RTB}
+			Acronimo di "Requirements and Technology Baseline": baseline di progetto dove vengono definiti i requisiti funzionali e tecnici insieme alle tecnologie utilizzate per soddisfare tali requisiti.
+        
+\newpage
+      
+        \section{S}
+        
+          \subsection*{Scelte tecnologiche}
+			Decisioni relative a tecnologie, librerie e architetture adottate per realizzare il sistema.
+          \subsection*{Semplicità}
+			Proprietà di un sistema o di un requisito che favorisce chiarezza, facilità di comprensione e riduzione della complessità.
+          \subsection*{Server}
+			Componente o macchina che gestisce logiche, servizi e funzionalità centralizzate accessibili da client o dispositivi.
+          \subsection*{Servizi}
+			Funzionalità accessibili dall'esterno o da altri componenti del sistema attraverso interfacce definite.
+          \subsection*{Sicurezza}
+			Insieme delle proprietà che garantiscono protezione da malfunzionamenti, accessi non autorizzati e rischi operativi.
+          \subsection*{Sicurezza informatica}
+			Disciplina che si occupa della protezione dei sistemi digitali da attacchi, intrusioni e vulnerabilità.
+          \subsection*{Soluzione}
+			Insieme delle scelte tecniche e organizzative proposte per risolvere un problema o soddisfare un requisito.
+          \subsection*{Stakeholder}
+			Persona o entità che ha interesse, influenza o responsabilità nei confronti del progetto o del prodotto.
+          \subsection*{Standard di processo}
+			Insieme di regole, procedure e convenzioni stabilite per garantire qualità, uniformità e controllo nello sviluppo.
+          \subsection*{Stima}
+			Valutazione quantitativa preliminare di costi, tempi o risorse necessarie per realizzare un'attività.
+          \subsection*{Strumento}
+			Tool o applicazione che supporta il team nello svolgimento delle attività di progettazione, sviluppo o verifica.
+          \subsection*{Sviluppo}
+			Fase del progetto in cui il sistema viene implementato, integrato e verificato sulla base dei requisiti.
+        
+\newpage
+        \section{T}
+        
+          \subsection*{Ticketing}
+			Sistema usato per registrare, organizzare e seguire le richieste di lavoro, problemi o domande.
+        
+\newpage
+        \section{U}
+        
+          \subsection*{UAT}
+			Acronimo di User Acceptance Testing: fase del testing in cui gli utenti finali verificano che il software soddisfi i requisiti contrattuali o di business.
+          \subsection*{UI}
+			Acronimo di User Interface: insieme di elementi grafici o testuali con cui l'utente interagisce con il software. La progettazione UI impatta sulla gestione del progetto e sulle priorità di sviluppo.
+          \subsection*{UML}
+			Acronimo di Unified Modeling Language: linguaggio standard di modellazione utilizzato nell'ingegneria del software per rappresentare visivamente sistemi complessi, processi e architetture software. Organizza i modelli in due grandi categorie: diagrammi strutturali, che rappresentano la struttura statica del sistema, e diagrammi comportamentali che rappresentano il comportamento dinamico del sistema.
+          \subsection*{Unicode}
+			Standard di codifica dei caratteri che assegna in modo univoco un numero (chiamato code point) a ogni carattere usato nei sistemi di scrittura di tutto il mondo.
+          \subsection*{Unit test}
+			Test automatizzato che verifica il corretto funzionamento di un singolo modulo o componente del software. È parte essenziale della gestione della qualità.
+          \subsection*{Upgrade}
+			Processo di rilascio di nuove versioni del software, che può includere miglioramenti, correzioni di bug o nuove funzionalità.
+          \subsection*{Usabilità}
+			Misura di quanto il software è facile da usare, efficiente e comprensibile per l'utente finale.
+          \subsection*{Use case}
+			Descrizione di come un utente o un sistema interagisce con il software per raggiungere un obiettivo specifico. Fondamentale per raccogliere requisiti funzionali.
+          \subsection*{User story}
+			Breve descrizione di una funzionalità dal punto di vista dell'utente finale. Molto usata in metodologie Agile/Scrum.
+          \subsection*{UX}
+			Acronimo di User Experience: esperienza complessiva dell'utente nell'usare il software. Il miglioramento della UX può essere parte degli obiettivi del progetto.
+        
+\newpage
+      
+        \section{V}
+        
+          \subsection*{Validazione}
+			Attività che verifica che il prodotto rispetti i requisiti e le aspettative del committente.
+          \subsection*{Verbale interno}
+			Documento che riporta il resoconto di una riunione interna al team di progetto. Riporta l'ordine del giorno, le questioni discusse e le decisioni prese.
+          \subsection*{Verbale esterno}
+			Documento che riporta il resoconto di una riunione con l'azienda proponente, uno stakeholder o altre persone esterne al team di progetto.
+          \subsection*{Verificatore}
+			Membro del team di progetto che si occupa di controllare la correttezza, la completezza e la qualità del lavoro svolto.
+          \subsection*{Versionamento}
+			Processo di gestione e controllo delle diverse versioni di un progetto.
+        
+\newpage
+        \section{W}
+        
+          \subsection*{Waterfall model}
+			Modello di sviluppo sequenziale in cui ogni fase deve essere completata prima di passare alla successiva.
+          \subsection*{WBS}
+			Acronimo di Work Breakdown Structure: scomposizione gerarchica del progetto in attività sempre più piccole e gestibili. 
+          \subsection*{Web-based}
+			Caratteristica di applicazioni accessibili tramite browser senza necessità di installazione locale.
+          \subsection*{Wi-Fi}
+			Tecnologia di comunicazione wireless utilizzata da molti dispositivi per trasmettere dati tramite rete locale.
+          \subsection*{Wireless}
+			Comunicazione tra dispositivi elettronici che non fa uso di cavi, ma utilizza radioonde o raggi infrarossi.
+          \subsection*{Work}
+			Attività che tende ad adattarsi al tempo assegnato, influenzando la pianificazione e la gestione del progetto.
+          \subsection*{Work environment}
+			Ambiente operativo in cui il team collabora, composto da strumenti, procedure e spazi di lavoro.
+          \subsection*{WoW}
+			Acronimo di Way of Working: insieme delle pratiche, processi e regole operative adottate dal team per gestire in modo efficace il progetto.          
+        
+\newpage
+      
+        \section{X}
+        
+          \subsection*{XML}
+			Linguaggio di markup pensato per rappresentare e scambiare dati in modo strutturato. Grazie ai tag personalizzabili, permette di descrivere le informazioni in modo chiaro e portabile tra sistemi diversi.
+        
+\newpage
+        \section{Y}
+        
+        
+\newpage
+        \section{Z}
+        
+\end{document}
