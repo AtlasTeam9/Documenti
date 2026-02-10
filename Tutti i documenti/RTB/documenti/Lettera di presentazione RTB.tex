@@ -1,0 +1,150 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloUno}{Lettera di Presentazione RTB}
+\newcommand{\DataModifica}{2025/10/31}
+\newcommand{\LogoGruppo}{../../Assets/AtlasLogo.png} % Inserisci il file del logo
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Lettera di Presentazione RTB\space - \space \DataModifica}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo in alto
+    \vspace*{0cm}
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\[0.8cm]
+
+    % Nome gruppo ed email sotto al logo
+    {\LARGE \textbf{\Gruppo}}\\[0.1cm]
+    {\large \Email}\\[1.2cm]
+
+    % Titolo principale
+    {\Huge \textbf{\TitoloUno}}\\[.5cm]
+
+    \hspace{1cm}
+
+     {\large \textbf{Componenti}}\\[0.5cm]
+    \begin{tabular}{l|l}
+        \textbf{Nome} & \textbf{Matricola} \\
+        \hline
+        Andrea Difino & 2101072 \\
+        Federico Simonetto & 2113180 \\
+        Riccardo Valerio & 2075517 \\
+        Francesco Marcolongo & 2101093 \\
+        Michele Tesser & 2111012 \\
+        Giacomo Giora & 2101094 \\
+        Bilal Sabic & 2111022 \\
+    \end{tabular}
+
+\end{titlepage}
+
+\noindent Egregio Prof. Tullio Vardanega ,\\
+\noindent Egregio Prof. Riccardo Cardin ,\\
+
+\noindent Con la presente il gruppo Atlas è lieto di comunicarVi formalmente il proprio interesse nel sottoporsi alla revisione della \textit{Requirements and Technology Baseline} in data \textbf{13 febbraio 2026}, riguardo allo sviluppo del progetto proposto dall'azienda \textbf{Bluewind S.r.l.} nel capitolato \textbf{C1} con titolo:
+
+
+\begin{center}
+    \textbf{Automated EN18031 Compliance Verification}
+\end{center}
+
+
+\noindent Il gruppo \textit{Atlas} ha implementato un \textit{Proof of Concept}, la cui repository è
+disponibile al seguente link:
+\begin{center}
+    \url{https://github.com/AtlasTeam9/PoC}  
+\end{center}
+
+\noindent Vi segnaliamo che la documentazione prodotta in questo periodo può essere trovata alla sezione "Tutti i documenti/RTB" della nostra repo al seguente link: 
+\begin{center}
+    \url{https://github.com/AtlasTeam9/Documenti}
+\end{center}
+
+\noindent Inoltre, essa è sempre disponibile all'interno del sito web del team: 
+\begin{center}
+    \url{https://atlasteam9.github.io/Atlas/}
+\end{center}
+
+
+\noindent Sono presenti per la consultazione i seguenti documenti:
+\begin{multicols}{2}
+\begin{itemize}
+  \item Lettera di presentazione RTB (questo documento)
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme%20di%20Progetto.pdf}{Norme di Progetto v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Glossario.pdf}{Glossario v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano%20di%20Progetto.pdf}{Piano di Progetto v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano%20di%20Qualifica.pdf}{Piano di Qualifica v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2025-11-07.pdf}{Verbale interno del 07/11/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2025-11-12.pdf}{Verbale interno del 12/11/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2025-11-25.pdf}{Verbale interno del 25/11/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2025-12-11.pdf}{Verbale interno del 11/12/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2025-12-23.pdf}{Verbale interno del 23/12/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2026-01-12.pdf}{Verbale interno del 12/01/2026 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2026-01-16.pdf}{Verbale interno del 16/01/2026 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/interni/VI-2026-02-02.pdf}{Verbale interno del 02/02/2026 v1.0.0} 
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/esterni/firmati/VE-2025-11-11-firmato.pdf}{Verbale esterno del 11/11/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/esterni/firmati/VE-2025-11-18-firmato.pdf}{Verbale esterno del 18/11/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/esterni/firmati/VE-2025-12-02-firmato.pdf}{Verbale esterno del 02/12/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/esterni/firmati/VE-2025-12-16-firmato.pdf}{Verbale esterno del 16/12/2025 v1.0.0}
+  \item \href{https://atlasteam9.github.io/Atlas/docs/RTB/verbali/esterni/firmati/VE-2026-01-13-firmato.pdf}{Verbale esterno del 13/01/2026 v1.0.0}
+\end{itemize}
+\end{multicols}
+
+Infine, riconfermiamo la data ultima di consegna del progetto al \textbf{20 marzo 2026}, con costo stimato massimo di \textbf{\euro 12˙705}.
+
+\noindent Per qualsiasi delucidazione rimaniamo a Vostra completa disposizione. \\
+
+\begin{flushright}
+    Cordiali saluti, \\
+    \textit{il team Atlas - Gruppo 9} \\
+\end{flushright}
+
+\end{document}
