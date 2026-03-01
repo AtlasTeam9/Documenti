@@ -45,11 +45,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2026/02/26}
+\newcommand{\DataUltimaModifica}{2026/02/27}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v1.0.1} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v1.0.2} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -128,7 +128,9 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Riccardo Valerio & Giacomo Giora & Sistemati requisiti non funzionali \\
+            \VersioneDocumento & \DataUltimaModifica & Riccardo Valerio & Giacomo Giora & Rimosse inclusioni e estensioni errate \\
+            \hline
+            v1.0.1 & 2026/02/26 & Riccardo Valerio & Giacomo Giora & Sistemati requisiti non funzionali \\
             \hline
             v1.0.0 & 2026/02/05 & Francesco Marcolongo & Giacomo Giora & Aggiunte g del Glossario v1.0.0. Ricevuta approvazione. \\
             \hline
@@ -528,14 +530,6 @@
 
                 \paragraph{UC6.1 - Risposta a domanda} \mbox{}
                 \label{uc:uc6.1}
-                \begin{center}
-                    \begin{figure}[H]
-                        \centering
-                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC6.1.png}
-                        \caption{UC6.1 -  Risposta a domanda}
-                        \label{fig:uc6.1}
-                    \end{figure}
-                \end{center}
                 \begin{itemize}
                     \item \textbf{Attore}: Utente
                     \item \textbf{Post-condizioni}: Il Sistema riceve la risposta alla domanda relativa al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del decision tree.
@@ -543,16 +537,6 @@
                     \begin{itemize}
                         \item Il Sistema mostra all'Utente il testo e il nome della domanda corrente del decision tree.
                         \item Il Sistema registra la risposta (SÌ/NO) dell'Utente.
-                    \end{itemize}
-                    \item \textbf{Scenari alternativi}:
-                    \begin{itemize}
-                        \item L'Utente seleziona il pulsante di navigazione alla domanda precedente per modificarne la risposta [\hyperref[uc:uc7]{UC7}].
-                        \item L'Utente seleziona il pulsante di navigazione alla domanda successiva per modificarne la risposta [\hyperref[uc:uc8]{UC8}].
-                    \end{itemize}
-                    \item \textbf{Estensioni}: 
-                    \begin{itemize}
-                        \item[-] \hyperref[uc:uc7]{UC7 Modifica risposta domanda precedente}
-                        \item[-] \hyperref[uc:uc8]{UC8 Modifica risposta domanda successiva}
                     \end{itemize}
                 \end{itemize} 
 
@@ -1419,24 +1403,9 @@
                 \item L'Utente visualizza i risultati di un test completato.
                 \item L'Utente seleziona la funzionalità di modifica del test.
                 \item L'Utente seleziona un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} e l'asset del dispositivo per individuare il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} da cui riprendere il test e avvia la modifica del test.
-                \item Il Sistema esegue nuovamente il test a partire dal punto selezionato [\hyperref[uc:uc6]{UC6}].
-            \end{itemize}
-            \item \textbf{Inclusioni}: 
-            \begin{itemize}
-                \item \hyperref[uc:uc6]{UC6  Esecuzione del test}
+                \item Il Sistema esegue nuovamente il test a partire dal punto selezionato.
             \end{itemize}
         \end{itemize}
-
-        \noindent Il Caso d'Uso UC25 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-            
-                \begin{center}
-                    \begin{figure}[H]
-                        \centering
-                        \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC25Inclusioni.png}
-                        \caption{UC25 -  Inclusioni Caso d'Uso 25: UC6}
-                        \label{fig:uc25-inclusioni}
-                    \end{figure}
-                \end{center}
 
 
             \subsubsection{UC26 - Esecuzione di un test non completato}
@@ -1448,24 +1417,9 @@
                 \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente ha caricato un test non completato.
-                    \item Il Sistema riprende l'esecuzione del test dall'ultimo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} [\hyperref[uc:uc6]{UC6}].
+                    \item Il Sistema riprende l'esecuzione del test dall'ultimo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}.
                 \end{itemize} 
-                 \item \textbf{Inclusioni}: 
-                 \begin{itemize}
-                    \item \hyperref[uc:uc6]{UC6  Esecuzione del test}
-                \end{itemize}
             \end{itemize}
-
-            \noindent Il Caso d'Uso UC26 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-                
-                    \begin{center}
-                        \begin{figure}[H]
-                            \centering
-                            \includegraphics[scale=0.58]{../../../Assets/Diagrammi/UC26Inclusioni.png}
-                            \caption{UC26 -  Inclusioni Caso d'Uso 26: UC6}
-                            \label{fig:uc26-inclusioni}
-                        \end{figure}
-                    \end{center}
 
             \subsubsection{UC27 - Visualizzazione lista giustificazioni test}
             \label{uc:uc27}
