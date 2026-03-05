@@ -1,0 +1,336 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{pgf-pie}
+\usepackage{longtable}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{pgffor}
+
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloDocumento}{Specifica Tecnica}
+\newcommand{\DataUltimaModifica}{2026/03/05}
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneDocumento}{1.0.0}
+\newcommand{\TipoDocumento}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Documento: \TipoDocumento}
+\fancyfoot[C]{\thepage}
+
+% larghezza della colonna dei nomi
+\newlength{\namecol}
+\setlength{\namecol}{4.5cm}
+\setlength{\headheight}{15pt} % messo per evitare warning di fancyhdr
+
+
+\newlength{\colw}
+\setlength{\colw}{1.5cm}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\definecolor{mioverde}{RGB}{20,150,60}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+
+    \begin{center}
+
+        % Logo
+        \vspace*{0cm}
+        \begin{tikzpicture}
+            \clip (0,-0.1) circle (5.6cm);
+            \node at (0,0) {\includegraphics[width=12cm]{\LogoGruppo}};
+        \end{tikzpicture}\\[0.8cm]
+
+        % Barra superiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+        % Titolo
+        \vspace{1cm}
+        {\Huge \textbf{\TitoloDocumento}}\\[0.4cm]
+        {\large Progetto di Ingegneria del Software A.A. 2025/2026}\\[0.8cm]
+        {\large Versione: \VersioneDocumento}
+        \vspace{1cm}
+
+        % Barra inferiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+    \end{center}
+
+    % Informazioni in basso
+    \vfill
+    \noindent
+    \begin{minipage}{0.5\textwidth}
+        \raggedright
+        \textbf{Autore:} \Gruppo\\
+        \textbf{Ultima modifica:} \DataUltimaModifica
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \raggedleft
+        \textbf{Tipo di documento:} \TipoDocumento
+    \end{minipage}
+
+\end{titlepage}
+
+
+
+\section*{Registro delle modifiche}
+\begin{center}
+    \rowcolors{2}{lightblue}{white}
+    \begin{tabularx}{\textwidth}{|l|l|l|X|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione}                                        \\
+        \hline
+        0.1.0             & 2025/03/05          & Federico Simonetto        &   Giacomo Giora                   & Prima stesura documento                                            \\
+        \hline
+    \end{tabularx}
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+
+\newpage
+
+\listoftables
+
+\newpage
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Introduzione}
+
+    \subsection{Scopo del documento}
+        Il presente documento ha l'obiettivo di descrivere in maniera approfondita l'architettura del prodotto software sviluppato dal team.
+        In particolare, verranno presentati e analizzati i seguenti aspetti:
+        \begin{itemize}
+            \item le tecnologie selezionate per lo sviluppo e per le attività di testing del prodotto;
+            \item l'architettura logica del sistema, con la descrizione dei principali moduli che lo compongono e delle interazioni tra di essi;
+            \item l'architettura di deployment del sistema;
+            \item i pattern architetturali adottati, corredati da una spiegazione delle motivazioni alla base della loro scelta e del loro utilizzo all'interno del progetto.
+        \end{itemize}
+        
+    \subsection{Glossario}
+        All'interno della documentazione prodotta dal team possono comparire termini suscettibili di incomprensioni o ambiguità. Per evitare questo, è disponibile un glossario
+        contenente i termini tecnici e le loro definizioni. Un termine è consultabile nel glossario se è indicato con la notazione \textit{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
+        Premendo sulla G a pedice, l'utente verrà indirizzato alla pagina web del \textit{Glossario v.2.0.0}.
+    
+
+    \subsection{Riferimenti}
+        \subsubsection{Riferimenti normativi}
+            \begin{itemize}
+                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item Riferimento al Way of Working del team Atlas: \newline \textbf{Norme di Progetto v.2.0.0}\newline \url{da_mettere_una_volta_scritto}
+            \end{itemize}
+        
+
+        \subsubsection{Riferimenti informativi}
+            \begin{itemize}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Regolamento del progetto didattico}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Diagrammi delle classi}\newline \url{https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Pattern architetturali}\newline \url{https://www.math.unipd.it/~rcardin/swea/2022/Software%20Architecture%20Patterns.pdf}
+                \item Riferimento alle slide del corso di Ingegneria del Software:\newline \textbf{Progettazione software}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T06.pdf} 
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{Python}\newline \url{https://docs.python.org/3/}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{JavaScript}\newline \url{https://devdocs.io/javascript/}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{FastAPI}\newline \url{https://fastapi.tiangolo.com/}
+                \item Riferimento alla pagina web della tecnologia utilizzata:\newline \textbf{Vite}\newline \url{https://vite.dev/guide/}
+                \item Riferimento alla pagina web della tecnologia utilizzata:\newline \textbf{React}\newline \url{https://react.dev/}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{Pydantic}\newline \url{https://docs.pydantic.dev/latest/}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{Axios}\newline \url{https://axios-http.com/docs/intro}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{React Router}\newline \url{https://reactrouter.com/home}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{Zustand}\newline \url{https://zustand.docs.pmnd.rs/learn/getting-started/introduction}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{JSON}\newline \url{https://www.json.org/json-en.html}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{Docker}\newline \url{https://docs.docker.com/}
+                \item Riferimento alla pagina web della tecnologia utilizzata:\newline \textbf{Vitest}\newline \url{https://v3.vitest.dev/}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{React Testing Library}\newline \url{https://testing-library.com/docs/react-testing-library/intro/}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{Pytest}\newline \url{https://docs.pytest.org/en/stable/}
+                \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{HTTPX}\newline \url{https://www.python-httpx.org/#documentation}
+            \end{itemize}
+        
+    
+    
+
+    \newpage
+
+    \section{Descrizione generale del prodotto}
+    \subsection{Obiettivi del prodotto}
+        Il prodotto ha l'obiettivo di supportare la verifica automatizzata della conformità dei dispositivi radio ai requisiti di sicurezza informatica definiti dalla Direttiva RED mediante l'uso di decision trees interattivi.
+    
+
+    \subsection{Funzioni del prodotto}
+        Il sistema permette all'utente di visualizzare e interagire con i decision trees per la verifica automatizzata della conformità normativa degli asset analizzati.
+        \newline
+        Le sue principali funzionalità includono:
+        \begin{itemize}
+            \item \textbf{Importazione da file:} il sistema deve consentire di importare file contenenti gli asset del dispositivo da analizzare, in formati strutturati standard;
+            \item \textbf{Creazione di asset:} il sistema permette la creazione diretta degli asset tramite \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} web, nel caso non sia disponibile un file di \textit{input}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Input}{G}} predefinito;
+            \item \textbf{Interazione con i decision trees:} per ciascun asset, il sistema mostra i decision trees pertinenti attraverso una rappresentazione grafica intuitiva, facilitando la comprensione del flusso decisionale;
+            \item \textbf{Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, JSON, ecc.) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
+        \end{itemize}
+    
+    \newpage
+
+    \section{Tecnologie}
+    In questa sezione vengono illustrate le tecnologie utilizzate dal team per la produzione del software, organizzate per funzione.
+
+        \subsection{Linguaggi di programmazione}
+        \begin{center}
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|l|X|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Linguaggio}  & \textbf{Versione}       & \textbf{Descrizione}                                          \\
+                \hline
+                \textbf{Python} & 3.11 & Linguaggio di programmazione utilizzato per la codifica del backend. L'utilizzo di Python è stato richiesto dall'azienda proponente e, nella versione 3.11 rappresenta una release stabile e performante nonché una grande versatilità.\\
+                \hline
+                \textbf{JavaScript} & ES6 & JavaScript è il linguaggio standard per lo sviluppo web lato client e garantisce piena compatibilità con i browser moderni. La sua adozione consente inoltre l'utilizzo di librerie e framework consolidati, come React, e l'accesso a un ampio ecosistema di strumenti e dipendenze che semplificano lo sviluppo e la manutenzione dell'applicazione.\\
+                \hline
+            \end{tabularx}
+        \end{center}
+
+        \subsection{Frameworks}
+        \begin{center}
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|l|X|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Framework}  & \textbf{Versione}  & \textbf{Descrizione}   \\
+                \hline
+                \textbf{FastAPI} & 0.124.4 & Framework moderno per la creazione di API in modo efficiente, veloce e semplice. Permette la validazione dei dati automatica grazie a Pydantic e garantisce il supporto asincrono.\\
+                \hline
+            \end{tabularx}
+        \end{center}
+
+        \subsection{Build Tools}
+        \begin{center}
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|l|X|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Tool}  & \textbf{Versione}  & \textbf{Descrizione}   \\
+                \hline
+                \textbf{Vite} & 7.2.4 & Tool per il build e lo scaffolding del progetto React. Permette di avviare un server di sviluppo rapido, gestire il bundling e ottimizzare le performance del frontend.\\
+                \hline
+            \end{tabularx}
+        \end{center}
+        
+        \subsection{Librerie}
+        \begin{center}
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|l|X|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Libreria}  & \textbf{Versione}  & \textbf{Descrizione}   \\
+                \hline
+                \textbf{React} & 19.2.0 & Libreria di JavaScript per la costruzione di interfacce utente dinamiche e interattive. Si basa su un'archiettura component-based in cui l'interfaccia è suddivisa in componenti riutilizzabili e indipendenti, ciascuno responsabile di una specifica porzione della UI.\\
+                \hline
+                \textbf{Pydantic} & 2.12.5 & Libreria Python utilizzata per la validazione dei dati, basata sulle annotazioni di tipo. Consente di definire strutture dati come classi per garantire che i parametri in ingresso rispettino i tipi e i vincoli rispettati.\\
+                \hline
+                \textbf{Axios} & 1.13.2 & Libreria JavaScript che permette di creare un layer HTTP, centralizzare la gestione degli errori e gestire il protocollo di comunicazione fra il client e il server.\\
+                \hline
+                \textbf{React Router} & ??? & Libreria React che garantisce il routing: permette di navigare tra diverse pagine senza attivare un ricaricamento completo e della pagine e permette la navigazione con i tanti avanti e indietro del browser senza perdere lo stato.\\
+                \hline
+                \textbf{Zustand} & ??? & Libreria leggera, veloce e scalabile per la gestione dello stato in React, basata su hook e un approccio store-based. Permette di creare store centralizzati per condividere dati fra componenti. \\
+                \hline
+            \end{tabularx}
+        \end{center}
+
+
+        \subsection{Formato dei dati}
+        \begin{center}
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|X|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Formato} & \textbf{Descrizione}  \\
+                \hline
+                \textbf{JSON} & JavaScript Object Notation è un formato di scambio di dati leggero. È \textit{human-friendly} sia nella scrittura che nella lettura nonché facile da generare e analizzare dai computer. Viene utilizzato per garantire la persistenza dei dati e per salvare i decision trees.\\ 
+                \hline
+            \end{tabularx}
+        \end{center}
+
+        \subsection{Deployment}
+        \begin{center}
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|l|X|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Piattaforma} & \textbf{Versione} & \textbf{Descrizione}  \\
+                \hline
+                \textbf{Docker} & 29.3.0 & Piattaforma utilizzata per la containerizzazione dei componenti dell'applicazione. Docker consente di creare ambienti di esecuzione isolati e riproducibili, garantendo portabilità e coerenza tra sviluppo, testing e deployment, indipendentemente dal sistema operativo della macchina ospitante.\\
+                \hline
+            \end{tabularx}
+        \end{center}
+
+        \subsection{Testing}
+        \begin{center}
+            \rowcolors{2}{lightblue}{white}
+            \begin{tabularx}{\textwidth}{|l|l|X|}
+                \hline
+                \rowcolor{gold}
+                \textbf{Tecnologia} & \textbf{Versione} & \textbf{Descrizione}  \\
+                \hline
+                \textbf{Vitest} & ??? & Framework di testing moderno, ispirato a Jest e ottimizzato per progetti con Vite. Consente l'esecuzione di unit test in modo rapido e con ottima integrazione negli ambienti moderni. \\
+                \hline
+                \textbf{React Testing Library} & ??? & Libreria per il testing dei componenti React, che permette di verificare il comportamento dei componenti dal punto di vista dell'utente finale. \\
+                \hline 
+                \textbf{Pytest} & ??? & Framework per l'esecuzione di test automatizzati in Python, con supporto per fixture, assert avanzati e plugin estensibili. \\
+                \hline 
+                \textbf{HTTPX} & ??? & Client HTTP per Python che permette di effettuare richieste sincrone e asincrone. Può essere utilizzato per testare API simulando chiamate client verso gli endpoint del backend. \\
+                \hline
+            \end{tabularx}
+        \end{center}
+
+    \end{document}        
