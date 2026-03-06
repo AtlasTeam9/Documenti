@@ -46,11 +46,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2026/02/27}
+\newcommand{\DataUltimaModifica}{2026/03/06}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v1.0.2} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v1.1.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \makeatletter
@@ -185,7 +185,11 @@
         \rowcolor{lightgray}
         \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione}                                        \\
         \hline
-        \VersioneDocumento & \DataUltimaModifica & Riccardo Valerio     & Giacomo Giora         & Rimosse inclusioni e estensioni errate                      \\
+        \VersioneDocumento & \DataUltimaModifica & Francesco Marcolongo     & Giacomo Giora         & Approvate le modifiche                     \\
+        \hline
+        v1.0.3 & \DataUltimaModifica & Riccardo Valerio     & Giacomo Giora         & Aggiunte gerarchie                      \\
+        \hline
+        v1.0.2 & 2026/02/27 & Riccardo Valerio     & Giacomo Giora         & Rimosse inclusioni e estensioni errate                      \\
         \hline
         v1.0.1             & 2026/02/26          & Riccardo Valerio     & Giacomo Giora         & Sistemati requisiti non funzionali                          \\
         \hline
@@ -570,13 +574,47 @@
       \end{center}
 
       \subusecase{Risposta a domanda}{uc:risposta-domanda}
+      \begin{center}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[scale=0.58]{../../../Assets/Diagrammi/\thesubusecase.png}
+              \caption{\thesubusecase\ -  Risposta a domanda}
+          \end{figure}
+      \end{center}
       \begin{itemize}
           \item \textbf{Attore}: Utente
           \item \textbf{Post-condizioni}: Il Sistema riceve la risposta alla domanda relativa al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del decision tree.
           \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item Il Sistema mostra all'Utente il testo e il nome della domanda corrente del decision tree.
-                    \item Il Sistema registra la risposta (SÌ/NO) dell'Utente.
+                    \item Il Sistema registra la risposta.
+                \end{itemize}
+          \item \textbf{Generalizzazioni}:
+          \begin{itemize}
+              \item \uctitle{uc:risposta-domanda-si}{Risposta a domanda con SI}
+              \item \uctitle{uc:risposta-domanda-no}{Risposta a domanda con NO}
+          \end{itemize}
+      \end{itemize}
+
+      \subusecase{Risposta a domanda con SI}{uc:risposta-domanda-si}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Post-condizioni}: Il Sistema riceve "SI" come risposta alla domanda relativa al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del decision tree.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema mostra all'Utente il testo e il nome della domanda corrente del decision tree.
+                    \item Il Sistema registra "SI" come risposta.
+                \end{itemize}
+      \end{itemize}
+
+      \subusecase{Risposta a domanda con NO}{uc:risposta-domanda-no}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Post-condizioni}: Il Sistema riceve "NO" come risposta alla domanda relativa al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} del decision tree.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Il Sistema mostra all'Utente il testo e il nome della domanda corrente del decision tree.
+                    \item Il Sistema registra "NO" come risposta.
                 \end{itemize}
       \end{itemize}
 
@@ -598,6 +636,37 @@
                     \item Il Sistema mostra la domanda precedente (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente.
                     \item L'Utente seleziona la risposta.
                 \end{itemize}
+          \item \textbf{Generalizzazioni}:
+          \begin{itemize}
+              \item \uctitle{uc:modifica-risposta-domanda-prec-si}{Modifica risposta domanda precedente con SI}
+              \item \uctitle{uc:modifica-risposta-domanda-prec-no}{Modifica risposta domanda precedente con NO}
+          \end{itemize}
+      \end{itemize}
+
+      \subusecase{Modifica risposta domanda precedente con SI}{uc:modifica-risposta-domanda-prec-si}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Pre-condizioni}: Il test è in corso ed esiste almeno una domanda precedente nella cronologia (non si è alla prima).
+          \item \textbf{Post-condizioni}: Il sistema registra "SI" come nuova risposta alla domanda precedente.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona il pulsante per tornare alla domanda precedente.
+                    \item Il Sistema mostra la domanda precedente (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente.
+                    \item L'Utente seleziona "SI" come risposta.
+                \end{itemize}
+      \end{itemize}
+
+      \subusecase{Modifica risposta domanda precedente con NO}{uc:modifica-risposta-domanda-prec-no}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Pre-condizioni}: Il test è in corso ed esiste almeno una domanda precedente nella cronologia (non si è alla prima).
+          \item \textbf{Post-condizioni}: Il sistema registra "NO" come nuova risposta alla domanda precedente.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente seleziona il pulsante per tornare alla domanda precedente.
+                    \item Il Sistema mostra la domanda precedente (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente.
+                    \item L'Utente seleziona "NO" come risposta.
+                \end{itemize}
       \end{itemize}
 
       \usecase{Modifica risposta domanda successiva}{uc:modifica-risposta-domanda-suc}
@@ -615,11 +684,41 @@
           \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item L'Utente preme il pulsante per tornare alla domanda successiva.
-                    \item Il Sistema mostra la domanda successiva (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda precedente all'Utente.
+                    \item Il Sistema mostra la domanda successiva (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda all'Utente.
                     \item L'Utente seleziona la risposta.
+                \end{itemize}
+          \item \textbf{Generalizzazioni}:
+          \begin{itemize}
+              \item \uctitle{uc:modifica-risposta-domanda-suc-si}{Modifica risposta domanda succesiva con SI}
+              \item \uctitle{uc:modifica-risposta-domanda-suc-no}{Modifica risposta domanda succesiva con NO}
+          \end{itemize}
+      \end{itemize}
+
+       \subusecase{Modifica risposta domanda successiva con SI}{uc:modifica-risposta-domanda-suc-si}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Pre-condizioni}: Il test è in corso ed esiste una domanda successiva nella storia in avanti.
+          \item \textbf{Post-condizioni}: Il Sistema riceve "SI" come nuova risposta alla domanda successiva.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente preme il pulsante per tornare alla domanda successiva.
+                    \item Il Sistema mostra la domanda successiva (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda all'Utente.
+                    \item L'Utente seleziona "SI" come risposta.
                 \end{itemize}
       \end{itemize}
 
+      \subusecase{Modifica risposta domanda successiva con NO}{uc:modifica-risposta-domanda-suc-no}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Pre-condizioni}: Il test è in corso ed esiste una domanda successiva nella storia in avanti.
+          \item \textbf{Post-condizioni}: Il Sistema riceve "NO" come nuova risposta alla domanda successiva.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente preme il pulsante per tornare alla domanda successiva.
+                    \item Il Sistema mostra la domanda successiva (con percentuale e identificativi coerenti con lo stato mostrato) e sottopone la domanda all'Utente.
+                    \item L'Utente seleziona "NO" come risposta.
+                \end{itemize}
+      \end{itemize}
 
       \usecase{Uscita anticipata dal test}{uc:uscita-anticipata-test}
       \begin{itemize}
@@ -710,17 +809,55 @@
       \end{center}
 
       \subsubsubusecase{Visualizzazione risultato requisito}{uc:visualizzazione-risultato-req}
-      \begin{itemize}
+          \begin{center}
+              \begin{figure}[H]
+                  \centering
+                  \includegraphics[scale=0.58]{../../../Assets/Diagrammi/\thesubsubsubusecase.png}
+                  \caption{\thesubsubsubusecase\ -  Visualizzazione risultato requisito}
+              \end{figure}
+          \end{center}
+          \begin{itemize}
           \item \textbf{Attore}: Utente
           \item \textbf{Post-condizioni}: Il Sistema mostra il risultato del requisito.
           \item \textbf{Scenario principale}:
                 \begin{itemize}
-                    \item L'Utente visualizza il risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}}, che può essere di tre tipi:
-                          \begin{itemize}
-                              \item[a)] \textbf{PASS}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è stato rispettato
-                              \item[b)] \textbf{FAIL}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non è stato rispettato
-                              \item[c)] \textbf{NA}: il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non è applicabile.
-                          \end{itemize}
+                    \item L'Utente visualizza il risultato del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}}
+                \end{itemize}
+          \item \textbf{Generalizzazioni}:
+                \begin{itemize}
+                    \item \uctitle{uc:visualizzazione-risultato-pass-req}{Visualizzazione risultato PASS requisito}
+                    \item \uctitle{uc:visualizzazione-risultato-fail-req}{Visualizzazione risultato FAIL requisito}
+                    \item \uctitle{uc:visualizzazione-risultato-na-req}{Visualizzazione risultato NA requisito}
+                \end{itemize}
+      \end{itemize}
+
+      \subsubsubusecase{Visualizzazione risultato PASS requisito}{uc:visualizzazione-risultato-pass-req}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Post-condizioni}: Il Sistema mostra PASS come risultato del requisito.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con risultato \textbf{PASS}
+                \end{itemize}
+      \end{itemize}
+
+      \subsubsubusecase{Visualizzazione risultato FAIL requisito}{uc:visualizzazione-risultato-fail-req}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Post-condizioni}: Il Sistema mostra FAIL come risultato del requisito.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con risultato \textbf{FAIL}
+                \end{itemize}
+      \end{itemize}
+
+      \subsubsubusecase{Visualizzazione risultato NA requisito}{uc:visualizzazione-risultato-na-req}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Post-condizioni}: Il Sistema mostra NA come risultato del requisito.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item L'Utente visualizza il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con risultato \textbf{NA}
                 \end{itemize}
       \end{itemize}
 
@@ -1148,7 +1285,7 @@
                 \end{itemize}
       \end{itemize}
 
-      \usecase{Visualizzazione presenza di modifiche non salvate dispositivo}{}
+      \usecase{Visualizzazione presenza di modifiche non salvate dispositivo}{uc:visualizzazione-presenza-modifiche-non-salvate}
       \begin{itemize}
           \item \textbf{Attore}: Utente
           \item \textbf{Pre-condizioni}: L'Utente ha creato un nuovo dispositivo oppure ha effettuato modifiche ai dati o alla \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli assets del dispositivo caricato.
@@ -1219,17 +1356,39 @@
       \end{itemize}
 
       \subusecase{Visualizzazione tipo asset}{uc:visualizzazione-tipo-asset}
+      \begin{center}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[scale=0.58]{../../../Assets/Diagrammi/\thesubusecase.png}
+              \caption{\thesubusecase\ - Visualizzazione tipo asset}
+          \end{figure}
+      \end{center}
       \begin{itemize}
           \item \textbf{Attore}: Utente
           \item \textbf{Post-condizioni}: Il Sistema mostra il tipo dell'asset.
           \item \textbf{Scenario principale}:
                 \begin{itemize}
                     \item Viene visualizzato il tipo dell'asset.
-                    \item Il tipo dell'asset può essere:
-                          \begin{itemize}
-                              \item Security
-                              \item Network
-                          \end{itemize}
+                \end{itemize}
+      \end{itemize}
+
+      \subsubusecase{Visualizzazione network asset}{uc:visualizzazione-network-asset}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Post-condizioni}: Il Sistema mostra il tipo NETWORK dell'asset.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato "NETWORK" come tipo dell'asset.
+                \end{itemize}
+      \end{itemize}
+
+      \subsubusecase{Visualizzazione security asset}{uc:visualizzazione-security-asset}
+      \begin{itemize}
+          \item \textbf{Attore}: Utente
+          \item \textbf{Post-condizioni}: Il Sistema mostra il tipo SECURITY dell'asset.
+          \item \textbf{Scenario principale}:
+                \begin{itemize}
+                    \item Viene visualizzato "SECURITY" come tipo dell'asset.
                 \end{itemize}
       \end{itemize}
 
@@ -1645,7 +1804,7 @@
                 \end{itemize}
       \end{itemize}
 
-      \usecase{Annullamento modifica dati dispositivo}{uc:annullamento-mod-disp}
+      \usecase{Annullamento modifica dati dispositivo}{uc:annullamento-modifica-dati-disp}
       \begin{itemize}
           \item \textbf{Attore}: Utente
           \item \textbf{Pre-condizioni}: L'Utente sta modificando i dati di un dispositivo.
@@ -2054,7 +2213,7 @@
                 \end{itemize}
       \end{itemize}
 
-      \usecase{Esportazione decision tree}{}
+      \usecase{Esportazione decision tree}{uc:esportazione-dt}
       \begin{center}
           \begin{figure}[H]
               \centering
@@ -2118,110 +2277,122 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
             \hline
             \endlastfoot
 
-            R-1-F-Ob        & L'Utente deve poter inserire un dispositivo                                                                                                                                                 & \hyperref[uc:uc1]{UC1}                                                 \\ \hline
-            R-2-F-Ob        & L'Utente, per inserire un dispositivo, deve poter caricare un dispositivo nel Sistema                                                                                                       & \hyperref[uc:uc2]{UC2}                                                 \\ \hline
-            R-3-F-Ob        & L'Utente deve poter ricevere un errore in seguito ad un tentativo di caricamento di un file di dispositivo non valido                                                                       & \hyperref[uc:uc2]{UC2}, \hyperref[uc:uc3]{UC3}                         \\ \hline
-            R-4-F-Ob        & L'Utente deve poter visualizzare il dispositivo inserito (caricato o creato)                                                                                                                & \hyperref[uc:uc4]{UC4}                                                 \\ \hline
-            R-5-F-Ob        & L'Utente, nel visualizzare il dispositivo inserito, deve poter visualizzare il nome del dispositivo                                                                                         & \hyperref[uc:uc4]{UC4}, \hyperref[uc:uc23.1]{UC23.1}                   \\ \hline
-            R-6-F-Ob        & L'Utente deve poter visualizzare la lista degli assets di un dispositivo                                                                                                                    & \hyperref[uc:uc5]{UC5}                                                 \\ \hline
-            R-7-F-Ob        & L'Utente, nel visualizzare la lista degli assets di un dispositivo, deve poter visualizzare un singolo asset                                                                                & \hyperref[uc:uc5]{UC5}, \hyperref[uc:uc5.1]{UC5.1}                     \\ \hline
-            R-8-F-Ob        & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il nome dell'asset                                                          & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.1]{UC22.1}               \\ \hline
-            R-9-F-Ob        & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il tipo dell'asset                                                          & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.2]{UC22.2}               \\ \hline
-            R-10-F-Ob       & L'Utente, dopo aver inserito un dispositivo, deve poter avviare e completare l'esecuzione di un test su quel dispositivo                                                                    & \hyperref[uc:uc6]{UC6}                                                 \\ \hline
-            R-11-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere a una particolare domanda del test                                                                       & \hyperref[uc:uc6]{UC6}, \hyperref[uc:uc6.1]{UC6.1}                     \\ \hline
-            R-12-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda precedente se seleziona la funzionalità corrispondente                         & \hyperref[uc:uc7]{UC7}                                                 \\ \hline
-            R-13-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda successiva se seleziona la funzionalità corrispondente                         & \hyperref[uc:uc8]{UC8}                                                 \\ \hline
-            R-14-F-Ob       & L'Utente deve poter uscire anticipatamente da un test in fase di esecuzione su un dispositivo                                                                                               & \hyperref[uc:uc9]{UC9}                                                 \\ \hline
-            R-15-F-Ob       & L'Utente deve poter visualizzare i risultati di un test (completato o caricato)                                                                                                             & \hyperref[uc:uc10]{UC10}                                               \\ \hline
-            R-16-F-Ob       & L'Utente, nel visualizzare i risultati di un test, deve poter visualizzare la lista ordinata dei requisiti del test con i risultati                                                         & \hyperref[uc:uc10]{UC10}, \hyperref[uc:uc10.1]{UC10.1}                 \\ \hline
-            R-17-F-Ob       & L'Utente, nel visualizzare la lista dei requisiti del test con i risultati, deve poter visualizzare un singolo requisito con risultato                                                      & \hyperref[uc:uc10.1]{UC10.1}, \hyperref[uc:uc10.1.1]{UC10.1.1}         \\ \hline
-            R-18-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il nome del requisito                             & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc33.2]{UC33.2}         \\ \hline
-            R-19-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato ottenuto per il requisito            & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc10.1.1.1]{UC10.1.1.1} \\ \hline
-            R-20-F-D        & L'Utente deve poter esportare un test completato                                                                                                                                            & \hyperref[uc:uc11]{UC11}                                               \\ \hline
-            R-21-F-Ob       & L'Utente, per inserire un dispositivo, deve poter creare un dispositivo                                                                                                                     & \hyperref[uc:uc12]{UC12}                                               \\ \hline
-            R-22-F-Ob       & L'Utente, nel processo di creazione di un dispositivo, deve poter inserire i dati del dispositivo                                                                                           & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc12.1]{UC12.1}                 \\ \hline
-            R-23-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il nome del dispositivo                                                                               & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.1]{UC12.1.1}         \\ \hline
-            R-24-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il sistema operativo del dispositivo                                                                  & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.2]{UC12.1.2}         \\ \hline
-            R-25-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la versione del firmware del dispositivo                                                              & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.3]{UC12.1.3}         \\ \hline
-            R-26-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la funzionalità del dispositivo                                                                       & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.4]{UC12.1.4}         \\ \hline
-            R-27-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la descrizione del dispositivo                                                                        & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.5]{UC12.1.5}         \\ \hline
-            R-28-F-Ob       & L'Utente, nel processo di inserimento dei dati del dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                     & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc13]{UC13}                 \\ \hline
-            R-29-F-Ob       & L'Utente, nel processo di creazione di un dispositivo, deve poter aggiungere almeno un asset                                                                                                & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc14]{UC14}                     \\ \hline
-            R-30-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter inserire il nome dell'asset                                                                                                     & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.1]{UC14.1}                 \\ \hline
-            R-31-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter selezionare il tipo dell'asset                                                                                                  & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.2]{UC14.2}                 \\ \hline
-            R-32-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter inserire la descrizione dell'asset                                                                                              & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.3]{UC14.3}                 \\ \hline
-            R-33-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter selezionare la sensibilità dell'asset                                                                                           & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.4]{UC14.4}                 \\ \hline
-            R-34-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                                    & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc13]{UC13}                     \\ \hline
-            R-35-F-Ob       & L'Utente deve poter annullare il processo di creazione di un asset                                                                                                                          & \hyperref[uc:uc15]{UC15}                                               \\ \hline
-            R-36-F-Ob       & L'Utente deve poter annullare il processo di creazione di un dispositivo                                                                                                                    & \hyperref[uc:uc19]{UC19}                                               \\ \hline
-            R-37-F-Ob       & L'Utente deve poter eliminare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente                                                    & \hyperref[uc:uc16]{UC16}                                               \\ \hline
-            R-38-F-Op       & L'Utente deve poter modificare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente                                                   & \hyperref[uc:uc17]{UC17}                                               \\ \hline
-            R-39-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare il nome del dispositivo                                                                                               & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.1]{UC17.1}                 \\ \hline
-            R-40-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione del tipo del dispositivo                                                                                 & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.2]{UC17.2}                 \\ \hline
-            R-41-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la descrizione del dispositivo                                                                                        & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.3]{UC17.3}                 \\ \hline
-            R-42-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione della sensibilità del dispositivo                                                                        & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.4]{UC17.4}                 \\ \hline
-            R-43-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                                     & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc13]{UC13}                     \\ \hline
-            R-44-F-Op       & L'Utente deve poter annullare il processo di modifica di un asset                                                                                                                           & \hyperref[uc:uc18]{UC18}                                               \\ \hline
-            R-45-F-Ob       & L'Utente deve poter visualizzare un avviso che indica la presenza di modifiche non salvate se ha creato un dispositivo o ha apportato modifiche ad un dispositivo esistente                 & \hyperref[uc:uc20]{UC20}                                               \\ \hline
-            R-46-F-Ob       & L'Utente deve poter effettuare il salvataggio delle modifiche non salvate quando visualizza l'avviso che indica la presenza di modifiche non salvate                                        & \hyperref[uc:uc21]{UC21}                                               \\ \hline
-            R-47-F-Ob       & L'Utente deve poter visualizzare le informazioni di un singolo asset nel dettaglio selezionandolo dalla lista degli assets di un dispositivo                                                & \hyperref[uc:uc22]{UC22}                                               \\ \hline
-            R-48-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il nome dell'asset                                                                             & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.1]{UC22.1}                 \\ \hline
-            R-49-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il tipo dell'asset                                                                             & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.2]{UC22.2}                 \\ \hline
-            R-50-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la descrizione dell'asset                                                                      & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.3]{UC22.3}                 \\ \hline
-            R-51-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la sensibilità dell'asset                                                                      & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.4]{UC22.4}                 \\ \hline
-            R-52-F-Ob       & L'Utente deve poter visualizzare i dati del dispositivo inserito nel dettaglio                                                                                                              & \hyperref[uc:uc23]{UC23}                                               \\ \hline
-            R-53-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il nome del dispositivo                                                                   & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.1]{UC23.1}                 \\ \hline
-            R-54-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il sistema operativo del dispositivo                                                      & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.2]{UC23.2}                 \\ \hline
-            R-55-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la versione del firmware del dispositivo                                                  & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.3]{UC23.3}                 \\ \hline
-            R-56-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la funzionalità del dispositivo                                                           & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.4]{UC23.4}                 \\ \hline
-            R-57-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la descrizione del dispositivo                                                            & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.5]{UC23.5}                 \\ \hline
-            R-58-F-Ob       & L'Utente deve poter caricare un test precedentemente effettuato                                                                                                                             & \hyperref[uc:uc24]{UC24}                                               \\ \hline
-            R-59-F-Ob       & L'Utente deve poter ricevere un errore se carica come test precedente un file non valido                                                                                                    & \hyperref[uc:uc24]{UC24}, \hyperref[uc:uc2]{UC2}                       \\ \hline
-            R-60-F-Ob       & L'Utente deve poter modificare i risultati di un test che ha caricato o completato selezionando un particolare asset da cui riprendere l'esecuzione                                         & \hyperref[uc:uc25]{UC25}                                               \\ \hline
-            R-61-F-Ob       & L'Utente, nel modificare i risultati di un test che ha caricato o completato, deve poter riprendere l'esecuzione del test a partire dall'asset selezionato                                  & \hyperref[uc:uc25]{UC25}, \hyperref[uc:uc6]{UC6}                       \\ \hline
-            R-62-F-Ob       & L'Utente deve poter completare l'esecuzione di un test caricato non completato                                                                                                              & \hyperref[uc:uc26]{UC26}                                               \\ \hline
-            R-63-F-Ob       & L'Utente, nel completare l'esecuzione di un test non completato, deve poter riprendere l'esecuzione del test a partire dal punto in cui era stato precedentemente fermato                   & \hyperref[uc:uc26]{UC26}, \hyperref[uc:uc6]{UC6}                       \\ \hline
-            R-64-F-Op       & L'Utente deve poter visualizzare la lista delle giustificazioni di un test                                                                                                                  & \hyperref[uc:uc27]{UC27}                                               \\ \hline
-            R-65-F-Op       & L'Utente, nel visualizzare la lista delle giustificazioni di un test, deve poter visualizzare una singola giustificazione                                                                   & \hyperref[uc:uc27]{UC27}, \hyperref[uc:uc27.1]{UC27.1}                 \\ \hline
-            R-66-F-Op       & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il nome del requisito                                          & \hyperref[uc:uc27.1]{UC27.1}, \hyperref[uc:uc33.2]{UC33.2}             \\ \hline
-            R-67-F-Op       & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il testo della giustificazione associata al requisito          & \hyperref[uc:uc27.1]{UC27.1}, \hyperref[uc:uc27.1.1]{UC27.1.1}         \\ \hline
-            R-68-F-Ob       & L'Utente deve poter visualizzare la lista degli assets con risultati di un requisito nel dettaglio selezionando un particolare requisito dalla lista dei requisiti del test con i risultati & \hyperref[uc:uc28]{UC28}                                               \\ \hline
-            R-69-F-Ob       & L'Utente, nel visualizzare la lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare un singolo asset con risultato                                        & \hyperref[uc:uc28]{UC28}, \hyperref[uc:uc28.1]{UC28.1}                 \\ \hline
-            R-70-F-Ob       & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il nome dell'asset                  & \hyperref[uc:uc28.1]{UC28.1}, \hyperref[uc:uc22.1]{UC22.1}             \\ \hline
-            R-71-F-Ob       & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il risultato dell'asset             & \hyperref[uc:uc28.1]{UC28.1}, \hyperref[uc:uc28.1.1]{UC28.1.1}         \\ \hline
-            R-72-F-Ob       & L'Utente deve poter eliminare un dispositivo che ha inserito                                                                                                                                & \hyperref[uc:uc29]{UC29}                                               \\ \hline
-            R-73-F-Op       & L'Utente deve poter modificare i dati del dispositivo che ha inserito                                                                                                                       & \hyperref[uc:uc30]{UC30}                                               \\ \hline
-            R-74-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il nome del dispositivo                                                                                & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.1]{UC30.1}                 \\ \hline
-            R-75-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il sistema operativo del dispositivo                                                                   & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.2]{UC30.2}                 \\ \hline
-            R-76-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la versione del firmware del dispositivo                                                               & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.3]{UC30.3}                 \\ \hline
-            R-77-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la funzionalità del dispositivo                                                                        & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.4]{UC30.4}                 \\ \hline
-            R-78-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la descrizione del dispositivo                                                                         & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.5]{UC30.5}                 \\ \hline
-            R-79-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                      & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc13]{UC13}                     \\ \hline
-            R-80-F-Op       & L'Utente deve poter annullare il processo di modifica dei dati di un dispositivo                                                                                                            & \hyperref[uc:uc31]{UC31}                                               \\ \hline
-            R-81-F-Op       & L'Utente deve poter visualizzare l'elenco dei decision trees selezionando la funzionalità corrispondente                                                                                    & \hyperref[uc:uc32]{UC32}                                               \\ \hline
-            R-82-F-Op       & L'Utente, nel visualizzare l'elenco dei decision trees, deve poter visualizzare un singolo decision tree                                                                                    & \hyperref[uc:uc32]{UC32}, \hyperref[uc:uc32.1]{UC32.1}                 \\ \hline
-            R-83-F-Op       & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare l'id del requisito associato al decision tree                                   & \hyperref[uc:uc32.1]{UC32.1}, \hyperref[uc:uc33.1]{UC33.1}             \\ \hline
-            R-84-F-Op       & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare il nome del requisito associato al decision tree                                & \hyperref[uc:uc32.1]{UC32.1}, \hyperref[uc:uc33.2]{UC33.2}             \\ \hline
-            R-85-F-Op       & L'Utente deve poter visualizzare un singolo decision tree nel dettaglio selezionandolo dalla lista dei decision trees                                                                       & \hyperref[uc:uc33]{UC33}                                               \\ \hline
-            R-86-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare l'id del requisito associato al decision tree                                                    & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.1]{UC33.1}                 \\ \hline
-            R-87-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il nome del requisito associato al decision tree                                                 & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.2]{UC33.2}                 \\ \hline
-            R-88-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare le dipendenze del requisito associato al decision tree                                           & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.3]{UC33.3}                 \\ \hline
-            R-89-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il grafo che rappresenta il decision tree                                                        & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.4]{UC33.4}                 \\ \hline
-            R-90-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi interni del grafo                                                                      & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.1]{UC33.4.1}         \\ \hline
-            R-91-F-Op       & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il codice univoco del nodo                                                   & \hyperref[uc:uc33.4.1]{UC33.4.1}, \hyperref[uc:uc33.4.1.1]{UC33.4.1.1} \\ \hline
-            R-92-F-Op       & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il testo della domanda del nodo                                              & \hyperref[uc:uc33.4.1]{UC33.4.1}, \hyperref[uc:uc33.4.1.2]{UC33.4.1.2} \\ \hline
-            R-93-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi foglia del grafo                                                                       & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.2]{UC33.4.2}         \\ \hline
-            R-94-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i collegamenti fra i nodi del grafo                                                           & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.3]{UC33.4.3}         \\ \hline
-            R-95-F-Op       & L'Utente deve poter modificare un decision tree                                                                                                                                             & \hyperref[uc:uc34]{UC34}                                               \\ \hline
-            R-96-F-Op       & L'Utente, per modificare un decision tree, deve poter aggiungere un nodo al decision tree                                                                                                   & \hyperref[uc:uc35]{UC35}                                               \\ \hline
-            R-97-F-Op       & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il codice univoco del nodo                                                                              & \hyperref[uc:uc35]{UC35}, \hyperref[uc:uc35.1]{UC35.1}                 \\ \hline
-            R-98-F-Op       & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il testo della domanda del nodo                                                                         & \hyperref[uc:uc35]{UC35}, \hyperref[uc:uc35.2]{UC35.2}                 \\ \hline
-            R-99-F-Op       & L'Utente, per modificare un decision tree, deve poter eliminare un nodo dal decision tree                                                                                                   & \hyperref[uc:uc36]{UC36}                                               \\ \hline
-            R-100-F-Op      & L'Utente deve poter ricevere un errore se cerca di eliminare il nodo root di un decision tree                                                                                               & \hyperref[uc:uc37]{UC37}                                               \\ \hline
-            R-101-F-Op      & L'Utente, per modificare un decision tree, deve poter modificare la destinazione di un collegamento del decision tree                                                                       & \hyperref[uc:uc38]{UC38}                                               \\ \hline
-            R-102-F-Op      & L'Utente deve poter ricevere un errore se la validazione della modifica del decision tree fallisce                                                                                          & \hyperref[uc:uc39]{UC39}                                               \\ \hline
-            R-103-F-Op      & L'Utente deve poter annullare il processo di modifica di un decision tree                                                                                                                   & \hyperref[uc:uc40]{UC40}                                               \\ \hline
-            R-104-F-Op      & L'Utente deve poter esportare un decision tree                                                                                                                                              & \hyperref[uc:uc41]{UC41}                                               \\ \hline
+            R-1-F-Ob        & L'Utente deve poter inserire un dispositivo                                                                                                                                                 & \ref{uc:inserimento}                                                 \\ \hline
+            R-2-F-Ob        & L'Utente, per inserire un dispositivo, deve poter caricare un dispositivo nel Sistema                                                                                                       & \ref{uc:caricamento}                                                 \\ \hline
+            R-3-F-Ob        & L'Utente deve poter ricevere un errore in seguito ad un tentativo di caricamento di un file di dispositivo non valido                                                                       & \ref{uc:caricamento}, \ref{uc:file-non-valido}                         \\ \hline
+            R-4-F-Ob        & L'Utente deve poter visualizzare il dispositivo inserito (caricato o creato)                                                                                                                & \ref{uc:visualizzazione-disp-inserito}                                                 \\ \hline
+            R-5-F-Ob        & L'Utente, nel visualizzare il dispositivo inserito, deve poter visualizzare il nome del dispositivo                                                                                         & \ref{uc:visualizzazione-disp-inserito}, \ref{uc:visualizzazione-nome-disp}                   \\ \hline
+            R-6-F-Ob        & L'Utente deve poter visualizzare la lista degli assets di un dispositivo                                                                                                                    & \ref{uc:visualizzazione-lista-assets}                                                 \\ \hline
+            R-7-F-Ob        & L'Utente, nel visualizzare la lista degli assets di un dispositivo, deve poter visualizzare un singolo asset                                                                                & \ref{uc:visualizzazione-lista-assets}, \ref{uc:visualizzazione-sing-asset}                     \\ \hline
+            R-8-F-Ob        & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il nome dell'asset                                                          & \ref{uc:visualizzazione-sing-asset}, \ref{uc:visualizzazione-nome-asset}               \\ \hline
+            R-9-F-Ob        & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il tipo dell'asset                                                          & \ref{uc:visualizzazione-sing-asset}, \ref{uc:visualizzazione-tipo-asset}               \\ \hline
+            R-10-F-Ob       & L'Utente, dopo aver inserito un dispositivo, deve poter avviare e completare l'esecuzione di un test su quel dispositivo                                                                    & \ref{uc:esecuzione-test}                                                 \\ \hline
+            R-11-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere a una particolare domanda del test                                                                       & \ref{uc:esecuzione-test}, \ref{uc:risposta-domanda}                     \\ \hline
+            R-12-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere SI a una particolare domanda del test                                                                       & \ref{uc:esecuzione-test}, \ref{uc:risposta-domanda-si}                     \\ \hline
+            R-13-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere NO a una particolare domanda del test                                                                       & \ref{uc:esecuzione-test}, \ref{uc:risposta-domanda-no}                     \\ \hline
+            R-14-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda precedente se seleziona la funzionalità corrispondente                         & \ref{uc:modifica-risposta-domanda-prec}                                                 \\ \hline
+            R-15-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare con SI la risposta a una domanda precedente se seleziona la funzionalità corrispondente                         & \ref{uc:modifica-risposta-domanda-prec-si}                                                 \\ \hline
+            R-16-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare con NO la risposta a una domanda precedente se seleziona la funzionalità corrispondente                         & \ref{uc:modifica-risposta-domanda-prec-no}                                                 \\ \hline
+            R-17-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda successiva se seleziona la funzionalità corrispondente                         & \ref{uc:modifica-risposta-domanda-suc}                                                 \\ \hline
+            R-18-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta con SI a una domanda successiva se seleziona la funzionalità corrispondente                         & \ref{uc:modifica-risposta-domanda-suc-si}                                                 \\ \hline
+            R-19-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta con NO a una domanda successiva se seleziona la funzionalità corrispondente                         & \ref{uc:modifica-risposta-domanda-suc-no}                                                 \\ \hline
+            R-20-F-Ob       & L'Utente deve poter uscire anticipatamente da un test in fase di esecuzione su un dispositivo                                                                                               & \ref{uc:uscita-anticipata-test}                                                 \\ \hline
+            R-21-F-Ob       & L'Utente deve poter visualizzare i risultati di un test (completato o caricato)                                                                                                             & \ref{uc:visualizzazione-risultati-test}                                               \\ \hline
+            R-22-F-Ob       & L'Utente, nel visualizzare i risultati di un test, deve poter visualizzare la lista ordinata dei requisiti del test con i risultati                                                         & \ref{uc:visualizzazione-risultati-test}, \ref{uc:visualizzazione-lista-requisiti-risultati}                 \\ \hline
+            R-23-F-Ob       & L'Utente, nel visualizzare la lista dei requisiti del test con i risultati, deve poter visualizzare un singolo requisito con risultato                                                      & \ref{uc:visualizzazione-lista-requisiti-risultati}, \ref{uc:visualizzazione-singolo-req-risultato}         \\ \hline
+            R-24-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il nome del requisito                             & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-nome-req-dt}         \\ \hline
+            R-25-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato ottenuto per il requisito            & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-risultato-req} \\ \hline
+            R-26-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato PASS associato al requisito            & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-risultato-pass-req} \\ \hline
+            R-27-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato FAIL associato al requisito       & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-risultato-fail-req} \\ \hline
+            R-28-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato NA associato al requisito         & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-risultato-na-req} \\ \hline
+            %da cambiare indici
+            R-29-F-D        & L'Utente deve poter esportare un test completato                                                                                                                                            & \ref{uc:esportazione-test-completato}                                               \\ \hline
+            R-30-F-Ob       & L'Utente, per inserire un dispositivo, deve poter creare un dispositivo                                                                                                                     & \ref{uc:creazione-dispositivo}                                               \\ \hline
+            R-31-F-Ob       & L'Utente, nel processo di creazione di un dispositivo, deve poter inserire i dati del dispositivo                                                                                           & \ref{uc:creazione-dispositivo}, \ref{uc:inserimento-dati-disp}                 \\ \hline
+            R-32-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il nome del dispositivo                                                                               & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-nome-disp}         \\ \hline
+            R-33-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il sistema operativo del dispositivo                                                                  & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-so-disp}         \\ \hline
+            R-34-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la versione del firmware del dispositivo                                                              & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-vfirm-disp}         \\ \hline
+            R-35-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la funzionalità del dispositivo                                                                       & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-funz-disp}         \\ \hline
+            R-36-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la descrizione del dispositivo                                                                        & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-desc-disp}         \\ \hline
+            R-37-F-Ob       & L'Utente, nel processo di inserimento dei dati del dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                     & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-dati-non-val}                 \\ \hline
+            R-38-F-Ob       & L'Utente, nel processo di creazione di un dispositivo, deve poter aggiungere almeno un asset                                                                                                & \ref{uc:creazione-dispositivo}, \ref{uc:creazione-asset}                     \\ \hline
+            R-39-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter inserire il nome dell'asset                                                                                                     & \ref{uc:creazione-asset}, \ref{uc:inserimento-nome-asset}                 \\ \hline
+            R-40-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter selezionare il tipo dell'asset                                                                                                  & \ref{uc:creazione-asset}, \ref{uc:selezione-tipo-asset}                 \\ \hline
+            R-41-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter inserire la descrizione dell'asset                                                                                              & \ref{uc:creazione-asset}, \ref{uc:inserimento-desc-asset}                 \\ \hline
+            R-42-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter selezionare la sensibilità dell'asset                                                                                           & \ref{uc:creazione-asset}, \ref{uc:selezione-sensibilità-asset}                 \\ \hline
+            R-43-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                                    & \ref{uc:creazione-asset}, \ref{uc:inserimento-dati-non-val}                     \\ \hline
+            R-44-F-Ob       & L'Utente deve poter annullare il processo di creazione di un asset                                                                                                                          & \ref{uc:annullamento-creaz-asset}                                               \\ \hline
+            R-45-F-Ob       & L'Utente deve poter annullare il processo di creazione di un dispositivo                                                                                                                    & \ref{uc:annullamento-creazione-disp}                                               \\ \hline
+            R-46-F-Ob       & L'Utente deve poter eliminare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente                                                    & \ref{uc:eliminazione-asset}                                               \\ \hline
+            R-47-F-Op       & L'Utente deve poter modificare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente                                                   & \ref{uc:modifica-asset}                                               \\ \hline
+            R-48-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare il nome del dispositivo                                                                                               & \ref{uc:modifica-asset}, \ref{uc:modifica-nome-asset}                 \\ \hline
+            R-49-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione del tipo del dispositivo                                                                                 & \ref{uc:modifica-asset}, \ref{uc:modifica-selezione-tipo-asset}                 \\ \hline
+            R-50-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la descrizione del dispositivo                                                                                        & \ref{uc:modifica-asset}, \ref{uc:modifica-desc-asset}                 \\ \hline
+            R-51-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione della sensibilità del dispositivo                                                                        & \ref{uc:modifica-asset}, \ref{uc:modifica-selezione-sens-asset}                 \\ \hline
+            R-52-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                                     & \ref{uc:modifica-asset}, \ref{uc:inserimento-dati-non-val}                     \\ \hline
+            R-53-F-Op       & L'Utente deve poter annullare il processo di modifica di un asset                                                                                                                           & \ref{uc:annullamento-modifica-asset}                                               \\ \hline
+            R-54-F-Ob       & L'Utente deve poter visualizzare un avviso che indica la presenza di modifiche non salvate se ha creato un dispositivo o ha apportato modifiche ad un dispositivo esistente                 & \ref{uc:visualizzazione-presenza-modifiche-non-salvate}                                               \\ \hline
+            R-55-F-Ob       & L'Utente deve poter effettuare il salvataggio delle modifiche non salvate quando visualizza l'avviso che indica la presenza di modifiche non salvate                                        & \ref{uc:salvataggio-mod-non-salvate-disp}                                               \\ \hline
+            R-56-F-Ob       & L'Utente deve poter visualizzare le informazioni di un singolo asset nel dettaglio selezionandolo dalla lista degli assets di un dispositivo                                                & \ref{uc:visualizzazione-sing-asset-dettaglio}                                              \\ \hline
+            R-57-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il nome dell'asset                                                                             & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-nome-asset}                 \\ \hline
+            R-58-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il tipo dell'asset                                                                             & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-tipo-asset}                 \\ \hline
+            R-59-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare "NETWORK" come tipo dell'asset                                                                             & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-network-asset}                 \\ \hline
+            R-60-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare "SECURITY" come tipo dell'asset                                                                             & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-security-asset}                 \\ \hline
+            R-61-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la descrizione dell'asset                                                                      & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-desc-asset}                 \\ \hline
+            R-62-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la sensibilità dell'asset                                                                      & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-sens-asset}                 \\ \hline
+            R-63-F-Ob       & L'Utente deve poter visualizzare i dati del dispositivo inserito nel dettaglio                                                                                                              & \ref{uc:visualizzazione-dett-dati-disp}                                               \\ \hline
+            R-64-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il nome del dispositivo                                                                   & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-nome-disp}                 \\ \hline
+            R-65-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il sistema operativo del dispositivo                                                      & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-so-disp}                 \\ \hline
+            R-66-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la versione del firmware del dispositivo                                                  & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-vfirm-disp}                 \\ \hline
+            R-67-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la funzionalità del dispositivo                                                           & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-funz-disp}                 \\ \hline
+            R-68-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la descrizione del dispositivo                                                            & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-desc-disp}                 \\ \hline
+            R-69-F-Ob       & L'Utente deve poter caricare un test precedentemente effettuato                                                                                                                             & \ref{uc:caricamento-test-prec}                                               \\ \hline
+            R-70-F-Ob       & L'Utente deve poter ricevere un errore se carica come test precedente un file non valido                                                                                                    & \ref{uc:caricamento-test-prec}, \ref{uc:caricamento}                       \\ \hline
+            R-71-F-Ob       & L'Utente deve poter modificare i risultati di un test che ha caricato o completato selezionando un particolare asset da cui riprendere l'esecuzione                                         & \ref{uc:modifica-ris-test}                                               \\ \hline
+            R-72-F-Ob       & L'Utente, nel modificare i risultati di un test che ha caricato o completato, deve poter riprendere l'esecuzione del test a partire dall'asset selezionato                                  & \ref{uc:modifica-ris-test}, \ref{uc:esecuzione-test}                       \\ \hline
+            R-73-F-Ob       & L'Utente deve poter completare l'esecuzione di un test caricato non completato                                                                                                              & \ref{uc:esecuzione-test-non-completato}                                               \\ \hline
+            R-74-F-Ob       & L'Utente, nel completare l'esecuzione di un test non completato, deve poter riprendere l'esecuzione del test a partire dal punto in cui era stato precedentemente fermato                   & \ref{uc:esecuzione-test-non-completato}, \ref{uc:esecuzione-test}                       \\ \hline
+            R-75-F-Op       & L'Utente deve poter visualizzare la lista delle giustificazioni di un test                                                                                                                  & \ref{uc:visualizzazione-lista-giust-test}                                               \\ \hline
+            R-76-F-Op       & L'Utente, nel visualizzare la lista delle giustificazioni di un test, deve poter visualizzare una singola giustificazione                                                                   & \ref{uc:visualizzazione-lista-giust-test}, \ref{uc:visualizzazione-sing-req-con-giust}                 \\ \hline
+            R-77-F-Op       & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il nome del requisito                                          & \ref{uc:visualizzazione-sing-req-con-giust}, \ref{uc:visualizzazione-nome-req-dt}             \\ \hline
+            R-78-F-Op       & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il testo della giustificazione associata al requisito          & \ref{uc:visualizzazione-sing-req-con-giust}, \ref{uc:visualizzazione-giust-req}         \\ \hline
+            R-79-F-Ob       & L'Utente deve poter visualizzare la lista degli assets con risultati di un requisito nel dettaglio selezionando un particolare requisito dalla lista dei requisiti del test con i risultati & \ref{uc:visualizzazione-lista-assets-ris-dett-req}                                               \\ \hline
+            R-80-F-Ob       & L'Utente, nel visualizzare la lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare un singolo asset con risultato                                        & \ref{uc:visualizzazione-lista-assets-ris-dett-req}, \ref{uc:visualizzazione-singolo-asset-ris}                 \\ \hline
+            R-81-F-Ob       & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il nome dell'asset                  & \ref{uc:visualizzazione-singolo-asset-ris}, \ref{uc:visualizzazione-nome-asset}             \\ \hline
+            R-82-F-Ob       & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il risultato dell'asset             & \ref{uc:visualizzazione-singolo-asset-ris}, \ref{uc:visualizzazione-ris-req-asset}         \\ \hline
+            R-83-F-Ob       & L'Utente deve poter eliminare un dispositivo che ha inserito                                                                                                                                & \ref{uc:eliminazione-disp}                                               \\ \hline
+            R-84-F-Op       & L'Utente deve poter modificare i dati del dispositivo che ha inserito                                                                                                                       & \ref{uc:modifica-dati-disp}                                               \\ \hline
+            R-85-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il nome del dispositivo                                                                                & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-nome-disp}                 \\ \hline
+            R-86-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il sistema operativo del dispositivo                                                                   & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-so-disp}                 \\ \hline
+            R-87-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la versione del firmware del dispositivo                                                               & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-vfirm-disp}                 \\ \hline
+            R-88-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la funzionalità del dispositivo                                                                        & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-funz-disp}                 \\ \hline
+            R-89-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la descrizione del dispositivo                                                                         & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-desc-disp}                 \\ \hline
+            R-90-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                      & \ref{uc:modifica-dati-disp}, \ref{uc:inserimento-dati-non-val}                     \\ \hline
+            R-91-F-Op       & L'Utente deve poter annullare il processo di modifica dei dati di un dispositivo                                                                                                            & \ref{uc:annullamento-modifica-dati-disp}                                               \\ \hline
+            R-92-F-Op       & L'Utente deve poter visualizzare l'elenco dei decision trees selezionando la funzionalità corrispondente                                                                                    & \ref{uc:visualizzazione-elenco-dt}                                               \\ \hline
+            R-93-F-Op       & L'Utente, nel visualizzare l'elenco dei decision trees, deve poter visualizzare un singolo decision tree                                                                                    & \ref{uc:visualizzazione-elenco-dt}, \ref{uc:visualizzazione-sing-dt}                 \\ \hline
+            R-94-F-Op       & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare l'id del requisito associato al decision tree                                   & \ref{uc:visualizzazione-sing-dt}, \ref{uc:visualizzazione-id-req-dt}             \\ \hline
+            R-95-F-Op       & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare il nome del requisito associato al decision tree                                & \ref{uc:visualizzazione-sing-dt}, \ref{uc:visualizzazione-nome-req-dt}             \\ \hline
+            R-96-F-Op       & L'Utente deve poter visualizzare un singolo decision tree nel dettaglio selezionandolo dalla lista dei decision trees                                                                       & \ref{uc:visualizzazione-det-dt}                                               \\ \hline
+            R-97-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare l'id del requisito associato al decision tree                                                    & \ref{uc:visualizzazione-det-dt}, \ref{uc:visualizzazione-id-req-dt}                 \\ \hline
+            R-98-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il nome del requisito associato al decision tree                                                 & \ref{uc:visualizzazione-det-dt}, \ref{uc:visualizzazione-nome-req-dt}                 \\ \hline
+            R-99-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare le dipendenze del requisito associato al decision tree                                           & \ref{uc:visualizzazione-det-dt}, \ref{uc:visualizzazione-dipendenze-dt}                 \\ \hline
+            R-100-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il grafo che rappresenta il decision tree                                                        & \ref{uc:visualizzazione-det-dt}, \ref{uc:visualizzazione-grafo-dt}                 \\ \hline
+            R-101-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi interni del grafo                                                                      & \ref{uc:visualizzazione-grafo-dt}, \ref{uc:visualizzazione-nodo-interno-dt}         \\ \hline
+            R-102-F-Op       & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il codice univoco del nodo                                                   & \ref{uc:visualizzazione-nodo-interno-dt}, \ref{uc:visualizzazione-cod-univoco-nodo} \\ \hline
+            R-103-F-Op       & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il testo della domanda del nodo                                              & \ref{uc:visualizzazione-nodo-interno-dt}, \ref{uc:visualizzazione-testo-domanda-nodo} \\ \hline
+            R-104-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi foglia del grafo                                                                       & \ref{uc:visualizzazione-grafo-dt}, \ref{uc:visualizzazione-nodo-foglia-dt}         \\ \hline
+            R-105-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i collegamenti fra i nodi del grafo                                                           & \ref{uc:visualizzazione-grafo-dt}, \ref{uc:visualizzazione-collegamento-nodi-dt}         \\ \hline
+            R-106-F-Op       & L'Utente deve poter modificare un decision tree                                                                                                                                             & \ref{uc:modifica-dt}                                               \\ \hline
+            R-107-F-Op       & L'Utente, per modificare un decision tree, deve poter aggiungere un nodo al decision tree                                                                                                   & \ref{uc:aggiunta-nodo-dt}                                               \\ \hline
+            R-108-F-Op       & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il codice univoco del nodo                                                                              & \ref{uc:aggiunta-nodo-dt}, \ref{uc:inserimento-codice-univ-nodo}                 \\ \hline
+            R-109-F-Op       & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il testo della domanda del nodo                                                                         & \ref{uc:aggiunta-nodo-dt}, \ref{uc:inserimento-test-domanda-nodo}                 \\ \hline
+            R-110-F-Op       & L'Utente, per modificare un decision tree, deve poter eliminare un nodo dal decision tree                                                                                                   & \ref{uc:eliminazione-nodo-dt}                                               \\ \hline
+            R-111-F-Op      & L'Utente deve poter ricevere un errore se cerca di eliminare il nodo root di un decision tree                                                                                               & \ref{uc:tentativo-eliminazione-nodo-root}                                               \\ \hline
+            R-112-F-Op      & L'Utente, per modificare un decision tree, deve poter modificare la destinazione di un collegamento del decision tree                                                                       & \ref{uc:modifica-collegamento-dt}                                               \\ \hline
+            R-113-F-Op      & L'Utente deve poter ricevere un errore se la validazione della modifica del decision tree fallisce                                                                                          & \ref{uc:validazione-fallita-mod-dt}                                               \\ \hline
+            R-114-F-Op      & L'Utente deve poter annullare il processo di modifica di un decision tree                                                                                                                   & \ref{uc:annullamento-mod-dt}                                               \\ \hline
+            R-115-F-Op      & L'Utente deve poter esportare un decision tree                                                                                                                                              & \ref{uc:esportazione-dt}                                               \\ \hline
         \end{longtable}
     }
 
@@ -2354,111 +2525,125 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
       \hline
       \endlastfoot
 
-      R-1-F-Ob           & \hyperref[uc:uc1]{UC1}                                                 \\ \hline
-      R-2-F-Ob           & \hyperref[uc:uc2]{UC2}                                                 \\ \hline
-      R-3-F-Ob           & \hyperref[uc:uc2]{UC2}, \hyperref[uc:uc3]{UC3}                         \\ \hline
-      R-4-F-Ob           & \hyperref[uc:uc4]{UC4}                                                 \\ \hline
-      R-5-F-Ob           & \hyperref[uc:uc4]{UC4}, \hyperref[uc:uc23.1]{UC23.1}                   \\ \hline
-      R-6-F-Ob           & \hyperref[uc:uc5]{UC5}                                                 \\ \hline
-      R-7-F-Ob           & \hyperref[uc:uc5]{UC5}, \hyperref[uc:uc5.1]{UC5.1}                     \\ \hline
-      R-8-F-Ob           & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.1]{UC22.1}               \\ \hline
-      R-9-F-Ob           & \hyperref[uc:uc5.1]{UC5.1}, \hyperref[uc:uc22.2]{UC22.2}               \\ \hline
-      R-10-F-Ob          & \hyperref[uc:uc6]{UC6}                                                 \\ \hline
-      R-11-F-Ob          & \hyperref[uc:uc6]{UC6}, \hyperref[uc:uc6.1]{UC6.1}                     \\ \hline
-      R-12-F-Ob          & \hyperref[uc:uc7]{UC7}                                                 \\ \hline
-      R-13-F-Ob          & \hyperref[uc:uc8]{UC8}                                                 \\ \hline
-      R-14-F-Ob          & \hyperref[uc:uc9]{UC9}                                                 \\ \hline
-      R-15-F-Ob          & \hyperref[uc:uc10]{UC10}                                               \\ \hline
-      R-16-F-Ob          & \hyperref[uc:uc10]{UC10}, \hyperref[uc:uc10.1]{UC10.1}                 \\ \hline
-      R-17-F-Ob          & \hyperref[uc:uc10.1]{UC10.1}, \hyperref[uc:uc10.1.1]{UC10.1.1}         \\ \hline
-      R-18-F-Ob          & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc33.2]{UC33.2}         \\ \hline
-      R-19-F-Ob          & \hyperref[uc:uc10.1.1]{UC10.1.1}, \hyperref[uc:uc10.1.1.1]{UC10.1.1.1} \\ \hline
-      R-20-F-D           & \hyperref[uc:uc11]{UC11}                                               \\ \hline
-      R-21-F-Ob          & \hyperref[uc:uc12]{UC12}                                               \\ \hline
-      R-22-F-Ob          & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc12.1]{UC12.1}                 \\ \hline
-      R-23-F-Ob          & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.1]{UC12.1.1}         \\ \hline
-      R-24-F-Ob          & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.2]{UC12.1.2}         \\ \hline
-      R-25-F-Ob          & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.3]{UC12.1.3}         \\ \hline
-      R-26-F-Ob          & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.4]{UC12.1.4}         \\ \hline
-      R-27-F-Ob          & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc12.1.5]{UC12.1.5}         \\ \hline
-      R-28-F-Ob          & \hyperref[uc:uc12.1]{UC12.1}, \hyperref[uc:uc13]{UC13}                 \\ \hline
-      R-29-F-Ob          & \hyperref[uc:uc12]{UC12}, \hyperref[uc:uc14]{UC14}                     \\ \hline
-      R-30-F-Ob          & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.1]{UC14.1}                 \\ \hline
-      R-31-F-Ob          & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.2]{UC14.2}                 \\ \hline
-      R-32-F-Ob          & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.3]{UC14.3}                 \\ \hline
-      R-33-F-Ob          & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc14.4]{UC14.4}                 \\ \hline
-      R-34-F-Ob          & \hyperref[uc:uc14]{UC14}, \hyperref[uc:uc13]{UC13}                     \\ \hline
-      R-35-F-Ob          & \hyperref[uc:uc15]{UC15}                                               \\ \hline
-      R-36-F-Ob          & \hyperref[uc:uc19]{UC19}                                               \\ \hline
-      R-37-F-Ob          & \hyperref[uc:uc16]{UC16}                                               \\ \hline
-      R-38-F-Op          & \hyperref[uc:uc17]{UC17}                                               \\ \hline
-      R-39-F-Op          & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.1]{UC17.1}                 \\ \hline
-      R-40-F-Op          & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.2]{UC17.2}                 \\ \hline
-      R-41-F-Op          & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.3]{UC17.3}                 \\ \hline
-      R-42-F-Op          & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc17.4]{UC17.4}                 \\ \hline
-      R-43-F-Op          & \hyperref[uc:uc17]{UC17}, \hyperref[uc:uc13]{UC13}                     \\ \hline
-      R-44-F-Op          & \hyperref[uc:uc18]{UC18}                                               \\ \hline
-      R-45-F-Ob          & \hyperref[uc:uc20]{UC20}                                               \\ \hline
-      R-46-F-Ob          & \hyperref[uc:uc21]{UC21}                                               \\ \hline
-      R-47-F-Ob          & \hyperref[uc:uc22]{UC22}                                               \\ \hline
-      R-48-F-Ob          & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.1]{UC22.1}                 \\ \hline
-      R-49-F-Ob          & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.2]{UC22.2}                 \\ \hline
-      R-50-F-Ob          & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.3]{UC22.3}                 \\ \hline
-      R-51-F-Ob          & \hyperref[uc:uc22]{UC22}, \hyperref[uc:uc22.4]{UC22.4}                 \\ \hline
-      R-52-F-Ob          & \hyperref[uc:uc23]{UC23}                                               \\ \hline
-      R-53-F-Ob          & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.1]{UC23.1}                 \\ \hline
-      R-54-F-Ob          & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.2]{UC23.2}                 \\ \hline
-      R-55-F-Ob          & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.3]{UC23.3}                 \\ \hline
-      R-56-F-Ob          & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.4]{UC23.4}                 \\ \hline
-      R-57-F-Ob          & \hyperref[uc:uc23]{UC23}, \hyperref[uc:uc23.5]{UC23.5}                 \\ \hline
-      R-58-F-Ob          & \hyperref[uc:uc24]{UC24}                                               \\ \hline
-      R-59-F-Ob          & \hyperref[uc:uc24]{UC24}, \hyperref[uc:uc2]{UC2}                       \\ \hline
-      R-60-F-Ob          & \hyperref[uc:uc25]{UC25}                                               \\ \hline
-      R-61-F-Ob          & \hyperref[uc:uc25]{UC25}, \hyperref[uc:uc6]{UC6}                       \\ \hline
-      R-62-F-Ob          & \hyperref[uc:uc26]{UC26}                                               \\ \hline
-      R-63-F-Ob          & \hyperref[uc:uc26]{UC26}, \hyperref[uc:uc6]{UC6}                       \\ \hline
-      R-64-F-Op          & \hyperref[uc:uc27]{UC27}                                               \\ \hline
-      R-65-F-Op          & \hyperref[uc:uc27]{UC27}, \hyperref[uc:uc27.1]{UC27.1}                 \\ \hline
-      R-66-F-Op          & \hyperref[uc:uc27.1]{UC27.1}, \hyperref[uc:uc33.2]{UC33.2}             \\ \hline
-      R-67-F-Op          & \hyperref[uc:uc27.1]{UC27.1}, \hyperref[uc:uc27.1.1]{UC27.1.1}         \\ \hline
-      R-68-F-Ob          & \hyperref[uc:uc28]{UC28}                                               \\ \hline
-      R-69-F-Ob          & \hyperref[uc:uc28]{UC28}, \hyperref[uc:uc28.1]{UC28.1}                 \\ \hline
-      R-70-F-Ob          & \hyperref[uc:uc28.1]{UC28.1}, \hyperref[uc:uc22.1]{UC22.1}             \\ \hline
-      R-71-F-Ob          & \hyperref[uc:uc28.1]{UC28.1}, \hyperref[uc:uc28.1.1]{UC28.1.1}         \\ \hline
-      R-72-F-Ob          & \hyperref[uc:uc29]{UC29}                                               \\ \hline
-      R-73-F-Op          & \hyperref[uc:uc30]{UC30}                                               \\ \hline
-      R-74-F-Op          & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.1]{UC30.1}                 \\ \hline
-      R-75-F-Op          & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.2]{UC30.2}                 \\ \hline
-      R-76-F-Op          & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.3]{UC30.3}                 \\ \hline
-      R-77-F-Op          & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.4]{UC30.4}                 \\ \hline
-      R-78-F-Op          & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc30.5]{UC30.5}                 \\ \hline
-      R-79-F-Op          & \hyperref[uc:uc30]{UC30}, \hyperref[uc:uc13]{UC13}                     \\ \hline
-      R-80-F-Op          & \hyperref[uc:uc31]{UC31}                                               \\ \hline
-      R-81-F-Op          & \hyperref[uc:uc32]{UC32}                                               \\ \hline
-      R-82-F-Op          & \hyperref[uc:uc32]{UC32}, \hyperref[uc:uc32.1]{UC32.1}                 \\ \hline
-      R-83-F-Op          & \hyperref[uc:uc32.1]{UC32.1}, \hyperref[uc:uc33.1]{UC33.1}             \\ \hline
-      R-84-F-Op          & \hyperref[uc:uc32.1]{UC32.1}, \hyperref[uc:uc33.2]{UC33.2}             \\ \hline
-      R-85-F-Op          & \hyperref[uc:uc33]{UC33}                                               \\ \hline
-      R-86-F-Op          & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.1]{UC33.1}                 \\ \hline
-      R-87-F-Op          & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.2]{UC33.2}                 \\ \hline
-      R-88-F-Op          & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.3]{UC33.3}                 \\ \hline
-      R-89-F-Op          & \hyperref[uc:uc33]{UC33}, \hyperref[uc:uc33.4]{UC33.4}                 \\ \hline
-      R-90-F-Op          & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.1]{UC33.4.1}         \\ \hline
-      R-91-F-Op          & \hyperref[uc:uc33.4.1]{UC33.4.1}, \hyperref[uc:uc33.4.1.1]{UC33.4.1.1} \\ \hline
-      R-92-F-Op          & \hyperref[uc:uc33.4.1]{UC33.4.1}, \hyperref[uc:uc33.4.1.2]{UC33.4.1.2} \\ \hline
-      R-93-F-Op          & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.2]{UC33.4.2}         \\ \hline
-      R-94-F-Op          & \hyperref[uc:uc33.4]{UC33.4}, \hyperref[uc:uc33.4.3]{UC33.4.3}         \\ \hline
-      R-95-F-Op          & \hyperref[uc:uc34]{UC34}                                               \\ \hline
-      R-96-F-Op          & \hyperref[uc:uc35]{UC35}                                               \\ \hline
-      R-97-F-Op          & \hyperref[uc:uc35]{UC35}, \hyperref[uc:uc35.1]{UC35.1}                 \\ \hline
-      R-98-F-Op          & \hyperref[uc:uc35]{UC35}, \hyperref[uc:uc35.2]{UC35.2}                 \\ \hline
-      R-99-F-Op          & \hyperref[uc:uc36]{UC36}                                               \\ \hline
-      R-100-F-Op         & \hyperref[uc:uc37]{UC37}                                               \\ \hline
-      R-101-F-Op         & \hyperref[uc:uc38]{UC38}                                               \\ \hline
-      R-102-F-Op         & \hyperref[uc:uc39]{UC39}                                               \\ \hline
-      R-103-F-Op         & \hyperref[uc:uc40]{UC40}                                               \\ \hline
-      R-104-F-Op         & \hyperref[uc:uc41]{UC41}                                               \\ \hline
+            R-1-F-Ob        & \ref{uc:inserimento}                                                 \\ \hline
+            R-2-F-Ob        & \ref{uc:caricamento}                                                 \\ \hline
+            R-3-F-Ob        & \ref{uc:caricamento}, \ref{uc:file-non-valido}                         \\ \hline
+            R-4-F-Ob        & \ref{uc:visualizzazione-disp-inserito}                                                 \\ \hline
+            R-5-F-Ob        & \ref{uc:visualizzazione-disp-inserito}, \ref{uc:visualizzazione-nome-disp}                   \\ \hline
+            R-6-F-Ob        & \ref{uc:visualizzazione-lista-assets}                                                 \\ \hline
+            R-7-F-Ob        & \ref{uc:visualizzazione-lista-assets}, \ref{uc:visualizzazione-sing-asset}                     \\ \hline
+            R-8-F-Ob        & \ref{uc:visualizzazione-sing-asset}, \ref{uc:visualizzazione-nome-asset}               \\ \hline
+            R-9-F-Ob        & \ref{uc:visualizzazione-sing-asset}, \ref{uc:visualizzazione-tipo-asset}               \\ \hline
+            R-10-F-Ob       & \ref{uc:esecuzione-test}                                                 \\ \hline
+            R-11-F-Ob       & \ref{uc:esecuzione-test}, \ref{uc:risposta-domanda}                     \\ \hline
+            R-12-F-Ob       & \ref{uc:esecuzione-test}, \ref{uc:risposta-domanda-si}                     \\ \hline
+            R-13-F-Ob       & \ref{uc:esecuzione-test}, \ref{uc:risposta-domanda-no}                     \\ \hline
+            R-14-F-Ob       & \ref{uc:modifica-risposta-domanda-prec}                                                 \\ \hline
+            R-15-F-Ob       & \ref{uc:modifica-risposta-domanda-prec-si}                                                 \\ \hline
+            R-16-F-Ob       & \ref{uc:modifica-risposta-domanda-prec-no}                                                 \\ \hline
+            R-17-F-Ob       & \ref{uc:modifica-risposta-domanda-suc}                                                 \\ \hline
+            R-18-F-Ob       & \ref{uc:modifica-risposta-domanda-suc-si}                                                 \\ \hline
+            R-19-F-Ob       & \ref{uc:modifica-risposta-domanda-suc-no}                                                 \\ \hline
+            R-20-F-Ob       & \ref{uc:uscita-anticipata-test}                                                 \\ \hline
+            R-21-F-Ob       & \ref{uc:visualizzazione-risultati-test}                                               \\ \hline
+            R-22-F-Ob       & \ref{uc:visualizzazione-risultati-test}, \ref{uc:visualizzazione-lista-requisiti-risultati}                 \\ \hline
+            R-23-F-Ob       & \ref{uc:visualizzazione-lista-requisiti-risultati}, \ref{uc:visualizzazione-singolo-req-risultato}         \\ \hline
+            R-24-F-Ob       & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-nome-req-dt}         \\ \hline
+            R-25-F-Ob       & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-risultato-req} \\ \hline
+            R-26-F-Ob       & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-risultato-pass-req} \\ \hline
+            R-27-F-Ob       & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-risultato-fail-req} \\ \hline
+            R-28-F-Ob       & \ref{uc:visualizzazione-singolo-req-risultato}, \ref{uc:visualizzazione-risultato-na-req} \\ \hline
+            %da cambiare indici
+            R-29-F-D        & \ref{uc:esportazione-test-completato}                                               \\ \hline
+            R-30-F-Ob       & \ref{uc:creazione-dispositivo}                                               \\ \hline
+            R-31-F-Ob       & \ref{uc:creazione-dispositivo}, \ref{uc:inserimento-dati-disp}                 \\ \hline
+            R-32-F-Ob       & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-nome-disp}         \\ \hline
+            R-33-F-Ob       & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-so-disp}         \\ \hline
+            R-34-F-Ob       & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-vfirm-disp}         \\ \hline
+            R-35-F-Ob       & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-funz-disp}         \\ \hline
+            R-36-F-Ob       & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-desc-disp}         \\ \hline
+            R-37-F-Ob       & \ref{uc:inserimento-dati-disp}, \ref{uc:inserimento-dati-non-val}                 \\ \hline
+            R-38-F-Ob       & \ref{uc:creazione-dispositivo}, \ref{uc:creazione-asset}                     \\ \hline
+            R-39-F-Ob       & \ref{uc:creazione-asset}, \ref{uc:inserimento-nome-asset}                 \\ \hline
+            R-40-F-Ob       & \ref{uc:creazione-asset}, \ref{uc:selezione-tipo-asset}                 \\ \hline
+            R-41-F-Ob       & \ref{uc:creazione-asset}, \ref{uc:inserimento-desc-asset}                 \\ \hline
+            R-42-F-Ob       & \ref{uc:creazione-asset}, \ref{uc:selezione-sensibilità-asset}                 \\ \hline
+            R-43-F-Ob       & \ref{uc:creazione-asset}, \ref{uc:inserimento-dati-non-val}                     \\ \hline
+            R-44-F-Ob       & \ref{uc:annullamento-creaz-asset}                                               \\ \hline
+            R-45-F-Ob       & \ref{uc:annullamento-creazione-disp}                                               \\ \hline
+            R-46-F-Ob       & \ref{uc:eliminazione-asset}                                               \\ \hline
+            R-47-F-Op       & \ref{uc:modifica-asset}                                               \\ \hline
+            R-48-F-Op       & \ref{uc:modifica-asset}, \ref{uc:modifica-nome-asset}                 \\ \hline
+            R-49-F-Op       & \ref{uc:modifica-asset}, \ref{uc:modifica-selezione-tipo-asset}                 \\ \hline
+            R-50-F-Op       & \ref{uc:modifica-asset}, \ref{uc:modifica-desc-asset}                 \\ \hline
+            R-51-F-Op       & \ref{uc:modifica-asset}, \ref{uc:modifica-selezione-sens-asset}                 \\ \hline
+            R-52-F-Op       & \ref{uc:modifica-asset}, \ref{uc:inserimento-dati-non-val}                     \\ \hline
+            R-53-F-Op       & \ref{uc:annullamento-modifica-asset}                                               \\ \hline
+            R-54-F-Ob       & \ref{uc:visualizzazione-presenza-modifiche-non-salvate}                                               \\ \hline
+            R-55-F-Ob       & \ref{uc:salvataggio-mod-non-salvate-disp}                                               \\ \hline
+            R-56-F-Ob       & \ref{uc:visualizzazione-sing-asset-dettaglio}                                              \\ \hline
+            R-57-F-Ob       & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-nome-asset}                 \\ \hline
+            R-58-F-Ob       & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-tipo-asset}                 \\ \hline
+            R-59-F-Ob       & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-network-asset}                 \\ \hline
+            R-60-F-Ob       & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-security-asset}                 \\ \hline
+            R-61-F-Ob       & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-desc-asset}                 \\ \hline
+            R-62-F-Ob       & \ref{uc:visualizzazione-sing-asset-dettaglio}, \ref{uc:visualizzazione-sens-asset}                 \\ \hline
+            R-63-F-Ob       & \ref{uc:visualizzazione-dett-dati-disp}                                               \\ \hline
+            R-64-F-Ob       & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-nome-disp}                 \\ \hline
+            R-65-F-Ob       & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-so-disp}                 \\ \hline
+            R-66-F-Ob       & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-vfirm-disp}                 \\ \hline
+            R-67-F-Ob       & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-funz-disp}                 \\ \hline
+            R-68-F-Ob       & \ref{uc:visualizzazione-dett-dati-disp}, \ref{uc:visualizzazione-desc-disp}                 \\ \hline
+            R-69-F-Ob       & \ref{uc:caricamento-test-prec}                                               \\ \hline
+            R-70-F-Ob       & \ref{uc:caricamento-test-prec}, \ref{uc:caricamento}                       \\ \hline
+            R-71-F-Ob       & \ref{uc:modifica-ris-test}                                               \\ \hline
+            R-72-F-Ob       & \ref{uc:modifica-ris-test}, \ref{uc:esecuzione-test}                       \\ \hline
+            R-73-F-Ob       & \ref{uc:esecuzione-test-non-completato}                                               \\ \hline
+            R-74-F-Ob       & \ref{uc:esecuzione-test-non-completato}, \ref{uc:esecuzione-test}                       \\ \hline
+            R-75-F-Op       & \ref{uc:visualizzazione-lista-giust-test}                                               \\ \hline
+            R-76-F-Op       & \ref{uc:visualizzazione-lista-giust-test}, \ref{uc:visualizzazione-sing-req-con-giust}                 \\ \hline
+            R-77-F-Op       & \ref{uc:visualizzazione-sing-req-con-giust}, \ref{uc:visualizzazione-nome-req-dt}             \\ \hline
+            R-78-F-Op       & \ref{uc:visualizzazione-sing-req-con-giust}, \ref{uc:visualizzazione-giust-req}         \\ \hline
+            R-79-F-Ob       & \ref{uc:visualizzazione-lista-assets-ris-dett-req}                                               \\ \hline
+            R-80-F-Ob       & \ref{uc:visualizzazione-lista-assets-ris-dett-req}, \ref{uc:visualizzazione-singolo-asset-ris}                 \\ \hline
+            R-81-F-Ob       & \ref{uc:visualizzazione-singolo-asset-ris}, \ref{uc:visualizzazione-nome-asset}             \\ \hline
+            R-82-F-Ob       & \ref{uc:visualizzazione-singolo-asset-ris}, \ref{uc:visualizzazione-ris-req-asset}         \\ \hline
+            R-83-F-Ob       & \ref{uc:eliminazione-disp}                                               \\ \hline
+            R-84-F-Op       & \ref{uc:modifica-dati-disp}                                               \\ \hline
+            R-85-F-Op       & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-nome-disp}                 \\ \hline
+            R-86-F-Op       & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-so-disp}                 \\ \hline
+            R-87-F-Op       & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-vfirm-disp}                 \\ \hline
+            R-88-F-Op       & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-funz-disp}                 \\ \hline
+            R-89-F-Op       & \ref{uc:modifica-dati-disp}, \ref{uc:modifica-desc-disp}                 \\ \hline
+            R-90-F-Op       & \ref{uc:modifica-dati-disp}, \ref{uc:inserimento-dati-non-val}                     \\ \hline
+            R-91-F-Op       & \ref{uc:annullamento-modifica-dati-disp}                                               \\ \hline
+            R-92-F-Op       & \ref{uc:visualizzazione-elenco-dt}                                               \\ \hline
+            R-93-F-Op       & \ref{uc:visualizzazione-elenco-dt}, \ref{uc:visualizzazione-sing-dt}                 \\ \hline
+            R-94-F-Op       & \ref{uc:visualizzazione-sing-dt}, \ref{uc:visualizzazione-id-req-dt}             \\ \hline
+            R-95-F-Op       & \ref{uc:visualizzazione-sing-dt}, \ref{uc:visualizzazione-nome-req-dt}             \\ \hline
+            R-96-F-Op       & \ref{uc:visualizzazione-det-dt}                                               \\ \hline
+            R-97-F-Op       & \ref{uc:visualizzazione-det-dt}, \ref{uc:visualizzazione-id-req-dt}                 \\ \hline
+            R-98-F-Op       & \ref{uc:visualizzazione-det-dt}, \ref{uc:visualizzazione-nome-req-dt}                 \\ \hline
+            R-99-F-Op       & \ref{uc:visualizzazione-det-dt}, \ref{uc:visualizzazione-dipendenze-dt}                 \\ \hline
+            R-100-F-Op       & \ref{uc:visualizzazione-det-dt}, \ref{uc:visualizzazione-grafo-dt}                 \\ \hline
+            R-101-F-Op       & \ref{uc:visualizzazione-grafo-dt}, \ref{uc:visualizzazione-nodo-interno-dt}         \\ \hline
+            R-102-F-Op       & \ref{uc:visualizzazione-nodo-interno-dt}, \ref{uc:visualizzazione-cod-univoco-nodo} \\ \hline
+            R-103-F-Op       & \ref{uc:visualizzazione-nodo-interno-dt}, \ref{uc:visualizzazione-testo-domanda-nodo} \\ \hline
+            R-104-F-Op       & \ref{uc:visualizzazione-grafo-dt}, \ref{uc:visualizzazione-nodo-foglia-dt}         \\ \hline
+            R-105-F-Op       & \ref{uc:visualizzazione-grafo-dt}, \ref{uc:visualizzazione-collegamento-nodi-dt}         \\ \hline
+            R-106-F-Op       & \ref{uc:modifica-dt}                                               \\ \hline
+            R-107-F-Op       & \ref{uc:aggiunta-nodo-dt}                                               \\ \hline
+            R-108-F-Op       & \ref{uc:aggiunta-nodo-dt}, \ref{uc:inserimento-codice-univ-nodo}                 \\ \hline
+            R-109-F-Op       & \ref{uc:aggiunta-nodo-dt}, \ref{uc:inserimento-test-domanda-nodo}                 \\ \hline
+            R-110-F-Op       & \ref{uc:eliminazione-nodo-dt}                                               \\ \hline
+            R-111-F-Op      & \ref{uc:tentativo-eliminazione-nodo-root}                                               \\ \hline
+            R-112-F-Op      & \ref{uc:modifica-collegamento-dt}                                               \\ \hline
+            R-113-F-Op      & \ref{uc:validazione-fallita-mod-dt}                                               \\ \hline
+            R-114-F-Op      & \ref{uc:annullamento-mod-dt}                                               \\ \hline
+            R-115-F-Op      & \ref{uc:esportazione-dt}                                               \\ \hline
   \end{longtable}
+
+
 
   \subsection{Riepilogo}{
       \begin{table}[H]
@@ -2469,13 +2654,13 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
               \rowcolor{gold}
               \textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Desiderabili} & \textbf{Opzionali} & \textbf{Totali} \\
               \hline
-              Funzionali         & 60                   & 1                     & 43                 & 104             \\
+              Funzionali         & 71                   & 1                     & 43                 & 104             \\
               \hline
               Qualità            & 7                    & 0                     & 0                  & 7               \\
               \hline
               Vincolo            & 6                    & 0                     & 0                  & 6               \\
               \hline
-              \textbf{Totali}    & \textbf{73}          & \textbf{1}            & \textbf{43}        & \textbf{117}    \\
+              \textbf{Totali}    & \textbf{84}          & \textbf{1}            & \textbf{43}        & \textbf{128 }    \\
               \hline
           \end{tabular}
           \caption{Riepilogo dei requisiti}
