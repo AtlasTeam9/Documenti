@@ -43,7 +43,7 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Piano di Progetto}
-\newcommand{\DataUltimaModifica}{2026/02/07}
+\newcommand{\DataUltimaModifica}{2026/03/12}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
 
 % --- Nuove variabili aggiunte ---
@@ -129,8 +129,10 @@
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-	    v1.1.0 & 2026/03/10 & Riccardo Valerio & Federico Simonetto & Scrittura sez. pianificazione lungo termine e sistemazione contenuti \\
-	    \hline	
+            v1.2.0 & 2026/03/12 & Riccardo Valerio & Federico Simonetto & Sistemazione ordine delle descrizioni degli sprint \\
+            \hline
+            v1.1.0 & 2026/03/10 & Riccardo Valerio & Federico Simonetto & Scrittura sez. pianificazione lungo termine e sistemazione contenuti \\
+            \hline	
             v1.0.0 & 2026/02/07 & Francesco Marcolongo & Giacomo Giora & Approvazione \\
             \hline
             v0.11.1 & 2026/02/07 & Andrea Difino & Giacomo Giora & Aggiunti termini glossario \\
@@ -441,12 +443,12 @@
     }
     \subsection{Struttura dell'esito effettivo}{
         \begin{enumerate}
+            \item \textbf{Retrospettiva}: resoconto finale dello sprint. Si riflette su cosa è andato bene e ciò che non ha funzionato come previsto. Vengono inoltre proposte modifiche e suggerimenti
+                per migliorare il processo produttivo dello sprint successivo.
+            \item \textbf{Rischi incontrati}: elenco dei rischi che si sono effettivamente verificati durante lo sprint.    
             \item \textbf{Consuntivo}: tabella "Preventivo" menzionata nella sezione precedente aggiornata con le ore realmente impiegate. Le ore in eccesso rispetto alla previsione
                 sono indicate con un "+" rosso mentre le ore risparmiate con un "-" verde. Viene inoltre mostrato anche un istogramma che confronta visivamente ore pianificate e ore effettive.
             \item \textbf{Risorse rimanenti}: tabella con tutti i ruoli di progetto che evidenzia, con un "-" rosso, i costi sostenuti per lo sprint appena concluso.
-            \item \textbf{Rischi incontrati}: elenco dei rischi che si sono effettivamente verificati durante lo sprint.
-            \item \textbf{Retrospettiva}: resoconto finale dello sprint. Si riflette su cosa è andato bene e ciò che non ha funzionato come previsto. Vengono inoltre proposte modifiche e suggerimenti
-                per migliorare il processo produttivo dello sprint successivo.
         \end{enumerate}  
     }
 }
@@ -898,6 +900,25 @@
             \end{table}
         }
 
+        \subsubsection{Retrospettiva}{
+            Nel primo periodo ci si è concentrati sulla risoluzione di problemi iniziali e sulla preparazione dei documenti fondamentali per l'avvio del progetto, includendo aggiornamenti al sito, 
+            organizzazione del \textit{versionamento}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Versionamento}{G}}, e prime stesure delle linee guida, \textit{glossario}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Glossario}{G}} e Piano di Progetto, oltre alla pianificazione di un incontro con l'azienda proponente.
+        }
+
+        \subsubsection{Rischi incontrati}{
+            Rischi effettivamente manifestatisi durante lo sprint:
+            \begin{itemize}
+                \item \textbf{RO-6: Confusione riguardo il Way of Working}: il rischio è stato gestito attraverso l'adozione di un Way of Working inizialmente condiviso, che ha definito un metodo di lavoro comune per la prima fase del progetto. Il team seguirà tale metodologia fino a una possibile \textit{revisione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Revisione}{G}} in una fase successiva, garantendo uniformità nelle modalità operative.
+                \item \textbf{RI-1: Organizzazione tempo personale}: il rischio è stato gestito mediante una pianificazione flessibile e bilanciata delle attività, assegnando compiti compatibili con il carico di lavoro di ciascun membro. Le attività non erano particolarmente gravose, consentendo a tutti di rispettare le scadenze nonostante eventuali impegni personali.
+            \end{itemize}
+            I seguenti rischi previsti per questo sprint:
+            \begin{itemize}
+                \item \textbf{RO-3: Difficoltà nella comunicazione con l'azienda proponente;}
+                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team.}
+            \end{itemize}
+            non si sono verificati.
+        }
+
         \subsubsection{Consuntivo}{
             \begin{table}[H]
                 \centering
@@ -987,24 +1008,6 @@
             \end{table}
         }
 
-        \subsubsection{Rischi incontrati}{
-            Rischi effettivamente manifestatisi durante lo sprint:
-            \begin{itemize}
-                \item \textbf{RO-6: Confusione riguardo il Way of Working}: il rischio è stato gestito attraverso l'adozione di un Way of Working inizialmente condiviso, che ha definito un metodo di lavoro comune per la prima fase del progetto. Il team seguirà tale metodologia fino a una possibile \textit{revisione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Revisione}{G}} in una fase successiva, garantendo uniformità nelle modalità operative.
-                \item \textbf{RI-1: Organizzazione tempo personale}: il rischio è stato gestito mediante una pianificazione flessibile e bilanciata delle attività, assegnando compiti compatibili con il carico di lavoro di ciascun membro. Le attività non erano particolarmente gravose, consentendo a tutti di rispettare le scadenze nonostante eventuali impegni personali.
-            \end{itemize}
-            I seguenti rischi previsti per questo sprint:
-            \begin{itemize}
-                \item \textbf{RO-3: Difficoltà nella comunicazione con l'azienda proponente;}
-                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team.}
-            \end{itemize}
-            non si sono verificati.
-        }
-
-        \subsubsection{Retrospettiva}{
-            Nel primo periodo ci si è concentrati sulla risoluzione di problemi iniziali e sulla preparazione dei documenti fondamentali per l'avvio del progetto, includendo aggiornamenti al sito, 
-            organizzazione del \textit{versionamento}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Versionamento}{G}}, e prime stesure delle linee guida, \textit{glossario}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Glossario}{G}} e Piano di Progetto, oltre alla pianificazione di un incontro con l'azienda proponente.
-        }
     }
  
     \subsection{Sprint 2 - RTB}{
@@ -1086,6 +1089,23 @@
                 \caption{Preventivo ore per ruolo - Sprint 2}
                 \label{tab:preventivo-sprint2}
             \end{table}
+        }
+
+        \subsubsection{Retrospettiva}{
+            Durante questo sprint il team si è focalizzato sul miglioramento dell'organizzazione interna, sullo studio del materiale condiviso e sull'avanzamento della documentazione. L'incontro con l'azienda proponente ha permesso di chiarire alcuni aspetti del progetto e di ottenere un allineamento utile per le fasi successive.
+        }
+
+        \subsubsection{Rischi incontrati}{
+            Rischi effettivamente manifestatisi durante lo sprint:
+            \begin{itemize}
+                \item \textbf{RO-6: Confusione riguardo il Way of Working}: sono emerse alcune incertezze sulle modalità operative, affrontate attraverso momenti di chiarimento interno e piccoli aggiustamenti all'organizzazione del lavoro.
+                \item \textbf{RI-1: Organizzazione tempo personale}: alcune attività hanno richiesto una gestione più attenta del tempo disponibile, ma il team è riuscito a mantenere un buon livello di produttività tramite una distribuzione equilibrata dei compiti.
+            \end{itemize}
+
+            I seguenti rischi previsti non si sono manifestati in modo significativo:
+            \begin{itemize}
+                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team.}
+            \end{itemize}
         }
 
         \subsubsection{Consuntivo}{
@@ -1176,22 +1196,7 @@
                 \label{tab:risorse-rimanenti-sprint2}
             \end{table}
         }
-                \subsubsection{Rischi incontrati}{
-            Rischi effettivamente manifestatisi durante lo sprint:
-            \begin{itemize}
-                \item \textbf{RO-6: Confusione riguardo il Way of Working}: sono emerse alcune incertezze sulle modalità operative, affrontate attraverso momenti di chiarimento interno e piccoli aggiustamenti all'organizzazione del lavoro.
-                \item \textbf{RI-1: Organizzazione tempo personale}: alcune attività hanno richiesto una gestione più attenta del tempo disponibile, ma il team è riuscito a mantenere un buon livello di produttività tramite una distribuzione equilibrata dei compiti.
-            \end{itemize}
 
-            I seguenti rischi previsti non si sono manifestati in modo significativo:
-            \begin{itemize}
-                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team.}
-            \end{itemize}
-        }
-
-        \subsubsection{Retrospettiva}{
-            Durante questo sprint il team si è focalizzato sul miglioramento dell'organizzazione interna, sullo studio del materiale condiviso e sull'avanzamento della documentazione. L'incontro con l'azienda proponente ha permesso di chiarire alcuni aspetti del progetto e di ottenere un allineamento utile per le fasi successive.
-        }
 }
 
     \subsection{Sprint 3 - RTB}{
@@ -1274,6 +1279,26 @@
                 \caption{Preventivo ore per ruolo - Sprint 3}
                 \label{tab:preventivo-sprint3}
             \end{table}
+        }
+
+        \subsubsection{Retrospettiva}{
+            Durante questo sprint il team si è concentrato sulla redazione della documentazione di progetto e sull'attività di analisi dei requisiti. Le procedure e gli strumenti adottati, in conformità alle indicazioni delle Norme di Progetto, si sono rivelati di grande supporto, migliorando il lavoro concorrente e rendendo più efficiente la stesura dei documenti.
+            \newline
+            L'attività di analisi dei requisiti è stata sottovalutata in questo sprint. Di conseguenza tale attività verrà rafforzata nel prossimo sprint mediante un incremento delle ore ad essa dedicate.
+        }
+
+        \subsubsection{Rischi incontrati}{
+            Rischi effettivamente manifestatisi durante lo sprint:
+            \begin{itemize}
+                \item \textbf{RO-6: Confusione riguardo il Way of Working}: nel corso del progetto si sono verificati diversi cambiamenti al Way of Working, generando inizialmente incertezza. La definizione e la formalizzazione delle procedure tramite il documento \textit{Norme di Progetto} da parte dell'amministratore hanno contribuito a chiarire i dubbi e a ristabilire un quadro operativo condiviso.
+                \item \textbf{RI-1: Organizzazione tempo personale}: la redazione della documentazione e l'attività di analisi dei requisiti si sono rivelate particolarmente onerose. Nonostante ciò, il team è riuscito a rispettare le scadenze e a completare le attività assegnate durante lo sprint.
+            \end{itemize}
+
+            I seguenti rischi previsti non si sono manifestati in modo significativo:
+            \begin{itemize}
+                \item \textbf{RO-3: Difficoltà nella comunicazione con l'azienda proponente:} l'azienda proponente ha dimostrato un'elevata disponibilità nell'organizzazione di riunioni in modalità sincrona. Le comunicazioni di minore rilevanza sono state invece gestite efficacemente in modalità asincrona, senza impatti negativi sull'avanzamento delle attività.
+                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: nonostante lo svolgimento delle attività prevalentemente in modalità asincrona, il team si è dimostrato sempre ben coordinato, garantendo una comunicazione efficace e un allineamento costante sugli obiettivi.
+            \end{itemize}
         }
 
         \subsubsection{Consuntivo}{
@@ -1364,25 +1389,7 @@
                 \label{tab:risorse-rimanenti-sprint3}
             \end{table}
         }
-                \subsubsection{Rischi incontrati}{
-            Rischi effettivamente manifestatisi durante lo sprint:
-            \begin{itemize}
-                \item \textbf{RO-6: Confusione riguardo il Way of Working}: nel corso del progetto si sono verificati diversi cambiamenti al Way of Working, generando inizialmente incertezza. La definizione e la formalizzazione delle procedure tramite il documento \textit{Norme di Progetto} da parte dell'amministratore hanno contribuito a chiarire i dubbi e a ristabilire un quadro operativo condiviso.
-                \item \textbf{RI-1: Organizzazione tempo personale}: la redazione della documentazione e l'attività di analisi dei requisiti si sono rivelate particolarmente onerose. Nonostante ciò, il team è riuscito a rispettare le scadenze e a completare le attività assegnate durante lo sprint.
-            \end{itemize}
 
-            I seguenti rischi previsti non si sono manifestati in modo significativo:
-            \begin{itemize}
-                \item \textbf{RO-3: Difficoltà nella comunicazione con l'azienda proponente:} l'azienda proponente ha dimostrato un'elevata disponibilità nell'organizzazione di riunioni in modalità sincrona. Le comunicazioni di minore rilevanza sono state invece gestite efficacemente in modalità asincrona, senza impatti negativi sull'avanzamento delle attività.
-                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: nonostante lo svolgimento delle attività prevalentemente in modalità asincrona, il team si è dimostrato sempre ben coordinato, garantendo una comunicazione efficace e un allineamento costante sugli obiettivi.
-            \end{itemize}
-        }
-
-        \subsubsection{Retrospettiva}{
-            Durante questo sprint il team si è concentrato sulla redazione della documentazione di progetto e sull'attività di analisi dei requisiti. Le procedure e gli strumenti adottati, in conformità alle indicazioni delle Norme di Progetto, si sono rivelati di grande supporto, migliorando il lavoro concorrente e rendendo più efficiente la stesura dei documenti.
-            \newline
-            L'attività di analisi dei requisiti è stata sottovalutata in questo sprint. Di conseguenza tale attività verrà rafforzata nel prossimo sprint mediante un incremento delle ore ad essa dedicate.
-        }
 }
 
     \subsection{Sprint 4 - RTB}{
@@ -1394,10 +1401,9 @@
             \end{itemize}
         }
     \subsubsection{Informazioni generali e attività da svolgere}{
-            Questo periodo ha come \textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} principale la continuazione della stesura dei documenti che il team dovrà fornire ai professori Vardanega e Cardin e all'azienda proponente Bluewind S.r.l. in vista della milestone di progetto RTB. Questo sprint ha avuto una durata maggiore rispetto ai precedenti a causa del periodo di festività; tale \textit{estensione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Estensione}{G}} è stata adottata per compensare la ridotta disponibilità del team.
-            }
-            
-            \
+        Questo periodo ha come \textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} principale la continuazione della stesura dei documenti che il team dovrà fornire ai professori Vardanega e Cardin e all'azienda proponente Bluewind S.r.l. in vista della milestone di progetto RTB. Questo sprint ha avuto una durata maggiore rispetto ai precedenti a causa del periodo di festività; tale \textit{estensione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Estensione}{G}} è stata adottata per compensare la ridotta disponibilità del team.
+        \
+    }
             
     \noindent In particolare, le attività previste sono:
             \begin{itemize}
@@ -1465,7 +1471,25 @@
                 \label{tab:preventivo-sprint4}
             \end{table}
         }
-     \subsubsection{Consuntivo}{
+
+        \subsubsection{Retrospettiva}
+        Durante questo sprint il team ha dedicato un numero significativo di ore alla redazione della documentazione, all'attività di analisi dei requisiti e alla realizzazione del PoC, come già evidenziato nello sprint precedente. Nel prossimo sprint il team si concentrerà sul completamento di tutta la documentazione e sulla candidatura all'attività RTB.
+
+        \subsubsection{Rischi incontrati}{
+            Rischi effettivamente manifestatisi durante lo sprint:
+            \begin{itemize}
+                \item \textbf{RT-1: Tecnologie sconosciute}: la realizzazione del primo modello del PoC ha richiesto un impegno significativo da parte del team, dovuto all'utilizzo di tecnologie non ancora consolidate. Il rischio è stato mitigato grazie a numerose ore di formazione e sperimentazione (“palestra”), che hanno permesso al team di acquisire maggiore familiarità con gli strumenti adottati.
+                \item \textbf{RI-1: Organizzazione tempo personale}: la redazione della documentazione si è rivelata particolarmente onerosa. Inoltre, il periodo natalizio e delle festività, insieme alla preparazione anticipata di alcuni esami da parte di membri del team, ha inciso sulla disponibilità complessiva.
+                \end{itemize}
+            
+            I seguenti rischi previsti non si sono manifestati in modo significativo:
+            \begin{itemize}
+                    \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: Nonostante il periodo di vacanze, il team è rimasto costantemente aggiornato e ha continuato a lavorare in modalità asincrona, ottenendo risultati soddisfacenti.
+                    \item \textbf{RO-6: Confusione riguardo il Way of Working}: grazie ai miglioramenti al \textit{WoW}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#WoW}{G}}, il team è riuscito a lavorare in una maniera efficiente ed efficace.
+            \end{itemize}
+        }
+
+        \subsubsection{Consuntivo}{
             \begin{table}[H]
                 \centering
                 % intestazioni diagonali fuori dalla tabella
@@ -1554,22 +1578,7 @@
                 \label{tab:risorse-rimanenti-sprint4}
             \end{table}
         }
-         \subsubsection{Rischi incontrati}{
-            Rischi effettivamente manifestatisi durante lo sprint:
-            \begin{itemize}
-                \item \textbf{RT-1: Tecnologie sconosciute}: la realizzazione del primo modello del PoC ha richiesto un impegno significativo da parte del team, dovuto all'utilizzo di tecnologie non ancora consolidate. Il rischio è stato mitigato grazie a numerose ore di formazione e sperimentazione (“palestra”), che hanno permesso al team di acquisire maggiore familiarità con gli strumenti adottati.
-                \item \textbf{RI-1: Organizzazione tempo personale}: la redazione della documentazione si è rivelata particolarmente onerosa. Inoltre, il periodo natalizio e delle festività, insieme alla preparazione anticipata di alcuni esami da parte di membri del team, ha inciso sulla disponibilità complessiva.
-                \end{itemize}
-            
-            I seguenti rischi previsti non si sono manifestati in modo significativo:
-            \begin{itemize}
-                    \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: Nonostante il periodo di vacanze, il team è rimasto costantemente aggiornato e ha continuato a lavorare in modalità asincrona, ottenendo risultati soddisfacenti.
-                    \item \textbf{RO-6: Confusione riguardo il Way of Working}: grazie ai miglioramenti al \textit{WoW}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#WoW}{G}}, il team è riuscito a lavorare in una maniera efficiente ed efficace.
-            \end{itemize}
-            }
-        \subsubsection{Retrospettiva}
-        Durante questo sprint il team ha dedicato un numero significativo di ore alla redazione della documentazione, all'attività di analisi dei requisiti e alla realizzazione del PoC, come già evidenziato nello sprint precedente. Nel prossimo sprint il team si concentrerà sul completamento di tutta la documentazione e sulla candidatura all'attività RTB.
-
+        
     \subsection{Sprint 5 - RTB}{
         \subsubsection{Tempo}{
             \begin{itemize}
@@ -1650,7 +1659,26 @@
                 \label{tab:preventivo-sprint5}
             \end{table}
         }
-     \subsubsection{Consuntivo}{
+
+        \subsubsection{Retrospettiva}
+        Durante questo sprint il team si è focalizzato principalmente sul completamento del PoC, sull'avanzamento nella stesura dell'Analisi dei Requisiti e sull'affinamento del Piano di Qualifica, nonché sulla stesura dell'ultima sezione delle Norme di Progetto. Nonostante il periodo di sessione universitaria, ogni membro del team si è dedicato con costanza al raggiungimento degli obiettivi prefissati.
+
+        \subsubsection{Rischi incontrati}{
+            Rischi effettivamente manifestatisi durante lo sprint:
+            \begin{itemize}
+                \item \textbf{RI-1: Organizzazione tempo personale}: Il periodo di sessione universitaria, oltre alle scadenze vicine di altri progetti, ha inciso sulla disponibilità complessiva.
+                \end{itemize}
+            
+            I seguenti rischi previsti non si sono manifestati in modo significativo:
+            \begin{itemize}
+                \item \textbf{RT-1: Tecnologie sconosciute}: nonostante la poca familiarità con le tecnologie utilizzate, il team ha svolto una fase precedente di studio e approfondimento che si è rivelata essenziale per questo sprint.
+                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: ogni membro del team ha portato a termine le attività assegnate.                
+                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: il team si è mantenuto costantemente allineato e ha proseguito il lavoro in modalità asincrona, garantendo \textit{efficienza}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Efficienza}{G}} operativa.
+                \item \textbf{RO-6: Confusione riguardo il Way of Working}: il team è riuscito a lavorare in una maniera efficiente ed efficace.
+            \end{itemize}
+        }
+
+        \subsubsection{Consuntivo}{
             \begin{table}[H]
                 \centering
                 % intestazioni diagonali fuori dalla tabella
@@ -1738,23 +1766,8 @@
                 \label{tab:risorse-rimanenti-sprint5}
             \end{table}
         }
-         \subsubsection{Rischi incontrati}{
-            Rischi effettivamente manifestatisi durante lo sprint:
-            \begin{itemize}
-                \item \textbf{RI-1: Organizzazione tempo personale}: Il periodo di sessione universitaria, oltre alle scadenze vicine di altri progetti, ha inciso sulla disponibilità complessiva.
-                \end{itemize}
-            
-            I seguenti rischi previsti non si sono manifestati in modo significativo:
-            \begin{itemize}
-                \item \textbf{RT-1: Tecnologie sconosciute}: nonostante la poca familiarità con le tecnologie utilizzate, il team ha svolto una fase precedente di studio e approfondimento che si è rivelata essenziale per questo sprint.
-                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: ogni membro del team ha portato a termine le attività assegnate.                
-                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: il team si è mantenuto costantemente allineato e ha proseguito il lavoro in modalità asincrona, garantendo \textit{efficienza}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Efficienza}{G}} operativa.
-                \item \textbf{RO-6: Confusione riguardo il Way of Working}: il team è riuscito a lavorare in una maniera efficiente ed efficace.
-            \end{itemize}
-            }
-        \subsubsection{Retrospettiva}
-        Durante questo sprint il team si è focalizzato principalmente sul completamento del PoC, sull'avanzamento nella stesura dell'Analisi dei Requisiti e sull'affinamento del Piano di Qualifica, nonché sulla stesura dell'ultima sezione delle Norme di Progetto. Nonostante il periodo di sessione universitaria, ogni membro del team si è dedicato con costanza al raggiungimento degli obiettivi prefissati.
-
+        
+        
     \subsection{Sprint 6 - RTB}{
         \subsubsection{Tempo}{
             \begin{itemize}
@@ -1786,7 +1799,8 @@
                 \item \textbf{RI-1: Organizzazione tempo personale.}
             \end{itemize}
         }
-    \subsubsection{Preventivo}{
+    
+        \subsubsection{Preventivo}{
             Si prospetta l'utilizzo delle seguenti risorse:
 
             \begin{table}[H]
@@ -1834,7 +1848,28 @@
                 \label{tab:preventivo-sprint6}
             \end{table}
         }
-     \subsubsection{Consuntivo}{
+
+        \subsubsection{Retrospettiva} {
+            Questo periodo è stato dedicato alla verifica, agli ultimi accorgimenti e allo studio approfondito dei vari artefatti. Nonostante i vari impegni personali il team è riuscito ad assolvere ai suoi impegni in maniera proficua col risultato di essere quasi pronto al RTB.
+        }
+
+        \subsubsection{Rischi incontrati}{
+            Rischi effettivamente manifestatisi durante lo sprint:
+            \begin{itemize}
+                \item \textbf{RI-1: Organizzazione tempo personale}: Il periodo di esami e deadline degli altri impegni universitari ha inciso sulla disponibilità dei vari membri.
+                \end{itemize}
+            
+            I seguenti rischi previsti non si sono manifestati in modo significativo:
+            \begin{itemize}
+                \item \textbf{RT-1: Tecnologie sconosciute}: per natura del lavoro svolto, ossia di verifica non si è manifestata questa evenienza.
+                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: ogni membro del team ha portato a termine le attività assegnate.
+                \item \textbf{RO-5: Errata comprensione degli obiettivi del progetto}: non ci sono stati ripensamenti dell'ultima ora nei vari artefatti nel repository.  
+                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: lavorando in maniera asincrona fra i vari impegni il team ha comunicato efficacemente.
+                \item \textbf{RO-6: Confusione riguardo il Way of Working}: il team è riuscito a lavorare in una maniera efficiente ed efficace.
+            \end{itemize}
+        }
+
+        \subsubsection{Consuntivo}{
             \begin{table}[H]
                 \centering
                 % intestazioni diagonali fuori dalla tabella
@@ -1924,24 +1959,7 @@
                 \label{tab:risorse-rimanenti-sprint6}
             \end{table}
         }
-         \subsubsection{Rischi incontrati}{
-            Rischi effettivamente manifestatisi durante lo sprint:
-            \begin{itemize}
-                \item \textbf{RI-1: Organizzazione tempo personale}: Il periodo di esami e deadline degli altri impegni universitari ha inciso sulla disponibilità dei vari membri.
-                \end{itemize}
-            
-            I seguenti rischi previsti non si sono manifestati in modo significativo:
-            \begin{itemize}
-                \item \textbf{RT-1: Tecnologie sconosciute}: per natura del lavoro svolto, ossia di verifica non si è manifestata questa evenienza.
-                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: ogni membro del team ha portato a termine le attività assegnate.
-                \item \textbf{RO-5: Errata comprensione degli obiettivi del progetto}: non ci sono stati ripensamenti dell'ultima ora nei vari artefatti nel repository.  
-                \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: lavorando in maniera asincrona fra i vari impegni il team ha comunicato efficacemente.
-                \item \textbf{RO-6: Confusione riguardo il Way of Working}: il team è riuscito a lavorare in una maniera efficiente ed efficace.
-            \end{itemize}
-            }
-        \subsubsection{Retrospettiva} {
-            Questo periodo è stato dedicato alla verifica, agli ultimi accorgimenti e allo studio approfondito dei vari artefatti. Nonostante i vari impegni personali il team è riuscito ad assolvere ai suoi impegni in maniera proficua col risultato di essere quasi pronto al RTB.
-        }
+        
 
         \subsubsection{Aggiornamento Preventivo a Finire}{
             Avvicinandosi alla prima \textit{revisione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Revisione}{G}} \textit{RTB}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RTB}{G}}, è emerso che la precedente suddivisione delle ore non era del tutto allineata alle reali necessità. Tutti i ruoli hanno mostrato scostamenti rispetto alle stime iniziali, in particolare quelli di programmatore e verificatore. Ciò è stato dovuto a una pianificazione iniziale poco accurata, un \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} prevedibile data l'inesperienza del team. Dopo un'analisi più accurata delle ore effettivamente impiegate e dei costi sostenuti, abbiamo deciso di riassegnare il carico orario in modo da bilanciare il più possibile le ore svolte in ciascun ruolo da ciascun membro:
