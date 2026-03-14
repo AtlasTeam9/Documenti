@@ -42,11 +42,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Glossario}
-\newcommand{\DataUltimaModifica}{2026/02/09}
+\newcommand{\DataUltimaModifica}{2026/03/14}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v1.0.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v1.1.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Interno} 
 
 \pagestyle{fancy}
@@ -128,7 +128,9 @@
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            v1.0.0 & 2025/12/09 & Francesco Marcolongo & Giacomo Giora & Approvazione documento\\
+            \VersioneDocumento & \DataUltimaModifica & Francesco Marcolongo & Federico Simonetto & Sostituiti indici del glossario con le lettere\\
+            \hline
+            v1.0.0 & 2026/02/09 & Francesco Marcolongo & Giacomo Giora & Approvazione documento\\
             \hline
             v0.2.3 & 2026/02/06 & Andrea Difino & Giacomo Giora & Rimozione voce 'Sistema' dal documento\\
             \hline
@@ -161,11 +163,12 @@
     
     
 
-\newpage
+\renewcommand{\thesection}{\Alph{section}}
+\setcounter{section}{0}
 
 \newpage
 
-        \section{A}
+        \section{}
         
           \subsection*{Agile}
 			Metodologia di sviluppo basata su iterazioni brevi e feedback continui.
@@ -184,7 +187,7 @@
         
       
 \newpage
-        \section{B}
+        \section{}
         
           \subsection*{Back-end}
 			Parte di un sistema che gestisce logica, dati e comunicazione con il database.
@@ -201,7 +204,7 @@
 
       
 \newpage      
-        \section{C}
+        \section{}
         
           \subsection*{Capitolato}
 			Documento stipulato tra il committente (azienda) e il gruppo incaricato dello sviluppo, nel quale viene illustrato il problema che il committente intende risolvere e vengono definiti le norme e i vincoli da seguire durante la progettazione e la realizzazione del prodotto software richiesto. 
@@ -215,7 +218,7 @@
 			Strumento che offre una visione sintetica e immediata dello stato delle attività di progetto. Si aggiorna dinamicamente con il progredire dei lavori e consente a chi lo utilizza di ottenere un quadro chiaro e intuitivo della situazione.
       
   \newpage    
-        \section{D}
+        \section{}
         
           \subsection*{Decision Tree}
 			Strumento grafico usato per rappresentare un processo decisionale. Ogni nodo mostra una condizione e ogni ramo mostra le varie alternative o conseguenze.
@@ -237,7 +240,7 @@
 			Piattaforma di comunicazione online che permette l'invio di messaggi così come l'avvio di chiamate vocali e video. È organizzato in server e viene utilizzato per collaborare e condividere informazioni.  
       
      \newpage 
-        \section{E}
+        \section{}
         
           \subsection*{Endpoint}
 			URL che rappresenta un punto di accesso a un servizio web o API.
@@ -267,7 +270,7 @@
 			Esecuzione di un comportamento che avviene solo se una determinata condizione risulta vera.
 
 \newpage    
-        \section{F}
+        \section{}
         
           \subsection*{Fail}
 			Possibile output ottenuto percorrendo un Decision Tree, indica che il requisito non è rispettato.
@@ -278,7 +281,7 @@
         
 \newpage 
       
-        \section{G}
+        \section{}
         
           \subsection*{Git}
 			Sistema di controllo versione distribuito per la gestione del codice sorgente.
@@ -288,10 +291,10 @@
 			Elenco dei termini tecnici utilizzati in un progetto, con relative definizioni.
         
 \newpage
-        \section{H}
+        \section{}
         
 \newpage
-        \section{I}
+        \section{}
         
           \subsection*{Interattivo}
 			Sistema che richiede la partecipazione attiva dell'utilizzatore, che può rispondere alle azioni per progredire.
@@ -305,16 +308,16 @@
 			Acronimo di "Internet of Things", ovvero "Internet delle cose". Si riferisce a una rete di oggetti fisici, dotati di sensori, software e altre tecnologie, che possono connettersi e scambiare dati tra loro e con altri sistemi su Internet. Questa interconnessione permette il monitoraggio e il controllo remoto dei dispositivi.
         
 \newpage
-        \section{J}
+        \section{}
         
           \subsection*{Just-In-Time}
 			Approccio basato sull'idea di produrre o fornire qualcosa solo quando serve, evitando sprechi e riducendo al minimo le risorse inutilizzate.
         
 \newpage
-        \section{K}
+        \section{}
         
 \newpage 
-        \section{L}
+        \section{}
         
           \subsection*{LaTeX}
 			Sistema di composizione professionale utilizzato per creare documenti tecnici e scientifici con struttura e formattazione rigorosa.
@@ -330,7 +333,7 @@
 			Gradazione del dettaglio con cui un sistema viene descritto, usata per separare aspetti concettuali da quelli implementativi.
         
 \newpage
-        \section{M}
+        \section{}
         
           \subsection*{Memory Leak}
 			Quando un programma usa memoria e non la libera più, anche quando non serve più.
@@ -342,7 +345,7 @@
 			Acronimo di Message Queuing Telemetry Transport, è un protocollo di messaggistica leggero, progettato per la comunicazione tra dispositivi con risorse limitate, come quelli dell'IoT.
         
 \newpage
-        \section{N}
+        \section{}
         
           \subsection*{NA}
 			Acronimo di Not Applicable: possibile output ottenuto percorrendo un Decision Tree, indica che il requisito non è applicabile.
@@ -355,7 +358,7 @@
         
 \newpage
       
-        \section{O}
+        \section{}
         
           \subsection*{Obiettivo}
 			Risultato da raggiungere nell'ambito di un'attività o di un'impresa.
@@ -363,7 +366,7 @@
 			Capacità di svolgere determinate attività; efficacia.
         
 \newpage
-        \section{P}
+        \section{}
         
           \subsection*{Pass}
 			Possibile output ottenuto percorrendo un Decision Tree, indica che il requisito è stato rispettato.
@@ -377,11 +380,11 @@
 			Processo di creazione e distribuzione di progetti Python in un formato standardizzato (chiamato package o pacchetto), in modo che altri possano facilmente installarli e utilizzarli. Il file pyproject.toml è un file di configurazione moderno e unificato che gestisce questo processo.
         
 \newpage
-        \section{Q}
+        \section{}
         
 \newpage
       
-        \section{R}
+        \section{}
         
           \subsection*{RED}
 			Normativa europea che stabilisce requisiti per la sicurezza, la compatibilità elettromagnetica e l'uso dello spettro radio per le apparecchiature che trasmettono o ricevono onde radio.
@@ -402,7 +405,7 @@
         
 \newpage
       
-        \section{S}
+        \section{}
         
           \subsection*{Scelte tecnologiche}
 			Decisioni relative a tecnologie, librerie e architetture adottate per realizzare il sistema.
@@ -430,13 +433,13 @@
 			Fase del progetto in cui il sistema viene implementato, integrato e verificato sulla base dei requisiti.
         
 \newpage
-        \section{T}
+        \section{}
         
           \subsection*{Ticketing}
 			Sistema usato per registrare, organizzare e seguire le richieste di lavoro, problemi o domande.
         
 \newpage
-        \section{U}
+        \section{}
         
           \subsection*{UAT}
 			Acronimo di User Acceptance Testing: fase del testing in cui gli utenti finali verificano che il software soddisfi i requisiti contrattuali o di business.
@@ -461,7 +464,7 @@
         
 \newpage
       
-        \section{V}
+        \section{}
         
           \subsection*{Validazione}
 			Attività che verifica che il prodotto rispetti i requisiti e le aspettative del committente.
@@ -475,7 +478,7 @@
 			Processo di gestione e controllo delle diverse versioni di un progetto.
         
 \newpage
-        \section{W}
+        \section{}
         
           \subsection*{Waterfall model}
 			Modello di sviluppo sequenziale in cui ogni fase deve essere completata prima di passare alla successiva.
@@ -496,16 +499,16 @@
         
 \newpage
       
-        \section{X}
+        \section{}
         
           \subsection*{XML}
 			Linguaggio di markup pensato per rappresentare e scambiare dati in modo strutturato. Grazie ai tag personalizzabili, permette di descrivere le informazioni in modo chiaro e portabile tra sistemi diversi.
         
 \newpage
-        \section{Y}
+        \section{}
         
         
 \newpage
-        \section{Z}
+        \section{}
         
 \end{document}
