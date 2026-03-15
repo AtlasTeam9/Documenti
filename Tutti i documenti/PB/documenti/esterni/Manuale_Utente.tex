@@ -1,0 +1,201 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{pgf-pie}
+\usepackage{longtable}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{pgffor}
+
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloDocumento}{Manuale Utente}
+\newcommand{\DataUltimaModifica}{2026/03/15}
+\newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneDocumento}{0.1.0}
+\newcommand{\TipoDocumento}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Documento: \TipoDocumento}
+\fancyfoot[C]{\thepage}
+
+% larghezza della colonna dei nomi
+\newlength{\namecol}
+\setlength{\namecol}{4.5cm}
+\setlength{\headheight}{15pt} % messo per evitare warning di fancyhdr
+
+
+\newlength{\colw}
+\setlength{\colw}{1.5cm}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\definecolor{mioverde}{RGB}{20,150,60}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+
+    \begin{center}
+
+        % Logo
+        \vspace*{0cm}
+        \begin{tikzpicture}
+            \clip (0,-0.1) circle (5.6cm);
+            \node at (0,0) {\includegraphics[width=12cm]{\LogoGruppo}};
+        \end{tikzpicture}\\[0.8cm]
+
+        % Barra superiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+        % Titolo
+        \vspace{1cm}
+        {\Huge \textbf{\TitoloDocumento}}\\[0.4cm]
+        {\large Progetto di Ingegneria del Software A.A. 2025/2026}\\[0.8cm]
+        {\large Versione: \VersioneDocumento}
+        \vspace{1cm}
+
+        % Barra inferiore
+        \noindent\rule{\textwidth}{0.4pt}
+
+    \end{center}
+
+    % Informazioni in basso
+    \vfill
+    \noindent
+    \begin{minipage}{0.5\textwidth}
+        \raggedright
+        \textbf{Autore:} \Gruppo\\
+        \textbf{Ultima modifica:} \DataUltimaModifica
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \raggedleft
+        \textbf{Tipo di documento:} \TipoDocumento
+    \end{minipage}
+
+\end{titlepage}
+
+
+
+\section*{Registro delle modifiche}
+\begin{center}
+    \rowcolors{2}{lightblue}{white}
+    \begin{tabularx}{\textwidth}{|l|l|l|X|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione}  \\
+        \hline
+        0.1.0 & 2025/03/15 & Bilal Sabic & Federico Simonetto & Prima stesura documento \\
+        \hline
+    \end{tabularx}
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+
+%\newpage
+
+%\listoftables
+
+\newpage
+
+\section{Introduzione}
+
+    \subsection{Scopo del documento}
+        Il presente documento ha l'obiettivo di fornire una guida all'utilizzo dell'applicazione sviluppata dal team \textit{Atlas}, realizzata su richiesta del proponente \textit{Bluewind S.r.l.} nell'ambito del capitolato \textbf{C1 - Automated EN18031 Compliance Verification}. \newline
+        Il documento è finalizzato a supportare l'utente finale nelle fasi di installazione e di utilizzo dell'applicazione software. A tal fine vengono descritti i requisiti hardware e software necessari, nonché le procedure da seguire per l'installazione e per il corretto utilizzo del sistema.
+
+    \subsection{Scopo del prodotto}
+        L'obiettivo del prodotto è automatizzare il processo di verifica della conformità degli apparecchi che utilizzano onde radio rispetto alla normativa europea EN18031, definita dalla Direttiva RED. \newline
+        L'applicazione sviluppata consente di effettuare tale verifica tramite l'esecuzione di specifici \textit{decision tree} associati ai diversi asset del dispositivo. Al termine dell'esecuzione, il sistema fornisce un risultato chiaro della valutazione, espresso attraverso uno dei seguenti esiti: \textit{PASS}, \textit{FAIL} oppure \textit{NON APPLICABLE}.
+
+    \subsection{Contesto d'uso}
+        Come già esplicitato nel documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}, gli utenti finali dell'applicazione \textbf{Automated EN18031 Compliance Verification} appartengono alla categoria degli "utenti esperti". Essi possiedono pertanto competenze tecniche in ambito di sicurezza informatica e conoscenze della normativa europea a cui il capitolato fa riferimento. \newline
+        Per tale motivo, nel presente documento viene fatto deliberatamente uso di terminologia tecnica.
+
+    % T. nell'ultimo DdB ha detto che il Manuale, essendo diretto ad utenti esterni, (contrariamente al glossario che è interno) ha bisogno del suo specifico glossario
+    
+    \subsection{Glossario}
+        All'interno della documentazione prodotta dal team possono comparire termini suscettibili di incomprensioni o ambiguità. Per evitare questo, è disponibile un glossario
+        contenente i termini tecnici e le loro definizioni. Un termine è consultabile nel glossario se è indicato con la notazione \textit{parola\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html}{G}}}.
+        Premendo sulla G a pedice, l'utente verrà indirizzato alla pagina web del \textit{Glossario v.2.0.0}.
+    
+
+    \subsection{Riferimenti}
+        \subsubsection{Riferimenti normativi}
+            \begin{itemize}
+                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item Riferimento al Way of Working del team Atlas: \newline \textbf{Norme di Progetto v.2.0.0}\newline \url{da_mettere_una_volta_scritto}
+            \end{itemize}
+
+\newpage
+\section{Requisiti}
+    \subsection{Requisiti hardware}
+
+    \subsection{Requisiti software}
+        L'applicazione richiede l'installazione dei seguenti software:
+        \begin{itemize}
+            \item \textbf{Docker Engine};
+            \item \textbf{Git}.
+        \end{itemize}
+        Il prodotto software viene distribuito tramite container Docker; pertanto non è necessario installare librerie o servizi di supporto aggiuntivi. \newline
+        \textbf{Git} è necessario per clonare la repository GitHub contenente il progetto, mentre \textbf{Docker} consente di eseguire l'applicazione all'interno di un container, garantendo un ambiente di esecuzione isolato e configurato correttamente.
+\newpage
+
+\section{Installazione}
+
+\newpage
+
+\section{Istruzioni per l'uso}
+
+
+\end{document}            
