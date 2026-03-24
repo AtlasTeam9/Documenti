@@ -1,0 +1,216 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----------------------------
+% Pacchetti utili
+% ----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\definecolor{lightblue}{RGB}{225,240,255}
+\definecolor{gold}{RGB}{255,215,0}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+% ----------------------------
+% Impostazioni pagina
+% ----------------------------
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+\setstretch{1.2}
+
+% ----------------------------
+% Dati personalizzabili
+% ----------------------------
+\newcommand{\Gruppo}{Atlas}
+\newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
+\newcommand{\TitoloVerbale}{Verbale della Riunione}
+\newcommand{\DataVerbale}{2026/03/17}
+\newcommand{\NumeroVerbaleEsterno}{ottavo}
+\newcommand{\OraInizio}{15:00}
+\newcommand{\OraFine}{15:45}
+\newcommand{\LuogoVerbale}{Chiamata Zoom}
+\newcommand{\LogoGruppo}{img/AtlasLogo.png} % DA CAMBIARE UNA VOLTA MESSO NELLA REPO IN ../../../Assets/AtlasLogo.png
+\newcommand{\AbstractVerbale}{
+    In questo verbale vengono riportati gli argomenti discussi, le domande poste e le risposte ricevute durante l'\NumeroVerbaleEsterno \space meeting effettuato dal team \Gruppo \space con l'azienda \textbf{Bluewind S.r.l.} nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
+}
+
+% --- Nuove variabili aggiunte ---
+\newcommand{\VersioneVerbale}{v1.0.0}
+\newcommand{\VerbaleEsterno}{Esterno} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\Gruppo}
+\fancyhead[R]{Verbale: \VerbaleEsterno \space - \space \DataVerbale}
+\fancyfoot[C]{\thepage}
+
+% ----------------------------
+% Inizio documento
+% ----------------------------
+\begin{document}
+
+% ----------------------------
+% Prima pagina
+% ----------------------------
+\begin{titlepage}
+    \centering
+
+    % Logo
+    \vspace*{0cm}
+    %\includegraphics[width=10cm]{\LogoGruppo}\\[.5cm]
+    \begin{tikzpicture}
+        \clip (0,-0.1) circle (4.6cm); % raggio = metà della larghezza desiderata
+        \node at (0,0) {\includegraphics[width=10cm]{\LogoGruppo}};
+    \end{tikzpicture}\\
+    [.5cm]
+    % Titolo
+    {\Huge \textbf{\TitoloVerbale}}\\[0.8cm]
+    {\LARGE \Gruppo}\\[0.1cm]
+    {\Email}\\[1.2cm]
+
+    % Dati riunione
+    \begin{tabular}{rl}
+        \textbf{Data:} & \DataVerbale \\
+        \textbf{Luogo:} & \LuogoVerbale \\
+        \textbf{Versione:} & \VersioneVerbale \\
+        \textbf{Tipo:} & \VerbaleEsterno \\
+    \end{tabular}
+
+    \vspace{1.2cm}
+
+    % Componenti e ruoli
+    {\large \textbf{Partecipanti}}\\[0.5cm]
+    \begin{tabular}{l|l|l}
+        \textbf{Nome} & \textbf{Presenza} & \textbf{Ruolo}\\
+        \hline
+        \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
+        Andrea Difino & SI & Programmatore\\
+        Federico Simonetto & SI & Verificatore\\
+        Riccardo Valerio & SI & Responsabile\\
+        Francesco Marcolongo & SI & Progettista\\
+        Michele Tesser & SI & Progettista\\
+        Giacomo Giora & SI & Progettista\\
+        Bilal Sabic & SI & Amministratore\\
+    \end{tabular}
+
+\end{titlepage}
+
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+% ----------------------------
+% Inizio contenuto verbale
+% ----------------------------
+\section{Abstract}{
+    % Abstract
+    \begin{minipage}{0.9\textwidth}
+        \small
+        \AbstractVerbale
+    \end{minipage}
+}
+
+
+\section{Ordine del giorno}{
+    \begin{itemize}
+        \item Aggiornamento riguardo allo stato del progetto
+        \item Presentazione di domande relative al progetto
+    \end{itemize}
+}
+
+
+\section{Discussione}{
+
+    % ----------------------------------------------------
+% percentuale test? 80% minimo sulle linee, chissene del branch coverage
+% tipi asset: fare una tipologia network/security e poi forkare (tipo e sottotipo)
+% c'é discriminazione in base alla sensibilitá anche se finora non é mai capitato
+% XML non serve
+% archittettura layered e deploy monolitico ok
+% potrebbe proprio servire salvare nuovo dispositivo su file
+\subsection{Aggiornamento riguardo allo stato del progetto}
+    Il team informa l'azienda proponente di aver superato con successo la revisione RTB e di aver avviato la fase di progettazione software del prodotto da sviluppare.
+
+\subsection{Presentazione di domande relative al progetto}
+    \subsubsection{Qual è la percentuale minima di test success che il team deve rispettare?}
+        L'azienda proponente ritiene adeguata una copertura minima dei test pari all'80\% delle linee di codice. Per questa fase del progetto non è invece richiesto un vincolo specifico sul branch coverage.
+
+    \subsubsection{Bisogna dividere i tipi di asset in tipi veri e propri o basta averli come enumerazione?}
+        L'azienda proponente suggerisce di adottare il tipo di struttura più semplice da applicare, suggerendo di distinguere tra una tipologia principale dell'asset e un eventuale sottotipo. Ad esempio, può essere utile prevedere una categoria generale, come \textit{network} o \textit{security}, da specializzare poi in sottotipi più specifici.
+
+    \subsubsection{La sensitivity è un campo che va inserito nella descrizione di un asset nel file json?}
+        Sì, la sensitivity deve essere prevista come campo nella descrizione di un asset all'interno del file JSON. L'azienda proponente precisa che alcuni test potrebbero dipendere da tale informazione, anche se questa casistica non rientra attualmente nelle funzionalità previste per l'MVP.
+
+    \subsubsection{Su Telegram avete specificato il formato XML da sviluppare nonostante avessimo concordato json. Dobbiamo sviluppare anche il formato XML?}
+        No, non è necessario sviluppare anche il formato XML. Per il progetto è considerato sufficiente il supporto al formato JSON.
+
+    \subsubsection{Per la progettazione dell'MVP abbiamo utilizzato un'architettura di tipo Layered e un deploy di tipo monolitico dato che lo abbiamo ritenuto più adatto all'utilizzo dell'applicazione. Cosa ne pensate?}
+        L'azienda proponente approva la scelta architetturale proposta dal team, ritenendola coerente con le esigenze e con la complessità prevista per l'MVP.
+
+    \subsubsection{Abbiamo pensato di aggiungere una nuova funzionalità che permetterebbe di salvare un file creato dall'utente tramite la web app senza dover prima eseguire i test. Cosa ne pensate?}
+        L'azienda proponente ritiene che questa funzionalità possa risultare utile, in quanto consentirebbe all'utente di salvare un nuovo dispositivo o un file generato tramite la web app anche prima dell'esecuzione dei test.
+}
+\newpage
+
+\section{Decisioni prese}{
+    \begin{center}
+    \begin{tabular}{|c|p{12cm}|}
+        \hline
+        \textbf{ID} & \textbf{Decisione} \\
+        \hline
+         D1-\DataVerbale\_ve & La copertura minima dei test viene fissata all'80\% delle linee di codice. \\
+    \hline
+    D2-\DataVerbale\_ve & La modellazione degli asset dovrà prevedere una tipologia principale ed eventualmente un sottotipo, evitando una struttura eccessivamente complessa. \\
+    \hline
+   D3-\DataVerbale\_ve & Il campo \texttt{sensitivity} dovrà essere previsto nella descrizione degli asset all'interno del file JSON. \\
+    \hline
+    D4-\DataVerbale\_ve & Per l'MVP sarà sviluppato esclusivamente il supporto al formato JSON; il formato XML non è richiesto. \\
+    \hline
+    D5-\DataVerbale\_ve & L'architettura di tipo Layered con deploy monolitico viene approvata dall'azienda proponente. \\
+    \hline
+    D6-\DataVerbale\_ve & L'azienda proponente valuta positivamente l'eventuale introduzione di una funzionalità per il salvataggio di un file creato dall'utente tramite web app anche prima dell'esecuzione dei test. \\
+    \hline
+    \end{tabular}
+    \end{center}
+}
+
+
+\section{Attivitá da svolgere}{
+    \begin{center}
+    \begin{tabular}{|c|p{4.5cm}|c|p{3cm}|} 
+        \hline
+        \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
+        \hline
+        A1-\DataVerbale\_ve & Definire la struttura dati degli asset prevedendo tipo principale, eventuale sottotipo e campo \texttt{sensitivity}. & - & Team \\
+    \hline
+    A2-\DataVerbale\_ve & Valutare l'inserimento della funzionalità di salvataggio di un file generato dall'utente senza esecuzione preventiva dei test. & - & Team \\
+    \hline
+    \end{tabular}
+    \end{center}
+}
+
+\vspace{2cm}
+\begin{flushright}
+    \textbf{Approvazione dell'azienda} \\
+    Il proponente,\\[0.5cm]
+    \rule{6cm}{0.4pt}\\
+\end{flushright}
+
+
+\end{document}
+
