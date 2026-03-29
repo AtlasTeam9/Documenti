@@ -127,9 +127,25 @@
     \begin{tabularx}{\textwidth}{|l|l|l|X|X|}
         \hline
         \rowcolor{lightgray}
-        \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione}                                        \\
+        \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione} \\
         \hline
-        0.1.0             & 2025/03/05          & Federico Simonetto        &   Giacomo Giora                   & Prima stesura documento                                            \\
+        v0.9.0 & 2025/03/23 & Andrea Difino & Michele Tesser & Aggiunta design patterns \\
+        \hline
+        v0.8.0 & 2025/03/22 & Andrea Difino & Michele Tesser & Aggiunta immagini\\
+        \hline
+        v0.7.0 & 2025/03/19 & Giacomo Giora & Federico Simonetto & Fine stesura classi backend\\
+        \hline
+        v0.6.0 & 2025/03/09 & Michele Tesser & Federico Simonetto & Inizio stesura classi backend \\
+        \hline
+        v0.5.0 & 2025/03/08 & Francesco Marcolongo & Federico Simonetto & Stesura architettura \\
+        \hline
+        v0.4.0 & 2025/03/07 & Giacomo Giora & Federico Simonettoa & Stesura tecnologie \\
+        \hline
+        v0.3.0 & 2025/03/06 & Federico Simonetto & Giacomo Giora & Stesura descrizione prodotto \\
+        \hline
+        v0.2.0 & 2025/03/06 & Federico Simonetto & Giacomo Giora & Aggiunti link ai riferimenti \\
+        \hline
+        v0.1.0 & 2025/03/05 & Federico Simonetto & Giacomo Giora & Prima stesura documento \\
         \hline
     \end{tabularx}
 \end{center}
@@ -138,13 +154,13 @@
 
 \tableofcontents
 
-\newpage
+%\newpage
 
-\listoffigures
+%\listoffigures
 
-\newpage
+%\newpage
 
-\listoftables
+%\listoftables
 
 \newpage
 % ----------------------------
@@ -214,10 +230,11 @@
         \newline
         Le sue principali funzionalità includono:
         \begin{itemize}
-            \item \textbf{Importazione da file:} il sistema deve consentire di importare file contenenti gli asset del dispositivo da analizzare, in formati strutturati standard;
-            \item \textbf{Creazione di asset:} il sistema permette la creazione diretta degli asset tramite \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} web, nel caso non sia disponibile un file di \textit{input}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Input}{G}} predefinito;
-            \item \textbf{Interazione con i decision trees:} per ciascun asset, il sistema mostra i decision trees pertinenti attraverso una rappresentazione grafica intuitiva, facilitando la comprensione del flusso decisionale;
-            \item \textbf{Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, JSON, ecc.) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
+            \item {\ttfamily Importazione da file:} il sistema deve consentire di importare file contenenti i dati del dispositivo da analizzare e i suoi asset, in formati strutturati standard;
+            \item {\ttfamily Creazione di un dispositivo:} il sistema permette la creazione diretta del dispositivo tramite \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} web, nel caso non sia disponibile un file di \textit{input}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Input}{G}} predefinito;
+            \item {\ttfamily Interazione con i decision trees:} per ciascun asset del dispositivo il sistema esegue i decision trees corretti. Durante il test l'interazione con i decision tree viene semplificata da un'interfaccia semplice per l'utente, che si limita a rispondere a delle domande.  
+            \item {\ttfamily Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, JSON, ecc.) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
+            \item {\ttfamily Caricamento di una sessione:} è possibile caricare il file JSON di una sessione passata per visionare i risultati del test ad essa associati. Se il test non era concluso é possibile riprenderlo dal punto a cui si era arrivati.
         \end{itemize}
     
     \newpage
@@ -274,7 +291,7 @@
                 \rowcolor{gold}
                 \textbf{Libreria}  & \textbf{Versione}  & \textbf{Descrizione}   \\
                 \hline
-                \textbf{React} & 19.2.0 & Libreria di JavaScript per la costruzione di interfacce utente dinamiche e interattive. Si basa su un'archiettura component-based in cui l'interfaccia è suddivisa in componenti riutilizzabili e indipendenti, ciascuno responsabile di una specifica porzione della UI.\\
+                \textbf{React} & 19.2.0 & Libreria di JavaScript per la costruzione di interfacce utente dinamiche e interattive. Si basa su un'architettura component-based in cui l'interfaccia è suddivisa in componenti riutilizzabili e indipendenti, ciascuno responsabile di una specifica porzione della UI.\\
                 \hline
                 \textbf{Pydantic} & 2.12.5 & Libreria Python utilizzata per la validazione dei dati, basata sulle annotazioni di tipo. Consente di definire strutture dati come classi per garantire che i parametri in ingresso rispettino i tipi e i vincoli rispettati.\\
                 \hline
@@ -283,6 +300,8 @@
                 \textbf{React Router} & ??? & Libreria React che garantisce il routing: permette di navigare tra diverse pagine senza attivare un ricaricamento completo e della pagine e permette la navigazione con i tanti avanti e indietro del browser senza perdere lo stato.\\
                 \hline
                 \textbf{Zustand} & ??? & Libreria leggera, veloce e scalabile per la gestione dello stato in React, basata su hook e un approccio store-based. Permette di creare store centralizzati per condividere dati fra componenti. \\
+                \hline
+                \textbf{reportlab} & 4.4.10 & La libreria ReportLab è uno strumento per Python che consente di generare file PDF in modo programmatico. Permette di creare documenti complessi con testo, immagini, tabelle e layout personalizzati direttamente dal codice. È ampiamente utilizzata per report automatici, fatture e documenti dinamici generati lato server. Grazie alla sua flessibilità, è adatta sia a progetti semplici che a sistemi enterprise. \\
                 \hline
             \end{tabularx}
         \end{center}
@@ -326,11 +345,1017 @@
                 \hline
                 \textbf{React Testing Library} & ??? & Libreria per il testing dei componenti React, che permette di verificare il comportamento dei componenti dal punto di vista dell'utente finale. \\
                 \hline 
-                \textbf{Pytest} & ??? & Framework per l'esecuzione di test automatizzati in Python, con supporto per fixture, assert avanzati e plugin estensibili. \\
+                \textbf{Pytest} & 9.0.2 & Framework per l'esecuzione di test automatizzati in Python, con supporto per fixture, assert avanzati e plugin estensibili. \\
                 \hline 
-                \textbf{HTTPX} & ??? & Client HTTP per Python che permette di effettuare richieste sincrone e asincrone. Può essere utilizzato per testare API simulando chiamate client verso gli endpoint del backend. \\
+                \textbf{HTTPX} & 0.28.1 & Client HTTP per Python che permette di effettuare richieste sincrone e asincrone. Può essere utilizzato per testare API simulando chiamate client verso gli endpoint del backend. \\
                 \hline
             \end{tabularx}
         \end{center}
 
+
+    \section{Architettura}
+        \subsection{Architettura logica}
+            Il progetto adotta un'architettura a strati (layered) che si articola in quattro livelli distinti: \textbf{Presentation, Application, Domain e Infrastructure}. Questa scelta è motivata dalla natura del sistema: si tratta di un'applicazione con flussi di dati prevalentemente lineari e prevedibili, dove le richieste HTTP attraversano i layer in modo direzionato e senza inversioni di controllo complesse. Rispetto all'architettura esagonale (ports \& adapters), la layered è più semplice da implementare e comprendere. L'architettura esagonale offrirebbe maggiore disaccoppiamento tra dominio e infrastruttura tramite porte e adattatori espliciti, ma introduce una complessità strutturale difficile da giustificare quando gli adattatori sono fissi (un solo database su file, una sola API REST). La struttura a layer è già sufficiente a garantire la separazione delle responsabilità, la testabilità del dominio (come dimostrano i numerosi unit test presenti) e la manutenibilità del codice, senza aggiungere overhead architetturale non necessario.
+        \subsection{Architettura di deployment}
+            Il sistema viene distribuito come applicazione monolitica — un singolo backend FastAPI e un singolo frontend React — piuttosto che come insieme di microservizi indipendenti. Questa scelta è giustificata dal contesto d'uso reale: il committente è un'azienda con orari di lavoro definiti, il che implica che la web application sarà attiva solo in specifiche fasce orarie, con lunghi periodi di inattività. In uno scenario del genere, i microservizi introdurrebbero costi operativi e complessità infrastrutturale (service discovery, comunicazione inter-servizio) del tutto sproporzionati rispetto ai benefici. Un'architettura monolitica, containerizzata tramite Docker Compose come da configurazione presente nel progetto, è più semplice da avviare, fermare e manutenere, richiede meno risorse computazionali a riposo e consente deploy rapidi. La scalabilità orizzontale offerta dai microservizi non è un requisito rilevante per un tool di compliance interno, utilizzato da un numero limitato di utenti in sessioni di lavoro giornaliere.
+
+        \subsection{UML backend}
+        \paragraph{Precisazione sulla visibilità}\mbox{}\\
+            In Python non esiste un sistema formale di modificatori di visibilità (come 'public', 'private' o 'protected' presenti in altri linguaggi). La distinzione tra membri pubblici e non pubblici è quindi basata su una \textbf{convenzione di naming} condivisa dalla comunità.
+
+            In particolare, tutti i metodi e gli attributi il cui nome inizia con un singolo underscore (\_) sono da considerarsi \textbf{privati per convenzione}, e non dovrebbero essere utilizzati direttamente dall'esterno della classe o del modulo. Al contrario, i metodi e gli attributi che non presentano tale prefisso sono da considerarsi \textbf{pubblici} e costituiscono l'interfaccia esposta della classe.
+            
+            Questa convenzione non impone vincoli a livello di linguaggio, ma rappresenta un contratto implicito tra sviluppatori volto a garantire incapsulamento, leggibilità e manutenibilità del codice.
+
+        
+        \subsection{Descrizione architettura backend}
+            \subsubsection{Presentation Layer}
+                \textbf{Scopo}: Gestisce l'interfaccia di comunicazione tra il mondo esterno (client HTTP) e l'applicazione.
+
+                \noindent \textbf{Responsabilità}: Espone gli endpoint API utilizzando il framework FastAPI. Si occupa di validare i dati in ingresso (tramite schemi Pydantic), gestire le sessioni HTTP, definire le rotte (router) e restituire le risposte corrette al client.
+            
+                \paragraph{SessionController}\mbox{}\\
+                    Controller FastAPI che gestisce tutti gli endpoint della sessione. Ogni endpoint si collega mediante un interfaccia ad un UseCase, che esegue la logica per ritornare la risposta.
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=1\linewidth]{../../../Assets/Classi/SessionController.png}
+                              \caption{SessionController: Classe e Schema di validazione}
+                        \end{figure}
+                    \end{center}
+
+                    Gli endpoint gestiti dal \textbf{SessionController} sono i seguenti: 
+
+                    \begin{itemize}
+                        \item {\ttfamily create\_session\_with\_file(file: File(...)) : SessionResponseSchema} \\ Permette di avviare una nuova sessione di test caricando un file JSON contenente le specifiche del dispositivo. Restituisce i dati necessari utili per inizializzare la sessione, validati mediante il \textbf{SessionResponseSchema} ;
+                        \item {\ttfamily create\_session(body: DeviceSchema): SessionResponseSchema} \\ Svolge la stessa funzione dell'endpoint precedente, ma riceve i dati del dispositivo direttamente come oggetto JSON nel corpo della richiesta (body). È utile per integrazioni dirette senza passaggio da file system. I dati in ingresso vengono validati dal \textbf{DeviceSchema} e quelli in uscita dal \textbf{SessionResponseSchema} ;                         
+                        \item {\ttfamily answer(body: AnswerRequestSchema, session\_id: String) : AnswerResponseSchema} \\ Registra la risposta (Sì/No) al nodo corrente dell'albero decisionale attivo. Restituisce le informazioni sul nodo successivo o l'eventuale completamento dell'albero o dell'intera sessione. I dati in ingresso vengono validati dal \textbf{AnswerRequestSchema} e quelli in uscita dal \textbf{AnswerResponseSchema} ; 
+                        \item {\ttfamily go\_back(body: GoBackRequestSchema, session\_id: String): GoBackResponseSchema} \\ Consente all'utente di tornare a un nodo specifico della cronologia all'interno dell'asset, permettendo di modificare una risposta precedente. Ricalcola automaticamente il percorso e la posizione corrente nel test. I dati in ingresso vengono validati dal \textbf{GoBackRequestSchema} e quelli in uscita dal \textbf{GoBackResponseSchema} ; 
+                        \item {\ttfamily export\_session(body: ExportSessionRequestSchema, session\_id: String): Response} \\ Genera e restituisce un file JSON scaricabile che contiene lo stato completo della sessione (dati dispositivo, risposte e progressi). Serve per il backup o per riprendere il test in un secondo momento ; 
+                        \item {\ttfamily export\_results(session\_id: String, format: String = "csv"): Response} \\ Elabora i risultati aggregati della conformità e li restituisce in formato CSV o PDF. È l'endpoint dedicato alla generazione della reportistica finale di conformità ; 
+                        \item {\ttfamily delete\_session(session\_id: String): void} \\ Rimuove definitivamente la sessione dalla memoria volatile del server e cancella il relativo file di persistenza dal disco. Restituisce uno stato di successo senza contenuto ;
+                        \item {\ttfamily modify\_device(body: DeviceSchema, session\_id: String):  void} \\ Permette di aggiornare le informazioni descrittive o gli asset del dispositivo prima che il test abbia inizio. Ricrea la sessione mantenendo lo stesso ID per riflettere le modifiche apportate. I dati in ingresso vengono validati dal \textbf{DeviceSchema};
+                        \item {\ttfamily load\_session\_from\_file(file: File(...)):  LoadSessionReponseSchema} \\ Carica una sessione precedentemente esportata da file JSON. Restituisce lo stato completo della sessione (device, posizione, risultati, risposte). I dati in uscita vengono validati dal \textbf{LoadSessionResponseSchema}.
+                    \end{itemize}
+
+                    L'utilizzo della classe \textbf{Response} di FastAPI (o delle sue sottoclassi) è preferibile rispetto a uno schema Pydantic quando  serve la gestione dei File Binari e Media Type. 
+                    
+                \paragraph{TreesController}\mbox{}\\
+                    Controller FastAPI che gestisce l'endpoint per ottenere i decision tree dal backend.
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=1\linewidth]{../../../Assets/Classi/TreesController.png}
+                              \caption{TreesController: Classe e Schema di validazione}
+                        \end{figure}
+                    \end{center}
+
+                    \textbf{TreesController} gestisce un unico endpoint: 
+
+                    \begin{itemize}
+                        \item {\ttfamily get\_trees() : list<TreesSchema> } \\ Utilizzato all'avvio dell'applicazione, permette di avere gli alberi immediatamente pronti nel frontend. I dati in uscita vengono validati dal \textbf{TreesSchema}
+                    \end{itemize}
+
+            \subsubsection{Application Layer}
+                \textbf{Scopo}: Orchestra i flussi di dati e implementa i casi d'uso (Use Cases) dell'applicazione.
+
+                \noindent \textbf{Responsabilità}: Questo layer non contiene logica di business pura, ma coordina l'esecuzione delle operazioni chiamando i servizi del dominio e le infrastrutture. Gestisce lo stato dell'applicazione (AppState) e definisce le interfacce per le operazioni come la creazione di sessioni o il recupero dei dati.\textbf{}
+                \\
+                \noindent Tutte le interfacce seguono lo stesso schema: unico metodo {\ttfamily execute()} tipizzato su un request e un response specifici. Inoltre tutti gli UseCase concreti del SessionController utilizzano l'interfaccia \textbf{ISessionService} che astrae metodi utili alla manipolazione della sessione.  
+            
+                \paragraph{AppState}\mbox{}\\
+                    AppState è una semplice classe che funge da gestore dello stato globale in memoria per l'applicazione, definendo due attributi principali: una lista di oggetti DecisionTree (trees) e un dizionario che associa identificatori testuali a oggetti Session (sessions). Viene utilizzata per mantenere in cache i dati essenziali per l'intera durata del ciclo di vita dell'applicazione FastAPI. All'avvio del server  (tramite il \textbf{gestore di contesto lifespan}), AppState.trees viene inizializzato e popolato caricando in memoria tutti gli alberi decisionali dal file system tramite la classe FileTreeProvider. In questo modo i dati restano rapidamente accessibili per le successive richieste API, per poi venire esplicitamente rimossi (AppState.trees = []) durante la fase di spegnimento e pulizia dell'applicazione.
+
+            
+                \paragraph{ICreateSessionUseCase}\mbox{}\\
+                    Contratto per la creazione di una sessione a partire da un dizionario proveniente da un file json caricato.
+                    
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.8\linewidth]{../../../Assets/Classi/CreateSessionUC.png}
+                              \caption{CreateSessionUseCase: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+                    
+
+                \paragraph{CreateSessionRequest}\mbox{}\\
+                    DTO di richiesta per la creazione della sessione.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily device\_data: Dictionary}: dizionario contenente le informazioni del dispositivo.
+                    \end{itemize}
+
+                \paragraph{AssetResponse}\mbox{}\\
+                    DTO di risposta contenente gli asset di un dispositivo.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily id: String}: id dell'asset;
+                        \item {\ttfamily name: String}: nome dell'asset;
+                        \item {\ttfamily type: String}: tipo dell'asset;
+                        \item {\ttfamily is\_sensitive: bool}: flag di sensibilità dell'asset;
+                        \item {\ttfamily description: String}: descrizione dell'asset.
+                    \end{itemize}
+
+                \paragraph{CreateSessionResponse}\mbox{}\\
+                    DTO di risposta alla creazione della sessione.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_id: String}: id univoco della sessione;
+                        \item {\ttfamily device\_name: String}: nome del dispositivo oggetto di verifica;
+                        \item {\ttfamily assets: list<AssetResponse>}: lista degli asset del dispositivo;
+                        \item {\ttfamily device\_os: String}, {\ttfamily device\_firmw\_v: String}, {\ttfamily device\_funcs: String}, {\ttfamily device\_desc: String}: metadati relativi al dispositivo;
+                        \item {\ttfamily current\_asset\_index: int}: indice dell'asset corrente;
+                        \item {\ttfamily current\_tree\_index: int}: indice dell'albero corrente;
+                        \item {\ttfamily current\_node\_id: String}: id del nodo corrente.
+                    \end{itemize}
+
+
+                \paragraph{CreateSessionUseCase}\mbox{}\\
+                    Valida il dizionario del device tramite Pydantic, costruisce l'oggetto Device con i suoi asset e delega al SessionService la creazione della sessione.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily \_session\_service: ISessionService}
+                    \end{itemize}
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(request: CreateSessionRequest): CreateSessionResponse}
+                    \end{itemize}
+
+
+                \paragraph{IAnswerUseCase}\mbox{}\\
+                    Contratto per la risposta al nodo corrente di una sessione.
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.5\linewidth]{../../../Assets/Classi/AnswerUC.png}
+                              \caption{AnswerUseCase: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+                    
+
+                \paragraph{AnswerRequest}\mbox{}\\
+                    DTO di richiesta di invio della risposta al nodo corrente.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_id: String}: id univoco della sessione;
+                        \item {\ttfamily answer: bool}: risposta alla domanda del decision tree.
+                    \end{itemize}
+
+                \paragraph{AnswerResponse}\mbox{}\\
+                    DTO di risposta al completamento del nodo corrente.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily next\_node\_id: String}: id del prossimo nodo con la prossima domanda da rispondere;
+                        \item {\ttfamily tree\_completed: bool}: flag di completamento dell'albero;
+                        \item {\ttfamily tree\_result String}: risultato di completamento dell'albero;
+                        \item {\ttfamily session\_finished: bool}: flag di completamento della sessione;
+                        \item {\ttfamily results: Dictionary}; dizionario contenente i risultati della sessione;
+                        \item {\ttfamily current\_asset\_index: int}; indice dell'asset corrente;
+                        \item {\ttfamily current\_tree\_index: int}; indice dell'albero corrente;
+                    \end{itemize}
+
+                \paragraph{AnswerUseCase}\mbox{}\\
+                    Carica la sessione tramite il service, chiama {\ttfamily session.answer()} e salva lo stato aggiornato. Restituisce {\ttfamily AnswerResponse} con il prossimo nodo, il risultato dell'albero se completato e il flag di fine sessione.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily \_session\_service: ISessionService}
+                    \end{itemize}
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(request: AnswerRequest): AnswerResponse}
+                    \end{itemize}
+
+
+                \paragraph{IGoBackUseCase}\mbox{}\\
+                    Contratto per il ritorno a un nodo precedente nella history del tree corrente.
+                    
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/GoBackUC.png}
+                              \caption{GoBackUseCase: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+                    
+
+                \paragraph{GoBackRequest}\mbox{}\\
+                    DTO di richiesta per ritornare a un nodo già risposto nell'albero corrente.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_id: String}: id univoco della sessione;
+                        \item {\ttfamily target\_asset\_index: int}: asset in cui si vuole cambiare la risposta;
+                        \item {\ttfamily target\_tree\_index: String}: albero in cui si vuole cambiare la risposta;
+                        \item {\ttfamily target\_node\_id: String}: nodo in cui si vuole cambiare la risposta;
+                        \item {\ttfamily new\_answer: bool}: nuova risposta data alla domanda;
+                    \end{itemize}
+
+                \paragraph{GoBackResponse}\mbox{}\\
+                    DTO di risposta al ritorno indietro di un nodo a cui l'utente aveva già risposto.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily found : bool}: flag di ritrovamento del nodo;
+                        \item {\ttfamily node\_id : String}: id del nodo (se ritrovato);
+                        \item {\ttfamily tree\_completed: bool}: flag di completamento dell'albero;
+                        \item {\ttfamily tree\_result: String}: risultato del completamento dell'albero;
+                        \item {\ttfamily session\_finished: bool}: flag di completamento della sessione; 
+                        \item {\ttfamily results: Dictionary}: dizionario contenente i risultati dei decision tree;
+                        \item {\ttfamily current\_asset\_index: int}: indice dell'asset corrente;
+                        \item {\ttfamily current\_tree\_index: int}: indice dell'albero corrente.
+                    \end{itemize}
+
+                \paragraph{GoBackUseCase}\mbox{}\\
+                    Carica la sessione tramite il service, cerca il nodo target nella navigation stack tramite l'id e chiama {\ttfamily session.go\_back()}.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily \_session\_service: ISessionService}
+                    \end{itemize}
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(request: GoBackRequest): GoBackResponse}
+                    \end{itemize}
+
+
+                \paragraph{IExportResultsUseCase}\mbox{}\\
+                    Contratto per l'esportazione dei risultati in un file esterno.
+                    
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/ExportResultsUC.png}
+                              \caption{ExportResultsUseCase: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+
+                \paragraph{ExportResultsRequest}\mbox{}\\
+                    DTO di richiesta di esportazione risultati su un file esterno.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_id: String}: id univoco della sessione;
+                        \item {\ttfamily format: String}: formato di esportazione (csv/pdf).
+                    \end{itemize}
+
+                \paragraph{ExportResultsResponse}\mbox{}\\
+                    DTO di risposta all'esportazione dei risultati del test su file.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily content: bytes}: contenuto del file;
+                        \item {\ttfamily media\_type: String}: tipo di file (csv/pdf);
+                        \item {\ttfamily filename: String}: nome del file.
+                    \end{itemize}
+
+                \paragraph{ExportResultsUseCase}\mbox{}\\
+                    Carica la sessione tramite il service, seleziona l'exporter appropriato dal dizionario, chiama {\ttfamily export()} e restituisce i byte con media type e nome del file.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily \_session\_service: ISessionService}
+                    \end{itemize}
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(request: ExportResultsRequest): ExportResultsResponse}
+                    \end{itemize}
+
+
+                \paragraph{IExportSessionUseCase}\mbox{}\\
+                    Contratto per l'esportazione dell'intera sessione come file json scaricabile.
+                    
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/ExportSessionUC.png}
+                              \caption{ExportSessionUseCase: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+                    
+
+                \paragraph{ExportSessionRequest}\mbox{}\\
+                DTO di richiesta per l'esportazione della sessione su file.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_id: String}: id univoco della sessione;
+                        \item {\ttfamily answer: List<Dictionary>}: lista delle risposte date serializzate tramite dizionario.
+                    \end{itemize}
+
+                \paragraph{ExportSessionResponse}\mbox{}\\
+                    DTO di risposta all'esportazione della sessione su file.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily content: bytes}: contenuto del file;
+                        \item {\ttfamily filename: String}: nome del file.
+                    \end{itemize}
+
+                \paragraph{ExportSessionUseCase}\mbox{}\\
+                    Carica la sessione tramite il service e serializza l'intero stato come json, restituendolo come bytes scaricabili.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily \_session\_service: ISessionService}
+                    \end{itemize}
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(request: ExportSessionRequest): ExportSessionResponse}
+                    \end{itemize}
+
+                
+
+                \paragraph{IDeleteSessionUseCase}\mbox{}\\
+                    Contratto per la cancellazione di una sessione.
+                    
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.5\linewidth]{../../../Assets/Classi/DeleteSessionUC.png}
+                              \caption{DeleteSessionUseCase: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+
+
+                \paragraph{DeleteSessionRequest}\mbox{}\\
+                    DTO di richiesta per la cancellazione di una sessione. \\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_id: String}: id univoco della sessione.
+                    \end{itemize}
+
+                \paragraph{DeleteSessionUseCase}\mbox{}\\
+                    Verifica che la sessione esista e poi la elimina sia dalla cache che dal repository.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily \_session\_service: ISessionService}
+                    \end{itemize}
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(request: DeleteSessionRequest): void}
+                    \end{itemize}
+
+                \paragraph{IModifyDeviceUseCase}\mbox{}\\
+                    Contratto per la modifica del device creato manualmente. 
+                    
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.5\linewidth]{../../../Assets/Classi/ModifyDeviceUC.png}
+                              \caption{ModifyDevice: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+                    
+
+                \paragraph{ModifyDeviceRequest}\mbox{}\\
+                    DTO di richiesta per modificare il device creato.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_id: String}: id univoco della sessione in cui va modificato il device;
+                        \item {\ttfamily device\_data: Dictionary}: dizionario con le nuove informazioni del device;
+                    \end{itemize}
+
+                \paragraph{ModifyDeviceUseCase}\mbox{}\\
+                    Carica la sessione tramite il service, crea il nuovo device e sovrascrive la sessione precedente con la nuova modificata mediante la factory.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily \_session\_service: ISessionService}
+                        \item {\ttfamily \_factory: SessionFactory}
+                    \end{itemize}
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(request: ModifyDeviceRequest): void}
+                    \end{itemize}
+
+                \paragraph{ILoadSessionUseCase}\mbox{}\\
+                    Contratto per l'upload di una sessione di test vecchia in formato JSON. 
+                    
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.8\linewidth]{../../../Assets/Classi/LoadSessionUC.png}
+                              \caption{ILoadSessionUseCase: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+                    
+
+                \paragraph{LoadSessionRequest}\mbox{}\\
+                    DTO di richiesta per l'upload della sessione.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_data: Dictionary}: dizionario contenente le informazioni della sessione.
+                    \end{itemize}
+
+                \paragraph{LoadSessionResponse}\mbox{}\\
+                    DTO di risposta all'upload della sessione.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily session\_id: String}: id univoco della sessione;
+                        \item {\ttfamily device\_name: String}: nome del dispositivo oggetto di verifica;
+                        \item {\ttfamily device\_os: String}, {\ttfamily device\_firmw\_v: String}, {\ttfamily device\_funcs: String}, {\ttfamily device\_desc: String}: metadati relativi al dispositivo;
+                        \item {\ttfamily assets: list<AssetResponse>}: lista degli asset del dispositivo;
+                        \item {\ttfamily current\_asset\_index: int}: indice dell'asset corrente;
+                        \item {\ttfamily current\_tree\_index: int}: indice dell'albero corrente;
+                        \item {\ttfamily current\_node\_id: String}: id del nodo corrente.
+                        \item {\ttfamily answers: list<Dictionary>}: lista delle riposte date nel precedente test della sessione.
+                        \item {\ttfamily results: Dictionary<String, Dictionary<String, String>}: dizionario contenente i risultati di ogni requisito per ogni asset. 
+                        \item {\ttfamily aggregate\_results: Dictionary}: dizionario dei risultati con formato utile al frontend per la visualizzazione
+                        \item {\ttfamily is\_finished: bool}: valore booleano che dice se la sessione caricata era conclusa o meno
+                    \end{itemize}
+
+
+                \paragraph{LoadSessionUseCase}\mbox{}\\
+                    Carica una vecchia sessione salvata su file e ripristina il contesto, mostrando tutti i risultati già ottenuti.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily \_session\_service: ISessionService}
+                        \item {\ttfamily \_factory: SessionFactory}
+                    \end{itemize}
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(request: LoadSessionRequest): LoadSessionResponse}
+                    \end{itemize}
+
+                \paragraph{IGetTreesUseCase}\mbox{}\\
+                    Contratto per il recupero della lista degli alberi decisionali disponibili.
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/GetTreesUC.png}
+                              \caption{GetTreesUseCase: interfaccia, DTOs e classe}
+                        \end{figure}
+                    \end{center}
+
+                \paragraph{TreesResponse}\mbox{}\\
+                    DTO di risposta che ritorna un singolo albero decisionali.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily id: String}: id dell'albero;
+                        \item {\ttfamily title: String}: titolo dell'albero;
+                        \item {\ttfamily dependencies: list<String>}: dipendenze dell'albero;
+                        \item {\ttfamily nodes: Dictionary}: nodi dell'albero.
+                    \end{itemize}
+
+                \paragraph{GetTreesResponse}\mbox{}\\
+                    DTO di risposta che ritorna la lista di alberi decisionali.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily trees: list<TreesResponse>}: lista di alberi.
+                    \end{itemize}
+
+
+                \paragraph{GetTreesUseCase}\mbox{}\\
+                    Riceve la lista di alberi caricata in memoria e la serializza come lista di dizionari.\\\\
+                    \textbf{Metodo}
+                    \begin{itemize}
+                        \item {\ttfamily execute(): GetTreesResponse}: ritorna una lista di alberi.
+                    \end{itemize}
+            
+                \paragraph{ISessionService}\mbox{}\\
+                    Interfaccia del service di dominio esposta verso l'application layer.\\\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/ISessionService.png}
+                              \caption{ISessionService: interfaccia}
+                        \end{figure}
+                    \end{center}
+                    
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily create\_session(device: Device): Session}: crea una session a partire dal dispositivo passato per parametro;
+                        \item {\ttfamily get\_session(session\_id: String): Session | null}: recupera la sessione con l'id passato per parametro dalla repo;
+                        \item {\ttfamily save\_session(session: Session): null}: salva la sessione passata per parametro;
+                        \item {\ttfamily delete\_session(session\_id: String): null}: elimina la sessione con l'id passato per parametro.
+                    \end{itemize}
+                    
+            \subsubsection{Domain Layer}
+                \textbf{Scopo}: Rappresenta il cuore pulsante del sistema, contenente le regole di business fondamentali.
+
+                \noindent\textbf{Responsabilità}: Definisce le entità (come Session, Device, DecisionTree) e la logica che non dipende da framework o database. È il layer più interno e isolato.
+
+                \paragraph{AssetType}
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.8\linewidth]{../../../Assets/Classi/Asset.png}
+                              \caption{Asset: classe e relativa enumerazione}
+                        \end{figure}
+                    \end{center}
+                    
+                    Enumerazione che defnisce i quattro asset previsti dallo standard EN18031:
+                    \begin{itemize}
+                        \item Network function;
+                        \item Network function configuration;
+                        \item Security function;
+                        \item Securitfy parameter.
+                    \end{itemize}
+                    Espone un metodo di classe {\ttfamily from\_string(value: String): AssetType}, per costruire il valore corretto a partire da una stringa. 
+
+                    Un metodo di classe in Python è un metodo che riceve la classe stessa come primo parametro implicito, mentre un metodo di istanza riceve l’istanza.
+
+                        
+                \paragraph{Asset}\mbox{}\\
+                    Rappresenta un singolo componente da testare.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_asset\_id: String}: id univoco dell'asset;
+                        \item {\ttfamily \_name: String}: nome dell'asset;
+                        \item {\ttfamily \_type: AssetType}: tipo dell'asset;
+                        \item {\ttfamily \_is\_sensitive: bool}: flag di sensibilità dell'asset;
+                        \item {\ttfamily \_desc: String}: descrizione (opzionale) dell'asset.
+                    \end{itemize}
+                    \textbf{Metodi}
+                        \begin{itemize}
+                            \item Metodi getter per ogni attributo;
+                            \item Metodi setter per ogni attributo ad eccezione dell'id;
+                            \item {\ttfamily to\_dict(): Dictionary}: metodo utilizzato per la serializzazione.
+                        \end{itemize}
+                \paragraph{Device}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.4\linewidth]{../../../Assets/Classi/Device.png}
+                              \caption{Device: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Rappresenta il dispositivo facente uso di onde radio oggetto della valutazione. Aggrega una lista di Asset e contiene le informazioni generali del dispositivo.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_device\_name: String}: nome del dispositivo;
+                        \item {\ttfamily \_assets: list<Asset>}: lista degli asset;
+                        \item {\ttfamily \_operating\_sys: String}: sistema operativo del dispositivo;
+                        \item {\ttfamily \_firm\_vers: String}: versione del firmware del dispositivo;
+                        \item {\ttfamily \_funcs: String}: funzionalità del dispositivo;
+                        \item {\ttfamily \_desc: String}: descrizione del dispositivo.
+                    \end{itemize}
+                    \textbf{Metodi}
+                        \begin{itemize}
+                            \item Metodi getter per ogni attributo;
+                            \item Metodi setter per ogni attributo ad eccezione della lista degli asset;
+                            \item {\ttfamily to\_dict(): Dictionary<String, any>}: metodo utilizzato per la serializzazione.
+                        \end{itemize}
+                
+                \paragraph{Node}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.2\linewidth]{../../../Assets/Classi/Node.png}
+                              \caption{Node: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Rappresenta un nodo di un decision tree.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_node\_id: String}: id del nodo;
+                        \item {\ttfamily \_question: String}: stringa contenente il testo della domanda;
+                        \item {\ttfamily \_yes: Node | Result}: risposta "sì", può portare ad un altro nodo o a un risultato;
+                        \item {\ttfamily \_no: Node | Result}: risposta "no", può portare ad un altro nodo o a un risultato;
+                    \end{itemize}
+                    \textbf{Metodi}
+                        \begin{itemize}
+                            \item Metodi getter per ogni attributo.
+                            \item {\ttfamily to\_dict(): Dictionary}: utilizzato per la serializzazione.
+                        \end{itemize}
+                \paragraph{DecisionTree}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.3\linewidth]{../../../Assets/Classi/DecisionTree.png}
+                              \caption{DecisionTree: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Albero decisionale corrispondente ad un requisito EN 18031. l'iterazione diretta sui nodi serializzati.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_id: String}: id dell'albero;
+                        \item {\ttfamily \_title: String}: titolo dell'albero;
+                        \item {\ttfamily \_dependencies: list[String]}: lista delle dipendenze dell'albero;
+                        \item {\ttfamily \_nodes: list[Node]}: lista contenente i nodi del decision tree.
+                    \end{itemize}
+                    \textbf{Metodi}
+                        \begin{itemize}
+                            \item Metodi getter per ogni attributo.
+                        \end{itemize}
+
+                        
+                \paragraph{Session}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/Session.png}
+                              \caption{Session: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Aggregato radice che rappresenta una sessione di test in corso. Contiene lo stato e la logica per l'avanzamento.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_id: String}: id della sessione;
+                        \item {\ttfamily \_device: Device}: dispositivo associato alla sessione;
+                        \item {\ttfamily \_trees: list[DecisionTree]}: lista degli alberi;
+                        \item {\ttfamily state: SessionState}: stato corrente della sessione;
+                        \item {\ttfamily results: ResultStore}: registratore dei risultati;
+                        \item {\ttfamily navigator: SessionNavigator}: navigatore della sessione;
+                        \item {\ttfamily dependencies: DependencyEvaluator}: controllore delle dipendenze;
+                        \item {\ttfamily \_dependency\_manager: DependencyManager}: gestore delle regole di dipendenza fra i decision tree.
+                    \end{itemize}
+                    \textbf{Metodi}
+                        \begin{itemize}
+                            \item Metodi getter per: id, lista completa degli asset, asset corrente, dispositivo, albero corrente, nodo corrente, storia di navigazione, lista completa degli alberi;
+                            \item {\ttfamily record\_result(result: Result): void}: registra il risultato di un decision tree;
+                            \item {\ttfamily answer(ans: bool): AnswerResult}: gestisce la risposta ad una domanda di un nodo;
+                            \item {\ttfamily go\_back(target\_node: Node): GoBackResult}: ritorna indietro alla risposta di un nodo target;
+                            \item {\ttfamily reset\_changed\_tree\_and\_dependents(asset\_index: int,  tree\_index: int): void}: resetta le dipendenze in caso di modifica di una risposta ad un decision tree;
+                            \item {\ttfamily \_skip\_invalid\_trees(): void}: se le dipendenze non sono soddisfatte salta l'albero.
+                        \end{itemize}
+
+            
+                    \paragraph{SessionService}
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.4\linewidth]{../../../Assets/Classi/SessionService.png}
+                              \caption{SessionService: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Implementazione concreta di ISessionService. Coordina la creazione, il recupero, il salvataggio e la cancellazione delle sessioni.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_repo: BaseRepository}: interfaccia generica e astratta che definisce il contratto standard (operazioni di salvataggio, recupero e cancellazione) per la persistenza delle entità
+                        \item {\ttfamily \_factory: SessionFactory}: factory che centralizza la costruzione di oggetti Session;
+                        \item {\ttfamily \_cache: Dictionary}: cache usata per evitare di ricaricare dal file system sessioni già attive nella stessa request;
+                    \end{itemize}
+                    \textbf{Metodi}\\
+                        La classe implementa i metodi dichiarati dall'interfaccia {\ttfamily ISessionService}.
+
+                        
+                \paragraph{SessionState}\mbox\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/SessionState.png}
+                              \caption{SessionState: classe}
+                        \end{figure}
+                    \end{center}
+
+                    Contenitore dello stato serializzabile della sessione. Fornisce i metodi per manipolare lo stack e avanzare tra alberi e asset.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily current\_asset\_index: int}: indice dell'asset corrente;
+                        \item {\ttfamily current\_tree\_index: int}: indice del decision tree corrente;
+                        \item {\ttfamily current\_node: Node}: nodo corrente;
+                        \item {\ttfamily is\_finished: bool}: flag di completamento;
+                        \item {\ttfamily navigation\_stack: list$<$tuple$<$int, Node, bool$>>$}: stack di navigazione. Una lista di tuple composte da tre elementi: l'indice dell'albero, il nodo a cui si ha risposto, la risposta data. 
+                    \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily current\_node\_id(): String}: ritorna l'id del nodo corrente;
+                        \item {\ttfamily push(node: Node, answer: bool): void}: pusha in coda allo stack di navigazione la coppia nodo-risposta;
+                        \item {\ttfamily pop\_until(target\_node: Node, target\_asset\_index: int, target\_tree\_index: int): bool}: rimuove dallo stack tutte le entry dal fondo fino al nodo target compreso. Ritorna true o false in base alla presenza del nodo nello stack;
+                        \item {\ttfamily clear\_stack(): void}: svuota lo stack;
+                        \item {\ttfamily next\_tree(): void}: avanza al prossimo albero;
+                        \item {\ttfamily next\_asset(): void}: avanza al prossimo asset.
+                    \end{itemize}
+
+                    
+                \paragraph{AnswerResult}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.4\linewidth]{../../../Assets/Classi/AnswerResult.png}
+                              \caption{AnswerResult: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Value object resitutito da SessionNavigator.answer(). Porta il prossimo nodo se il tree continua, il risultato e il flag tree\_completed se il tree è terminato e session\_finished se tutti gli asset e alberi sono stati completati.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily next\_node: Node}: prossimo nodo;
+                        \item {\ttfamily tree\_result: Result}: risultato dell'albero;
+                        \item {\ttfamily tree\_completed: bool}: flag di albero completato;
+                        \item {\ttfamily session\_finished: bool}: flag di fine sessione.
+                    \end{itemize}
+
+                    
+                \paragraph{GoBackResult}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.3\linewidth]{../../../Assets/Classi/GoBackResult.png}
+                              \caption{GoBackResult: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Value object resitutito da {\ttfamily SessionNavigator.go\_back()}. Indica se il nodo target è stato trovato e, in caso positivo, il nodo stesso.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily node: Node}: nodo da ripetere;
+                        \item {\ttfamily found: bool}: flag che indica se il nodo era nello stack.
+                    \end{itemize}    
+
+                    
+                \paragraph{SessionNavigator}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/SessionNavigator.png}
+                              \caption{SessionNavigator: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Gestisce la navigazione all'interno della sessione.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily state: SessionState}: stato della sessione;
+                        \item {\ttfamily \_assets: list<Asset>}: lista degli asset;
+                        \item {\ttfamily \_trees: list<DecisionTree>}: lista dei decision trees;
+                    \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily current\_asset(): Asset}: ritorna l'asset corrente;
+                        \item {\ttfamily current\_tree(): DecisionTree}: ritorna il decision tree corrente;
+                        \item {\ttfamily current\_node(): Node}: ritorna il nodo corrente all'interno del tree attivo;
+                        \item {\ttfamily answer(ans: bool): AnswerResult}: Processa la risposta al nodo corrente. Se il ramo porta a un altro nodo, aggiorna il current node e lo restituisce. Se il ramo porta a un Result, avanza al prossimo tree e restituisce il risultato da registrare;
+                        \item {\ttfamily go\_back(target\_node: Node, target\_asset\_index: int, target\_tree\_index: int): GoBackResult}: torna  al nodo target cancellando tutte le rispose successive;
+                        \item {\ttfamily navigation\_history(): list<Dictionary>}: restituisce la lista dei nodi già risposti nel decision tree corrente;
+                        \item {\ttfamily \_advance\_tree(): void}: avanza al prossimo albero;
+                        \item {\ttfamily next(): void}: metodo pubblico che richiama {\ttfamily \_advance\_tree()}.
+                    \end{itemize}
+                \paragraph{ResultStore}
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/ResultStore.png}
+                              \caption{ResultStore: classe e relativa enumerazione}
+                        \end{figure}
+                    \end{center}
+                    
+                    Dizionario a due livelli che registra i risultati accumulati durante la sessione.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_results: Dictionary$<$String, Dictionary$<$String, Result$>>$}: dizionario dei risultati;
+                    \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily record(asset\_id: String, tree\_id: String, result: Result): void}: registra il risultato;
+                        \item {\ttfamily reset(asset\_id: String, tree\_id: String): void}: resetta il risultato sull'asset e decision tree passati come parametri;
+                        \item {\ttfamily get(asset\_id: String, tree\_id: String): Result}: ritorna il risultato in base all'asset e al decision tree;
+                        \item {\ttfamily to\_dict(): Dictionary$<$String, Dictionary$<$String, String$>>$}: ritorna un dizionario con i nuovi valori??????? 
+                        \item {\ttfamily get\_aggregated\_result(all\_tree\_ids: List<String>): Dictionary<String, String>}: calcola il risultato globale per ogni requisito (albero) basandosi su tutti gli asset.
+                    \end{itemize}
+
+                \paragraph{Result}\mbox{}\\
+                    Enumerazione contenente i tre possibili esiti del decision tree:
+                    \begin{itemize}
+                        \item PASS;
+                        \item FAIL;
+                        \item NOT\_APPLICABLE.
+                    \end{itemize}
+                    
+                \paragraph{DependencyEvaluator}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/DependencyEvaluator.png}
+                              \caption{DependencyEvaluator: classe}
+                        \end{figure}
+                    \end{center}
+
+                    
+                    Verifica se le dipendenze di un albero sono soddisfatte per un certo asset.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_results: ResultStore}: dizionario dei risultati;
+                    \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily check(asset\_id: String, tree: DecisionTree): bool}: ritorna true/false in base al rispetto/non rispetto delle dipendenze.
+                    \end{itemize}  
+
+                    \paragraph{DependencyManager}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/DependencyManager.png}
+                              \caption{DependencyManager: classe}
+                        \end{figure}
+                    \end{center}
+
+                    
+                    Gestisce le regole di dipendenza tra decision tree durante la navigazione
+                    e quando una risposta viene modificata.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily \_results: ResultStore}: dizionario dei risultati;
+                        \item {\ttfamily \_navigator: SessionNavigator}: gestore della navigazione della sessione;
+                        \item {\ttfamily \_dependencies: DependencyEvaluator}: verificatore delle dipendenze;
+                        \item {\ttfamily \_trees: List<DecisionTree>}: lista dei decision tree.
+                    \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily reset\_changed\_trees\_and\_dependents(asset\_id: String, tree\_index: int): void}: resetta le dipendenze in caso di modifica di una risposta ad un decision tree;
+                        \item {\ttfamily skip\_invalid\_trees(): void}: salta gli alberi in base alle dipendenze.
+                    \end{itemize}  
+
+            
+                \paragraph{SessionFactory}
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/SessionFactory.png}
+                              \caption{SessionFactory: classe}
+                        \end{figure}
+                    \end{center}
+                    
+                    Centralizza la costruzione di oggetti Session.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily tree\_provider: TreeProvider}: dipendenza ricevuta per caricare gli alberi.
+                    \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily create(device: Device, session\_id: String): Session}: genera un nuovo id e istanzia tutti i componenti interni;
+                        \item {\ttfamily restore(device: Device, session\_id: String): Session}: crea una session partendo da dati già persistiti.
+                    \end{itemize}
+
+                \paragraph{DomainException}
+                
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.8\linewidth]{../../../Assets/Classi/Exceptions.png}
+                              \caption{Eccezioni: classe base e derivate}
+                        \end{figure}
+                    \end{center}
+                    
+                    Classe base per tutte le eccezioni di dominio.\\\\
+                    \textbf{Attributo}
+                    \begin{itemize}
+                        \item {\ttfamily detail: String}: messaggio leggibile.
+                    \end{itemize}
+
+                \paragraph{SessionNotFoundException}\mbox{}\\
+                    Sollevata quando si cerca una sessione con un id che non esiste né in cache né nel repository.
+
+                \paragraph{InvalidDeviceFileException}\mbox{}\\
+                    Sollevata quando il file json del device non supera la validazione dello schema Pydantic.
+
+                \paragraph{InvalidFileException}\mbox{}\\
+                    Sollevata quando ????.
+
+                \paragraph{UnsupportedExportFormatException}\mbox{}\\
+                    Sollevata quando il formato richiesto per l'export non è tra quelli disponibili (csv, pdf).
+
+                \paragraph{InvalidSessionIdException}\mbox{}\\
+                    Sollevata quando session\_id fornito in una richiesta non è un UUID v4 valido.
+                    
+
+                \paragraph{ExportStrategy}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[width=.6\linewidth]{../../../Assets/Classi/Exporters.png}
+                            \caption{Esportatori: interfaccia e classi}
+                        \end{figure}
+                    \end{center}
+
+                    Interfaccia utilizzata per definire il contratto per le strategie di esportazione dei risultati.\\\\
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily media\_type(): String}: definisce il tipo di file;
+                        \item {\ttfamily filename(): String}: definisce il nome del file;
+                        \item {\ttfamily export(results: Dictionary$<$String, Dictionary$<$String, String$>>$, device\_name: String): bytes}: riceve il dizionario dei risultati, il nome del device e restituisce i byte del file del prodotto.
+                    \end{itemize}
+                
+                \paragraph{CsvExporter}\mbox{}\\
+                    Implementa ExportStrategy producendo un file CSV con colonne Device, AssetID, TreeID, Result e una coppia (asset, albero) per ogni riga con il rispettivo risultato.\\\\
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item Implementazione dei metodi {\ttfamily media\_type()}, {\ttfamily filename()} ed {\ttfamily export()} definiti dall'interfaccia ExportStrategy.
+                    \end{itemize}
+
+                \paragraph{PdfExporter}\mbox{}\\
+                    Implementa ExportStrategy producendo un file PDF formattato con ReportLab. Per ogni asset genera una tabella con intestazione colorata, righe alternate e colorazione del testo del risultato (verde per PASS, rosso per FAIL e grigio per NOT\_APPLICABLE)\\\\
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item Implementazione dei metodi {\ttfamily media\_type()}, {\ttfamily filename()} ed {\ttfamily export()} definiti dall'interfaccia ExportStrategy.
+                    \end{itemize}   
+                    
+
+            \subsubsection{Infrastructure Layer}
+
+                \paragraph{FileStorage}\mbox{}\\
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/FileStorage.png}
+                              \caption{FileStorage: classe}
+                        \end{figure}
+                    \end{center}
+                
+                    Gestisce le operazioni di I/O su disco. Crea e mantiene la struttura di directory (data/sessions/).\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily base\_dir: Path}: directory base;
+                        \item {\ttfamily session\_dir: Path}: directory delle sessioni;
+                        \item {\ttfamily trees\_file: Path}: file contenente i decision trees;
+                        \item {\ttfamily config\_file: Path}: file di configurazione.
+                    \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily \_ensure\_directories: void}: assicura che le directory esistano. Se queste non esistono, vengono create;
+                        \item {\ttfamily \_get\_session\_path(session\_id: String): Path}: ritorna il Path di una sessione salvata;
+                        \item {\ttfamily save\_session(session\_id: String, data: Dictionary<String, any>): void}: salva la sessione su file. Il salvataggio avviene prima effettuando una scrittura su file .tmp, eseguendo poi un rename per evitare file corrotti in caso di crash;
+                        \item {\ttfamily load\_session(session\_id: String): Dictionary<String, any>}: carica la sessione da file;
+                        \item {\ttfamily delete\_session(session\_id: String): void}: elimina il file contenente la sessione passata per parametro;
+                        \item {\ttfamily load\_trees(): Dictionary}: carica i decision trees dal file json.
+                    \end{itemize}
+
+
+                \paragraph{TreeProvider}
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.6\linewidth]{../../../Assets/Classi/TreeProvider.png}
+                              \caption{TreeProvider: interfaccia e classe}
+                        \end{figure}
+                    \end{center}
+                
+                    Interfaccia utilizzata per disaccoppiare il dominio dalla sorgente concreta degli alberi.\\\\
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily get\_all(): list<DecisionTree>}: ritorna la lista completa dei decision tree.
+                    \end{itemize}
+                
+                \paragraph{FileTreeProvider}\mbox{}\\
+                    Implementa l'interfaccia TreeProvider, leggendo gli alberi da \textit{trees.json} tramite FileStorage.\\\\
+                    \textbf{Attributi}
+                        \begin{itemize}
+                            \item {\ttfamily \_storage: FileStorage}: gestore delle operazioni di I/O;
+                            \item {\ttfamily \_cache: list<DecisionTree>}: cache lazy, caricata alla prima chiamata;
+                        \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily \_resolve\_ref(ref: String, nodes: Dictionary<String, Node>): Node | Result}: risolve i riferimenti a nodi successivi e risultati foglia?????????????????????;
+                        \item {\ttfamily build\_nodes(nodes\_data: Dictionary): list<Node>}: costruisce ricorsivamente la struttura Node dal json;
+                        \item {\ttfamily get\_all(): list<DecisionTree>}: implementazione del metodo dichiarato nell'interfaccia TreeProvider;
+                    \end{itemize}
+
+                \paragraph{BaseRepository}
+
+                    \begin{center}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=.4\linewidth]{../../../Assets/Classi/BaseRepository.png}
+                              \caption{BaseRepository: interfaccia e classe}
+                        \end{figure}
+                    \end{center}
+                
+                    Interfaccia generica astratta per il pattern repository.\\\\
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily save(entity: T): void}: salva un'entità nel repository;
+                        \item {\ttfamily get(entity\_id: String): T}: recupera un'entità dal repository;
+                        \item {\ttfamily delete(entity\_id: String): void}: elimina un'entità dal repository.
+                    \end{itemize}
+                    
+                \paragraph{SessionRepository}\mbox{}\\
+                    Implementa BaseRepository per le sessioni.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily storage: FileStorage}: gestore delle operazioni I/O;
+                    \end{itemize}
+                    \textbf{Metodi}
+                    \begin{itemize}
+                        \item {\ttfamily save(), get(), delete()}: metodi definiti dall'interfaccia BaseRepository, vengono implementati;
+                        \item {\ttfamily update(session: Session): void}: effettua un salvataggio della sessione.
+                    \end{itemize}
+
+        \subsection{Design Pattern utilizzati}
+            In Python, sono stati utilizzati diversi design pattern per aumentare la manutenibilità del software:
+            \begin{itemize}
+                \item \textbf{Strategy pattern}: applicato nella gestione delle esportazioni...
+                \item \textbf{Repository pattern}: utilizzato per astrarre la logica di accesso ai dati dalla business logic.
+                \item \textbf{Factory pattern}: applicato nella creazione dell'oggetto Session tramite l'utilizzo di SessionFactory.
+            \end{itemize}
+                    
     \end{document}        
