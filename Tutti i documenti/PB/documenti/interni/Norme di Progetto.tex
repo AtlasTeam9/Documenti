@@ -43,11 +43,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Norme di Progetto}
-\newcommand{\DataUltimaModifica}{2026/03/12}
+\newcommand{\DataUltimaModifica}{2026/04/07}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png}
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{1.0.1}
+\newcommand{\VersioneDocumento}{2.0.0}
 \newcommand{\TipoDocumento}{Interno} 
 
 \pagestyle{fancy}
@@ -128,7 +128,13 @@
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            v.1.0.1 & \DataUltimaModifica & Bilal Sabic & Federico Simonetto & Modifiche migliorative \\
+            \VersioneDocumento & \DataUltimaModifica & Giacomo Giora & Michele Tesser & Approvazione documento\\
+            \hline
+            v1.1.2 & 2026/03/13 & Bilal Sabic & Federico Simonetto & Modificati riferimenti normativi\\
+            \hline
+            v1.1.1 & 2026/03/12 & Bilal Sabic & Federico Simonetto & Modifiche migliorative \\
+            \hline 
+            v1.1.0 & 2026/03/08 & Bilal Sabic & Federico Simonetto & Aggiunta sezione progettazione \\
             \hline
             v1.0.0 & 2026/02/06 & Francesco Marcolongo & Giacomo Giora &  Approvazione \\
             \hline
@@ -183,7 +189,7 @@
 
 \section{Introduzione}{
     \subsection{Scopo del documento}{
-        Lo scopo del \textit{Norme di Progetto} è definire le procedure e gli strumenti di lavoro che il team utilizzerà per tutta la durata del progetto didattico.
+        Lo scopo del documento \textit{Norme di Progetto} è definire le procedure e gli strumenti di lavoro che il team utilizzerà per tutta la durata del progetto didattico.
         \newline
         Per realizzare la stesura del documento, il team ha preso come riferimento lo standard ISO/IEC 12207:1995. Questo divide i processi di ciclo di vita software in tre categorie:
         \begin{itemize}
@@ -390,10 +396,9 @@
                 \item \textbf{Supporto all'accettazione software:} lo sviluppatore deve supportare l'utente finale durante le attività di verifica, \textit{revisione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Revisione}{G}} e test previste per l'accettazione del prodotto.
             \end{enumerate}
         }
-        Il team ha deciso di approfondire di seguito le sole attività di analisi dei requisiti di sistema e codifica del software in vista della \textit{Requirements and Technology Baseline}. Crediamo infatti che, per questa \textit{baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}} di progetto, le due attività sopra menzionate siano quelle che richiedono una spiegazione più approfondita. Le altre principali attività che il team presenterà verranno aggiunte dopo il “semaforo verde” della RTB.
 
         \subsubsection{Attività di analisi dei requisiti}{
-            L'analisi dei requisiti è un'attività cardine di ogni progetto e, in particolare, della \textit{baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}} di progetto \textit{Requirements and Technology Baseline}. Questa consiste nell'individuare tutti i requisiti, funzionali e non, che il prodotto software deve soddisfare. L'analisi effettuata dal team può essere visualizzata nell'apposito documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v1.1.0}.
+            L'analisi dei requisiti è un'attività cardine di ogni progetto e, in particolare, della \textit{baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}} di progetto \textit{Requirements and Technology Baseline}. Questa consiste nell'individuare tutti i requisiti, funzionali e non, che il prodotto software deve soddisfare. L'analisi effettuata dal team può essere visualizzata nell'apposito documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}.
             \newline
             In particolare, vengono riportati i casi d'uso ed i relativi requisiti secondo la seguente convenzione.
             
@@ -431,6 +436,22 @@
             } 
         }
 
+        \subsubsection{Progettazione del prodotto software}
+            L'attività di progettazione è svolta dai progettisti e consiste nell'implementazione dell'architettura software a partire dai requisiti definiti nella fase di analisi. In primo luogo, vengono individuate le tecnologie da utilizzare, specificandone riferimenti e versioni. Successivamente si procede con la progettazione vera e propria, partendo dalla definizione dell'architettura logica e di deployment, per poi scendere progressivamente nel dettaglio fino a delineare le singole unità che costituiranno il prodotto finale.
+            \\
+            Si tratta di un'attività collaborativa, organizzata in gruppi di lavoro, con l'obiettivo di favorire il confronto tra diversi punti di vista e convergere infine verso una sintesi delle soluzioni migliori.\\
+            Attraverso l'adozione di buone pratiche e l'utilizzo di appropriati design pattern, si mira a realizzare un'architettura non solo funzionale, ma anche scalabile, estendibile e manutenibile nel tempo, così da facilitare eventuali evoluzioni o modifiche future.\\
+            In parallelo, vengono definiti i test che saranno successivamente eseguiti, al fine di garantire la conformità del prodotto alle specifiche e supportare il team nell'individuazione tempestiva di eventuali problematiche.
+            \\
+            Tutte le descrizioni delle tecnologie e dell'architettura sono visionabili nell'apposito documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Specifica%20Tecnica.pdf}{Specifica Tecnica v1.0.0}.
+
+            \paragraph{Strumenti e tecnologie}\mbox{}\\
+                Strumento utilizzato per la progettazione
+                \begin{itemize}
+                    \item \textbf{Draw.io}: applicazione web utilizzata per svolgere in modo contemporaneo e collaborativo il diagramma delle classi.
+                \end{itemize}
+            
+            
         \subsubsection{Codifica del software}{
             L'attività di codifica del software viene svolta dai programmatori e rappresenta l'implementazione tramite codice del lavoro effettuato dai progettisti. Il software risultante dall'attività di codifica deve rispettare i requisiti individuati dagli analisti, soddisfare le metriche di verifica e \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}}, e deve inoltre soddisfare le esigenze del proponente.
             \newline
@@ -547,7 +568,6 @@
                     \item Tipologia del documento e le informazioni di riferimento, tra cui versione, data e luogo
                     \item La \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei partecipanti alla riunione
                 \end{itemize}
-                \item La \textbf{tabella delle versioni} che riporta le modifiche apportate al documento, con la data, il nome dell'autore, del \textit{verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}} e una breve descrizione del cambiamento;
                 \item \textbf{Abstract} che ha lo scopo di indicare il periodo della riunione e i principali argomenti trattati;
                 \item \textbf{Ordine del giorno} che indica in modo strutturato gli argomenti discussi durante la riunione;
                 \item \textbf{Discussione}, dove vengono documentati i temi affrontati, le osservazioni dei partecipanti e le eventuali divergenze o punti di accordo;
@@ -686,7 +706,7 @@
 
         \subsubsection{Valutazione della configurazione}
             L'attività di valutazione della configurazione viene affrontata dal team mediante un'attività di tracciamento dei requisiti, definita all'interno del documento di
-            \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v1.1.0}.
+            \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}.
             Tale attività viene svolta al fine di garantire che il prodotto software risulti funzionalmente completo, ossia che fornisca una risposta a tutti i requisiti richiesti dall'azienda proponente.
         
         
@@ -701,7 +721,7 @@
                 \item \textbf{Accertamento del processo}: verifica dell'aderenza dei processi del ciclo di vita del software alle procedure, agli standard e alle pianificazioni stabilite, valutandone la corretta applicazione e l'efficacia.
             \end{enumerate}    
         
-        Le metriche individuate dal team di progetto sono descritte in modo dettagliato sia nel documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano%20di%20Qualifica.pdf}{Piano di Qualifica v1.0.0} sia nelle sezioni~\ref{sec:mpc} e \ref{sec:mpd} del documento attuale.
+        Le metriche individuate dal team di progetto sono descritte in modo dettagliato sia nel documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Piano%20di%20Qualifica.pdf}{Piano di Qualifica v2.0.0} sia nelle sezioni~\ref{sec:mpc} e \ref{sec:mpd} del documento attuale.
         L'andamento delle attività del team di progetto viene monitorato e aggiornato al termine di ogni sprint e riportato nel Piano di Qualifica mediante grafici appositamente elaborati.
     
 
@@ -726,7 +746,7 @@
 
         \subsubsection{Implementazione del processo}
             L'attività di implementazione del processo si basa sull'individuazione delle criticità che possono manifestarsi nel corso del progetto didattico.
-            Nella sezione 3 del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano%20di%20Progetto.pdf}{Piano di Progetto v1.0.0} è riportata un'accurata analisi dei rischi che include gran parte delle criticità previste, insieme alla probabilità di occorrenza e alle relative strategie di mitigazione. Tuttavia, in coerenza con quanto previsto dallo standard ISO/IEC 12207:1995 si riportano di seguito ulteriori criticità che potrebbero manifestarsi durante lo svolgimento del progetto didattico:
+            Nella sezione 3 del documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Piano%20di%20Progetto.pdf}{Piano di Progetto v2.0.0} è riportata un'accurata analisi dei rischi che include gran parte delle criticità previste, insieme alla probabilità di occorrenza e alle relative strategie di mitigazione. Tuttavia, in coerenza con quanto previsto dallo standard ISO/IEC 12207:1995 si riportano di seguito ulteriori criticità che potrebbero manifestarsi durante lo svolgimento del progetto didattico:
             \begin{itemize}
                 \item \textbf{Disponibilità di fondi:} rischio di superamento del tetto di spesa massimo stabilito prima dell'aggiudicazione degli appalti. Tale rischio viene mitigato mediante un'accurata pianificazione delle attività e dei ruoli all'interno degli sprint. Inoltre vengono svolte regolarmente riunioni interne per individuare tempestivamente ulteriori problemi;
                 \item \textbf{Rischi associati alla codifica del prodotto software.} Questo rischio viene mitigato tramite un'accurata attività di verifica del software, descritta nella seguente sottosezione.
