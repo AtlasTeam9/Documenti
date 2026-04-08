@@ -381,52 +381,60 @@
             Il sistema viene distribuito come applicazione monolitica — un singolo backend FastAPI e un singolo frontend React — piuttosto che come insieme di microservizi indipendenti. Questa scelta è giustificata dal contesto d'uso reale: il committente è un'azienda con orari di lavoro definiti, il che implica che la web application sarà attiva solo in specifiche fasce orarie, con lunghi periodi di inattività. In uno scenario del genere, i microservizi introdurrebbero costi operativi e complessità infrastrutturale (service discovery, comunicazione inter-servizio) del tutto sproporzionati rispetto ai benefici. Un'architettura monolitica, containerizzata tramite Docker Compose come da configurazione presente nel progetto, è più semplice da avviare, fermare e manutenere, richiede meno risorse computazionali a riposo e consente deploy rapidi. La scalabilità orizzontale offerta dai microservizi non è un requisito rilevante per un tool di compliance interno, utilizzato da un numero limitato di utenti in sessioni di lavoro giornaliere.
 
         \subsection{Frontend}
-            Il frontend del sistema è realizzato come Single Page Application (SPA) basata su React, con l'obiettivo di garantire un'esperienza utente fluida, una chiara separazione delle responsabilità applicative e una buona evolvibilità del codice. Le scelte architetturali adottate privilegiano modularità dei componenti UI, isolamento della logica di business lato client, disaccoppiamento tra interfaccia e dettagli di comunicazione col backend, e testabilità per layer funzionali. In questo modo si ottiene una riduzione dell'accoppiamento tra interfaccia utente, logica applicativa e dettagli infrastrutturali.
-
+            Il frontend del sistema è realizzato come Single Page Application (SPA) basata su React, con l'obiettivo di garantire un'esperienza utente fluida, una chiara separazione delle responsabilità e una buona evolvibilità del codice.  
+            L'impostazione adottata è una scelta pragmatica: architettura layered modulare con principi clean parziali. In particolare, la logica applicativa è concentrata nei service e negli hook, mentre la gestione dello stato globale rimane esplicita e operativa per contenere la complessità implementativa.
+            
             \subsubsection{Vista architetturale generale}
-                L'architettura del frontend adotta una organizzazione a layer, con flusso prevalente top-down tra presentazione, applicazione, stato e dominio.
-                La UI non accede direttamente ai dettagli infrastrutturali, ma delega il comportamento a hook e servizi applicativi; questi orchestrano i casi d'uso interagendo con stato globale, dominio e componenti tecnici.
-                Sono presenti alcune dipendenze trasversali motivate (ad esempio il composition root applicativo verso adapter infrastrutturali e l'implementazione delle porte applicative da parte dell'infrastruttura), per cui il modello è layered ibrido e non rigidamente stratificato. In particolare:
-                \begin{itemize}
-                    \item il layer di presentazione gestisce rendering e interazione utente;
-                    \item il layer applicativo orchestra i casi d'uso;
-                    \item il layer di stato centralizza i dati condivisi;
-                    \item il layer di dominio incapsula entità e regole;
-                    \item il layer infrastrutturale implementa integrazioni tecniche;
-                    \item il layer shared contiene utility trasversali.
-                \end{itemize}
-                \begin{center}
-                    \begin{figure}[H]
-                        \centering
-                        \includegraphics[width=.5\linewidth]{../../../Assets/classiFront/Layers.png}
-                        \caption{Diagramma architetturale generale}
-                    \end{figure}
-                \end{center}
-        
+            L'architettura frontend è organizzata in layer funzionali:
+            \begin{itemize}
+                \item \textbf{Presentation}: rendering, interazione utente, routing e composizione UI;
+                \item \textbf{Application}: orchestrazione dei casi d'uso tramite service e hook;
+                \item \textbf{State}: gestione dello stato globale condiviso (store separati per responsabilità);
+                \item \textbf{Domain}: entità e regole di business pure lato client;
+                \item \textbf{Infrastructure}: comunicazione HTTP, adapter tecnici, mapping errori;
+                \item \textbf{Shared}: utility trasversali riusabili.
+            \end{itemize}
+            
+            Il flusso è prevalentemente top-down dalla presentazione verso i servizi applicativi, con supporto di dominio e infrastruttura.  
+            Il modello non è rigidamente clean/hexagonal: in alcuni punti i service applicativi aggiornano direttamente lo stato globale per semplicità operativa. Questa scelta riduce boilerplate e tempi di sviluppo, accettando un trade-off in termini di maggiore accoppiamento e minore sostituibilità dei dettagli di state management.
+            
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=.6\linewidth]{../../../Assets/classiFront/Layers.png}
+                    \caption{Vista semplificata del frontend}
+                \end{figure}
+            \end{center}
+            
             \paragraph{Layer di presentazione e routing}\mbox{}\\
-                Il layer di presentazione è composto da viste e componenti UI riusabili. La navigazione avviene tramite routing client-side e route guard, che verificano la presenza delle precondizioni necessarie ai flussi protetti (ad esempio sessione attiva e dati dispositivo disponibili). Questa organizzazione consente di mantenere i componenti focalizzati sulla resa grafica e sull'esperienza utente.
-        
+            Il layer di presentazione comprende viste e componenti UI riusabili. La navigazione è gestita tramite routing client-side e route guard che verificano le precondizioni dei flussi protetti (ad esempio sessione attiva e dati dispositivo disponibili).  
+            Questa organizzazione mantiene i componenti focalizzati sulla resa grafica e sull'esperienza utente, delegando l'orchestrazione ai livelli applicativi.
+            
             \paragraph{Gestione dello stato}\mbox{}\\
-                La gestione dello stato adotta una distinzione tra:
-                \begin{itemize}
-                    \item stato globale, condiviso tra più viste;
-                    \item stato locale, limitato al singolo componente o hook.
-                \end{itemize}
-                Lo stato globale è suddiviso in store separati per responsabilità funzionale (sessione, alberi decisionali, dispositivo, risultati, UI), evitando concentrazione eccessiva di responsabilità in un unico stato monolitico. L'accesso ai dati contenuti negli store avviene tramite selector dedicati e compositi, riducendo accoppiamento e duplicazione di logica di lettura.
-        
+            La gestione dello stato distingue tra:
+            \begin{itemize}
+                \item \textbf{stato globale}, condiviso tra più viste;
+                \item \textbf{stato locale}, limitato al singolo componente o hook.
+            \end{itemize}
+            Lo stato globale è suddiviso in store separati per area funzionale (sessione, alberi decisionali, dispositivo, risultati, UI), evitando uno stato monolitico.  
+            L'uso di selector dedicati e compositi riduce duplicazioni di lettura e limita l'accoppiamento tra componenti.
+            
             \paragraph{Layer applicativo: hook e servizi}\mbox{}\\
-                La logica di orchestrazione è incapsulata in custom hook e servizi applicativi. I custom hook gestiscono flussi di interazione e regole di coordinamento tra vista, stato e servizi. I servizi applicativi centralizzano operazioni di sessione, navigazione ed export, mantenendo i componenti il più possibile dichiarativi. 
-        
+            La logica di orchestrazione è incapsulata in custom hook e servizi applicativi.  
+            I custom hook coordinano l'interazione tra vista, stato e servizi; i servizi applicativi centralizzano i casi d'uso principali (sessione, navigazione, export), mantenendo i componenti prevalentemente dichiarativi.  
+            In coerenza con l'approccio pragmatico adottato, parte dell'orchestrazione applicativa interagisce direttamente con lo stato globale.
+            
             \paragraph{Comunicazione con il backend}\mbox{}\\
-                La comunicazione con il backend segue un approccio ports-and-adapters:
-                \begin{itemize}
-                    \item il layer applicativo dipende da interfacce astratte;
-                    \item il layer infrastrutturale fornisce implementazioni concrete (client HTTP, adapter notifiche, mapping errori).
-                \end{itemize}
-                I payload ricevuti dal backend vengono trasformati in modelli del dominio frontend tramite mapper dedicati. Questo è utile per disaccoppiare il frontend dal formato esterno, ridurre l'impatto di variazioni dei contratti API e isolare la logica di conversione in un unico punto.
-        
+            La comunicazione con il backend adotta principi ports-and-adapters in forma parziale:
+            \begin{itemize}
+                \item per l'accesso HTTP, il layer applicativo dipende da servizi astratti;
+                \item il layer infrastrutturale fornisce implementazioni concrete (client HTTP, adapter notifiche, mapping errori).
+            \end{itemize}
+            I payload ricevuti vengono convertiti in modelli frontend tramite mapper dedicati, così da disaccoppiare il dominio client dal formato esterno e contenere l'impatto di variazioni nei contratti API.
+            
             \paragraph{Modello di dominio frontend}\mbox{}\\
-                Il dominio frontend include le entità principali come Device, Asset, Node e DecisionTree, e regole di business pure (es. funzioni di filtro/valutazione). Le classi dominio adottano incapsulamento dei dati con campi privati e accesso controllato tramite metodi/getter, migliorando consistenza e robustezza del modello.
+            Il dominio frontend include entità principali (ad esempio Device, Asset, Node, DecisionTree) e regole di business pure (filtri, valutazioni, trasformazioni).  
+            L'incapsulamento dei dati e l'accesso controllato tramite metodi/getter migliorano consistenza del modello e robustezza delle regole applicative.
 
             
         \subsubsection{Design dettagliato frontend}
