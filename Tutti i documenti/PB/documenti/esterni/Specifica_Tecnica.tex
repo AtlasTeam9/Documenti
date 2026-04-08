@@ -24,6 +24,12 @@
 \usepackage{longtable}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 \usepackage{pgffor}
+\usepackage{titlesec}
+
+% Modifica la spaziatura di \subparagraph
+% Argomenti: {comando} {rientro_sinistro} {spazio_sopra} {spazio_dopo}
+\titlespacing*{\subparagraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1em}
 
 % ----------------------------
 % Impostazioni pagina
@@ -43,7 +49,7 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Specifica Tecnica}
-\newcommand{\DataUltimaModifica}{2026/03/05}
+\newcommand{\DataUltimaModifica}{2026/04/08}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png}
 
 % --- Nuove variabili aggiunte ---
@@ -129,23 +135,35 @@
         \rowcolor{lightgray}
         \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione} \\
         \hline
-        v0.9.0 & 2025/03/23 & Andrea Difino & Michele Tesser & Aggiunta design patterns \\
+        v0.8.0 & 2026/04/02 & Andrea Difino & Michele Tesser & Aggiunta design patterns \\
         \hline
-        v0.8.0 & 2025/03/22 & Andrea Difino & Michele Tesser & Aggiunta immagini\\
+        v0.7.3 & 2026/03/26 & Andrea Difino & Michele Tesser & Fine stesura frontend\\
         \hline
-        v0.7.0 & 2025/03/19 & Giacomo Giora & Federico Simonetto & Fine stesura classi backend\\
+        v0.7.2 & 2026/03/24 & Andrea Difino & Michele Tesser & Aggiunta immagini\\
         \hline
-        v0.6.0 & 2025/03/09 & Michele Tesser & Federico Simonetto & Inizio stesura classi backend \\
+        v0.7.1 & 2026/03/21 & Giacomo Giora & Federico Simonetto & Fine stesura elementi frontend\\
         \hline
-        v0.5.0 & 2025/03/08 & Francesco Marcolongo & Federico Simonetto & Stesura architettura \\
+        v0.7.0 & 2026/03/20 & Giacomo Giora & Federico Simonetto & Inizio stesura elementi frontend\\
         \hline
-        v0.4.0 & 2025/03/07 & Giacomo Giora & Federico Simonettoa & Stesura tecnologie \\
+        v0.6.1 & 2026/03/19 & Giacomo Giora & Federico Simonetto & Fine stesura classi backend\\
         \hline
-        v0.3.0 & 2025/03/06 & Federico Simonetto & Giacomo Giora & Stesura descrizione prodotto \\
+        v0.6.0 & 2026/03/16 & Giacomo Giora & Federico Simonetto & Inizio stesura architettura frontend\\
         \hline
-        v0.2.0 & 2025/03/06 & Federico Simonetto & Giacomo Giora & Aggiunti link ai riferimenti \\
+        v0.5.1 & 2026/03/14 & Michele Tesser & Federico Simonetto & Fine stesura architettura\\
         \hline
-        v0.1.0 & 2025/03/05 & Federico Simonetto & Giacomo Giora & Prima stesura documento \\
+        v0.5.0 & 2026/03/10 & Michele Tesser & Federico Simonetto & Inizio stesura classi backend \\
+        \hline
+        v0.4.0 & 2026/03/09 & Francesco Marcolongo & Federico Simonetto & Inizio stesura architettura \\
+        \hline
+        v0.3.1 & 2026/03/09 & Giacomo Giora & Federico Simonetto & Fine stesura tecnologie \\
+        \hline
+        v0.3.0 & 2026/03/08 & Giacomo Giora & Federico Simonetto & Inizio stesura tecnologie \\
+        \hline
+        v0.2.0 & 2026/03/07 & Federico Simonetto & Giacomo Giora & Stesura descrizione prodotto \\
+        \hline
+        v0.1.1 & 2026/03/06 & Federico Simonetto & Giacomo Giora & Aggiunti link ai riferimenti \\
+        \hline
+        v0.1.0 & 2026/03/05 & Federico Simonetto & Giacomo Giora & Prima stesura documento \\
         \hline
     \end{tabularx}
 \end{center}
@@ -164,7 +182,7 @@
 
 \newpage
 % ----------------------------
-% Inizio contenuto verbale
+% Inizio contenuto
 % ----------------------------
 \section{Introduzione}
 
@@ -215,9 +233,6 @@
                 \item Riferimento alla documentazione della tecnologia utilizzata:\newline \textbf{HTTPX}\newline \url{https://www.python-httpx.org/#documentation}
             \end{itemize}
         
-    
-    
-
     \newpage
 
     \section{Descrizione generale del prodotto}
@@ -233,8 +248,8 @@
             \item {\ttfamily Importazione da file:} il sistema deve consentire di importare file contenenti i dati del dispositivo da analizzare e i suoi asset, in formati strutturati standard;
             \item {\ttfamily Creazione di un dispositivo:} il sistema permette la creazione diretta del dispositivo tramite \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} web, nel caso non sia disponibile un file di \textit{input}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Input}{G}} predefinito;
             \item {\ttfamily Interazione con i decision trees:} per ciascun asset del dispositivo il sistema esegue i decision trees corretti. Durante il test l'interazione con i decision tree viene semplificata da un'interfaccia semplice per l'utente, che si limita a rispondere a delle domande.  
-            \item {\ttfamily Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, JSON, ecc.) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
-            \item {\ttfamily Caricamento di una sessione:} è possibile caricare il file JSON di una sessione passata per visionare i risultati del test ad essa associati. Se il test non era concluso é possibile riprenderlo dal punto a cui si era arrivati.
+            \item {\ttfamily Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, CSV) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
+            \item {\ttfamily Caricamento di una sessione:} è possibile caricare il file JSON di una sessione completata per visionare i risultati del test ad essa associati. Se il test non era concluso è possibile riprenderlo dal punto a cui si era arrivati.
         \end{itemize}
     
     \newpage
@@ -297,11 +312,17 @@
                 \hline
                 \textbf{Axios} & 1.13.2 & Libreria JavaScript che permette di creare un layer HTTP, centralizzare la gestione degli errori e gestire il protocollo di comunicazione fra il client e il server.\\
                 \hline
-                \textbf{React Router} & ??? & Libreria React che garantisce il routing: permette di navigare tra diverse pagine senza attivare un ricaricamento completo e della pagine e permette la navigazione con i tanti avanti e indietro del browser senza perdere lo stato.\\
+                \textbf{React Router} & 7.13.1 & Libreria React che garantisce il routing: permette di navigare tra diverse pagine senza attivare un ricaricamento completo e della pagine e permette la navigazione con i tanti avanti e indietro del browser senza perdere lo stato.\\
                 \hline
-                \textbf{Zustand} & ??? & Libreria leggera, veloce e scalabile per la gestione dello stato in React, basata su hook e un approccio store-based. Permette di creare store centralizzati per condividere dati fra componenti. \\
+                \textbf{Zustand} & 5.0.12 & Libreria leggera, veloce e scalabile per la gestione dello stato in React, basata su hook e un approccio store-based. Permette di creare store centralizzati per condividere dati fra componenti. \\
                 \hline
-                \textbf{reportlab} & 4.4.10 & La libreria ReportLab è uno strumento per Python che consente di generare file PDF in modo programmatico. Permette di creare documenti complessi con testo, immagini, tabelle e layout personalizzati direttamente dal codice. È ampiamente utilizzata per report automatici, fatture e documenti dinamici generati lato server. Grazie alla sua flessibilità, è adatta sia a progetti semplici che a sistemi enterprise. \\
+                \textbf{Sonner} & 2.0.7 & Libreria leggera per la gestione di notifiche toast in applicazioni React. Si distingue per un’API minimale e intuitiva, oltre a un design elegante e facilmente personalizzabile. Consente di mostrare feedback asincroni in modo non invasivo, con animazioni fluide e buona accessibilità. \\
+                \hline
+                \textbf{Zod} & 4.3.6 & Libreria di validazione e definizione di schemi. È particolarmente utile in contesti frontend moderni (ad esempio con React o form complessi) perché riduce il disallineamento tra validazione runtime e typing, migliorando la robustezza. \\
+                \hline
+                \textbf{React Hook Form} & 4.3.6 & Libreria per la gestione dei form in React che sfrutta gli hook per ottimizzare performance e semplicità d’uso. Offre integrazione nativa con validatori esterni come Zod e gestione avanzata degli errori. \\
+                \hline
+                \textbf{Reportlab} & 4.4.10 & Libreria per Python che consente di generare file PDF in modo programmatico. Permette di creare documenti complessi con testo, immagini, tabelle e layout personalizzati direttamente dal codice.   \\
                 \hline
             \end{tabularx}
         \end{center}
@@ -341,9 +362,9 @@
                 \rowcolor{gold}
                 \textbf{Tecnologia} & \textbf{Versione} & \textbf{Descrizione}  \\
                 \hline
-                \textbf{Vitest} & ??? & Framework di testing moderno, ispirato a Jest e ottimizzato per progetti con Vite. Consente l'esecuzione di unit test in modo rapido e con ottima integrazione negli ambienti moderni. \\
+                \textbf{Vitest} & 4.0.18 & Framework di testing moderno, ispirato a Jest e ottimizzato per progetti con Vite. Consente l'esecuzione di unit test in modo rapido e con ottima integrazione negli ambienti moderni. \\
                 \hline
-                \textbf{React Testing Library} & ??? & Libreria per il testing dei componenti React, che permette di verificare il comportamento dei componenti dal punto di vista dell'utente finale. \\
+                \textbf{React Testing Library} & 16.3.2 & Libreria per il testing dei componenti React, che permette di verificare il comportamento dei componenti dal punto di vista dell'utente finale. \\
                 \hline 
                 \textbf{Pytest} & 9.0.2 & Framework per l'esecuzione di test automatizzati in Python, con supporto per fixture, assert avanzati e plugin estensibili. \\
                 \hline 
@@ -358,6 +379,974 @@
             Il progetto adotta un'architettura a strati (layered) che si articola in quattro livelli distinti: \textbf{Presentation, Application, Domain e Infrastructure}. Questa scelta è motivata dalla natura del sistema: si tratta di un'applicazione con flussi di dati prevalentemente lineari e prevedibili, dove le richieste HTTP attraversano i layer in modo direzionato e senza inversioni di controllo complesse. Rispetto all'architettura esagonale (ports \& adapters), la layered è più semplice da implementare e comprendere. L'architettura esagonale offrirebbe maggiore disaccoppiamento tra dominio e infrastruttura tramite porte e adattatori espliciti, ma introduce una complessità strutturale difficile da giustificare quando gli adattatori sono fissi (un solo database su file, una sola API REST). La struttura a layer è già sufficiente a garantire la separazione delle responsabilità, la testabilità del dominio (come dimostrano i numerosi unit test presenti) e la manutenibilità del codice, senza aggiungere overhead architetturale non necessario.
         \subsection{Architettura di deployment}
             Il sistema viene distribuito come applicazione monolitica — un singolo backend FastAPI e un singolo frontend React — piuttosto che come insieme di microservizi indipendenti. Questa scelta è giustificata dal contesto d'uso reale: il committente è un'azienda con orari di lavoro definiti, il che implica che la web application sarà attiva solo in specifiche fasce orarie, con lunghi periodi di inattività. In uno scenario del genere, i microservizi introdurrebbero costi operativi e complessità infrastrutturale (service discovery, comunicazione inter-servizio) del tutto sproporzionati rispetto ai benefici. Un'architettura monolitica, containerizzata tramite Docker Compose come da configurazione presente nel progetto, è più semplice da avviare, fermare e manutenere, richiede meno risorse computazionali a riposo e consente deploy rapidi. La scalabilità orizzontale offerta dai microservizi non è un requisito rilevante per un tool di compliance interno, utilizzato da un numero limitato di utenti in sessioni di lavoro giornaliere.
+
+        \subsection{Frontend}
+            Il frontend del sistema è realizzato come Single Page Application (SPA) basata su React, con l'obiettivo di garantire un'esperienza utente fluida, una chiara separazione delle responsabilità applicative e una buona evolvibilità del codice. Le scelte architetturali adottate privilegiano modularità dei componenti UI, isolamento della logica di business lato client, disaccoppiamento tra interfaccia e dettagli di comunicazione col backend, e testabilità per layer funzionali. In questo modo si ottiene una riduzione dell'accoppiamento tra interfaccia utente, logica applicativa e dettagli infrastrutturali.
+
+            \subsubsection{Vista architetturale generale}
+                L'architettura del frontend adotta una organizzazione a layer, con flusso prevalente top-down tra presentazione, applicazione, stato e dominio.
+                La UI non accede direttamente ai dettagli infrastrutturali, ma delega il comportamento a hook e servizi applicativi; questi orchestrano i casi d'uso interagendo con stato globale, dominio e componenti tecnici.
+                Sono presenti alcune dipendenze trasversali motivate (ad esempio il composition root applicativo verso adapter infrastrutturali e l'implementazione delle porte applicative da parte dell'infrastruttura), per cui il modello è layered ibrido e non rigidamente stratificato. In particolare:
+                \begin{itemize}
+                    \item il layer di presentazione gestisce rendering e interazione utente;
+                    \item il layer applicativo orchestra i casi d'uso;
+                    \item il layer di stato centralizza i dati condivisi;
+                    \item il layer di dominio incapsula entità e regole;
+                    \item il layer infrastrutturale implementa integrazioni tecniche;
+                    \item il layer shared contiene utility trasversali.
+                \end{itemize}
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.5\linewidth]{../../../Assets/classiFront/Layers.png}
+                        \caption{Diagramma architetturale generale}
+                    \end{figure}
+                \end{center}
+        
+            \paragraph{Layer di presentazione e routing}\mbox{}\\
+                Il layer di presentazione è composto da viste e componenti UI riusabili. La navigazione avviene tramite routing client-side e route guard, che verificano la presenza delle precondizioni necessarie ai flussi protetti (ad esempio sessione attiva e dati dispositivo disponibili). Questa organizzazione consente di mantenere i componenti focalizzati sulla resa grafica e sull'esperienza utente.
+        
+            \paragraph{Gestione dello stato}\mbox{}\\
+                La gestione dello stato adotta una distinzione tra:
+                \begin{itemize}
+                    \item stato globale, condiviso tra più viste;
+                    \item stato locale, limitato al singolo componente o hook.
+                \end{itemize}
+                Lo stato globale è suddiviso in store separati per responsabilità funzionale (sessione, alberi decisionali, dispositivo, risultati, UI), evitando concentrazione eccessiva di responsabilità in un unico stato monolitico. L'accesso ai dati contenuti negli store avviene tramite selector dedicati e compositi, riducendo accoppiamento e duplicazione di logica di lettura.
+        
+            \paragraph{Layer applicativo: hook e servizi}\mbox{}\\
+                La logica di orchestrazione è incapsulata in custom hook e servizi applicativi. I custom hook gestiscono flussi di interazione e regole di coordinamento tra vista, stato e servizi. I servizi applicativi centralizzano operazioni di sessione, navigazione ed export, mantenendo i componenti il più possibile dichiarativi. 
+        
+            \paragraph{Comunicazione con il backend}\mbox{}\\
+                La comunicazione con il backend segue un approccio ports-and-adapters:
+                \begin{itemize}
+                    \item il layer applicativo dipende da interfacce astratte;
+                    \item il layer infrastrutturale fornisce implementazioni concrete (client HTTP, adapter notifiche, mapping errori).
+                \end{itemize}
+                I payload ricevuti dal backend vengono trasformati in modelli del dominio frontend tramite mapper dedicati. Questo è utile per disaccoppiare il frontend dal formato esterno, ridurre l'impatto di variazioni dei contratti API e isolare la logica di conversione in un unico punto.
+        
+            \paragraph{Modello di dominio frontend}\mbox{}\\
+                Il dominio frontend include le entità principali come Device, Asset, Node e DecisionTree, e regole di business pure (es. funzioni di filtro/valutazione). Le classi dominio adottano incapsulamento dei dati con campi privati e accesso controllato tramite metodi/getter, migliorando consistenza e robustezza del modello.
+
+            
+        \subsubsection{Design dettagliato frontend}
+            Questa sezione approfondisce i moduli concreti del frontend, descrivendo ruolo e responsabilità di pagine, hook, store, servizi e classi di dominio, nonché le loro interazioni nei principali flussi applicativi.
+
+            \paragraph{Pages}\mbox{}\\
+                Le pagine rappresentano il punto di ingresso dei principali casi d'uso utente e hanno la responsabilità di orchestrare la composizione dei componenti visuali e dei relativi hook applicativi.
+                Ogni pagina mantiene un ruolo specifico nel flusso end-to-end, evitando sovrapposizioni funzionali.
+                Descrizione sintetica delle principali pagine:
+                \begin{itemize}
+                    \item \texttt{HomeView}: schermata iniziale dell'applicazione, da essa è possibile avviare il flusso di creazione o caricamento del dispositivo da analizzare, o di caricamento di una sessione completa o incompleta.
+                    \item \texttt{DeviceFormView}: schermata dedicata alla raccolta e validazione dei dati descrittivi del dispositivo oggetto dell'analisi.
+                    \item \texttt{DeviceAssetManagementView}: schermata per la gestione degli asset associati al dispositivo.
+                    \item \texttt{AssetFormView}: schermata per la creazione del singolo asset.
+                    \item \texttt{DeviceSummaryView}: presenta un riepilogo esaustivo dei dati inseriti prima dell'avvio del test.
+                    \item \texttt{SessionRunnerView}: pagina che visualizza la domanda a cui l'utente deve rispondere e i componenti che permettono la gestione della navigazione tra le risposte.
+                    \item \texttt{ResultView}: visualizza i risultati aggregati per requisito e per asset, con opzioni di export.
+                    \item \texttt{ModifySessionView}: pagina che permette la ripresa di una sessione incompleta o la modifica di una sessione completata tramite la selezione dell'asset da cui riprendere il percorso del test.
+                \end{itemize}
+                Linee guida adottate:
+                \begin{itemize}
+                    \item la pagina non contiene logica di business complessa;
+                    \item la pagina delega la logica a hook e servizi;
+                    \item la pagina mantiene responsabilità di composizione UI e navigazione.
+                \end{itemize}
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.6\linewidth]{../../../Assets/classiFront/Pages.png}
+                        \caption{Mappa pagine e transizioni}
+                    \end{figure}
+                \end{center}
+        
+            \paragraph{Componenti UI}\mbox{}\\
+                I componenti UI sono progettati per massimizzare riusabilità e separazione delle responsabilità: la presentazione resta nei componenti, mentre la logica applicativa viene delegata a hook, store e servizi. 
+                Questo approccio riduce duplicazione, facilita il testing e rende più semplice l'evoluzione delle viste.
+                
+                Tipologie principali e componenti rappresentativi:
+                \begin{itemize}
+                    \item \textbf{Componenti trasversali}: \texttt{UploadButton}, \texttt{HomeIcon}, \texttt{BackIcon} e altri elementi riusabili impiegati in più viste.
+                    \item \textbf{Input e form}: componenti usati nelle pagine \texttt{DeviceFormView} e \texttt{AssetFormView}, come \texttt{InputField}, \texttt{SelectField}, \texttt{CheckboxField} e \texttt{ToggleSwitch}.
+                    \item \textbf{Resoconto dispositivo}: componenti usati nella pagina \texttt{DeviceSummaryView}, quali \newline \texttt{AssetInfoOverlay}, \texttt{AssetListView} che a sua volta contiene numerosi \texttt{AssetItemView}, \texttt{DeviceMainActions}, e altri sotto componenti.
+                    \item \textbf{Supporto al flusso sessione}: \texttt{SessionContent}, \texttt{SessionContentAdapter} e sottocomponenti del runner per avanzamento, risposta e navigazione, come per esempio \newline \texttt{AnswerButtons},  \texttt{NavigationFooter}, \texttt{QuestionSection} e \texttt{SessionHeader}.
+                    \item \textbf{Visualizzazione risultati}: componenti utilizzati in \texttt{ResultView}, per esempio \newline \texttt{ExportDialog}, \texttt{ResultListView}, \texttt{ResultItemView}, \texttt{AssetResultsView} e \texttt{ResultActions}.
+                \end{itemize}
+        
+            \paragraph{Hook applicativi}\mbox{}\\
+                I custom hook costituiscono il layer di orchestrazione tra UI, stato globale e servizi. Essi incapsulano flussi operativi, side effect e coordinamento di navigazione, mantenendo i componenti dichiarativi. \\
+                Hook principali:
+                \begin{itemize}
+                    \item \texttt{useHomeNavigation}: gestisce creazione/caricamento della sessione dalla home e la navigazione conseguente.
+                    \item \texttt{useAssetManagement}: coordina la gestione degli asset, del salvataggio dispositivo, dei controlli sulle modifiche non salvate e il passaggio alla vista di resoconto.
+                    \item \texttt{useResultViewLogic}: centralizza la logica della vista risultati, come l'espansione requisiti, la ripresa, l'export e il ritorno alla home.
+                    \item \texttt{useModifySessionLogic}: gestisce la selezione del requisito/asset e la ripresa del test.
+                    \item \texttt{useRouteGuardAccess}: verifica le precondizioni di accesso alle pagine protette.
+                    \item \texttt{useTreeBootstrap}: effettua il bootstrap iniziale dei decision tree.
+                    \item \texttt{useSessionRunnerTrees}: espone i tree necessari al runner.
+                    \item \texttt{useBeforeUnload}: gestisce la protezione in uscita durante operazioni sensibili.
+                    \item \texttt{useExportResults} / \texttt{useExportSession}: gestiscono i flussi di esportazione e i relativi stati.
+                \end{itemize}
+                Hook specifici del flusso sessione:
+                \begin{itemize}
+                    \item \texttt{useSessionState}: aggrega lo stato della sessione utile alla vista runner.
+                    \item \texttt{useSessionHandlers}: espone handler asincroni (invio risposta, navigazione, salvataggio/uscita) con gestione uniforme di loading/error.
+                    \item \texttt{useSessionRedirect}: gestisce redirect coerenti in caso di stato sessione non valido.
+                \end{itemize}
+        
+            \paragraph{State management (store e selectors)}\mbox{}\\
+                La gestione dello stato globale è strutturata in store separati per contesto funzionale. Ogni store definisce il proprio stato, le azioni di modifica e le relative invarianti. L'accesso agli store avviene tramite selectors, che permettono di astrarre la forma interna dello stato e ridurre l'accoppiamento tra consumer e struttura store. \\
+                Gli store principali sono:
+                \begin{itemize}
+                    \item \texttt{SessionStore}: mantiene lo stato di sessione, ovvero id, posizione corrente, storia delle risposte, la modalità ripresa, i risultati per asset, lo stato fine test, e le azioni di navigazione nel flusso.
+                    \item \texttt{TreeStore}: mantiene i decision tree normalizzati e fornisce l'accesso ai nodi.
+                    \item \texttt{DeviceStore}: mantiene il dispositivo corrente e la gestione degli asset ad esso associati.
+                    \item \texttt{ResultStore}: mantiene i risultati aggregati del test.
+                    \item \texttt{UIStore}: mantiene stati trasversali di interfaccia (loading, exporting, dirty flag).
+                \end{itemize}
+        
+            \paragraph{Services (application e infrastructure)}\mbox{}\\
+                I servizi implementano operazioni applicative e integrazioni tecniche. La distinzione principale è tra:
+                \begin{itemize}
+                    \item servizi applicativi, orientati ai casi d'uso;
+                    \item servizi infrastrutturali, orientati a dettagli tecnici.
+                \end{itemize}
+                Servizi applicativi:
+                \begin{itemize}
+                    \item \texttt{SessionService}: è il servizio principale del flusso sessione (creazione, caricamento, invio risposta, navigazione avanti/indietro, ripresa, pulizia, salvataggio e uscita).
+                    \item \texttt{TreeService}: per il caricamento e la normalizzazione dei decision tree.
+                    \item \texttt{DeviceService}: per la gestione del dispositivo corrente e le operazioni sugli asset.
+                    \item \texttt{ExportService}: per l'esportazione di risultati/sessione/dispositivo.
+                    \item \texttt{NavigationService}: servizio di utilità per il reset dello stato e la navigazione verso la pagina home.
+                    \item \texttt{ApiClientService}: wrapper applicativo della porta API.
+                    \item \texttt{NotificationService}: wrapper applicativo della porta notifiche.
+                \end{itemize}
+                Servizi/adapter infrastrutturali:
+                \begin{itemize}
+                    \item \texttt{AxiosApiClient}: implementazione concreta del client HTTP.
+                    \item \texttt{errorMapper}: conversione errori tecnici in errori applicativi.
+                    \item \texttt{NotificationManager} + \texttt{SonnerNotificationAdapter}: gestione notifiche utente.
+                \end{itemize}
+        
+            \paragraph{Domain e regole di business}\mbox{}\\
+                Il dominio frontend contiene entità e regole pure che modellano il problema applicativo anche lato client. Le classi dominio adottano incapsulamento dei dati e API esplicite, mentre le regole pure sono mantenute in funzioni dedicate. \\
+                Responsabilità del dominio:
+                \begin{itemize}
+                    \item rappresentare in modo consistente dispositivi, asset, nodi e alberi;
+                    \item fornire trasformazioni controllate da/verso payload esterni;
+                    \item centralizzare regole di filtro/valutazione indipendenti dalla UI.
+                \end{itemize}
+                Classi principali:
+                \begin{itemize}
+                    \item \texttt{Device}: modello del dispositivo con metodi di gestione asset e serializzazione.
+                    \item \texttt{Asset}: modello del singolo asset con tipo, sensibilità e serializzazione.
+                    \item \texttt{Node}: modello del nodo decisionale (domanda/risultato).
+                    \item \texttt{DecisionTree}: modello del requisito con nodi e dipendenze, che trasforma le informazioni grezze del backend in oggetti pronti per l'applicazione.
+                \end{itemize}
+                
+                Regole e validazione:
+                \begin{itemize}
+                    \item \texttt{treeRules}: regole pure per filtraggio/valutazione risultati riprendibili.
+                    \item \texttt{AssetSchema}, \texttt{DeviceSchema}: validazione strutturale dei dati di input di asset e device.
+                \end{itemize}
+        
+        \subsubsection{Caratteristiche di qualità}
+            \paragraph{Manutenibilità}\mbox{}\\
+                La separazione per layer, l'uso di selector e la centralizzazione dei servizi migliorano la manutenibilità in presenza di evoluzioni funzionali o tecniche.
+                
+            \paragraph{Scalabilità}\mbox{}\\
+                La struttura attuale supporta estensioni progressive:
+                \begin{itemize}
+                    \item nuove pagine senza impatto sul dominio;
+                    \item nuovi flussi applicativi tramite hook/servizi dedicati;
+                    \item sostituzione di adapter infrastrutturali con impatto contenuto.
+                \end{itemize}
+
+        \subsubsection{Elementi principali}
+            \paragraph{Classi del dominio}
+                \subparagraph{Asset}
+                    \begin{center}
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[width=.6\linewidth]{../../../Assets/classiFront/Asset.png}
+                            \caption{Asset: classe frontend}
+                        \end{figure}
+                    \end{center}
+                    Rappresenta un singolo componente da testare.\\\\
+                    \textbf{Attributi}
+                    \begin{itemize}
+                        \item {\ttfamily id}: id univoco dell'asset;
+                        \item {\ttfamily name}: nome dell'asset;
+                        \item {\ttfamily type}: tipo dell'asset;
+                        \item {\ttfamily isSensitive}: flag di sensibilità dell'asset;
+                        \item {\ttfamily desc}: descrizione (opzionale) dell'asset.
+                    \end{itemize}
+                    \textbf{Metodi}
+                        \begin{itemize}
+                            \item Metodi getter per ogni attributo;
+                            \item {\ttfamily toDict(): Dictionary}: metodo utilizzato per la serializzazione.
+                        \end{itemize}
+                    
+            \subparagraph{Device}\mbox{}\\
+
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.3\linewidth]{../../../Assets/classiFront/Device.png}
+                        \caption{Device: classe frontend}
+                    \end{figure}
+                \end{center}
+                Rappresenta il dispositivo facente uso di onde radio oggetto della valutazione. Aggrega una lista di Asset e contiene le informazioni generali del dispositivo.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily name}: nome del dispositivo;
+                    \item {\ttfamily assets[]}: lista di oggetti Asset;
+                    \item {\ttfamily operatingSystem}: sistema operativo del dispositivo;
+                    \item {\ttfamily firmwareVersion}: versione del firmware del dispositivo;
+                    \item {\ttfamily functionalities}: funzionalità del dispositivo;
+                    \item {\ttfamily description}: descrizione del dispositivo (opzionale).
+                \end{itemize}
+                \textbf{Metodi}
+                    \begin{itemize}
+                        \item Metodi getter per ogni attributo;
+                        \item {\ttfamily addAsset(asset)}: aggiunge un asset in coda all'array degli asset;
+                        \item {\ttfamily deleteAsset(assetId)}: elimina dall'array l'asset con l'identificativo passato per parametro;
+                        \item {\ttfamily toDict(): Dictionary}: metodo utilizzato per la serializzazione.
+                    \end{itemize}
+            
+            \subparagraph{Node}\mbox{}\\
+
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.6\linewidth]{../../../Assets/classiFront/Node.png}
+                        \caption{Node: classe frontend}
+                    \end{figure}
+                \end{center}
+                Rappresenta un nodo di un decision tree.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily id}: id del nodo;
+                    \item {\ttfamily text}: contenuto principale del nodo, che può essere una domanda o il testo del risultato;
+                    \item {\ttfamily description}: descrizione del nodo (opzionale);
+                    \item {\ttfamily type}: indica la natura del nodo, può essere "QUESTION" oppure "RESULT".
+                \end{itemize}
+                \textbf{Metodi}
+                    \begin{itemize}
+                        \item Metodi getter per ogni attributo.
+                        \item {\ttfamily fromApi(nodeId, nodeData): Node}: utilizzato per trasformare il formato grezzo che arriva dal backend in un oggetto Node.
+                    \end{itemize}
+
+            \subparagraph{DecisionTree}\mbox{}\\
+
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.3\linewidth]{../../../Assets/classiFront/DecisionTree.png}
+                        \caption{DecisionTree: classe frontend}
+                    \end{figure}
+                \end{center}
+                Albero decisionale corrispondente ad un requisito della norma EN 18031.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily id: String}: id dell'albero;
+                    \item {\ttfamily title}: titolo dell'albero (nome del requisito);
+                    \item {\ttfamily nodes\{\}}: mappa dei nodi del decision tree;
+                    \item {\ttfamily dependencies[]}: lista delle dipendenze dell'albero.
+                \end{itemize}
+                \textbf{Metodi}
+                    \begin{itemize}
+                        \item Metodi getter per ogni attributo.
+                        \item {\ttfamily getNodeById(nodeId)}: metodo per ritornare un nodo dell'albero da un identificativo passato per parametro;
+                        \item {\ttfamily fromApi(treeData): DecisionTree}: utilizzato per trasformare il formato grezzo che arriva dal backend in un oggetto DecisionTree.
+                    \end{itemize}
+
+        % DESCRIZIONE SERVIZI FRONTEND 
+            \paragraph{Servizi applicativi}
+                \subparagraph{ApiClientService}
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.4\linewidth]{../../../Assets/classiFront/ApiClientService.png}
+                        \caption{ApiClientService: classe application}
+                    \end{figure}
+                \end{center}
+                Servizio applicativo che incapsula il client HTTP tramite porta astratta (\texttt{IApiClient}), così il layer application non dipende direttamente da Axios o da altri adapter concreti.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily port}: riferimento alla porta HTTP che deve implementare {\ttfamily get}, {\ttfamily post}, {\ttfamily delete}.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily constructor(port)}: valida che la porta implementi i metodi richiesti;
+                    \item {\ttfamily get(url, config)}: inoltra una GET alla porta;
+                    \item {\ttfamily post(url, data, config)}: inoltra una POST alla porta;
+                    \item {\ttfamily delete(url, config)}: inoltra una DELETE alla porta.
+                \end{itemize}
+                
+                \subparagraph{NotificationService}\mbox{}\
+                
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.4\linewidth]{../../../Assets/classiFront/NotificationService.png}
+                        \caption{NotificationService: classe application}
+                    \end{figure}
+                \end{center}
+                Servizio applicativo per notifiche utente, disaccoppiato dal framework UI tramite porta \newline {\ttfamily INotificationPort}.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily port}: riferimento all'adapter di notifica concreto (es. Sonner), che espone metodi di notifica.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily constructor(port)}: valida che la porta implementi {\ttfamily notifyError} e {\ttfamily notifySuccess};
+                    \item {\ttfamily notifyError(error, options)}: mostra una notifica di errore;
+                    \item {\ttfamily notifySuccess(message)}: mostra una notifica di successo.
+                \end{itemize}
+                
+                \subparagraph{DeviceService}\mbox{}\
+                
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.4\linewidth]{../../../Assets/classiFront/DeviceService.png}
+                        \caption{DeviceService: classe application}
+                    \end{figure}
+                \end{center}
+                Servizio applicativo per la gestione del dispositivo corrente e dei suoi asset, orchestrando i relativi store di stato.\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item Nessun attributo di istanza persistente (servizio stateless, usa gli store globali).
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily createDevice(device)}: salva il dispositivo nello stato applicativo;
+                    \item {\ttfamily getCurrentDevice()}: restituisce il dispositivo corrente;
+                    \item {\ttfamily addAssetToDevice(asset)}: aggiunge un asset al dispositivo e marca lo stato come modificato;
+                    \item {\ttfamily removeAsset(assetId)}: rimuove un asset dal dispositivo e marca lo stato come modificato;
+                    \item {\ttfamily saveDeviceToFile()}: esporta il device in JSON e resetta il flag di modifiche;
+                    \item {\ttfamily clearDevice()}: pulisce il device dallo stato locale.
+                \end{itemize}
+                
+                \subparagraph{TreeService}\mbox{}\
+                
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.4\linewidth]{../../../Assets/classiFront/TreeService.png}
+                        \caption{TreeService: classe application}
+                    \end{figure}
+                \end{center}
+                Servizio applicativo per il caricamento dei decision tree dal backend e la sincronizzazione nello store frontend.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item Nessun attributo di istanza persistente (usa servizi/store condivisi).
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily loadTrees()}: recupera i tree da API, li normalizza in oggetti {\ttfamily DecisionTree} e salva gli alberi normalizzati nello stato applicativo;
+                    \item {\ttfamily clearTrees()}: svuota i tree dallo store.
+                \end{itemize}
+                
+                \subparagraph{SessionService}\mbox{}\
+                
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.5\linewidth]{../../../Assets/classiFront/SessionService.png}
+                        \caption{SessionService: classe application}
+                    \end{figure}
+                \end{center}
+                Servizio applicativo centrale per l'orchestrazione dell'intero flusso di sessione: creazione, invio risposte, navigazione, caricamento/salvataggio e ripresa test.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item Nessun attributo pubblico persistente; usa store e helper del layer application;
+                    \item {\ttfamily initializeSessionFromResponse(response)}: metodo privato per inizializzare stato locale da risposta backend.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily createSessionWithFile(file)}: crea sessione da file JSON caricato;
+                    \item {\ttfamily createSessionWithDevice(device)}: crea sessione da oggetto Device serializzato;
+                    \item {\ttfamily sendAnswer(answer)}: invia risposta e gestisce avanzamento/go-back/fine albero;
+                    \item {\ttfamily previousStep()}: naviga localmente al nodo precedente;
+                    \item {\ttfamily forwardStep()}: naviga localmente al nodo successivo;
+                    \item {\ttfamily loadSessionFromFile(file)}: ripristina una sessione esportata in file JSON;
+                    \item {\ttfamily saveAndExit()}: chiude sessione remota e pulisce stato locale;
+                    \item {\ttfamily getSessionId()}: restituisce l'identificativo sessione corrente;
+                    \item {\ttfamily getFormattedAnswers()}: converte lo storico risposte nel payload API;
+                    \item {\ttfamily clearSession()}: cancella la sessione corrente (remota e locale);
+                    \item {\ttfamily resumeSession(requirementId, assetId)}: riposiziona la sessione su requisito/asset scelto.
+                \end{itemize}
+                
+                \subparagraph{ExportService}\mbox{}\
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.5\linewidth]{../../../Assets/classiFront/ExportService.png}
+                        \caption{ExportService: classe application}
+                    \end{figure}
+                \end{center}
+                Servizio applicativo per esportazione risultati/sessione/device in diversi formati, con validazione payload e download file.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item Nessun attributo di istanza persistente.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily isEmptyPayload(payload)}: verifica se il payload ricevuto è vuoto/non valido;
+                    \item {\ttfamily exportResults(sessionId, format)}: esporta i risultati della sessione in formato richiesto;
+                    \item {\ttfamily exportResultsAsCSV(sessionId)}: shortcut per esportazione CSV;
+                    \item {\ttfamily exportResultsAsPDF(sessionId)}: shortcut per esportazione PDF;
+                    \item {\ttfamily exportSessionAsJSON(sessionId, answers)}: esporta la sessione completa come JSON;
+                    \item {\ttfamily exportDeviceAsJSON(device)}: esporta il device corrente in JSON;
+                    \item {\ttfamily downloadFile(response, filename)}: helper per avviare il download nel browser.
+                \end{itemize}
+                
+                \subparagraph{AppError (e sottoclassi)}\mbox{}\
+                
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.4\linewidth]{../../../Assets/classiFront/AppError.png}
+                        \caption{Gerarchia errori application}
+                    \end{figure}
+                \end{center}
+                Gerarchia di errori applicativi tipizzati per distinguere errori di rete, stato o validazione.\\\\
+                \textbf{Attributi (AppError)}
+                \begin{itemize}
+                    \item {\ttfamily name}: nome della classe di errore;
+                    \item {\ttfamily code}: codice applicativo dell'errore;
+                    \item {\ttfamily cause}: eventuale errore origine;
+                    \item {\ttfamily context}: contesto aggiuntivo per debug/logging.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily constructor(message, options)}: inizializza l'errore base con metadati.
+                \end{itemize}
+                \textbf{Sottoclassi}
+                \begin{itemize}
+                    \item {\ttfamily NetworkError}: errore di comunicazione con backend;
+                    \item {\ttfamily StateError}: errore di stato applicativo non coerente;
+                    \item {\ttfamily ValidationError}: errore di validazione input/dati.
+                \end{itemize}
+
+            % DESCRIZIONE HOOK FRONTEND 
+            \paragraph{Custom Hooks}\mbox{}\\
+                I custom hooks creati verranno di seguito descritti specificando ove presenti: i parametri dell'hook, le dipendenze esterne, lo stato interno locale, il comportamento e i valori esposti dall'hook.\\
+                \subparagraph{useTreeBootstrap}\mbox{}\\
+                Hook di bootstrap incaricato di caricare i {\ttfamily DecisionTree} all'avvio della sessione e di gestire la notifica di eventuali fallimenti del caricamento.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily TreeService}: utilizzato per invocare la logica di caricamento asincrono;
+                    \item {\ttfamily notificationService}: ottenuto tramite il contesto applicativo ({\ttfamily useAppServices}) per la gestione dei feedback di errore.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Esegue all'interno di un {\ttfamily useEffect} il metodo {\ttfamily TreeService.loadTrees()} al montaggio del componente o alla variazione del servizio di notifica;
+                    \item Intercetta eventuali errori della {\ttfamily Promise} tramite {\ttfamily .catch()}, invocando \newline {\ttfamily notificationService.notifyError} con l'identificativo specifico {\ttfamily 'LOAD\_TREES\_ERROR'}.
+                \end{itemize}
+                
+                \subparagraph{useSessionState}\mbox{}\\
+                Hook di sola lettura delegato all'estrazione dello snapshot dello stato di sessione per la visualizzazione nella UI. Si interfaccia direttamente con lo store globale per garantire una lettura reattiva dei dati senza l'intermediazione del livello di servizio.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily useSessionStore}: sorgente dati per lo stato della sessione;
+                    \item {\ttfamily selectSessionStateSnapshot}: selettore incaricato di estrarre le proprietà rilevanti dal file di stato;
+                    \item {\ttfamily useShallow}: utility di ottimizzazione fornita da Zustand.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Restituisce l'insieme sincronizzato dei dati di sessione (identificativo, nodo corrente, indici di posizione e cronologia delle risposte);
+                    \item Implementa una strategia di aggiornamento efficiente tramite {\ttfamily useShallow}, che esegue una comparazione superficiale dei dati restituiti dal selettore per evitare aggiornamenti superflui del componente React.
+                \end{itemize}
+                
+                \subparagraph{useSessionHandlers}\mbox{}\\
+                Hook orchestratore che genera dinamicamente gli handler asincroni per le azioni della sessione (navigazione, risposte, salvataggio), centralizzando la gestione dello stato di caricamento e la cattura degli errori.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily navigate} (React Router): per il reindirizzamento post azione;
+                    \item {\ttfamily UIStore}: per la sincronizzazione globale del flag {\ttfamily isLoading};
+                    \item {\ttfamily sessionHandlersConfig}: fornisce le definizioni atomiche delle azioni;
+                    \item {\ttfamily createAsyncHandler}: factory per l'iniezione di logica trasversale (loading/error) negli handler.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item {\ttfamily error}: memorizza l'ultimo errore intercettato durante un'azione asincrona.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Utilizza {\ttfamily useMemo} per generare una mappa di funzioni ({\ttfamily actionHandlers}) riducendo le configurazioni ottenute da {\ttfamily getHandlerConfigs};
+                    \item Ogni handler generato automatizza il ciclo di vita dell'azione: attivazione del loading globale, esecuzione della logica, gestione del successo e gestione centralizzata dell'errore.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item {\ttfamily ...actionHandlers}: set di funzioni pronte per l'uso nella UI (es. {\ttfamily handleYesClick}, {\ttfamily handleSaveAndExitClick});
+                    \item {\ttfamily isLoading}: stato di caricamento globale derivato dal selettore dello store;
+                    \item {\ttfamily error}: riferimento all'errore locale per la visualizzazione di feedback immediati nel runner.
+                \end{itemize}
+                
+                \subparagraph{useSessionRedirect}\mbox{}\\
+                Hook di guardia utilizzato per proteggere le pagine del runner. Verifica la presenza di sessione o dispositivo corrente e, in caso di assenza, esegue un reindirizzamento forzato.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item {\ttfamily sessionId}: identificativo della sessione corrente;
+                    \item {\ttfamily currentDevice}: oggetto rappresentante il dispositivo corrente.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily navigate} ({\ttfamily useNavigate} di React Router): utilizzato per il reindirizzamento.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item All'interno di un {\ttfamily useEffect}, verifica se uno dei parametri ({\ttfamily sessionId} o {\ttfamily currentDevice}) risulti nullo o non definito;
+                    \item In caso di mancata conformità alle precondizioni, esegue il reindirizzamento alla rotta di riepilogo del dispositivo ({\ttfamily /device/summary}).
+                \end{itemize}
+                
+                \subparagraph{useResultViewLogic}\mbox{}\\
+                Hook orchestratore della logica di presentazione della vista risultati. Centralizza l'accesso ai dati di sessione, lo stato dei risultati e le funzionalità di esportazione e navigazione.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily useResultStore} e {\ttfamily useSessionStore}: accesso allo stato globale;
+                    \item {\ttfamily useCurrentDevice}: recupero del dispositivo in uso;
+                    \item {\ttfamily useExportResults} e {\ttfamily useExportSession}: hook specializzati per le procedure di esportazione;
+                    \item {\ttfamily resetSessionAndNavigateHome}: logica di terminazione sessione.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item {\ttfamily expandedRequirement}: memorizza l'id del requisito attualmente espanso nella UI per visualizzarne i dettagli.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Gestisce la navigazione verso la prosecuzione del test, la modifica della sessione o il ritorno alla home;
+                    \item Coordina l'apertura del dialogo di formattazione e l'avvio del download per i report (CSV, PDF) e per il backup della sessione (JSON);
+                    \item Implementa il toggle visivo per l'espansione dei singoli requisiti nella lista dei risultati.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item Dati: {\ttfamily results}, {\ttfamily device}, {\ttfamily resultsPerAsset};
+                    \item Flag di stato: {\ttfamily isTestFinished}, {\ttfamily isSessionUploaded}, {\ttfamily isExporting}, ecc.;
+                    \item Handler: metodi per la navigazione, il toggle della UI e l'esecuzione degli export.
+                \end{itemize}
+                
+                \subparagraph{useModifySessionLogic}\mbox{}\\
+                Hook orchestratore per la logica di modifica della sessione. Gestisce il filtraggio dei risultati modificabili, la selezione dei target di ripresa (asset/requisito) e il ripristino dello stato applicativo per la riesecuzione dei test.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily useResultStore}, {\ttfamily useTreeStore}, {\ttfamily useDeviceStore}, {\ttfamily useSessionStore}: accesso centralizzato allo stato globale;
+                    \item {\ttfamily filterResumableResults}: logica di dominio per identificare i requisiti che supportano la ripresa;
+                    \item {\ttfamily sessionService}: per l'esecuzione della logica di {\ttfamily resume};
+                    \item {\ttfamily useNavigate}: per la navigazione programmatica verso il runner o i risultati.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item {\ttfamily expandedRequirement}: ID del requisito attualmente espanso nella lista;
+                    \item {\ttfamily selectedAsset}: ID dell'asset selezionato all'interno del requisito espanso per l'operazione di {\ttfamily resume}.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Filtraggio: calcola in modo ottimizzato ({\ttfamily useMemo}) i risultati che possono essere ripresi basandosi sulle regole di dominio;
+                    \item Selezione: gestisce il toggle della UI per i requisiti e la selezione esclusiva di un asset per il riavvio;
+                    \item Ripresa test: verifica la validità della selezione e invoca {\ttfamily sessionService.resumeSession} per ricalibrare la storia e la posizione della sessione prima di navigare al runner;
+                    \item Navigazione: fornisce un handler dedicato per il ritorno alla vista dei risultati.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item Dati filtrati: {\ttfamily filteredResults}, {\ttfamily dependenciesByRequirement};
+                    \item Stato UI: {\ttfamily expandedRequirement}, {\ttfamily selectedAsset};
+                    \item Contesto: {\ttfamily resultsPerAsset}, {\ttfamily device};
+                    \item Azioni: {\ttfamily handleToggleRequirement}, {\ttfamily handleSelectAsset}, {\ttfamily handleResumeTest}, {\ttfamily handleBack}.
+                \end{itemize}
+                
+                \subparagraph{useAssetManagement}\mbox{}\\
+                Hook orchestratore per la vista di gestione degli asset. Coordina le operazioni di modifica del dispositivo (aggiunta/rimozione asset), il salvataggio su file e la logica di guardia per il passaggio alla sessione di test in presenza di modifiche non salvate.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily useNavigate}: per la navigazione verso la creazione asset o il riepilogo del dispositivo;
+                    \item {\ttfamily SessionService}: utilizzato per inizializzare la sessione a partire dal dispositivo corrente;
+                    \item {\ttfamily DeviceService}: per le operazioni di persistenza (salvataggio su file) e rimozione asset;
+                    \item {\ttfamily notificationService}: per la segnalazione di errori durante la creazione della sessione;
+                    \item {\ttfamily UIStore}: per il monitoraggio dello stato {\ttfamily isDirty} (presenza di modifiche non salvate).
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item {\ttfamily showUnsavedDialog}: booleano che controlla la visibilità del dialog di conferma per le modifiche non salvate.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Gestione asset: fornisce handler per la navigazione verso la creazione di nuovi asset e delega la rimozione a {\ttfamily DeviceService};
+                    \item Logica di guardia: in {\ttfamily onGoToSummary}, verifica se il dispositivo ha modifiche pendenti tramite {\ttfamily isDirty}. Se presente, attiva il dialog di avviso; in caso contrario, procede alla creazione della sessione;
+                    \item Persistenza e navigazione: coordina il salvataggio del dispositivo prima del passaggio al riepilogo ({\ttfamily onConfirmSaveBeforeSummary}) o permette il proseguimento ignorando le modifiche;
+                    \item Creazione sessione: incapsula la chiamata asincrona a \newline {\ttfamily sessionService.createSessionWithDevice} gestendo il feedback in caso di errore.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item {\ttfamily currentDevice}: riferimento al dispositivo attualmente in gestione;
+                    \item {\ttfamily showUnsavedDialog}: stato visivo per la UI;
+                    \item Interfaccia dei metodi: set completo di handler per la manipolazione degli asset, la navigazione e il controllo del flusso di salvataggio.
+                \end{itemize}
+                
+                \subparagraph{useHomeNavigation}\mbox{}\\
+                Hook orchestratore della pagina iniziale ({\ttfamily HomeView}) che centralizza i flussi di ingresso principali dell'applicazione. Gestisce l'inizializzazione dell'ambiente di lavoro attraverso il caricamento di configurazioni esistenti (dispositivi o sessioni) o la creazione di nuovi asset.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily useNavigate} (React Router): per il reindirizzamento programmatico alle diverse sezioni dell'app;
+                    \item {\ttfamily SessionService}: per l'interazione con le API di backend relative alla creazione e al ripristino delle sessioni;
+                    \item {\ttfamily notificationService}: per la gestione e visualizzazione degli errori durante le operazioni di I/O, ottenuto tramite contesto applicativo.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item Nessuno (delega la persistenza dello stato agli store globali tramite i servizi).
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item {\ttfamily handleLoadDevice(file)}: coordina l'invocazione asincrona di \newline {\ttfamily SessionService.createSessionWithFile(file)}. In caso di successo, l'utente viene indirizzato alla pagina di riepilogo del dispositivo;
+                    \item {\ttfamily handleCreateDevice()}: gestisce la navigazione verso l'interfaccia di creazione manuale di un nuovo dispositivo;
+                    \item {\ttfamily handleLoadPreviousSession(file)}: esegue il ripristino di una sessione salvata tramite {\ttfamily SessionService.loadSessionFromFile(file)}, automatizzando il caricamento della cronologia e navigando direttamente alla vista dei risultati finali.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item Set di handler per le azioni principali della dashboard iniziale.
+                \end{itemize}
+                
+                \subparagraph{useRouteGuardAccess}\mbox{}\\
+                Hook di autorizzazione per il sistema di routing che determina se una rotta protetta è accessibile sulla base dello stato corrente della sessione e del dispositivo.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item {\ttfamily routeConfig}: oggetto di configurazione della rotta che definisce se il percorso è protetto ({\ttfamily isProtected}) e se richiede esplicitamente un identificativo di sessione ({\ttfamily requiresSessionId}).
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily useSessionStore}: utilizzato per monitorare il {\ttfamily sessionId} corrente;
+                    \item {\ttfamily useDeviceStore}: utilizzato per monitorare il {\ttfamily currentDevice};
+                    \item {\ttfamily selectRouteAccess}: selettore composito che incapsula la logica di validazione dei criteri di accesso.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Utilizza {\ttfamily useMemo} per ottimizzare le prestazioni, ricalcolando il permesso di accesso solo al variare della configurazione della rotta, del dispositivo o della sessione;
+                    \item Se la rotta non è contrassegnata come protetta, l'accesso è garantito in modo predefinito ({\ttfamily true});
+                    \item In caso di rotta protetta, determina se la sessione è obbligatoria (default {\ttfamily true} a meno di specifica contraria) e delega la valutazione finale a {\ttfamily selectRouteAccess}.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item Un valore booleano che indica la legittimità dell'accesso alla rotta configurata.
+                \end{itemize}
+
+                \subparagraph{useExportResults}\mbox{}\\
+                Hook specializzato nella gestione del flusso di esportazione dei risultati aggregati, includendo selezione del formato, stato di avanzamento e gestione errori.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item {\ttfamily sessionId}: identificativo della sessione per cui esportare i risultati.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily ExportService}: esecuzione export in formato CSV/PDF;
+                    \item {\ttfamily notificationService}: notifica errori utente;
+                    \item {\ttfamily UIStore}: gestione del flag globale {\ttfamily isExporting}.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item {\ttfamily showFormatDialog}: controlla la visibilità del dialogo di scelta formato.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item {\ttfamily handleExportClick()} apre il dialogo di selezione formato;
+                    \item {\ttfamily handleExportFormat(format)} chiude il dialogo, abilita il flag di export, invoca il metodo di export coerente col formato e gestisce eventuali errori con notifica;
+                    \item al termine dell'operazione resetta sempre il flag di export.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item {\ttfamily isExporting};
+                    \item {\ttfamily showFormatDialog};
+                    \item {\ttfamily handleExportClick}, {\ttfamily handleExportFormat}, {\ttfamily setShowFormatDialog}.
+                \end{itemize}
+
+                \subparagraph{useExportSession}\mbox{}\\
+                Hook dedicato all'esportazione completa della sessione corrente in formato JSON, con gestione uniforme dello stato di avanzamento e degli errori.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item {\ttfamily sessionId}: identificativo della sessione da esportare.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily SessionService}: recupero risposte formattate;
+                    \item {\ttfamily ExportService}: esportazione JSON della sessione;
+                    \item {\ttfamily notificationService}: notifica errori;
+                    \item {\ttfamily UIStore}: gestione del flag {\ttfamily isExportingSession}.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item {\ttfamily handleExportSessionClick()} attiva il flag di export sessione, costruisce il payload risposte tramite servizio di sessione, avvia l'export e notifica eventuali errori;
+                    \item in ogni caso disattiva il flag di export al termine.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item {\ttfamily isExportingSession};
+                    \item {\ttfamily handleExportSessionClick}.
+                \end{itemize}
+                
+                \subparagraph{useSessionRunnerTrees}\mbox{}\\
+                Hook di lettura che espone i decision tree necessari alla UI del runner, delegando l'accesso allo stato globale tramite selector composito.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily useTreeStore}: sorgente stato dei tree;
+                    \item {\ttfamily selectSessionRunnerTrees}: selector composito per estrazione dati.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Restituisce in modo reattivo i tree correnti necessari al flusso del Session Runner.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item Lista dei decision tree correnti.
+                \end{itemize}
+                
+                \subparagraph{useBeforeUnload}\mbox{}\\
+                Hook di protezione lifecycle che gestisce la chiusura o ricarica della pagina, assicurando la terminazione della sessione lato backend e la pulizia dello stato locale.\\\\
+                \textbf{Parametri}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Dipendenze}
+                \begin{itemize}
+                    \item {\ttfamily sessionService}: accesso a sessionId e operazioni di cleanup;
+                    \item API browser {\ttfamily beforeunload} + chiamata {\ttfamily fetch} con {\ttfamily keepalive}.
+                \end{itemize}
+                \textbf{Stato interno}
+                \begin{itemize}
+                    \item Nessuno.
+                \end{itemize}
+                \textbf{Comportamento}
+                \begin{itemize}
+                    \item Registra un listener su {\ttfamily window.beforeunload};
+                    \item se esiste una sessione attiva, invia una DELETE al backend con {\ttfamily keepalive: true};
+                    \item invoca la pulizia locale della sessione;
+                    \item alla dismissione del componente rimuove il listener registrato.
+                \end{itemize}
+                \textbf{Valori esposti}
+                \begin{itemize}
+                    \item Nessuno (hook a effetto collaterale).
+                \end{itemize}
+
+            % DESCRIZIONE STORE FRONTEND 
+            \paragraph{Store e selectors}\mbox{}\\
+            Per lo state management vengono descritti gli store specificando i loro attributi e il loro metodi.
+
+                \subparagraph{SessionStore}\mbox{}\\
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.6\linewidth]{../../../Assets/classiFront/SessionStore.png}
+                        \caption{SessionStore: store state management}
+                    \end{figure}
+                \end{center}
+                Store principale per lo stato della sessione di test: posizione corrente, storico risposte, avanzamento e flag di flusso.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily sessionId}: identificativo sessione corrente;
+                    \item {\ttfamily pastHistory}: storico delle risposte date dall'utente;
+                    \item {\ttfamily futureHistory}: storico in avanti per navigazione;
+                    \item {\ttfamily isTestFinished}: flag di completamento sessione;
+                    \item {\ttfamily isResumeMode}: flag di ripresa da sessione modificata;
+                    \item {\ttfamily isSessionUploaded}: indica se la sessione è caricata da file;
+                    \item {\ttfamily resultsPerAsset}: risultati dettagliati per asset;
+                    \item {\ttfamily currentNode}: riferimento al nodo corrente;
+                    \item {\ttfamily currentAssetIndex}, {\ttfamily currentTreeIndex}: posizione corrente su asset e requisito.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item Metodi setter base: {\ttfamily setSessionId}, {\ttfamily setCurrentNode}, {\ttfamily setSessionUploaded}, \newline {\ttfamily setDevicePosition};
+                    \item Gestione risposte/storico: {\ttfamily selectAnswer}, {\ttfamily importPastHistory}, {\ttfamily truncateHistory}, \newline {\ttfamily truncateHistoryByPosition};
+                    \item Navigazione: {\ttfamily goToPreviousNode}, {\ttfamily goToNextNode}, {\ttfamily clearFuture}, {\ttfamily setPosition};
+                    \item Flag di processo: {\ttfamily setTestFinished}, {\ttfamily setResumeMode}, {\ttfamily setResultsPerAsset};
+                    \item Reset completo: {\ttfamily clearStore()}.
+                \end{itemize}
+                
+                \subparagraph{DeviceStore}\mbox{}\\
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.4\linewidth]{../../../Assets/classiFront/DeviceStore.png}
+                        \caption{DeviceStore: store state management}
+                    \end{figure}
+                \end{center}
+                Store dedicato al dispositivo corrente e alla sua lista di asset.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily currentDevice}: oggetto dispositivo attivo.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily setDevice(device)}: imposta il dispositivo corrente;
+                    \item {\ttfamily addAsset(asset)}: aggiunge un asset al dispositivo;
+                    \item {\ttfamily deleteAsset(assetId)}: rimuove un asset dal dispositivo;
+                    \item {\ttfamily clearStore()}: reset del dispositivo corrente.
+                \end{itemize}
+                
+                \subparagraph{TreeStore}\mbox{}\\
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.6\linewidth]{../../../Assets/classiFront/TreeStore.png}
+                        \caption{TreeStore: store state management}
+                    \end{figure}
+                \end{center}
+                Store dei decision tree normalizzati usati durante il questionario.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily trees}: lista dei decision tree caricati.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily setTrees(trees)}: normalizza e salva i tree (anche da payload API);
+                    \item {\ttfamily getNodeByTreeIndexAndNodeId(treeIndex, nodeId)}: recupera un nodo specifico del tree di indice {\ttfamily treeIndex};
+                    \item {\ttfamily clearStore()}: reset della lista tree.
+                \end{itemize}
+                
+                \subparagraph{ResultStore}\mbox{}\\
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.4\linewidth]{../../../Assets/classiFront/ResultStore.png}
+                        \caption{ResultStore: store state management}
+                    \end{figure}
+                \end{center}
+                Store dedicato ai risultati aggregati della sessione.\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily results}: lista risultati aggregati per requisito.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item {\ttfamily setResults(results)}: aggiorna i risultati aggregati;
+                    \item {\ttfamily clearStore()}: reset dei risultati.
+                \end{itemize}
+                
+                \subparagraph{UIStore}\mbox{}\\
+                \begin{center}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=.5\linewidth]{../../../Assets/classiFront/UIStore.png}
+                        \caption{UIStore: store state management}
+                    \end{figure}
+                \end{center}
+                Store trasversale per i flag UI (loading, export, dirty state).\\\\
+                \textbf{Attributi}
+                \begin{itemize}
+                    \item {\ttfamily isSessionActionLoading}: azione sessione in corso;
+                    \item {\ttfamily isExporting}: export risultati in corso;
+                    \item {\ttfamily isExportingSession}: export sessione in corso;
+                    \item {\ttfamily isDirty}: presenza di modifiche non salvate.
+                \end{itemize}
+                \textbf{Metodi}
+                \begin{itemize}
+                    \item Setter dei flag UI: {\ttfamily setSessionActionLoading}, {\ttfamily setExporting}, {\ttfamily setExportingSession}, {\ttfamily setDirty};
+                    \item {\ttfamily resetUIState()}: reset completo dei flag UI.
+                \end{itemize}
+
+                \subparagraph{Selectors}\mbox{}\\
+                    Di seguito sono elencati i principali selectors presenti nell'applicazione:
+                    
+                    \begin{itemize}
+                        \item {\ttfamily selectCurrentDevice}: restituisce il dispositivo corrente.
+                        \item {\ttfamily selectResults}: restituisce i risultati aggregati della sessione.
+                        \item {\ttfamily selectSessionId}: restituisce l'identificativo della sessione.
+                        \item {\ttfamily selectResultsPerAsset}: restituisce i risultati suddivisi per asset.
+                        \item {\ttfamily selectResultViewSessionState}: restituisce lo stato sessione necessario alla pagina risultati.
+                        \item {\ttfamily selectSessionStateSnapshot}: restituisce lo snapshot usato dal Session Runner.
+                        \item {\ttfamily selectTrees}: restituisce la lista dei decision tree.
+                        \item {\ttfamily selectDependenciesByRequirement}: restituisce la mappa delle dipendenze tra requisiti.
+                        \item {\ttfamily selectIsDirty}: indica la presenza di modifiche non salvate.
+                        \item {\ttfamily selectIsExporting}: indica se l'export risultati è in corso.
+                        \item {\ttfamily selectIsExportingSession}: indica se l'export sessione è in corso.
+                        \item {\ttfamily selectIsSessionActionLoading}: indica se un'azione di sessione è in corso.
+                        \item {\ttfamily selectRouteAccess}: valuta se una rotta protetta è accessibile.
+                        \item {\ttfamily selectSessionRunnerTrees}: restituisce i tree da usare nel Session Runner.
+                    \end{itemize}
+
+            \paragraph{Infrastruttura}
+                \subparagraph{AxiosApiClient}\mbox{}\\
+                Implementazione concreta della porta HTTP applicativa, basata su Axios. Gestisce le operazioni {\ttfamily get/post/delete}, configura il {\ttfamily baseURL} e converte gli errori tecnici in errori applicativi tramite {\ttfamily mapToAppError(error)}.\\\\
+                \textbf{Metodi principali}
+                \begin{itemize}
+                    \item {\ttfamily get(url, config)}
+                    \item {\ttfamily post(url, data, config)}
+                    \item {\ttfamily delete(url, config)}
+                \end{itemize}
+                
+                \subparagraph{errorMapper}\mbox{}\\
+                Componente di normalizzazione errori tra infrastructure e application: traduce errori Axios/generici in {\ttfamily NetworkError}, {\ttfamily ValidationError}, {\ttfamily StateError} o {\ttfamily AppError}.\\\\
+                \textbf{Metodo principale}
+                \begin{itemize}
+                    \item {\ttfamily mapToAppError(error)}
+                \end{itemize}
+                
+                \subparagraph{Notification Adapter/Manager}\mbox{}\\
+                Strato di notifica che isola il provider UI (Sonner) dal layer application. L'adapter espone i metodi della porta notifica e delega al manager, che mostra toast di errore/successo con messaggi coerenti.\\\\
+                \textbf{Metodi principali}
+                \begin{itemize}
+                    \item {\ttfamily notifyError(error, options)}
+                    \item {\ttfamily notifySuccess(message)}
+                \end{itemize}
+
+
+
 
         \subsection{UML backend}
         \paragraph{Precisazione sulla visibilità}\mbox{}\\
