@@ -129,7 +129,7 @@
         \rowcolor{lightgray}
         \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione}  \\
         \hline
-        \VersioneDocumento & \DataUltimaModifica & Giacomo Giora & Michele Tesser & Approvazione \\
+        \VersioneDocumento & \DataUltimaModifica & Giacomo Giora & Michele Tesser & Aggiunte g del Glossario v2.0.0. Ricevuta approvazione \\
         \hline
         v0.5.1 & 2026/04/03 & Bilal Sabic & Michele Tesser & Fine stesura \newline documento \\
         \hline
@@ -163,15 +163,15 @@
 \section{Introduzione}
 
     \subsection{Scopo del documento}
-        Il presente documento ha l'obiettivo di fornire una guida all'utilizzo dell'applicazione sviluppata dal team \textit{Atlas}, realizzata su richiesta del proponente \textit{Bluewind S.r.l.} nell'ambito del capitolato \textbf{C1 - Automated EN18031 Compliance Verification}. \newline
+        Il presente documento ha l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di fornire una guida all'utilizzo dell'applicazione sviluppata dal team \textit{Atlas}, realizzata su richiesta del proponente \textit{Bluewind S.r.l.} nell'ambito del \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} \textbf{C1 - Automated EN18031 Compliance Verification}. \newline
         Il documento è finalizzato a supportare l'utente finale nelle fasi di installazione e di utilizzo dell'applicazione software. A tal fine vengono descritti i requisiti hardware e software necessari, nonché le procedure da seguire per l'installazione e per il corretto utilizzo del sistema.
 
     \subsection{Scopo del prodotto}
-        L'obiettivo del prodotto è automatizzare il processo di verifica della conformità degli apparecchi che utilizzano onde radio rispetto alla normativa europea EN18031, definita dalla Direttiva RED. \newline
+        L'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} del prodotto è automatizzare il processo di verifica della conformità degli apparecchi che utilizzano onde radio rispetto alla normativa europea EN18031, definita dalla Direttiva RED. \newline
         L'applicazione sviluppata consente di effettuare tale verifica tramite l'esecuzione di specifici \textit{decision tree} associati ai diversi asset del dispositivo. Al termine dell'esecuzione, il sistema fornisce un risultato chiaro della valutazione, espresso attraverso uno dei seguenti esiti: \textit{PASS}, \textit{FAIL} oppure \textit{NOT APPLICABLE}.
 
     \subsection{Contesto d'uso}
-        Come già esplicitato nel documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}, gli utenti finali dell'applicazione \textbf{Automated EN18031 Compliance Verification} appartengono alla categoria degli "utenti esperti". Essi possiedono pertanto competenze tecniche in ambito di sicurezza informatica e conoscenze della normativa europea a cui il capitolato fa riferimento. \newline
+        Come già esplicitato nel documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}, gli utenti finali dell'applicazione \textbf{Automated EN18031 Compliance Verification} appartengono alla categoria degli "utenti esperti". Essi possiedono pertanto competenze tecniche in ambito di \textit{sicurezza informatica}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezzainformatica}{G}} e conoscenze della normativa europea a cui il \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} fa riferimento. \newline
         Per tale motivo, nel presente documento viene fatto deliberatamente uso di terminologia tecnica.
 
     \subsection{Glossario}
@@ -183,7 +183,7 @@
     \subsection{Riferimenti}
         \subsubsection{Riferimenti normativi}
             \begin{itemize}
-                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item Riferimento al \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
                 \item Riferimento al Way of Working del team Atlas: \newline \textbf{Norme di Progetto v.2.0.0}\newline \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/interni/Norme%20di%20Progetto.pdf}{Link al documento} 
             \end{itemize}
 
@@ -211,7 +211,7 @@
                  \end{center}
                  Sono stati elencati sia Chrome che Firefox perché sono i due browser più utilizzati. 
                  Tutti i componenti si possono scaricare dai loro siti dedicati. \newline
-                 Per garantire una buona esperienza d’uso, si raccomanda che il sistema soddisfi i seguenti requisiti  hardware minimi.
+                 Per garantire una buona esperienza d'uso, si raccomanda che il sistema soddisfi i seguenti requisiti  hardware minimi.
         \begin{center}
         \rowcolors{2}{lightblue}{white}
             \begin{tabularx}{\textwidth}{|l|l|l|X|}
@@ -231,22 +231,22 @@
             \item \textbf{Git (opzionale)}.
         \end{itemize}
 
-        Il prodotto software viene distribuito tramite container Docker; pertanto non è necessario installare librerie o servizi di supporto aggiuntivi. \newline
+        Il prodotto software viene distribuito tramite container \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}}; pertanto non è necessario installare librerie o \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} di supporto aggiuntivi. \newline
         \textbf{Docker}, infatti, consente di eseguire l'applicazione all'interno di un container, garantendo un ambiente di esecuzione isolato e configurato correttamente.
-        \textbf{Git} viene utilizzato per clonare la repository GitHub contenente il progetto, ma è altrettanto possibile scaricare il prodotto in formato .zip tramite il sito del team \href{https://atlasteam9.github.io/Atlas/}{Atlas}.
+        \textbf{Git} viene utilizzato per clonare la \textit{repository}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Repository}{G}} \textit{GitHub}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#GitHub}{G}} contenente il progetto, ma è altrettanto possibile scaricare il prodotto in formato .zip tramite il sito del team \href{https://atlasteam9.github.io/Atlas/}{Atlas}.
 \newpage
 
 \section{Installazione}
     \subsection{Installazione di Docker}    
-        Prima di procedere con l'installazione dell'applicazione bisogna verificare che Docker sia presente sulla propria macchina. Per farlo, si digita nel terminale: \newline 
+        Prima di procedere con l'installazione dell'applicazione bisogna verificare che \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} sia presente sulla propria macchina. Per farlo, si digita nel terminale: \newline 
         \textbf{docker --version}\newline
-        Se la console ritorna una versione di Docker, ad esempio: "\textbf{Docker version 28.5.2, build ecc6942}",
-        allora docker è correttamente installato. Se invece ritorna un errore, è possibile scaricarlo dal seguente sito \url{https://docs.docker.com/engine/install/} seguendo la guida. Durante lo sviluppo dell'applicazione è stata utilizzata la versione 29.3.0 di Docker.
+        Se la console ritorna una versione di \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}}, ad \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}}: "\textbf{Docker version 28.5.2, build ecc6942}",
+        allora \textit{docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} è correttamente installato. Se invece ritorna un \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}}, è possibile scaricarlo dal seguente sito \url{https://docs.docker.com/engine/install/} seguendo la guida. Durante lo \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}} dell'applicazione è stata utilizzata la versione 29.3.0 di Docker.
         \subsection{Download dell'applicazione}
         Il download si può effettuare in due modi:
         \begin{itemize}
-        \item Git: è possibile clonare la repository di GitHub eseguendo nel terminale \newline \textbf{git clone https://github.com/AtlasTeam9/MVP}
-        \item da browser: andare sul sito della \href{https://github.com/AtlasTeam9/MVP}{repository} e scaricare la repo in formato .zip
+        \item \textit{Git}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Git}{G}}: è possibile clonare la \textit{repository}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Repository}{G}} di \textit{GitHub}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#GitHub}{G}} eseguendo nel terminale \newline \textbf{git clone https://github.com/AtlasTeam9/MVP}
+        \item da browser: andare sul sito della \href{https://github.com/AtlasTeam9/MVP}{\textit{repository}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Repository}{G}}} e scaricare la repo in formato .zip
         \end{itemize}
         Una volta scaricato, posizionarsi nella cartella "MVP-main".
 
@@ -256,7 +256,7 @@
           \item \textbf{cp .env.example .env} (solo la prima volta)
           \item \textbf{docker compose up --build}
         \end{itemize}
-        La creazione dell'immagine richiede pochi minuti (circa 1-2). Dopo il processo di creazione viene costruito ed avviato il container della web-app. Per chiudere la sessione di Docker basta inserire la combinazione di tasti Ctrl+C, oppure premere il tasto stop che si trova nella sezione actions se si utilizza Docker Desktop. \newline Se si vuole riprendere la sessione di Docker si può fare digitando nel terminale:
+        La creazione dell'immagine richiede pochi minuti (circa 1-2). Dopo il processo di creazione viene costruito ed avviato il container della web-app. Per chiudere la sessione di \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} basta inserire la combinazione di tasti Ctrl+C, oppure premere il tasto stop che si trova nella sezione actions se si utilizza \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} Desktop. \newline Se si vuole riprendere la sessione di \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} si può fare digitando nel terminale:
         \begin{itemize}
           \item \textbf{docker compose up} 
         \end{itemize}
@@ -267,14 +267,14 @@
         \begin{itemize}
           \item \textbf{localhost:8080}
         \end{itemize}
-        Si aprirà l'interfaccia dell'applicazione web, pronta per l'uso. Nella seguente sezione si trovano le istruzioni per l'utilizzo della web-app.
+        Si aprirà l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} dell'applicazione web, pronta per l'uso. Nella seguente sezione si trovano le istruzioni per l'utilizzo della web-app.
         
 \newpage
 
 \section{Istruzioni per l'uso}
     Questa sezione descrive le principali azioni che si possono svolgere all'interno dell'applicazione.
     \subsection{Homepage}
-    L'interfaccia principale della web-app. Sono presenti 3 pulsanti: Upload Device(JSON), Create New Device, Upload Previous Session.
+    L'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} principale della web-app. Sono presenti 3 pulsanti: Upload Device(JSON), Create New Device, Upload Previous Session.
     \begin{center}
         \begin{figure}[H]
               \centering
@@ -296,7 +296,7 @@
         \end{figure}
       \end{center}
       \subsubsection{Visualizzazione degli asset}
-        È presente un elemento cliccabile contenente il nome del dispositivo inserito; selezionandolo, viene visualizzata la lista di tutti gli asset del dispositivo. Ogni asset è rappresentato da un riquadro che mostra il nome e il tipo dell'asset.
+        È presente un elemento cliccabile contenente il nome del dispositivo inserito; selezionandolo, viene visualizzata la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di tutti gli asset del dispositivo. Ogni asset è rappresentato da un riquadro che mostra il nome e il tipo dell'asset.
         \begin{center}
         \begin{figure}[H]
               \centering
@@ -305,7 +305,7 @@
         \end{figure}
       \end{center}
       \subsubsection{Visualizzazione dei dettagli degli asset}
-        Premendo su un singolo asset nella lista degli asset, vengono visualizzati sullo schermo i suoi dettagli.
+        Premendo su un singolo asset nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset, vengono visualizzati sullo schermo i suoi dettagli.
         \begin{center}
         \begin{figure}[H]
               \centering
@@ -324,7 +324,7 @@
       \end{itemize}
 
       \subsubsection{Visualizzazione dei dettagli del dispositivo}
-      È possibile, inoltre, vedere tutti i dettagli di un dispositivo. Il bottone \textbf{Show Device Details} mostra a schermo la lista degli attributi del dispostivo.
+      È possibile, inoltre, vedere tutti i dettagli di un dispositivo. Il bottone \textbf{Show Device Details} mostra a schermo la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli attributi del dispostivo.
       \begin{center}
         \begin{figure}[H]
               \centering
@@ -337,7 +337,7 @@
       \begin{itemize}
           \item \textbf{Name} : il nome del dispositivo;
           \item \textbf{Operating system} : il sistema operativo che usa il dispositivo;
-          \item \textbf{Firmware version} : la versione del firmware del dispositivo;
+          \item \textbf{Firmware version} : la versione del \textit{firmware}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Firmware}{G}} del dispositivo;
           \item \textbf{Functionalities} : tutte le funzionalità del dispositivo;
           \item \textbf{Description} : una descrizione del dispositivo.
       \end{itemize}
@@ -351,14 +351,14 @@
         \end{figure}
       \end{center}
       \subsection{Visualizzazione esito test}
-        Al termine del test, per ogni requisito viene visualizzato sullo schermo l'esito. Gli esiti possono essere di quattro tipi: 
+        Al termine del test, per ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} viene visualizzato sullo schermo l'esito. Gli esiti possono essere di quattro tipi: 
       \begin{itemize}
-          \item \textbf{PASS}: per tutti gli asset del dispositivo il requisito è soddisfatto oppure in stato NON APPLICABILE. Tale requisito quindi è soddisfatto per il dispositivo.
-          \item \textbf{FAIL}: per tutti gli asset del dispositivo il requisito è non soddisfatto oppure in stato NON APPLICABILE. Tale requisito quindi non è soddisfatto per il dispositivo.
-          \item \textbf{NOT APPLICABLE}: per tutti gli asset del dispositivo il requisito è in stato NON APPLICABILE. Tale requisito quindi non è applicabile al dispositivo.
+          \item \textbf{PASS}: per tutti gli asset del dispositivo il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è soddisfatto oppure in stato NON APPLICABILE. Tale \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} quindi è soddisfatto per il dispositivo.
+          \item \textbf{FAIL}: per tutti gli asset del dispositivo il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è non soddisfatto oppure in stato NON APPLICABILE. Tale \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} quindi non è soddisfatto per il dispositivo.
+          \item \textbf{NOT APPLICABLE}: per tutti gli asset del dispositivo il \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} è in stato NON APPLICABILE. Tale \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} quindi non è applicabile al dispositivo.
           \item \textbf{NOT COMPLETED}: il test non è stato completato e quindi non sono disponibili risultati per il requisito. Questo stato può comparire se l'utente ha interrotto il test mentre era in corso e successivamente ha ricaricato la sessione.
       \end{itemize}
-      Il dispositivo soggetto al test viene considerato conforme alla normativa EN 18031 se tutti i requisiti sono soddisfatti o non applicabili. Se invece è presente almeno un requisito non soddisfatto, il dispositivo viene considerato non conforme.
+      Il dispositivo soggetto al test viene considerato conforme alla normativa \textit{EN 18031}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#EN18031}{G}} se tutti i requisiti sono soddisfatti o non applicabili. Se invece è presente almeno un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} non soddisfatto, il dispositivo viene considerato non conforme.
        \begin{center}
         \begin{figure}[H]
               \centering
@@ -367,7 +367,7 @@
         \end{figure}
       \end{center}
 
-        Per ognuno dei requisiti della norma è possibile, selezionando il box corrispondente, visionare la lista dei risultati dei singoli asset associati al requsito. 
+        Per ognuno dei requisiti della \textit{norma}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Norma}{G}} è possibile, selezionando il box corrispondente, visionare la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei risultati dei singoli asset associati al requsito. 
 
         \begin{center}
             \begin{figure}[H]
@@ -377,7 +377,7 @@
             \end{figure}
         \end{center}
         
-        Gli esiti dei test possono essere esportati mediante il pulsante \textbf{Export Results} in due formati: PDF e CSV. Anche la sessione può essere esportata mediante il pulsante \textbf{Export Session}, in formato JSON. Se esportati in formato PDF, gli esiti vengono visualizzati in forma tabellare.
+        Gli esiti dei test possono essere esportati mediante il pulsante \textbf{Export Results} in due formati: \textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}} e \textit{CSV}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}}. Anche la sessione può essere esportata mediante il pulsante \textbf{Export Session}, in formato JSON. Se esportati in formato \textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, gli esiti vengono visualizzati in forma tabellare.
         \begin{center}
         \begin{figure}[H]
               \centering
@@ -398,7 +398,7 @@
       Dopo la creazione di un dispositivo, l'utente viene portato alla schermata di gestione degli asset. Azionando il pulsante \textbf{Add new asset}, è possibile creare dei nuovi asset associati al dispositivo. La fase di creazione prevede la compilazione di un modulo, in cui è possibile:
       \begin{itemize}
         \item inserire il campo Name,
-        \item selezionare il campo Type da una lista di opzioni predefinite,
+        \item selezionare il campo Type da una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di opzioni predefinite,
         \item selezionare il campo Is Sensitive tramite un toggle,
         \item inserire opzionalmente il campo Description.
       \end{itemize}
@@ -409,7 +409,7 @@
               \caption{Creazione asset}
         \end{figure}
       \end{center}
-      Dopo aver creato un nuovo asset, questo viene visualizzato nella lista degli asset nella schermata di gestione. Inoltre, è possibile eliminare un asset creato premendo il pulsante con l'icona di un cestino, situato accanto all'asset nella lista. L'utente può tornare alla schermata di riepilogo premendo il pulsante
+      Dopo aver creato un nuovo asset, questo viene visualizzato nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset nella schermata di gestione. Inoltre, è possibile eliminare un asset creato premendo il pulsante con l'icona di un cestino, situato accanto all'asset nella lista. L'utente può tornare alla schermata di riepilogo premendo il pulsante
       \textbf{Go to summary}.
       \begin{center}
         \begin{figure}[H]
@@ -457,7 +457,7 @@
       La schermata è simile a quella degli esiti dei test, ma in questo caso l'utente può andare alla schermata di modifica dei risultati azionando il pulsante  \textbf{Modify Session}.
 
       \subsection{Pagina requisiti modificabili}
-      Una volta selezionato il pulsante \textbf{Modify Session} viene visualizzata la pagina di modifica con al suo interno la lista dei soli requisiti modificabili.
+      Una volta selezionato il pulsante \textbf{Modify Session} viene visualizzata la pagina di modifica con al suo interno la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei soli requisiti modificabili.
       \begin{center}
         \begin{figure}[H]
               \centering
@@ -467,7 +467,7 @@
       \end{center}
 
       \subsection{Visualizzazione asset modificabili}
-      Per iniziare la modifica bisogna selezionare un asset specifico. Per visualizzare gli asset da cui è possibile modificare bisogna cliccare sul box corrispondente ad un requisito. Una volta cliccato si apre la lista degli asset da cui è possibile far ripartire l'esecuzione del test. 
+      Per iniziare la modifica bisogna selezionare un asset specifico. Per visualizzare gli asset da cui è possibile modificare bisogna cliccare sul box corrispondente ad un requisito. Una volta cliccato si apre la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset da cui è possibile far ripartire l'esecuzione del test. 
       \begin{center}
         \begin{figure}[H]
               \centering
@@ -477,7 +477,7 @@
       \end{center}
 
       \subsection{Modifica del test}
-      Se si clicca su un asset modificabile questo viene evidenziato. Allo stesso modo diventa cliccabile il pulsante in fondo alla pagina che permette di riprendere il test da quel preciso asset partendo dal requisito di cui faceva parte.
+      Se si clicca su un asset modificabile questo viene evidenziato. Allo stesso modo diventa cliccabile il pulsante in fondo alla pagina che permette di riprendere il test da quel preciso asset partendo dal \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} di cui faceva parte.
       \begin{center}
         \begin{figure}[H]
               \centering
@@ -509,7 +509,7 @@
     \subsection{Possibili errori}
      Questa sezione elenca alcuni errori che l'utente potrebbe incontrare durante l'utilizzo dell'applicazione e fornisce indicazioni su come risolverli.
      \subsubsection{Errore nel caricamento di un dispositivo}
-    Questo errore è accompagnato dal codice 422 e indica che il file JSON del dispositivo è formattato in modo errato e quindi non può essere letto dal sistema. Questo errore può verificarsi se nel file JSON ci sono errori di battitura durante la compilazione manuale, oppure se viene caricato un file non compatibile con l'applicazione.
+    Questo \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} è accompagnato dal codice 422 e indica che il file JSON del dispositivo è formattato in modo errato e quindi non può essere letto dal sistema. Questo \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} può verificarsi se nel file JSON ci sono errori di battitura durante la compilazione manuale, oppure se viene caricato un file non compatibile con l'applicazione.
     \begin{center}
         \begin{figure}[H]
               \centering
@@ -518,7 +518,7 @@
         \end{figure}
       \end{center}
       \subsubsection{Errore compilazione modulo}
-     Questo errore si verifica quando non vengono compilati tutti i campi obbligatori. L'applicazione segnala immediatamente all'utente il campo da completare.
+     Questo \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} si verifica quando non vengono compilati tutti i campi obbligatori. L'applicazione segnala immediatamente all'utente il campo da completare.
      \begin{center}
         \begin{figure}[H]
               \centering
@@ -526,9 +526,9 @@
               \caption{Errore mancata compilazione}
         \end{figure}
       \end{center}
-      Questo errore può verificarsi durante la creazione di un nuovo dispositivo oppure nella creazione di un nuovo asset.
+      Questo \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} può verificarsi durante la creazione di un nuovo dispositivo oppure nella creazione di un nuovo asset.
       \subsubsection{Errore server irraggiungibile}
-      Questo errore si verifica quando il backend della web app non è attivo oppure quando l’URL presente nel file .env è diverso da quello predefinito. Se l’URL è diverso, scaricare nuovamente il file .env e sostituire quello attualmente presente nei file.
+      Questo \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} si verifica quando il backend della web app non è attivo oppure quando l'URL presente nel file .env è diverso da quello predefinito. Se l'URL è diverso, scaricare nuovamente il file .env e sostituire quello attualmente presente nei file.
       \begin{center}
         \begin{figure}[H]
               \centering
@@ -537,8 +537,8 @@
         \end{figure}
       \end{center}
       
-      \subsubsection{Errore nell’invio della risposta}
-        Durante l’utilizzo dell’applicazione può verificarsi un errore nel caso in cui la stessa sessione venga aperta contemporaneamente in più schede del browser. Ad esempio, un utente apre una sessione incompleta in una prima scheda e seleziona il pulsante \textbf{Modify Session}. Successivamente, apre una seconda scheda del browser, carica lo stesso file di sessione e, dopo aver premuto nuovamente \textbf{Modify Session}, torna alla schermata principale tramite il pulsante Home. Tornando alla prima scheda e tentando di proseguire il test selezionando YES o NO, viene visualizzato un messaggio di errore “Failed to submit answer.” Ciò accade perché tornando alla home dalla seconda scheda la sessione viene eliminata localmente e quindi non è più possibile proseguire con la prima scheda. Per risolvere questo problema, è necessario evitare di aprire la stessa sessione in più schede del browser.
+      \subsubsection{Errore nell'invio della risposta}
+        Durante l'utilizzo dell'applicazione può verificarsi un \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} nel caso in cui la stessa sessione venga aperta contemporaneamente in più schede del browser. Ad \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}}, un utente apre una sessione incompleta in una prima scheda e seleziona il pulsante \textbf{Modify Session}. Successivamente, apre una seconda scheda del browser, carica lo stesso file di sessione e, dopo aver premuto nuovamente \textbf{Modify Session}, torna alla schermata principale tramite il pulsante Home. Tornando alla prima scheda e tentando di proseguire il test selezionando YES o NO, viene visualizzato un messaggio di \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} “Failed to submit answer.” Ciò accade perché tornando alla home dalla seconda scheda la sessione viene eliminata localmente e quindi non è più possibile proseguire con la prima scheda. Per risolvere questo problema, è necessario evitare di aprire la stessa sessione in più schede del browser.
         \begin{center}
         \begin{figure}[H]
               \centering
@@ -547,7 +547,7 @@
         \end{figure}
       \end{center}
       \subsubsection{Impossibile recuperare l'immagine}
-      L'errore \textbf{"Failed to connect to the docker API at npipe:\newline////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the \newline daemon is running:"} si verifica quando si tenta di creare l’immagine Docker tramite terminale, ma il Docker Engine non è attivo. Per risolverlo, avviare Docker Engine. Se si è da Windows o Mac, avviare Docker Desktop.
+      L'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} \textbf{"Failed to connect to the docker API at npipe:\newline////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the \newline daemon is running:"} si verifica quando si tenta di creare l'immagine \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} tramite terminale, ma il \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} Engine non è attivo. Per risolverlo, avviare \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} Engine. Se si è da Windows o Mac, avviare \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} Desktop.
       \subsection{Supporto tecnico}
-      In caso di situazioni estreme o anomalie, è possibile contattare il team scrivendo all’indirizzo email  \textbf{team9.atlas@gmail.com} e descrivendo il problema riscontrato.
+      In caso di situazioni estreme o anomalie, è possibile contattare il team scrivendo all'indirizzo email  \textbf{team9.atlas@gmail.com} e descrivendo il problema riscontrato.
 \end{document}            
