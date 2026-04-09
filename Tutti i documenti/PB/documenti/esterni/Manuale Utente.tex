@@ -43,11 +43,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Manuale Utente}
-\newcommand{\DataUltimaModifica}{2026/04/03}
+\newcommand{\DataUltimaModifica}{2026/04/08}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png}
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{1.0.0}
+\newcommand{\VersioneDocumento}{v1.0.0}
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -129,17 +129,19 @@
         \rowcolor{lightgray}
         \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione}  \\
         \hline
-        1.0.0 & \DataUltimaModifica & Bilal Sabic & Michele Tesser & Fine stesura \newline documento \\
+        \VersioneDocumento & \DataUltimaModifica & Giacomo Giora & Michele Tesser & Approvazione \\
         \hline
-        0.5.0 & 2026/03/31 & Bilal Sabic & Michele Tesser & Sistemazione contenuti \\
+        v0.5.1 & 2026/04/03 & Bilal Sabic & Michele Tesser & Fine stesura \newline documento \\
         \hline
-        0.4.0 & 2026/03/30 & Bilal Sabic & Michele Tesser & Aggiunta sezione \newline errori \\
+        v0.5.0 & 2026/03/31 & Bilal Sabic & Michele Tesser & Sistemazione contenuti \\
         \hline
-        0.3.0 & 2026/03/27 & Bilal Sabic & Michele Tesser & Aggiunte foto \\
+        v0.4.0 & 2026/03/30 & Bilal Sabic & Michele Tesser & Aggiunta sezione \newline errori \\
         \hline
-        0.2.0 & 2026/03/26 & Bilal Sabic & Michele Tesser & Aggiunta sezione \newline requisiti \\
+        v0.3.0 & 2026/03/27 & Bilal Sabic & Michele Tesser & Aggiunte foto \\
         \hline
-        0.1.0 & 2026/03/15 & Bilal Sabic & Federico Simonetto & Prima stesura \newline documento \\
+        v0.2.0 & 2026/03/26 & Bilal Sabic & Michele Tesser & Aggiunta sezione \newline requisiti \\
+        \hline
+        v0.1.0 & 2026/03/15 & Bilal Sabic & Federico Simonetto & Prima stesura \newline documento \\
         \hline
     \end{tabularx}
 \end{center}
@@ -182,7 +184,7 @@
         \subsubsection{Riferimenti normativi}
             \begin{itemize}
                 \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
-                \item Riferimento al Way of Working del team Atlas: \newline \textbf{Norme di Progetto v.2.0.0}\newline \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/interni/Norme%20di%20Progetto.pdf}{https://atlasteam9.github.io/Atlas/docs/PB/documenti/interni/Norme\%20di\%20Progetto.pdf} 
+                \item Riferimento al Way of Working del team Atlas: \newline \textbf{Norme di Progetto v.2.0.0}\newline \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/interni/Norme%20di%20Progetto.pdf}{Link al documento} 
             \end{itemize}
 
 \newpage
@@ -250,14 +252,21 @@
 
         \subsection{Creazione dell'immagine e l'avvio del container}
         Dopo essersi posizionati nella cartella principale, digitare nel terminale: 
-        \newline \textbf{.env.example .env} (solo la prima volta)
-        \newline \textbf{docker compose up --build} \newline
-        La creazione dell'immagine richiede pochi minuti (circa 1-2). Dopo il processo di creazione viene costruito ed avviato il container della web-app. Per chiudere la sessione di Docker basta inserire la combinazione di tasti Ctrl+C, oppure premere il tasto stop che si trova nella sezione actions se si utilizza Docker Desktop. \newline Se si vuole riprendere la sessione di Docker si può fare digitando nel terminale: \newline
-        \textbf{docker compose up} \newline si può chiudere premendo Ctrl+C oppure premendo stop.
-
+        \begin{itemize}
+          \item \textbf{cp .env.example .env} (solo la prima volta)
+          \item \textbf{docker compose up --build}
+        \end{itemize}
+        La creazione dell'immagine richiede pochi minuti (circa 1-2). Dopo il processo di creazione viene costruito ed avviato il container della web-app. Per chiudere la sessione di Docker basta inserire la combinazione di tasti Ctrl+C, oppure premere il tasto stop che si trova nella sezione actions se si utilizza Docker Desktop. \newline Se si vuole riprendere la sessione di Docker si può fare digitando nel terminale:
+        \begin{itemize}
+          \item \textbf{docker compose up} 
+        \end{itemize}
+        Si può sempre chiudere premendo Ctrl+C oppure premendo stop.
+        
         \subsection{Esecuzione della web-app}
         Dopo aver seguito tutti i passi precedenti, aprire un browser e scrivere nella barra di ricerca:
-        \textbf{localhost:8080} \newline
+        \begin{itemize}
+          \item \textbf{localhost:8080}
+        \end{itemize}
         Si aprirà l'interfaccia dell'applicazione web, pronta per l'uso. Nella seguente sezione si trovano le istruzioni per l'utilizzo della web-app.
         
 \newpage
@@ -287,7 +296,7 @@
         \end{figure}
       \end{center}
       \subsubsection{Visualizzazione degli asset}
-        È presente un menu a tendina che elenca tutti gli asset associati al dispositivo; selezionandolo, vengono visualizzati gli asset disponibili.
+        È presente un elemento cliccabile contenente il nome del dispositivo inserito; selezionandolo, viene visualizzata la lista di tutti gli asset del dispositivo. Ogni asset è rappresentato da un riquadro che mostra il nome e il tipo dell'asset.
         \begin{center}
         \begin{figure}[H]
               \centering
@@ -296,7 +305,7 @@
         \end{figure}
       \end{center}
       \subsubsection{Visualizzazione dei dettagli degli asset}
-        Premendo sul riquadro dell’asset, viene visualizzata sullo schermo la sua descrizione.
+        Premendo su un singolo asset nella lista degli asset, vengono visualizzati sullo schermo i suoi dettagli.
         \begin{center}
         \begin{figure}[H]
               \centering
@@ -307,12 +316,13 @@
       \end{center}
       Vengono descritte le principali caratteristiche dell'asset:
       \begin{itemize}
-      \item \textbf{ID} : il codice identificativo dell'asset
-      \item \textbf{Name} : il nome dell'asset
-      \item \textbf{Type} : il tipo di asset
-      \item \textbf{Sensitive} : se l'asset è sensibile o meno
-      \item \textbf{Description} : la descrizione dell'asset
+      \item \textbf{ID} : il codice identificativo dell'asset;
+      \item \textbf{Name} : il nome dell'asset;
+      \item \textbf{Type} : il tipo di asset;
+      \item \textbf{Sensitive} : se l'asset è sensibile o meno;
+      \item \textbf{Description} : la descrizione dell'asset.
       \end{itemize}
+
       \subsubsection{Visualizzazione dei dettagli del dispositivo}
       È possibile, inoltre, vedere tutti i dettagli di un dispositivo. Il bottone \textbf{Show Device Details} mostra a schermo la lista degli attributi del dispostivo.
       \begin{center}
@@ -325,14 +335,14 @@
       \end{center}
       In questa schermata è possibile vedere:
       \begin{itemize}
-          \item \textbf{Name} : il nome del dispositivo
-          \item \textbf{Operating system} : il sistema operativo che usa il dispositivo
-          \item \textbf{Firmware version} : la versione del firmware del dispositivo
-          \item \textbf{Functionalities} : tutte le funzionalità del dispositivo
-          \item \textbf{Description} : una descrizione del dispositivo
+          \item \textbf{Name} : il nome del dispositivo;
+          \item \textbf{Operating system} : il sistema operativo che usa il dispositivo;
+          \item \textbf{Firmware version} : la versione del firmware del dispositivo;
+          \item \textbf{Functionalities} : tutte le funzionalità del dispositivo;
+          \item \textbf{Description} : una descrizione del dispositivo.
       \end{itemize}
       \subsection{Avvio dei test}
-      Dalla schermata di riepilogo è possibile avviare i test del dispositivo. Tutti gli asset vengono verificati tramite una serie di domande a risposta sì/no. È possibile navigare avanti o indietro tra le domande e, in alto a sinistra, viene visualizzata la percentuale di completamento. Per salvare la sessione attuale, è possibile premere il pulsante Save and Exit, che salva la sessione in formato JSON e ti porta alla home. Per tornare alla schermata principale senza salvare, invece, si può premere il pulsante Home, situato in basso. Si procede rispondendo alle domande fino al completamento del test. 
+      Dalla schermata di riepilogo è possibile avviare i test del dispositivo. Tutti gli asset vengono verificati tramite una serie di domande a risposta sì/no. È possibile navigare avanti o indietro tra le domande in base alle risposte fornite, e, in alto a sinistra, viene visualizzata la percentuale di completamento del test. Per salvare la sessione attuale, è possibile premere il pulsante Save and Exit, che salva la sessione in formato JSON e ti porta alla home. Per tornare alla schermata principale senza salvare, invece, si può premere il pulsante Home, situato in basso. Si procede rispondendo alle domande fino al completamento del test. 
       \begin{center}
         \begin{figure}[H]
               \centering
@@ -341,13 +351,14 @@
         \end{figure}
       \end{center}
       \subsection{Visualizzazione esito test}
-        Al termine del test, per ogni requisito vengono visualizzati sullo schermo gli esiti. Gli esiti possono essere di quattro tipi: 
+        Al termine del test, per ogni requisito viene visualizzato sullo schermo l'esito. Gli esiti possono essere di quattro tipi: 
       \begin{itemize}
-          \item \textbf{PASS}: il dispositivo ha soddisfatto tutti i requisiti della norma. L’elemento è conforme agli standard previsti.
-          \item \textbf{FAIL}: il dispositivo non ha superato i criteri richiesti dalla norma. L’elemento testato non soddisfa gli standard di sicurezza o prestazione.
-          \item \textbf{NOT APPLICABLE}: il dispositivo non si applica al particolare elemento o alla situazione testata. 
-          \item \textbf{NOT COMPLETED}: il test non è stato completato. Questo stato può comparire se l’utente ha interrotto il test mentre era in corso e successivamente ha ricaricato la sessione.
+          \item \textbf{PASS}: per tutti gli asset del dispositivo il requisito è soddisfatto oppure in stato NON APPLICABILE. Tale requisito quindi è soddisfatto per il dispositivo.
+          \item \textbf{FAIL}: per tutti gli asset del dispositivo il requisito è non soddisfatto oppure in stato NON APPLICABILE. Tale requisito quindi non è soddisfatto per il dispositivo.
+          \item \textbf{NOT APPLICABLE}: per tutti gli asset del dispositivo il requisito è in stato NON APPLICABILE. Tale requisito quindi non è applicabile al dispositivo.
+          \item \textbf{NOT COMPLETED}: il test non è stato completato e quindi non sono disponibili risultati per il requisito. Questo stato può comparire se l'utente ha interrotto il test mentre era in corso e successivamente ha ricaricato la sessione.
       \end{itemize}
+      Il dispositivo soggetto al test viene considerato conforme alla normativa EN 18031 se tutti i requisiti sono soddisfatti o non applicabili. Se invece è presente almeno un requisito non soddisfatto, il dispositivo viene considerato non conforme.
        \begin{center}
         \begin{figure}[H]
               \centering
@@ -384,20 +395,26 @@
         \end{figure}
       \end{center}
       \subsubsection{Creazione di un asset}
-      Dopo la creazione di un dispositivo, l’utente viene portato alla schermata di gestione degli asset. Azionando il pulsante \textbf{Add new asset}, è possibile creare dei nuovi asset associati al dispositivo. La fase di creazione prevede la compilazione di un modulo, i cui dati richiesti sono riportati nella figura \ref{fig:Asset}.
+      Dopo la creazione di un dispositivo, l'utente viene portato alla schermata di gestione degli asset. Azionando il pulsante \textbf{Add new asset}, è possibile creare dei nuovi asset associati al dispositivo. La fase di creazione prevede la compilazione di un modulo, in cui è possibile:
+      \begin{itemize}
+        \item inserire il campo Name,
+        \item selezionare il campo Type da una lista di opzioni predefinite,
+        \item selezionare il campo Is Sensitive tramite un toggle,
+        \item inserire opzionalmente il campo Description.
+      \end{itemize}
       \begin{center}
         \begin{figure}[H]
               \centering
-              \includegraphics[width=.7\linewidth]{../../../Assets/Applicazione/AssetCreate.png}
+              \includegraphics[width=.6\linewidth]{../../../Assets/Applicazione/AssetCreate.png}
               \caption{Creazione asset}
         \end{figure}
       \end{center}
-      Dopo aver creato un nuovo asset, questo viene visualizzato nella lista degli asset nella schermata di gestione. Inoltre, è possibile eliminare un asset creato premendo il pulsante con l'icona di un cestino, situato accanto all’asset nella lista. L'utente può tornare alla schermata di riepilogo premendo il pulsante
+      Dopo aver creato un nuovo asset, questo viene visualizzato nella lista degli asset nella schermata di gestione. Inoltre, è possibile eliminare un asset creato premendo il pulsante con l'icona di un cestino, situato accanto all'asset nella lista. L'utente può tornare alla schermata di riepilogo premendo il pulsante
       \textbf{Go to summary}.
       \begin{center}
         \begin{figure}[H]
               \centering
-              \includegraphics[width=.7\linewidth]{../../../Assets/Applicazione/AssetManager.png}
+              \includegraphics[width=.65\linewidth]{../../../Assets/Applicazione/AssetManager.png}
               \caption{Gestione asset}
         \end{figure}
       \end{center}
@@ -405,7 +422,7 @@
       \subsubsection{Salvataggio di un dispositivo}
       Completata la creazione degli asset, è possibile salvare il dispositivo in formato JSON premendo il pulsante \textbf{Save Device}. Il salvataggio è consentito solo se il dispositivo contiene almeno un asset.
 
-      Se prima di andare alla schermata successiva non viene selezionato il pulsante \textbf{Save Device}, a schermo compare il seguente messaggio. Se si clicca "YES" il dispositivo viene salvato in formato JSON nel pc dell'utente altrimenti si passa direttamente alla schemata "Device Summary" e il dispositivo non viene salvato. Di conseguenza sarà necessario ricrearlo la prossima volta per poterlo ritestare. 
+      Se prima di andare alla schermata successiva non viene selezionato il pulsante \textbf{Save Device}, a schermo compare un messaggio che avvisa l'utente della presenza di modifiche al dispositivo non salvate. Se si clicca "YES" il dispositivo viene salvato in formato JSON nel pc dell'utente altrimenti si passa direttamente alla schemata "Device Summary" e le modifiche al dispositivo non verranno salvate. 
 
       \begin{center}
         \begin{figure}[H]
@@ -416,7 +433,7 @@
       \end{center}
 
       \subsection{Ripresa di una sessione non completata}
-      L’applicazione consente la ripresa di una sessione precedentemente salvata dall’utente. La ripresa si ottiene premendo il pulsante \textbf{Upload previous session} che si trova nella homepage. Successivamente, viene visualizzata una finestra di selezione file. Gli unici file ammessi sono i file di tipo JSON conformi al file di sessione previsto per l'applicazione.
+      L'applicazione consente la ripresa di una sessione precedentemente salvata dall'utente. La ripresa si ottiene premendo il pulsante \textbf{Upload previous session} che si trova nella homepage. Successivamente, viene visualizzata una finestra di selezione file. Gli unici file ammessi sono i file di tipo JSON conformi al file di sessione previsto per l'applicazione.
       Una volta selezionato il file, l'utente viene portato alla schermata degli esiti del test non completato.
       \begin{center}
         \begin{figure}[H]
@@ -425,32 +442,32 @@
               \caption{Ripresa di una sessione non completata}
         \end{figure}
       \end{center}
-      La schermata è simile a quella degli esiti dei test, ma in questo caso l’utente può riprendere i test dal punto in cui si era interrotto l’ultima volta azionando il pulsante \textbf{Resume Session}.
+      La schermata è simile a quella degli esiti dei test, ma in questo caso l'utente può riprendere i test dal punto in cui si era interrotto l'ultima volta azionando il pulsante \textbf{Resume Session}.
 
-      \subsection{Ripresa di una sessione completata}
-      L’applicazione consente anche la ripresa di una sessione precedentemente finita e salvata dall'utente. La ripresa si ottiene premendo il pulsante \textbf{Upload previous session} che si trova nella homepage. Successivamente, viene visualizzata una finestra di selezione file. Gli unici file ammessi sono i file di tipo JSON conformi al file di sessione previsto per l'applicazione.
+      \subsection{Modifica di una sessione completata}
+      L'applicazione consente anche la modifica di una sessione precedentemente finita e salvata dall'utente. La modifica si ottiene premendo il pulsante \textbf{Upload previous session} che si trova nella homepage. Successivamente, viene visualizzata una finestra di selezione file. Gli unici file ammessi sono i file di tipo JSON conformi al file di sessione previsto per l'applicazione.
       Una volta selezionato il file, l'utente viene portato alla schermata degli esiti dei test.
       \begin{center}
         \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.5]{../../../Assets/Applicazione/RipresaSessioneCompletata.png}
+              \includegraphics[scale=0.45]{../../../Assets/Applicazione/RipresaSessioneCompletata.png}
               \caption{Ripresa di una sessione completata}
         \end{figure}
       \end{center}
-      La schermata è simile a quella degli esiti dei test, ma in questo caso l’utente può andare alla schermata di modifica dei risultati azionando il pulsante  \textbf{Modify Session}.
+      La schermata è simile a quella degli esiti dei test, ma in questo caso l'utente può andare alla schermata di modifica dei risultati azionando il pulsante  \textbf{Modify Session}.
 
-      \subsection{Recap requisiti modificabili}
-      L’applicazione consente la modifica dei risultati di una sessione completata. La modifica si ottiene selezionando il pulsante \textbf{Modify Session} che si trova nella pagina che si apre dopo aver fatto l'upload di una sessione completata. In questa pagina viene visualizzato un recap con soltanto i requisiti modificabili.
+      \subsection{Pagina requisiti modificabili}
+      Una volta selezionato il pulsante \textbf{Modify Session} viene visualizzata la pagina di modifica con al suo interno la lista dei soli requisiti modificabili.
       \begin{center}
         \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.5]{../../../Assets/Applicazione/SchermataModificaSessione.png}
+              \includegraphics[scale=0.45]{../../../Assets/Applicazione/SchermataModificaSessione.png}
               \caption{Modifica di un test}
         \end{figure}
       \end{center}
 
       \subsection{Visualizzazione asset modificabili}
-      Per cominciare la modifica bisogna selezionare un asset specifico. Per vedere gli asset basta cliccare sul box corrispondente ad un requisito. Una volta cliccato si apre la lista degli asset modificabili. 
+      Per iniziare la modifica bisogna selezionare un asset specifico. Per visualizzare gli asset da cui è possibile modificare bisogna cliccare sul box corrispondente ad un requisito. Una volta cliccato si apre la lista degli asset da cui è possibile far ripartire l'esecuzione del test. 
       \begin{center}
         \begin{figure}[H]
               \centering
@@ -472,11 +489,11 @@
       Una volta cliccato il pulsante \textbf{Resume test from here} la schermata è identica a quella dell'esecuzione del test. In questo caso però il test parte da un punto specifico selezionato dall'utente e non dall'inizio. 
 
     \subsection{Asset non modificabili}
-        Se viene caricata una sessione che include asset con esito NOT APPLICABLE, questi potrebbero non essere modificabili, in quanto dipendono da altri asset anch’essi con esito NOT APPLICABLE. Per poterlo modificare, è necessario cambiare l’esito dell’asset da cui dipende. 
+        Se viene caricata una sessione che include asset con esito NOT APPLICABLE, questi potrebbero non essere modificabili, in quanto potrebbero dipendere da altri asset anch'essi con esito NOT APPLICABLE. Per poter modificare un test, è necessario ripartire da un asset che non abbia dipendenze NOT APPLICABLE. 
             \begin{center}
         \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.8]{../../../Assets/Applicazione/NonModificabile.png}
+              \includegraphics[scale=0.7]{../../../Assets/Applicazione/NonModificabile.png}
               \caption{Asset non modificabile}
         \end{figure}
       \end{center}
@@ -485,27 +502,27 @@
      \begin{center}
         \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.8]{../../../Assets/Applicazione/NextDisabled.png}
+              \includegraphics[scale=0.5]{../../../Assets/Applicazione/NextDisabled.png}
               \caption{Pulsante Next Question disabilitato}
         \end{figure}
       \end{center}
     \subsection{Possibili errori}
-     Questa sezione elenca alcuni errori che l’utente potrebbe incontrare durante l’utilizzo dell’applicazione e fornisce indicazioni su come risolverli.
+     Questa sezione elenca alcuni errori che l'utente potrebbe incontrare durante l'utilizzo dell'applicazione e fornisce indicazioni su come risolverli.
      \subsubsection{Errore nel caricamento di un dispositivo}
-    Questo errore è accompagnato dal codice 422 e indica che il file JSON del dispositivo è formattato in modo errato e quindi non può essere letto dal sistema. Questo errore può verificarsi se nel file JSON ci sono errori di battitura durante la compilazione manuale, oppure se viene caricato un file non compatibile con l’applicazione.
+    Questo errore è accompagnato dal codice 422 e indica che il file JSON del dispositivo è formattato in modo errato e quindi non può essere letto dal sistema. Questo errore può verificarsi se nel file JSON ci sono errori di battitura durante la compilazione manuale, oppure se viene caricato un file non compatibile con l'applicazione.
     \begin{center}
         \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.8]{../../../Assets/Applicazione/ErroreFile.png}
+              \includegraphics[scale=0.6]{../../../Assets/Applicazione/ErroreFile.png}
               \caption{Errore caricamento dispositivo}
         \end{figure}
       \end{center}
       \subsubsection{Errore compilazione modulo}
-     Questo errore si verifica quando non vengono compilati tutti i campi obbligatori. L’applicazione segnala immediatamente all’utente il campo da completare.
+     Questo errore si verifica quando non vengono compilati tutti i campi obbligatori. L'applicazione segnala immediatamente all'utente il campo da completare.
      \begin{center}
         \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.28]{../../../Assets/Applicazione/ErrorForm.png}
+              \includegraphics[scale=0.26]{../../../Assets/Applicazione/ErrorForm.png}
               \caption{Errore mancata compilazione}
         \end{figure}
       \end{center}
@@ -521,7 +538,7 @@
       \end{center}
       
       \subsubsection{Errore nell’invio della risposta}
-        Durante l’utilizzo dell’applicazione può verificarsi un errore nel caso in cui la stessa sessione venga aperta contemporaneamente in più schede del browser. Ad esempio, un utente apre una sessione incompleta in una prima scheda e seleziona il pulsante \textbf{Modify Session}. Successivamente, apre una seconda scheda del browser, carica lo stesso file di sessione e, dopo aver premuto nuovamente \textbf{Modify Session}, torna alla schermata principale tramite il pulsante Home. Tornando alla prima scheda e tentando di proseguire il test selezionando YES o NO, viene visualizzato un messaggio di errore “Failed to submit answer.”
+        Durante l’utilizzo dell’applicazione può verificarsi un errore nel caso in cui la stessa sessione venga aperta contemporaneamente in più schede del browser. Ad esempio, un utente apre una sessione incompleta in una prima scheda e seleziona il pulsante \textbf{Modify Session}. Successivamente, apre una seconda scheda del browser, carica lo stesso file di sessione e, dopo aver premuto nuovamente \textbf{Modify Session}, torna alla schermata principale tramite il pulsante Home. Tornando alla prima scheda e tentando di proseguire il test selezionando YES o NO, viene visualizzato un messaggio di errore “Failed to submit answer.” Ciò accade perché tornando alla home dalla seconda scheda la sessione viene eliminata localmente e quindi non è più possibile proseguire con la prima scheda. Per risolvere questo problema, è necessario evitare di aprire la stessa sessione in più schede del browser.
         \begin{center}
         \begin{figure}[H]
               \centering
