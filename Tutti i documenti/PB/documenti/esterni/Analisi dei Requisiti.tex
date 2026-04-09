@@ -46,11 +46,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Analisi dei Requisiti}
-\newcommand{\DataUltimaModifica}{2026/03/27}
+\newcommand{\DataUltimaModifica}{2026/04/08}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v1.2.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v2.0.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \makeatletter
@@ -185,7 +185,9 @@
         \rowcolor{lightgray}
         \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione} \\
         \hline
-        \VersioneDocumento & \DataUltimaModifica & Francesco Marcolongo & Michele Tesser & Aggiunte generalizzazioni mancanti \\
+        \VersioneDocumento & \DataUltimaModifica & Andrea Difino & Giacomo Giora & Verificato documento. Ricevuta approvazione \\
+        \hline
+        v1.2.0 & 2026/03/27 & Francesco Marcolongo & Michele Tesser & Aggiunte generalizzazioni mancanti \\
         \hline
         v1.1.3 & 2026/03/27 & Andrea Difino & Michele Tesser & Rimossi casi d'uso non necessari \\
         \hline
@@ -2349,8 +2351,12 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
 \noindent Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.2 del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme%20di%20Progetto}{Norme di Progetto v2.0.0}.
 
     \subsection{Requisiti funzionali}{
+
+        \setlength{\LTleft}{\fill}
+        \setlength{\LTright}{\fill}
+    
         \rowcolors{2}{lightblue}{white}
-        \begin{longtable}{|l|p{0.6\textwidth}|p{0.15\textwidth}|}
+        \begin{longtable}{|l|p{0.64\textwidth}|p{0.14\textwidth}|}
             \caption{Tabella dei requisiti funzionali}
             \label{tab:requisiti-funzionali}                                                                                                                                                                                                                                                       \\
             \hline
@@ -2359,8 +2365,9 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
             \hline
             \endfirsthead
 
-            \multicolumn{3}{c}%
-            {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}}                                                                                                                                                                                                                  \\
+            \rowcolor{white}
+            \multicolumn{3}{l}%
+            {\textit{\tablename\ \thetable}\ \textit{...continua dalla pagina precedente}} \\                                                                                                                                  
             \hline
             \rowcolor{gold}
             \textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                        & \textbf{Fonti}                                                         \\
@@ -2368,8 +2375,9 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
             \endhead
 
             \hline
-            \multicolumn{3}{r}{\textit{continua nella pagina successiva}}                                                                                                                                                                                                                          \\
-            \endfoot
+            \rowcolor{white}
+            \multicolumn{3}{r}{\textit{continua nella pagina successiva...}} \\
+            \endfoot                                                                  
 
             \hline
             \endlastfoot
@@ -2502,8 +2510,11 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
 
     \subsection{Requisiti di qualità}{
 
+        \setlength{\LTleft}{\fill}
+        \setlength{\LTright}{\fill}
+
         \rowcolors{2}{lightblue}{white}
-        \begin{longtable}{|l|p{0.4\textwidth}|p{7.5cm}|}
+        \begin{longtable}{|l|p{0.4\textwidth}|p{6.8cm}|}
             \caption{Tabella dei requisiti di qualità}
             \label{tab:requisiti-qualità}                                                                                                                                                                                                                                                       \\
             \hline
@@ -2512,8 +2523,9 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
             \hline
             \endfirsthead
 
-            \multicolumn{3}{c}%
-            {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}}                                                                                                                                                                                                               \\
+            \rowcolor{white}
+            \multicolumn{3}{l}%
+            {\textit{\tablename\ \thetable}\ \textit{...continua dalla pagina precedente}} \\                                                           
             \hline
             \rowcolor{gold}
             \textbf{Codice} & \textbf{Descrizione}                                                                                                                          & \textbf{Fonti}                                                                                                    \\
@@ -2521,13 +2533,12 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
             \endhead
 
             \hline
-            \multicolumn{3}{r}{\textit{continua nella pagina successiva}}                                                                                                                                                                                                                       \\
-            \endfoot
+            \rowcolor{white}
+            \multicolumn{3}{r}{\textit{continua nella pagina successiva...}} \\
+            \endfoot                                                                                                                                           
 
             \hline
             \endlastfoot
-            \hline
-            \rowcolor{gold}
             \hline
             R-1-Q-Ob        & È necessario rispettare tutte le norme presenti nelle \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme                                                                                                                                   %20di%20Progetto}{Norme di Progetto v1.0.0} & Interno \\ 
             \hline
@@ -2556,8 +2567,11 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
 
     \subsection{Requisiti di vincolo}{
 
+        \setlength{\LTleft}{\fill}
+        \setlength{\LTright}{\fill}
+
         \rowcolors{2}{lightblue}{white}
-        \begin{longtable}{|l|p{0.4\textwidth}|p{7.5cm}|}
+        \begin{longtable}{|l|p{0.4\textwidth}|p{6.8cm}|}
             \caption{Tabella dei requisiti di vincolo}
             \label{tab:requisiti-vincolo}                                                                                                                                                                                                                                                         \\
             \hline
@@ -2566,8 +2580,9 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
             \hline
             \endfirsthead
 
-            \multicolumn{3}{c}%
-            {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}}                                                                                                                                                                                                                 \\
+            \rowcolor{white}
+            \multicolumn{3}{l}%
+            {\textit{\tablename\ \thetable}\ \textit{...continua dalla pagina precedente}} \\ 
             \hline
             \rowcolor{gold}
             \textbf{Codice} & \textbf{Descrizione}                                                                            & \textbf{Fonti}                                                                                                                                                    \\
@@ -2575,13 +2590,12 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
             \endhead
 
             \hline
-            \multicolumn{3}{r}{\textit{continua nella pagina successiva}}                                                                                                                                                                                                                         \\
-            \endfoot
+            \rowcolor{white}
+            \multicolumn{3}{r}{\textit{continua nella pagina successiva...}} \\
+            \endfoot 
 
             \hline
             \endlastfoot
-            \hline
-            \rowcolor{gold}
             \hline
             R-1-V-Ob        & È necessario l'utilizzo di Python 3.x per il backend                                            & \parbox[t]{\linewidth}{\href{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}{Capitolato di Progetto}                                                 \\ Sez4 <<Scelte e Preferenze Tecnologiche>>} \\
             \hline
@@ -2602,11 +2616,15 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
 
 \newpage
 
-\section{Tracciamento dei Casi d’Uso e Riepilogo}{
+\section{Tracciamento dei Casi d'Uso e Riepilogo}{
+
+    \setlength{\LTleft}{\fill}
+    \setlength{\LTright}{\fill}
+    
   \rowcolors{2}{lightblue}{white}
   \begin{longtable}{|
-      >{\centering\arraybackslash}p{.5\textwidth}|
-      >{\centering\arraybackslash}p{.5\textwidth}|
+      >{\centering\arraybackslash}p{.35\textwidth}|
+      >{\centering\arraybackslash}p{.35\textwidth}|
       }
       \caption{Tabella di tracciamento dei requisiti}
       \label{tab:tracciamento-requisiti}                                                          \\
@@ -2616,8 +2634,9 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
       \hline
       \endfirsthead
 
-      \multicolumn{2}{c}%
-      {\tablename\ \thetable\ -- \textit{continua dalla pagina precedente}}                       \\
+      \rowcolor{white}
+      \multicolumn{2}{l}%
+      {\textit{\tablename\ \thetable}\ \textit{...continua dalla pagina precedente}} \\             
       \hline
       \rowcolor{gold}
       \textbf{Requisito} & \textbf{Casi d'Uso}                                                    \\
@@ -2625,12 +2644,13 @@ Verranno ora descritti i requisiti che Atlas ha individuato, raggruppati per tip
       \endhead
 
       \hline
-      \multicolumn{2}{r}{\textit{continua nella pagina successiva}}                               \\
+      \rowcolor{white}
+      \multicolumn{2}{r}{\textit{continua nella pagina successiva...}} \\
       \endfoot
-
+      
       \hline
       \endlastfoot
-
+      \hline
         R-1-F-Ob & \ref{uc:inserimento} \\ \hline
         R-2-F-Ob & \ref{uc:caricamento} \\ \hline
         R-3-F-Ob & \ref{uc:caricamento}, \ref{uc:file-non-valido} \\ \hline
