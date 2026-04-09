@@ -136,6 +136,8 @@
         \rowcolor{lightgray}
         \textbf{Versione}  & \textbf{Data}       & \textbf{Autore}      & \textbf{Verificatore} & \textbf{Descrizione} \\
         \hline
+        v1.0.0 & 2026/04/09 & Giacomo Giora & Michele Tesser & Approvazione documento \\
+        \hline
         v0.8.0 & 2026/04/02 & Andrea Difino & Michele Tesser & Aggiunta design patterns \\
         \hline
         v0.7.3 & 2026/03/26 & Andrea Difino & Michele Tesser & Fine stesura frontend\\
@@ -188,12 +190,12 @@
 \section{Introduzione}
 
     \subsection{Scopo del documento}
-        Il presente documento ha l'obiettivo di descrivere in maniera approfondita l'architettura del prodotto software sviluppato dal team.
+        Il presente documento ha l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di descrivere in maniera approfondita l'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} del prodotto software sviluppato dal team.
         In particolare, verranno presentati e analizzati i seguenti aspetti:
         \begin{itemize}
-            \item le tecnologie selezionate per lo sviluppo e per le attività di testing del prodotto;
-            \item l'architettura logica del sistema, con la descrizione dei principali moduli che lo compongono e delle interazioni tra di essi;
-            \item l'architettura di deployment del sistema;
+            \item le tecnologie selezionate per lo \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}} e per le attività di testing del prodotto;
+            \item l'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} logica del sistema, con la descrizione dei principali moduli che lo compongono e delle interazioni tra di essi;
+            \item l'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} di deployment del sistema;
             \item i pattern architetturali adottati, corredati da una spiegazione delle motivazioni alla base della loro scelta e del loro utilizzo all'interno del progetto.
         \end{itemize}
         
@@ -206,7 +208,7 @@
     \subsection{Riferimenti}
         \subsubsection{Riferimenti normativi}
             \begin{itemize}
-                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item Riferimento al \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
                 \item Riferimento al Way of Working del team Atlas: \newline \textbf{Norme di Progetto v.2.0.0}\newline \url{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Norme%20di%20Progetto.pdf}
             \end{itemize}
         
@@ -238,7 +240,7 @@
 
     \section{Descrizione generale del prodotto}
     \subsection{Obiettivi del prodotto}
-        Il prodotto ha l'obiettivo di supportare la verifica automatizzata della conformità dei dispositivi radio ai requisiti di sicurezza informatica definiti dalla Direttiva RED mediante l'uso di decision trees interattivi.
+        Il prodotto ha l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di supportare la verifica automatizzata della conformità dei dispositivi radio ai requisiti di \textit{sicurezza informatica}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sicurezzainformatica}{G}} definiti dalla Direttiva \textit{RED}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RED}{G}} mediante l'uso di decision trees interattivi.
     
 
     \subsection{Funzioni del prodotto}
@@ -248,8 +250,8 @@
         \begin{itemize}
             \item {\ttfamily Importazione da file:} il sistema deve consentire di importare file contenenti i dati del dispositivo da analizzare e i suoi asset, in formati strutturati standard;
             \item {\ttfamily Creazione di un dispositivo:} il sistema permette la creazione diretta del dispositivo tramite \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} web, nel caso non sia disponibile un file di \textit{input}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Input}{G}} predefinito;
-            \item {\ttfamily Interazione con i decision trees:} per ciascun asset del dispositivo il sistema esegue i decision trees corretti. Durante il test l'interazione con i decision tree viene semplificata da un'interfaccia semplice per l'utente, che si limita a rispondere a delle domande.  
-            \item {\ttfamily Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, CSV) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
+            \item {\ttfamily Interazione con i decision trees:} per ciascun asset del dispositivo il sistema esegue i decision trees corretti. Durante il test l'interazione con i \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} viene semplificata da un'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} semplice per l'utente, che si limita a rispondere a delle domande.  
+            \item {\ttfamily Salvataggio su file:} è possibile salvare l'esito delle analisi in diversi formati (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, \textit{CSV}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}}) per consentire l'archiviazione, la condivisione e la consultazione dei risultati;
             \item {\ttfamily Caricamento di una sessione:} è possibile caricare il file JSON di una sessione completata per visionare i risultati del test ad essa associati. Se il test non era concluso è possibile riprenderlo dal punto a cui si era arrivati.
         \end{itemize}
     
@@ -378,18 +380,18 @@
 
     \section{Architettura}
         \subsection{Architettura logica}
-            Il progetto adotta un'architettura a strati (layered) che si articola in quattro livelli distinti: \textbf{Presentation, Application, Domain e Infrastructure}. Questa scelta è motivata dalla natura del sistema: si tratta di un'applicazione con flussi di dati prevalentemente lineari e prevedibili, dove le richieste HTTP attraversano i layer in modo direzionato e senza inversioni di controllo complesse. Rispetto all'architettura esagonale (ports \& adapters), la layered è più semplice da implementare e comprendere. L'architettura esagonale offrirebbe maggiore disaccoppiamento tra dominio e infrastruttura tramite porte e adattatori espliciti, ma introduce una complessità strutturale difficile da giustificare quando gli adattatori sono fissi (un solo database su file, una sola API REST). La struttura a layer è già sufficiente a garantire la separazione delle responsabilità, la testabilità del dominio (come dimostrano i numerosi unit test presenti) e la manutenibilità del codice, senza aggiungere overhead architetturale non necessario.
+            Il progetto adotta un'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} a strati (layered) che si articola in quattro livelli distinti: \textbf{Presentation, Application, Domain e Infrastructure}. Questa scelta è motivata dalla natura del sistema: si tratta di un'applicazione con flussi di dati prevalentemente lineari e prevedibili, dove le richieste HTTP attraversano i layer in modo direzionato e senza inversioni di controllo complesse. Rispetto all'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} esagonale (ports \& adapters), la layered è più semplice da implementare e comprendere. L'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} esagonale offrirebbe maggiore disaccoppiamento tra dominio e infrastruttura tramite porte e adattatori espliciti, ma introduce una complessità strutturale difficile da giustificare quando gli adattatori sono fissi (un solo database su file, una sola \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}} REST). La struttura a layer è già sufficiente a garantire la separazione delle responsabilità, la testabilità del dominio (come dimostrano i numerosi \textit{unit test}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Unittest}{G}} presenti) e la manutenibilità del codice, senza aggiungere overhead architetturale non necessario.
         \subsection{Architettura di deployment}
-            Il sistema viene distribuito come applicazione monolitica — un singolo backend FastAPI e un singolo frontend React — piuttosto che come insieme di microservizi indipendenti. Questa scelta è giustificata dal contesto d'uso reale: il committente è un'azienda con orari di lavoro definiti, il che implica che la web application sarà attiva solo in specifiche fasce orarie, con lunghi periodi di inattività. In uno scenario del genere, i microservizi introdurrebbero costi operativi e complessità infrastrutturale (service discovery, comunicazione inter-servizio) del tutto sproporzionati rispetto ai benefici. Un'architettura monolitica, containerizzata tramite Docker Compose come da configurazione presente nel progetto, è più semplice da avviare, fermare e manutenere, richiede meno risorse computazionali a riposo e consente deploy rapidi. La scalabilità orizzontale offerta dai microservizi non è un requisito rilevante per un tool di compliance interno, utilizzato da un numero limitato di utenti in sessioni di lavoro giornaliere.
+            Il sistema viene distribuito come applicazione monolitica — un singolo backend FastAPI e un singolo frontend React — piuttosto che come insieme di microservizi indipendenti. Questa scelta è giustificata dal contesto d'uso reale: il committente è un'azienda con orari di lavoro definiti, il che implica che la web application sarà attiva solo in specifiche fasce orarie, con lunghi periodi di inattività. In uno scenario del genere, i microservizi introdurrebbero costi operativi e complessità infrastrutturale (service discovery, comunicazione inter-servizio) del tutto sproporzionati rispetto ai benefici. Un'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} monolitica, containerizzata tramite \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} Compose come da configurazione presente nel progetto, è più semplice da avviare, fermare e manutenere, richiede meno risorse computazionali a riposo e consente deploy rapidi. La scalabilità orizzontale offerta dai microservizi non è un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} rilevante per un tool di compliance interno, utilizzato da un numero limitato di utenti in sessioni di lavoro giornaliere.
 
         \subsection{Frontend}
-            Il frontend del sistema è realizzato come Single Page Application (SPA) basata su React, con l'obiettivo di garantire un'esperienza utente fluida, una chiara separazione delle responsabilità e una buona evolvibilità del codice.  
-            L'impostazione adottata è una scelta pragmatica: architettura layered modulare con principi clean parziali. In particolare, la logica applicativa è concentrata nei service e negli hook, mentre la gestione dello stato globale rimane esplicita e operativa per contenere la complessità implementativa.
+            Il frontend del sistema è realizzato come Single Page Application (SPA) basata su React, con l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di garantire un'esperienza utente fluida, una chiara separazione delle responsabilità e una buona evolvibilità del codice.  
+            L'impostazione adottata è una scelta pragmatica: \textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} layered modulare con principi clean parziali. In particolare, la logica applicativa è concentrata nei service e negli hook, mentre la gestione dello stato globale rimane esplicita e operativa per contenere la complessità implementativa.
             
             \subsubsection{Vista architetturale generale}
-            L'architettura frontend è organizzata in layer funzionali:
+            L'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} frontend è organizzata in layer funzionali:
             \begin{itemize}
-                \item \textbf{Presentation}: rendering, interazione utente, routing e composizione UI;
+                \item \textbf{Presentation}: rendering, interazione utente, routing e composizione \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}};
                 \item \textbf{Application}: orchestrazione dei casi d'uso tramite service e hook;
                 \item \textbf{State}: gestione dello stato globale condiviso (store separati per responsabilità);
                 \item \textbf{Domain}: entità e regole di business pure lato client;
@@ -397,8 +399,8 @@
                 \item \textbf{Shared}: utility trasversali riusabili.
             \end{itemize}
             
-            Il flusso è prevalentemente top-down dalla presentazione verso i servizi applicativi, con supporto di dominio e infrastruttura.  
-            Il modello non è rigidamente clean/hexagonal: in alcuni punti i service applicativi aggiornano direttamente lo stato globale per semplicità operativa. Questa scelta riduce boilerplate e tempi di sviluppo, accettando un trade-off in termini di maggiore accoppiamento e minore sostituibilità dei dettagli di state management.
+            Il flusso è prevalentemente top-down dalla presentazione verso i \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi, con supporto di dominio e infrastruttura.  
+            Il modello non è rigidamente clean/hexagonal: in alcuni punti i service applicativi aggiornano direttamente lo stato globale per \textit{semplicità}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Semplicità}{G}} operativa. Questa scelta riduce boilerplate e tempi di \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}}, accettando un trade-off in termini di maggiore accoppiamento e minore sostituibilità dei dettagli di state management.
             
             \begin{center}
                 \begin{figure}[H]
@@ -409,7 +411,7 @@
             \end{center}
             
             \paragraph{Layer di presentazione e routing}\mbox{}\\
-            Il layer di presentazione comprende viste e componenti UI riusabili. La navigazione è gestita tramite routing client-side e route guard che verificano le precondizioni dei flussi protetti (ad esempio sessione attiva e dati dispositivo disponibili).  
+            Il layer di presentazione comprende viste e componenti \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} riusabili. La navigazione è gestita tramite routing client-side e route guard che verificano le precondizioni dei flussi protetti (ad \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}} sessione attiva e dati dispositivo disponibili).  
             Questa organizzazione mantiene i componenti focalizzati sulla resa grafica e sull'esperienza utente, delegando l'orchestrazione ai livelli applicativi.
             
             \paragraph{Gestione dello stato}\mbox{}\\
@@ -418,29 +420,29 @@
                 \item \textbf{stato globale}, condiviso tra più viste;
                 \item \textbf{stato locale}, limitato al singolo componente o hook.
             \end{itemize}
-            Lo stato globale è suddiviso in store separati per area funzionale (sessione, alberi decisionali, dispositivo, risultati, UI), evitando uno stato monolitico.  
+            Lo stato globale è suddiviso in store separati per area funzionale (sessione, alberi decisionali, dispositivo, risultati, \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}}), evitando uno stato monolitico.  
             L'uso di selector dedicati e compositi riduce duplicazioni di lettura e limita l'accoppiamento tra componenti.
             
             \paragraph{Layer applicativo: hook e servizi}\mbox{}\\
-            La logica di orchestrazione è incapsulata in custom hook e servizi applicativi.  
-            I custom hook coordinano l'interazione tra vista, stato e servizi; i servizi applicativi centralizzano i casi d'uso principali (sessione, navigazione, export), mantenendo i componenti prevalentemente dichiarativi.  
+            La logica di orchestrazione è incapsulata in custom hook e \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi.  
+            I custom hook coordinano l'interazione tra vista, stato e \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}}; i \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi centralizzano i casi d'uso principali (sessione, navigazione, export), mantenendo i componenti prevalentemente dichiarativi.  
             In coerenza con l'approccio pragmatico adottato, parte dell'orchestrazione applicativa interagisce direttamente con lo stato globale.
             
             \paragraph{Comunicazione con il backend}\mbox{}\\
             La comunicazione con il backend adotta principi ports-and-adapters in forma parziale:
             \begin{itemize}
-                \item per l'accesso HTTP, il layer applicativo dipende da servizi astratti;
+                \item per l'accesso HTTP, il layer applicativo dipende da \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} astratti;
                 \item il layer infrastrutturale fornisce implementazioni concrete (client HTTP, adapter notifiche, mapping errori).
             \end{itemize}
             I payload ricevuti vengono convertiti in modelli frontend tramite mapper dedicati, così da disaccoppiare il dominio client dal formato esterno e contenere l'impatto di variazioni nei contratti API.
             
             \paragraph{Modello di dominio frontend}\mbox{}\\
-            Il dominio frontend include entità principali (ad esempio Device, Asset, Node, DecisionTree) e regole di business pure (filtri, valutazioni, trasformazioni).  
+            Il dominio frontend include entità principali (ad \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}} Device, Asset, Node, DecisionTree) e regole di business pure (filtri, valutazioni, trasformazioni).  
             L'incapsulamento dei dati e l'accesso controllato tramite metodi/getter migliorano consistenza del modello e robustezza delle regole applicative.
 
             
         \subsubsection{Design dettagliato frontend}
-            Questa sezione approfondisce i moduli concreti del frontend, descrivendo ruolo e responsabilità di pagine, hook, store, servizi e classi di dominio, nonché le loro interazioni nei principali flussi applicativi.
+            Questa sezione approfondisce i moduli concreti del frontend, descrivendo ruolo e responsabilità di pagine, hook, store, \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} e classi di dominio, nonché le loro interazioni nei principali flussi applicativi.
 
             \paragraph{Pages}\mbox{}\\
                 Le pagine rappresentano il punto di ingresso dei principali casi d'uso utente e hanno la responsabilità di orchestrare la composizione dei componenti visuali e dei relativi hook applicativi.
@@ -448,19 +450,19 @@
                 Descrizione sintetica delle principali pagine:
                 \begin{itemize}
                     \item \texttt{HomeView}: schermata iniziale dell'applicazione, da essa è possibile avviare il flusso di creazione o caricamento del dispositivo da analizzare, o di caricamento di una sessione completa o incompleta.
-                    \item \texttt{DeviceFormView}: schermata dedicata alla raccolta e validazione dei dati descrittivi del dispositivo oggetto dell'analisi.
+                    \item \texttt{DeviceFormView}: schermata dedicata alla raccolta e \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} dei dati descrittivi del dispositivo oggetto dell'analisi.
                     \item \texttt{DeviceAssetManagementView}: schermata per la gestione degli asset associati al dispositivo.
                     \item \texttt{AssetFormView}: schermata per la creazione del singolo asset.
                     \item \texttt{DeviceSummaryView}: presenta un riepilogo esaustivo dei dati inseriti prima dell'avvio del test.
                     \item \texttt{SessionRunnerView}: pagina che visualizza la domanda a cui l'utente deve rispondere e i componenti che permettono la gestione della navigazione tra le risposte.
-                    \item \texttt{ResultView}: visualizza i risultati aggregati per requisito e per asset, con opzioni di export.
+                    \item \texttt{ResultView}: visualizza i risultati aggregati per \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} e per asset, con opzioni di export.
                     \item \texttt{ModifySessionView}: pagina che permette la ripresa di una sessione incompleta o la modifica di una sessione completata tramite la selezione dell'asset da cui riprendere il percorso del test.
                 \end{itemize}
                 Linee guida adottate:
                 \begin{itemize}
                     \item la pagina non contiene logica di business complessa;
-                    \item la pagina delega la logica a hook e servizi;
-                    \item la pagina mantiene responsabilità di composizione UI e navigazione.
+                    \item la pagina delega la logica a hook e \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}};
+                    \item la pagina mantiene responsabilità di composizione \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} e navigazione.
                 \end{itemize}
                 \begin{center}
                     \begin{figure}[H]
@@ -471,7 +473,7 @@
                 \end{center}
         
             \paragraph{Componenti UI}\mbox{}\\
-                I componenti UI sono progettati per massimizzare riusabilità e separazione delle responsabilità: la presentazione resta nei componenti, mentre la logica applicativa viene delegata a hook, store e servizi. 
+                I componenti \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} sono progettati per massimizzare riusabilità e separazione delle responsabilità: la presentazione resta nei componenti, mentre la logica applicativa viene delegata a hook, store e servizi. 
                 Questo approccio riduce duplicazione, facilita il testing e rende più semplice l'evoluzione delle viste.
                 
                 Tipologie principali e componenti rappresentativi:
@@ -479,12 +481,12 @@
                     \item \textbf{Componenti trasversali}: \texttt{UploadButton}, \texttt{HomeIcon}, \texttt{BackIcon} e altri elementi riusabili impiegati in più viste.
                     \item \textbf{Input e form}: componenti usati nelle pagine \texttt{DeviceFormView} e \texttt{AssetFormView}, come \texttt{InputField}, \texttt{SelectField}, \texttt{CheckboxField} e \texttt{ToggleSwitch}.
                     \item \textbf{Resoconto dispositivo}: componenti usati nella pagina \texttt{DeviceSummaryView}, quali \newline \texttt{AssetInfoOverlay}, \texttt{AssetListView} che a sua volta contiene numerosi \texttt{AssetItemView}, \texttt{DeviceMainActions}, e altri sotto componenti.
-                    \item \textbf{Supporto al flusso sessione}: \texttt{SessionContent}, \texttt{SessionContentAdapter} e sottocomponenti del runner per avanzamento, risposta e navigazione, come per esempio \newline \texttt{AnswerButtons},  \texttt{NavigationFooter}, \texttt{QuestionSection} e \texttt{SessionHeader}.
-                    \item \textbf{Visualizzazione risultati}: componenti utilizzati in \texttt{ResultView}, per esempio \newline \texttt{ExportDialog}, \texttt{ResultListView}, \texttt{ResultItemView}, \texttt{AssetResultsView} e \texttt{ResultActions}.
+                    \item \textbf{Supporto al flusso sessione}: \texttt{SessionContent}, \texttt{SessionContentAdapter} e sottocomponenti del runner per avanzamento, risposta e navigazione, come per \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}} \newline \texttt{AnswerButtons},  \texttt{NavigationFooter}, \texttt{QuestionSection} e \texttt{SessionHeader}.
+                    \item \textbf{Visualizzazione risultati}: componenti utilizzati in \texttt{ResultView}, per \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}} \newline \texttt{ExportDialog}, \texttt{ResultListView}, \texttt{ResultItemView}, \texttt{AssetResultsView} e \texttt{ResultActions}.
                 \end{itemize}
         
             \paragraph{Hook applicativi}\mbox{}\\
-                I custom hook costituiscono il layer di orchestrazione tra UI, stato globale e servizi. Essi incapsulano flussi operativi, side effect e coordinamento di navigazione, mantenendo i componenti dichiarativi. \\
+                I custom hook costituiscono il layer di orchestrazione tra \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}}, stato globale e servizi. Essi incapsulano flussi operativi, side effect e coordinamento di navigazione, mantenendo i componenti dichiarativi. \\
                 Hook principali:
                 \begin{itemize}
                     \item \texttt{useHomeNavigation}: gestisce creazione/caricamento della sessione dalla home e la navigazione conseguente.
@@ -495,7 +497,7 @@
                     \item \texttt{useTreeBootstrap}: effettua il bootstrap iniziale dei decision tree.
                     \item \texttt{useSessionRunnerTrees}: espone i tree necessari al runner.
                     \item \texttt{useBeforeUnload}: gestisce la protezione in uscita durante operazioni sensibili.
-                    \item \texttt{useExportResults} / \texttt{useExportSession}: gestiscono i flussi di esportazione e i relativi stati.
+                    \item \texttt{useExportResults} / \texttt{useExportSession}: gestiscono i flussi di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} e i relativi stati.
                 \end{itemize}
                 Hook specifici del flusso sessione:
                 \begin{itemize}
@@ -509,24 +511,24 @@
                 Gli store principali sono:
                 \begin{itemize}
                     \item \texttt{SessionStore}: mantiene lo stato di sessione, ovvero id, posizione corrente, storia delle risposte, la modalità ripresa, i risultati per asset, lo stato fine test, e le azioni di navigazione nel flusso.
-                    \item \texttt{TreeStore}: mantiene i decision tree normalizzati e fornisce l'accesso ai nodi.
+                    \item \texttt{TreeStore}: mantiene i \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} normalizzati e fornisce l'accesso ai nodi.
                     \item \texttt{DeviceStore}: mantiene il dispositivo corrente e la gestione degli asset ad esso associati.
                     \item \texttt{ResultStore}: mantiene i risultati aggregati del test.
-                    \item \texttt{UIStore}: mantiene stati trasversali di interfaccia (loading, exporting, dirty flag).
+                    \item \texttt{UIStore}: mantiene stati trasversali di \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} (loading, exporting, dirty flag).
                 \end{itemize}
         
             \paragraph{Services (application e infrastructure)}\mbox{}\\
-                I servizi implementano operazioni applicative e integrazioni tecniche. La distinzione principale è tra:
+                I \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} implementano operazioni applicative e integrazioni tecniche. La distinzione principale è tra:
                 \begin{itemize}
-                    \item servizi applicativi, orientati ai casi d'uso;
-                    \item servizi infrastrutturali, orientati a dettagli tecnici.
+                    \item \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi, orientati ai casi d'uso;
+                    \item \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} infrastrutturali, orientati a dettagli tecnici.
                 \end{itemize}
-                Servizi applicativi:
+                \textit{Servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi:
                 \begin{itemize}
                     \item \texttt{SessionService}: è il servizio principale del flusso sessione (creazione, caricamento, invio risposta, navigazione avanti/indietro, ripresa, pulizia, salvataggio e uscita).
                     \item \texttt{TreeService}: per il caricamento e la normalizzazione dei decision tree.
                     \item \texttt{DeviceService}: per la gestione del dispositivo corrente e le operazioni sugli asset.
-                    \item \texttt{ExportService}: per l'esportazione di risultati/sessione/dispositivo.
+                    \item \texttt{ExportService}: per l'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} di risultati/sessione/dispositivo.
                     \item \texttt{NavigationService}: servizio di utilità per il reset dello stato e la navigazione verso la pagina home.
                     \item \texttt{ApiClientService}: wrapper applicativo della porta API.
                     \item \texttt{NotificationService}: wrapper applicativo della porta notifiche.
@@ -539,7 +541,7 @@
                 \end{itemize}
         
             \paragraph{Domain e regole di business}\mbox{}\\
-                Il dominio frontend contiene entità e regole pure che modellano il problema applicativo anche lato client. Le classi dominio adottano incapsulamento dei dati e API esplicite, mentre le regole pure sono mantenute in funzioni dedicate. \\
+                Il dominio frontend contiene entità e regole pure che modellano il problema applicativo anche lato client. Le classi dominio adottano incapsulamento dei dati e \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}} esplicite, mentre le regole pure sono mantenute in funzioni dedicate. \\
                 Responsabilità del dominio:
                 \begin{itemize}
                     \item rappresentare in modo consistente dispositivi, asset, nodi e alberi;
@@ -550,19 +552,19 @@
                 \begin{itemize}
                     \item \texttt{Device}: modello del dispositivo con metodi di gestione asset e serializzazione.
                     \item \texttt{Asset}: modello del singolo asset con tipo, sensibilità e serializzazione.
-                    \item \texttt{Node}: modello del nodo decisionale (domanda/risultato).
-                    \item \texttt{DecisionTree}: modello del requisito con nodi e dipendenze, che trasforma le informazioni grezze del backend in oggetti pronti per l'applicazione.
+                    \item \texttt{Node}: modello del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} decisionale (domanda/risultato).
+                    \item \texttt{DecisionTree}: modello del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} con nodi e dipendenze, che trasforma le informazioni grezze del backend in oggetti pronti per l'applicazione.
                 \end{itemize}
                 
-                Regole e validazione:
+                Regole e \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}}:
                 \begin{itemize}
                     \item \texttt{treeRules}: regole pure per filtraggio/valutazione risultati riprendibili.
-                    \item \texttt{AssetSchema}, \texttt{DeviceSchema}: validazione strutturale dei dati di input di asset e device.
+                    \item \texttt{AssetSchema}, \texttt{DeviceSchema}: \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} strutturale dei dati di \textit{input}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Input}{G}} di asset e device.
                 \end{itemize}
         
         \subsubsection{Caratteristiche di qualità}
             \paragraph{Manutenibilità}\mbox{}\\
-                La separazione per layer, l'uso di selector e la centralizzazione dei servizi migliorano la manutenibilità in presenza di evoluzioni funzionali o tecniche.
+                La separazione per layer, l'uso di selector e la centralizzazione dei \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} migliorano la manutenibilità in presenza di evoluzioni funzionali o tecniche.
                 
             \paragraph{Scalabilità}\mbox{}\\
                 La struttura attuale supporta estensioni progressive:
@@ -606,13 +608,13 @@
                         \caption{Device: classe frontend}
                     \end{figure}
                 \end{center}
-                Rappresenta il dispositivo facente uso di onde radio oggetto della valutazione. Aggrega una lista di Asset e contiene le informazioni generali del dispositivo.\\\\
+                Rappresenta il dispositivo facente uso di onde radio oggetto della valutazione. Aggrega una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di Asset e contiene le informazioni generali del dispositivo.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
                     \item {\ttfamily name}: nome del dispositivo;
-                    \item {\ttfamily assets[]}: lista di oggetti Asset;
+                    \item {\ttfamily assets[]}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di oggetti Asset;
                     \item {\ttfamily operatingSystem}: sistema operativo del dispositivo;
-                    \item {\ttfamily firmwareVersion}: versione del firmware del dispositivo;
+                    \item {\ttfamily firmwareVersion}: versione del \textit{firmware}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Firmware}{G}} del dispositivo;
                     \item {\ttfamily functionalities}: funzionalità del dispositivo;
                     \item {\ttfamily description}: descrizione del dispositivo (opzionale).
                 \end{itemize}
@@ -633,13 +635,13 @@
                         \caption{Node: classe frontend}
                     \end{figure}
                 \end{center}
-                Rappresenta un nodo di un decision tree.\\\\
+                Rappresenta un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} di un decision tree.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
-                    \item {\ttfamily id}: id del nodo;
-                    \item {\ttfamily text}: contenuto principale del nodo, che può essere una domanda o il testo del risultato;
-                    \item {\ttfamily description}: descrizione del nodo (opzionale);
-                    \item {\ttfamily type}: indica la natura del nodo, può essere "QUESTION" oppure "RESULT".
+                    \item {\ttfamily id}: id del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}};
+                    \item {\ttfamily text}: contenuto principale del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}, che può essere una domanda o il testo del risultato;
+                    \item {\ttfamily description}: descrizione del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} (opzionale);
+                    \item {\ttfamily type}: indica la natura del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}, può essere "QUESTION" oppure "RESULT".
                 \end{itemize}
                 \textbf{Metodi}
                     \begin{itemize}
@@ -656,22 +658,22 @@
                         \caption{DecisionTree: classe frontend}
                     \end{figure}
                 \end{center}
-                Albero decisionale corrispondente ad un requisito della norma EN 18031.\\\\
+                Albero decisionale corrispondente ad un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} della \textit{norma}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Norma}{G}} EN 18031.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
                     \item {\ttfamily id: String}: id dell'albero;
-                    \item {\ttfamily title}: titolo dell'albero (nome del requisito);
-                    \item {\ttfamily nodes\{\}}: mappa dei nodi del decision tree;
-                    \item {\ttfamily dependencies[]}: lista delle dipendenze dell'albero.
+                    \item {\ttfamily title}: titolo dell'albero (nome del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}});
+                    \item {\ttfamily nodes\{\}}: mappa dei nodi del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}};
+                    \item {\ttfamily dependencies[]}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} delle dipendenze dell'albero.
                 \end{itemize}
                 \textbf{Metodi}
                     \begin{itemize}
                         \item Metodi getter per ogni attributo.
-                        \item {\ttfamily getNodeById(nodeId)}: metodo per ritornare un nodo dell'albero da un identificativo passato per parametro;
+                        \item {\ttfamily getNodeById(nodeId)}: metodo per ritornare un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} dell'albero da un identificativo passato per parametro;
                         \item {\ttfamily fromApi(treeData): DecisionTree}: utilizzato per trasformare il formato grezzo che arriva dal backend in un oggetto DecisionTree.
                     \end{itemize}
 
-        % DESCRIZIONE SERVIZI FRONTEND 
+        % DESCRIZIONE \textit{SERVIZI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} FRONTEND 
             \paragraph{Servizi applicativi}
                 \subparagraph{ApiClientService}
                 \begin{center}
@@ -703,7 +705,7 @@
                         \caption{NotificationService: classe application}
                     \end{figure}
                 \end{center}
-                Servizio applicativo per notifiche utente, disaccoppiato dal framework UI tramite porta \newline {\ttfamily INotificationPort}.\\\\
+                Servizio applicativo per notifiche utente, disaccoppiato dal \textit{framework}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Framework}{G}} \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} tramite porta \newline {\ttfamily INotificationPort}.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
                     \item {\ttfamily port}: riferimento all'adapter di notifica concreto (es. Sonner), che espone metodi di notifica.
@@ -711,7 +713,7 @@
                 \textbf{Metodi}
                 \begin{itemize}
                     \item {\ttfamily constructor(port)}: valida che la porta implementi {\ttfamily notifyError} e {\ttfamily notifySuccess};
-                    \item {\ttfamily notifyError(error, options)}: mostra una notifica di errore;
+                    \item {\ttfamily notifyError(error, options)}: mostra una notifica di \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}};
                     \item {\ttfamily notifySuccess(message)}: mostra una notifica di successo.
                 \end{itemize}
                 
@@ -748,14 +750,14 @@
                         \caption{TreeService: classe application}
                     \end{figure}
                 \end{center}
-                Servizio applicativo per il caricamento dei decision tree dal backend e la sincronizzazione nello store frontend.\\\\
+                Servizio applicativo per il caricamento dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} dal backend e la sincronizzazione nello store frontend.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
                     \item Nessun attributo di istanza persistente (usa servizi/store condivisi).
                 \end{itemize}
                 \textbf{Metodi}
                 \begin{itemize}
-                    \item {\ttfamily loadTrees()}: recupera i tree da API, li normalizza in oggetti {\ttfamily DecisionTree} e salva gli alberi normalizzati nello stato applicativo;
+                    \item {\ttfamily loadTrees()}: recupera i tree da \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}}, li normalizza in oggetti {\ttfamily DecisionTree} e salva gli alberi normalizzati nello stato applicativo;
                     \item {\ttfamily clearTrees()}: svuota i tree dallo store.
                 \end{itemize}
                 
@@ -779,12 +781,12 @@
                     \item {\ttfamily createSessionWithFile(file)}: crea sessione da file JSON caricato;
                     \item {\ttfamily createSessionWithDevice(device)}: crea sessione da oggetto Device serializzato;
                     \item {\ttfamily sendAnswer(answer)}: invia risposta e gestisce avanzamento/go-back/fine albero;
-                    \item {\ttfamily previousStep()}: naviga localmente al nodo precedente;
-                    \item {\ttfamily forwardStep()}: naviga localmente al nodo successivo;
+                    \item {\ttfamily previousStep()}: naviga localmente al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} precedente;
+                    \item {\ttfamily forwardStep()}: naviga localmente al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} successivo;
                     \item {\ttfamily loadSessionFromFile(file)}: ripristina una sessione esportata in file JSON;
                     \item {\ttfamily saveAndExit()}: chiude sessione remota e pulisce stato locale;
                     \item {\ttfamily getSessionId()}: restituisce l'identificativo sessione corrente;
-                    \item {\ttfamily getFormattedAnswers()}: converte lo storico risposte nel payload API;
+                    \item {\ttfamily getFormattedAnswers()}: converte lo storico risposte nel payload \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}};
                     \item {\ttfamily clearSession()}: cancella la sessione corrente (remota e locale);
                     \item {\ttfamily resumeSession(requirementId, assetId)}: riposiziona la sessione su requisito/asset scelto.
                 \end{itemize}
@@ -797,7 +799,7 @@
                         \caption{ExportService: classe application}
                     \end{figure}
                 \end{center}
-                Servizio applicativo per esportazione risultati/sessione/device in diversi formati, con validazione payload e download file.\\\\
+                Servizio applicativo per \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} risultati/sessione/device in diversi formati, con \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} payload e download file.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
                     \item Nessun attributo di istanza persistente.
@@ -806,8 +808,8 @@
                 \begin{itemize}
                     \item {\ttfamily isEmptyPayload(payload)}: verifica se il payload ricevuto è vuoto/non valido;
                     \item {\ttfamily exportResults(sessionId, format)}: esporta i risultati della sessione in formato richiesto;
-                    \item {\ttfamily exportResultsAsCSV(sessionId)}: shortcut per esportazione CSV;
-                    \item {\ttfamily exportResultsAsPDF(sessionId)}: shortcut per esportazione PDF;
+                    \item {\ttfamily exportResultsAsCSV(sessionId)}: shortcut per \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} \textit{CSV}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}};
+                    \item {\ttfamily exportResultsAsPDF(sessionId)}: shortcut per \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} \textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}};
                     \item {\ttfamily exportSessionAsJSON(sessionId, answers)}: esporta la sessione completa come JSON;
                     \item {\ttfamily exportDeviceAsJSON(device)}: esporta il device corrente in JSON;
                     \item {\ttfamily downloadFile(response, filename)}: helper per avviare il download nel browser.
@@ -825,20 +827,20 @@
                 Gerarchia di errori applicativi tipizzati per distinguere errori di rete, stato o validazione.\\\\
                 \textbf{Attributi (AppError)}
                 \begin{itemize}
-                    \item {\ttfamily name}: nome della classe di errore;
-                    \item {\ttfamily code}: codice applicativo dell'errore;
-                    \item {\ttfamily cause}: eventuale errore origine;
+                    \item {\ttfamily name}: nome della classe di \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}};
+                    \item {\ttfamily code}: codice applicativo dell'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}};
+                    \item {\ttfamily cause}: eventuale \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} origine;
                     \item {\ttfamily context}: contesto aggiuntivo per debug/logging.
                 \end{itemize}
                 \textbf{Metodi}
                 \begin{itemize}
-                    \item {\ttfamily constructor(message, options)}: inizializza l'errore base con metadati.
+                    \item {\ttfamily constructor(message, options)}: inizializza l'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} base con metadati.
                 \end{itemize}
                 \textbf{Sottoclassi}
                 \begin{itemize}
-                    \item {\ttfamily NetworkError}: errore di comunicazione con backend;
-                    \item {\ttfamily StateError}: errore di stato applicativo non coerente;
-                    \item {\ttfamily ValidationError}: errore di validazione input/dati.
+                    \item {\ttfamily NetworkError}: \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di comunicazione con backend;
+                    \item {\ttfamily StateError}: \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di stato applicativo non coerente;
+                    \item {\ttfamily ValidationError}: \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} di \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} input/dati.
                 \end{itemize}
 
             % DESCRIZIONE HOOK FRONTEND 
@@ -866,7 +868,7 @@
                 \end{itemize}
                 
                 \subparagraph{useSessionState}\mbox{}\\
-                Hook di sola lettura delegato all'estrazione dello snapshot dello stato di sessione per la visualizzazione nella UI. Si interfaccia direttamente con lo store globale per garantire una lettura reattiva dei dati senza l'intermediazione del livello di servizio.\\\\
+                Hook di sola lettura delegato all'estrazione dello snapshot dello stato di sessione per la visualizzazione nella UI. Si \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} direttamente con lo store globale per garantire una lettura reattiva dei dati senza l'intermediazione del livello di servizio.\\\\
                 \textbf{Parametri}
                 \begin{itemize}
                     \item Nessuno.
@@ -883,7 +885,7 @@
                 \end{itemize}
                 \textbf{Comportamento}
                 \begin{itemize}
-                    \item Restituisce l'insieme sincronizzato dei dati di sessione (identificativo, nodo corrente, indici di posizione e cronologia delle risposte);
+                    \item Restituisce l'insieme sincronizzato dei dati di sessione (identificativo, \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente, indici di posizione e cronologia delle risposte);
                     \item Implementa una strategia di aggiornamento efficiente tramite {\ttfamily useShallow}, che esegue una comparazione superficiale dei dati restituiti dal selettore per evitare aggiornamenti superflui del componente React.
                 \end{itemize}
                 
@@ -895,14 +897,14 @@
                 \end{itemize}
                 \textbf{Dipendenze}
                 \begin{itemize}
-                    \item {\ttfamily navigate} (React Router): per il reindirizzamento post azione;
+                    \item {\ttfamily navigate} (React \textit{Router}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Router}{G}}): per il reindirizzamento post azione;
                     \item {\ttfamily UIStore}: per la sincronizzazione globale del flag {\ttfamily isLoading};
                     \item {\ttfamily sessionHandlersConfig}: fornisce le definizioni atomiche delle azioni;
                     \item {\ttfamily createAsyncHandler}: factory per l'iniezione di logica trasversale (loading/error) negli handler.
                 \end{itemize}
                 \textbf{Stato interno}
                 \begin{itemize}
-                    \item {\ttfamily error}: memorizza l'ultimo errore intercettato durante un'azione asincrona.
+                    \item {\ttfamily error}: memorizza l'ultimo \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} intercettato durante un'azione asincrona.
                 \end{itemize}
                 \textbf{Comportamento}
                 \begin{itemize}
@@ -911,9 +913,9 @@
                 \end{itemize}
                 \textbf{Valori esposti}
                 \begin{itemize}
-                    \item {\ttfamily ...actionHandlers}: set di funzioni pronte per l'uso nella UI (es. {\ttfamily handleYesClick}, {\ttfamily handleSaveAndExitClick});
+                    \item {\ttfamily ...actionHandlers}: set di funzioni pronte per l'uso nella \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} (es. {\ttfamily handleYesClick}, {\ttfamily handleSaveAndExitClick});
                     \item {\ttfamily isLoading}: stato di caricamento globale derivato dal selettore dello store;
-                    \item {\ttfamily error}: riferimento all'errore locale per la visualizzazione di feedback immediati nel runner.
+                    \item {\ttfamily error}: riferimento all'\textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} locale per la visualizzazione di feedback immediati nel runner.
                 \end{itemize}
                 
                 \subparagraph{useSessionRedirect}\mbox{}\\
@@ -925,7 +927,7 @@
                 \end{itemize}
                 \textbf{Dipendenze}
                 \begin{itemize}
-                    \item {\ttfamily navigate} ({\ttfamily useNavigate} di React Router): utilizzato per il reindirizzamento.
+                    \item {\ttfamily navigate} ({\ttfamily useNavigate} di React \textit{Router}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Router}{G}}): utilizzato per il reindirizzamento.
                 \end{itemize}
                 \textbf{Stato interno}
                 \begin{itemize}
@@ -938,7 +940,7 @@
                 \end{itemize}
                 
                 \subparagraph{useResultViewLogic}\mbox{}\\
-                Hook orchestratore della logica di presentazione della vista risultati. Centralizza l'accesso ai dati di sessione, lo stato dei risultati e le funzionalità di esportazione e navigazione.\\\\
+                Hook orchestratore della logica di presentazione della vista risultati. Centralizza l'accesso ai dati di sessione, lo stato dei risultati e le funzionalità di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} e navigazione.\\\\
                 \textbf{Parametri}
                 \begin{itemize}
                     \item Nessuno.
@@ -947,24 +949,24 @@
                 \begin{itemize}
                     \item {\ttfamily useResultStore} e {\ttfamily useSessionStore}: accesso allo stato globale;
                     \item {\ttfamily useCurrentDevice}: recupero del dispositivo in uso;
-                    \item {\ttfamily useExportResults} e {\ttfamily useExportSession}: hook specializzati per le procedure di esportazione;
+                    \item {\ttfamily useExportResults} e {\ttfamily useExportSession}: hook specializzati per le procedure di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}};
                     \item {\ttfamily resetSessionAndNavigateHome}: logica di terminazione sessione.
                 \end{itemize}
                 \textbf{Stato interno}
                 \begin{itemize}
-                    \item {\ttfamily expandedRequirement}: memorizza l'id del requisito attualmente espanso nella UI per visualizzarne i dettagli.
+                    \item {\ttfamily expandedRequirement}: memorizza l'id del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} attualmente espanso nella \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} per visualizzarne i dettagli.
                 \end{itemize}
                 \textbf{Comportamento}
                 \begin{itemize}
                     \item Gestisce la navigazione verso la prosecuzione del test, la modifica della sessione o il ritorno alla home;
-                    \item Coordina l'apertura del dialogo di formattazione e l'avvio del download per i report (CSV, PDF) e per il backup della sessione (JSON);
-                    \item Implementa il toggle visivo per l'espansione dei singoli requisiti nella lista dei risultati.
+                    \item Coordina l'apertura del dialogo di formattazione e l'avvio del download per i report (\textit{CSV}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}}, \textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}) e per il backup della sessione (JSON);
+                    \item Implementa il toggle visivo per l'espansione dei singoli requisiti nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei risultati.
                 \end{itemize}
                 \textbf{Valori esposti}
                 \begin{itemize}
                     \item Dati: {\ttfamily results}, {\ttfamily device}, {\ttfamily resultsPerAsset};
                     \item Flag di stato: {\ttfamily isTestFinished}, {\ttfamily isSessionUploaded}, {\ttfamily isExporting}, ecc.;
-                    \item Handler: metodi per la navigazione, il toggle della UI e l'esecuzione degli export.
+                    \item Handler: metodi per la navigazione, il toggle della \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} e l'esecuzione degli export.
                 \end{itemize}
                 
                 \subparagraph{useModifySessionLogic}\mbox{}\\
@@ -982,20 +984,20 @@
                 \end{itemize}
                 \textbf{Stato interno}
                 \begin{itemize}
-                    \item {\ttfamily expandedRequirement}: ID del requisito attualmente espanso nella lista;
-                    \item {\ttfamily selectedAsset}: ID dell'asset selezionato all'interno del requisito espanso per l'operazione di {\ttfamily resume}.
+                    \item {\ttfamily expandedRequirement}: ID del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} attualmente espanso nella \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}};
+                    \item {\ttfamily selectedAsset}: ID dell'asset selezionato all'interno del \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} espanso per l'operazione di {\ttfamily resume}.
                 \end{itemize}
                 \textbf{Comportamento}
                 \begin{itemize}
                     \item Filtraggio: calcola in modo ottimizzato ({\ttfamily useMemo}) i risultati che possono essere ripresi basandosi sulle regole di dominio;
-                    \item Selezione: gestisce il toggle della UI per i requisiti e la selezione esclusiva di un asset per il riavvio;
+                    \item Selezione: gestisce il toggle della \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} per i requisiti e la selezione esclusiva di un asset per il riavvio;
                     \item Ripresa test: verifica la validità della selezione e invoca {\ttfamily sessionService.resumeSession} per ricalibrare la storia e la posizione della sessione prima di navigare al runner;
                     \item Navigazione: fornisce un handler dedicato per il ritorno alla vista dei risultati.
                 \end{itemize}
                 \textbf{Valori esposti}
                 \begin{itemize}
                     \item Dati filtrati: {\ttfamily filteredResults}, {\ttfamily dependenciesByRequirement};
-                    \item Stato UI: {\ttfamily expandedRequirement}, {\ttfamily selectedAsset};
+                    \item Stato \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}}: {\ttfamily expandedRequirement}, {\ttfamily selectedAsset};
                     \item Contesto: {\ttfamily resultsPerAsset}, {\ttfamily device};
                     \item Azioni: {\ttfamily handleToggleRequirement}, {\ttfamily handleSelectAsset}, {\ttfamily handleResumeTest}, {\ttfamily handleBack}.
                 \end{itemize}
@@ -1028,30 +1030,30 @@
                 \textbf{Valori esposti}
                 \begin{itemize}
                     \item {\ttfamily currentDevice}: riferimento al dispositivo attualmente in gestione;
-                    \item {\ttfamily showUnsavedDialog}: stato visivo per la UI;
-                    \item Interfaccia dei metodi: set completo di handler per la manipolazione degli asset, la navigazione e il controllo del flusso di salvataggio.
+                    \item {\ttfamily showUnsavedDialog}: stato visivo per la \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}};
+                    \item \textit{Interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} dei metodi: set completo di handler per la manipolazione degli asset, la navigazione e il controllo del flusso di salvataggio.
                 \end{itemize}
                 
                 \subparagraph{useHomeNavigation}\mbox{}\\
-                Hook orchestratore della pagina iniziale ({\ttfamily HomeView}) che centralizza i flussi di ingresso principali dell'applicazione. Gestisce l'inizializzazione dell'ambiente di lavoro attraverso il caricamento di configurazioni esistenti (dispositivi o sessioni) o la creazione di nuovi asset.\\\\
+                Hook orchestratore della pagina iniziale ({\ttfamily HomeView}) che centralizza i flussi di ingresso principali dell'applicazione. Gestisce l'inizializzazione dell'\textit{ambiente di lavoro}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Ambientedilavoro}{G}} attraverso il caricamento di configurazioni esistenti (dispositivi o sessioni) o la creazione di nuovi asset.\\\\
                 \textbf{Parametri}
                 \begin{itemize}
                     \item Nessuno.
                 \end{itemize}
                 \textbf{Dipendenze}
                 \begin{itemize}
-                    \item {\ttfamily useNavigate} (React Router): per il reindirizzamento programmatico alle diverse sezioni dell'app;
-                    \item {\ttfamily SessionService}: per l'interazione con le API di backend relative alla creazione e al ripristino delle sessioni;
+                    \item {\ttfamily useNavigate} (React \textit{Router}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Router}{G}}): per il reindirizzamento programmatico alle diverse sezioni dell'app;
+                    \item {\ttfamily SessionService}: per l'interazione con le \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}} di backend relative alla creazione e al ripristino delle sessioni;
                     \item {\ttfamily notificationService}: per la gestione e visualizzazione degli errori durante le operazioni di I/O, ottenuto tramite contesto applicativo.
                 \end{itemize}
                 \textbf{Stato interno}
                 \begin{itemize}
-                    \item Nessuno (delega la persistenza dello stato agli store globali tramite i servizi).
+                    \item Nessuno (delega la persistenza dello stato agli store globali tramite i \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}}).
                 \end{itemize}
                 \textbf{Comportamento}
                 \begin{itemize}
                     \item {\ttfamily handleLoadDevice(file)}: coordina l'invocazione asincrona di \newline {\ttfamily SessionService.createSessionWithFile(file)}. In caso di successo, l'utente viene indirizzato alla pagina di riepilogo del dispositivo;
-                    \item {\ttfamily handleCreateDevice()}: gestisce la navigazione verso l'interfaccia di creazione manuale di un nuovo dispositivo;
+                    \item {\ttfamily handleCreateDevice()}: gestisce la navigazione verso l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} di creazione manuale di un nuovo dispositivo;
                     \item {\ttfamily handleLoadPreviousSession(file)}: esegue il ripristino di una sessione salvata tramite {\ttfamily SessionService.loadSessionFromFile(file)}, automatizzando il caricamento della cronologia e navigando direttamente alla vista dei risultati finali.
                 \end{itemize}
                 \textbf{Valori esposti}
@@ -1069,7 +1071,7 @@
                 \begin{itemize}
                     \item {\ttfamily useSessionStore}: utilizzato per monitorare il {\ttfamily sessionId} corrente;
                     \item {\ttfamily useDeviceStore}: utilizzato per monitorare il {\ttfamily currentDevice};
-                    \item {\ttfamily selectRouteAccess}: selettore composito che incapsula la logica di validazione dei criteri di accesso.
+                    \item {\ttfamily selectRouteAccess}: selettore composito che incapsula la logica di \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} dei criteri di accesso.
                 \end{itemize}
                 \textbf{Stato interno}
                 \begin{itemize}
@@ -1087,7 +1089,7 @@
                 \end{itemize}
 
                 \subparagraph{useExportResults}\mbox{}\\
-                Hook specializzato nella gestione del flusso di esportazione dei risultati aggregati, includendo selezione del formato, stato di avanzamento e gestione errori.\\\\
+                Hook specializzato nella gestione del flusso di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} dei risultati aggregati, includendo selezione del formato, stato di avanzamento e gestione errori.\\\\
                 \textbf{Parametri}
                 \begin{itemize}
                     \item {\ttfamily sessionId}: identificativo della sessione per cui esportare i risultati.
@@ -1116,7 +1118,7 @@
                 \end{itemize}
 
                 \subparagraph{useExportSession}\mbox{}\\
-                Hook dedicato all'esportazione completa della sessione corrente in formato JSON, con gestione uniforme dello stato di avanzamento e degli errori.\\\\
+                Hook dedicato all'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} completa della sessione corrente in formato JSON, con gestione uniforme dello stato di avanzamento e degli errori.\\\\
                 \textbf{Parametri}
                 \begin{itemize}
                     \item {\ttfamily sessionId}: identificativo della sessione da esportare.
@@ -1124,7 +1126,7 @@
                 \textbf{Dipendenze}
                 \begin{itemize}
                     \item {\ttfamily SessionService}: recupero risposte formattate;
-                    \item {\ttfamily ExportService}: esportazione JSON della sessione;
+                    \item {\ttfamily ExportService}: \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} JSON della sessione;
                     \item {\ttfamily notificationService}: notifica errori;
                     \item {\ttfamily UIStore}: gestione del flag {\ttfamily isExportingSession}.
                 \end{itemize}
@@ -1144,7 +1146,7 @@
                 \end{itemize}
                 
                 \subparagraph{useSessionRunnerTrees}\mbox{}\\
-                Hook di lettura che espone i decision tree necessari alla UI del runner, delegando l'accesso allo stato globale tramite selector composito.\\\\
+                Hook di lettura che espone i \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} necessari alla \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} del runner, delegando l'accesso allo stato globale tramite selector composito.\\\\
                 \textbf{Parametri}
                 \begin{itemize}
                     \item Nessuno.
@@ -1164,7 +1166,7 @@
                 \end{itemize}
                 \textbf{Valori esposti}
                 \begin{itemize}
-                    \item Lista dei decision tree correnti.
+                    \item \textit{Lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} correnti.
                 \end{itemize}
                 
                 \subparagraph{useBeforeUnload}\mbox{}\\
@@ -1176,7 +1178,7 @@
                 \textbf{Dipendenze}
                 \begin{itemize}
                     \item {\ttfamily sessionService}: accesso a sessionId e operazioni di cleanup;
-                    \item API browser {\ttfamily beforeunload} + chiamata {\ttfamily fetch} con {\ttfamily keepalive}.
+                    \item \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}} browser {\ttfamily beforeunload} + chiamata {\ttfamily fetch} con {\ttfamily keepalive}.
                 \end{itemize}
                 \textbf{Stato interno}
                 \begin{itemize}
@@ -1216,7 +1218,7 @@
                     \item {\ttfamily isResumeMode}: flag di ripresa da sessione modificata;
                     \item {\ttfamily isSessionUploaded}: indica se la sessione è caricata da file;
                     \item {\ttfamily resultsPerAsset}: risultati dettagliati per asset;
-                    \item {\ttfamily currentNode}: riferimento al nodo corrente;
+                    \item {\ttfamily currentNode}: riferimento al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente;
                     \item {\ttfamily currentAssetIndex}, {\ttfamily currentTreeIndex}: posizione corrente su asset e requisito.
                 \end{itemize}
                 \textbf{Metodi}
@@ -1236,7 +1238,7 @@
                         \caption{DeviceStore: store state management}
                     \end{figure}
                 \end{center}
-                Store dedicato al dispositivo corrente e alla sua lista di asset.\\\\
+                Store dedicato al dispositivo corrente e alla sua \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di asset.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
                     \item {\ttfamily currentDevice}: oggetto dispositivo attivo.
@@ -1257,16 +1259,16 @@
                         \caption{TreeStore: store state management}
                     \end{figure}
                 \end{center}
-                Store dei decision tree normalizzati usati durante il questionario.\\\\
+                Store dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} normalizzati usati durante il questionario.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
-                    \item {\ttfamily trees}: lista dei decision tree caricati.
+                    \item {\ttfamily trees}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} caricati.
                 \end{itemize}
                 \textbf{Metodi}
                 \begin{itemize}
-                    \item {\ttfamily setTrees(trees)}: normalizza e salva i tree (anche da payload API);
-                    \item {\ttfamily getNodeByTreeIndexAndNodeId(treeIndex, nodeId)}: recupera un nodo specifico del tree di indice {\ttfamily treeIndex};
-                    \item {\ttfamily clearStore()}: reset della lista tree.
+                    \item {\ttfamily setTrees(trees)}: normalizza e salva i tree (anche da payload \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}});
+                    \item {\ttfamily getNodeByTreeIndexAndNodeId(treeIndex, nodeId)}: recupera un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} specifico del tree di indice {\ttfamily treeIndex};
+                    \item {\ttfamily clearStore()}: reset della \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} tree.
                 \end{itemize}
                 
                 \subparagraph{ResultStore}\mbox{}\\
@@ -1280,7 +1282,7 @@
                 Store dedicato ai risultati aggregati della sessione.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
-                    \item {\ttfamily results}: lista risultati aggregati per requisito.
+                    \item {\ttfamily results}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} risultati aggregati per requisito.
                 \end{itemize}
                 \textbf{Metodi}
                 \begin{itemize}
@@ -1296,7 +1298,7 @@
                         \caption{UIStore: store state management}
                     \end{figure}
                 \end{center}
-                Store trasversale per i flag UI (loading, export, dirty state).\\\\
+                Store trasversale per i flag \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} (loading, export, dirty state).\\\\
                 \textbf{Attributi}
                 \begin{itemize}
                     \item {\ttfamily isSessionActionLoading}: azione sessione in corso;
@@ -1306,7 +1308,7 @@
                 \end{itemize}
                 \textbf{Metodi}
                 \begin{itemize}
-                    \item Setter dei flag UI: {\ttfamily setSessionActionLoading}, {\ttfamily setExporting}, {\ttfamily setExportingSession}, {\ttfamily setDirty};
+                    \item Setter dei flag \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}}: {\ttfamily setSessionActionLoading}, {\ttfamily setExporting}, {\ttfamily setExportingSession}, {\ttfamily setDirty};
                     \item {\ttfamily resetUIState()}: reset completo dei flag UI.
                 \end{itemize}
 
@@ -1320,7 +1322,7 @@
                         \item {\ttfamily selectResultsPerAsset}: restituisce i risultati suddivisi per asset.
                         \item {\ttfamily selectResultViewSessionState}: restituisce lo stato sessione necessario alla pagina risultati.
                         \item {\ttfamily selectSessionStateSnapshot}: restituisce lo snapshot usato dal Session Runner.
-                        \item {\ttfamily selectTrees}: restituisce la lista dei decision tree.
+                        \item {\ttfamily selectTrees}: restituisce la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision tree.
                         \item {\ttfamily selectDependenciesByRequirement}: restituisce la mappa delle dipendenze tra requisiti.
                         \item {\ttfamily selectIsDirty}: indica la presenza di modifiche non salvate.
                         \item {\ttfamily selectIsExporting}: indica se l'export risultati è in corso.
@@ -1348,7 +1350,7 @@
                 \end{itemize}
                 
                 \subparagraph{Notification Adapter/Manager}\mbox{}\\
-                Strato di notifica che isola il provider UI (Sonner) dal layer application. L'adapter espone i metodi della porta notifica e delega al manager, che mostra toast di errore/successo con messaggi coerenti.\\\\
+                Strato di notifica che isola il provider \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} (Sonner) dal layer application. L'adapter espone i metodi della porta notifica e delega al manager, che mostra toast di errore/successo con messaggi coerenti.\\\\
                 \textbf{Metodi principali}
                 \begin{itemize}
                     \item {\ttfamily notifyError(error, options)}
@@ -1362,19 +1364,19 @@
         \subsubsection{Precisazione sulla visibilità}
             In Python non esiste un sistema formale di modificatori di visibilità (come 'public', 'private' o 'protected' presenti in altri linguaggi). La distinzione tra membri pubblici e non pubblici è quindi basata su una \textbf{convenzione di naming} condivisa dalla comunità.
 
-            In particolare, tutti i metodi e gli attributi il cui nome inizia con un singolo underscore (\_) sono da considerarsi \textbf{privati per convenzione}, e non dovrebbero essere utilizzati direttamente dall'esterno della classe o del modulo. Al contrario, i metodi e gli attributi che non presentano tale prefisso sono da considerarsi \textbf{pubblici} e costituiscono l'interfaccia esposta della classe.
+            In particolare, tutti i metodi e gli attributi il cui nome inizia con un singolo underscore (\_) sono da considerarsi \textbf{privati per convenzione}, e non dovrebbero essere utilizzati direttamente dall'esterno della classe o del modulo. Al contrario, i metodi e gli attributi che non presentano tale prefisso sono da considerarsi \textbf{pubblici} e costituiscono l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} esposta della classe.
             
             Questa convenzione non impone vincoli a livello di linguaggio, ma rappresenta un contratto implicito tra sviluppatori volto a garantire incapsulamento, leggibilità e manutenibilità del codice.
 
         
         \subsection{Descrizione architettura backend}
             \subsubsection{Presentation Layer}
-                \textbf{Scopo}: Gestisce l'interfaccia di comunicazione tra il mondo esterno (client HTTP) e l'applicazione.
+                \textbf{Scopo}: Gestisce l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} di comunicazione tra il mondo esterno (client HTTP) e l'applicazione.
 
-                \noindent \textbf{Responsabilità}: Espone gli endpoint API utilizzando il framework FastAPI. Si occupa di validare i dati in ingresso (tramite schemi Pydantic), gestire le sessioni HTTP, definire le rotte (router) e restituire le risposte corrette al client.
+                \noindent \textbf{Responsabilità}: Espone gli \textit{endpoint}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Endpoint}{G}} \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}} utilizzando il \textit{framework}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Framework}{G}} FastAPI. Si occupa di validare i dati in ingresso (tramite schemi Pydantic), gestire le sessioni HTTP, definire le rotte (\textit{router}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Router}{G}}) e restituire le risposte corrette al client.
             
                 \paragraph{SessionController}\mbox{}\\
-                    Controller FastAPI che gestisce tutti gli endpoint della sessione. Ogni endpoint si collega mediante un interfaccia ad un UseCase, che esegue la logica per ritornare la risposta.
+                    Controller FastAPI che gestisce tutti gli \textit{endpoint}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Endpoint}{G}} della sessione. Ogni \textit{endpoint}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Endpoint}{G}} si collega mediante un \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} ad un UseCase, che esegue la logica per ritornare la risposta.
 
                     \begin{center}
                         \begin{figure}[H]
@@ -1384,16 +1386,16 @@
                         \end{figure}
                     \end{center}
 
-                    Gli endpoint gestiti dal \textbf{SessionController} sono i seguenti: 
+                    Gli \textit{endpoint}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Endpoint}{G}} gestiti dal \textbf{SessionController} sono i seguenti: 
 
                     \begin{itemize}
                         \item {\ttfamily create\_session\_with\_file(file: File(...)) : SessionResponseSchema} \\ Permette di avviare una nuova sessione di test caricando un file JSON contenente le specifiche del dispositivo. Restituisce i dati necessari utili per inizializzare la sessione, validati mediante il \textbf{SessionResponseSchema} ;
-                        \item {\ttfamily create\_session(body: DeviceSchema): SessionResponseSchema} \\ Svolge la stessa funzione dell'endpoint precedente, ma riceve i dati del dispositivo direttamente come oggetto JSON nel corpo della richiesta (body). È utile per integrazioni dirette senza passaggio da file system. I dati in ingresso vengono validati dal \textbf{DeviceSchema} e quelli in uscita dal \textbf{SessionResponseSchema} ;                         
-                        \item {\ttfamily answer(body: AnswerRequestSchema, session\_id: String) : AnswerResponseSchema} \\ Registra la risposta (Sì/No) al nodo corrente dell'albero decisionale attivo. Restituisce le informazioni sul nodo successivo o l'eventuale completamento dell'albero o dell'intera sessione. I dati in ingresso vengono validati dal \textbf{AnswerRequestSchema} e quelli in uscita dal \textbf{AnswerResponseSchema} ; 
-                        \item {\ttfamily go\_back(body: GoBackRequestSchema, session\_id: String): GoBackResponseSchema} \\ Consente all'utente di tornare a un nodo specifico della cronologia all'interno dell'asset, permettendo di modificare una risposta precedente. Ricalcola automaticamente il percorso e la posizione corrente nel test. I dati in ingresso vengono validati dal \textbf{GoBackRequestSchema} e quelli in uscita dal \textbf{GoBackResponseSchema} ; 
+                        \item {\ttfamily create\_session(body: DeviceSchema): SessionResponseSchema} \\ Svolge la stessa funzione dell'\textit{endpoint}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Endpoint}{G}} precedente, ma riceve i dati del dispositivo direttamente come oggetto JSON nel corpo della richiesta (body). È utile per integrazioni dirette senza passaggio da file system. I dati in ingresso vengono validati dal \textbf{DeviceSchema} e quelli in uscita dal \textbf{SessionResponseSchema} ;                         
+                        \item {\ttfamily answer(body: AnswerRequestSchema, session\_id: String) : AnswerResponseSchema} \\ Registra la risposta (Sì/No) al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente dell'albero decisionale attivo. Restituisce le informazioni sul \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} successivo o l'eventuale completamento dell'albero o dell'intera sessione. I dati in ingresso vengono validati dal \textbf{AnswerRequestSchema} e quelli in uscita dal \textbf{AnswerResponseSchema} ; 
+                        \item {\ttfamily go\_back(body: GoBackRequestSchema, session\_id: String): GoBackResponseSchema} \\ Consente all'utente di tornare a un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} specifico della cronologia all'interno dell'asset, permettendo di modificare una risposta precedente. Ricalcola automaticamente il percorso e la posizione corrente nel test. I dati in ingresso vengono validati dal \textbf{GoBackRequestSchema} e quelli in uscita dal \textbf{GoBackResponseSchema} ; 
                         \item {\ttfamily export\_session(body: ExportSessionRequestSchema, session\_id: String): Response} \\ Genera e restituisce un file JSON scaricabile che contiene lo stato completo della sessione (dati dispositivo, risposte e progressi). Serve per il backup o per riprendere il test in un secondo momento ; 
-                        \item {\ttfamily export\_results(session\_id: String, format: String = "csv"): Response} \\ Elabora i risultati aggregati della conformità e li restituisce in formato CSV o PDF. È l'endpoint dedicato alla generazione della reportistica finale di conformità ; 
-                        \item {\ttfamily delete\_session(session\_id: String): void} \\ Rimuove definitivamente la sessione dalla memoria volatile del server e cancella il relativo file di persistenza dal disco. Restituisce uno stato di successo senza contenuto ;
+                        \item {\ttfamily export\_results(session\_id: String, format: String = "\textit{csv}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}}"): Response} \\ Elabora i risultati aggregati della conformità e li restituisce in formato \textit{CSV}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}} o PDF. È l'\textit{endpoint}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Endpoint}{G}} dedicato alla generazione della reportistica finale di conformità ; 
+                        \item {\ttfamily delete\_session(session\_id: String): void} \\ Rimuove definitivamente la sessione dalla memoria volatile del \textit{server}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Server}{G}} e cancella il relativo file di persistenza dal disco. Restituisce uno stato di successo senza contenuto ;
                         \item {\ttfamily modify\_device(body: DeviceSchema, session\_id: String):  void} \\ Permette di aggiornare le informazioni descrittive o gli asset del dispositivo prima che il test abbia inizio. Ricrea la sessione mantenendo lo stesso ID per riflettere le modifiche apportate. I dati in ingresso vengono validati dal \textbf{DeviceSchema};
                         \item {\ttfamily load\_session\_from\_file(file: File(...)):  LoadSessionReponseSchema} \\ Carica una sessione precedentemente esportata da file JSON. Restituisce lo stato completo della sessione (device, posizione, risultati, risposte). I dati in uscita vengono validati dal \textbf{LoadSessionResponseSchema}.
                     \end{itemize}
@@ -1401,7 +1403,7 @@
                     L'utilizzo della classe \textbf{Response} di FastAPI (o delle sue sottoclassi) è preferibile rispetto a uno schema Pydantic quando  serve la gestione dei File Binari e Media Type. 
                     
                 \paragraph{TreesController}\mbox{}\\
-                    Controller FastAPI che gestisce l'endpoint per ottenere i decision tree dal backend.
+                    Controller FastAPI che gestisce l'\textit{endpoint}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Endpoint}{G}} per ottenere i \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} dal backend.
 
                     \begin{center}
                         \begin{figure}[H]
@@ -1411,7 +1413,7 @@
                         \end{figure}
                     \end{center}
 
-                    \textbf{TreesController} gestisce un unico endpoint: 
+                    \textbf{TreesController} gestisce un unico \textit{endpoint}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Endpoint}{G}}: 
 
                     \begin{itemize}
                         \item {\ttfamily get\_trees() : list<TreesSchema> } \\ Utilizzato all'avvio dell'applicazione, permette di avere gli alberi immediatamente pronti nel frontend. I dati in uscita vengono validati dal \textbf{TreesSchema}
@@ -1420,12 +1422,12 @@
             \subsubsection{Application Layer}
                 \textbf{Scopo}: Orchestra i flussi di dati e implementa i casi d'uso (Use Cases) dell'applicazione.
 
-                \noindent \textbf{Responsabilità}: Questo layer non contiene logica di business pura, ma coordina l'esecuzione delle operazioni chiamando i servizi del dominio e le infrastrutture. Gestisce lo stato dell'applicazione (AppState) e definisce le interfacce per le operazioni come la creazione di sessioni o il recupero dei dati.\textbf{}
+                \noindent \textbf{Responsabilità}: Questo layer non contiene logica di business pura, ma coordina l'esecuzione delle operazioni chiamando i \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} del dominio e le infrastrutture. Gestisce lo stato dell'applicazione (AppState) e definisce le interfacce per le operazioni come la creazione di sessioni o il recupero dei dati.\textbf{}
                 \\
-                \noindent Tutte le interfacce seguono lo stesso schema: unico metodo {\ttfamily execute()} tipizzato su un request e un response specifici. Inoltre tutti gli UseCase concreti del SessionController utilizzano l'interfaccia \textbf{ISessionService} che astrae metodi utili alla manipolazione della sessione.  
+                \noindent Tutte le interfacce seguono lo stesso schema: unico metodo {\ttfamily execute()} tipizzato su un request e un response specifici. Inoltre tutti gli UseCase concreti del SessionController utilizzano l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} \textbf{ISessionService} che astrae metodi utili alla manipolazione della sessione.  
             
                 \paragraph{AppState}\mbox{}\\
-                    AppState è una semplice classe che funge da gestore dello stato globale in memoria per l'applicazione, definendo due attributi principali: una lista di oggetti DecisionTree (trees) e un dizionario che associa identificatori testuali a oggetti Session (sessions). Viene utilizzata per mantenere in cache i dati essenziali per l'intera durata del ciclo di vita dell'applicazione FastAPI. All'avvio del server  (tramite il \textbf{gestore di contesto lifespan}), AppState.trees viene inizializzato e popolato caricando in memoria tutti gli alberi decisionali dal file system tramite la classe FileTreeProvider. In questo modo i dati restano rapidamente accessibili per le successive richieste API, per poi venire esplicitamente rimossi (AppState.trees = []) durante la fase di spegnimento e pulizia dell'applicazione.
+                    AppState è una semplice classe che funge da gestore dello stato globale in memoria per l'applicazione, definendo due attributi principali: una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di oggetti DecisionTree (trees) e un dizionario che associa identificatori testuali a oggetti Session (sessions). Viene utilizzata per mantenere in cache i dati essenziali per l'intera durata del ciclo di vita dell'applicazione FastAPI. All'avvio del \textit{server}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Server}{G}}  (tramite il \textbf{gestore di contesto lifespan}), AppState.trees viene inizializzato e popolato caricando in memoria tutti gli alberi decisionali dal file system tramite la classe FileTreeProvider. In questo modo i dati restano rapidamente accessibili per le successive richieste \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}}, per poi venire esplicitamente rimossi (AppState.trees = []) durante la fase di spegnimento e pulizia dell'applicazione.
 
             
                 \paragraph{ICreateSessionUseCase}\mbox{}\\
@@ -1464,11 +1466,11 @@
                     \begin{itemize}
                         \item {\ttfamily session\_id: String}: id univoco della sessione;
                         \item {\ttfamily device\_name: String}: nome del dispositivo oggetto di verifica;
-                        \item {\ttfamily assets: list<AssetResponse>}: lista degli asset del dispositivo;
+                        \item {\ttfamily assets: list<AssetResponse>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset del dispositivo;
                         \item {\ttfamily device\_os: String}, {\ttfamily device\_firmw\_v: String}, {\ttfamily device\_funcs: String}, {\ttfamily device\_desc: String}: metadati relativi al dispositivo;
                         \item {\ttfamily current\_asset\_index: int}: indice dell'asset corrente;
                         \item {\ttfamily current\_tree\_index: int}: indice dell'albero corrente;
-                        \item {\ttfamily current\_node\_id: String}: id del nodo corrente.
+                        \item {\ttfamily current\_node\_id: String}: id del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente.
                     \end{itemize}
 
 
@@ -1485,7 +1487,7 @@
 
 
                 \paragraph{IAnswerUseCase}\mbox{}\\
-                    Contratto per la risposta al nodo corrente di una sessione.
+                    Contratto per la risposta al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente di una sessione.
 
                     \begin{center}
                         \begin{figure}[H]
@@ -1497,7 +1499,7 @@
                     
 
                 \paragraph{AnswerRequest}\mbox{}\\
-                    DTO di richiesta di invio della risposta al nodo corrente.\\\\
+                    DTO di richiesta di invio della risposta al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily session\_id: String}: id univoco della sessione;
@@ -1505,10 +1507,10 @@
                     \end{itemize}
 
                 \paragraph{AnswerResponse}\mbox{}\\
-                    DTO di risposta al completamento del nodo corrente.\\\\
+                    DTO di risposta al completamento del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
-                        \item {\ttfamily next\_node\_id: String}: id del prossimo nodo con la prossima domanda da rispondere;
+                        \item {\ttfamily next\_node\_id: String}: id del prossimo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} con la prossima domanda da rispondere;
                         \item {\ttfamily tree\_completed: bool}: flag di completamento dell'albero;
                         \item {\ttfamily tree\_result String}: risultato di completamento dell'albero;
                         \item {\ttfamily session\_finished: bool}: flag di completamento della sessione;
@@ -1518,7 +1520,7 @@
                     \end{itemize}
 
                 \paragraph{AnswerUseCase}\mbox{}\\
-                    Carica la sessione tramite il service, chiama {\ttfamily session.answer()} e salva lo stato aggiornato. Restituisce {\ttfamily AnswerResponse} con il prossimo nodo, il risultato dell'albero se completato e il flag di fine sessione.\\\\
+                    Carica la sessione tramite il service, chiama {\ttfamily session.answer()} e salva lo stato aggiornato. Restituisce {\ttfamily AnswerResponse} con il prossimo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}, il risultato dell'albero se completato e il flag di fine sessione.\\\\
                     \textbf{Attributo}
                     \begin{itemize}
                         \item {\ttfamily \_session\_service: ISessionService}
@@ -1530,7 +1532,7 @@
 
 
                 \paragraph{IGoBackUseCase}\mbox{}\\
-                    Contratto per il ritorno a un nodo precedente nella history del tree corrente.
+                    Contratto per il ritorno a un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} precedente nella history del tree corrente.
                     
                     \begin{center}
                         \begin{figure}[H]
@@ -1542,32 +1544,32 @@
                     
 
                 \paragraph{GoBackRequest}\mbox{}\\
-                    DTO di richiesta per ritornare a un nodo già risposto nell'albero corrente.\\\\
+                    DTO di richiesta per ritornare a un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} già risposto nell'albero corrente.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily session\_id: String}: id univoco della sessione;
                         \item {\ttfamily target\_asset\_index: int}: asset in cui si vuole cambiare la risposta;
                         \item {\ttfamily target\_tree\_index: String}: albero in cui si vuole cambiare la risposta;
-                        \item {\ttfamily target\_node\_id: String}: nodo in cui si vuole cambiare la risposta;
+                        \item {\ttfamily target\_node\_id: String}: \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} in cui si vuole cambiare la risposta;
                         \item {\ttfamily new\_answer: bool}: nuova risposta data alla domanda;
                     \end{itemize}
 
                 \paragraph{GoBackResponse}\mbox{}\\
-                    DTO di risposta al ritorno indietro di un nodo a cui l'utente aveva già risposto.\\\\
+                    DTO di risposta al ritorno indietro di un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} a cui l'utente aveva già risposto.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
-                        \item {\ttfamily found : bool}: flag di ritrovamento del nodo;
-                        \item {\ttfamily node\_id : String}: id del nodo (se ritrovato);
+                        \item {\ttfamily found : bool}: flag di ritrovamento del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}};
+                        \item {\ttfamily node\_id : String}: id del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} (se ritrovato);
                         \item {\ttfamily tree\_completed: bool}: flag di completamento dell'albero;
                         \item {\ttfamily tree\_result: String}: risultato del completamento dell'albero;
                         \item {\ttfamily session\_finished: bool}: flag di completamento della sessione; 
-                        \item {\ttfamily results: Dictionary}: dizionario contenente i risultati dei decision tree;
+                        \item {\ttfamily results: Dictionary}: dizionario contenente i risultati dei \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}};
                         \item {\ttfamily current\_asset\_index: int}: indice dell'asset corrente;
                         \item {\ttfamily current\_tree\_index: int}: indice dell'albero corrente.
                     \end{itemize}
 
                 \paragraph{GoBackUseCase}\mbox{}\\
-                    Carica la sessione tramite il service, cerca il nodo target nella navigation stack tramite l'id e chiama {\ttfamily session.go\_back()}.\\\\
+                    Carica la sessione tramite il service, cerca il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} target nella navigation stack tramite l'id e chiama {\ttfamily session.go\_back()}.\\\\
                     \textbf{Attributo}
                     \begin{itemize}
                         \item {\ttfamily \_session\_service: ISessionService}
@@ -1579,7 +1581,7 @@
 
 
                 \paragraph{IExportResultsUseCase}\mbox{}\\
-                    Contratto per l'esportazione dei risultati in un file esterno.
+                    Contratto per l'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} dei risultati in un file esterno.
                     
                     \begin{center}
                         \begin{figure}[H]
@@ -1590,15 +1592,15 @@
                     \end{center}
 
                 \paragraph{ExportResultsRequest}\mbox{}\\
-                    DTO di richiesta di esportazione risultati su un file esterno.\\\\
+                    DTO di richiesta di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} risultati su un file esterno.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily session\_id: String}: id univoco della sessione;
-                        \item {\ttfamily format: String}: formato di esportazione (csv/pdf).
+                        \item {\ttfamily format: String}: formato di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} (csv/pdf).
                     \end{itemize}
 
                 \paragraph{ExportResultsResponse}\mbox{}\\
-                    DTO di risposta all'esportazione dei risultati del test su file.\\\\
+                    DTO di risposta all'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} dei risultati del test su file.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily content: bytes}: contenuto del file;
@@ -1619,7 +1621,7 @@
 
 
                 \paragraph{IExportSessionUseCase}\mbox{}\\
-                    Contratto per l'esportazione dell'intera sessione come file json scaricabile.
+                    Contratto per l'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} dell'intera sessione come file json scaricabile.
                     
                     \begin{center}
                         \begin{figure}[H]
@@ -1631,15 +1633,15 @@
                     
 
                 \paragraph{ExportSessionRequest}\mbox{}\\
-                DTO di richiesta per l'esportazione della sessione su file.\\\\
+                DTO di richiesta per l'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} della sessione su file.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily session\_id: String}: id univoco della sessione;
-                        \item {\ttfamily answer: List<Dictionary>}: lista delle risposte date serializzate tramite dizionario.
+                        \item {\ttfamily answer: List<Dictionary>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} delle risposte date serializzate tramite dizionario.
                     \end{itemize}
 
                 \paragraph{ExportSessionResponse}\mbox{}\\
-                    DTO di risposta all'esportazione della sessione su file.\\\\
+                    DTO di risposta all'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} della sessione su file.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily content: bytes}: contenuto del file;
@@ -1747,12 +1749,12 @@
                         \item {\ttfamily session\_id: String}: id univoco della sessione;
                         \item {\ttfamily device\_name: String}: nome del dispositivo oggetto di verifica;
                         \item {\ttfamily device\_os: String}, {\ttfamily device\_firmw\_v: String}, {\ttfamily device\_funcs: String}, {\ttfamily device\_desc: String}: metadati relativi al dispositivo;
-                        \item {\ttfamily assets: list<AssetResponse>}: lista degli asset del dispositivo;
+                        \item {\ttfamily assets: list<AssetResponse>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset del dispositivo;
                         \item {\ttfamily current\_asset\_index: int}: indice dell'asset corrente;
                         \item {\ttfamily current\_tree\_index: int}: indice dell'albero corrente;
-                        \item {\ttfamily current\_node\_id: String}: id del nodo corrente.
-                        \item {\ttfamily answers: list<Dictionary>}: lista delle riposte date nel precedente test della sessione.
-                        \item {\ttfamily results: Dictionary<String, Dictionary<String, String>}: dizionario contenente i risultati di ogni requisito per ogni asset. 
+                        \item {\ttfamily current\_node\_id: String}: id del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente.
+                        \item {\ttfamily answers: list<Dictionary>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} delle riposte date nel precedente test della sessione.
+                        \item {\ttfamily results: Dictionary<String, Dictionary<String, String>}: dizionario contenente i risultati di ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} per ogni asset. 
                         \item {\ttfamily aggregate\_results: Dictionary}: dizionario dei risultati con formato utile al frontend per la visualizzazione
                         \item {\ttfamily is\_finished: bool}: valore booleano che dice se la sessione caricata era conclusa o meno
                     \end{itemize}
@@ -1771,7 +1773,7 @@
                     \end{itemize}
 
                 \paragraph{IGetTreesUseCase}\mbox{}\\
-                    Contratto per il recupero della lista degli alberi decisionali disponibili.
+                    Contratto per il recupero della \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli alberi decisionali disponibili.
 
                     \begin{center}
                         \begin{figure}[H]
@@ -1792,22 +1794,22 @@
                     \end{itemize}
 
                 \paragraph{GetTreesResponse}\mbox{}\\
-                    DTO di risposta che ritorna la lista di alberi decisionali.\\\\
+                    DTO di risposta che ritorna la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di alberi decisionali.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
-                        \item {\ttfamily trees: list<TreesResponse>}: lista di alberi.
+                        \item {\ttfamily trees: list<TreesResponse>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di alberi.
                     \end{itemize}
 
 
                 \paragraph{GetTreesUseCase}\mbox{}\\
-                    Riceve la lista di alberi caricata in memoria e la serializza come lista di dizionari.\\\\
+                    Riceve la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di alberi caricata in memoria e la serializza come \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di dizionari.\\\\
                     \textbf{Metodo}
                     \begin{itemize}
-                        \item {\ttfamily execute(): GetTreesResponse}: ritorna una lista di alberi.
+                        \item {\ttfamily execute(): GetTreesResponse}: ritorna una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di alberi.
                     \end{itemize}
             
                 \paragraph{ISessionService}\mbox{}\\
-                    Interfaccia del service di dominio esposta verso l'application layer.\\\\
+                    \textit{Interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} del service di dominio esposta verso l'application layer.\\\\
 
                     \begin{center}
                         \begin{figure}[H]
@@ -1828,7 +1830,7 @@
             \subsubsection{Domain Layer}
                 \textbf{Scopo}: Rappresenta il cuore pulsante del sistema, contenente le regole di business fondamentali.
 
-                \noindent\textbf{Responsabilità}: Definisce le entità (come Session, Device, DecisionTree) e la logica che non dipende da framework o database. È il layer più interno e isolato.
+                \noindent\textbf{Responsabilità}: Definisce le entità (come Session, Device, DecisionTree) e la logica che non dipende da \textit{framework}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Framework}{G}} o database. È il layer più interno e isolato.
 
                 \paragraph{AssetType}
 
@@ -1878,20 +1880,20 @@
                         \end{figure}
                     \end{center}
                     
-                    Rappresenta il dispositivo facente uso di onde radio oggetto della valutazione. Aggrega una lista di Asset e contiene le informazioni generali del dispositivo.\\\\
+                    Rappresenta il dispositivo facente uso di onde radio oggetto della valutazione. Aggrega una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di Asset e contiene le informazioni generali del dispositivo.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily \_device\_name: String}: nome del dispositivo;
-                        \item {\ttfamily \_assets: list<Asset>}: lista degli asset;
+                        \item {\ttfamily \_assets: list<Asset>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset;
                         \item {\ttfamily \_operating\_sys: String}: sistema operativo del dispositivo;
-                        \item {\ttfamily \_firm\_vers: String}: versione del firmware del dispositivo;
+                        \item {\ttfamily \_firm\_vers: String}: versione del \textit{firmware}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Firmware}{G}} del dispositivo;
                         \item {\ttfamily \_funcs: String}: funzionalità del dispositivo;
                         \item {\ttfamily \_desc: String}: descrizione del dispositivo.
                     \end{itemize}
                     \textbf{Metodi}
                         \begin{itemize}
                             \item Metodi getter per ogni attributo;
-                            \item Metodi setter per ogni attributo ad eccezione della lista degli asset;
+                            \item Metodi setter per ogni attributo ad eccezione della \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset;
                             \item {\ttfamily to\_dict(): Dictionary<String, any>}: metodo utilizzato per la serializzazione.
                         \end{itemize}
                 
@@ -1905,13 +1907,13 @@
                         \end{figure}
                     \end{center}
                     
-                    Rappresenta un nodo di un decision tree.\\\\
+                    Rappresenta un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} di un decision tree.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
-                        \item {\ttfamily \_node\_id: String}: id del nodo;
+                        \item {\ttfamily \_node\_id: String}: id del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}};
                         \item {\ttfamily \_question: String}: stringa contenente il testo della domanda;
-                        \item {\ttfamily \_yes: Node | Result}: risposta "sì", può portare ad un altro nodo o a un risultato;
-                        \item {\ttfamily \_no: Node | Result}: risposta "no", può portare ad un altro nodo o a un risultato;
+                        \item {\ttfamily \_yes: Node | Result}: risposta "sì", può portare ad un altro \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} o a un risultato;
+                        \item {\ttfamily \_no: Node | Result}: risposta "no", può portare ad un altro \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} o a un risultato;
                     \end{itemize}
                     \textbf{Metodi}
                         \begin{itemize}
@@ -1928,13 +1930,13 @@
                         \end{figure}
                     \end{center}
                     
-                    Albero decisionale corrispondente ad un requisito EN 18031. l'iterazione diretta sui nodi serializzati.\\\\
+                    Albero decisionale corrispondente ad un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} EN 18031. l'iterazione diretta sui nodi serializzati.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily \_id: String}: id dell'albero;
                         \item {\ttfamily \_title: String}: titolo dell'albero;
-                        \item {\ttfamily \_dependencies: list[String]}: lista delle dipendenze dell'albero;
-                        \item {\ttfamily \_nodes: list[Node]}: lista contenente i nodi del decision tree.
+                        \item {\ttfamily \_dependencies: list[String]}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} delle dipendenze dell'albero;
+                        \item {\ttfamily \_nodes: list[Node]}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} contenente i nodi del decision tree.
                     \end{itemize}
                     \textbf{Metodi}
                         \begin{itemize}
@@ -1957,7 +1959,7 @@
                     \begin{itemize}
                         \item {\ttfamily \_id: String}: id della sessione;
                         \item {\ttfamily \_device: Device}: dispositivo associato alla sessione;
-                        \item {\ttfamily \_trees: list[DecisionTree]}: lista degli alberi;
+                        \item {\ttfamily \_trees: list[DecisionTree]}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli alberi;
                         \item {\ttfamily state: SessionState}: stato corrente della sessione;
                         \item {\ttfamily results: ResultStore}: registratore dei risultati;
                         \item {\ttfamily navigator: SessionNavigator}: navigatore della sessione;
@@ -1966,11 +1968,11 @@
                     \end{itemize}
                     \textbf{Metodi}
                         \begin{itemize}
-                            \item Metodi getter per: id, lista completa degli asset, asset corrente, dispositivo, albero corrente, nodo corrente, storia di navigazione, lista completa degli alberi;
-                            \item {\ttfamily record\_result(result: Result): void}: registra il risultato di un decision tree;
-                            \item {\ttfamily answer(ans: bool): AnswerResult}: gestisce la risposta ad una domanda di un nodo;
-                            \item {\ttfamily go\_back(target\_node: Node): GoBackResult}: ritorna indietro alla risposta di un nodo target;
-                            \item {\ttfamily reset\_changed\_tree\_and\_dependents(asset\_index: int,  tree\_index: int): void}: resetta le dipendenze in caso di modifica di una risposta ad un decision tree;
+                            \item Metodi getter per: id, \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} completa degli asset, asset corrente, dispositivo, albero corrente, \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente, storia di navigazione, \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} completa degli alberi;
+                            \item {\ttfamily record\_result(result: Result): void}: registra il risultato di un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}};
+                            \item {\ttfamily answer(ans: bool): AnswerResult}: gestisce la risposta ad una domanda di un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}};
+                            \item {\ttfamily go\_back(target\_node: Node): GoBackResult}: ritorna indietro alla risposta di un \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} target;
+                            \item {\ttfamily reset\_changed\_tree\_and\_dependents(asset\_index: int,  tree\_index: int): void}: resetta le dipendenze in caso di modifica di una risposta ad un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}};
                             \item {\ttfamily \_skip\_invalid\_trees(): void}: se le dipendenze non sono soddisfatte salta l'albero.
                         \end{itemize}
 
@@ -1988,12 +1990,12 @@
                     Implementazione concreta di ISessionService. Coordina la creazione, il recupero, il salvataggio e la cancellazione delle sessioni.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
-                        \item {\ttfamily \_repo: BaseRepository}: interfaccia generica e astratta che definisce il contratto standard (operazioni di salvataggio, recupero e cancellazione) per la persistenza delle entità
+                        \item {\ttfamily \_repo: BaseRepository}: \textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} generica e astratta che definisce il contratto standard (operazioni di salvataggio, recupero e cancellazione) per la persistenza delle entità
                         \item {\ttfamily \_factory: SessionFactory}: factory che centralizza la costruzione di oggetti Session;
                         \item {\ttfamily \_cache: Dictionary}: cache usata per evitare di ricaricare dal file system sessioni già attive nella stessa request;
                     \end{itemize}
                     \textbf{Metodi}\\
-                        La classe implementa i metodi dichiarati dall'interfaccia {\ttfamily ISessionService}.
+                        La classe implementa i metodi dichiarati dall'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} {\ttfamily ISessionService}.
 
                         
                 \paragraph{SessionState}\mbox\\
@@ -2010,16 +2012,16 @@
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily current\_asset\_index: int}: indice dell'asset corrente;
-                        \item {\ttfamily current\_tree\_index: int}: indice del decision tree corrente;
-                        \item {\ttfamily current\_node: Node}: nodo corrente;
+                        \item {\ttfamily current\_tree\_index: int}: indice del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} corrente;
+                        \item {\ttfamily current\_node: Node}: \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente;
                         \item {\ttfamily is\_finished: bool}: flag di completamento;
-                        \item {\ttfamily navigation\_stack: list$<$tuple$<$int, Node, bool$>>$}: stack di navigazione. Una lista di tuple composte da tre elementi: l'indice dell'albero, il nodo a cui si ha risposto, la risposta data. 
+                        \item {\ttfamily navigation\_stack: list$<$tuple$<$int, Node, bool$>>$}: stack di navigazione. Una \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} di tuple composte da tre elementi: l'indice dell'albero, il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} a cui si ha risposto, la risposta data. 
                     \end{itemize}
                     \textbf{Metodi}
                     \begin{itemize}
-                        \item {\ttfamily current\_node\_id(): String}: ritorna l'id del nodo corrente;
-                        \item {\ttfamily push(node: Node, answer: bool): void}: pusha in coda allo stack di navigazione la coppia nodo-risposta;
-                        \item {\ttfamily pop\_until(target\_node: Node, target\_asset\_index: int, target\_tree\_index: int): bool}: rimuove dallo stack tutte le entry dal fondo fino al nodo target compreso. Ritorna true o false in base alla presenza del nodo nello stack;
+                        \item {\ttfamily current\_node\_id(): String}: ritorna l'id del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente;
+                        \item {\ttfamily \textit{push}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Push}{G}}(node: Node, answer: bool): void}: pusha in coda allo stack di navigazione la coppia nodo-risposta;
+                        \item {\ttfamily pop\_until(target\_node: Node, target\_asset\_index: int, target\_tree\_index: int): bool}: rimuove dallo stack tutte le entry dal fondo fino al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} target compreso. Ritorna true o false in base alla presenza del \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} nello stack;
                         \item {\ttfamily clear\_stack(): void}: svuota lo stack;
                         \item {\ttfamily next\_tree(): void}: avanza al prossimo albero;
                         \item {\ttfamily next\_asset(): void}: avanza al prossimo asset.
@@ -2036,10 +2038,10 @@
                         \end{figure}
                     \end{center}
                     
-                    Value object resitutito da SessionNavigator.answer(). Porta il prossimo nodo se il tree continua, il risultato e il flag tree\_completed se il tree è terminato e session\_finished se tutti gli asset e alberi sono stati completati.\\\\
+                    Value object resitutito da SessionNavigator.answer(). Porta il prossimo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} se il tree continua, il risultato e il flag tree\_completed se il tree è terminato e session\_finished se tutti gli asset e alberi sono stati completati.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
-                        \item {\ttfamily next\_node: Node}: prossimo nodo;
+                        \item {\ttfamily next\_node: Node}: prossimo \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}};
                         \item {\ttfamily tree\_result: Result}: risultato dell'albero;
                         \item {\ttfamily tree\_completed: bool}: flag di albero completato;
                         \item {\ttfamily session\_finished: bool}: flag di fine sessione.
@@ -2056,11 +2058,11 @@
                         \end{figure}
                     \end{center}
                     
-                    Value object resitutito da {\ttfamily SessionNavigator.go\_back()}. Indica se il nodo target è stato trovato e, in caso positivo, il nodo stesso.\\\\
+                    Value object resitutito da {\ttfamily SessionNavigator.go\_back()}. Indica se il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} target è stato trovato e, in caso positivo, il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} stesso.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
-                        \item {\ttfamily node: Node}: nodo da ripetere;
-                        \item {\ttfamily found: bool}: flag che indica se il nodo era nello stack.
+                        \item {\ttfamily node: Node}: \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} da ripetere;
+                        \item {\ttfamily found: bool}: flag che indica se il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} era nello stack.
                     \end{itemize}    
 
                     
@@ -2078,17 +2080,17 @@
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily state: SessionState}: stato della sessione;
-                        \item {\ttfamily \_assets: list<Asset>}: lista degli asset;
-                        \item {\ttfamily \_trees: list<DecisionTree>}: lista dei decision trees;
+                        \item {\ttfamily \_assets: list<Asset>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} degli asset;
+                        \item {\ttfamily \_trees: list<DecisionTree>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision trees;
                     \end{itemize}
                     \textbf{Metodi}
                     \begin{itemize}
                         \item {\ttfamily current\_asset(): Asset}: ritorna l'asset corrente;
-                        \item {\ttfamily current\_tree(): DecisionTree}: ritorna il decision tree corrente;
-                        \item {\ttfamily current\_node(): Node}: ritorna il nodo corrente all'interno del tree attivo;
-                        \item {\ttfamily answer(ans: bool): AnswerResult}: Processa la risposta al nodo corrente. Se il ramo porta a un altro nodo, aggiorna il current node e lo restituisce. Se il ramo porta a un Result, avanza al prossimo tree e restituisce il risultato da registrare;
-                        \item {\ttfamily go\_back(target\_node: Node, target\_asset\_index: int, target\_tree\_index: int): GoBackResult}: torna  al nodo target cancellando tutte le rispose successive;
-                        \item {\ttfamily navigation\_history(): list<Dictionary>}: restituisce la lista dei nodi già risposti nel decision tree corrente;
+                        \item {\ttfamily current\_tree(): DecisionTree}: ritorna il \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} corrente;
+                        \item {\ttfamily current\_node(): Node}: ritorna il \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente all'interno del tree attivo;
+                        \item {\ttfamily answer(ans: bool): AnswerResult}: Processa la risposta al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} corrente. Se il ramo porta a un altro \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}}, aggiorna il current node e lo restituisce. Se il ramo porta a un Result, avanza al prossimo tree e restituisce il risultato da registrare;
+                        \item {\ttfamily go\_back(target\_node: Node, target\_asset\_index: int, target\_tree\_index: int): GoBackResult}: torna  al \textit{nodo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Nodo}{G}} target cancellando tutte le rispose successive;
+                        \item {\ttfamily navigation\_history(): list<Dictionary>}: restituisce la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei nodi già risposti nel \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} corrente;
                         \item {\ttfamily \_advance\_tree(): void}: avanza al prossimo albero;
                         \item {\ttfamily next(): void}: metodo pubblico che richiama {\ttfamily \_advance\_tree()}.
                     \end{itemize}
@@ -2110,17 +2112,17 @@
                     \textbf{Metodi}
                     \begin{itemize}
                         \item {\ttfamily record(asset\_id: String, tree\_id: String, result: Result): void}: registra il risultato;
-                        \item {\ttfamily reset(asset\_id: String, tree\_id: String): void}: resetta il risultato sull'asset e decision tree passati come parametri;
-                        \item {\ttfamily get(asset\_id: String, tree\_id: String): Result}: ritorna il risultato in base all'asset e al decision tree;
+                        \item {\ttfamily reset(asset\_id: String, tree\_id: String): void}: resetta il risultato sull'asset e \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} passati come parametri;
+                        \item {\ttfamily get(asset\_id: String, tree\_id: String): Result}: ritorna il risultato in base all'asset e al \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}};
                         \item {\ttfamily to\_dict(): Dictionary$<$String, Dictionary$<$String, String$>>$}: ritorna un dizionario con i nuovi valori??????? 
-                        \item {\ttfamily get\_aggregated\_result(all\_tree\_ids: List<String>): Dictionary<String, String>}: calcola il risultato globale per ogni requisito (albero) basandosi su tutti gli asset.
+                        \item {\ttfamily get\_aggregated\_result(all\_tree\_ids: List<String>): Dictionary<String, String>}: calcola il risultato globale per ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} (albero) basandosi su tutti gli asset.
                     \end{itemize}
 
                 \paragraph{Result}\mbox{}\\
-                    Enumerazione contenente i tre possibili esiti del decision tree:
+                    Enumerazione contenente i tre possibili esiti del \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}}:
                     \begin{itemize}
-                        \item PASS;
-                        \item FAIL;
+                        \item \textit{PASS}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Pass}{G}};
+                        \item \textit{FAIL}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Fail}{G}};
                         \item NOT\_APPLICABLE.
                     \end{itemize}
                     
@@ -2156,18 +2158,18 @@
                     \end{center}
 
                     
-                    Gestisce le regole di dipendenza tra decision tree durante la navigazione
+                    Gestisce le regole di dipendenza tra \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} durante la navigazione
                     e quando una risposta viene modificata.\\\\
                     \textbf{Attributi}
                     \begin{itemize}
                         \item {\ttfamily \_results: ResultStore}: dizionario dei risultati;
                         \item {\ttfamily \_navigator: SessionNavigator}: gestore della navigazione della sessione;
-                        \item {\ttfamily \_dependencies: DependencyEvaluator}: verificatore delle dipendenze;
-                        \item {\ttfamily \_trees: List<DecisionTree>}: lista dei decision tree.
+                        \item {\ttfamily \_dependencies: DependencyEvaluator}: \textit{verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}} delle dipendenze;
+                        \item {\ttfamily \_trees: List<DecisionTree>}: \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} dei decision tree.
                     \end{itemize}
                     \textbf{Metodi}
                     \begin{itemize}
-                        \item {\ttfamily reset\_changed\_trees\_and\_dependents(asset\_id: String, tree\_index: int): void}: resetta le dipendenze in caso di modifica di una risposta ad un decision tree;
+                        \item {\ttfamily reset\_changed\_trees\_and\_dependents(asset\_id: String, tree\_index: int): void}: resetta le dipendenze in caso di modifica di una risposta ad un \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}};
                         \item {\ttfamily skip\_invalid\_trees(): void}: salta gli alberi in base alle dipendenze.
                     \end{itemize}  
 
@@ -2213,13 +2215,13 @@
                     Sollevata quando si cerca una sessione con un id che non esiste né in cache né nel repository.
 
                 \paragraph{InvalidDeviceFileException}\mbox{}\\
-                    Sollevata quando il file json del device non supera la validazione dello schema Pydantic.
+                    Sollevata quando il file json del device non supera la \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} dello schema Pydantic.
 
                 \paragraph{InvalidFileException}\mbox{}\\
                     Sollevata quando ????.
 
                 \paragraph{UnsupportedExportFormatException}\mbox{}\\
-                    Sollevata quando il formato richiesto per l'export non è tra quelli disponibili (csv, pdf).
+                    Sollevata quando il formato richiesto per l'export non è tra quelli disponibili (\textit{csv}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}}, \textit{pdf}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}).
 
                 \paragraph{InvalidSessionIdException}\mbox{}\\
                     Sollevata quando session\_id fornito in una richiesta non è un UUID v4 valido.
@@ -2235,7 +2237,7 @@
                         \end{figure}
                     \end{center}
 
-                    Interfaccia utilizzata per definire il contratto per le strategie di esportazione dei risultati.\\\\
+                    \textit{Interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} utilizzata per definire il contratto per le strategie di \textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} dei risultati.\\\\
                     \textbf{Metodi}
                     \begin{itemize}
                         \item {\ttfamily media\_type(): String}: definisce il tipo di file;
@@ -2244,17 +2246,17 @@
                     \end{itemize}
                 
                 \paragraph{CsvExporter}\mbox{}\\
-                    Implementa ExportStrategy producendo un file CSV con colonne Device, AssetID, TreeID, Result e una coppia (asset, albero) per ogni riga con il rispettivo risultato.\\\\
+                    Implementa ExportStrategy producendo un file \textit{CSV}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}} con colonne Device, AssetID, TreeID, Result e una coppia (asset, albero) per ogni riga con il rispettivo risultato.\\\\
                     \textbf{Metodi}
                     \begin{itemize}
-                        \item Implementazione dei metodi {\ttfamily media\_type()}, {\ttfamily filename()} ed {\ttfamily export()} definiti dall'interfaccia ExportStrategy.
+                        \item Implementazione dei metodi {\ttfamily media\_type()}, {\ttfamily filename()} ed {\ttfamily export()} definiti dall'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} ExportStrategy.
                     \end{itemize}
 
                 \paragraph{PdfExporter}\mbox{}\\
-                    Implementa ExportStrategy producendo un file PDF formattato con ReportLab. Per ogni asset genera una tabella con intestazione colorata, righe alternate e colorazione del testo del risultato (verde per PASS, rosso per FAIL e grigio per NOT\_APPLICABLE)\\\\
+                    Implementa ExportStrategy producendo un file \textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}} formattato con ReportLab. Per ogni asset genera una tabella con intestazione colorata, righe alternate e colorazione del testo del risultato (verde per \textit{PASS}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Pass}{G}}, rosso per \textit{FAIL}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Fail}{G}} e grigio per NOT\_APPLICABLE)\\\\
                     \textbf{Metodi}
                     \begin{itemize}
-                        \item Implementazione dei metodi {\ttfamily media\_type()}, {\ttfamily filename()} ed {\ttfamily export()} definiti dall'interfaccia ExportStrategy.
+                        \item Implementazione dei metodi {\ttfamily media\_type()}, {\ttfamily filename()} ed {\ttfamily export()} definiti dall'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} ExportStrategy.
                     \end{itemize}   
                     
 
@@ -2299,14 +2301,14 @@
                         \end{figure}
                     \end{center}
                 
-                    Interfaccia utilizzata per disaccoppiare il dominio dalla sorgente concreta degli alberi.\\\\
+                    \textit{Interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} utilizzata per disaccoppiare il dominio dalla sorgente concreta degli alberi.\\\\
                     \textbf{Metodi}
                     \begin{itemize}
-                        \item {\ttfamily get\_all(): list<DecisionTree>}: ritorna la lista completa dei decision tree.
+                        \item {\ttfamily get\_all(): list<DecisionTree>}: ritorna la \textit{lista}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Lista}{G}} completa dei decision tree.
                     \end{itemize}
                 
                 \paragraph{FileTreeProvider}\mbox{}\\
-                    Implementa l'interfaccia TreeProvider, leggendo gli alberi da \textit{trees.json} tramite FileStorage.\\\\
+                    Implementa l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} TreeProvider, leggendo gli alberi da \textit{trees.json} tramite FileStorage.\\\\
                     \textbf{Attributi}
                         \begin{itemize}
                             \item {\ttfamily \_storage: FileStorage}: gestore delle operazioni di I/O;
@@ -2316,7 +2318,7 @@
                     \begin{itemize}
                         \item {\ttfamily \_resolve\_ref(ref: String, nodes: Dictionary<String, Node>): Node | Result}: risolve i riferimenti a nodi successivi e risultati foglia?????????????????????;
                         \item {\ttfamily build\_nodes(nodes\_data: Dictionary): list<Node>}: costruisce ricorsivamente la struttura Node dal json;
-                        \item {\ttfamily get\_all(): list<DecisionTree>}: implementazione del metodo dichiarato nell'interfaccia TreeProvider;
+                        \item {\ttfamily get\_all(): list<DecisionTree>}: implementazione del metodo dichiarato nell'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} TreeProvider;
                     \end{itemize}
 
                 \paragraph{BaseRepository}
@@ -2329,12 +2331,12 @@
                         \end{figure}
                     \end{center}
                 
-                    Interfaccia generica astratta per il pattern repository.\\\\
+                    \textit{Interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} generica astratta per il pattern repository.\\\\
                     \textbf{Metodi}
                     \begin{itemize}
-                        \item {\ttfamily save(entity: T): void}: salva un'entità nel repository;
-                        \item {\ttfamily get(entity\_id: String): T}: recupera un'entità dal repository;
-                        \item {\ttfamily delete(entity\_id: String): void}: elimina un'entità dal repository.
+                        \item {\ttfamily save(\textit{entity}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Entity}{G}}: T): void}: salva un'entità nel \textit{repository}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Repository}{G}};
+                        \item {\ttfamily get(\textit{entity}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Entity}{G}}\_id: String): T}: recupera un'entità dal \textit{repository}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Repository}{G}};
+                        \item {\ttfamily delete(\textit{entity}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Entity}{G}}\_id: String): void}: elimina un'entità dal repository.
                     \end{itemize}
                     
                 \paragraph{SessionRepository}\mbox{}\\
@@ -2345,23 +2347,23 @@
                     \end{itemize}
                     \textbf{Metodi}
                     \begin{itemize}
-                        \item {\ttfamily save(), get(), delete()}: metodi definiti dall'interfaccia BaseRepository, vengono implementati;
+                        \item {\ttfamily save(), get(), delete()}: metodi definiti dall'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} BaseRepository, vengono implementati;
                         \item {\ttfamily update(session: Session): void}: effettua un salvataggio della sessione.
                     \end{itemize}
 
         \subsection{Design Pattern utilizzati}
-            In Python, sono stati utilizzati diversi design pattern per aumentare la manutenibilità del software:
+            In Python, sono stati utilizzati diversi \textit{design pattern}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DesignPattern}{G}} per aumentare la manutenibilità del software:
             \begin{itemize}
-                \item \textbf{Strategy pattern}: utilizzato per la gestione dell'esportazione dei risultati dei test. È stata definita un'interfaccia che stabilisce il contratto per 
-                    l'esportazione, mentre implementazioni concrete forniscono il supporto per i due formati decisi (PDF, CSV). Questo approccio consente di incapsulare algoritmi intercambiabili, 
-                    favorendo l'estensione del sistema senza modificare il codice esistente e migliorando la separazione delle responsabilità;
-                \item \textbf{Repository pattern}: utilizzato per astrarre la logica di accesso ai dati dalla business logic. BaseRepository definisce l'interfaccia astratta generica con i metodi 
+                \item \textbf{Strategy pattern}: utilizzato per la gestione dell'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}} dei risultati dei test. È stata definita un'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} che stabilisce il contratto per 
+                    l'\textit{esportazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esportazione}{G}}, mentre implementazioni concrete forniscono il supporto per i due formati decisi (\textit{PDF}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}, \textit{CSV}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}}). Questo approccio consente di incapsulare algoritmi intercambiabili, 
+                    favorendo l'\textit{estensione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Estensione}{G}} del sistema senza modificare il codice esistente e migliorando la separazione delle responsabilità;
+                \item \textbf{Repository pattern}: utilizzato per astrarre la logica di accesso ai dati dalla business logic. BaseRepository definisce l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} astratta generica con i metodi 
                     {\ttfamily save(), get()} e {\ttfamily delete()}, parametrizzata con TypeVar. SessionRepository è l'implementazione concreta che implementa BaseRepository, nasconde completamente i 
-                    dettagli del file system e delega le operazione di I/O a FileStorage. Chi usa il repository non sa se i dati stanno su file, database o altro;
+                    dettagli del file system e delega le operazione di I/O a FileStorage. Chi usa il \textit{repository}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Repository}{G}} non sa se i dati stanno su file, database o altro;
                 \item \textbf{Factory pattern}: utilizzato perché l'oggetto Session è complesso da costruire, in quanto richiede l'istanziazione coordinata di diversi componenti interni.
                     La classe SessionFactory incapsula questa logica di creazione, nascondendone i dettagli al client e semplificando l'uso del sistema: il client può ottenere un'istanza di Session 
                     semplicemente invocando il metodo {\ttfamily create()};
-                \item \textbf{Facade pattern}: utilizzato nella gestione della Session. La classe Session infatti non gestisce direttamente nessuna logica, ma espone un'interfaccia unificata e 
+                \item \textbf{Facade pattern}: utilizzato nella gestione della Session. La classe Session infatti non gestisce direttamente nessuna logica, ma espone un'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} unificata e 
                     semplificata verso l'esterno nascondendo la complessità interna dei suoi componenti (SessionNavigator, SessionState, ResultStore, DependencyEvaluator). Il chiamante usa {\ttfamily session.answer()}
                     senza sapere che internamente vengono coinvolti tutti i componenti sopracitati.
             \end{itemize}
