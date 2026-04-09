@@ -42,11 +42,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Glossario}
-\newcommand{\DataUltimaModifica}{2026/03/14}
+\newcommand{\DataUltimaModifica}{2026/04/09}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v1.1.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v2.0.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Interno} 
 
 \pagestyle{fancy}
@@ -128,9 +128,11 @@
             \hline
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Francesco Marcolongo & Federico Simonetto & Sostituiti indici del glossario con le lettere\\
+            v2.0.0 & 2026/04/09 & Giacomo Giora & Michele Tesser & Approvazione documento \\
             \hline
-            v1.0.0 & 2026/02/09 & Francesco Marcolongo & Giacomo Giora & Approvazione documento\\
+            v1.1.0 & 2026/03/09 & Bilal Sabic & Federico Simonetto & Aggiunta termini \\
+            \hline
+            v1.0.0 & 2025/12/09 & Francesco Marcolongo & Giacomo Giora & Approvazione documento\\
             \hline
             v0.2.3 & 2026/02/06 & Andrea Difino & Giacomo Giora & Rimozione voce 'Sistema' dal documento\\
             \hline
@@ -163,12 +165,11 @@
     
     
 
-\renewcommand{\thesection}{\Alph{section}}
-\setcounter{section}{0}
+\newpage
 
 \newpage
 
-        \section{}
+        \section{A}
         
           \subsection*{Agile}
 			Metodologia di sviluppo basata su iterazioni brevi e feedback continui.
@@ -187,7 +188,7 @@
         
       
 \newpage
-        \section{}
+        \section{B}
         
           \subsection*{Back-end}
 			Parte di un sistema che gestisce logica, dati e comunicazione con il database.
@@ -204,7 +205,7 @@
 
       
 \newpage      
-        \section{}
+        \section{C}
         
           \subsection*{Capitolato}
 			Documento stipulato tra il committente (azienda) e il gruppo incaricato dello sviluppo, nel quale viene illustrato il problema che il committente intende risolvere e vengono definiti le norme e i vincoli da seguire durante la progettazione e la realizzazione del prodotto software richiesto. 
@@ -216,9 +217,11 @@
 			Pratica che prevede l'integrazione continua del codice in un repository condiviso.
           \subsection*{Cruscotto}
 			Strumento che offre una visione sintetica e immediata dello stato delle attività di progetto. Si aggiorna dinamicamente con il progredire dei lavori e consente a chi lo utilizza di ottenere un quadro chiaro e intuitivo della situazione.
+          \subsection*{CSV}
+            Formato di file semplice usato per salvare dati in forma tabellare.
       
   \newpage    
-        \section{}
+        \section{D}
         
           \subsection*{Decision Tree}
 			Strumento grafico usato per rappresentare un processo decisionale. Ogni nodo mostra una condizione e ogni ramo mostra le varie alternative o conseguenze.
@@ -238,42 +241,48 @@
 			Documento nel quale vengono mostrate le attività intraprese e segnalate le maggiori difficoltà incontrate in un certo momento del progetto.
           \subsection*{Discord}
 			Piattaforma di comunicazione online che permette l'invio di messaggi così come l'avvio di chiamate vocali e video. È organizzato in server e viene utilizzato per collaborare e condividere informazioni.  
+          \subsection*{Docker}
+            Piattaforma che permette di creare, distribuire e far girare applicazioni in container, cioè ambienti isolati e leggeri che includono tutto il necessario per far funzionare un’app.
       
      \newpage 
-        \section{}
-        
-          \subsection*{Endpoint}
-			URL che rappresenta un punto di accesso a un servizio web o API.
-          \subsection*{Entity}
-			Elemento persistente del modello dati che rappresenta un oggetto del dominio applicativo.
+        \section{E}
+          
+          \subsection*{Editor}
+			Interfaccia che permette la creazione, modifica e gestione strutturata di contenuti, come decision tree o configurazioni.
           \subsection*{Efficacia}
 			Capacità del sistema di soddisfare gli obiettivi stabiliti e rispondere correttamente ai bisogni degli stakeholder.
           \subsection*{Efficienza}
 			Capacità del sistema o del processo di ottenere il risultato desiderato usando il minor numero possibile di risorse, tempo e sforzo.
-          \subsection*{Errore}
-			Difetto o imperfezione introdotta nel processo o nel codice che può generare un comportamento inatteso o un malfunzionamento.
+          \subsection*{Endpoint}
+			URL che rappresenta un punto di accesso a un servizio web o API.
+          \subsection*{Entity}
+			Elemento persistente del modello dati che rappresenta un oggetto del dominio applicativo.
           \subsection*{EN 18031}
 			Norma europea che definisce requisiti e test di sicurezza per dispositivi IoT, utilizzata per la verifica della loro conformità.
-          \subsection*{Esempio}
-			Caso illustrativo utilizzato per chiarire il funzionamento di un modello, di una funzione o di un processo.
-          \subsection*{Editor}
-			Interfaccia che permette la creazione, modifica e gestione strutturata di contenuti, come decision tree o configurazioni.
-          \subsection*{Esportazione}
-			Funzionalità che consente di generare un output riutilizzabile (documenti, report o dati) in un formato definito.
+          \subsection*{Errore}
+			Difetto o imperfezione introdotta nel processo o nel codice che può generare un comportamento inatteso o un malfunzionamento.
           \subsection*{Esecuzione automatizzata}
 			Processo in cui una serie di controlli, analisi o procedure viene eseguita automaticamente da un sistema senza intervento umano.
-          \subsection*{Evolutivo}
-			(Di un modello) Approccio allo sviluppo che prevede iterazioni successive nelle quali il sistema viene raffinato e ampliato progressivamente.
-          \subsection*{Estensione}
-			Meccanismo che permette di aggiungere comportamento opzionale o alternativo a un caso d'uso principale.
           \subsection*{Esecuzione condizionale}
 			Esecuzione di un comportamento che avviene solo se una determinata condizione risulta vera.
+          \subsection*{Esempio}
+			Caso illustrativo utilizzato per chiarire il funzionamento di un modello, di una funzione o di un processo.
+          \subsection*{Esportazione}
+			Funzionalità che consente di generare un output riutilizzabile (documenti, report o dati) in un formato definito.
+          \subsection*{Estensione}
+			Meccanismo che permette di aggiungere comportamento opzionale o alternativo a un caso d'uso principale.
+          \subsection*{Evolutivo}
+			(Di un modello) Approccio allo sviluppo che prevede iterazioni successive nelle quali il sistema viene raffinato e ampliato progressivamente.
+          
+          
 
 \newpage    
-        \section{}
+        \section{F}
         
           \subsection*{Fail}
 			Possibile output ottenuto percorrendo un Decision Tree, indica che il requisito non è rispettato.
+          \subsection*{Firmware}
+            Software di base integrato direttamente in un dispositivo hardware.
           \subsection*{Front-end}
 			Parte visibile di un'applicazione con cui l'utente interagisce direttamente.
           \subsection*{Framework}
@@ -281,7 +290,7 @@
         
 \newpage 
       
-        \section{}
+        \section{G}
         
           \subsection*{Git}
 			Sistema di controllo versione distribuito per la gestione del codice sorgente.
@@ -291,10 +300,10 @@
 			Elenco dei termini tecnici utilizzati in un progetto, con relative definizioni.
         
 \newpage
-        \section{}
+        \section{H}
         
 \newpage
-        \section{}
+        \section{I}
         
           \subsection*{Interattivo}
 			Sistema che richiede la partecipazione attiva dell'utilizzatore, che può rispondere alle azioni per progredire.
@@ -308,16 +317,16 @@
 			Acronimo di "Internet of Things", ovvero "Internet delle cose". Si riferisce a una rete di oggetti fisici, dotati di sensori, software e altre tecnologie, che possono connettersi e scambiare dati tra loro e con altri sistemi su Internet. Questa interconnessione permette il monitoraggio e il controllo remoto dei dispositivi.
         
 \newpage
-        \section{}
+        \section{J}
         
           \subsection*{Just-In-Time}
 			Approccio basato sull'idea di produrre o fornire qualcosa solo quando serve, evitando sprechi e riducendo al minimo le risorse inutilizzate.
         
 \newpage
-        \section{}
+        \section{K}
         
 \newpage 
-        \section{}
+        \section{L}
         
           \subsection*{LaTeX}
 			Sistema di composizione professionale utilizzato per creare documenti tecnici e scientifici con struttura e formattazione rigorosa.
@@ -333,7 +342,7 @@
 			Gradazione del dettaglio con cui un sistema viene descritto, usata per separare aspetti concettuali da quelli implementativi.
         
 \newpage
-        \section{}
+        \section{M}
         
           \subsection*{Memory Leak}
 			Quando un programma usa memoria e non la libera più, anche quando non serve più.
@@ -345,7 +354,7 @@
 			Acronimo di Message Queuing Telemetry Transport, è un protocollo di messaggistica leggero, progettato per la comunicazione tra dispositivi con risorse limitate, come quelli dell'IoT.
         
 \newpage
-        \section{}
+        \section{N}
         
           \subsection*{NA}
 			Acronimo di Not Applicable: possibile output ottenuto percorrendo un Decision Tree, indica che il requisito non è applicabile.
@@ -358,7 +367,7 @@
         
 \newpage
       
-        \section{}
+        \section{O}
         
           \subsection*{Obiettivo}
 			Risultato da raggiungere nell'ambito di un'attività o di un'impresa.
@@ -366,7 +375,7 @@
 			Capacità di svolgere determinate attività; efficacia.
         
 \newpage
-        \section{}
+        \section{P}
         
           \subsection*{Pass}
 			Possibile output ottenuto percorrendo un Decision Tree, indica che il requisito è stato rispettato.
@@ -380,11 +389,11 @@
 			Processo di creazione e distribuzione di progetti Python in un formato standardizzato (chiamato package o pacchetto), in modo che altri possano facilmente installarli e utilizzarli. Il file pyproject.toml è un file di configurazione moderno e unificato che gestisce questo processo.
         
 \newpage
-        \section{}
+        \section{Q}
         
 \newpage
       
-        \section{}
+        \section{R}
         
           \subsection*{RED}
 			Normativa europea che stabilisce requisiti per la sicurezza, la compatibilità elettromagnetica e l'uso dello spettro radio per le apparecchiature che trasmettono o ricevono onde radio.
@@ -405,7 +414,7 @@
         
 \newpage
       
-        \section{}
+        \section{S}
         
           \subsection*{Scelte tecnologiche}
 			Decisioni relative a tecnologie, librerie e architetture adottate per realizzare il sistema.
@@ -433,13 +442,13 @@
 			Fase del progetto in cui il sistema viene implementato, integrato e verificato sulla base dei requisiti.
         
 \newpage
-        \section{}
+        \section{T}
         
           \subsection*{Ticketing}
 			Sistema usato per registrare, organizzare e seguire le richieste di lavoro, problemi o domande.
         
 \newpage
-        \section{}
+        \section{U}
         
           \subsection*{UAT}
 			Acronimo di User Acceptance Testing: fase del testing in cui gli utenti finali verificano che il software soddisfi i requisiti contrattuali o di business.
@@ -464,7 +473,7 @@
         
 \newpage
       
-        \section{}
+        \section{V}
         
           \subsection*{Validazione}
 			Attività che verifica che il prodotto rispetti i requisiti e le aspettative del committente.
@@ -476,9 +485,11 @@
 			Membro del team di progetto che si occupa di controllare la correttezza, la completezza e la qualità del lavoro svolto.
           \subsection*{Versionamento}
 			Processo di gestione e controllo delle diverse versioni di un progetto.
+          \subsection*{Virtualizzazione}
+            Tecnologia che permette di creare versioni “virtuali” di risorse informatiche (come computer, server, sistemi operativi o reti), così da usarle come se fossero reali su un unico dispositivo fisico.
         
 \newpage
-        \section{}
+        \section{W}
         
           \subsection*{Waterfall model}
 			Modello di sviluppo sequenziale in cui ogni fase deve essere completata prima di passare alla successiva.
@@ -499,16 +510,16 @@
         
 \newpage
       
-        \section{}
+        \section{X}
         
           \subsection*{XML}
 			Linguaggio di markup pensato per rappresentare e scambiare dati in modo strutturato. Grazie ai tag personalizzabili, permette di descrivere le informazioni in modo chiaro e portabile tra sistemi diversi.
         
 \newpage
-        \section{}
+        \section{Y}
         
         
 \newpage
-        \section{}
+        \section{Z}
         
 \end{document}
