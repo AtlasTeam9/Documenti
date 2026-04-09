@@ -19,6 +19,7 @@
 \usepackage{comment}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{xurl}
 \usepackage{amsmath}
 \usepackage{pgf-pie}
 \usepackage{longtable}
@@ -316,11 +317,11 @@
                 \hline
                 \textbf{Zustand} & 5.0.12 & Libreria leggera, veloce e scalabile per la gestione dello stato in React, basata su hook e un approccio store-based. Permette di creare store centralizzati per condividere dati fra componenti. \\
                 \hline
-                \textbf{Sonner} & 2.0.7 & Libreria leggera per la gestione di notifiche toast in applicazioni React. Si distingue per un’API minimale e intuitiva, oltre a un design elegante e facilmente personalizzabile. Consente di mostrare feedback asincroni in modo non invasivo, con animazioni fluide e buona accessibilità. \\
+                \textbf{Sonner} & 2.0.7 & Libreria leggera per la gestione di notifiche toast in applicazioni React. Si distingue per un'API minimale e intuitiva, oltre a un design elegante e facilmente personalizzabile. Consente di mostrare feedback asincroni in modo non invasivo, con animazioni fluide e buona accessibilità. \\
                 \hline
                 \textbf{Zod} & 4.3.6 & Libreria di validazione e definizione di schemi. È particolarmente utile in contesti frontend moderni (ad esempio con React o form complessi) perché riduce il disallineamento tra validazione runtime e typing, migliorando la robustezza. \\
                 \hline
-                \textbf{React Hook Form} & 4.3.6 & Libreria per la gestione dei form in React che sfrutta gli hook per ottimizzare performance e semplicità d’uso. Offre integrazione nativa con validatori esterni come Zod e gestione avanzata degli errori. \\
+                \textbf{React Hook Form} & 4.3.6 & Libreria per la gestione dei form in React che sfrutta gli hook per ottimizzare performance e semplicità d'uso. Offre integrazione nativa con validatori esterni come Zod e gestione avanzata degli errori. \\
                 \hline
                 \textbf{Reportlab} & 4.4.10 & Libreria per Python che consente di generare file PDF in modo programmatico. Permette di creare documenti complessi con testo, immagini, tabelle e layout personalizzati direttamente dal codice.   \\
                 \hline
@@ -373,6 +374,7 @@
             \end{tabularx}
         \end{center}
 
+    \newpage
 
     \section{Architettura}
         \subsection{Architettura logica}
@@ -769,11 +771,11 @@
                 Servizio applicativo centrale per l'orchestrazione dell'intero flusso di sessione: creazione, invio risposte, navigazione, caricamento/salvataggio e ripresa test.\\\\
                 \textbf{Attributi}
                 \begin{itemize}
-                    \item Nessun attributo pubblico persistente; usa store e helper del layer application;
-                    \item {\ttfamily initializeSessionFromResponse(response)}: metodo privato per inizializzare stato locale da risposta backend.
+                    \item Nessun attributo pubblico persistente; usa store e helper del layer application.
                 \end{itemize}
                 \textbf{Metodi}
                 \begin{itemize}
+                    \item {\ttfamily initializeSessionFromResponse(response)}: metodo privato per inizializzare stato locale da risposta backend;
                     \item {\ttfamily createSessionWithFile(file)}: crea sessione da file JSON caricato;
                     \item {\ttfamily createSessionWithDevice(device)}: crea sessione da oggetto Device serializzato;
                     \item {\ttfamily sendAnswer(answer)}: invia risposta e gestisce avanzamento/go-back/fine albero;
@@ -1356,7 +1358,7 @@
 
 
 
-        \subsection{UML backend}
+        \subsection{Backend}
         \paragraph{Precisazione sulla visibilità}\mbox{}\\
             In Python non esiste un sistema formale di modificatori di visibilità (come 'public', 'private' o 'protected' presenti in altri linguaggi). La distinzione tra membri pubblici e non pubblici è quindi basata su una \textbf{convenzione di naming} condivisa dalla comunità.
 
@@ -1847,7 +1849,7 @@
                     \end{itemize}
                     Espone un metodo di classe {\ttfamily from\_string(value: String): AssetType}, per costruire il valore corretto a partire da una stringa. 
 
-                    Un metodo di classe in Python è un metodo che riceve la classe stessa come primo parametro implicito, mentre un metodo di istanza riceve l’istanza.
+                    Un metodo di classe in Python è un metodo che riceve la classe stessa come primo parametro implicito, mentre un metodo di istanza riceve l'istanza.
 
                         
                 \paragraph{Asset}\mbox{}\\
@@ -2350,9 +2352,18 @@
         \subsection{Design Pattern utilizzati}
             In Python, sono stati utilizzati diversi design pattern per aumentare la manutenibilità del software:
             \begin{itemize}
-                \item \textbf{Strategy pattern}: applicato nella gestione delle esportazioni...
-                \item \textbf{Repository pattern}: utilizzato per astrarre la logica di accesso ai dati dalla business logic.
-                \item \textbf{Factory pattern}: applicato nella creazione dell'oggetto Session tramite l'utilizzo di SessionFactory.
+                \item \textbf{Strategy pattern}: utilizzato per la gestione dell'esportazione dei risultati dei test. È stata definita un'interfaccia che stabilisce il contratto per 
+                    l'esportazione, mentre implementazioni concrete forniscono il supporto per i due formati decisi (PDF, CSV). Questo approccio consente di incapsulare algoritmi intercambiabili, 
+                    favorendo l'estensione del sistema senza modificare il codice esistente e migliorando la separazione delle responsabilità;
+                \item \textbf{Repository pattern}: utilizzato per astrarre la logica di accesso ai dati dalla business logic. BaseRepository definisce l'interfaccia astratta generica con i metodi 
+                    {\ttfamily save(), get()} e {\ttfamily delete()}, parametrizzata con TypeVar. SessionRepository è l'implementazione concreta che implementa BaseRepository, nasconde completamente i 
+                    dettagli del file system e delega le operazione di I/O a FileStorage. Chi usa il repository non sa se i dati stanno su file, database o altro;
+                \item \textbf{Factory pattern}: utilizzato perché l'oggetto Session è complesso da costruire, in quanto richiede l'istanziazione coordinata di diversi componenti interni.
+                    La classe SessionFactory incapsula questa logica di creazione, nascondendone i dettagli al client e semplificando l'uso del sistema: il client può ottenere un'istanza di Session 
+                    semplicemente invocando il metodo {\ttfamily create()};
+                \item \textbf{Facade pattern}: utilizzato nella gestione della Session. La classe Session infatti non gestisce direttamente nessuna logica, ma espone un'interfaccia unificata e 
+                    semplificata verso l'esterno nascondendo la complessità interna dei suoi componenti (SessionNavigator, SessionState, ResultStore, DependencyEvaluator). Il chiamante usa {\ttfamily session.answer()}
+                    senza sapere che internamente vengono coinvolti tutti i componenti sopracitati.
             \end{itemize}
                     
     \end{document}        
