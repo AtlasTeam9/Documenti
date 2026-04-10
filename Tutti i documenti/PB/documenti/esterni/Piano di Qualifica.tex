@@ -48,11 +48,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Piano di Qualifica}
-\newcommand{\DataUltimaModifica}{2026/04/02}
+\newcommand{\DataUltimaModifica}{2026/04/10}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} 
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v1.4.0} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v2.0.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -129,7 +129,13 @@
             \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            \VersioneDocumento & \DataUltimaModifica & Andrea Difino & Federico Simonetto & Aggiunti test di Integrazione e di Unità del frontend \\
+            \VersioneDocumento & \DataUltimaModifica & Giacomo Giora & Michele Tesser & Approvazione \\
+            \hline
+            v1.6.0 & 2026/04/07 & Francesco Marcolongo & Michele Tesser & Aggiunte ultime metriche \\
+            \hline
+            v1.5.0 & 2026/04/05 & Francesco Marcolongo & Michele Tesser & Aggiorate metriche con attività PB \\
+            \hline
+            v1.4.0 & 2026/04/02 & Andrea Difino & Federico Simonetto & Aggiunti test di Integrazione e di Unità del frontend \\
             \hline
             v1.3.0 & 2026/03/30 & Andrea Difino & Federico Simonetto & Aggiunti test di Integrazione del backend \\
             \hline
@@ -175,7 +181,7 @@
 % ----------------------------
 \section{Introduzione}{
     \subsection{Scopo del documento}{
-        Il presente documento descrive nel dettaglio le strategie di verifica e validazione adottate per garantire la qualità dei processi e del prodotto software. Viene offerta un'analisi esaustiva delle metriche e delle metodologie impiegate per il controllo e la misurazione della qualità in ogni sua componente. Il documento definisce gli obiettivi di qualità, le risorse necessarie e i test pianificati, documentando metodologie e risultati attesi. \newline
+        Il presente documento descrive nel dettaglio le strategie di verifica e \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} adottate per garantire la qualità dei processi e del prodotto software. Viene offerta un'analisi esaustiva delle metriche e delle metodologie impiegate per il controllo e la misurazione della qualità in ogni sua componente. Il documento definisce gli obiettivi di qualità, le risorse necessarie e i test pianificati, documentando metodologie e risultati attesi. \newline
         In ottica di miglioramento continuo, il piano sarà oggetto di revisioni periodiche per riflettere l'evoluzione del progetto e i risultati delle verifiche effettuate.
     }
 
@@ -187,8 +193,8 @@
     \subsection{Riferimenti}{
         \subsubsection{Riferimenti normativi}{
             \begin{itemize}
-                \item Riferimento alla documentazione interna del team Atlas:\newline \textbf{Norme di Progetto v2.0.0}\newline\url{da_mettere_una_volta_scritto}
-                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item Riferimento alla documentazione interna del team Atlas:\newline \textbf{Norme di Progetto v2.0.0}\newline \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/interni/Norme%20di%20Progetto.pdf}{Link al documento}
+                \item Riferimento al \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
             \end{itemize}
         }
 
@@ -217,10 +223,10 @@
 % ----------------------------
 
 \section{Metriche per la qualità}{
-    In questa sezione vengono delineate le soglie quantitative, composte da valore accettabile e valore ottimo, per valutare l'efficacia e l'efficienza dei processi e del prodotto. Le definizioni delle metriche applicate sono dettagliate nelle sezioni 6 e 7 del documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/interni/Norme%20di%20Progetto.pdf}{Norme di Progetto v2.0.0}.
+    In questa sezione vengono delineate le soglie quantitative, composte da valore accettabile e valore ottimo, per valutare l'\textit{efficacia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Efficacia}{G}} e l'\textit{efficienza}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Efficienza}{G}} dei processi e del prodotto. Le definizioni delle metriche applicate sono dettagliate nelle sezioni 6 e 7 del documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/interni/Norme%20di%20Progetto.pdf}{Norme di Progetto v2.0.0}.
     
     \subsection{Qualità di processo}{
-    La qualità di processo rappresenta un'esigenza primaria nello sviluppo software, poiché è grazie alla corretta applicazione di best practice ben definite che è possibile sviluppare un prodotto finale di alta qualità. Queste devono guidare tutte le attività, pratiche e metodologie adottate lungo l'intero ciclo di vita del software. La qualità di processo si fonda sull'idea che il raggiungimento di standard elevati nel prodotto dipenda da controlli regolari e dall'ottimizzazione continua dei processi che lo supportano, garantendo risultati che rispondano pienamente alle aspettative.
+    La qualità di processo rappresenta un'esigenza primaria nello \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}} software, poiché è grazie alla corretta applicazione di best practice ben definite che è possibile sviluppare un prodotto finale di alta qualità. Queste devono guidare tutte le attività, pratiche e metodologie adottate lungo l'intero ciclo di vita del software. La qualità di processo si fonda sull'idea che il raggiungimento di standard elevati nel prodotto dipenda da controlli regolari e dall'ottimizzazione continua dei processi che lo supportano, garantendo risultati che rispondano pienamente alle aspettative.
     
         \subsubsection{Processi primari}{
 
@@ -361,7 +367,7 @@
     }
 
     \subsection{Qualità di prodotto}{
-        La qualità del prodotto rappresenta l'obiettivo centrale di un progetto software e consiste nella capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti. Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto. Un prodotto software è considerato di alta qualità quando:
+        La qualità del prodotto rappresenta l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} centrale di un progetto software e consiste nella capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti. Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto. Un prodotto software è considerato di alta qualità quando:
         \begin{itemize}
             \item È funzionale, ovvero rispetta i requisiti funzionali e non funzionali definiti nel documento di \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0};
             \item È affidabile, ossia garantisce prestazioni consistenti e prive di errori;
@@ -492,7 +498,7 @@
         \item test di Accettazione
     \end{itemize}
 
-    \noindent Di seguito, sono elencati i test di tutte le tipologie. I test di sistema e i test di accettazione sono stati definiti durante lo svolgimento delle attività per la Requirements and Technology Baseline (RTB). I test di unità e di integrazione sono invece stati individuati durante lo svolgimento delle attività per la Product Baseline (PB). \\\\
+    \noindent Di seguito, sono elencati i test di tutte le tipologie. I test di sistema e i test di accettazione sono stati definiti durante lo svolgimento delle attività per la Requirements and Technology \textit{Baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}} (\textit{RTB}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RTB}{G}}). I test di unità, di integrazione e di regressione sono invece stati individuati durante lo svolgimento delle attività per la Product \textit{Baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}} (PB). \\\\
     Per ciascun test viene riportato un codice identificativo, una descrizione dettagliata, il valore atteso per i test di unità e di integrazione e lo stato corrente. Lo stato dei test verrà indicato tramite le seguenti abbreviazioni:
     \begin{itemize}
         \item NI: Non Implementato
@@ -502,7 +508,7 @@
 
 
     \subsection{Test di unità}{
-        I test di unità hanno come obiettivo quello di accertare la copertura completa delle singole unità di codice (di solito metodi o funzioni) in isolamento. In questo modo si verifica la correttezza del codice al livello più elementare, controllando che ciascuna singola componente operi come previsto.
+        I test di unità hanno come \textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} quello di accertare la copertura completa delle singole unità di codice (di solito metodi o funzioni) in isolamento. In questo modo si verifica la correttezza del codice al livello più elementare, controllando che ciascuna singola componente operi come previsto.
 
         \setlength{\LTleft}{\fill}
         \setlength{\LTright}{\fill}
@@ -1513,7 +1519,7 @@
         
     \subsection{Test di sistema}{
     
-    I test di sistema hanno come obiettivo quello di accertare la copertura completa dei requisiti indicati nel documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}. La verifica dei test di sistema è stata effettuata manualmente.
+    I test di sistema hanno come \textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} quello di accertare la copertura completa dei requisiti indicati nel documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}. La verifica dei test di sistema è stata effettuata manualmente.
 
         \setlength{\LTleft}{\fill}
         \setlength{\LTright}{\fill}
@@ -1888,11 +1894,11 @@
     
 \newpage
 % ------------------
-% CRUSCOTTO
+% \textit{CRUSCOTTO}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Cruscotto}{G}}
 % ------------------
 \section{Cruscotto di valutazione}{
 
-    Vengono ora esposte le misurazioni eseguite durante il periodo intercorso tra l'aggiudicazione del capitolato e la Product Baseline (PB).
+    Vengono ora esposte le misurazioni eseguite durante il periodo intercorso tra l'aggiudicazione del \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} e la Product \textit{Baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}} (PB).
 
     \subsection{MPC01, MPC02 e MPC08: Earned Value, Planned Value e Estimate At Completion}{
         \begin{figure}[H]
@@ -1919,7 +1925,7 @@
         \end{figure}
 
         \noindent \textbf{RTB:} \\
-        Il valore dell'Actual Cost (AC) cresce durante tutti gli sprint per raggiungere \euro7380 allo sprint 6. Il valore dell'Estimate To Complete (ETC) diminuisce circa della stessa quantità in quasi tutti gli sprint, e questo è indice di una regolare progressione nel progetto. Solo durante lo sprint 5, il valore dell'EAC si mantiene pressoché inalterato nonostante un incremento dell'AC di \euro1385. Durante il periodo 5 il team non ha fatto dei progressi sostanziali per terminare il lavoro necessario alla candidatura per la RTB, e li ha anzi relegati quasi totalmente allo sprint 6.
+        Il valore dell'Actual Cost (AC) cresce durante tutti gli sprint per raggiungere \euro7380 allo sprint 6. Il valore dell'Estimate To Complete (ETC) diminuisce circa della stessa quantità in quasi tutti gli sprint, e questo è indice di una regolare progressione nel progetto. Solo durante lo sprint 5, il valore dell'EAC si mantiene pressoché inalterato nonostante un incremento dell'AC di \euro1385. Durante il periodo 5 il team non ha fatto dei progressi sostanziali per terminare il lavoro necessario alla candidatura per la \textit{RTB}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RTB}{G}}, e li ha anzi relegati quasi totalmente allo sprint 6.
         \\\\
         \noindent \textbf{PB:} \\
         A partire dallo sprint 7, l’Actual Cost (AC) continua a crescere in modo regolare, passando da circa \euro9055 nello sprint 7 fino a \euro12700 nello sprint 11, indicando un avanzamento costante delle attività. Parallelamente, l’Estimate To Complete (ETC) diminuisce in maniera significativa e pressoché continua: da \euro4652 nello sprint 7 fino ad annullarsi nello sprint 11. L'andamento di questa metrica (e di quella speculare Estimate At Completion) riflette il progressivo completamento del lavoro residuo, senza evidenti rallentamenti nelle fasi finali.
@@ -1990,10 +1996,10 @@
         \end{figure}
 
         \noindent \textbf{RTB:} \\
-        Il Requirements Stability Index (RSI) ha un picco negativo allo 0\% nello sprint 1 in quanto il team ha iniziato fin da subito a individuare i requisiti. Dopo un aumento in corrispondenza dello sprint 2, si registrano ulteriori flessioni negative al di sotto del limite inferiore di accettabilità in corrispondenza degli sprint 3 e 4 (37\% e 29\%). Durante questi periodi, infatti, il team ha effettuato colloqui aggiuntivi con l'azienda proponente per analizzare in profondità il capitolato d'appalto e ha di conseguenza aggiunto e modificato diversi requisiti. Il valore diventa infine accettabile a partire dallo sprint 5. 
+        Il Requirements Stability Index (RSI) ha un picco negativo allo 0\% nello sprint 1 in quanto il team ha iniziato fin da subito a individuare i requisiti. Dopo un aumento in corrispondenza dello sprint 2, si registrano ulteriori flessioni negative al di sotto del limite inferiore di accettabilità in corrispondenza degli sprint 3 e 4 (37\% e 29\%). Durante questi periodi, infatti, il team ha effettuato colloqui aggiuntivi con l'azienda proponente per analizzare in profondità il \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} d'appalto e ha di conseguenza aggiunto e modificato diversi requisiti. Il valore diventa infine accettabile a partire dallo sprint 5. 
         \\\\
         \noindent \textbf{PB:} \\
-        Durante le attività di questa baseline si ha la stabilizzazione del RSI al di sopra della soglia inferiore di accettabilità. Nello sprint 7, il suo valore è di 89\% per via delle correzioni richieste dal prof. Cardin sull'Analisi dei Requisiti. Nei periodi 8 e 9 non si registrano cambiamenti e la metrica assume dunque valore ottimo. Nello sprint 10 il valore del RSI scende leggermente (a 96\%) a causa dell'adeguamento di alcuni requisiti agli scenari d'uso implementati nel progetto. Lo sprint 11 registra il ritorno della metrica al 100\%.
+        Durante le attività di questa \textit{baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}} si ha la stabilizzazione del RSI al di sopra della soglia inferiore di accettabilità. Nello sprint 7, il suo valore è di 89\% per via delle correzioni richieste dal prof. Cardin sull'Analisi dei Requisiti. Nei periodi 8 e 9 non si registrano cambiamenti e la metrica assume dunque valore ottimo. Nello sprint 10 il valore del RSI scende leggermente (a 96\%) a causa dell'adeguamento di alcuni requisiti agli scenari d'uso implementati nel progetto. Lo sprint 11 registra il ritorno della metrica al 100\%.
     }
     \newpage
     \subsection{MPC13: Indice di Gulpease}{
@@ -2006,11 +2012,11 @@
         \noindent \textbf{RTB:} \\
         Il grafico mostra una chiara propensione del team alla cura della leggibilità dei documenti. L'indice di Gulpease si è infatti mantenuto al di sopra del valore di accettabilità per tutti i documenti durante tutti gli sprint.
         \begin{itemize}[labelindent=0pt, leftmargin=*]
-            \item L'Analisi dei Requisiti ha un valore sempre ottimo e in crescita, che raggiunge il massimo (88\%) nello sprint 6.
-            \item Simile è l'andamento dell'indice del Piano di Progetto, con il massimo (91\%) nello sprint 6.
+            \item L'Analisi dei Requisiti ha un valore sempre ottimo e in crescita, che raggiunge il massimo della \textit{RTB}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RTB}{G}} (88\%) nello sprint 6.
+            \item Simile è l'andamento dell'indice del Piano di Progetto, con il valore 91\% nello sprint 6.
             \item Il Piano di Qualifica ha un indice sempre ottimo ma che decresce a partire dallo sprint 2 (il cui valore è 91\%).
-            \item Le Norme di Progetto hanno un valore di leggibilità accettabile che raggiunge il massimo nello sprint 2 (79\%) e che può dunque essere incrementato. 
-            \item Il Glossario è il documento meno leggibile con un indice di Gulpease stabile al 63\%, legato alla presenza di termini tecnici e frasi brevi.
+            \item Le Norme di Progetto hanno un valore di leggibilità accettabile che raggiunge 79\% nello sprint 2 e che può dunque essere incrementato. 
+            \item Il \textit{Glossario}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Glossario}{G}} è il documento meno leggibile con un indice di Gulpease stabile al 63\%, legato alla presenza di termini tecnici e frasi brevi.
         \end{itemize}
         
         \noindent \\ \textbf{PB:} \\
@@ -2020,7 +2026,7 @@
             \item Il Piano di Progetto diventa via via più leggibile, fino a raggiungere il valore di 92\% negli sprint 10 e 11.
             \item Il Gulpease del Piano di Qualifica mostra una crescita significativa a partire dallo sprint 8 (momento in cui raggiunge il 95\%), per via delle correzioni apportate in seguito alla RTB.
             \item Le Norme di Progetto evidenziano invece una leggibilità stabile al 77\% (al di sotto del valore ottimo), nonostante le modifiche effettuate durante le attività di questa baseline.
-            \item Il Glossario si mantiene stabile intorno al 63\%, confermandosi il documento meno leggibile a causa della natura tecnica dei contenuti.
+            \item Il \textit{Glossario}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Glossario}{G}} si mantiene stabile intorno al 63\%, confermandosi il documento meno leggibile a causa della natura tecnica dei contenuti.
             \item Il Manuale Utente, introdotto a partire dallo sprint 7, presenta valori inizialmente più bassi (72\%) ma in crescita costante fino a oltre l’80\% (limite per un indice ottimo) nello sprint 11.
             \item La Specifica Tecnica, che compare anch'essa nello sprint 7, parte dal 76\% ma migliora progressivamente la chiarezza espositiva fino ad arrivare al 90\%.
         \end{itemize}
@@ -2034,10 +2040,10 @@
         \end{figure}
 
         \noindent \textbf{RTB:} \\
-        Al termine dei primi due sprint non sono stati rilevati errori ortografici. Al termine degli sprint 3 sono invece stati trovati 2 errori nell'Analisi dei Requisiti e 1 nelle Norme di Progetto. In questo periodo, tali documenti sono cresciuti molto in dimensione. Nello sprint 4, è stato segnalato un errore nel Glossario. Negli sprint 5 e 6, il team ha raggiunto il valore ottimo grazie a revisioni più attente.
+        Al termine dei primi due sprint non sono stati rilevati errori ortografici. Al termine degli sprint 3 sono invece stati trovati 2 errori nell'Analisi dei Requisiti e 1 nelle Norme di Progetto. In questo periodo, tali documenti sono cresciuti molto in dimensione. Nello sprint 4, è stato segnalato un \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} nel Glossario. Negli sprint 5 e 6, il team ha raggiunto il valore ottimo grazie a revisioni più attente.
         \\\\
         \noindent \textbf{PB:} \\
-        Negli sprint dal 7 all’11, la correttezza ortografica rimane complessivamente elevata, con un numero di errori contenuto e sempre entro il limite accettabile. Nello sprint 7 non vengono rilevati errori, confermando il mantenimento del valore ottimo raggiunto negli sprint precedenti. Gli sprint 8 e 9 registrano un errore ciascuno, di cui quello nel Manuale Utente è dovuto alla recente introduzione del documento. Nello sprint 10 si rilevano due errori nella Specifica Tecnica e uno nell'Analisi dei Requisiti, rappresentando il punto di maggiore criticità del periodo, pur rimanendo entro i limiti accettabili. Nello sprint 11 il team recupera completamente, riportando tutti i documenti a zero errori e ristabilendo il valore ottimo grazie a un'attività di revisione finale accurata.
+        Negli sprint dal 7 all’11, la correttezza ortografica rimane complessivamente elevata, con un numero di errori contenuto e sempre entro il limite accettabile. Nello sprint 7 non vengono rilevati errori, confermando il mantenimento del valore ottimo raggiunto negli sprint precedenti. Gli sprint 8 e 9 registrano un \textit{errore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Errore}{G}} ciascuno, di cui quello nel Manuale Utente è dovuto alla recente introduzione del documento. Nello sprint 10 si rilevano due errori nella Specifica Tecnica e uno nell'Analisi dei Requisiti, rappresentando il punto di maggiore criticità del periodo, pur rimanendo entro i limiti accettabili. Nello sprint 11 il team recupera completamente, riportando tutti i documenti a zero errori e ristabilendo il valore ottimo grazie a un'attività di \textit{revisione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Revisione}{G}} finale accurata.
 
     }
     \newpage
@@ -2052,7 +2058,7 @@
         Misurazione non disponibile in questa baseline.
         \\\\
         \noindent \textbf{PB:} \\
-        Il code coverage rimane nullo fino allo sprint 7 per via dell'assenza di test automatizzati nel processo di sviluppo del MVP. A partire dallo sprint 8 si osserva un primo incremento significativo (38\%). Nello sprint successivo la metrica cresce ancora e raggiunge il 79\%, appena sotto il limite accettabile (80\%). Lo sprint 10 registra tuttavia una flessione negativa (al 62\%), legata all'aggiunta di nuove funzionalità non ancora coperte da test. Infine, nello sprint 11 il coverage aumenta ulteriormente fino a 92\%, avvicinandosi al valore ottimo e indicando un consolidamento delle attività di testing e una buona copertura complessiva del codice del progetto.
+        Il code coverage rimane nullo fino allo sprint 7 per via dell'assenza di test automatizzati nel processo di \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}} del MVP. A partire dallo sprint 8 si osserva un primo incremento significativo (38\%). Nello sprint successivo la metrica cresce ancora e raggiunge il 79\%, appena sotto il limite accettabile (80\%). Lo sprint 10 registra tuttavia una flessione negativa (al 62\%), legata all'aggiunta di nuove funzionalità non ancora coperte da test. Infine, nello sprint 11 il coverage aumenta ulteriormente fino a 92\%, avvicinandosi al valore ottimo e indicando un consolidamento delle attività di testing e una buona copertura complessiva del codice del progetto.
 
     }
     \newpage
@@ -2067,7 +2073,7 @@
         Misurazione non disponibile in questa baseline.
         \\\\
         \noindent \textbf{PB:} \\
-        Nello sprint 7, durante il quale sono stati aggiunti i primi test, il valore del Test Success Rate è massimo. 
+        Nello sprint 8 il Test Success Rate assume valore ottimo (100\%), segnale di una positiva introduzione dei test. Nei due sprint successivi si registrano due valori non ottimi (rispettivamente 96\% e 92\%), dovuti all'introduzione di diversi test più stringenti, soprattutto lato frontend. Nello Sprint 11, la metrica torna al 100\%, allineandosi pienamente al valore ottimale.
     }
     \newpage
     \subsection{MPC17: Quality Metrics Satisfied}{
@@ -2081,7 +2087,7 @@
         Fin dal primo sprint, non tutte le metriche sono risultate soddisfatte. Durante gli sprint 2, 3 e 4, centrali per lo svolgimento dei compiti, il valore di Quality Metrics Satisfied è rimasto basso, ma comunque sopra la soglia di accettabilità (75\%). Il team giustifica questo con la poca esperienza dei membri nel gestire un tale progetto in modo efficiente. Durante gli sprint 5 e 6, in cui si è raggiunto il valore ottimo del 100\%, è evidente una presa di coscienza che ha portato alla risoluzione delle criticità.
         \\\\
         \noindent \textbf{PB:} \\
-        //To Do
+        Si nota un peggioramento della metrica nello sprint 7, in cui il valore scende sotto la soglia ottimale portandosi al 74\%. Questo calo è dovuto all'introduzione di nuove metriche, in particolare quelle di coverage, difficili da soddisfare nelle prime fasi di vita del progetto. Negli sprint successivi si ha però una graduale ripresa e il valore torna stabilmente sopra la soglia di accettabilità. L'eccezione di questo trend è rappresentata dallo sprint 10, in cui le metriche soddisfatte scendono al 78\% a causa dell'aggiunta di nuovo codice poco coperto da test. Allo sprint 11, questa metrica non arriva al valore ottimo, ma si ferma al 96\% in quanto non viene superata la soglia di accettabilità dei code smells.
     }
     \newpage
     \subsection{MPC18: Non Calculated Risk}{
@@ -2092,10 +2098,10 @@
         \end{figure}
 
         \noindent \textbf{RTB:} \\
-        Non si sono mai presentati rischi non attesi durante gli sprint. Ciò significa che il team è riuscito a individuare efficacemente e sapientemente i rischi all'inizio della RTB e prima di ogni nuovo sprint e che si è adoperato fin da subito per cercare di mitigarli.
+        Non si sono mai presentati rischi non attesi durante gli sprint della RTB. Ciò significa che il team è riuscito a individuare efficacemente e sapientemente i rischi all'inizio della \textit{RTB}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RTB}{G}} e prima di ogni nuovo sprint e che si è adoperato fin da subito per cercare di mitigarli.
         \\\\
         \noindent \textbf{PB:} \\
-        //To Do
+        Anche durante gli sprint della PB il team non si è imbattuto in rischi non previsti. Risulta pertanto confermata l'\textit{efficacia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Efficacia}{G}} dell'analisi iniziale svolta sulla loro individuazione e mititgazione.
     }
     \newpage
     \subsection{MPD01: Requisiti obbligatori soddisfatti}{
@@ -2109,7 +2115,7 @@
         Misurazione non disponibile in questa baseline.
         \\\\
         \noindent \textbf{PB:} \\
-        //To Do
+        La metrica di soddisfacimento dei requisiti obbligatori sale di poco nello sprint 7 (circa 4\%) dal momento che questo periodo è stato dedicato più alla progettazione architetturale del MVP che alla scrittura di molto codice. Ad ogni modo, il valore cresce progressivamente negli sprint successivi, per arrivare al 46\% al termine dello sprint 9. La maggiore crescita in termini implementativi si registra però nello sprint 10, durante il quale sono completati 22 requisiti obbligatori e la metrica raggiunge complessivamente il 78\%. Alla fine dello sprint 11, tutti i requisiti obbligatori risultano completati e la metrica assume valore ottimo.
     }
     \newpage
     \subsection{MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti}{
@@ -2123,7 +2129,7 @@
         Misurazione non disponibile in questa baseline.
         \\\\
         \noindent \textbf{PB:} \\
-        //To Do
+        Dal grafico emerge che i requisiti desiderabili sono stati sviluppati interamente durante lo sprint 10. Si tratta infatti di 5 requisiti che hanno richiesto poco tempo di lavoro. Anche i requisiti opzionali sono stati presi in considerazione a partire da questo sprint, ma non sono stati completati per via della mancanza di tempo ulteriore. Allo sprint 11 ne risultano infatti soddisfatti il 17\%.
     }
     \newpage
     \subsection{MPD04: Branch coverage}{
@@ -2137,7 +2143,7 @@
         Misurazione non disponibile in questa baseline.
         \\\\
         \noindent \textbf{PB:} \\
-        //To Do
+        Dallo sprint 8 si osserva un primo incremento del \textit{branch}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Branch}{G}} coverage (21\%), seguito da una crescita significativa nello sprint 9 (66\%), dove viene superato il limite accettabile (60\%), segno di un miglioramento concreto nella qualità dei test. Nello sprint 10 si registra una flessione al 50\%, dovuta all'introduzione di nuova logica con varie istruzioni condizionali non adeguatamente testate. Infine, nello sprint 11 il valore raggiunge circa l’80\%, raggiungendo il livello ottimo e indicando una buona copertura dei rami decisionali nelle fasi finali del progetto.
     }
     \newpage
     \subsection{MPD05: Statement coverage}{
@@ -2151,7 +2157,52 @@
         Misurazione non disponibile in questa baseline.
         \\\\
         \noindent \textbf{PB:} \\
-        //To Do
+        Lo statement coverage ha valore 40\% nello sprint 8. La crescita prosegue rapidamente nello sprint 9, dove il valore raggiunge il doppio, l’80\%, superando la soglia minima accettabile. Nel corso dello sprint 10 la metrica diminuisce però al 63\%, valore che soddisfa poco il team trattandosi della copertura complessiva delle istruzioni. In compenso, durante lo sprint 11, la copertura degli statements sale fino al 92\% e arriva così nella regione dei valori ottimi.
+    }
+    \newpage
+    \subsection{MPD10: Code smells}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/CodeSmells.png}}
+            \caption{Grafico per sprint di MPD10}
+        \end{figure}
+
+        \noindent \textbf{RTB:} \\
+        Misurazione non disponibile in questa baseline.
+        \\\\
+        \noindent \textbf{PB:} \\
+        Al termine dello sprint 8 non risultano esserci code smells. Nello sprint 9 ne vengono contati 13 (il valore massimo tollerabile è 10). Allo sprint 10 si ha però un aumento molto significativo, con un picco di 35, superando ampiamente la soglia accettabile: ciò rappresenta una fase di accumulo di debito tecnico dovuta all'introduzione rapida di nuove funzionalità. La presa di consapevolezza di questo problema emerge chiaramente nell'ultimo sprint, durante il quale il team ha eseguito un'attività di refactoring e miglioramento della qualità del codice e ha ridotto così il numero di code smells a 11. Nel complesso, la metrica evidenzia una criticità improvvisa ma parzialmente rientrata nella fase finale del progetto, seppur non ancora pienamente soddisfacente.
+    }
+    \newpage
+    \subsection{MPD12: Cyclomatic complexity}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/CyclomaticComplexity.png}}
+            \caption{Grafico per sprint di MPD12}
+        \end{figure}
+
+        \noindent \textbf{RTB:} \\
+        Misurazione non disponibile in questa baseline.
+        \\\\
+        \noindent \textbf{PB:} \\
+        Nello sprint 7, il valore di complessità ciclomatica risulta essere basso in quanto durante questo periodo il progetto è stato solo iniziato. 
+        A partire dallo sprint 8 si registra un aumento della metrica che si porta intorno a valori compresi tra circa 1,3 e 1,5. Questo incremento indica l'introduzione di una logica più articolata nel codice. Negli sprint successivi, la complessità si mantiene sostanzialmente stabile in questo intervallo. Nel complesso, i valori rimangono sempre ampiamente al di sotto delle soglie indicate nel grafico (sia quella ottimale sia quella di attenzione), evidenziando che il progetto conserva una complessità bassa e ben sotto controllo per tutta la sua evoluzione.
+
+    }
+    \newpage
+    \subsection{MPD14: Linee di codice per metodo}{
+        \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[scale=0.65]{../../../Assets/Grafici/LineeCodicePerMetodo.png}}
+            \caption{Grafico per sprint di MPD14}
+        \end{figure}
+
+        \noindent \textbf{RTB:} \\
+        Misurazione non disponibile in questa baseline.
+        \\\\
+        \noindent \textbf{PB:} \\
+        Nello sprint 7 il numero di linee di codice per metodo cresce circa a 5. Questo valore poi aumenta progressivamente: nello sprint 9 supera le 8 unità e nello sprint 10 si porta a 10. Questo andamento riflette la crescita della complessità dei metodi con l'evolversi del progetto. Tali valori restano sempre ben al di sotto delle soglie di accettabilità e ottimalità, indicando una buona gestione della dimensione dei metodi e una complessità contenuta. Il team ha consolidato questo andamento positivo monitorando attentamente la dimensione dei metodi nello sprint 11 e riuscendo a ridurre di una unità il numero medio di linee di codice per metodo.
+
     }
 }
 
