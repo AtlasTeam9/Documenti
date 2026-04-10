@@ -380,7 +380,17 @@
 
     \section{Architettura}
         \subsection{Architettura logica}
-            Il progetto adotta un'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} a strati (layered) che si articola in quattro livelli distinti: \textbf{Presentation, Application, Domain e Infrastructure}. Questa scelta è motivata dalla natura del sistema: si tratta di un'applicazione con flussi di dati prevalentemente lineari e prevedibili, dove le richieste HTTP attraversano i layer in modo direzionato e senza inversioni di controllo complesse. Rispetto all'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} esagonale (ports \& adapters), la layered è più semplice da implementare e comprendere. L'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} esagonale offrirebbe maggiore disaccoppiamento tra dominio e infrastruttura tramite porte e adattatori espliciti, ma introduce una complessità strutturale difficile da giustificare quando gli adattatori sono fissi (un solo database su file, una sola \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}} REST). La struttura a layer è già sufficiente a garantire la separazione delle responsabilità, la testabilità del dominio (come dimostrano i numerosi \textit{unit test}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Unittest}{G}} presenti) e la manutenibilità del codice, senza aggiungere overhead architetturale non necessario.
+            A livello macroscopico, il sistema adotta un'architettura logica di tipo \textbf{Client-Server}, basata sulla netta separazione delle responsabilità tra l'interfaccia utente e il livello di elaborazione e persistenza dei dati. Questa scelta garantisce un elevato grado di modularità e disaccoppiamento tecnologico tra le due componenti.
+
+            Il sistema si articola in due moduli principali:
+
+            \begin{itemize}
+                \item \textbf{Client (Frontend)}: Sviluppato come Single Page Application (SPA) in React. Agisce come interfaccia per l'utente, occupandosi del rendering dinamico delle viste, della validazione degli input lato client, del mantenimento dello stato di navigazione locale e della visualizzazione interattiva dei decision trees e dei risultati.
+                \item \textbf{Server (Backend)}: Sviluppato in Python mediante il framework FastAPI. Funge da motore principale dell'applicazione: incapsula le regole di business centralizzate, convalida formalmente i payload, orchestra il salvataggio o il recupero dei dati (file JSON) ed elabora la reportistica finale da esportare in formati quali PDF e CSV.
+            \end{itemize}
+        \subsubsection{Comunicazione tra i moduli}
+            I due moduli operano in modo indipendente e comunicano tramite il protocollo HTTP/REST. Il Frontend effettua richieste agli endpoint esposti dal Backend per leggere, creare o modificare le risorse, scambiando pacchetti dati serializzati nel formato JSON. Questa tipologia di comunicazione stateless permette al Client di non avere alcuna visibilità sui dettagli implementativi della memorizzazione dei file o dell'elaborazione logica, affidandosi unicamente ai contratti definiti dalle API.
+
         \subsection{Architettura di deployment}
             Il sistema viene distribuito come applicazione monolitica — un singolo backend FastAPI e un singolo frontend React — piuttosto che come insieme di microservizi indipendenti. Questa scelta è giustificata dal contesto d'uso reale: il committente è un'azienda con orari di lavoro definiti, il che implica che la web application sarà attiva solo in specifiche fasce orarie, con lunghi periodi di inattività. In uno scenario del genere, i microservizi introdurrebbero costi operativi e complessità infrastrutturale (service discovery, comunicazione inter-servizio) del tutto sproporzionati rispetto ai benefici. Un'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} monolitica, containerizzata tramite \textit{Docker}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Docker}{G}} Compose come da configurazione presente nel progetto, è più semplice da avviare, fermare e manutenere, richiede meno risorse computazionali a riposo e consente deploy rapidi. La scalabilità orizzontale offerta dai microservizi non è un \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} rilevante per un tool di compliance interno, utilizzato da un numero limitato di utenti in sessioni di lavoro giornaliere.
 
@@ -1361,15 +1371,18 @@
 
 
         \subsection{Backend}
+
+        
         \subsubsection{Precisazione sulla visibilità}
             In Python non esiste un sistema formale di modificatori di visibilità (come 'public', 'private' o 'protected' presenti in altri linguaggi). La distinzione tra membri pubblici e non pubblici è quindi basata su una \textbf{convenzione di naming} condivisa dalla comunità.
 
             In particolare, tutti i metodi e gli attributi il cui nome inizia con un singolo underscore (\_) sono da considerarsi \textbf{privati per convenzione}, e non dovrebbero essere utilizzati direttamente dall'esterno della classe o del modulo. Al contrario, i metodi e gli attributi che non presentano tale prefisso sono da considerarsi \textbf{pubblici} e costituiscono l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} esposta della classe.
             
             Questa convenzione non impone vincoli a livello di linguaggio, ma rappresenta un contratto implicito tra sviluppatori volto a garantire incapsulamento, leggibilità e manutenibilità del codice.
-
-        
         \subsection{Descrizione architettura backend}
+            La struttura del backend adotta un'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} a strati (layered) che si articola in quattro livelli distinti: \textbf{Presentation, Application, Domain e Infrastructure}. Questa scelta è motivata dalla natura del sistema: si tratta di un'applicazione con flussi di dati prevalentemente lineari e prevedibili, dove le richieste HTTP attraversano i layer in modo direzionato e senza inversioni di controllo complesse. Rispetto all'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} esagonale (ports \& adapters), la layered è più semplice da implementare e comprendere. L'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} esagonale offrirebbe maggiore disaccoppiamento tra dominio e infrastruttura tramite porte e adattatori espliciti, ma introduce una complessità strutturale difficile da giustificare quando gli adattatori sono fissi (un solo database su file, una sola \textit{API}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#API}{G}} REST). La struttura a layer è già sufficiente a garantire la separazione delle responsabilità, la testabilità del dominio (come dimostrano i numerosi \textit{unit test}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Unittest}{G}} presenti) e la manutenibilità del codice, senza aggiungere overhead architetturale non necessario.
+
+
             \subsubsection{Presentation Layer}
                 \textbf{Scopo}: Gestisce l'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} di comunicazione tra il mondo esterno (client HTTP) e l'applicazione.
 
@@ -2378,7 +2391,7 @@
         \end{itemize}
         Per maggiori dettagli su Codice e Tipo si rimanda alla sezione Requisiti del documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}
 
-        \subsection{}{
+        \subsection{Stato per requisito}{
             \setlength{\LTleft}{\fill}
             \setlength{\LTright}{\fill}
         
