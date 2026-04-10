@@ -1,0 +1,5 @@
+#I pdf dei verbali non sono tracciati
+*.pdf
+
+#I pdf dei verbali esterni firmati sono tracciati
+!esterni/firmati/*.pdf
