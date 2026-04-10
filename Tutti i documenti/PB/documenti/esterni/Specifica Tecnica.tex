@@ -2367,5 +2367,172 @@
                     semplificata verso l'esterno nascondendo la complessità interna dei suoi componenti (SessionNavigator, SessionState, ResultStore, DependencyEvaluator). Il chiamante usa {\ttfamily session.answer()}
                     senza sapere che internamente vengono coinvolti tutti i componenti sopracitati.
             \end{itemize}
-                    
+    
+    \section{Stato dei requisiti funzionali}{
+        Vengono di seguito riportati i requisiti funzionali individuati durante la fase di analisi. Per ognuno di
+        essi vengono forniti:
+        \begin{itemize}
+            \item Codice: identificativo;
+            \item Descrizione;
+            \item Stato: soddisfatto/non soddisfatto.
+        \end{itemize}
+        Per maggiori dettagli su Codice e Tipo si rimanda alla sezione Requisiti del documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0}
+
+        \subsection{}{
+            \setlength{\LTleft}{\fill}
+            \setlength{\LTright}{\fill}
+        
+            \rowcolors{2}{lightblue}{white}
+            \begin{longtable}{|l|p{0.64\textwidth}|p{0.14\textwidth}|}
+                \caption{Tabella dei requisiti funzionali}
+                \label{tab:requisiti-funzionali}                                                                                                                                                                                                                                                       \\
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                        & \multicolumn{1}{p{0.14\textwidth}|}{\textbf{Stato}}                 \\
+                \hline
+                \endfirsthead
+
+                \rowcolor{white}
+                \multicolumn{3}{l}%
+                {\textit{\tablename\ \thetable}\ \textit{...continua dalla pagina precedente}} \\                                                                                                                                  
+                \hline
+                \rowcolor{gold}
+                \textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                        & \multicolumn{1}{p{0.14\textwidth}|}{\textbf{Stato}}                 \\
+                \hline
+                \endhead
+
+                \hline
+                \rowcolor{white}
+                \multicolumn{3}{r}{\textit{continua nella pagina successiva...}} \\
+                \endfoot                                                                  
+
+                \hline
+                \endlastfoot
+
+                R-1-F-Ob        & L'Utente deve poter inserire un dispositivo                                                                                                                                                 & Soddisfatto \\ \hline
+                R-2-F-Ob        & L'Utente, per inserire un dispositivo, deve poter caricare un dispositivo nel Sistema                                                                                                       & Soddisfatto \\ \hline
+                R-3-F-Ob        & L'Utente deve poter ricevere un errore in seguito ad un tentativo di caricamento di un file di dispositivo non valido                                                                       & Soddisfatto \\ \hline
+                R-4-F-Ob        & L'Utente deve poter visualizzare il dispositivo inserito (caricato o creato)                                                                                                                & Soddisfatto \\ \hline
+                R-5-F-Ob        & L'Utente, nel visualizzare il dispositivo inserito, deve poter visualizzare il nome del dispositivo                                                                                         & Soddisfatto \\ \hline
+                R-6-F-Ob        & L'Utente deve poter visualizzare la lista degli assets di un dispositivo                                                                                                                    & Soddisfatto \\ \hline
+                R-7-F-Ob        & L'Utente, nel visualizzare la lista degli assets di un dispositivo, deve poter visualizzare un singolo asset                                                                                & Soddisfatto \\ \hline
+                R-8-F-Ob        & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il nome dell'asset                                                          & Soddisfatto \\ \hline
+                R-9-F-Ob        & L'Utente, nel visualizzare un singolo asset nella lista degli assets di un dispositivo, deve poter visualizzare il tipo dell'asset                                                          & Soddisfatto \\ \hline
+                R-10-F-Ob       & L'Utente, dopo aver inserito un dispositivo, deve poter avviare e completare l'esecuzione di un test su quel dispositivo                                                                    & Soddisfatto \\ \hline
+                R-11-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere a una particolare domanda del test                                                                       & Soddisfatto \\ \hline
+                R-12-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere SI a una particolare domanda del test                                                                       & Soddisfatto \\ \hline
+                R-13-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter rispondere NO a una particolare domanda del test                                                                       & Soddisfatto \\ \hline
+                R-14-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda precedente se seleziona la funzionalità corrispondente                         & Soddisfatto \\ \hline
+                R-15-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare con SI la risposta a una domanda precedente se seleziona la funzionalità corrispondente                         & Soddisfatto \\ \hline
+                R-16-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare con NO la risposta a una domanda precedente se seleziona la funzionalità corrispondente                         & Soddisfatto \\ \hline
+                R-17-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta a una domanda successiva se seleziona la funzionalità corrispondente                         & Soddisfatto \\ \hline
+                R-18-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta con SI a una domanda successiva se seleziona la funzionalità corrispondente                         & Soddisfatto \\ \hline
+                R-19-F-Ob       & L'Utente, durante l'esecuzione di un test su un dispositivo, deve poter modificare la risposta con NO a una domanda successiva se seleziona la funzionalità corrispondente                         & Soddisfatto \\ \hline
+                R-20-F-Ob       & L'Utente deve poter uscire anticipatamente da un test in fase di esecuzione su un dispositivo                                                                                               & Soddisfatto \\ \hline
+                R-21-F-Ob       & L'Utente deve poter visualizzare i risultati di un test (completato o caricato)                                                                                                             & Soddisfatto \\ \hline
+                R-22-F-Ob       & L'Utente, nel visualizzare i risultati di un test, deve poter visualizzare la lista ordinata dei requisiti del test con i risultati                                                         & Soddisfatto \\ \hline
+                R-23-F-Ob       & L'Utente, nel visualizzare la lista dei requisiti del test con i risultati, deve poter visualizzare un singolo requisito con risultato                                                      & Soddisfatto \\ \hline
+                R-24-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il nome del requisito                             & Soddisfatto \\ \hline
+                R-25-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato ottenuto per il requisito            & Soddisfatto \\ \hline
+                R-26-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato PASS associato al requisito            & Soddisfatto \\ \hline
+                R-27-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato FAIL associato al requisito       & Soddisfatto \\ \hline
+                R-28-F-Ob       & L'Utente, nel visualizzare un singolo requisito con risultato nella lista dei requisiti del test con i risultati, deve poter visualizzare il risultato NA associato al requisito         & Soddisfatto \\ \hline
+                %da cambiare indici
+                R-29-F-D        & L'Utente deve poter esportare un test completato                                                                                                                                            & Soddisfatto \\ \hline
+                R-30-F-D        & L'Utente, per esportare un test completato, deve poter esportare i risultati del test   & Soddisfatto \\ \hline
+                R-31-F-D        & L'Utente, per esportare i risultati di un test, deve poter esportare i risultati del test in formato pdf   & Soddisfatto \\ \hline
+                R-32-F-D        & L'Utente, per esportare i risultati di un test, deve poter esportare i risultati del test in formato csv   & Soddisfatto \\ \hline
+                R-33-F-D        & L'Utente, per esportare un test completato, deve poter esportare i dati del test   & Soddisfatto \\ \hline
+                R-34-F-Ob       & L'Utente, per inserire un dispositivo, deve poter creare un dispositivo                                                                                                                     & Soddisfatto \\ \hline
+                R-35-F-Ob       & L'Utente, nel processo di creazione di un dispositivo, deve poter inserire i dati del dispositivo                                                                                           & Soddisfatto \\ \hline
+                R-36-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il nome del dispositivo                                                                               & Soddisfatto \\ \hline
+                R-37-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire il sistema operativo del dispositivo                                                                  & Soddisfatto \\ \hline
+                R-38-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la versione del firmware del dispositivo                                                              & Soddisfatto \\ \hline
+                R-39-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la funzionalità del dispositivo                                                                       & Soddisfatto \\ \hline
+                R-40-F-Ob       & L'Utente, nel processo di inserimento dei dati di un dispositivo, deve poter inserire la descrizione del dispositivo                                                                        & Soddisfatto \\ \hline
+                R-41-F-Ob       & L'Utente, nel processo di inserimento dei dati del dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                     & Soddisfatto \\ \hline
+                R-42-F-Ob       & L'Utente, nel processo di creazione di un dispositivo, deve poter aggiungere almeno un asset                                                                                                & Soddisfatto \\ \hline
+                R-43-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter inserire il nome dell'asset                                                                                                     & Soddisfatto \\ \hline
+                R-44-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter selezionare il tipo dell'asset                                                                                                  & Soddisfatto \\ \hline
+                R-45-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter inserire la descrizione dell'asset                                                                                              & Soddisfatto \\ \hline
+                R-46-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter selezionare la sensibilità dell'asset                                                                                           & Soddisfatto \\ \hline
+                R-47-F-Ob       & L'Utente, nel processo di creazione di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                                    & Soddisfatto \\ \hline
+                R-48-F-Ob       & L'Utente deve poter annullare il processo di creazione di un asset                                                                                                                          & Soddisfatto \\ \hline
+                R-49-F-Ob       & L'Utente deve poter annullare il processo di creazione di un dispositivo                                                                                                                    & Soddisfatto \\ \hline
+                R-50-F-Ob       & L'Utente deve poter eliminare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente                                                    & Soddisfatto \\ \hline
+                R-51-F-Op       & L'Utente deve poter modificare un asset presente nella lista degli assets di un dispositivo selezionandone la funzionalità corrispondente                                                   & Non soddisfatto \\ \hline
+                R-52-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare il nome dell'asset                                                                                               & Non soddisfatto \\ \hline
+                R-53-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione del tipo dell'asset                                                                                 & Non soddisfatto \\ \hline
+                R-54-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la descrizione dell'asset                                                                                        & Non soddisfatto \\ \hline
+                R-55-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter modificare la selezione della sensibilità dell'asset                                                                        & Non soddisfatto \\ \hline
+                R-56-F-Op       & L'Utente, nel processo di modifica di un asset, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                                     & Non soddisfatto \\ \hline
+                R-57-F-Op       & L'Utente deve poter annullare il processo di modifica di un asset                                                                                                                           & Non soddisfatto \\ \hline
+                R-58-F-Ob       & L'Utente deve poter visualizzare un avviso che indica la presenza di modifiche non salvate se ha creato un dispositivo o ha apportato modifiche ad un dispositivo esistente                 & Soddisfatto \\ \hline
+                R-59-F-Ob       & L'Utente deve poter effettuare il salvataggio delle modifiche non salvate quando visualizza l'avviso che indica la presenza di modifiche non salvate                                        & Soddisfatto \\ \hline
+                R-60-F-Ob       & L'Utente deve poter visualizzare le informazioni di un singolo asset nel dettaglio selezionandolo dalla lista degli assets di un dispositivo                                                & Soddisfatto \\ \hline
+                R-61-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il nome dell'asset                                                                             & Soddisfatto \\ \hline
+                R-62-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare il tipo dell'asset                                                                             & Soddisfatto \\ \hline
+                R-63-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la descrizione dell'asset                                                                      & Soddisfatto \\ \hline
+                R-64-F-Ob       & L'Utente, nel visualizzare le informazioni di dettaglio di un asset, deve poter visualizzare la sensibilità dell'asset                                                                      & Soddisfatto \\ \hline
+                R-65-F-Ob       & L'Utente deve poter visualizzare i dati del dispositivo inserito nel dettaglio                                                                                                              & Soddisfatto \\ \hline
+                R-66-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il nome del dispositivo                                                                   & Soddisfatto \\ \hline
+                R-67-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare il sistema operativo del dispositivo                                                      & Soddisfatto \\ \hline
+                R-68-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la versione del firmware del dispositivo                                                  & Soddisfatto \\ \hline
+                R-69-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la funzionalità del dispositivo                                                           & Soddisfatto \\ \hline
+                R-70-F-Ob       & L'Utente, nel visualizzare i dati del dispositivo inserito nel dettaglio, deve poter visualizzare la descrizione del dispositivo                                                            & Soddisfatto \\ \hline
+                R-71-F-Ob       & L'Utente deve poter caricare un test precedentemente effettuato                                                                                                                             & Soddisfatto \\ \hline
+                R-72-F-Ob       & L'Utente deve poter ricevere un errore se carica come test precedente un file non valido                                                                                                    & Soddisfatto \\ \hline
+                R-73-F-Ob       & L'Utente deve poter modificare i risultati di un test che ha caricato o completato selezionando un particolare asset da cui riprendere l'esecuzione                                         & Soddisfatto \\ \hline
+                R-74-F-Ob       & L'Utente, nel modificare i risultati di un test che ha caricato o completato, deve poter riprendere l'esecuzione del test a partire dall'asset selezionato                                  & Soddisfatto \\ \hline
+                R-75-F-Ob       & L'Utente deve poter completare l'esecuzione di un test caricato non completato                                                                                                              & Soddisfatto \\ \hline
+                R-76-F-Ob       & L'Utente, nel completare l'esecuzione di un test non completato, deve poter riprendere l'esecuzione del test a partire dal punto in cui era stato precedentemente fermato                   & Soddisfatto \\ \hline
+                R-77-F-Op       & L'Utente deve poter visualizzare la lista delle giustificazioni di un test                                                                                                                  & Non soddisfatto \\ \hline
+                R-78-F-Op       & L'Utente, nel visualizzare la lista delle giustificazioni di un test, deve poter visualizzare una singola giustificazione                                                                   & Non soddisfatto \\ \hline
+                R-79-F-Op       & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il nome del requisito                                          & Non soddisfatto \\ \hline
+                R-80-F-Op       & L'Utente, nel visualizzare una singola giustificazione nella lista delle giustificazioni di un test, deve poter visualizzare il testo della giustificazione associata al requisito          & Non soddisfatto \\ \hline
+                R-81-F-Ob       & L'Utente deve poter visualizzare la lista degli assets con risultati di un requisito nel dettaglio selezionando un particolare requisito dalla lista dei requisiti del test con i risultati & Soddisfatto \\ \hline
+                R-82-F-Ob       & L'Utente, nel visualizzare la lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare un singolo asset con risultato                                        & Soddisfatto \\ \hline
+                R-83-F-Ob       & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il nome dell'asset                  & Soddisfatto \\ \hline
+                R-84-F-Ob       & L'Utente, nel visualizzare un singolo asset con risultato nella lista degli assets con risultati di un requisito nel dettaglio, deve poter visualizzare il risultato dell'asset             & Soddisfatto \\ \hline
+                R-85-F-Ob       & L'Utente deve poter eliminare un dispositivo che ha inserito                                                                                                                                & Soddisfatto \\ \hline
+                R-86-F-Op       & L'Utente deve poter modificare i dati del dispositivo che ha inserito                                                                                                                       & Soddisfatto \\ \hline
+                R-87-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il nome del dispositivo                                                                                & Soddisfatto \\ \hline
+                R-88-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare il sistema operativo del dispositivo                                                                   & Soddisfatto \\ \hline
+                R-89-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la versione del firmware del dispositivo                                                               & Soddisfatto \\ \hline
+                R-90-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la funzionalità del dispositivo                                                                        & Soddisfatto \\ \hline
+                R-91-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter modificare la descrizione del dispositivo                                                                         & Soddisfatto \\ \hline
+                R-92-F-Op       & L'Utente, nel processo di modifica dei dati di un dispositivo, deve poter visualizzare un errore se inserisce in uno o più campi dei valori non validi                                      & Soddisfatto \\ \hline
+                R-93-F-Op       & L'Utente deve poter annullare il processo di modifica dei dati di un dispositivo                                                                                                            & Soddisfatto \\ \hline
+                R-94-F-Op       & L'Utente deve poter visualizzare l'elenco dei decision trees selezionando la funzionalità corrispondente                                                                                    & Non soddisfatto \\ \hline
+                R-95-F-Op       & L'Utente, nel visualizzare l'elenco dei decision trees, deve poter visualizzare un singolo decision tree                                                                                    & Non soddisfatto \\ \hline
+                R-96-F-Op       & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare l'id del requisito associato al decision tree                                   & Non soddisfatto \\ \hline
+                R-97-F-Op       & L'Utente, nel visualizzare un singolo decision tree nell'elenco dei decision trees, deve poter visualizzare il nome del requisito associato al decision tree                                & Non soddisfatto \\ \hline
+                R-98-F-Op       & L'Utente deve poter visualizzare un singolo decision tree nel dettaglio selezionandolo dalla lista dei decision trees                                                                       & Non soddisfatto \\ \hline
+                R-99-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare l'id del requisito associato al decision tree                                                    & Non soddisfatto \\ \hline
+                R-100-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il nome del requisito associato al decision tree                                                 & Non soddisfatto \\ \hline
+                R-101-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare le dipendenze del requisito associato al decision tree                                           & Non soddisfatto \\ \hline
+                R-102-F-Op       & L'Utente, nel visualizzare un singolo decision tree nel dettaglio, deve poter visualizzare il grafo che rappresenta il decision tree                                                        & Non soddisfatto \\ \hline
+                R-103-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi interni del grafo                                                                      & Non soddisfatto \\ \hline
+                R-104-F-Op       & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il codice univoco del nodo                                                   & Non soddisfatto \\ \hline
+                R-105-F-Op       & L'Utente, nel visualizzare un nodo interno del grafo che rappresenta un decision tree, deve poter visualizzare il testo della domanda del nodo                                              & Non soddisfatto \\ \hline
+                R-106-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i nodi foglia del grafo                                                                       & Non soddisfatto \\ \hline
+                R-107-F-Op       & L'Utente, nel visualizzare i nodi foglia del grafo di un decision tree, deve poter visualizzare i nodi foglia con il risultato PASS & Soddisfatto \\ \hline
+                R-108-F-Op       & L'Utente, nel visualizzare i nodi foglia del grafo di un decision tree, deve poter visualizzare i nodi foglia con il risultato FAIL & Soddisfatto \\ \hline
+                R-109-F-Op       & L'Utente, nel visualizzare i nodi foglia del grafo di un decision tree, deve poter visualizzare i nodi foglia con il risultato NA & Soddisfatto \\ \hline
+                R-110-F-Op       & L'Utente, nel visualizzare il grafo che rappresenta un decision tree, deve poter visualizzare i collegamenti fra i nodi del grafo                                                           & Non soddisfatto \\ \hline
+                R-111-F-Op       & L'Utente deve poter modificare un decision tree                                                                                                                                             & Non soddisfatto \\ \hline
+                R-112-F-Op       & L'Utente, per modificare un decision tree, deve poter aggiungere un nodo al decision tree                                                                                                   & Non soddisfatto \\ \hline
+                R-113-F-Op       & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il codice univoco del nodo                                                                              & Non soddisfatto \\ \hline
+                R-114-F-Op       & L'Utente, nel processo di aggiunta di un nodo al decision tree, deve poter inserire il testo della domanda del nodo                                                                         & Non soddisfatto \\ \hline
+                R-115-F-Op       & L'Utente, per modificare un decision tree, deve poter eliminare un nodo dal decision tree                                                                                                   & Non soddisfatto \\ \hline
+                R-116-F-Op      & L'Utente deve poter ricevere un errore se cerca di eliminare il nodo root di un decision tree                                                                                               & Non soddisfatto \\ \hline
+                R-117-F-Op      & L'Utente, per modificare un decision tree, deve poter modificare la destinazione di un collegamento del decision tree                                                                       & Non soddisfatto \\ \hline
+                R-118-F-Op      & L'Utente deve poter ricevere un errore se la validazione della modifica del decision tree fallisce                                                                                          & Non soddisfatto \\ \hline
+                R-119-F-Op      & L'Utente deve poter annullare il processo di modifica di un decision tree                                                                                                                   & Non soddisfatto \\ \hline
+                R-120-F-Op      & L'Utente deve poter esportare un decision tree                                                                                                                                              & Non soddisfatto \\ \hline
+            \end{longtable}
+        }
+
+    }
+            
     \end{document}        
