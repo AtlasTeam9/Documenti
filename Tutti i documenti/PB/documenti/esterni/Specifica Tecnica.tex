@@ -2378,7 +2378,9 @@
                     semplicemente invocando il metodo {\ttfamily create()};
                 \item \textbf{Facade pattern}: utilizzato nella gestione della Session. La classe Session infatti non gestisce direttamente nessuna logica, ma espone un'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} unificata e 
                     semplificata verso l'esterno nascondendo la complessità interna dei suoi componenti (SessionNavigator, SessionState, ResultStore, DependencyEvaluator). Il chiamante usa {\ttfamily session.answer()}
-                    senza sapere che internamente vengono coinvolti tutti i componenti sopracitati.
+                    senza sapere che internamente vengono coinvolti tutti i componenti sopracitati;
+                \item \textbf{Dependency Injection}: realizzata tramite il sistema Depends di FastAPI. Il grafo delle dipendenze viene assemblato in {\ttfamily shared\_dependencies.py} e nei file {\ttfamily dependencies.py} di ciascun router: FileStorage viene costruita e passata a SessionRepository e FileTreeProvider, questi vengono passati a SessionFactory e SessionService, e i service vengono infine iniettati nei use case che li richiedono.\\
+                Ogni use case riceve le proprie dipendenze come parametri del costruttore e lavora esclusivamente sulle interfacce astratte, senza conoscere le implementazioni concrete. Questo risulta molto utile anche in fase di test dato che è sufficiente passare un mock che rispetta l'interfaccia per isolare completamente il comportamento del use case dal filesystem e dal resto dell'infrastruttura, senza modificare una riga di codice di produzione.
             \end{itemize}
     
     \section{Stato dei requisiti funzionali}{
