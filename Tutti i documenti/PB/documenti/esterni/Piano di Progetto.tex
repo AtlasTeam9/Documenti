@@ -43,11 +43,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloDocumento}{Piano di Progetto}
-\newcommand{\DataUltimaModifica}{2026/03/13}
+\newcommand{\DataUltimaModifica}{2026/04/10}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % Inserisci il file del logo
 
 % --- Nuove variabili aggiunte ---
-\newcommand{\VersioneDocumento}{v1.2.1} % <-- modifica qui la versione o ID
+\newcommand{\VersioneDocumento}{v2.0.0} % <-- modifica qui la versione o ID
 \newcommand{\TipoDocumento}{Esterno} 
 
 \pagestyle{fancy}
@@ -125,21 +125,36 @@
 \section*{Registro delle modifiche}
     \begin{center}
     \rowcolors{2}{lightblue}{white} % Alternanza automatica dal secondo row
-        \begin{tabularx}{\textwidth}{|l|l|l|l|X|}
+        \begin{tabularx}{\textwidth}{|l|l|l|X|X|}
             \hline
+            \rowcolor{lightgray}
             \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
             \hline
-            v1.2.1 & 2026/03/13 & Riccardo Valerio & Federico Simonetto & Correzione errori \\
+            v2.0.0 & 2026/04/10 & Giacomo Giora & Michele Tesser & Approvazione documento \\
             \hline
-            v1.2.0 & 2026/03/12 & Riccardo Valerio & Federico Simonetto & Sistemazione ordine delle descrizioni degli sprint \\
+            v1.8.0 & 2026/04/03 & Giacomo Giora & Michele Tesser & Scrittura Sommario finale\\
             \hline
-            v1.1.0 & 2026/03/10 & Riccardo Valerio & Federico Simonetto & Scrittura sez. pianificazione lungo termine e sistemazione contenuti \\
+            v1.7.0 & 2026/04/03 & Giacomo Giora & Michele Tesser & Scrittura sez. 5.13\\
+            \hline
+            v1.6.0 & 2026/03/27 & Giacomo Giora & Michele Tesser & Scrittura sez. 5.12\\
+            \hline
+            v1.5.0 & 2026/03/20 & Riccardo Valerio & Federico Simonetto & Scrittura sez. 5.11\\
+             \hline
+            v1.4.0 & 2026/03/14 & Riccardo Valerio & Federico Simonetto & Scrittura sez. 5.10\\
+            \hline
+            v1.3.1 & 2026/03/13 & Riccardo Valerio & Federico Simonetto & Correzione errori \\
+            \hline
+            v1.3.0 & 2026/03/12 & Riccardo Valerio & Federico Simonetto & Sistemazione ordine delle descrizioni degli sprint \\
+            \hline
+            v1.2.0 & 2026/03/10 & Riccardo Valerio & Federico Simonetto & Scrittura sez. pianificazione lungo termine e sistemazione contenuti \\
+            \hline
+            v1.1.0 & 2026/03/07 & Francesco Marcolongo & Giacomo Giora & Scrittura sez. 5.9\\
             \hline	
             v1.0.0 & 2026/02/07 & Francesco Marcolongo & Giacomo Giora & Approvazione \\
             \hline
             v0.11.1 & 2026/02/07 & Andrea Difino & Giacomo Giora & Aggiunti termini glossario \\
             \hline
-            v0.11.0 & 2026/02/07 & Francesco Marcolongo & Giacomo Giora & Scrittura sommario finale \\
+            v0.11.0 & 2026/02/07 & Francesco Marcolongo & Giacomo Giora & Scrittura sommario finale RTB\\
             \hline
             v0.10.0 & 2026/02/05 & Michele Tesser & Giacomo Giora & Scrittura sez 4.7 \\
             \hline
@@ -202,8 +217,8 @@
     \subsection{Riferimenti utili}{
         \subsubsection{Riferimenti normativi}{
             \begin{itemize}
-                \item Riferimento al capitolato 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
-                \item Riferimento alla documentazione interna del team Atlas:\newline \textbf{Norme di Progetto v2.0.0}\newline\url{da_mettere_una_volta_scritto}
+                \item Riferimento al \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}} 1 dell'azienda proponente:\newline \textbf{Bluewind S.r.l - Automated EN18031 Compliance Verification}\newline \url{https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf}
+                \item Riferimento alla documentazione interna del team Atlas:\newline \textbf{Norme di Progetto v2.0.0}\newline\url{https://atlasteam9.github.io/Atlas/docs/PB/documenti/interni/Norme%20di%20Progetto.pdf}
             \end{itemize}
         }
         \subsubsection{Riferimenti informativi}{
@@ -470,7 +485,7 @@
                 \hline
                 Requirements and Technology Baseline & 2026/02/11-13 \\
                 \hline
-                Product Baseline & 2026/03/20 \\
+                Product Baseline & 2026/04/03 \\
                 \hline
             \end{tabular}
         \end{center}
@@ -511,7 +526,7 @@
             \label{fig:piechart}
         \end{figure}  
 
-	A seguito dell'ultimo sprint della RTB, data la sottovalutazione dei ruoli Analista e Verificatore, è stata effettuata una riassegnazione delle ore per membro, risultata nella seguente disposizione:
+	A seguito dell'ultimo sprint della \textit{RTB}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RTB}{G}}, data la sottovalutazione dei ruoli Analista e \textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}, è stata effettuata una riassegnazione delle ore per membro, risultata nella seguente disposizione:
 
 
 	 \begin{center}
@@ -543,7 +558,7 @@
             \pie{8.5/Responsabile, 11.3/Amministratore, 14.1/Analista, 17.0/Progettista, 24.3/Programmatore, 24.8/Verificatore}
             \end{tikzpicture}
             \caption{Distribuzione delle ore per ruolo secondo la riassegnazione post-RTB}
-            \label{fig:piechart}
+            \label{fig:piechart-postRTB}
         \end{figure}  
 
 	\subsection{Assegnazione attività da svolgere durante la RTB}
@@ -684,8 +699,10 @@
 		      \textbf{Stesura Specifica Tecnica} & Redazione delle sezioni:
 		    \begin{itemize}
 			    \item Introduzione;
-			    \item TODO
-		    \end{itemize}		    & \textbf{} \\
+			    \item Descrizione generale del prodotto;
+                \item Tecnologie; 
+                \item Architettura.
+		    \end{itemize}		    & \textbf{Completato in PB} \\
                 \hline
               \end{tabularx}      
             \end{table}
@@ -703,8 +720,10 @@
 		      \textbf{Stesura Manuale Utente} & Redazione delle sezioni:
 		    \begin{itemize}
 			    \item Introduzione;
-			    \item TODO
-		    \end{itemize}		    & \textbf{} \\
+			    \item Requisiti;
+                \item Installazione;
+                \item Istruzioni per l'uso.
+		    \end{itemize}		    & \textbf{Completato in PB} \\
                 \hline
               \end{tabularx}      
             \end{table}
@@ -725,7 +744,7 @@
 			    \item Rivisitazione delle estensioni in UC6.1, UC7 e UC8;
 			    \item Modifica dei sottocasi d'uso di UC25 e UC26.
 			    \item Aggiungere tracciamento dei requisiti.
-		    \end{itemize}		    & \textbf{} \\
+		    \end{itemize}		    & \textbf{Completato in PB} \\
                 \hline
               \end{tabularx}      
             \end{table}
@@ -745,7 +764,7 @@
 			    \item Spostamento della sezione riguardo la gestione dei rischi prima della formulazione del piano;
 			    \item Aggiunta della sezione sulla pianificazione a lungo termine;
 			    \item Aggiunta della descrizione degli sprint rimanenti.
-		    \end{itemize}		    & \textbf{} \\
+		    \end{itemize}		    & \textbf{Completato in PB} \\
                 \hline
               \end{tabularx}      
             \end{table}
@@ -763,9 +782,9 @@
 		      \textbf{Aggiornamento Piano di Qualifica} & Apportare le seguenti correzioni:
 		    \begin{itemize}
 			    \item Sostituzione del processo di PDCA con le misurazioni atte a valutare i risultati del ciclo di automiglioramento;
-			    \item Miglioramento l'analisi delle metriche riportate;
+			    \item Migliorare l'analisi delle metriche riportate;
 			    \item Inclusione nel cruscotto di valutazione gli obiettivi di qualità riguardanti la specifica dei test.
-		    \end{itemize}		    & \textbf{} \\
+		    \end{itemize}		    & \textbf{Completato in PB} \\
                 \hline
               \end{tabularx}      
             \end{table}
@@ -780,11 +799,14 @@
                 \rowcolor{gold}
 		    \textbf{Attività} & \textbf{Descrizione} & \textbf{Stato}\\
                 \hline
-		      \textbf{Realizzazione del MVP} & Codifica del Minimum Viable Product tramite codifica:
+		      \textbf{Realizzazione del MVP} & Realizzazione del Minimum Viable Product:
 		    \begin{itemize}
-			    \item
+			    \item codifica del frontend in React;
+                \item codifica del backend in Python;
+                \item codifica delle API;
+                \item testing di tutte le parti del prodotto software.
 		    \end{itemize}
-            e testing del prodotto come segnalato nel Piano di Qualifica v2.0.0 LINK!!!!		    & \textbf{} \\
+            & \textbf{Completato in PB} \\
                 \hline
               \end{tabularx}      
             \end{table}
@@ -1789,7 +1811,7 @@
                 \item Perfezionamento del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/esterni/Piano%20di%20Qualifica.pdf}{Piano di Qualifica v1.0.0};
                 \item \textit{Revisione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Revisione}{G}} finale del documento \href{https://atlasteam9.github.io/Atlas/docs/RTB/documenti/interni/Norme%20di%20Progetto.pdf}{Norme di Progetto v1.0.0}.
                 \item Verifica del PoC;
-                \item Prerazione generale per il RTB.
+                \item Preparazione generale per il RTB.
             \end{itemize}
         }
         \subsubsection{Rischi previsti}{
@@ -1864,7 +1886,6 @@
             
             I seguenti rischi previsti non si sono manifestati in modo significativo:
             \begin{itemize}
-                \item \textbf{RT-1: Tecnologie sconosciute}: per natura del lavoro svolto, ossia di verifica non si è manifestata questa evenienza.
                 \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: ogni membro del team ha portato a termine le attività assegnate.
                 \item \textbf{RO-5: Errata comprensione degli obiettivi del progetto}: non ci sono stati ripensamenti dell'ultima ora nei vari artefatti nel repository.  
                 \item \textbf{RO-4: Difficoltà nella comunicazione interna al team}: lavorando in maniera asincrona fra i vari impegni il team ha comunicato efficacemente.
@@ -1998,7 +2019,7 @@
         }
 
     \subsection{Sommario finale RTB}
-    \subsubsection{Riepiologo orario}
+    \subsubsection{Riepilogo orario}
         \begin{table}[H]
                 \centering
                 % intestazioni diagonali fuori dalla tabella
@@ -2047,7 +2068,7 @@
                 \label{tab:riepilogo-orario-rtb}
             \end{table}
 
-    \subsubsection{Riepiologo economico}
+    \subsubsection{Riepilogo economico}
         \begin{table}[h!]
                 \centering
                 \rowcolors{2}{lightblue}{white}
@@ -2073,8 +2094,1049 @@
                 \caption{Costo sostenuto per ruolo - RTB}
                 \label{tab:costo-ruoli-rtb}
             \end{table} 
-        
 
+    \newpage
+    
+    \subsection{Sprint 7 - PB}{
+    \subsubsection{Tempo}{
+        \begin{itemize}
+            \item[] Inizio: \textbf{2026/02/18} 
+            \item[] Fine prevista: \textbf{2026/03/06} 
+            \item[] Fine reale: \textbf{2026/03/06} 
+        \end{itemize}
+    }
+    \subsubsection{Informazioni generali e attività da svolgere}{
+        Questo periodo ha come obiettivi principali l'attuazione delle correzioni del documento di Analisi dei Requisiti come richiesto dal professor Cardin e l'inizio della progettazione architetturale del MVP.
+    }
+            
+    \noindent In particolare, le attività previste sono:
+            \begin{itemize}
+                \item Apportare le correzioni necessarie al documento \href{https://atlasteam9.github.io/Atlas/docs/PB/documenti/esterni/Analisi%20dei%20Requisiti.pdf}{Analisi dei Requisiti v2.0.0};
+                \item Iniziare la progettazione architetturale da utilizzare nel MVP.
+            \end{itemize}
+        }
+        \subsubsection{Rischi previsti}{
+            Si prevede la possibile manifestazione dei seguenti rischi:
+            \begin{itemize}
+                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati;}
+                \item \textbf{RO-5: Errata comprensione degli obiettivi del progetto;}
+                \item \textbf{RI-1: Organizzazione tempo personale.}
+            \end{itemize}
+        }
+    
+        \subsubsection{Preventivo}{
+            Si prospetta l'utilizzo delle seguenti risorse:
+
+            \begin{table}[H]
+                \centering
+
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    \hline
+                    Andrea Difino        & - & 7 & - & - & - & - \\
+                    \hline
+                    Bilal Sabic          & - & - & - & 18 & - & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & 14 & - & - \\
+                    \hline
+                    Francesco Marcolongo & 4 & - & - & - & - & - \\
+                    \hline
+                    Giacomo Giora        & - & - & - & - & - & 19 \\
+                    \hline
+                    Riccardo Valerio     & - & - & 9 & - & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & - & 20 & - \\
+                    \hline
+                \end{tabular}
+                \caption{Preventivo ore per ruolo - Sprint 7}
+                \label{tab:preventivo-sprint7}
+            \end{table}
+        }
+
+        \subsubsection{Retrospettiva} {
+            Questo periodo è stato dedicato alla correzione dell'Analisi dei Requisiti e alla progettazione di una prima \textit{soluzione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Soluzione}{G}} architetturale. Il team è riuscito a portare a termine gli obiettivi prefissati anche grazie a una maggiore disponibilità di tempo.
+        }
+
+        \subsubsection{Rischi incontrati}{
+            In questo sprint nessun rischio previsto si è manifestato in modo significativo:
+            \begin{itemize}
+                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: ogni membro del team ha portato a termine le attività assegnate.
+                \item \textbf{RO-5: Errata comprensione degli obiettivi del progetto}: l'inizio della progettazione non ha evidenziato lacune o sollevato dubbi relativi ai requisiti e agli obiettivi del progetto.
+                \item \textbf{RI-1: Organizzazione tempo personale}: non ci sono stati impegni che hanno modificato la disponibilità dei membri del team
+            \end{itemize}
+        }
+
+        \subsubsection{Consuntivo}{
+            \begin{table}[H]
+                \centering
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    % \textcolor{red}{(+4)}
+                    % \textcolor{mioverde}{(-1)}
+                    \hline
+                    Andrea Difino        & - & 6 \textcolor{mioverde}{(-1)} & - & -  & - & - \\
+                    \hline
+                    Bilal Sabic          & - & - & - & 15 \textcolor{mioverde}{(-3)} & -  & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & 12 \textcolor{mioverde}{(-2)} & - & - \\
+                    \hline
+                    Francesco Marcolongo & 4 & - & - & - & - & - \\
+                    \hline
+                    Giacomo Giora        & - & - & - & - & - & 20 \textcolor{red}{(+1)} \\
+                    \hline
+                    Riccardo Valerio     & - & - & 7 \textcolor{mioverde}{(-2)} & - & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & - & 19 \textcolor{mioverde}{(-1)} & - \\
+                    \hline
+                \end{tabular}
+                \caption{Consuntivo ore per ruolo - Sprint 7}
+                \label{tab:consuntivo-sprint7}
+            \end{table}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=16cm]{../../../Assets/OrePerRuolo-Sprint7.png}
+                \caption{Confronto ore previste ed effettive per ruolo - Sprint 7}
+                \label{fig:confronto-ore-sprint7}
+            \end{figure}
+        }
+   
+        \subsubsection{Risorse rimanenti aggiornate}{
+            \begin{table}[h!]
+                \centering
+
+                \rowcolors{2}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}p{3.2cm}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{2.9cm}
+                    |>{\centering\arraybackslash}p{3.2cm}|}
+                    \hline 
+                    Ruolo & Costo & Ore & Costo & Ore rimanenti & Budget rimanenti \\
+                    \hline
+                    Responsabile         & 30\texteuro/h & 4 & 120\texteuro & 8 \textcolor{red}{(-4)}  &  240\texteuro \textcolor{red}{(-120\texteuro)}\\
+                    \hline
+                    Amministratore       & 20\texteuro/h & 6 & 120\texteuro  & 6 \textcolor{red}{(-6)}  & 120\texteuro \textcolor{red}{(-120\texteuro)}\\
+                    \hline
+                    Analista             & 25\texteuro/h & 7 & 175\texteuro & 0 \textcolor{red}{(-7)}  & 0\texteuro \textcolor{red}{(-175\texteuro)} \\
+                    \hline
+                    Progettista          & 25\texteuro/h & 27 & 675\texteuro & 77 \textcolor{red}{(-27)} &  1925\texteuro \textcolor{red}{(-675\texteuro)} \\
+                    \hline
+                    Programmatore        & 15\texteuro/h & 19 & 285\texteuro & 65 \textcolor{red}{(-19)} &  975\texteuro \textcolor{red}{(-285\texteuro)} \\
+                    \hline
+                    Verificatore         & 15\texteuro/h & 20 & 300\texteuro  & 26 \textcolor{red}{(-20)} &  390\texteuro \textcolor{red}{(-300\texteuro)}\\
+                    \hline
+                    Totale               & -             & 83 &  1675\texteuro & 182\textcolor{red}{(-83)}&  3650\texteuro \textcolor{red}{(-1675\texteuro)}\\
+                    \hline
+                \end{tabular}
+                \caption{Variazione risorse disponibili - Sprint 7}
+                \label{tab:risorse-rimanenti-sprint7}
+            \end{table}
+        }
+
+
+ \newpage
+    
+\subsection{Sprint 8 - PB}{
+    \subsubsection{Tempo}{
+        \begin{itemize}
+            \item[] Inizio: \textbf{2026/03/07} 
+            \item[] Fine prevista: \textbf{2026/03/13} 
+            \item[] Fine reale: \textbf{2026/03/13} 
+        \end{itemize}
+    }
+
+    \subsubsection{Informazioni generali e attività da svolgere}{
+        Questo periodo ha come \textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} principale il consolidamento della progettazione del prodotto successivamente alla definizione architetturale avviata nello sprint precedente. In particolare, il team si concentra sulla formalizzazione delle scelte progettuali e sull'allineamento tra requisiti, \textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} e soluzioni implementative, così da predisporre una base solida per il completamento degli artefatti richiesti dalla milestone \textit{Product Baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}}.
+    }
+            
+    \noindent In particolare, le attività previste sono:
+            \begin{itemize}
+                \item Proseguire la stesura della Specifica Tecnica, descrivendo in maniera più precisa l'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} del sistema, i componenti e le loro interazioni;
+                \item Consolidare le decisioni progettuali relative al MVP, verificandone la coerenza con i requisiti individuati;
+                \item Avanzare nello \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}} delle funzionalità principali del prodotto, in particolare quelle strettamente collegate al flusso di verifica guidata;
+                \item Aggiornare i documenti di progetto coinvolti nella PB, mantenendo coerenza tra progettazione e pianificazione;
+                \item Preparare le attività di verifica necessarie agli sprint successivi.
+            \end{itemize}
+        }
+
+        \subsubsection{Rischi previsti}{
+            Si prevede la possibile manifestazione dei seguenti rischi:
+            \begin{itemize}
+                \item \textbf{RT-1: Tecnologie sconosciute;}
+                \item \textbf{RO-1: Imprecisioni nella pianificazione;}
+                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati;}
+                \item \textbf{RI-1: Organizzazione tempo personale.}
+            \end{itemize}
+        }
+
+    
+        \subsubsection{Preventivo}{
+            Si prospetta l'utilizzo delle seguenti risorse:
+
+            \begin{table}[H]
+                \centering
+
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    \hline
+                    Andrea Difino        & - & - & - & - & 10 & - \\
+                    \hline
+                    Bilal Sabic          & - & 4 & - & - & - & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & - & - & 7 \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & 8 & - & - \\
+                    \hline
+                    Giacomo Giora        & - & - & - & 9 & - & - \\
+                    \hline
+                    Riccardo Valerio     & 2 & - & - & - & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & 8 & - & - \\
+                    \hline
+                \end{tabular}
+                \caption{Preventivo ore per ruolo - Sprint 8}
+                \label{tab:preventivo-sprint8}
+            \end{table}
+        }
+
+        
+       \subsubsection{Retrospettiva}{
+            Durante questo sprint il team ha lavorato soprattutto sul consolidamento della progettazione, trasformando le scelte architetturali iniziali in una descrizione tecnica più strutturata e coerente con i requisiti del progetto. Questo ha permesso di chiarire meglio il ruolo dei vari componenti del sistema e di ridurre alcune incertezze presenti nella fase iniziale della PB. Parallelamente, l'avanzamento del MVP ha consentito di validare in modo progressivo alcune delle soluzioni progettuali individuate.
+        }
+
+        \subsubsection{Rischi incontrati}{
+            Rischi effettivamente manifestatisi durante lo sprint:
+            \begin{itemize}
+                \item \textbf{RT-1: Tecnologie sconosciute}: la definizione delle soluzioni implementative e il collegamento tra i diversi componenti del sistema hanno richiesto ulteriori momenti di approfondimento tecnico. Il rischio è stato mitigato tramite attività di confronto interno, studio mirato e sperimentazione;
+                \item \textbf{RO-1: Imprecisioni nella pianificazione}: alcune attività di progettazione si sono rivelate più articolate del previsto, richiedendo un parziale riadattamento del lavoro all'interno dello sprint;
+                \item \textbf{RI-1: Organizzazione tempo personale}: la disponibilità dei membri del team non è stata completamente uniforme, ma il lavoro è comunque proseguito in maniera regolare grazie a una buona distribuzione dei compiti.
+            \end{itemize}
+
+            Il seguente rischio previsto non si è manifestato in modo significativo:
+            \begin{itemize}
+                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: le attività assegnate sono state svolte in maniera coordinata e senza criticità rilevanti.
+            \end{itemize}
+        }
+
+        \subsubsection{Consuntivo}{
+            \begin{table}[H]
+                \centering
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    % \textcolor{red}{(+4)}
+                    % \textcolor{mioverde}{(-1)}
+                    \hline
+                    Andrea Difino        & - & - & - & - & 10 & - \\
+                    \hline
+                    Bilal Sabic          & - & 3\textcolor{mioverde}{(-1)} & - & - & - & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & - & - & 7 \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & 8 & - & - \\
+                    \hline
+                    Giacomo Giora        & - & - & - & 9 & - & - \\
+                    \hline
+                    Riccardo Valerio     & 2 & - & - & - & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & 8 & - & - \\
+                    \hline
+                \end{tabular}
+                \caption{Consuntivo ore per ruolo - Sprint 8}
+                \label{tab:consuntivo-sprint8}
+            \end{table}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=16cm]{../../../Assets/OrePerRuolo-Sprint8.png}
+                \caption{Confronto ore previste ed effettive per ruolo - Sprint 8}
+                \label{fig:confronto-ore-sprint8}
+            \end{figure}
+        }
+   
+        \subsubsection{Risorse rimanenti aggiornate}{
+            \begin{table}[h!]
+                \centering
+
+                \rowcolors{2}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}p{3.2cm}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{2.9cm}
+                    |>{\centering\arraybackslash}p{3.2cm}|}
+                    \hline 
+                    Ruolo & Costo & Ore & Costo & Ore rimanenti & Budget rimanenti \\
+                    \hline
+                    Responsabile         & 30\texteuro/h & 2 & 60\texteuro & 6 \textcolor{red}{(-2)}  &  180\texteuro \textcolor{red}{(-60\texteuro)}\\
+                    \hline
+                    Amministratore       & 20\texteuro/h & 3 & 60\texteuro  & 3 \textcolor{red}{(-3)}  & 60\texteuro \textcolor{red}{(-60\texteuro)}\\
+                    \hline
+                    Analista             & 25\texteuro/h & 0 & 0\texteuro & 0  & 0 \texteuro \\
+                    \hline
+                    Progettista          & 25\texteuro/h & 25 & 625\texteuro & 52 \textcolor{red}{(-25)} &  1300\texteuro \textcolor{red}{(-625\texteuro)} \\
+                    \hline
+                    Programmatore        & 15\texteuro/h & 10 & 150\texteuro & 55 \textcolor{red}{(-10)} & 825\texteuro \textcolor{red}{(-150\texteuro)} \\
+                    \hline
+                    Verificatore         & 15\texteuro/h & 7 & 105\texteuro  & 19 \textcolor{red}{(-7)} &  285\texteuro \textcolor{red}{(-105\texteuro)}\\
+                    \hline
+                    Totale               & -             & 47 &  1000\texteuro & 135\textcolor{red}{(-47)}&  2650\texteuro \textcolor{red}{(-1000\texteuro)}\\
+                    \hline
+                \end{tabular}
+                \caption{Variazione risorse disponibili - Sprint 8}
+                \label{tab:risorse-rimanenti-sprint8}
+            \end{table}
+        }
+
+\subsection{Sprint 9 - PB}{
+    \subsubsection{Tempo}{
+        \begin{itemize}
+            \item[] Inizio: \textbf{2026/03/14} 
+            \item[] Fine prevista: \textbf{2026/03/20} 
+            \item[] Fine reale: \textbf{2026/03/20} 
+        \end{itemize}
+    }
+
+    \subsubsection{Informazioni generali e attività da svolgere}{
+        Questo periodo ha come \textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} principale il completamento delle attività necessarie alla consegna della \textit{Product Baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}}. Dopo il consolidamento della progettazione effettuato nello sprint precedente, il team si concentra sulla rifinitura della documentazione tecnica, sull'integrazione delle funzionalità principali del MVP e sulla verifica complessiva della coerenza tra requisiti, progettazione e prodotto realizzato.
+    }
+            
+    \noindent In particolare, le attività previste sono:
+            \begin{itemize}
+                \item Completare la stesura della Specifica Tecnica;
+                \item Rifinire e integrare le funzionalità principali del MVP, così da presentare un prodotto coerente con gli obiettivi del \textit{capitolato}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Capitolato}{G}};
+                \item Eseguire attività di verifica e testing sul prodotto e sugli artefatti documentali;
+                \item Aggiornare il Piano di Progetto e il Piano di Qualifica sulla base del lavoro effettivamente svolto durante la PB;
+                \item Preparare il materiale finale necessario per la \textit{revisione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Revisione}{G}} PB.
+            \end{itemize}
+        }
+
+        \subsubsection{Rischi previsti}{
+            Si prevede la possibile manifestazione dei seguenti rischi:
+            \begin{itemize}
+                \item \textbf{RO-1: Imprecisioni nella pianificazione;}
+                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati;}
+                \item \textbf{RO-5: Errata comprensione degli obiettivi del progetto;}
+                \item \textbf{RI-1: Organizzazione tempo personale.}
+            \end{itemize}
+        }
+
+    
+        \subsubsection{Preventivo}{
+            Si prospetta l'utilizzo delle seguenti risorse:
+
+            \begin{table}[H]
+                \centering
+
+                % intestazioni diagonali fuori dalla tabella
+               \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    \hline
+                    Andrea Difino        & - & - & - & - & 10 & - \\
+                    \hline
+                    Bilal Sabic          & - & 3 & - & - & - & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & - & - & 7 \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & 8 & - & - \\
+                    \hline
+                    Giacomo Giora        & - & - & - & 10 & - & - \\
+                    \hline
+                    Riccardo Valerio     & 2 & - & - & - & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & 7 & - & - \\
+                    \hline
+                \end{tabular}
+                \caption{Preventivo ore per ruolo - Sprint 9}
+                \label{tab:preventivo-sprint9}
+            \end{table}
+        }
+
+        
+       \subsubsection{Retrospettiva}{
+            Durante questo sprint il team si è concentrato sulla finalizzazione degli artefatti previsti per la PB e sulla rifinitura del prodotto sviluppato. Il lavoro svolto nello sprint precedente ha reso più ordinato il completamento della documentazione tecnica e ha facilitato l'integrazione delle funzionalità principali del MVP. Le attività di verifica hanno inoltre permesso di controllare con maggiore attenzione la coerenza complessiva tra quanto analizzato, progettato e implementato, contribuendo a una chiusura più solida della fase PB.
+        }
+
+        \subsubsection{Rischi incontrati}{
+            Rischi effettivamente manifestatisi durante lo sprint:
+            \begin{itemize}
+                \item \textbf{RO-1: Imprecisioni nella pianificazione}: nella fase finale alcune attività di rifinitura e verifica hanno richiesto un impegno leggermente superiore a quanto inizialmente previsto;
+                \item \textbf{RI-1: Organizzazione tempo personale}: la vicinanza della consegna ha richiesto una gestione più attenta del tempo disponibile da parte dei membri del team.
+            \end{itemize}
+
+            I seguenti rischi previsti non si sono manifestati in modo significativo:
+            \begin{itemize}
+                \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: il team è riuscito a portare a termine le attività pianificate entro la conclusione dello sprint;
+                \item \textbf{RO-5: Errata comprensione degli obiettivi del progetto}: non sono emerse incomprensioni rilevanti tra obiettivi, requisiti e scelte progettuali, grazie al lavoro di chiarimento svolto negli sprint precedenti.
+            \end{itemize}
+        }
+
+        \subsubsection{Consuntivo}{
+            \begin{table}[H]
+                \centering
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    % \textcolor{red}{(+4)}
+                    % \textcolor{mioverde}{(-1)}
+                    \hline
+                    Andrea Difino        & - & - & - & - & 9\textcolor{mioverde}{(-1)} & - \\
+                    \hline
+                    Bilal Sabic          & - & 3 & - & - & - & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & - & - & 8 \textcolor{red}{(+1)} \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & 8 & - & - \\
+                    \hline
+                    Giacomo Giora        & - & - & - & 9\textcolor{mioverde}{(-1)} & - & - \\
+                    \hline
+                    Riccardo Valerio     & 2 & - & - & - & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & 7 & - & - \\
+                    \hline
+                \end{tabular}
+                \caption{Consuntivo ore per ruolo - Sprint 9}
+                \label{tab:consuntivo-sprint9}
+            \end{table}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=16cm]{../../../Assets/OrePerRuolo-Sprint9.png}
+                \caption{Confronto ore previste ed effettive per ruolo - Sprint 9}
+                \label{fig:confronto-ore-sprint9}
+            \end{figure}
+        }
+   
+        \subsubsection{Risorse rimanenti aggiornate}{
+            \begin{table}[h!]
+                \centering
+
+                \rowcolors{2}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}p{3.2cm}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{2.9cm}
+                    |>{\centering\arraybackslash}p{3.2cm}|}
+                    \hline 
+                    Ruolo & Costo & Ore & Costo & Ore rimanenti & Budget rimanenti \\
+                    \hline
+                    Responsabile         & 30\texteuro/h & 2 & 60\texteuro & 4 \textcolor{red}{(-2)}  &  120\texteuro \textcolor{red}{(-60\texteuro)}\\
+                    \hline
+                    Amministratore       & 20\texteuro/h & 3 & 60\texteuro  & 0 \textcolor{red}{(-3)}  & 0\texteuro \textcolor{red}{(-60\texteuro)}\\
+                    \hline
+                    Analista             & 25\texteuro/h & 0 & 0\texteuro & 0  & 0 \texteuro \\
+                    \hline
+                    Progettista          & 25\texteuro/h & 24 & 600\texteuro & 28 \textcolor{red}{(-24)} &  700\texteuro \textcolor{red}{(-600\texteuro)} \\
+                    \hline
+                    Programmatore        & 15\texteuro/h & 9 & 135\texteuro & 46 \textcolor{red}{(-9)} & 690\texteuro \textcolor{red}{(-135\texteuro)} \\
+                    \hline
+                    Verificatore         & 15\texteuro/h & 8 & 120\texteuro  & 11 \textcolor{red}{(-8)} &  165\texteuro \textcolor{red}{(-120\texteuro)}\\
+                    \hline
+                    Totale               & -             & 46 &  975\texteuro & 89\textcolor{red}{(-46)}&  1675\texteuro \textcolor{red}{(-975\texteuro)}\\
+                    \hline
+                \end{tabular}
+                \caption{Variazione risorse disponibili - Sprint 9}
+                \label{tab:risorse-rimanenti-sprint9}
+            \end{table}
+        }
+
+
+\subsection{Sprint 10 - PB}{
+    \subsubsection{Tempo}{
+        \begin{itemize}
+            \item[] Inizio: \textbf{2026/03/21} 
+            \item[] Fine prevista: \textbf{2026/03/27} 
+            \item[] Fine reale: \textbf{2026/03/27} 
+        \end{itemize}
+    }
+
+    \subsubsection{Informazioni generali e attività da svolgere}{
+        Questo periodo ha come \textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} principale il proseguimento della fase conclusiva della \textit{Product Baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}}. Dopo il completamento delle attività principali negli sprint precedenti, il team si concentra sul consolidamento del MVP, sul perfezionamento della documentazione tecnica e sul rafforzamento delle attività di verifica, così da ridurre le criticità residue prima dell'ultimo sprint di progetto.
+    }
+        
+    \noindent In particolare, le attività previste sono:
+        \begin{itemize}
+            \item Rifinire la documentazione tecnica del progetto, completando e armonizzando la Specifica Tecnica con le soluzioni effettivamente adottate;
+            \item Consolidare il MVP attraverso correzioni mirate e miglioramenti delle funzionalità principali già implementate;
+            \item Rafforzare le attività di verifica e testing sul prodotto, con particolare attenzione ai flussi principali e ai casi di regressione;
+            \item Aggiornare il Piano di Progetto e il Piano di Qualifica sulla base del lavoro effettivamente svolto;
+            \item Preparare le ultime attività necessarie alla chiusura della PB nello sprint successivo.
+        \end{itemize}
+    }
+
+    \subsubsection{Rischi previsti}{
+        Si prevede la possibile manifestazione dei seguenti rischi:
+        \begin{itemize}
+            \item \textbf{RO-1: Imprecisioni nella pianificazione;}
+            \item \textbf{RO-2: Mancato adempimento dei compiti assegnati;}
+            \item \textbf{RT-1: Tecnologie sconosciute;}
+            \item \textbf{RI-1: Organizzazione tempo personale.}
+        \end{itemize}
+    }
+
+
+    
+        \subsubsection{Preventivo}{
+            Si prospetta l'utilizzo delle seguenti risorse:
+
+            \begin{table}[H]
+                \centering
+
+                % intestazioni diagonali fuori dalla tabella
+               \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    \hline
+                    Andrea Difino        & - & - & - & 7 & - & - \\
+                    \hline
+                    Bilal Sabic          & - & - & - & - & 8 & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & - & 8 & - \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & - & 10 & - \\
+                    \hline
+                    Giacomo Giora        & 2 & - & - & - & - & - \\
+                    \hline
+                    Riccardo Valerio     & - & - & - & 8 & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & - & - & 5 \\
+                    \hline
+                \end{tabular}
+                \caption{Preventivo ore per ruolo - Sprint 10}
+                \label{tab:preventivo-sprint10}
+            \end{table}
+        }
+
+ \subsubsection{Retrospettiva}{
+        Durante questo sprint il team si è concentrato sul consolidamento del prodotto e sulla rifinitura degli artefatti previsti per la PB. Le attività svolte hanno permesso di migliorare ulteriormente la coerenza tra documentazione tecnica e implementazione effettiva del MVP, oltre a rendere più stabile il comportamento del sistema attraverso verifiche aggiuntive e correzioni puntuali. Lo sprint ha inoltre consentito di predisporre in modo ordinato il lavoro conclusivo da svolgere nel periodo successivo.
+    }
+
+    \subsubsection{Rischi incontrati}{
+        Rischi effettivamente manifestatisi durante lo sprint:
+        \begin{itemize}
+            \item \textbf{RO-1: Imprecisioni nella pianificazione}: alcune attività di rifinitura documentale e di verifica hanno richiesto un impegno leggermente diverso da quello inizialmente stimato;
+            \item \textbf{RT-1: Tecnologie sconosciute}: in alcune attività di consolidamento è stato necessario un ulteriore approfondimento tecnico per intervenire in modo coerente sulle componenti già sviluppate;
+            \item \textbf{RI-1: Organizzazione tempo personale}: la distribuzione del tempo tra correzioni, verifiche e altri impegni ha richiesto una pianificazione più attenta.
+        \end{itemize}
+
+        Il seguente rischio previsto non si è manifestato in modo significativo:
+        \begin{itemize}
+            \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: il team è riuscito a portare a termine le attività pianificate mantenendo un buon coordinamento interno.
+        \end{itemize}
+    }
+
+
+        \subsubsection{Consuntivo}{
+            \begin{table}[H]
+                \centering
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    % \textcolor{red}{(+4)}
+                    % \textcolor{mioverde}{(-1)}
+                    \hline
+                    Andrea Difino        & - & - & - & 6\textcolor{mioverde}{(-1)} & - & - \\
+                    \hline
+                    Bilal Sabic          & - & - & - & - & 9\textcolor{red}{(+1)} & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & - & 6 \textcolor{mioverde}{(-2)} & -  \\                    
+                    \hline
+                    Francesco Marcolongo & - & - & - & - & 9\textcolor{mioverde}{(-1)} & - \\
+                    \hline
+                    Giacomo Giora        & 2 & - & - & - & - & - \\
+                    \hline
+                    Riccardo Valerio     & - & - & - & 8 & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & - & - & 6\textcolor{red}{(+1)} \\
+                    \hline
+                \end{tabular}
+                \caption{Consuntivo ore per ruolo - Sprint 10}
+                \label{tab:consuntivo-sprint10}
+            \end{table}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=16cm]{../../../Assets/OrePerRuolo-Sprint10.png}
+                \caption{Confronto ore previste ed effettive per ruolo - Sprint 10}
+                \label{fig:confronto-ore-sprint10}
+            \end{figure}
+        }
+   
+        \subsubsection{Risorse rimanenti aggiornate}{
+            \begin{table}[h!]
+                \centering
+
+                \rowcolors{2}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}p{3.2cm}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{2.9cm}
+                    |>{\centering\arraybackslash}p{3.2cm}|}
+                    \hline 
+                    Ruolo & Costo & Ore & Costo & Ore rimanenti & Budget rimanenti \\
+                    \hline
+                    Responsabile         & 30\texteuro/h & 2 & 60\texteuro & 2\textcolor{red}{(-2)}  &  60\texteuro \textcolor{red}{(-60\texteuro)}\\
+                    \hline
+                    Amministratore       & 20\texteuro/h & 0 & 0\texteuro  & 0 & 0\texteuro \\
+                    \hline
+                    Analista             & 25\texteuro/h & 0 & 0\texteuro & 0  & 0 \texteuro \\
+                    \hline
+                    Progettista          & 25\texteuro/h & 14 & 350\texteuro & 14 \textcolor{red}{(-14)} &  350\texteuro \textcolor{red}{(-350\texteuro)} \\
+                    \hline
+                    Programmatore        & 15\texteuro/h & 24 & 360\texteuro & 22 \textcolor{red}{(-24)} & 330\texteuro \textcolor{red}{(-360\texteuro)} \\
+                    \hline
+                    Verificatore         & 15\texteuro/h & 6 & 90\texteuro  & 5 \textcolor{red}{(-6)} &  75\texteuro \textcolor{red}{(-90\texteuro)}\\
+                    \hline
+                    Totale               & -             & 46 &  860\texteuro & 43\textcolor{red}{(-46)}&  815\texteuro \textcolor{red}{(-860\texteuro)}\\
+                    \hline
+                \end{tabular}
+                \caption{Variazione risorse disponibili - Sprint 10}
+                \label{tab:risorse-rimanenti-sprint10}
+            \end{table}
+        }
+
+
+
+       \subsection{Sprint 11 - PB}{
+    \subsubsection{Tempo}{
+        \begin{itemize}
+            \item[] Inizio: \textbf{2026/03/28} 
+            \item[] Fine prevista: \textbf{2026/04/03} 
+            \item[] Fine reale: \textbf{2026/04/03} 
+        \end{itemize}
+    }
+
+    \subsubsection{Informazioni generali e attività da svolgere}{
+        Questo periodo ha come \textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} principale la conclusione della \textit{Product Baseline}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Baseline}{G}} e la chiusura delle attività di progetto. Il team intende completare le ultime rifiniture sul prodotto, concludere le correzioni residue sugli artefatti documentali e verificare in modo finale la coerenza complessiva tra requisiti, progettazione, implementazione e verifica, così da arrivare alla \textit{revisione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Revisione}{G}} conclusiva con un prodotto stabile e corredato dalla documentazione richiesta.
+    }
+        
+    \noindent In particolare, le attività previste sono:
+        \begin{itemize}
+            \item Completare le correzioni residue sulla Specifica Tecnica, sul Manuale Utente e sugli altri documenti di progetto;
+            \item Rifinire ulteriormente il MVP tramite correzioni puntuali e miglioramenti delle funzionalità già implementate;
+            \item Concludere le attività di verifica e testing, con particolare attenzione ai casi di sistema e di regressione;
+            \item Verificare la coerenza finale tra requisiti, progettazione, implementazione e documentazione;
+            \item Preparare e consolidare il materiale conclusivo necessario alla chiusura della PB.
+        \end{itemize}
+    }
+
+    \subsubsection{Rischi previsti}{
+        Si prevede la possibile manifestazione dei seguenti rischi:
+        \begin{itemize}
+            \item \textbf{RO-1: Imprecisioni nella pianificazione;}
+            \item \textbf{RO-2: Mancato adempimento dei compiti assegnati;}
+            \item \textbf{RI-1: Organizzazione tempo personale.}
+        \end{itemize}
+    }
+
+    
+        \subsubsection{Preventivo}{
+            Si prospetta l'utilizzo delle seguenti risorse:
+
+            \begin{table}[H]
+                \centering
+
+                % intestazioni diagonali fuori dalla tabella
+               \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    \hline
+                    Andrea Difino        & - & - & - & 8 & - & - \\
+                    \hline
+                    Bilal Sabic          & - & - & - & - & 8 & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & - & 7 & - \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & - & 10 & - \\
+                    \hline
+                    Giacomo Giora        & 2 & - & - & - & - & - \\
+                    \hline
+                    Riccardo Valerio     & - & - & - & 7 & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & - & - & 4 \\
+                    \hline
+                \end{tabular}
+                \caption{Preventivo ore per ruolo - Sprint 11}
+                \label{tab:preventivo-sprint11}
+            \end{table}
+        }
+
+        
+      \subsubsection{Retrospettiva}{
+        Durante questo sprint il team ha completato le attività conclusive della PB, concentrandosi sulla finalizzazione degli artefatti documentali e sulle ultime rifiniture del prodotto. Il lavoro svolto ha permesso di chiudere in maniera coerente il percorso di progettazione e \textit{sviluppo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Sviluppo}{G}}, consolidando il MVP e completando le verifiche necessarie. Al termine dello sprint il progetto risulta allineato rispetto agli obiettivi prefissati e pronto per la conclusione della fase PB.
+    }
+
+    \subsubsection{Rischi incontrati}{
+        Rischi effettivamente manifestatisi durante lo sprint:
+        \begin{itemize}
+            \item \textbf{RO-1: Imprecisioni nella pianificazione}: nella fase finale alcune attività di rifinitura e verifica hanno richiesto un impegno leggermente superiore a quanto inizialmente previsto;
+            \item \textbf{RI-1: Organizzazione tempo personale}: la vicinanza della consegna ha richiesto una gestione più attenta del tempo disponibile da parte dei membri del team.
+        \end{itemize}
+
+        I seguenti rischi previsti non si sono manifestati in modo significativo:
+        \begin{itemize}
+            \item \textbf{RO-2: Mancato adempimento dei compiti assegnati}: il team è riuscito a portare a termine le attività pianificate entro la conclusione dello sprint.
+        \end{itemize}
+    }
+
+        \subsubsection{Consuntivo}{
+            \begin{table}[H]
+                \centering
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{\namecol}%
+                    \rotatebox{60}{\textit{Responsabile}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Responsabile}{G}}}%
+                    \hspace*{0.3cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.8cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{\textit{Verificatore}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Verificatore}{G}}}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}
+                    |>{\centering\arraybackslash}m{\colw}|}
+                    % \textcolor{red}{(+4)}
+                    % \textcolor{mioverde}{(-1)}
+                    \hline
+                    Andrea Difino        & - & - & - & 7\textcolor{mioverde}{(-1)} & - & - \\
+                    \hline
+                    Bilal Sabic          & - & - & - & - & 9\textcolor{red}{(+1)} & - \\
+                    \hline
+                    Federico Simonetto   & - & - & - & - & 4\textcolor{mioverde}{(-3)} & -  \\
+                    \hline
+                    Francesco Marcolongo & - & - & - & - & 9\textcolor{mioverde}{(-1)} & - \\
+                    \hline
+                    Giacomo Giora        & 2 & - & - & - & - & - \\
+                    \hline
+                    Riccardo Valerio     & - & - & - & 7 & - & - \\
+                    \hline
+                    Michele Tesser       & - & - & - & - & - & 5\textcolor{red}{(+1)} \\
+                    \hline
+                \end{tabular}
+                \caption{Consuntivo ore per ruolo - Sprint 11}
+                \label{tab:consuntivo-sprint11}
+            \end{table}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=16cm]{../../../Assets/OrePerRuolo-Sprint11.png}
+                \caption{Confronto ore previste ed effettive per ruolo - Sprint 11}
+                \label{fig:confronto-ore-sprint11}
+            \end{figure}
+        }
+   
+        \subsubsection{Risorse rimanenti aggiornate}{
+            \begin{table}[h!]
+                \centering
+
+                \rowcolors{2}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}p{3.2cm}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{\colw}
+                    |>{\centering\arraybackslash}p{2.9cm}
+                    |>{\centering\arraybackslash}p{3.2cm}|}
+                    \hline 
+                    Ruolo & Costo & Ore & Costo & Ore rimanenti & Budget rimanenti \\
+                    \hline
+                    Responsabile         & 30\texteuro/h & 2 & 60\texteuro & 0\textcolor{red}{(-2)}  &  0\texteuro \textcolor{red}{(-60\texteuro)}\\
+                    \hline
+                    Amministratore       & 20\texteuro/h & 0 & 0\texteuro  & 0 & 0\texteuro \\
+                    \hline
+                    Analista             & 25\texteuro/h & 0 & 0\texteuro & 0  & 0 \texteuro \\
+                    \hline
+                    Progettista          & 25\texteuro/h & 14 & 350\texteuro & 0 \textcolor{red}{(-14)} &  0\texteuro \textcolor{red}{(-350\texteuro)} \\
+                    \hline
+                    Programmatore        & 15\texteuro/h & 22 & 330\texteuro & 0 \textcolor{red}{(-22)} & 0\texteuro \textcolor{red}{(-330\texteuro)} \\
+                    \hline
+                    Verificatore         & 15\texteuro/h & 5 & 75\texteuro  & 0 \textcolor{red}{(-5)} &  0\texteuro \textcolor{red}{(-75\texteuro)}\\
+                    \hline
+                    Totale               & -             & 43 &  815\texteuro & 0\textcolor{red}{(-43)}&  0\texteuro \textcolor{red}{(-815\texteuro)}\\
+                    \hline
+                \end{tabular}
+                \caption{Variazione risorse disponibili - Sprint 11}
+                \label{tab:risorse-rimanenti-sprint11}
+            \end{table}
+        }
+
+\subsection{Sommario finale}
+    \subsubsection{Riepilogo orario}{
+        Al termine del progetto, il team ha completato tutte le attività previste per le milestone \textit{RTB}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RTB}{G}} e PB, esaurendo interamente il monte ore disponibile. In seguito alla riallocazione effettuata dopo la \textit{RTB}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#RTB}{G}}, il carico complessivo risulta distribuito in modo coerente tra i diversi ruoli di progetto, per un totale di 637 ore.
+
+        \begin{table}[H]
+                \centering
+                % intestazioni diagonali fuori dalla tabella
+                \hspace*{-14cm}%
+                \makebox[0pt][l]{%
+                    \hspace*{4.2cm}%
+                    \rotatebox{60}{Responsabile}%
+                    \hspace*{0.1cm}\rotatebox{60}{Amministratore}%
+                    \hspace*{0.1cm}\rotatebox{60}{Analista}%
+                    \hspace*{0.6cm}\rotatebox{60}{Progettista}%
+                    \hspace*{0.5cm}\rotatebox{60}{Programmatore}%
+                    \hspace*{0.1cm}\rotatebox{60}{Verificatore}%
+                    \hspace*{0.3cm}\rotatebox{60}{Totali persona}%
+                }
+
+                \rowcolors{1}{lightblue}{white}
+
+                \begin{tabular}{
+                    |>{\raggedright\arraybackslash}m{\namecol}
+                    |>{\centering\arraybackslash}m{\colwS}
+                    |>{\centering\arraybackslash}m{\colwS}
+                    |>{\centering\arraybackslash}m{\colwS}
+                    |>{\centering\arraybackslash}m{\colwS}
+                    |>{\centering\arraybackslash}m{\colwS}
+                    |>{\centering\arraybackslash}m{\colwS}
+                    |>{\centering\arraybackslash}m{\colwS}|}
+                    \hline
+                    Andrea Difino        & 7  & 11 & 14 & 17 & 26 & 16 & 91 \\
+                    \hline
+                    Bilal Sabic          & 8  & 6  & 14 & 15 & 32 & 16 & 91 \\
+                    \hline
+                    Federico Simonetto   & 7  & 15 & 6  & 12 & 26 & 25 & 91 \\
+                    \hline
+                    Francesco Marcolongo & 8  & 11 & 14 & 16 & 18 & 24 & 91 \\
+                    \hline
+                    Giacomo Giora        & 10 & 13 & 16 & 18 & 14 & 20 & 91 \\
+                    \hline
+                    Riccardo Valerio     & 7  & 11 & 15 & 15 & 20 & 23 & 91 \\
+                    \hline
+                    Michele Tesser       & 7  & 5  & 11 & 15 & 19 & 34 & 91 \\
+                    \hline
+                    \textbf{Totali per ruolo} & \textbf{54} & \textbf{72} & \textbf{90} & \textbf{108} & \textbf{155} & \textbf{158} & \textbf{637} \\
+                    \hline
+                \end{tabular}
+                \caption{Ore svolte dai membri del team - Finale}
+                \label{tab:riepilogo-orario-finale}
+            \end{table}
+    }
+
+    \subsubsection{Riepilogo economico}{
+        La conclusione del progetto coincide con l'esaurimento completo del budget disponibile. Il costo totale sostenuto risulta pari a 12\,705\texteuro, in linea con il preventivo complessivo definito dal team.
+
+        \begin{table}[H]
+                \centering
+                \rowcolors{2}{lightblue}{white}
+                \begin{tabular}{|l|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo} & \textbf{Costo/h}(\texteuro) & \textbf{Ore svolte} & \textbf{Costo}(\texteuro) \\
+                    \hline
+                    Responsabile   & 30 & 54  & 1620\texteuro \\
+                    \hline
+                    Amministratore & 20 & 72  & 1440\texteuro \\
+                    \hline
+                    Analista       & 25 & 90  & 2250\texteuro \\
+                    \hline
+                    Progettista    & 25 & 108 & 2700\texteuro \\
+                    \hline
+                    Programmatore  & 15 & 155 & 2325\texteuro \\
+                    \hline
+                    Verificatore   & 15 & 158 & 2370\texteuro \\
+                    \hline
+                    \multicolumn{2}{|c|}{\textbf{Totale}} & \textbf{637} & \textbf{12\,705}\texteuro\\
+                    \hline
+                \end{tabular}
+                \caption{Costo sostenuto per ruolo - Finale}
+                \label{tab:costo-ruoli-finale}
+            \end{table}
+
+    \newpage
 }
 
 \end{document}
