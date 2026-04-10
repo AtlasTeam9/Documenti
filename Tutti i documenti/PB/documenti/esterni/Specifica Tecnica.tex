@@ -2114,7 +2114,7 @@
                         \item {\ttfamily record(asset\_id: String, tree\_id: String, result: Result): void}: registra il risultato;
                         \item {\ttfamily reset(asset\_id: String, tree\_id: String): void}: resetta il risultato sull'asset e \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}} passati come parametri;
                         \item {\ttfamily get(asset\_id: String, tree\_id: String): Result}: ritorna il risultato in base all'asset e al \textit{decision tree}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#DecisionTree}{G}};
-                        \item {\ttfamily to\_dict(): Dictionary$<$String, Dictionary$<$String, String$>>$}: ritorna un dizionario con i nuovi valori??????? 
+                        \item {\ttfamily to\_dict(): Dictionary$<$String, Dictionary$<$String, String$>>$}: ritorna un dizionario con i risultati di ogni asset relativi ad ogni albero;
                         \item {\ttfamily get\_aggregated\_result(all\_tree\_ids: List<String>): Dictionary<String, String>}: calcola il risultato globale per ogni \textit{requisito}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Requisito}{G}} (albero) basandosi su tutti gli asset.
                     \end{itemize}
 
@@ -2218,7 +2218,7 @@
                     Sollevata quando il file json del device non supera la \textit{validazione}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Validazione}{G}} dello schema Pydantic.
 
                 \paragraph{InvalidFileException}\mbox{}\\
-                    Sollevata quando ????.
+                    Sollevata quando il file json della sessione caricato nell'applicazione non rispetta la struttura o il contenuto richiesto.
 
                 \paragraph{UnsupportedExportFormatException}\mbox{}\\
                     Sollevata quando il formato richiesto per l'export non è tra quelli disponibili (\textit{csv}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#CSV}{G}}, \textit{pdf}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#PDF}{G}}).
@@ -2316,7 +2316,7 @@
                         \end{itemize}
                     \textbf{Metodi}
                     \begin{itemize}
-                        \item {\ttfamily \_resolve\_ref(ref: String, nodes: Dictionary<String, Node>): Node | Result}: risolve i riferimenti a nodi successivi e risultati foglia?????????????????????;
+                        \item {\ttfamily \_resolve\_ref(ref: String, nodes: Dictionary<String, Node>): Node | Result}: risolve i riferimenti a nodi successivi e risultati foglia;
                         \item {\ttfamily build\_nodes(nodes\_data: Dictionary): list<Node>}: costruisce ricorsivamente la struttura Node dal json;
                         \item {\ttfamily get\_all(): list<DecisionTree>}: implementazione del metodo dichiarato nell'\textit{interfaccia}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Interfaccia}{G}} TreeProvider;
                     \end{itemize}
