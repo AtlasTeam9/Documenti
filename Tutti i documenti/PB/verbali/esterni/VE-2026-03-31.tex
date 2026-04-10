@@ -34,11 +34,11 @@
 \newcommand{\Gruppo}{Atlas}
 \newcommand{\Email}{\href{mailto:team9.atlas@gmail.com}{\textcolor{blue}{\underline{team9.atlas@gmail.com}}}}
 \newcommand{\TitoloVerbale}{Verbale della Riunione}
-\newcommand{\DataVerbale}{2026/01/13}
-\newcommand{\NumeroVerbaleEsterno}{settimo}
+\newcommand{\DataVerbale}{2026/03/31}
+\newcommand{\NumeroVerbaleEsterno}{nono}
 \newcommand{\OraInizio}{15:00}
-\newcommand{\OraFine}{15:25}
-\newcommand{\LuogoVerbale}{Chiamata Google Meet}
+\newcommand{\OraFine}{16:00}
+\newcommand{\LuogoVerbale}{Chiamata Zoom}
 \newcommand{\LogoGruppo}{../../../Assets/AtlasLogo.png} % DA CAMBIARE UNA VOLTA MESSO NELLA REPO IN ../../../Assets/AtlasLogo.png
 \newcommand{\AbstractVerbale}{
     In questo verbale vengono riportati gli argomenti discussi, le domande poste e le risposte ricevute durante il \NumeroVerbaleEsterno \space meeting effettuato dal team \Gruppo \space con l'azienda \textbf{Bluewind S.r.l.} nel giorno \DataVerbale \space dalle \OraInizio \space alle \OraFine.
@@ -95,30 +95,17 @@
         \hline
         \textbf{Alessandro Zappia} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
         \textbf{Tobia Fiorese} & SI (\textbf{Bluewind S.r.l.}) & \textbf{Rappresentante} \\
-        Andrea Difino & SI & Programmatore\\
-        Federico Simonetto & SI & Analista\\
-        Riccardo Valerio & SI & Amministratore\\
-        Francesco Marcolongo & SI & Verificatore\\
-        Michele Tesser & SI & Analista\\
+        Andrea Difino & SI & Progettista\\
+        Federico Simonetto & SI & Programmatore\\
+        Riccardo Valerio & SI & Progettista\\
+        Francesco Marcolongo & SI & Programmatore\\
+        Michele Tesser & SI & Verificatore\\
         Giacomo Giora & SI & Responsabile\\
         Bilal Sabic & SI & Programmatore\\
     \end{tabular}
 
 \end{titlepage}
 
-\section*{Registro delle modifiche}{
-    \begin{center} 
-        \begin{tabularx}{\textwidth}{|l|l|l|l|X|}
-        \hline
-            \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
-            \hline
-            \VersioneVerbale & \DataVerbale & Giacomo Giora & Francesco Marcolongo & Correzioni varie \\
-            \hline
-            v0.1.0 & \DataVerbale & Federico Simonetto &  & Prima stesura \\
-            \hline
-        \end{tabularx}
-    \end{center}
-}
 
 \newpage
 
@@ -141,30 +128,18 @@
 
 \section{Ordine del giorno}{
     \begin{itemize}
-        \item Presentazione dei cambiamenti nel Proof of Concept
-        \item Presentazione dei requisiti individuati
-        \item Riferimento all'azienda proponente della data per la fine della RTB
+        \item \textbf{Presentazione dell'MVP}
     \end{itemize}
 }
 
 
 \section{Discussione}{
+    \subsection{Presentazione dell'MVP}
+        Viene presentato all'azienda proponente la versione finale del Minimum Viable Product sviluppato dal team. Viene mostrato il corretto funzionamento di tutte le funzionalità implementate, come descritte nell'apposita documentazione.\\
+        Viene poi mostrata l'architettura del progetto, dando all'azienda proponente un'idea della struttura del prodotto software.\\
+        L'azienda ha \textbf{approvato} infine il prodotto software dato che soddisfa tutte le richieste da loro espresse.
 
-    % ----------------------------------------------------
-    \subsection{Presentazione dei cambiamenti  nel Proof of Concept}{
-        Vengono mostrati all'azienda proponente i cambiamenti effettuati nel Proof of Concept, riguardanti un miglioramento nell'interfaccia grafica e nell'architettura del prodotto software.
-    }
 
-    \subsection{Presentazione dei requisiti individuati}{
-        Viene mostrata la lista dei requisiti funzionali agli stakeholder al fine di far venire a galla evenutali dubbi o perplessità riguardo le funzionalità che il prodotto software dovrà poi possedere. 
-    }
-    
-    \subsection{Riferimento all'azienda proponente della data per la fine della RTB}{
-        Viene comunicato all'azienda proponente il periodo in cui il team intende effettuare la presentazione della Requirements and Technology Baseline, individuato nella prima settimana di febbraio 2026.
-    }
-    
-   
-}
 \newpage
 
 \section{Decisioni prese}{
@@ -172,8 +147,6 @@
     \begin{tabular}{|c|p{12cm}|}
         \hline
         \textbf{ID} & \textbf{Decisione} \\
-        \hline
-            D1-\DataVerbale\_ve & Concordato con l'azienda l'invio del file d'esempio di caso d'uso della macchina del caffè, proposto per la seguente settimana.\\
         \hline
     \end{tabular}
     \end{center}
@@ -186,7 +159,9 @@
         \hline
         \textbf{ID} & \textbf{Descrizione} & \textbf{Id Github Issue} & \textbf{Assegnatario}\\
         \hline
-            A1-\DataVerbale\_ve & Inviare all'azienda proponente il file riguardante l'analisi dei requisiti effettuata & - & Andrea Difino\\
+        A1-\DataVerbale\_ve & Terminare la Specifica Tecnica & \#97 & Team\\
+        \hline
+        A2-\DataVerbale\_ve & Terminare il Piano di Qualifica & \#98 & Team\\
         \hline
     \end{tabular}
     \end{center}
