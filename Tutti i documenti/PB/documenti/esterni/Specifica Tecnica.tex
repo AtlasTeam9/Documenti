@@ -396,7 +396,7 @@
 
         \subsection{Frontend}
             Il frontend del sistema è realizzato come Single Page Application (SPA) basata su React, con l'\textit{obiettivo}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Obiettivo}{G}} di garantire un'esperienza utente fluida, una chiara separazione delle responsabilità e una buona evolvibilità del codice.  
-            L'impostazione adottata è una scelta pragmatica: \textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} layered modulare con principi clean parziali. In particolare, la logica applicativa è concentrata nei service e negli hook, mentre la gestione dello stato globale rimane esplicita e operativa per contenere la complessità implementativa.
+            L'impostazione adottata è un'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} layered modulare, in cui ogni layer è dedicato a una specifica funzionalità. In particolare, la logica applicativa è concentrata nei service e negli hook, mentre la gestione dello stato globale rimane esplicita e operativa per contenere la complessità implementativa.
             
             \subsubsection{Vista architetturale generale}
             L'\textit{architettura}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Architettura}{G}} frontend è organizzata in layer funzionali:
@@ -404,8 +404,8 @@
                 \item \textbf{Presentation}: rendering, interazione utente, routing e composizione \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}};
                 \item \textbf{Application}: orchestrazione dei casi d'uso tramite service e hook;
                 \item \textbf{State}: gestione dello stato globale condiviso (store separati per responsabilità);
-                \item \textbf{Domain}: entità e regole di business pure lato client;
                 \item \textbf{Infrastructure}: comunicazione HTTP, adapter tecnici, mapping errori;
+                \item \textbf{Domain}: entità e regole di business pure lato client;
                 \item \textbf{Shared}: utility trasversali riusabili.
             \end{itemize}
             
@@ -423,6 +423,11 @@
             \paragraph{Layer di presentazione e routing}\mbox{}\\
             Il layer di presentazione comprende viste e componenti \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}} riusabili. La navigazione è gestita tramite routing client-side e route guard che verificano le precondizioni dei flussi protetti (ad \textit{esempio}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Esempio}{G}} sessione attiva e dati dispositivo disponibili).  
             Questa organizzazione mantiene i componenti focalizzati sulla resa grafica e sull'esperienza utente, delegando l'orchestrazione ai livelli applicativi.
+
+            \paragraph{Layer applicativo: hook e servizi}\mbox{}\\
+            La logica di orchestrazione è incapsulata in custom hook e \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi.  
+            I custom hook coordinano l'interazione tra vista, stato e \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}}; i \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi centralizzano i casi d'uso principali (sessione, navigazione, export), mantenendo i componenti prevalentemente dichiarativi.  
+            In coerenza con l'approccio pragmatico adottato, parte dell'orchestrazione applicativa interagisce direttamente con lo stato globale.
             
             \paragraph{Gestione dello stato}\mbox{}\\
             La gestione dello stato distingue tra:
@@ -432,11 +437,6 @@
             \end{itemize}
             Lo stato globale è suddiviso in store separati per area funzionale (sessione, alberi decisionali, dispositivo, risultati, \textit{UI}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#UI}{G}}), evitando uno stato monolitico.  
             L'uso di selector dedicati e compositi riduce duplicazioni di lettura e limita l'accoppiamento tra componenti.
-            
-            \paragraph{Layer applicativo: hook e servizi}\mbox{}\\
-            La logica di orchestrazione è incapsulata in custom hook e \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi.  
-            I custom hook coordinano l'interazione tra vista, stato e \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}}; i \textit{servizi}\textsubscript{\href{https://atlasteam9.github.io/Atlas/glossario.html\#Servizi}{G}} applicativi centralizzano i casi d'uso principali (sessione, navigazione, export), mantenendo i componenti prevalentemente dichiarativi.  
-            In coerenza con l'approccio pragmatico adottato, parte dell'orchestrazione applicativa interagisce direttamente con lo stato globale.
             
             \paragraph{Comunicazione con il backend}\mbox{}\\
             La comunicazione con il backend adotta principi ports-and-adapters in forma parziale:
